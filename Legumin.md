@@ -1,4 +1,4 @@
-celo: krei alternativan firmware por ĉi tiu kamerao:
+celo: krei alternativan firmvaron por ĉi tiu kamerao:
 
 marko = WIFI CARAM  
 modelo : WF-HD820-ZS  
@@ -16,12 +16,9 @@ procesoro : ingenic T21
 video-sentilo : GC2053
 
 Multa laboro estis farita por kameraoj ekipitaj per inĝenia T20-procesoro.  
-modifitaj firmvaroj :  
-    https://github.com/EliasKotlyar/Xiaomi-Dafang-Hacks  
-fontoj de modifitaj firmvaroj :
-    https://github.com/Dafang-Hacks/Main  
-lanĉante programojn sen ŝanĝi la firmvaro :  
-    https://github.com/ThatUsernameAlreadyExist/JCO-PM203-Fisheye-Ingenic-T20-P2P-camera-hacks  
+modifitaj firmvaroj :  https://github.com/EliasKotlyar/Xiaomi-Dafang-Hacks  
+fontoj de modifitaj firmvaroj : https://github.com/Dafang-Hacks/Main  
+lanĉante programojn sen ŝanĝi la firmvaro :  https://github.com/ThatUsernameAlreadyExist/JCO-PM203-Fisheye-Ingenic-T20-P2P-camera-hacks  
 
 
 malfermaj havenoj :  
