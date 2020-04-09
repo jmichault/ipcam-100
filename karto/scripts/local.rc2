@@ -1,0 +1,36 @@
+#!/bin/sh
+export LD_LIBRARY_PATH='/opt/media/mmcblk0p1/lib/:/lib/:/ipc/lib/'
+
+CONFIGPATH="/opt/media/mmcblk0p1/config"
+LOGDIR="/opt/media/mmcblk0p1/log"
+LOGPATH="$LOGDIR/startup.log"
+
+## Load some common functions:
+. /opt/media/mmcblk0p1/scripts/common_functions.sh
+
+# Mount bind to extended busybox.
+#mount -o bind /opt/media/mmcblk0p1/bin/busybox /bin/busybox
+
+sleep 15
+
+#/opt/media/mmcblk0p1/controlscripts/rtsp start
+
+## stop_cloud :
+ps | awk '/[a]uto_run.sh/ {print $1}' | while read PID; do kill -9 $PID; done;
+ps | awk '/[j]co_server/ {print $1}' | xargs kill -9 &>/dev/null
+echo 'V'>/dev/watchdog
+echo 'V'>/dev/watchdog0    
+rm '/opt/media/mmcblk0p1/cid.txt' &>/dev/null
+
+#sleep 1
+# init ir_led gpio :
+#init_gpio 46
+
+/opt/media/mmcblk0p1/config/autostart/system-webserver
+
+#/opt/media/mmcblk0p1/controlscripts/rtsp-h264
+/opt/media/mmcblk0p1/controlscripts/rtsp start
+
+/opt/media/mmcblk0p1/controlscripts/ftp-server start
+
+cd /opt/media/mmcblk0p1/bin

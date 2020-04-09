@@ -28,11 +28,11 @@ CFLAGS      += -Wall -I. $(INC) -DSOCKLEN_T=socklen_t -DNO_SSTREAM=1 -D_LARGEFIL
 
 LDFLAGS     = -L. -muclibc -lpthread -lm -lrt
 
-LIVE_LIB 	+= $(BASE)/lib/libliveMedia.a
-LIVE_LIB 	+= $(BASE)/lib/libgroupsock.a
-LIVE_LIB 	+= $(BASE)/lib/libUsageEnvironment.a
-LIVE_LIB 	+= $(BASE)/lib/libBasicUsageEnvironment.a
-LIVE_LIB 	+= $(BASE)/lib/libBasicUsageEnvironment.a
+LIVE_LIB 	+= $(BASE)/lib/libliveMedia.so
+LIVE_LIB 	+= $(BASE)/lib/libgroupsock.so
+LIVE_LIB 	+= $(BASE)/lib/libUsageEnvironment.so
+LIVE_LIB 	+= $(BASE)/lib/libBasicUsageEnvironment.so
+LIVE_LIB 	+= $(BASE)/lib/libBasicUsageEnvironment.so
 LIVE_LIB 	+= $(BASE)/lib/libimp.so
 LIVE_LIB 	+= $(BASE)/lib/libalog.so
 

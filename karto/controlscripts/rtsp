@@ -1,0 +1,28 @@
+#!/bin/sh
+SERVICE_NAME="RTSP MJPEG Server"
+export LD_LIBRARY_PATH='/opt/media/sdc/lib:/thirdlib:/system/lib/:/ipc/lib/'
+
+
+status()
+{
+ ps|grep rtsp_server
+}
+
+start()
+{
+  /opt/media/sdc/bin/busybox nohup /opt/media/sdc/bin/rtsp_server -W 1280 -H 720 -j 60 -Q 5 -u media/stream1 -P 554 >/dev/null 2>&1 &
+}
+
+stop()
+{
+  killall -9 rtsp_server
+}
+
+if [ $# -eq 0 ]; then
+  start
+else
+  case $1 in start|stop|status)
+    $1
+    ;;
+  esac
+fi
