@@ -1,9 +1,12 @@
 #!/bin/sh
 
-. /opt/media/sdc/www/cgi-bin/func.cgi
-. /opt/media/sdc/scripts/common_functions.sh
+SDPATH=/opt/media/mmcblk0p1
+PATH="${SDPATH}/bin:/system/bin:/bin:/usr/bin:/sbin:/usr/sbin"
+. ${SDPATH}/www/cgi-bin/func.cgi
+. ${SDPATH}/scripts/common_functions.sh
 
-export LD_LIBRARY_PATH='/opt/media/sdc/lib/:/lib/:/ipc/lib/'
+export LD_LIBRARY_PATH=/system/lib
+export LD_LIBRARY_PATH=/thirdlib:$LD_LIBRARY_PATH
 
 echo "Content-type: text/html"
 echo "Pragma: no-cache"
@@ -30,16 +33,32 @@ if [ -n "$F_cmd" ]; then
 
         3)
           echo "Content of logcat<br/>"
-          /ipc/bin/logcat -d
+          /system/bin/logcat -d
           ;;
 
         4)
           echo "Content of v4l2rtspserver-master.log<br/>"
-          tail -n 256 /opt/media/sdc/log/v4l2rtspserver-master.log
+          cat /tmp/v4l2rtspserver-master.log
+          ;;
+
+        5)
+          echo "Content of update.log <br/>"
+          cat ${SDCARD}/log/update.log
+          ;;
+
+        6)
+          echo "Process List <br/>"
+          ps
+          ;;
+
+        7)
+          echo "Mounts <br/>"
+          mount
           ;;
 
       esac
       echo "</pre>"
+      return
     ;;
     clearlog)
       echo "<pre>"
@@ -57,24 +76,31 @@ if [ -n "$F_cmd" ]; then
           ;;
         3)
           echo "Content of logcat cleared<br/>"
-          /ipc/bin/logcat -c
+          /system/bin/logcat -c
           ;;
         4)
           echo "Content of v4l2rtspserver-master.log cleared<br/>"
-          echo -n "" > /opt/media/sdc/log/v4l2rtspserver-master.log
+          echo -n "" > /tmp/v4l2rtspserver-master.log
           ;;
+        5)
+          echo "Content of update.log cleared <br/>"
+          echo -n "" > ${SDCARD}/log/update.log
+         ;;
       esac
       echo "</pre>"
+      return
     ;;
 
     reboot)
       echo "Rebooting device..."
       /sbin/reboot
+      return
     ;;
 
     shutdown)
       echo "Shutting down device.."
       /sbin/halt
+      return
     ;;
 
     blue_led_on)
@@ -83,6 +109,14 @@ if [ -n "$F_cmd" ]; then
 
     blue_led_off)
       blue_led off
+    ;;
+
+    yellow_led_on)
+      yellow_led on
+    ;;
+
+    yellow_led_off)
+      yellow_led off
     ;;
 
     ir_led_on)
@@ -101,92 +135,95 @@ if [ -n "$F_cmd" ]; then
       ir_cut off
     ;;
 
+    motor_left)
+      motor -d d -a $F_val
+    ;;
+
+    motor_right)
+      motor -d D -a $F_val
+    ;;
+
+    motor_up)
+      motor -d S -a $F_val
+    ;;
+
+    motor_down)
+      motor -d s -a $F_val
+    ;;
+
+    motor_calibrate)
+      motor reset_pos_count $F_val
+    ;;
+
+    motor_PTZ)
+      ${SDCARD}/scripts/PTZpresets.sh $F_x_axis $F_y_axis
+    ;;
+
     audio_test)
       F_audioSource=$(printf '%b' "${F_audioSource//%/\\x}")
       if [ "$F_audioSource" == "" ]; then
-        F_audioSource="/opt/media/sdc/media/police.wav"
+        F_audioSource="/usr/share/notify/CN/init_ok.wav"
       fi
-      /opt/media/sdc/bin/busybox nohup /opt/media/sdc/bin/audioplay $F_audioSource $F_audiotestVol >> "/var/log/update.log" &
+      ${SDCARD}/bin/busybox nohup ${SDCARD}/bin/audioplay $F_audioSource $F_audiotestVol >> "/var/log/update.log" &
       echo  "Play $F_audioSource at volume $F_audiotestVol"
+      return
     ;;
 
     h264_start)
-      /opt/media/sdc/controlscripts/rtsp-h264 start
+      ${SDCARD}/controlscripts/rtsp-h264 start
     ;;
 
     h264_noseg_start)
-      /opt/media/sdc/controlscripts/rtsp-h264 start
+      ${SDCARD}/controlscripts/rtsp-h264 start
     ;;
 
     mjpeg_start)
-      /opt/media/sdc/controlscripts/rtsp-mjpeg start
+      ${SDCARD}/controlscripts/rtsp-mjpeg start
     ;;
 
     h264_nosegmentation_start)
-      /opt/media/sdc/controlscripts/rtsp-h264 start
+      ${SDCARD}/controlscripts/rtsp-h264 start
     ;;
 
     rtsp_stop)
-      /opt/media/sdc/controlscripts/rtsp-mjpeg stop
-      /opt/media/sdc/controlscripts/rtsp-h264 stop
-    ;;
-
-    set_telnet)
-      telnetport=$(echo "${F_telnetport}"| sed -e 's/+/ /g')
-      echo "TELNET_PORT=$telnetport" > /opt/media/sdc/config/telnetd.conf
-      restart_service_if_need /opt/media/sdc/controlscripts/telnet-server
-      echo "<p>Setting telnet service port to : $telnetport</p>"
-    ;;
-
-    set_ftp)
-      ftpport=$(echo "${F_ftpport}"| sed -e 's/+/ /g')
-      ftppassword=$(printf '%b' "${F_ftppassword}")
-      ftpuser=$(printf '%b' "${F_ftpuser}")
-      echo "<p>Setting ftp service port to: $ftpport</p>"
-      echo "<p>Setting ftp service login to: $ftpuser</p>"
-      echo "<p>Setting ftp service password to: $ftppassword</p>"
-      ftp_login_password $ftpuser $ftppassword
-      rewrite_config /opt/media/sdc/config/bftpd.conf PORT "\"$ftpport\""
-      restart_service_if_need /opt/media/sdc/controlscripts/ftp-server
+      ${SDCARD}/controlscripts/rtsp-mjpeg stop
+      ${SDCARD}/controlscripts/rtsp-h264 stop
     ;;
 
     settz)
-       ntp_srv=$(printf '%b' "${F_ntp_srv}")
+       ntp_srv=$(printf '%b' "${F_ntp_srv//%/\\x}")
        #read ntp_serv.conf
-       conf_ntp_srv=$(cat /opt/media/sdc/config/ntp_srv.conf)
+       conf_ntp_srv=$(cat ${SDCARD}/config/ntp_srv.conf)
 
       if [ $conf_ntp_srv != "$ntp_srv" ]; then
         echo "<p>Setting NTP Server to '$ntp_srv'...</p>"
-        echo "$ntp_srv" > /opt/media/sdc/config/ntp_srv.conf
+        echo "$ntp_srv" > ${SDCARD}/config/ntp_srv.conf
         echo "<p>Syncing time on '$ntp_srv'...</p>"
-        if /opt/media/sdc/bin/busybox ntpd -q -n -p "$ntp_srv" > /dev/null 2>&1; then
+        if ${SDCARD}/bin/busybox ntpd -q -n -p "$ntp_srv" > /dev/null 2>&1; then
           echo "<p>Success</p>"
         else
           echo "<p>Failed</p>"
         fi
       fi
 
-      tz=$(printf '%b' "${F_tz//%/\\x}")
-      if [ "$(cat /opt/media/sdc/config/timezone.conf)" != "$tz" ]; then
-        echo "<p>Setting TZ to '$tz'...</p>"
-        echo "$tz" > /opt/media/sdc/config/timezone.conf
-        echo "<p>Syncing time...</p>"
-        if /opt/media/sdc/bin/busybox ntpd -q -n -p "$ntp_srv" > /dev/null 2>&1; then
-          echo "<p>Success</p>"
-        else echo "<p>Failed</p>"
-        fi
-        restart_service_if_need /opt/media/sdc/controlscripts/rtsp-mjpeg
-        restart_service_if_need /opt/media/sdc/controlscripts/rtsp-h264
+      timezone_name=$(printf '%b' "${F_timeZone//%/\\x}")
+      if [ "$(cat ${SDCARD}/config/timezone.conf)" != "$timezone_name" ]; then
+        echo "<p>Setting time zone to '$timezone_name'...</p>"
+        echo "$timezone_name" > ${SDCARD}/config/timezone.conf
+        # Set system timezone from timezone name
+        set_timezone
       fi
-      hst=$(printf '%b' "${F_hostname}")
-      if [ "$(cat /opt/media/sdc/config/hostname.conf)" != "$hst" ]; then
+
+      hst=$(printf '%b' "${F_hostname//%/\\x}")
+      if [ "$(cat ${SDCARD}/config/hostname.conf)" != "$hst" ]; then
         echo "<p>Setting hostname to '$hst'...</p>"
-        echo "$hst" > /opt/media/sdc/config/hostname.conf
+        echo "$hst" > ${SDCARD}/config/hostname.conf
         if hostname "$hst"; then
           echo "<p>Success</p>"
         else echo "<p>Failed</p>"
         fi
       fi
+      return
     ;;
 
     set_http_password)
@@ -195,299 +232,382 @@ if [ -n "$F_cmd" ]; then
       http_password "$password"
     ;;
 
-    set_all_password)
-      password=$(printf '%b' "${F_password//%/\\x}")
-      echo "<p>Setting all services password to : $password</p>"
-      all_password "$password"
-      restart_service_if_need /opt/media/sdc/controlscripts/ftp-server
-      restart_service_if_need /opt/media/sdc/controlscripts/rtsp-mjpeg
-      restart_service_if_need /opt/media/sdc/controlscripts/rtsp-h264
-    ;;
-
     osd)
       enabled=$(printf '%b' "${F_OSDenable}")
+      axis_enable=$(printf '%b' "${F_AXISenable}")
       position=$(printf '%b' "${F_Position}")
       osdtext=$(printf '%b' "${F_osdtext//%/\\x}")
       osdtext=$(echo "$osdtext" | sed -e "s/\\+/ /g")
       fontName=$(printf '%b' "${F_fontName//%/\\x}")
       fontName=$(echo "$fontName" | sed -e "s/\\+/ /g")
 
-      if [ ! -z "$enabled" ]; then
-        /opt/media/sdc/bin/setconf -k o -v "$osdtext"
-        echo "OSD=\"${osdtext}\"" | sed -r 's/[ ]X=.*"/"/' > /opt/media/sdc/config/osd.conf
-        echo "OSD set"
+      if [ ! -z "$axis_enable" ];then
+        echo "DISPLAY_AXIS=true" > ${SDCARD}/config/osd.conf
+        echo "DISPLAY_AXIS enable<br />"
       else
-        echo "OSD removed"
-        /opt/media/sdc/bin/setconf -k o -v ""
-        echo "OSD=\"\" " > /opt/media/sdc/config/osd.conf
+        echo "DISPLAY_AXIS=false" > ${SDCARD}/config/osd.conf
+        echo "DISPLAY_AXIS disable<br />"
+      fi
+      
+      echo "OSD=\"${osdtext}\"" | sed -r 's/[ ]X=.*"/"/' >> ${SDCARD}/config/osd.conf
+      echo "OSD set<br />"
+
+      if [ ! -z "$enabled" ]; then
+        echo "ENABLE_OSD=true" >> ${SDCARD}/config/osd.conf
+        update_axis
+        echo "OSD enabled"
+      else
+        echo "ENABLE_OSD=false" >> ${SDCARD}/config/osd.conf
+        echo "OSD disabled"
+        ${SDCARD}/bin/setconf -k o -v ""
       fi
 
-      echo "COLOR=${F_color}" >> /opt/media/sdc/config/osd.conf
-      /opt/media/sdc/bin/setconf -k c -v "${F_color}"
+      echo "COLOR=${F_color}" >> ${SDCARD}/config/osd.conf
+      ${SDCARD}/bin/setconf -k c -v "${F_color}"
 
-      echo "SIZE=${F_OSDSize}" >> /opt/media/sdc/config/osd.conf
-      /opt/media/sdc/bin/setconf -k s -v "${F_OSDSize}"
+      echo "SIZE=${F_OSDSize}" >> ${SDCARD}/config/osd.conf
+      ${SDCARD}/bin/setconf -k s -v "${F_OSDSize}"
 
-      echo "POSY=${F_posy}" >> /opt/media/sdc/config/osd.conf
-      /opt/media/sdc/bin/setconf -k x -v "${F_posy}"
+      echo "POSY=${F_posy}" >> ${SDCARD}/config/osd.conf
+      ${SDCARD}/bin/setconf -k x -v "${F_posy}"
 
-      echo "FIXEDW=${F_fixedw}" >> /opt/media/sdc/config/osd.conf
-      /opt/media/sdc/bin/setconf -k w -v "${F_fixedw}"
+      echo "FIXEDW=${F_fixedw}" >> ${SDCARD}/config/osd.conf
+      ${SDCARD}/bin/setconf -k w -v "${F_fixedw}"
 
-      echo "SPACE=${F_spacepixels}" >> /opt/media/sdc/config/osd.conf
-      /opt/media/sdc/bin/setconf -k p -v "${F_spacepixels}"
+      echo "SPACE=${F_spacepixels}" >> ${SDCARD}/config/osd.conf
+      ${SDCARD}/bin/setconf -k p -v "${F_spacepixels}"
 
-      echo "FONTNAME=${fontName}" >> /opt/media/sdc/config/osd.conf
-      /opt/media/sdc/bin/setconf -k e -v "${fontName}"
+      echo "FONTNAME=${fontName}" >> ${SDCARD}/config/osd.conf
+      ${SDCARD}/bin/setconf -k e -v "${fontName}"
+      return
+    ;;
+
+    setldravg)
+      ldravg=$(printf '%b' "${F_avg/%/\\x}")
+      ldravg=$(echo "$ldravg" | sed "s/[^0-9]//g")
+      echo AVG="$ldravg" > ${SDCARD}/config/ldr-average.conf
+      echo "Average set to $ldravg iterations."
+      return
     ;;
 
     auto_night_mode_start)
-      /opt/media/sdc/controlscripts/auto-night-detection start
+      ${SDCARD}/controlscripts/auto-night-detection start
     ;;
 
     auto_night_mode_stop)
-      /opt/media/sdc/controlscripts/auto-night-detection stop
+      ${SDCARD}/controlscripts/auto-night-detection stop
     ;;
 
     toggle-rtsp-nightvision-on)
-      /opt/media/sdc/bin/setconf -k n -v 1
+      ${SDCARD}/bin/setconf -k n -v 1
     ;;
 
     toggle-rtsp-nightvision-off)
-      /opt/media/sdc/bin/setconf -k n -v 0
+      ${SDCARD}/bin/setconf -k n -v 0
+    ;;
+    
+    night_mode_on)
+      night_mode on
     ;;
 
-    night-mode-on)
-      /opt/media/sdc/controlscripts/night-mode start
-    ;;
-
-    night-mode-off)
-      /opt/media/sdc/controlscripts/night-mode stop
+    night_mode_off)
+      night_mode off
     ;;
 
     flip-on)
-      rewrite_config /opt/media/sdc/config/rtspserver.conf FLIP "ON"
-      /opt/media/sdc/bin/setconf -k f -v 1
+      rewrite_config ${SDCARD}/config/rtspserver.conf FLIP "ON"
+      ${SDCARD}/bin/setconf -k f -v 1
     ;;
 
     flip-off)
-      rewrite_config /opt/media/sdc/config/rtspserver.conf FLIP "OFF"
-      /opt/media/sdc/bin/setconf -k f -v 0
-    ;;
-    
-    rtsp-log-on)
-      rewrite_config /opt/media/sdc/config/rtspserver.conf RTSPLOGENABLED 1
-      restart_service_if_need /opt/media/sdc/controlscripts/rtsp-mjpeg
-      restart_service_if_need /opt/media/sdc/controlscripts/rtsp-h264
-    ;;
-
-    rtsp-log-off)
-      rewrite_config /opt/media/sdc/config/rtspserver.conf RTSPLOGENABLED 0
-      restart_service_if_need /opt/media/sdc/controlscripts/rtsp-mjpeg
-      restart_service_if_need /opt/media/sdc/controlscripts/rtsp-h264
+      rewrite_config ${SDCARD}/config/rtspserver.conf FLIP "OFF"
+      ${SDCARD}/bin/setconf -k f -v 0
     ;;
 
     motion_detection_on)
-        motion_sensitivity=4
-        if [ -f /opt/media/sdc/config/motion.conf ]; then
-            source /opt/media/sdc/config/motion.conf
-        fi
-        if [ $motion_sensitivity -eq -1 ]; then
-             motion_sensitivity=4
-        fi
-        /opt/media/sdc/bin/setconf -k m -v $motion_sensitivity
-        rewrite_config /opt/media/sdc/config/motion.conf motion_sensitivity $motion_sensitivity
+      motion_detection on
     ;;
 
     motion_detection_off)
-      /opt/media/sdc/bin/setconf -k m -v -1
+      motion_detection off
+    ;;
+    
+    snapshot)
+      snapshot
     ;;
 
     set_video_size)
       video_size=$(echo "${F_video_size}"| sed -e 's/+/ /g')
-      video_format=$(printf '%b' "${F_video_format}")
-      brbitrate=$(printf '%b' "${F_brbitrate}")
-      videopassword=$(printf '%b' "${F_videopassword}")
-      videouser=$(printf '%b' "${F_videouser}")
+      video_format=$(printf '%b' "${F_video_format/%/\\x}")
+      brbitrate=$(printf '%b' "${F_brbitrate/%/\\x}")
+      videopassword=$(printf '%b' "${F_videopassword//%/\\x}")
+      videouser=$(printf '%b' "${F_videouser//%/\\x}")
       videoport=$(echo "${F_videoport}"| sed -e 's/+/ /g')
-      frmRateDen=$(printf '%b' "${F_frmRateDen}")
-      frmRateNum=$(printf '%b' "${F_frmRateNum}")
+      frmRateDen=$(printf '%b' "${F_frmRateDen/%/\\x}")
+      frmRateNum=$(printf '%b' "${F_frmRateNum/%/\\x}")
 
-      rewrite_config /opt/media/sdc/config/rtspserver.conf RTSPH264OPTS "\"$video_size\""
-      rewrite_config /opt/media/sdc/config/rtspserver.conf RTSPMJPEGOPTS "\"$video_size\""
-      rewrite_config /opt/media/sdc/config/rtspserver.conf BITRATE "$brbitrate"
-      rewrite_config /opt/media/sdc/config/rtspserver.conf VIDEOFORMAT "$video_format"
-      rewrite_config /opt/media/sdc/config/rtspserver.conf USERNAME "$videouser"
-      rewrite_config /opt/media/sdc/config/rtspserver.conf USERPASSWORD "$videopassword"
-      rewrite_config /opt/media/sdc/config/rtspserver.conf PORT "$videoport"
+      rewrite_config ${SDCARD}/config/rtspserver.conf RTSPH264OPTS "\"$video_size\""
+      rewrite_config ${SDCARD}/config/rtspserver.conf RTSPMJPEGOPTS "\"$video_size\""
+      rewrite_config ${SDCARD}/config/rtspserver.conf BITRATE "$brbitrate"
+      rewrite_config ${SDCARD}/config/rtspserver.conf VIDEOFORMAT "$video_format"
+      rewrite_config ${SDCARD}/config/rtspserver.conf USERNAME "$videouser"
+      rewrite_config ${SDCARD}/config/rtspserver.conf USERPASSWORD "$videopassword"
+      rewrite_config ${SDCARD}/config/rtspserver.conf PORT "$videoport"
       if [ "$frmRateDen" != "" ]; then
-        rewrite_config /opt/media/sdc/config/rtspserver.conf FRAMERATE_DEN "$frmRateDen"
+        rewrite_config ${SDCARD}/config/rtspserver.conf FRAMERATE_DEN "$frmRateDen"
       fi
       if [ "$frmRateNum" != "" ]; then
-        rewrite_config /opt/media/sdc/config/rtspserver.conf FRAMERATE_NUM "$frmRateNum"
+        rewrite_config ${SDCARD}/config/rtspserver.conf FRAMERATE_NUM "$frmRateNum"
       fi
 
       echo "Video resolution set to $video_size<br/>"
       echo "Bitrate set to $brbitrate<br/>"
       echo "FrameRate set to $frmRateDen/$frmRateNum <br/>"
-      /opt/media/sdc/bin/setconf -k d -v "$frmRateNum,$frmRateDen" 2>/dev/null
+      ${SDCARD}/bin/setconf -k d -v "$frmRateNum,$frmRateDen" 2>/dev/null
       echo "Video format set to $video_format<br/>"
 
-      restart_service_if_need /opt/media/sdc/controlscripts/rtsp-mjpeg
-      restart_service_if_need /opt/media/sdc/controlscripts/rtsp-h264
+      if [ "$(rtsp_h264_server status)" = "ON" ]; then
+        rtsp_h264_server off
+        rtsp_h264_server on
+      fi
+      if [ "$(rtsp_mjpeg_server status)" = "ON" ]; then
+        rtsp_mjpeg_server off
+        rtsp_mjpeg_server on
+      fi
+      return
     ;;
 
     set_region_of_interest)
-        rewrite_config /opt/media/sdc/config/motion.conf region_of_interest "${F_x0},${F_y0},${F_x1},${F_y1}"
-        rewrite_config /opt/media/sdc/config/motion.conf motion_sensitivity "${F_motion_sensitivity}"
-        rewrite_config /opt/media/sdc/config/motion.conf motion_indicator_color "${F_motion_indicator_color}"
+        rewrite_config ${SDCARD}/config/motion.conf region_of_interest "${F_x0},${F_y0},${F_x1},${F_y1}"
+        rewrite_config ${SDCARD}/config/motion.conf motion_sensitivity "${F_motion_sensitivity}"
+        rewrite_config ${SDCARD}/config/motion.conf motion_indicator_color "${F_motion_indicator_color}"
+        rewrite_config ${SDCARD}/config/motion.conf motion_timeout "${F_motion_timeout}"
+        if [ "${F_motion_tracking}X" == "X" ]; then
+          rewrite_config ${SDCARD}/config/motion.conf motion_tracking off
+          ${SDCARD}/bin/setconf -k t -v off
+        else
+          rewrite_config ${SDCARD}/config/motion.conf motion_tracking on
+          ${SDCARD}/bin/setconf -k t -v on
+        fi
 
-        /opt/media/sdc/bin/setconf -k r -v ${F_x0},${F_y0},${F_x1},${F_y1}
-        /opt/media/sdc/bin/setconf -k z -v ${F_motion_indicator_color}
+        if [ "${F_motion_detection}" == "true" ]; then
+          echo "enabled motion detection"
+          motion_detection on
+        else
+          echo "disabled motion detection"
+          motion_detection off
+        fi
+
+        ${SDCARD}/bin/setconf -k r -v ${F_x0},${F_y0},${F_x1},${F_y1}
+        ${SDCARD}/bin/setconf -k m -v ${F_motion_sensitivity}
+        ${SDCARD}/bin/setconf -k z -v ${F_motion_indicator_color}
+        ${SDCARD}/bin/setconf -k u -v ${F_motion_timeout}
 
         # Changed the detection region, need to restart the server
         if [ ${F_restart_server} == "1" ]
         then
-            restart_service_if_need /opt/media/sdc/controlscripts/rtsp-mjpeg
-            restart_service_if_need /opt/media/sdc/controlscripts/rtsp-h264
+            if [ "$(rtsp_h264_server status)" == "ON" ]; then
+                rtsp_h264_server off
+                rtsp_h264_server on
+            fi
+            if [ "$(rtsp_mjpeg_server status)" == "ON" ]; then
+                rtsp_mjpeg_server off
+                rtsp_mjpeg_server on
+            fi
         fi
 
-        restart_service_if_need /opt/media/sdc/controlscripts/motion-detection
-
         echo "Motion Configuration done"
+        return
+    ;;
+
+    autonight_sw)
+      if [ ! -f ${SDCARD}/config/autonight.conf ]; then
+        echo "-S" > ${SDCARD}/config/autonight.conf
+      fi
+      current_setting=$(sed 's/-S *//g' ${SDCARD}/config/autonight.conf)
+      echo "-S" $current_setting > ${SDCARD}/config/autonight.conf
+    ;;
+
+    autonight_hw)
+      if [ -f ${SDCARD}/config/autonight.conf ]; then
+        sed -i 's/-S *//g' ${SDCARD}/config/autonight.conf
+      fi
     ;;
 
     get_sw_night_config)
-      cat /opt/media/sdc/config/autonight.conf
+      cat ${SDCARD}/config/autonight.conf
       exit
     ;;
 
     save_sw_night_config)
       #This also enables software mode
       night_mode_conf=$(echo "${F_val}"| sed "s/+/ /g" | sed "s/%2C/,/g")
-      echo $night_mode_conf > /opt/media/sdc/config/autonight.conf
+      echo $night_mode_conf > ${SDCARD}/config/autonight.conf
       echo Saved $night_mode_conf
     ;;
 
     offDebug)
-      /opt/media/sdc/controlscripts/debug-on-osd stop
+      ${SDCARD}/controlscripts/debug-on-osd stop
     ;;
 
     onDebug)
-      /opt/media/sdc/controlscripts/debug-on-osd start
+      ${SDCARD}/controlscripts/debug-on-osd start
     ;;
 
     conf_timelapse)
-      tlinterval=$(printf '%b' "${F_tlinterval}")
+      tlinterval=$(printf '%b' "${F_tlinterval/%/\\x}")
       tlinterval=$(echo "$tlinterval" | sed "s/[^0-9\.]//g")
       if [ "$tlinterval" ]; then
-        rewrite_config /opt/media/sdc/config/timelapse.conf TIMELAPSE_INTERVAL "$tlinterval"
+        rewrite_config ${SDCARD}/config/timelapse.conf TIMELAPSE_INTERVAL "$tlinterval"
         echo "Timelapse interval set to $tlinterval seconds."
       else
         echo "Invalid timelapse interval"
       fi
-      tlduration=$(printf '%b' "${F_tlduration}")
+      tlduration=$(printf '%b' "${F_tlduration/%/\\x}")
       tlduration=$(echo "$tlduration" | sed "s/[^0-9\.]//g")
       if [ "$tlduration" ]; then
-        rewrite_config /opt/media/sdc/config/timelapse.conf TIMELAPSE_DURATION "$tlduration"
+        rewrite_config ${SDCARD}/config/timelapse.conf TIMELAPSE_DURATION "$tlduration"
         echo "Timelapse duration set to $tlduration minutes."
       else
         echo "Invalid timelapse duration"
       fi
-    ;;
-
-    conf_recording)
-      motion_act=$(printf '%b' "${F_motion_act}")
-      postrec=$(printf '%b' "${F_postrec}")
-      maxduration=$(printf '%b' "${F_maxduration}")
-      diskspace=$(printf '%b' "${F_diskspace}")
-
-      echo "Motion activated recording set to $motion_act.<BR>"
-      echo "Postrecord set to $postrec seconds.<BR>"
-      echo "Max file duration set to $maxduration seconds.<BR>"
-      echo "Reserved free disk space set to $diskspace Megabytes.<BR>"
-
-      echo "rec_motion_activated=$motion_act" > /opt/media/sdc/config/recording.conf
-      echo "rec_postrecord_sec=$postrec" >> /opt/media/sdc/config/recording.conf
-      echo "rec_file_duration_sec=$maxduration" >> /opt/media/sdc/config/recording.conf
-      echo "rec_reserverd_disk_mb=$diskspace" >> /opt/media/sdc/config/recording.conf
-
-      restart_service_if_need /opt/media/sdc/controlscripts/recording
+      return
     ;;
 
     conf_audioin)
-       audioinFormat=$(printf '%b' "${F_audioinFormat}")
-       audioinBR=$(printf '%b' "${F_audioinBR}")
-       audiooutBR=$(printf '%b' "${F_audiooutBR}")
+       audioinFormat=$(printf '%b' "${F_audioinFormat/%/\\x}")
+       audioinBR=$(printf '%b' "${F_audioinBR/%/\\x}")
+       audiooutBR=$(printf '%b' "${F_audiooutBR/%/\\x}")
 
        if [ "$audioinBR" == "" ]; then
             audioinBR="8000"
        fi
        if [ "$audiooutBR" == "" ]; then
-           audiooutBR="$audioinBR"
+           audioOutBR = audioinBR
        fi
        if [ "$audioinFormat" == "OPUS" ]; then
-            audiooutBR="48000"
+            audioOutBR="48000"
        fi
        if [ "$audioinFormat" == "PCM" ]; then
-            audiooutBR="$audioinBR"
+            audioOutBR = audioinBR
        fi
        if [ "$audioinFormat" == "PCMU" ]; then
-           audiooutBR="$audioinBR"
+           audioOutBR = audioinBR
        fi
 
-       rewrite_config /opt/media/sdc/config/rtspserver.conf AUDIOFORMAT "$audioinFormat"
-       rewrite_config /opt/media/sdc/config/rtspserver.conf AUDIOINBR "$audioinBR"
-       rewrite_config /opt/media/sdc/config/rtspserver.conf AUDIOOUTBR "$audiooutBR"
-       rewrite_config /opt/media/sdc/config/rtspserver.conf FILTER "$F_audioinFilter"
-       rewrite_config /opt/media/sdc/config/rtspserver.conf HIGHPASSFILTER "$F_HFEnabled"
-       rewrite_config /opt/media/sdc/config/rtspserver.conf AECFILTER "$F_AECEnabled"
-       rewrite_config /opt/media/sdc/config/rtspserver.conf HWVOLUME "$F_audioinVol"
-       rewrite_config /opt/media/sdc/config/rtspserver.conf SWVOLUME "-1"
+       rewrite_config ${SDCARD}/config/rtspserver.conf AUDIOFORMAT "$audioinFormat"
+       rewrite_config ${SDCARD}/config/rtspserver.conf AUDIOINBR "$audioinBR"
+       rewrite_config ${SDCARD}/config/rtspserver.conf AUDIOOUTBR "$audiooutBR"
+       rewrite_config ${SDCARD}/config/rtspserver.conf FILTER "$F_audioinFilter"
+       rewrite_config ${SDCARD}/config/rtspserver.conf HIGHPASSFILTER "$F_HFEnabled"
+       rewrite_config ${SDCARD}/config/rtspserver.conf AECFILTER "$F_AECEnabled"
+       rewrite_config ${SDCARD}/config/rtspserver.conf HWVOLUME "$F_audioinVol"
+       rewrite_config ${SDCARD}/config/rtspserver.conf SWVOLUME "-1"
 
-       echo "Audio format $audioinFormat <BR>"
-       echo "In audio bitrate $audioinBR <BR>"
-       echo "Out audio bitrate $audiooutBR <BR>"
-       echo "Filter $F_audioinFilter <BR>"
-       echo "High Pass Filter $F_HFEnabled <BR>"
-       echo "AEC Filter $F_AECEnabled <BR>"
-       echo "Volume $F_audioinVol <BR>"
-       /opt/media/sdc/bin/setconf -k q -v "$F_audioinFilter" 2>/dev/null
-       /opt/media/sdc/bin/setconf -k l -v "$F_HFEnabled" 2>/dev/null
-       /opt/media/sdc/bin/setconf -k a -v "$F_AECEnabled" 2>/dev/null
-       /opt/media/sdc/bin/setconf -k h -v "$F_audioinVol" 2>/dev/null
+       echo "Audio format $audioinFormat <br/>"
+       echo "In audio bitrate $audioinBR <br/>"
+       echo "Out audio bitrate $audiooutBR <br/>"
+       echo "Filter $F_audioinFilter <br/>"
+       echo "High Pass Filter $F_HFEnabled <br/>"
+       echo "AEC Filter $F_AECEnabled <br/>"
+       echo "Volume $F_audioinVol <br/>"
+       ${SDCARD}/bin/setconf -k q -v "$F_audioinFilter" 2>/dev/null
+       ${SDCARD}/bin/setconf -k l -v "$F_HFEnabled" 2>/dev/null
+       ${SDCARD}/bin/setconf -k a -v "$F_AECEnabled" 2>/dev/null
+       ${SDCARD}/bin/setconf -k h -v "$F_audioinVol" 2>/dev/null
+       return
      ;;
 
+     update)
+        processId=$(ps | grep autoupdate.sh | grep -v grep)
+        if [ "$processId" == "" ]
+        then
+            echo "===============" >> ${SDCARD}/log/update.log
+            date >> /var/log/update.log
+            if [ "$F_login" != "" ]; then
+                ${SDCARD}/bin/busybox nohup ${SDCARD}/autoupdate.sh -s -v -f -u $F_login  >> "${SDCARD}/log/update.log" &
+            else
+                ${SDCARD}/bin/busybox nohup ${SDCARD}/autoupdate.sh -s -v -f >> "${SDCARD}/log/update.log" &
+            fi
+            processId=$(ps | grep autoupdate.sh | grep -v grep)
+        fi
+        echo $processId
+        return
+      ;;
+
+     show_updateProgress)
+        processId=$(ps | grep autoupdate.sh | grep -v grep)
+        if [ "$processId" == "" ]
+        then
+            echo -n -1
+        else
+            if [ -f /tmp/progress ] ; then
+                cat /tmp/progress
+            else
+                echo -n 0
+            fi
+        fi
+        return
+        ;;
+
      motion_detection_mail_on)
-         rewrite_config /opt/media/sdc/config/motion.conf sendemail "true"
+         rewrite_config ${SDCARD}/config/motion.conf send_email "true"
+         return
          ;;
 
      motion_detection_mail_off)
-          rewrite_config /opt/media/sdc/config/motion.conf sendemail "false"
+          rewrite_config ${SDCARD}/config/motion.conf send_email "false"
+          return
+          ;;
+
+     motion_detection_telegram_on)
+          rewrite_config ${SDCARD}/config/motion.conf send_telegram "true"
+          return
+          ;;
+
+     motion_detection_telegram_off)
+          rewrite_config ${SDCARD}/config/motion.conf send_telegram "false"
+          return
+          ;;
+
+     motion_detection_led_on)
+          rewrite_config ${SDCARD}/config/motion.conf motion_trigger_led "true"
+          return
+          ;;
+
+     motion_detection_led_off)
+          rewrite_config ${SDCARD}/config/motion.conf motion_trigger_led "false"
+          return
           ;;
 
      motion_detection_snapshot_on)
-          rewrite_config /opt/media/sdc/config/motion.conf save_snapshot "true"
+          rewrite_config ${SDCARD}/config/motion.conf save_snapshot "true"
+          return
           ;;
 
      motion_detection_snapshot_off)
-          rewrite_config /opt/media/sdc/config/motion.conf save_snapshot "false"
+          rewrite_config ${SDCARD}/config/motion.conf save_snapshot "false"
+          return
           ;;
 
      motion_detection_mqtt_publish_on)
-          rewrite_config /opt/media/sdc/config/motion.conf publish_mqtt_message "true"
+          rewrite_config ${SDCARD}/config/motion.conf publish_mqtt_message "true"
+          return
           ;;
 
      motion_detection_mqtt_publish_off)
-          rewrite_config /opt/media/sdc/config/motion.conf publish_mqtt_message "false"
+          rewrite_config ${SDCARD}/config/motion.conf publish_mqtt_message "false"
+          return
           ;;
 
      motion_detection_mqtt_snapshot_on)
-          rewrite_config /opt/media/sdc/config/motion.conf publish_mqtt_snapshot "true"
+          rewrite_config ${SDCARD}/config/motion.conf publish_mqtt_snapshot "true"
+          return
           ;;
 
      motion_detection_mqtt_snapshot_off)
-          rewrite_config /opt/media/sdc/config/motion.conf publish_mqtt_snapshot "false"
+          rewrite_config ${SDCARD}/config/motion.conf publish_mqtt_snapshot "false"
+          return
           ;;
 
      *)
@@ -498,3 +618,4 @@ if [ -n "$F_cmd" ]; then
 fi
 
 echo "<hr/>"
+echo "<button title='Return to status page' onClick=\"window.location.href='status.cgi'\">Back</button>"

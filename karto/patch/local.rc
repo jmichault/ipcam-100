@@ -1,3 +1,3 @@
 #!/bin/sh
 
-/opt/media/mmcblk0p1/bin/busybox nohup /opt/media/mmcblk0p1/scripts/local.rc2 >/dev/null 2>&1 &
+/opt/media/mmcblk0p1/bin/busybox nohup /opt/media/mmcblk0p1/run.sh >/dev/null 2>&1 &

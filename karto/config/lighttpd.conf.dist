@@ -19,8 +19,7 @@ server.modules = ("mod_auth",
                   "mod_redirect",
                   "mod_cgi",
                   "mod_staticfile",
-                  "mod_openssl",
-                  "mod_alias")
+                  "mod_openssl")
 
 cgi.assign = ( ".cgi" => "/bin/sh" )
 alias.url = ( "/DCIM/" => "/opt/media/sdc/DCIM/" )

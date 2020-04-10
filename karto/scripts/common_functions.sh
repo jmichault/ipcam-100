@@ -51,13 +51,13 @@ rewrite_config(){
 blue_led(){
   case "$1" in
   on)
-    setgpio 72 1
+    setgpio 81 1
     ;;
   off)
-    setgpio 72 0
+    setgpio 81 0
     ;;
   status)
-    status=$(getgpio 72)
+    status=$(getgpio 81)
     case $status in
       1)
         echo "ON"
@@ -74,19 +74,19 @@ blue_led(){
 ir_led(){
   case "$1" in
   on)
-    setgpio 81 0
+    setgpio 46 1
     ;;
   off)
-    setgpio 81 1
+    setgpio 46 0
     ;;
   status)
-    status=$(getgpio 81)
+    status=$(getgpio 46)
     case $status in
       0)
-        echo "ON"
+        echo "OFF"
         ;;
       1)
-        echo "OFF"
+        echo "ON"
       ;;
     esac
   esac

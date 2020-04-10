@@ -1,3 +1,9 @@
+var SWITCHES = [
+    "yellow_led", "blue_led", "ir_led", "ir_cut",
+    "rtsp_h264", "rtsp_mjpeg", "auto_night_detection",
+    "mqtt_status", "mqtt_control",
+    "sound_on_startup", "motion_detection", "motion_mail", "motion_telegram",
+    "motion_led","motion_snapshot","motion_mqtt", "motion_mqtt_snapshot"];
 
 var timeoutJobs = {};
 
@@ -5,45 +11,30 @@ function refreshLiveImage() {
     var ts = new Date().getTime();
     $("#liveview").attr("src", "cgi-bin/currentpic.cgi?" + ts);
 }
-
 function scheduleRefreshLiveImage(interval) {
     if (timeoutJobs['refreshLiveImage'] != undefined) {
         clearTimeout(timeoutJobs['refreshLiveImage']);
     }
     timeoutJobs['refreshLiveImage'] = setTimeout(refreshLiveImage, interval);
 }
-
-function refreshSysUsage() {
-    var ts = new Date().getTime();
-    $.get("cgi-bin/state.cgi", {cmd: "sysusage", uid: ts}, function(sysusage){document.getElementById("sysusage").innerHTML = sysusage; scheduleRefreshSysUsage(5000);});
-}
-
-function scheduleRefreshSysUsage(interval) {
-    if (timeoutJobs['refreshSysUsage'] != undefined) {
-        clearTimeout(timeoutJobs['refreshSysUsage']);
+function syncSwitch(sw) {
+    var e = $('#' + sw);
+    if (!e.prop('disabled')) {
+        $.get("cgi-bin/state.cgi", {
+            cmd: sw
+        }).done(function (status) {
+            // console.log(sw + " status " + status + " / current " + e.prop('checked'));
+            e.prop('checked', (status.trim().toLowerCase() == "on"));
+        });
     }
-    timeoutJobs['refreshSysUsage'] = setTimeout(refreshSysUsage, interval);
 }
-
-function syncSwitchesTimeout(millis) {
-    if (timeoutJobs['syncSwitches'] != undefined) {
-        clearTimeout(timeoutJobs['syncSwitches']);
-    }
-    timeoutJobs['syncSwitches'] = setTimeout(syncSwitches, millis);
-}
-
 function syncSwitches() {
-    $.get("cgi-bin/camcontrols.cgi", {
-        cmd: "getallstate",
-    }).done(function (data) {
-        var switchesStateArray = eval(data);
-        for (var i = 0; i < switchesStateArray.length; i++) {
-            var switchState = switchesStateArray[i];
-            var e = $('#' + switchState.id);
-            
-            e.prop('checked', (switchState.status.trim().toLowerCase() == "on"));
+    for (var i in SWITCHES) {
+        if (timeoutJobs[SWITCHES[i]] != undefined) {
+            clearTimeout(timeoutJobs[SWITCHES[i]]);
         }
-    });
+        syncSwitch(SWITCHES[i]);
+    }
 }
 
 function showResult(txt) {
@@ -66,9 +57,10 @@ $(document).ready(function () {
     // Set title page and menu with hostname
     $.get("cgi-bin/state.cgi", {cmd: "hostname"}, function(title){document.title = title;document.getElementById("title").innerHTML = title;});
     
-    // Set initial fast camera controls.
-    updateCameraControls();
     
+    // Set git version to bottim page
+    $.get("cgi-bin/state.cgi", {cmd: "version"}, function(version){document.getElementById("version").innerHTML = version;});
+   
     // Load link into #content
     $('.onpage').click(function () {
         var e = $(this);
@@ -102,6 +94,28 @@ $(document).ready(function () {
         });
     });
 
+    // Switch controls
+    $(".switch").click(function () {
+        var e = $(this);
+        e.prop('disabled', true);
+        $.get("cgi-bin/state.cgi", {
+            cmd: e.attr('id')
+        }).done(function (status) {
+            if (status.trim().toLowerCase() == "on") {
+                $.get(e.data('unchecked')).done(function (data) {
+                    e.prop('checked', false);
+                });
+            } else {
+                $.get(e.data('checked')).done(function (data) {
+                    e.prop('checked', true);
+                });
+            }
+            e.prop('disabled', false);
+        });
+    });
+
+    // Initial syncing of switches
+    timeoutJobs['syncSwitches'] = setTimeout(syncSwitches, 10);
     $('#camcontrol_link').hover(function () {
         // for desktop
         var e = $(this);
@@ -110,7 +124,10 @@ $(document).ready(function () {
             return;
         }
         // refresh switches on hover over Camera Controls menu
-        syncSwitchesTimeout(500);
+        if (timeoutJobs['syncSwitches'] != undefined) {
+            clearTimeout(timeoutJobs['syncSwitches']);
+        }
+        timeoutJobs['syncSwitches'] = setTimeout(syncSwitches, 10);
     }, function () { $(this).toggleClass('is-active'); });
 
     // Hookup navbar burger for mobile
@@ -124,15 +141,10 @@ $(document).ready(function () {
             return;
         }
         // refresh switches on burger is tapped
-        syncSwitchesTimeout(500);
-    });
-    
-    // Autohide navbar for mobile
-    $('#nav_menu').click(function () {
-        // for mobile
-        var e = $('#navbar_burger');
-        e.toggleClass('is-active');
-        $('#' + e.data('target')).toggleClass('is-active');
+        if (timeoutJobs['syncSwitches'] != undefined) {
+            clearTimeout(timeoutJobs['syncSwitches']);
+        }
+        timeoutJobs['syncSwitches'] = setTimeout(syncSwitches, 10);
     });
 
     // Close action for quickview
@@ -147,8 +159,6 @@ $(document).ready(function () {
 
     // Make liveview self refresh
     $("#liveview").attr("onload", "scheduleRefreshLiveImage(1000);");
-    
-    refreshSysUsage();
 
 });
 
@@ -169,7 +179,6 @@ function getCookie(name) {
     }
     return null;
 }
-
 function setTheme(c) {
     if (!c) {
         return;
@@ -198,48 +207,7 @@ function setTheme(c) {
         setCookie('theme', c);
     }
 }
-
 function getThemeChoice() {
     var c = getCookie('theme');
     return c;
-}
-
-function cameraControlClick(control)
-{   
-    var e = $(control);
-    e.prop('disabled', true);
-    $.get("cgi-bin/camcontrols.cgi", {
-        cmd: "getstate",
-        control: e.attr('id')
-    }).done(function (status) {
-        if (status.trim().toLowerCase() == "on") {
-            $.get(e.data('unchecked')).done(function (data) {
-                e.prop('checked', false);
-            });
-        } else {
-            $.get(e.data('checked')).done(function (data) {
-                e.prop('checked', true);
-            });
-        }
-        e.prop('disabled', false);
-    });
-}
-
-
-function updateCameraControls() {
-    $.get("cgi-bin/camcontrols.cgi?cmd=getcontrols").done(function(data) {
-        $("#camcontrol_items").empty();
-        var camControlsArray = eval(data);
-        for (var i = 0; i < camControlsArray.length; i++) {
-            var camControl = camControlsArray[i];
-            $("#camcontrol_items").append("<span class=\"navbar-item\"><input id=\"" + camControl.id + "\" \
-                onclick='cameraControlClick(this)' \
-                type=\"checkbox\" name=\"" + camControl.id + "\" class=\"switch\" \
-                data-checked=\"cgi-bin/camcontrols.cgi?cmd=on&control=" + camControl.id + "\" \
-                data-unchecked=\"cgi-bin/camcontrols.cgi?cmd=off&control=" + camControl.id + "\"> \
-                <label for=\"" + camControl.id + "\">" + camControl.name + "</label></span>");
-        }
-        
-        syncSwitches();
-    });
 }

@@ -27,11 +27,18 @@
         </div>
 
         <div class="field">
-            <label class="label">Set sensitivity or deactivate</label>
+            <div class="control">
+                <label  class="checkbox">
+                  <input type="checkbox" name="motion_detection" id="motion_detection"> Enable motion detection
+                </label>
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Set sensitivity</label>
             <div class="control">
                 <div class="select">
                     <select name="motion_sensitivity" id="motion_sensitivity">
-                        <option value="-1">Deactivated</option>
                         <option value="0">Very Low</option>
                         <option value="1">Low</option>
                         <option value="2">Moderate</option>
@@ -61,6 +68,21 @@
             </div>
         </div>
 
+        <div class="field">
+            <div class="control">
+                <label class="checkbox">
+                    <input type="checkbox" name="motion_tracking" id="motion_tracking" onchange="setTracking(this, false)"> Enable motion tracking (Custom set motion detection region will be ignored)
+                </label>
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Motion Timeout</label>
+            <div class="control">
+                <input class="input" id="motion_timeout" name="motion_timeout" type="number" size="6">
+            </div>
+            <p class="help">Restore camera position after x seconds, -1 to deactivate</p>
+        </div>
         <div class="field">
             <div class="control">
                 <input id="configMotionSubmit" class="button is-primary" type="submit" value="Configure motion" />
@@ -107,6 +129,42 @@
             // user has set it back to original region
             $('#restart_server').val(0);
         }
+    }
+
+    function setTracking(obj, init) {
+
+        var picture = $('#motion_picture');
+        var region_disabled = $('#region_disabled');
+        var motion_timeout = $('#motion_timeout');
+        var ias = picture.imgAreaSelect({
+            instance: true
+        });
+
+        if ($(obj).prop("checked")) {
+            ias.setOptions({
+                hide: true
+            });
+            picture.css('opacity', 0.5);
+            region_disabled.show();
+            motion_timeout.prop('readonly', false);
+            motion_timeout.css('backgroundColor', '#fff');
+
+        } else {
+            ias.setOptions({
+                show: true
+            });
+            picture.css('opacity', 1);
+            region_disabled.hide();
+            // grey out and disable field
+            motion_timeout.prop('readonly', true);
+            motion_timeout.css('backgroundColor', '#ccc');
+        }
+        ias.update();
+
+        if (init == false) {
+            $('#restart_server').val(1);
+        }
+
     }
 
     $(document).ready(function () {
@@ -179,18 +237,26 @@
             $('#restart_server').val(0);
             $('#motion_indicator_color').val(motionInfo.motion_indicator_color).change();
             $('#motion_sensitivity').val(motionInfo.motion_sensitivity).change();
-            ias.setOptions({
-                show: true
-            });
-            picture.css('opacity', 1);
-            region_disabled.hide();
-            ias.update();
+            $('#motion_detection').prop('checked', motionInfo.motion_detection);
+            $('#motion_tracking').prop('checked', motionInfo.motion_tracking);
+            $('#motion_timeout').val(motionInfo.motion_timeout).change();
+            setTracking($('#motion_tracking')[0], true);
         });
 
         $('#confMotionForm').submit(function (event) {
             var b = $('#configMotionSubmit');
             b.toggleClass('is-loading');
             b.prop('disabled', !b.prop('disabled'));
+            var motion_tracking = '';
+            if ($('#motion_tracking').prop('checked')) {
+                motion_tracking = 'true';
+            }
+            var motion_detection = '';
+            if ($('#motion_detection').prop('checked')) {
+                motion_detection = 'true';
+            } else {
+                motion_detection = 'false';
+            }
             var formData = {
                 'x0': $('input[name=x0]').val(),
                 'y0': $('input[name=y0]').val(),
@@ -198,7 +264,10 @@
                 'y1': $('input[name=y1]').val(),
                 'restart_server': $('input[name=restart_server]').val(),
                 'motion_sensitivity': $('select[name=motion_sensitivity]').val(),
-                'motion_indicator_color': $('select[name=motion_indicator_color]').val()
+                'motion_indicator_color': $('select[name=motion_indicator_color]').val(),
+                'motion_tracking': motion_tracking,
+                'motion_detection': motion_detection,
+                'motion_timeout': $('input[name=motion_timeout]').val()
             };
             $.ajax({
                 type: 'POST',

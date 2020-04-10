@@ -37,7 +37,7 @@ $(document).ready(function() {
     b.toggleClass('is-loading');
     b.prop('disabled', !b.prop('disabled'));
     var formData = {
-      'tz': $('input[name=tz]').val(),
+      'timeZone': $('select[name=timeZone]').val(),
       'hostname': $('input[name=hostname]').val(),
       'ntp_srv': $('input[name=ntp_srv]').val()
     };
@@ -61,7 +61,7 @@ $(document).ready(function() {
   });
 
   $('#passwordForm').submit(function(event) {
-    var b = $('#pwSubmit');
+    var b = $('#passwordSubmit');
     b.toggleClass('is-loading');
     b.prop('disabled', !b.prop('disabled'));
     var formData = {
@@ -70,86 +70,6 @@ $(document).ready(function() {
     $.ajax({
       type: 'POST',
       url: $('#passwordForm').attr('action'),
-      data: formData,
-      dataType: 'html',
-      encode: true
-    }).done(function(res) {
-      b.toggleClass('is-loading');
-      b.prop('disabled', !b.prop('disabled'));
-
-      showResult(res);
-      // reload after 2s
-      setTimeout(function() {
-        $('#content').load('cgi-bin/status.cgi');
-      }, 2000);
-    });
-    event.preventDefault();
-  });
-
-  $('#allPasswordForm').submit(function(event) {
-    var b = $('#allpwSubmit');
-    b.toggleClass('is-loading');
-    b.prop('disabled', !b.prop('disabled'));
-    var formData = {
-      'password': $('input[name=password]').val(),
-    };
-    $.ajax({
-      type: 'POST',
-      url: $('#allPasswordForm').attr('action'),
-      data: formData,
-      dataType: 'html',
-      encode: true
-    }).done(function(res) {
-      b.toggleClass('is-loading');
-      b.prop('disabled', !b.prop('disabled'));
-
-      showResult(res);
-      // reload after 2s
-      setTimeout(function() {
-        $('#content').load('cgi-bin/status.cgi');
-      }, 2000);
-    });
-    event.preventDefault();
-  });
-
-  $('#telnetForm').submit(function(event) {
-    var b = $('#telnetSubmit');
-    b.toggleClass('is-loading');
-    b.prop('disabled', !b.prop('disabled'));
-    var formData = {
-      'telnetport': $('input[name=telnetport]').val(),
-    };
-    $.ajax({
-      type: 'POST',
-      url: $('#telnetForm').attr('action'),
-      data: formData,
-      dataType: 'html',
-      encode: true
-    }).done(function(res) {
-      b.toggleClass('is-loading');
-      b.prop('disabled', !b.prop('disabled'));
-
-      showResult(res);
-      // reload after 2s
-      setTimeout(function() {
-        $('#content').load('cgi-bin/status.cgi');
-      }, 2000);
-    });
-    event.preventDefault();
-  });
-
-  $('#ftpForm').submit(function(event) {
-    var b = $('#ftpSubmit');
-    b.toggleClass('is-loading');
-    b.prop('disabled', !b.prop('disabled'));
-    var formData = {
-      'ftpport': $('input[name=ftpport]').val(),
-      'ftpuser': $('input[name=ftpuser]').val(),
-      'ftppassword': $('input[name=ftppassword]').val(),
-    };
-    $.ajax({
-      type: 'POST',
-      url: $('#ftpForm').attr('action'),
       data: formData,
       dataType: 'html',
       encode: true
@@ -205,24 +125,16 @@ $(document).ready(function() {
     event.preventDefault();
   });
 
-  $('#formRecording').submit(function(event) {
-    var b = $('#recSubmit');
+  $('#formldr').submit(function(event) {
+    var b = $('#ldrSubmit');
     b.toggleClass('is-loading');
     b.prop('disabled', !b.prop('disabled'));
-    if ($('input[name=motion_act]').prop('checked')) {
-          motion_act = '1';
-      } else {
-          motion_act = '0';
-      }
     var formData = {
-      'motion_act': motion_act,
-      'postrec': $('input[name=postrec]').val(),
-      'maxduration': $('input[name=maxduration]').val(),
-      'diskspace': $('input[name=diskspace]').val()
+      'avg': $('select[name=avg]').val()
     };
     $.ajax({
       type: 'POST',
-      url: $('#formRecording').attr('action'),
+      url: $('#formldr').attr('action'),
       data: formData,
       dataType: 'html',
       encode: true
@@ -335,17 +247,5 @@ $(document).ready(function() {
             })
         }
     });
-    
-    $('#enable_rtsp_log').change(function() {
-        if($(this).is(":checked")) {
-           // if checked
-           $.ajax({
-            'url': 'cgi-bin/action.cgi?cmd=rtsp-log-on',
-           })
-        }  else {
-            $.ajax({
-                'url': 'cgi-bin/action.cgi?cmd=rtsp-log-off',
-            })
-        }
-    });
 });
+
