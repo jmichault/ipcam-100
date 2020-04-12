@@ -2,7 +2,7 @@ NAME = snx_rtsp_server
 
 PWD     	:= $(shell pwd)
 BASE := ../..
-TARGET      ?= arm-linux
+TARGET      ?= ../../toolchain/bin/mips-linux-gnu
 CROSS_COMPILE   ?= $(TARGET)-
 CPP     	:= $(CROSS_COMPILE)g++
 CC      	:= $(CROSS_COMPILE)g++
@@ -26,15 +26,7 @@ CFLAGS      += -Wall -I. $(INC) -DSOCKLEN_T=socklen_t -DNO_SSTREAM=1 -D_LARGEFIL
 #CFLAGS		+= -DAUDIO_STREAM=1
 #CFLAGS		+= -DDEBUG
 
-LDFLAGS     = -L. -muclibc -lpthread -lm -lrt
-
-LIVE_LIB 	+= $(BASE)/lib/libliveMedia.so
-LIVE_LIB 	+= $(BASE)/lib/libgroupsock.so
-LIVE_LIB 	+= $(BASE)/lib/libUsageEnvironment.so
-LIVE_LIB 	+= $(BASE)/lib/libBasicUsageEnvironment.so
-LIVE_LIB 	+= $(BASE)/lib/libBasicUsageEnvironment.so
-LIVE_LIB 	+= $(BASE)/lib/libimp.so
-LIVE_LIB 	+= $(BASE)/lib/libalog.so
+LDFLAGS     = -L../../lib -muclibc -lpthread -lm -lrt -lliveMedia -lgroupsock -lUsageEnvironment -lBasicUsageEnvironment -limp -lalog
 
 SRC_OBJ	= main.o 
 SRC_OBJ	+=ServerMediaSubsession.o
@@ -59,7 +51,7 @@ all: $(targets)
 
 
 rtsp_server:  $(SRC_OBJ)
-	$(CPP) -o$@  $(LDFLAGS)  $^  $(LIVE_LIB)
+	$(CPP) -o$@  $(LDFLAGS)  $^  
 #	$(STRIP) $@
 
 

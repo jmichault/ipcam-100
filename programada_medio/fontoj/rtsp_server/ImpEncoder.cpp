@@ -11,6 +11,10 @@
 #include <imp/imp_system.h>
 #include <imp/imp_framesource.h>
 #include <imp/imp_encoder.h>
+#include <imp/imp_isp.h>
+#include <imp/imp_osd.h>
+extern "C" int IMP_OSD_SetPoolSize(int);
+extern "C" int IMP_Encoder_SetPoolSize(int);
 
 
 #include <fcntl.h>
@@ -38,7 +42,7 @@
                 .pixFmt = PIX_FMT_NV12,
                 .outFrmRateNum = SENSOR_FRAME_RATE_NUM,
                 .outFrmRateDen = SENSOR_FRAME_RATE_DEN,
-                .nrVBs = 3,
+                .nrVBs = 2,
                 .type = FS_PHY_CHANNEL,
 
                 .crop.enable = CROP_EN,
@@ -81,18 +85,18 @@ int ImpEncoder::init_all(impParams params)
     chn.index = 0;
     chn.enable = 1;
     chn.fs_chn_attr.pixFmt = PIX_FMT_NV12;
-    chn.fs_chn_attr.outFrmRateNum = currentParams.framerate;
+    chn.fs_chn_attr.outFrmRateNum = 25;
     chn.fs_chn_attr.outFrmRateDen = 1;
-    chn.fs_chn_attr.nrVBs = 3;
+    chn.fs_chn_attr.nrVBs = 2;
     chn.fs_chn_attr.type = FS_PHY_CHANNEL;
 
-    chn.fs_chn_attr.crop.enable = 1;
-    chn.fs_chn_attr.crop.width = currentParams.width;
-    chn.fs_chn_attr.crop.height = currentParams.height;
+    chn.fs_chn_attr.crop.enable = 0;
+    chn.fs_chn_attr.crop.width = 1920;
+    chn.fs_chn_attr.crop.height = 1080;
     chn.fs_chn_attr.crop.top = 0;
     chn.fs_chn_attr.crop.left = 0;
 
-    chn.fs_chn_attr.scaler.enable = 0;
+    chn.fs_chn_attr.scaler.enable = 1;
     chn.fs_chn_attr.scaler.outwidth = currentParams.width;
     chn.fs_chn_attr.scaler.outheight = currentParams.height;
 
@@ -413,6 +417,17 @@ int ImpEncoder::sample_system_init() {
     if (ret < 0) {
         IMP_LOG_ERR(TAG, "failed to EnableSensor\n");
         return -1;
+    }
+    //ret = IMP_Encoder_SetPoolSize(1430016);
+    ret = IMP_Encoder_SetPoolSize(0x200000);
+    if(ret < 0){
+    	IMP_LOG_ERR(TAG, "failed to SetPoolSize\n");
+    	return -1;
+    }
+    ret = IMP_OSD_SetPoolSize(0x160000);
+    if(ret < 0){
+    	IMP_LOG_ERR(TAG, "failed to SetPoolSize\n");
+    	return -1;
     }
 
 
