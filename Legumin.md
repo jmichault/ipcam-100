@@ -26,5 +26,6 @@ malfermaj havenoj :
   udp : 67(dhcp), 3702, 8002, 39642  
 
 Vi povas konekti per telnet al la haveno 9527 dum kvin minutoj post la startigo. Uzanto: root, pasvorto: jco66688.  
+(jco = http://www.cnjabsco.com/ )
 
 

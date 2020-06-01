@@ -51,18 +51,18 @@ do
     cp -fRL "/etc/$etc_element" ${SDCARD}/etc
   fi
 done <<- END
-	TZ
-	protocols
-	fstab
-	inittab
-	init.d
-	hosts
-	group
-	resolv.conf
-	hostname
-	os-release
-	sensor
-	webrtc_profile.ini
+TZ
+protocols
+fstab
+inittab
+init.d
+hosts
+group
+resolv.conf
+hostname
+os-release
+sensor
+webrtc_profile.ini
 END
 echo "Created etc directory on sdcard" >> $LOGPATH
 

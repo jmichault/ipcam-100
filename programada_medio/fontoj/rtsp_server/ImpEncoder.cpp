@@ -85,7 +85,7 @@ int ImpEncoder::init_all(impParams params)
     chn.index = 0;
     chn.enable = 1;
     chn.fs_chn_attr.pixFmt = PIX_FMT_NV12;
-    chn.fs_chn_attr.outFrmRateNum = 25;
+    chn.fs_chn_attr.outFrmRateNum = 20;
     chn.fs_chn_attr.outFrmRateDen = 1;
     chn.fs_chn_attr.nrVBs = 2;
     chn.fs_chn_attr.type = FS_PHY_CHANNEL;
