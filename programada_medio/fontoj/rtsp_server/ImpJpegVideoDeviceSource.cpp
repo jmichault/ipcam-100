@@ -28,6 +28,8 @@
 #include <sys/time.h>
 #include <sys/mman.h>
 #include <sys/ioctl.h>
+#include <sys/ipc.h>
+#include <sys/shm.h>
 
 #ifndef JPEG_TEST
 #endif
@@ -122,6 +124,10 @@ void ImpJpegVideoDeviceSource::doGetNextFrame() {
                 "WebcamJPEGDeviceSource::doGetNextFrame(): read maximum buffer size: %d bytes.  Frame may be truncated\n",
                 fMaxSize);
     }
+    else
+    {
+    }
+
 
 
     fFrameSize = jpeg_to_rtp(fTo, impEncoder->getBuffer(), bytesRead);
@@ -139,6 +145,15 @@ size_t ImpJpegVideoDeviceSource::jpeg_to_rtp(void *pto, void *pfrom, size_t len)
     unsigned char const *dat;
     if (parser.parse(from, len) == 0) { // successful parsing
         dat = parser.scandata(datlen);
+      // kopio al dividita memoro
+                key_t key1;
+                key1 = ftok("/usr/include", 'x');
+                int shm_id;
+                shm_id = shmget( key1, len, IPC_CREAT);
+                void* shared_mem;
+                shared_mem = shmat( shm_id, NULL, 0);
+                memcpy(shared_mem,pfrom,len);
+                shmdt(shared_mem);
         memcpy(to, dat, datlen);
         to += datlen;
         return datlen;

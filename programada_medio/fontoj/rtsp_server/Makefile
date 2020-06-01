@@ -37,7 +37,7 @@ SRC_OBJ	+=JpegFrameParser.o
 SRC_OBJ	+=ImpEncoder.o
 
 #targets =
-targets = rtsp_server
+targets = rtsp_server getimage
 
 
 .PHONY : clean distclean all
