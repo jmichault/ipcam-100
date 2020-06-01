@@ -18,13 +18,14 @@ INC     	= -I$(BASE)/include
 INC 		+= -I$(PWD)/include
 
 ## toolchain
-EXTRA_LDFLAGS	= 
+EXTRA_LDFLAGS	= -std=c++11$
 EXTRA_CFLAGS	+= -I$(AUTOCONF_DIR)
 
 CFLAGS      += -Wall -I. $(INC) -DSOCKLEN_T=socklen_t -DNO_SSTREAM=1 -D_LARGEFILE_SOURCE=1  -D_FILE_OFFSET_BITS=64
 #CFLAGS		+= -DBSD=1 -DLOCALE_NOT_USED
 #CFLAGS		+= -DAUDIO_STREAM=1
 #CFLAGS		+= -DDEBUG
+CFLAGS		+= -std=c++11
 
 LDFLAGS     = -L../../lib -muclibc -lpthread -lm -lrt -lliveMedia -lgroupsock -lUsageEnvironment -lBasicUsageEnvironment -limp -lalog
 
@@ -35,14 +36,15 @@ SRC_OBJ	+=AlsaDeviceSource.o
 SRC_OBJ	+=ImpJpegVideoDeviceSource.o
 SRC_OBJ	+=JpegFrameParser.o
 SRC_OBJ	+=ImpEncoder.o
+SRC_OBJ +=../v4l2rtspserver-tools/sharedmem.o
 
 #targets =
-targets = rtsp_server getimage
+targets = rtsp_server
 
 
 .PHONY : clean distclean all
 %.o : %.cpp
-	$(CPP) -c $(CFLAGS) $<
+	$(CPP) -c $(CFLAGS) $< -o $@
 
 %.o : %.c
 	$(CC) -c $(CFLAGS) $<

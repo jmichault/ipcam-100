@@ -28,8 +28,9 @@
 #include <sys/time.h>
 #include <sys/mman.h>
 #include <sys/ioctl.h>
-#include <sys/ipc.h>
-#include <sys/shm.h>
+#include "../v4l2rtspserver-tools/sharedmem.h"
+//#include <sys/ipc.h>
+//#include <sys/shm.h>
 
 #ifndef JPEG_TEST
 #endif
@@ -146,6 +147,9 @@ size_t ImpJpegVideoDeviceSource::jpeg_to_rtp(void *pto, void *pfrom, size_t len)
     if (parser.parse(from, len) == 0) { // successful parsing
         dat = parser.scandata(datlen);
       // kopio al dividita memoro
+SharedMem &sharedMem = SharedMem::instance();
+sharedMem.copyImage(pfrom,len);
+/*
                 key_t key1;
                 key1 = ftok("/usr/include", 'x');
                 int shm_id;
@@ -154,6 +158,7 @@ size_t ImpJpegVideoDeviceSource::jpeg_to_rtp(void *pto, void *pfrom, size_t len)
                 shared_mem = shmat( shm_id, NULL, 0);
                 memcpy(shared_mem,pfrom,len);
                 shmdt(shared_mem);
+*/
         memcpy(to, dat, datlen);
         to += datlen;
         return datlen;
