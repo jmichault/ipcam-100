@@ -7,7 +7,8 @@ echo ""
 
 # source header.cgi
 
-mount|grep "${SDCARD}"|grep "rw,">/dev/null
+FS=`df ${DOCUMENT_ROOT}/..|tail -n 1|awk '{print $6;}'`
+mount|grep -w ${FS}|grep "rw,">/dev/null
 
 if [ $? == 1 ]; then
 
@@ -47,11 +48,11 @@ cat << EOF
                         <div class="field-body">
                             <div class="select">
                                 <select name="audioinFormat">
-                                       <option value="OFF" $(source ${SDCARD}/config/rtspserver.conf; if [ "$(echo $AUDIOFORMAT | grep OFF)" != "" ]; then echo selected; fi)>OFF</option>
-                                       <option value="OPUS" $(source ${SDCARD}/config/rtspserver.conf; if [ "$(echo $AUDIOFORMAT | grep OPUS)" != "" ]; then echo selected; fi)>OPUS</option>
-                                       <option value="PCM"  $(source ${SDCARD}/config/rtspserver.conf; if [ "$(echo $AUDIOFORMAT | grep -w PCM)" != "" ]; then echo selected; fi)>PCM</option>
-                                       <option value="PCMU" $(source ${SDCARD}/config/rtspserver.conf; if [ "$(echo $AUDIOFORMAT | grep -w PCMU)" != "" ]; then echo selected; fi)>PCMU</option>
-                                       <option value="MP3" $(source ${SDCARD}/config/rtspserver.conf; if [ "$(echo $AUDIOFORMAT | grep -w MP3)" != "" ]; then echo selected; fi)>MP3</option>
+                                       <option value="OFF" $(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; if [ "$(echo $AUDIOFORMAT | grep OFF)" != "" ]; then echo selected; fi)>OFF</option>
+                                       <option value="OPUS" $(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; if [ "$(echo $AUDIOFORMAT | grep OPUS)" != "" ]; then echo selected; fi)>OPUS</option>
+                                       <option value="PCM"  $(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; if [ "$(echo $AUDIOFORMAT | grep -w PCM)" != "" ]; then echo selected; fi)>PCM</option>
+                                       <option value="PCMU" $(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; if [ "$(echo $AUDIOFORMAT | grep -w PCMU)" != "" ]; then echo selected; fi)>PCMU</option>
+                                       <option value="MP3" $(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; if [ "$(echo $AUDIOFORMAT | grep -w MP3)" != "" ]; then echo selected; fi)>MP3</option>
                                 </select>
                             </div>
                             <span class="help">
@@ -68,11 +69,11 @@ cat << EOF
                         <div class="field-body">
                                 <div class="select">
                                     <select name="audioinBR">
-                                           <option value="8000"  $(source ${SDCARD}/config/rtspserver.conf; if [ "$(echo $AUDIOINBR | grep 8000)" != "" ]; then echo selected; fi)>8000</option>
-                                           <option value="16000" $(source ${SDCARD}/config/rtspserver.conf; if [ "$(echo $AUDIOINBR | grep 16000)" != "" ]; then echo selected; fi)>16000</option>
-                                           <option value="24000" $(source ${SDCARD}/config/rtspserver.conf; if [ "$(echo $AUDIOINBR | grep -w 24000)" != "" ]; then echo selected; fi)>24000</option>
-                                           <option value="44100" $(source ${SDCARD}/config/rtspserver.conf; if [ "$(echo $AUDIOINBR | grep -w 44100)" != "" ]; then echo selected; fi)>44100</option>
-                                           <option value="48000" $(source ${SDCARD}/config/rtspserver.conf; if [ "$(echo $AUDIOINBR | grep -w 48000)" != "" ]; then echo selected; fi)>48000</option>
+                                           <option value="8000"  $(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; if [ "$(echo $AUDIOINBR | grep 8000)" != "" ]; then echo selected; fi)>8000</option>
+                                           <option value="16000" $(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; if [ "$(echo $AUDIOINBR | grep 16000)" != "" ]; then echo selected; fi)>16000</option>
+                                           <option value="24000" $(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; if [ "$(echo $AUDIOINBR | grep -w 24000)" != "" ]; then echo selected; fi)>24000</option>
+                                           <option value="44100" $(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; if [ "$(echo $AUDIOINBR | grep -w 44100)" != "" ]; then echo selected; fi)>44100</option>
+                                           <option value="48000" $(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; if [ "$(echo $AUDIOINBR | grep -w 48000)" != "" ]; then echo selected; fi)>48000</option>
                                     </select>
                                 </div>
                                 <span class="help">
@@ -88,13 +89,13 @@ cat << EOF
                         <div class="field-body">
                             <div class="select">
                                 <select name="audioinFilter">
-                                       <option value="0" $(if [ "$(${SDCARD}/bin/setconf -g q)" == "0" ]; then echo selected; fi)>No filter</option>
-                                       <option value="1" $(if [ "$(${SDCARD}/bin/setconf -g q)" == "1" ]; then echo selected; fi)>Filter 1</option>
-                                       <option value="2" $(if [ "$(${SDCARD}/bin/setconf -g q)" == "2" ]; then echo selected; fi)>Filter 2</option>
-                                       <option value="3" $(if [ "$(${SDCARD}/bin/setconf -g q)" == "3" ]; then echo selected; fi)>NS Filter LOW</option>
-                                       <option value="4" $(if [ "$(${SDCARD}/bin/setconf -g q)" == "4" ]; then echo selected; fi)>NS Filter MODERATE</option>
-                                       <option value="5" $(if [ "$(${SDCARD}/bin/setconf -g q)" == "5" ]; then echo selected; fi)>NS Filter HIGH</option>
-                                       <option value="6" $(if [ "$(${SDCARD}/bin/setconf -g q)" == "6" ]; then echo selected; fi)>NS Filter VERY HIGH</option>
+                                       <option value="0" $(if [ "$(${DOCUMENT_ROOT}/../bin/setconf -g q)" == "0" ]; then echo selected; fi)>No filter</option>
+                                       <option value="1" $(if [ "$(${DOCUMENT_ROOT}/../bin/setconf -g q)" == "1" ]; then echo selected; fi)>Filter 1</option>
+                                       <option value="2" $(if [ "$(${DOCUMENT_ROOT}/../bin/setconf -g q)" == "2" ]; then echo selected; fi)>Filter 2</option>
+                                       <option value="3" $(if [ "$(${DOCUMENT_ROOT}/../bin/setconf -g q)" == "3" ]; then echo selected; fi)>NS Filter LOW</option>
+                                       <option value="4" $(if [ "$(${DOCUMENT_ROOT}/../bin/setconf -g q)" == "4" ]; then echo selected; fi)>NS Filter MODERATE</option>
+                                       <option value="5" $(if [ "$(${DOCUMENT_ROOT}/../bin/setconf -g q)" == "5" ]; then echo selected; fi)>NS Filter HIGH</option>
+                                       <option value="6" $(if [ "$(${DOCUMENT_ROOT}/../bin/setconf -g q)" == "6" ]; then echo selected; fi)>NS Filter VERY HIGH</option>
                                 </select>
                             </div>
                         </div>
@@ -106,7 +107,7 @@ cat << EOF
                         <div class="field-body">
                             <p class="control">
                                 <div class="double">
-                                    <input type="checkbox" name="HFEnabled" value="enabled" $(if [ "$(${SDCARD}/bin/setconf -g l)" == "true" ]; then echo checked; fi)/>
+                                    <input type="checkbox" name="HFEnabled" value="enabled" $(if [ "$(${DOCUMENT_ROOT}/../bin/setconf -g l)" == "true" ]; then echo checked; fi)/>
                                 </div>
                             </p>
                         </div>
@@ -120,11 +121,11 @@ cat << EOF
                             <div class="field-body">
                                 <div class="select">
                                     <select name="audiooutBR">
-                                           <option value="8000"  $(source ${SDCARD}/config/rtspserver.conf; if [ "$(echo $AUDIOOUTBR | grep 8000)" != "" ]; then echo selected; fi)>8000</option>
-                                           <option value="16000" $(source ${SDCARD}/config/rtspserver.conf; if [ "$(echo $AUDIOOUTBR | grep 16000)" != "" ]; then echo selected; fi)>16000</option>
-                                           <option value="24000" $(source ${SDCARD}/config/rtspserver.conf; if [ "$(echo $AUDIOOUTBR | grep -w 24000)" != "" ]; then echo selected; fi)>24000</option>
-                                           <option value="44100" $(source ${SDCARD}/config/rtspserver.conf; if [ "$(echo $AUDIOOUTBR | grep -w 44100)" != "" ]; then echo selected; fi)>44100</option>
-                                           <option value="48000" $(source ${SDCARD}/config/rtspserver.conf; if [ "$(echo $AUDIOOUTBR | grep -w 48000)" != "" ]; then echo selected; fi)>48000</option>
+                                           <option value="8000"  $(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; if [ "$(echo $AUDIOOUTBR | grep 8000)" != "" ]; then echo selected; fi)>8000</option>
+                                           <option value="16000" $(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; if [ "$(echo $AUDIOOUTBR | grep 16000)" != "" ]; then echo selected; fi)>16000</option>
+                                           <option value="24000" $(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; if [ "$(echo $AUDIOOUTBR | grep -w 24000)" != "" ]; then echo selected; fi)>24000</option>
+                                           <option value="44100" $(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; if [ "$(echo $AUDIOOUTBR | grep -w 44100)" != "" ]; then echo selected; fi)>44100</option>
+                                           <option value="48000" $(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; if [ "$(echo $AUDIOOUTBR | grep -w 48000)" != "" ]; then echo selected; fi)>48000</option>
                                     </select>
                                 </div>
 
@@ -135,7 +136,7 @@ cat << EOF
                         <div class="field-label is-normal">
                             <label class="label">Volume</label>
                         </div>
-                        <input class="slider is-fullwidth" name="audioinVol" step="1" min="-1" max="120" value="$(${SDCARD}/bin/setconf -g h)" type="range">
+                        <input class="slider is-fullwidth" name="audioinVol" step="1" min="-1" max="120" value="$(${DOCUMENT_ROOT}/../bin/setconf -g h)" type="range">
                     </div>
                     <br><br>
                     <div class="field is-horizontal">
@@ -145,7 +146,7 @@ cat << EOF
                         <div class="field-body">
                             <p class="control">
                                 <div class="double">
-                                    <input type="checkbox" name="AECEnabled" value="enabled" $(if [ "$(${SDCARD}/bin/setconf -g a)" == "true" ]; then echo checked; fi)/>
+                                    <input type="checkbox" name="AECEnabled" value="enabled" $(if [ "$(${DOCUMENT_ROOT}/../bin/setconf -g a)" == "true" ]; then echo checked; fi)/>
                                 </div>
                             </p>
                         </div>
@@ -171,9 +172,9 @@ cat << EOF
                 <div class="select">
                     <select name="audioSource">
                         $(
-                           for i in `${SDCARD}/bin/busybox find /usr/share/notify/ ${SDCARD}/media -name *.wav`
+                           for i in `${DOCUMENT_ROOT}/../bin/busybox find /usr/share/notify/ ${DOCUMENT_ROOT}/../media -name *.wav`
                            do
-                                echo  "<option value=$i> `${SDCARD}/bin/busybox basename $i` </option>"
+                                echo  "<option value=$i> `${DOCUMENT_ROOT}/../bin/busybox basename $i` </option>"
                            done
                         )
                     </select>
@@ -194,5 +195,5 @@ cat << EOF
 </div>
 
 EOF
-script=$(cat ${SDCARD}/www/scripts/status.cgi.js)
+script=$(cat ${DOCUMENT_ROOT}/../www/scripts/status.cgi.js)
 echo "<script>$script</script>"

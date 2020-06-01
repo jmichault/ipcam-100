@@ -3,7 +3,7 @@
 # A very light-weight interface just for responsive ui to get states
 
 source ./func.cgi
-source ${SDCARD}/scripts/common_functions.sh
+source ${DOCUMENT_ROOT}/../scripts/common_functions.sh
 
 
 echo "Content-type: text"
@@ -45,8 +45,8 @@ if [ -n "$F_cmd" ]; then
     echo $(auto_night_mode status)
     ;;
   auto_night_detection_mode)
-    if [ -f ${SDCARD}/config/autonight.conf ];
-      then night_mode=$(cat ${SDCARD}/config/autonight.conf);
+    if [ -f ${DOCUMENT_ROOT}/../config/autonight.conf ];
+      then night_mode=$(cat ${DOCUMENT_ROOT}/../config/autonight.conf);
     else
       night_mode="HW";
     fi
@@ -71,7 +71,7 @@ if [ -n "$F_cmd" ]; then
     ;;
 
   sound_on_startup)
-    if [ -f ${SDCARD}/config/autostart/sound-on-startup ];
+    if [ -f ${DOCUMENT_ROOT}/../config/autostart/sound-on-startup ];
       then sound_on_startup="ON";
     else
       sound_on_startup="OFF";
@@ -88,7 +88,7 @@ if [ -n "$F_cmd" ]; then
     ;;
 
   motion_mail)
-    . ${SDCARD}/config/motion.conf 2> /dev/null
+    . ${DOCUMENT_ROOT}/../config/motion.conf 2> /dev/null
     if [ "$send_email" == "true" ]; then
       echo "ON"
     else
@@ -97,7 +97,7 @@ if [ -n "$F_cmd" ]; then
     ;;
 
   motion_telegram)
-    . ${SDCARD}/config/motion.conf 2> /dev/null
+    . ${DOCUMENT_ROOT}/../config/motion.conf 2> /dev/null
     if [ "$send_telegram" == "true" ]; then
       echo "ON"
     else
@@ -106,7 +106,7 @@ if [ -n "$F_cmd" ]; then
     ;;
 
   motion_led)
-    . ${SDCARD}/config/motion.conf 2> /dev/null
+    . ${DOCUMENT_ROOT}/../config/motion.conf 2> /dev/null
     if [ "$motion_trigger_led" == "true" ]; then
       echo "ON"
     else
@@ -115,7 +115,7 @@ if [ -n "$F_cmd" ]; then
     ;;
 
   motion_snapshot)
-    . ${SDCARD}/config/motion.conf 2> /dev/null
+    . ${DOCUMENT_ROOT}/../config/motion.conf 2> /dev/null
     if [ "$save_snapshot" == "true" ]; then
       echo "ON"
     else
@@ -124,7 +124,7 @@ if [ -n "$F_cmd" ]; then
     ;;
 
   motion_mqtt)
-    . ${SDCARD}/config/motion.conf 2> /dev/null
+    . ${DOCUMENT_ROOT}/../config/motion.conf 2> /dev/null
     if [ "$publish_mqtt_message" == "true" ]; then
       echo "ON"
     else
@@ -133,7 +133,7 @@ if [ -n "$F_cmd" ]; then
     ;;
 
   motion_mqtt_snapshot)
-    . ${SDCARD}/config/motion.conf 2> /dev/null
+    . ${DOCUMENT_ROOT}/../config/motion.conf 2> /dev/null
     if [ "$publish_mqtt_snapshot" == "true" ]; then
       echo "ON"
     else
@@ -146,7 +146,7 @@ if [ -n "$F_cmd" ]; then
     ;;
 
   version)
-    echo $(cat ${SDCARD}/.lastCommitDate);
+    echo $(cat ${DOCUMENT_ROOT}/../.lastCommitDate);
     ;;
 
   *)

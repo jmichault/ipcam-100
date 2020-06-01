@@ -1,13 +1,14 @@
 #!/bin/sh
 
-source ${SDCARD}/scripts/common_functions.sh
+source ${DOCUMENT_ROOT}/../scripts/common_functions.sh
 
 echo "Content-type: text/html"
 echo "Pragma: no-cache"
 echo "Cache-Control: max-age=0, no-store, no-cache"
 echo ""
 
-mount|grep "${SDCARD}"|grep "rw,">/dev/null
+FS=`df ${DOCUMENT_ROOT}/..|tail -n 1|awk '{print $6;}'`
+mount|grep -w ${FS}|grep "rw,">/dev/null
 
 if [ $? == 1 ]; then
 
@@ -48,11 +49,11 @@ cat << EOF
                 </tr>
                 <tr>
                   <td> Firmware Version </td>
-                  <td> $(if [ -s "${SDCARD}/.lastCommitDate" ]; then cat ${SDCARD}/.lastCommitDate; else echo "Update for version string"; fi) </td>
+                  <td> $(if [ -s "${DOCUMENT_ROOT}/../.lastCommitDate" ]; then cat ${DOCUMENT_ROOT}/../.lastCommitDate; else echo "Update for version string"; fi) </td>
                 </tr>
                 <tr>
                   <td> Kernel Version </td>
-                  <td> $(${SDCARD}/bin/busybox uname -v) </td>
+                  <td> $(${DOCUMENT_ROOT}/../bin/busybox uname -v) </td>
                 </tr>
                 <tr>
                   <td> Bootloader Version </td>

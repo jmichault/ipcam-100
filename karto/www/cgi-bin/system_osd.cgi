@@ -7,7 +7,8 @@ echo ""
 
 # source header.cgi
 
-mount|grep "${SDCARD}"|grep "rw,">/dev/null
+FS=`df ${DOCUMENT_ROOT}/..|tail -n 1|awk '{print $6;}'`
+mount|grep -w ${FS}|grep "rw,">/dev/null
 
 if [ $? == 1 ]; then
 
@@ -53,10 +54,10 @@ cat << EOF
                 <div class="field-body">
                     <div class="field is-grouped">
                         <p class="control">
-                            <input type="checkbox" name="OSDenable" value="enabled" $(if [ "$(grep ENABLE_OSD ${SDCARD}/config/osd.conf | sed s/ENABLE_OSD=//)" == "true" ]; then echo checked; fi) />
+                            <input type="checkbox" name="OSDenable" value="enabled" $(if [ "$(grep ENABLE_OSD ${DOCUMENT_ROOT}/../config/osd.conf | sed s/ENABLE_OSD=//)" == "true" ]; then echo checked; fi) />
                         </p>
                         <p class="control">
-                            <input class="input" id="osdtext" name="osdtext" type="text" size="25" value="$(source ${SDCARD}/config/osd.conf && echo "$OSD")"/>
+                            <input class="input" id="osdtext" name="osdtext" type="text" size="25" value="$(source ${DOCUMENT_ROOT}/../config/osd.conf && echo "$OSD")"/>
                             <span class="help">
                                 Enter time-variables in <a href="http://strftime.org/" target="_blank">strftime</a> format
                             </span>
@@ -71,7 +72,7 @@ cat << EOF
                 <div class="field-body">
                     <div class="field is-grouped">
                         <p class="control">
-                            <input type="checkbox" name="AXISenable" value="enabled" $(if [[ "$(grep DISPLAY_AXIS ${SDCARD}/config/osd.conf | sed s/DISPLAY_AXIS=//)" == "true" ]];then echo checked; fi) />
+                            <input type="checkbox" name="AXISenable" value="enabled" $(if [[ "$(grep DISPLAY_AXIS ${DOCUMENT_ROOT}/../config/osd.conf | sed s/DISPLAY_AXIS=//)" == "true" ]];then echo checked; fi) />
                         </p>
                     </div>
                 </div>
@@ -85,14 +86,14 @@ cat << EOF
                         <div class="control">
                             <div class="select">
                                 <select name="color">
-                                <option value="0" $(if [ "$(grep COLOR ${SDCARD}/config/osd.conf | sed s/COLOR=//)" -eq 0 ]; then echo selected; fi)>White</option>
-                                <option value="1" $(if [ "$(grep COLOR ${SDCARD}/config/osd.conf | sed s/COLOR=//)" -eq 1 ]; then echo selected; fi)>Black</option>
-                                <option value="2" $(if [ "$(grep COLOR ${SDCARD}/config/osd.conf | sed s/COLOR=//)" -eq 2 ]; then echo selected; fi)>Red</option>
-                                <option value="3" $(if [ "$(grep COLOR ${SDCARD}/config/osd.conf | sed s/COLOR=//)" -eq 3 ]; then echo selected; fi)>Green</option>
-                                <option value="4" $(if [ "$(grep COLOR ${SDCARD}/config/osd.conf | sed s/COLOR=//)" -eq 4 ]; then echo selected; fi)>Blue</option>
-                                <option value="5" $(if [ "$(grep COLOR ${SDCARD}/config/osd.conf | sed s/COLOR=//)" -eq 5 ]; then echo selected; fi)>Cyan</option>
-                                <option value="6" $(if [ "$(grep COLOR ${SDCARD}/config/osd.conf | sed s/COLOR=//)" -eq 6 ]; then echo selected; fi)>Yellow</option>
-                                <option value="7" $(if [ "$(grep COLOR ${SDCARD}/config/osd.conf | sed s/COLOR=//)" -eq 7 ]; then echo selected; fi)>Purple</option>
+                                <option value="0" $(if [ "$(grep COLOR ${DOCUMENT_ROOT}/../config/osd.conf | sed s/COLOR=//)" -eq 0 ]; then echo selected; fi)>White</option>
+                                <option value="1" $(if [ "$(grep COLOR ${DOCUMENT_ROOT}/../config/osd.conf | sed s/COLOR=//)" -eq 1 ]; then echo selected; fi)>Black</option>
+                                <option value="2" $(if [ "$(grep COLOR ${DOCUMENT_ROOT}/../config/osd.conf | sed s/COLOR=//)" -eq 2 ]; then echo selected; fi)>Red</option>
+                                <option value="3" $(if [ "$(grep COLOR ${DOCUMENT_ROOT}/../config/osd.conf | sed s/COLOR=//)" -eq 3 ]; then echo selected; fi)>Green</option>
+                                <option value="4" $(if [ "$(grep COLOR ${DOCUMENT_ROOT}/../config/osd.conf | sed s/COLOR=//)" -eq 4 ]; then echo selected; fi)>Blue</option>
+                                <option value="5" $(if [ "$(grep COLOR ${DOCUMENT_ROOT}/../config/osd.conf | sed s/COLOR=//)" -eq 5 ]; then echo selected; fi)>Cyan</option>
+                                <option value="6" $(if [ "$(grep COLOR ${DOCUMENT_ROOT}/../config/osd.conf | sed s/COLOR=//)" -eq 6 ]; then echo selected; fi)>Yellow</option>
+                                <option value="7" $(if [ "$(grep COLOR ${DOCUMENT_ROOT}/../config/osd.conf | sed s/COLOR=//)" -eq 7 ]; then echo selected; fi)>Purple</option>
                                 </select>
                             </div>
                         </div>
@@ -110,16 +111,16 @@ cat << EOF
                             <div class="select">
                                 <select name="FontName">
                                     $(
-                                       fontName="$(${SDCARD}/bin/setconf -g e)"
+                                       fontName="$(${DOCUMENT_ROOT}/../bin/setconf -g e)"
                                        echo -n "<option value=\"\""
                                        if [ -n "${fontName-unset}" ] ; then echo selected; fi
                                        echo -n ">Default fonts </option>"
 
-                                       for i in `${SDCARD}/bin/busybox find ${SDCARD}/fonts -name *.ttf`
+                                       for i in `${DOCUMENT_ROOT}/../bin/busybox find ${DOCUMENT_ROOT}/../fonts -name *.ttf`
                                        do
                                             echo -n "<option value=\"$i\" "
                                             if [ "$fontName" == "$i" ] ; then echo selected; fi
-                                            echo -n ">`${SDCARD}/bin/busybox basename $i` </option>"
+                                            echo -n ">`${DOCUMENT_ROOT}/../bin/busybox basename $i` </option>"
                                        done
                                     )
                                 </select>
@@ -139,7 +140,7 @@ cat << EOF
                         <p class="control">
                                  <input class="input" id="OSDSize" name="OSDSize" type="number" size="4"
                                      value="$(
-                                        fontSize=$(${SDCARD}/bin/setconf -g s)
+                                        fontSize=$(${DOCUMENT_ROOT}/../bin/setconf -g s)
                                         if [ "$fontSize" == "0" ]; then echo 18
                                         elif [ "$fontSize" == "1" ]; then echo 40
                                         else echo "$fontSize"
@@ -157,7 +158,7 @@ cat << EOF
                 <div class="field-body">
                     <div class="field">
                         <p class="control">
-                            <input class="input" id="spacepixels" name="spacepixels" type="number" size="4" value="$(source ${SDCARD}/config/osd.conf && echo "$SPACE")"/>
+                            <input class="input" id="spacepixels" name="spacepixels" type="number" size="4" value="$(source ${DOCUMENT_ROOT}/../config/osd.conf && echo "$SPACE")"/>
                         </p>
                         <p class="help">Can be negative</p>
                     </div>
@@ -170,7 +171,7 @@ cat << EOF
                 <div class="field-body">
                     <div class="field">
                         <p class="control">
-                            <input class="input" id="posy" name="posy" type="number" size="6" value="$(source ${SDCARD}/config/osd.conf && echo "$POSY")"/>
+                            <input class="input" id="posy" name="posy" type="number" size="6" value="$(source ${DOCUMENT_ROOT}/../config/osd.conf && echo "$POSY")"/>
                         </p>
                     </div>
                 </div>
@@ -185,8 +186,8 @@ cat << EOF
                         <div class="control">
                             <div class="select">
                                 <select name="fixedw">
-                                <option value="0" $(if [ "$(grep FIXEDW ${SDCARD}/config/osd.conf | sed s/FIXEDW=//)" -eq 0 ]; then echo selected; fi)>No</option>
-                                <option value="1" $(if [ "$(grep FIXEDW ${SDCARD}/config/osd.conf | sed s/FIXEDW=//)" -eq 1 ]; then echo selected; fi)>Yes</option>
+                                <option value="0" $(if [ "$(grep FIXEDW ${DOCUMENT_ROOT}/../config/osd.conf | sed s/FIXEDW=//)" -eq 0 ]; then echo selected; fi)>No</option>
+                                <option value="1" $(if [ "$(grep FIXEDW ${DOCUMENT_ROOT}/../config/osd.conf | sed s/FIXEDW=//)" -eq 1 ]; then echo selected; fi)>Yes</option>
                                 </select>
                             </div>
                             <p class="help">Fixed width works only for "default" fonts</p>
@@ -221,5 +222,5 @@ cat << EOF
 </div>
 
 EOF
-script=$(cat ${SDCARD}/www/scripts/status.cgi.js)
+script=$(cat ${DOCUMENT_ROOT}/../www/scripts/status.cgi.js)
 echo "<script>$script</script>"

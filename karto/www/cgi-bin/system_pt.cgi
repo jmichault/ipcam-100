@@ -7,7 +7,8 @@ echo ""
 
 # source header.cgi
 
-mount|grep "${SDCARD}"|grep "rw,">/dev/null
+FS=`df ${DOCUMENT_ROOT}/..|tail -n 1|awk '{print $6;}'`
+mount|grep -w ${FS}|grep "rw,">/dev/null
 
 if [ $? == 1 ]; then
 
@@ -78,5 +79,5 @@ cat << EOF
 </div>
 
 EOF
-script=$(cat ${SDCARD}/www/scripts/status.cgi.js)
+script=$(cat ${DOCUMENT_ROOT}/../www/scripts/status.cgi.js)
 echo "<script>$script</script>"

@@ -8,7 +8,7 @@
 source ./func.cgi
 
 # START VARIABLES
-SDPATH=/opt/media/mmcblk0p1
+SDPATH=${DOCUMENT_ROOT}/..
 PATH="${SDPATH}/bin:/system/bin:/bin:/usr/bin:/sbin:/usr/sbin"
 CONFIGPATH=${SDPATH}/config
 BINPATH=${SDPATH}/bin

@@ -7,7 +7,8 @@ echo ""
 
 # source header.cgi
 
-mount|grep "${SDCARD}"|grep "rw,">/dev/null
+FS=`df ${DOCUMENT_ROOT}/..|tail -n 1|awk '{print $6;}'`
+mount|grep -w ${FS}|grep "rw,">/dev/null
 
 if [ $? == 1 ]; then
 
@@ -55,7 +56,7 @@ cat << EOF
                             </div>
                             <div class="field">
                                 <div class="control">
-                                    <input class="input" id="videouser" name="videouser" type="text" size="12" value="$(source ${SDCARD}/config/rtspserver.conf; echo $USERNAME)" />
+                                    <input class="input" id="videouser" name="videouser" type="text" size="12" value="$(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; echo $USERNAME)" />
                                 </div>
                             </div>
                         </div>
@@ -68,7 +69,7 @@ cat << EOF
                         </div>
                         <div class="field">
                             <div class="control">
-                                <input class="input" id="videopassword" name="videopassword" type="password" size="12" value="$(source ${SDCARD}/config/rtspserver.conf; echo $USERPASSWORD)" />
+                                <input class="input" id="videopassword" name="videopassword" type="password" size="12" value="$(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; echo $USERPASSWORD)" />
                             </div>
                         </div>
                     </div>
@@ -80,7 +81,7 @@ cat << EOF
                     </div>
                     <div class="field">
                         <div class="control">
-                            <input class="input" id="videoport" name="videoport" type="number" size="12" value=$(source ${SDCARD}/config/rtspserver.conf; echo $PORT) />
+                            <input class="input" id="videoport" name="videoport" type="number" size="12" value=$(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; echo $PORT) />
                         </div>
                     </div>
                     <span class="help">
@@ -102,12 +103,12 @@ cat << EOF
                         <div class="control">
                             <div class="select">
                                 <select name="video_size">
-                                <option value="-W640 -H360"   $(source ${SDCARD}/config/rtspserver.conf; if [ "$RTSPH264OPTS" == "-W640 -H360" ]; then echo selected; fi) >640x360</option>
-                                <option value="-W768 -H432"   $(source ${SDCARD}/config/rtspserver.conf; if [ "$RTSPH264OPTS" == "-W768 -H432" ]; then echo selected; fi) >768x432</option>
-                                <option value="-W960 -H540"   $(source ${SDCARD}/config/rtspserver.conf; if [ "$RTSPH264OPTS" == "-W960 -H540" ]; then echo selected; fi) >960x540</option>
-                                <option value="-W1280 -H720"  $(source ${SDCARD}/config/rtspserver.conf; if [ "$RTSPH264OPTS" == "-W1280 -H720" ] || [ -z "$RTSPH264OPTS" ]; then echo selected; fi) >1280x720</option>
-                                <option value="-W1600 -H900"  $(source ${SDCARD}/config/rtspserver.conf; if [ "$RTSPH264OPTS" == "-W1600 -H900" ]; then echo selected; fi) >1600x900</option>
-                                <option value="-W1920 -H1080" $(source ${SDCARD}/config/rtspserver.conf; if [ "$RTSPH264OPTS" == "-W1920 -H1080" ]; then echo selected; fi) >1920x1080</option>
+                                <option value="-W640 -H360"   $(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; if [ "$RTSPH264OPTS" == "-W640 -H360" ]; then echo selected; fi) >640x360</option>
+                                <option value="-W768 -H432"   $(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; if [ "$RTSPH264OPTS" == "-W768 -H432" ]; then echo selected; fi) >768x432</option>
+                                <option value="-W960 -H540"   $(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; if [ "$RTSPH264OPTS" == "-W960 -H540" ]; then echo selected; fi) >960x540</option>
+                                <option value="-W1280 -H720"  $(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; if [ "$RTSPH264OPTS" == "-W1280 -H720" ] || [ -z "$RTSPH264OPTS" ]; then echo selected; fi) >1280x720</option>
+                                <option value="-W1600 -H900"  $(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; if [ "$RTSPH264OPTS" == "-W1600 -H900" ]; then echo selected; fi) >1600x900</option>
+                                <option value="-W1920 -H1080" $(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; if [ "$RTSPH264OPTS" == "-W1920 -H1080" ]; then echo selected; fi) >1920x1080</option>
                                 </select>
                             </div>
                         </div>
@@ -124,10 +125,10 @@ cat << EOF
                             <div class="select">
                                 <select name="video_format">
                                 0 = FixedQp, 1 = CBR, 2 = VBR, 3 = SMART
-                                <option value="0" $(source ${SDCARD}/config/rtspserver.conf; if [ "$(echo $VIDEOFORMAT | grep -w 0)" != "" ]; then echo selected; fi)>FixedQp</option>
-                                <option value="1" $(source ${SDCARD}/config/rtspserver.conf; if [ "$(echo $VIDEOFORMAT | grep -w 1)" != "" ]; then echo selected; fi)>CBR</option>
-                                <option value="2" $(source ${SDCARD}/config/rtspserver.conf; if [ "$(echo $VIDEOFORMAT | grep -w 2)" != "" ] || [ -z "$VIDEOFORMAT" ] ; then echo selected; fi)>VBR</option>
-                                <option value="3" $(source ${SDCARD}/config/rtspserver.conf; if [ "$(echo $VIDEOFORMAT | grep -w 3)" != "" ]; then echo selected; fi)>SMART</option>
+                                <option value="0" $(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; if [ "$(echo $VIDEOFORMAT | grep -w 0)" != "" ]; then echo selected; fi)>FixedQp</option>
+                                <option value="1" $(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; if [ "$(echo $VIDEOFORMAT | grep -w 1)" != "" ]; then echo selected; fi)>CBR</option>
+                                <option value="2" $(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; if [ "$(echo $VIDEOFORMAT | grep -w 2)" != "" ] || [ -z "$VIDEOFORMAT" ] ; then echo selected; fi)>VBR</option>
+                                <option value="3" $(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; if [ "$(echo $VIDEOFORMAT | grep -w 3)" != "" ]; then echo selected; fi)>SMART</option>
                                 </select>
                             </div>
                         </div>
@@ -143,7 +144,7 @@ cat << EOF
 
                     <div class="field">
                         <div class="control">
-                            <input class="input" id="frmRateNum" name="frmRateNum" type="text" size="5" value="$(source ${SDCARD}/config/rtspserver.conf; echo $FRAMERATE_NUM)" placeholder="25"/>
+                            <input class="input" id="frmRateNum" name="frmRateNum" type="text" size="5" value="$(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; echo $FRAMERATE_NUM)" placeholder="25"/>
                         </div>
                     </div>
                     <div class="field-label is-horizontal">
@@ -151,7 +152,7 @@ cat << EOF
                     </div>
                       <div class="field">
                         <div class="control">
-                            <input class="input" id="frmRateDen" name="frmRateDen" type="text" size=5 value="$(source ${SDCARD}/config/rtspserver.conf; echo $FRAMERATE_DEN)"  placeholder="1" />
+                            <input class="input" id="frmRateDen" name="frmRateDen" type="text" size=5 value="$(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; echo $FRAMERATE_DEN)"  placeholder="1" />
                         </div>
                     </div>
 
@@ -169,7 +170,7 @@ cat << EOF
                 <div class="field-body">
                     <div class="field">
                         <div class="control">
-                            <input class="input" id="brbitrate" name="brbitrate" type="text" size="5" value="$(${SDCARD}/bin/setconf -g b)"/> kbps
+                            <input class="input" id="brbitrate" name="brbitrate" type="text" size="5" value="$(${DOCUMENT_ROOT}/../bin/setconf -g b)"/> kbps
                         </div>
                     </div>
                 </div>
@@ -211,9 +212,9 @@ cat << EOF
         <div class="column">
             <button class="button is-link" onClick="call('cgi-bin/action.cgi?cmd=auto_night_mode_start')">On</button>
             <button class="button is-warning" onClick="call('cgi-bin/action.cgi?cmd=auto_night_mode_stop')">Off</button>
-            <input class="is-checkradio" id="night_config_hw" type="radio" name="night_config" $(if [ "$(grep -q -e "-S" ${SDCARD}/config/autonight.conf; echo $?)" != 0 ]; then echo "checked";  fi) onClick="call('cgi-bin/action.cgi?cmd=autonight_hw')" >
+            <input class="is-checkradio" id="night_config_hw" type="radio" name="night_config" $(if [ "$(grep -q -e "-S" ${DOCUMENT_ROOT}/../config/autonight.conf; echo $?)" != 0 ]; then echo "checked";  fi) onClick="call('cgi-bin/action.cgi?cmd=autonight_hw')" >
             <label for="night_config_hw">HW</label>
-            <input class="is-checkradio" id="night_config_sw" type="radio" name="night_config" $(if [ "$(grep -q -e "-S" ${SDCARD}/config/autonight.conf; echo $?)" == 0 ]; then echo "checked";  fi)  onClick="call('cgi-bin/action.cgi?cmd=autonight_sw')">
+            <input class="is-checkradio" id="night_config_sw" type="radio" name="night_config" $(if [ "$(grep -q -e "-S" ${DOCUMENT_ROOT}/../config/autonight.conf; echo $?)" == 0 ]; then echo "checked";  fi)  onClick="call('cgi-bin/action.cgi?cmd=autonight_sw')">
             <label for="night_config_sw">SW</label>
         </div>
         <div class="column">
@@ -224,13 +225,13 @@ cat << EOF
                 <div class="control">
                     <div class="select">
                         <select class="select" name="avg">
-                            <option value="1" $(if [ "$(sed s/AVG=// ${SDCARD}/config/ldr-average.conf)" -eq 1 ]; then echo selected; fi)>1</option>
-                            <option value="2" $(if [ "$(sed s/AVG=// ${SDCARD}/config/ldr-average.conf)" -eq 2 ]; then echo selected; fi)>2</option>
-                            <option value="3" $(if [ "$(sed s/AVG=// ${SDCARD}/config/ldr-average.conf)" -eq 3 ]; then echo selected; fi)>3</option>
-                            <option value="4" $(if [ "$(sed s/AVG=// ${SDCARD}/config/ldr-average.conf)" -eq 4 ]; then echo selected; fi)>4</option>
-                            <option value="5" $(if [ "$(sed s/AVG=// ${SDCARD}/config/ldr-average.conf)" -eq 5 ]; then echo selected; fi)>5</option>
-                            <option value="10" $(if [ "$(sed s/AVG=// ${SDCARD}/config/ldr-average.conf)" -eq 10 ]; then echo selected; fi)>10</option>
-                            <option value="15" $(if [ "$(sed s/AVG=// ${SDCARD}/config/ldr-average.conf)" -eq 15 ]; then echo selected; fi)>15</option>
+                            <option value="1" $(if [ "$(sed s/AVG=// ${DOCUMENT_ROOT}/../config/ldr-average.conf)" -eq 1 ]; then echo selected; fi)>1</option>
+                            <option value="2" $(if [ "$(sed s/AVG=// ${DOCUMENT_ROOT}/../config/ldr-average.conf)" -eq 2 ]; then echo selected; fi)>2</option>
+                            <option value="3" $(if [ "$(sed s/AVG=// ${DOCUMENT_ROOT}/../config/ldr-average.conf)" -eq 3 ]; then echo selected; fi)>3</option>
+                            <option value="4" $(if [ "$(sed s/AVG=// ${DOCUMENT_ROOT}/../config/ldr-average.conf)" -eq 4 ]; then echo selected; fi)>4</option>
+                            <option value="5" $(if [ "$(sed s/AVG=// ${DOCUMENT_ROOT}/../config/ldr-average.conf)" -eq 5 ]; then echo selected; fi)>5</option>
+                            <option value="10" $(if [ "$(sed s/AVG=// ${DOCUMENT_ROOT}/../config/ldr-average.conf)" -eq 10 ]; then echo selected; fi)>10</option>
+                            <option value="15" $(if [ "$(sed s/AVG=// ${DOCUMENT_ROOT}/../config/ldr-average.conf)" -eq 15 ]; then echo selected; fi)>15</option>
                         </select>
                     </div>
                 </div>
@@ -262,7 +263,7 @@ cat << EOF
         <br>
         <div class="field is-horizontal">
           <div class="field">
-            <input class="switch" name="flip" id="flip" type="checkbox" $(if [ "$(${SDCARD}/bin/setconf -g f)" == 1 ]; then echo "checked";  fi) >
+            <input class="switch" name="flip" id="flip" type="checkbox" $(if [ "$(${DOCUMENT_ROOT}/../bin/setconf -g f)" == 1 ]; then echo "checked";  fi) >
             <label for="flip">Image flip</label>
           </div>
 
@@ -286,10 +287,10 @@ EOF
 PATH="/bin:/sbin:/usr/bin:/media/mmcblk0p2/data/bin:/media/mmcblk0p2/data/sbin:/media/mmcblk0p2/data/usr/bin"
 
 IP=$(ifconfig wlan0 |grep "inet addr" |awk '{print $2}' |awk -F: '{print $2}')
-echo "<p>Path to feed: <a href='rtsp://$IP:$(source ${SDCARD}/config/rtspserver.conf; echo $PORT)/unicast'>rtsp://$IP:$(source ${SDCARD}/config/rtspserver.conf; echo $PORT)/unicast</a></p>"
-echo "<p>HLS: <a href='http://$IP:$(source ${SDCARD}/config/rtspserver.conf; echo $PORT)/unicast.m3u8'>http://$IP:$(source ${SDCARD}/config/rtspserver.conf; echo $PORT)/unicast.m3u8</a></p>"
-echo "<p>hls.js web player: <a href='http://$IP:$(source ${SDCARD}/config/rtspserver.conf; echo $PORT)'>http://$IP:$(source ${SDCARD}/config/rtspserver.conf; echo $PORT)</a></p>"
-echo "<p>MPEG-DASH: <a href='http://$IP:$(source ${SDCARD}/config/rtspserver.conf; echo $PORT)/unicast.mpd'>http://$IP:$(source ${SDCARD}/config/rtspserver.conf; echo $PORT)/unicast.mpd</a></p>"
+echo "<p>Path to feed: <a href='rtsp://$IP:$(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; echo $PORT)/unicast'>rtsp://$IP:$(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; echo $PORT)/unicast</a></p>"
+echo "<p>HLS: <a href='http://$IP:$(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; echo $PORT)/unicast.m3u8'>http://$IP:$(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; echo $PORT)/unicast.m3u8</a></p>"
+echo "<p>hls.js web player: <a href='http://$IP:$(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; echo $PORT)'>http://$IP:$(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; echo $PORT)</a></p>"
+echo "<p>MPEG-DASH: <a href='http://$IP:$(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; echo $PORT)/unicast.mpd'>http://$IP:$(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; echo $PORT)/unicast.mpd</a></p>"
 echo "HLS & MPEG-DASH require the rtspserver to be started with the -S flag. This may reduce the compatibility with some ip camera viewers such as ipcamviewer etc."
 cat << EOF
     </div>
@@ -306,7 +307,7 @@ EOF
 PATH="/bin:/sbin:/usr/bin:/media/mmcblk0p2/data/bin:/media/mmcblk0p2/data/sbin:/media/mmcblk0p2/data/usr/bin"
 
 IP=$(ifconfig wlan0 |grep "inet addr" |awk '{print $2}' |awk -F: '{print $2}')
-echo "<p>Path to feed : <a href='rtsp://$IP:$(source ${SDCARD}/config/rtspserver.conf; echo $PORT)/unicast'>rtsp://$IP:$(source ${SDCARD}/config/rtspserver.conf; echo $PORT)/unicast</a></p>"
+echo "<p>Path to feed : <a href='rtsp://$IP:$(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; echo $PORT)/unicast'>rtsp://$IP:$(source ${DOCUMENT_ROOT}/../config/rtspserver.conf; echo $PORT)/unicast</a></p>"
 
 cat << EOF
     </div>
@@ -324,7 +325,7 @@ cat << EOF
             <div class="field-body">
                 <div class="field">
                     <div class="control">
-                        <input class="input" id="tlinterval" name="tlinterval" type="text" size="5" value="$(source ${SDCARD}/config/timelapse.conf && echo "$TIMELAPSE_INTERVAL")"/> seconds
+                        <input class="input" id="tlinterval" name="tlinterval" type="text" size="5" value="$(source ${DOCUMENT_ROOT}/../config/timelapse.conf && echo "$TIMELAPSE_INTERVAL")"/> seconds
                     </div>
                 </div>
             </div>
@@ -336,7 +337,7 @@ cat << EOF
             <div class="field-body">
                 <div class="field">
                     <div class="control">
-                        <input class="input" id="tlduration" name="tlduration" type="text" size="5" value="$(source ${SDCARD}/config/timelapse.conf && echo "$TIMELAPSE_DURATION")"/> minutes
+                        <input class="input" id="tlduration" name="tlduration" type="text" size="5" value="$(source ${DOCUMENT_ROOT}/../config/timelapse.conf && echo "$TIMELAPSE_DURATION")"/> minutes
                     </div>
                     <p class="help">Set to 0 for unlimited</p>
                     <p class="help">These settings configure the timelapse mode. Start the timelapse on the Services page.</p>
@@ -359,5 +360,5 @@ cat << EOF
 </div>
 
 EOF
-script=$(cat ${SDCARD}/www/scripts/status.cgi.js)
+script=$(cat ${DOCUMENT_ROOT}/../www/scripts/status.cgi.js)
 echo "<script>$script</script>"

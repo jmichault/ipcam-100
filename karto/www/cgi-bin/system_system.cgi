@@ -6,8 +6,9 @@ echo "Cache-Control: max-age=0, no-store, no-cache"
 echo ""
 
 # source header.cgi
-
-mount|grep "${SDCARD}"|grep "rw,">/dev/null
+SDCARD=`dirname ${DOCUMENT_ROOT}`
+FS=`df ${DOCUMENT_ROOT}/..|tail -n 1|awk '{print $6;}'`
+mount|grep -w ${FS}|grep "rw,">/dev/null
 
 if [ $? == 1 ]; then
 
@@ -54,7 +55,7 @@ cat << EOF
                     <div class="control">
                         <div class="select">
                             <select name="timeZone">
-                                $(${SDCARD}/bin/busybox awk -F '\t' -v tzn="$(cat ${SDCARD}/config/timezone.conf)" '{print "<option value=\""$1"\""; if ($1==tzn) print "selected"; print ">" $1 "</option>"}' ${SDCARD}/www/timezones.tsv)
+                                $(${DOCUMENT_ROOT}/../bin/busybox awk -F '\t' -v tzn="$(cat ${DOCUMENT_ROOT}/../config/timezone.conf)" '{print "<option value=\""$1"\""; if ($1==tzn) print "selected"; print ">" $1 "</option>"}' ${DOCUMENT_ROOT}/../www/timezones.tsv)
                             </select>
                         </div>
                         <p class="help">$(date) - $(cat /etc/TZ)</p>
@@ -69,7 +70,7 @@ cat << EOF
             <div class="field-body">
                 <div class="field">
                     <div class="control">
-                        <input class="input" id="ntp_srv" name="ntp_srv" type="text" size="25" value="$(cat ${SDCARD}/config/ntp_srv.conf)" />
+                        <input class="input" id="ntp_srv" name="ntp_srv" type="text" size="25" value="$(cat ${DOCUMENT_ROOT}/../config/ntp_srv.conf)" />
                     </div>
                 </div>
             </div>
@@ -102,5 +103,5 @@ cat << EOF
 </div>
 
 EOF
-script=$(cat ${SDCARD}/www/scripts/status.cgi.js)
+script=$(cat ${DOCUMENT_ROOT}/../www/scripts/status.cgi.js)
 echo "<script>$script</script>"

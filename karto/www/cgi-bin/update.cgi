@@ -7,7 +7,7 @@ echo ""
 
 cat << EOF
 Update:
-<pre>`${SDCARD}/autoupdate.sh -v -f -d ${SDCARD}/ 2>&1`</pre>
+<pre>`${DOCUMENT_ROOT}/../autoupdate.sh -v -f -d ${DOCUMENT_ROOT}/../ 2>&1`</pre>
 </body>
 </html>
 EOF

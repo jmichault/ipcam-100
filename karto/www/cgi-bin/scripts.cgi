@@ -4,7 +4,7 @@ source ./func.cgi
 echo "Pragma: no-cache"
 echo "Cache-Control: max-age=0, no-store, no-cache"
 
-SCRIPT_HOME="${SDCARD}/controlscripts/"
+SCRIPT_HOME="${DOCUMENT_ROOT}/../controlscripts/"
 if [ -n "$F_script" ]; then
   script="${F_script##*/}"
   if [ -e "$SCRIPT_HOME/$script" ]; then
@@ -17,7 +17,7 @@ if [ -n "$F_script" ]; then
         echo "<pre>$("$SCRIPT_HOME/$script" 2>&1)</pre>"
         ;;  
       disable)
-        rm "${SDCARD}/config/autostart/$script"
+        rm "${DOCUMENT_ROOT}/../config/autostart/$script"
         echo "Content-type: application/json"
         echo ""
         echo "{\"status\": \"ok\"}"
@@ -32,8 +32,8 @@ if [ -n "$F_script" ]; then
         echo "</pre>"
         ;;
       enable)
-        echo "#!/bin/sh" > "${SDCARD}/config/autostart/$script"
-        echo "$SCRIPT_HOME$script" >> "${SDCARD}/config/autostart/$script"
+        echo "#!/bin/sh" > "${DOCUMENT_ROOT}/../config/autostart/$script"
+        echo "$SCRIPT_HOME$script" >> "${DOCUMENT_ROOT}/../config/autostart/$script"
         echo "Content-type: application/json"
         echo ""
         echo "{\"status\": \"ok\"}"
@@ -124,7 +124,7 @@ else
       echo "<input type='checkbox' id='autorun_$i' name='autorun_$i' class='switch is-rtl autostart' data-script='$i' "
         echo " data-unchecked='cgi-bin/scripts.cgi?cmd=disable&script=$i'"
         echo " data-checked='cgi-bin/scripts.cgi?cmd=enable&script=$i'"
-      if [ -f "${SDCARD}/config/autostart/$i" ]; then
+      if [ -f "${DOCUMENT_ROOT}/../config/autostart/$i" ]; then
         echo " checked='checked'"
       fi
       echo "'>"
@@ -140,5 +140,5 @@ else
   done
 fi
 
-script=$(cat ${SDCARD}/www/scripts/scripts.cgi.js)
+script=$(cat ${DOCUMENT_ROOT}/../www/scripts/scripts.cgi.js)
 echo "<script>$script</script>"

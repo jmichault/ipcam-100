@@ -1,12 +1,14 @@
 #!/bin/sh
 
+SDCARD=`pwd`
+
 DST_PATCH="/opt/etc/local.rc"
-SRC_PATCH="/opt/media/mmcblk0p1/patch/local.rc"
+SRC_PATCH="${SDCARD}/patch/local.rc"
 AUTORUN_FILE="/ipc/etc/auto_run.sh"
 WIFI_SYSTEM_CONFIG="/opt/conf/airlink/supplicant.conf"
-WIFI_USER_CONFIG="/opt/media/mmcblk0p1/wpa_supplicant.conf"
+WIFI_USER_CONFIG="${SDCARD}/wpa_supplicant.conf"
 
-. /opt/media/mmcblk0p1/scripts/common_functions.sh
+. ${SDCARD}/scripts/common_functions.sh
 
 apply_patch()
 {

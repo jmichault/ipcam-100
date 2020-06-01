@@ -2,5 +2,5 @@
 
 echo "Content-type: image/jpeg"
 echo ""
-${SDCARD}/bin/getimage |  ${SDCARD}/bin/jpegtran -progressive -optimize
+${DOCUMENT_ROOT}/../bin/getimage |  ${DOCUMENT_ROOT}/../bin/jpegtran -progressive -optimize
 

@@ -2,4 +2,4 @@
 
 echo "Content-type: image/jpeg"
 echo ""
-${SDCARD}/bin/getimage
+${DOCUMENT_ROOT}/../bin/getimage
