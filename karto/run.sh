@@ -73,12 +73,58 @@ echo "Bind mounted ${SDCARD}/root to /root" >> $LOGPATH
 mount -o bind ${SDCARD}/etc /etc
 echo "Bind mounted ${SDCARD}/etc to /etc" >> $LOGPATH
 
+## Create crontab dir and start crond:
+if [ ! -d ${SDCARD}/config/cron ]; then
+  mkdir -p ${CONFIGPATH}/cron/crontabs
+  CRONPERIODIC="${CONFIGPATH}/cron/periodic"
+  echo ${CONFIGPATH}/cron/crontabs/periodic
+  # Wish busybox sh had brace expansion...
+  mkdir -p ${CRONPERIODIC}/15min \
+           ${CRONPERIODIC}/hourly \
+           ${CRONPERIODIC}/daily \
+           ${CRONPERIODIC}/weekly \
+           ${CRONPERIODIC}/monthly
+  cat > ${CONFIGPATH}/cron/crontabs/root <<EOF
+# min   hour    day     month   weekday command
+*/15    *       *       *       *       busybox run-parts ${CRONPERIODIC}/15min
+0       *       *       *       *       busybox run-parts ${CRONPERIODIC}/hourly
+0       2       *       *       *       busybox run-parts ${CRONPERIODIC}/daily
+0       3       *       *       6       busybox run-parts ${CRONPERIODIC}/weekly
+0       5       1       *       *       busybox run-parts ${CRONPERIODIC}/monthly
+EOF
+  echo "Created cron directories and standard interval jobs" >> $LOGPATH
+fi
+${SDCARD}/bin/busybox crond -L ${SDCARD}/log/crond.log -c ${SDCARD}/config/cron/crontabs
+
+## Set Hostname
+if [ ! -f $CONFIGPATH/hostname.conf ]; then
+  cp $CONFIGPATH/hostname.conf.dist $CONFIGPATH/hostname.conf
+fi
+hostname -F $CONFIGPATH/hostname.conf
+
+## Set Timezone
+set_timezone
+
+## Sync the time via NTP:
+if [ ! -f $CONFIGPATH/ntp_srv.conf ]; then
+  cp $CONFIGPATH/ntp_srv.conf.dist $CONFIGPATH/ntp_srv.conf
+fi
+ntp_srv="$(cat "$CONFIGPATH/ntp_srv.conf")"
+timeout -t 30 sh -c "until ping -c1 \"$ntp_srv\" &>/dev/null; do sleep 3; done";
+${SDCARD}/bin/busybox ntpd -p "$ntp_srv"
 
 ${SDCARD}/config/autostart/system-webserver
 
-${SDCARD}/controlscripts/ftp-server start
+## Autostart all enabled services:
+for i in ${SDCARD}/config/autostart/*; do
+  $i &
+done
 
-#${SDCARD}/controlscripts/rtsp start
+## Autostart startup userscripts
+for i in ${SDCARD}/config/userscripts/startup/*; do
+  $i &
+done
+
 while :; do
   @${count:-0}                
   /opt/media/sdc/bin/rtsp_server -W 1280 -H 720 -j 60 -Q 5 -u media/stream1 -P 554
