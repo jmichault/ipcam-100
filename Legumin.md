@@ -28,4 +28,45 @@ malfermaj havenoj :
 Vi povas konekti per telnet al la haveno 9527 dum kvin minutoj post la startigo. Uzanto: root, pasvorto: jco66688.  
 (jco = http://www.cnjabsco.com/ )
 
+Kio funkcias en alternativa firmvaro:
+* RTSP MJPEG servilo
+* HTTP servilo
+* motora kontrolo
+* NTP kliento
+* ŝanĝo de pasvorto por http-aliro
+* blua kaj IR LED kontrolo
+
+
+Kio ne funkcias en alternativa firmvaro:
+* video sistemo pravalorizado  (ĝi devas esti pravalorizita per la originala firmvaro)
+* kalibrado de motoro
+* Video-Agordoj
+* sondosistemo
+* OSD
+* ĝisdatigo de firmvaro
+* aŭtomata nokta detekto
+* movado-detekto
+* ir-cut
+* mail
+* mqtt
+* h264
+* wlan
+* ktp ...
+
+Preparado de la kameraon :  
+* Konektu la kameraon al via loka reto kaj funkciigu la kameraon.
+* Trovu la IP-adreson de la fotilo.
+* Konektu al la kamerao per la URL "http://IP" (uzanto admin, pasvorto admin)
+* en la langeto "Audio & Video" starigu la ĉefan rivereton al 720p, alklaku "Save".
+* laŭvole agordu la kablan reton en la langeto "Network".
+
+Instalado alternativan firmvaron :  
+* Kopiu ĉion el la dosierujo "karto" en la radikon de la microSD.
+* Enmetu la karton microSD.
+* Konektu la kameraon al via loka reto kaj funkciigu la kameraon.
+* Konektu al la kamerao per "telnet IP 9527" (uzanto root, pasvorto jco66688).
+* Faru "killall -9 auto_run.sh" por eviti fermi la konekton.
+* Faru "cd /opt/media/mmcblk0p1;./install.sh"
+* Vi povas konekti al la URL "https://IP" (uzanto admin, pasvorto jco66688).
+
 
