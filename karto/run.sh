@@ -12,13 +12,15 @@ export LOGPATH="$LOGDIR/startup.log"
 # Mount bind to extended busybox.
 #mount -o bind ${SDCARD}/bin/busybox /bin/busybox
 
-sleep 15
+ifconfig eth0 down
+ifconfig wlan0 down
+sleep 20
 
 ## stop_cloud :
 ps | awk '/[a]uto_run.sh/ {print $1}' | while read PID; do kill -9 $PID; done;
 ps | awk '/[j]co_server/ {print $1}' | xargs kill -9 &>/dev/null
 echo 'V'>/dev/watchdog
-echo 'V'>/dev/watchdog0    
+echo 'V'>/dev/watchdog0
 rm "${SDCARD}/cid.txt" &>/dev/null
 
 #sleep 1
@@ -40,9 +42,9 @@ then
     echo "
 export SDCARD=${SDCARD}
 LD_LIBRARY_PATH=\"${SDCARD}/lib:\$LD_LIBRARY_PATH\"
-export CONFIGPATH=\"${SDCARD}/config\"                                                            
-export LOGDIR=\"${SDCARD}/log\"                                                              
-export LOGPATH=\"$LOGDIR/startup.log\"          
+export CONFIGPATH=\"${SDCARD}/config\"
+export LOGDIR=\"${SDCARD}/log\"
+export LOGPATH=\"$LOGDIR/startup.log\"
 " >>${SDCARD}/etc/profile
 fi
 while IFS= read -r etc_element
@@ -102,6 +104,9 @@ if [ ! -f $CONFIGPATH/hostname.conf ]; then
 fi
 hostname -F $CONFIGPATH/hostname.conf
 
+## start network
+${SDCARD}/controlscripts/network
+
 ## Set Timezone
 set_timezone
 
@@ -126,10 +131,10 @@ for i in ${SDCARD}/config/userscripts/startup/*; do
 done
 
 while :; do
-  @${count:-0}                
+  @${count:-0}
   /opt/media/sdc/bin/rtsp_server -W 1280 -H 720 -j 60 -Q 5 -u media/stream1 -P 554
   let count++
   sleep 1
   [ "${count:-0}" -ge 5 ] && reboot -f
-done 
+done
 

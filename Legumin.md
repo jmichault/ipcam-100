@@ -29,6 +29,7 @@ Vi povas konekti per telnet al la haveno 9527 dum kvin minutoj post la startigo.
 (jco = http://www.cnjabsco.com/ )
 
 Kio funkcias en alternativa firmvaro:
+* lan kaj wlan
 * RTSP MJPEG servilo
 * HTTP servilo
 * motora kontrolo
@@ -50,7 +51,6 @@ Kio ne funkcias en alternativa firmvaro:
 * mail
 * mqtt
 * h264
-* wlan
 * ktp ...
 
 Preparado de la kameraon :  
@@ -62,6 +62,7 @@ Preparado de la kameraon :
 
 Instalado alternativan firmvaron :  
 * Kopiu ĉion el la dosierujo "karto" en la radikon de la microSD.
+* laŭvole agordu la reton (config/staticip.conf, config/resolv.conf, config/wpa_supplicant.conf)
 * Enmetu la karton microSD.
 * Konektu la kameraon al via loka reto kaj funkciigu la kameraon.
 * Konektu al la kamerao per "telnet IP 9527" (uzanto root, pasvorto jco66688).
@@ -69,4 +70,8 @@ Instalado alternativan firmvaron :
 * Faru "cd /opt/media/mmcblk0p1;./install.sh"
 * Vi povas konekti al la URL "https://IP" (uzanto admin, pasvorto jco66688).
 
+Malinstalado alternativan firmvaron :
+* Konektu al la kamerao per "telnet IP 9527" (uzanto root, pasvorto ismart12).
+* Faru "killall -9 run.sh system-emergency-telnet" por eviti fermi la konekton.
+* Faru "cd /opt/media/mmcblk0p1;./uninstall.sh;reboot"
 
