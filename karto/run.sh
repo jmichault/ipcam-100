@@ -14,7 +14,7 @@ export LOGPATH="$LOGDIR/startup.log"
 
 ifconfig eth0 down
 ifconfig wlan0 down
-sleep 20
+sleep 16
 
 ## stop_cloud :
 ps | awk '/[a]uto_run.sh/ {print $1}' | while read PID; do kill -9 $PID; done;
@@ -29,7 +29,8 @@ init_gpio 46
 # init blue_led gpio :
 init_gpio 81
 # init motor :
-${SDCARD}/bin/motor -p &
+. ${SDCARD}/config/ptz.conf
+(${SDCARD}/bin/motor -p;${SDCARD}/bin/motor -x $X0 -y $Y0 -r $RAPIDECO) &
 
 ## Create root user home directory and etc directory on sdcard:
 if [ ! -d ${SDCARD}/root ]; then
@@ -42,8 +43,6 @@ if [ ! -f "${SDCARD}/etc/profile" ]
 then
     cp -fRL "/etc/profile" ${SDCARD}/etc
     echo "
-export SDCARD=${SDCARD}
-LD_LIBRARY_PATH=\"${SDCARD}/lib:\$LD_LIBRARY_PATH\"
 export CONFIGPATH=\"${SDCARD}/config\"
 export LOGDIR=\"${SDCARD}/log\"
 export LOGPATH=\"$LOGDIR/startup.log\"
