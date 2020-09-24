@@ -37,6 +37,7 @@ Kio funkcias en alternativa firmvaro:
 * NTP kliento
 * ŝanĝo de pasvorto por http-aliro
 * blua kaj IR LED kontrolo
+* FTP servilo
 
 
 Kio ne funkcias en alternativa firmvaro:
