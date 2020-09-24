@@ -113,6 +113,7 @@ void skribiVal()
 void legiVal()
 {
  FILE * val=fopen("/tmp/motoraValoro","r");
+ if(!val) return;
  fscanf(val,"%d %d %d\n",&EstisPravalorizita,&PozicioX,&PozicioY);
  fclose(val);
 }
@@ -235,6 +236,7 @@ int main(int argc, char *argv[])
   { 
     if (x> MAX_X) x=MAX_X;
     if (y> MAX_Y) y=MAX_Y;
+    if(!EstisPravalorizita) pravalorizi();
     int deltax= x-PozicioX;
     int deltay= y-PozicioY;
     direkto = 0;

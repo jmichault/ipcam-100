@@ -152,7 +152,7 @@ if [ -n "$F_cmd" ]; then
     ;;
 
     motor_calibrate)
-      motor reset_pos_count $F_val
+      motor -p
     ;;
 
     motor_PTZ)

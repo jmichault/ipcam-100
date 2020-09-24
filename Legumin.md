@@ -33,6 +33,7 @@ Kio funkcias en alternativa firmvaro:
 * RTSP MJPEG servilo
 * HTTP servilo
 * motora kontrolo
+* kalibrado de motoro
 * NTP kliento
 * ŝanĝo de pasvorto por http-aliro
 * blua kaj IR LED kontrolo
@@ -40,7 +41,6 @@ Kio funkcias en alternativa firmvaro:
 
 Kio ne funkcias en alternativa firmvaro:
 * video sistemo pravalorizado  (ĝi devas esti pravalorizita per la originala firmvaro)
-* kalibrado de motoro
 * Video-Agordoj
 * sondosistemo
 * OSD

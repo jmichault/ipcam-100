@@ -28,6 +28,8 @@ rm "${SDCARD}/cid.txt" &>/dev/null
 init_gpio 46
 # init blue_led gpio :
 init_gpio 81
+# init motor :
+${SDCARD}/bin/motor -p &
 
 ## Create root user home directory and etc directory on sdcard:
 if [ ! -d ${SDCARD}/root ]; then
