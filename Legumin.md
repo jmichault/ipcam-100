@@ -1,4 +1,6 @@
-celo: krei alternativan firmvaron por ĉi tiu kamerao:
+#celo:
+
+krei alternativan firmvaron por ĉi tiu kamerao:
 
 marko = WIFI CARAM  
 modelo : WF-HD820-ZS  
@@ -7,7 +9,7 @@ rezolucio : 1080P
 
 DeviceName:     INGENIC-V01  
 DeviceModel:    IPCAM-100  
-DeviceSN:       30901607543  
+DeviceSN:       12345678901  
 KernelVersion:  Thu Jul 9 15:46:54 CST 2015  
 ServerVersion:  WS3.53.1243-20190717-DANALE-GEN  
 WebVersion:     V2.3.4-20190709  
@@ -19,6 +21,8 @@ Multa laboro estis farita por kameraoj ekipitaj per inĝenia T20-procesoro.
 modifitaj firmvaroj :  https://github.com/EliasKotlyar/Xiaomi-Dafang-Hacks  
 fontoj de modifitaj firmvaroj : https://github.com/Dafang-Hacks/Main  
 lanĉante programojn sen ŝanĝi la firmvaro :  https://github.com/ThatUsernameAlreadyExist/JCO-PM203-Fisheye-Ingenic-T20-P2P-camera-hacks  
+# Alternativa Firmvaro
+
 
 Kio funkcias en alternativa firmvaro:
 * lan kaj wlan

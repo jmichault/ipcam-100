@@ -2,6 +2,7 @@ karto.zip
 *.old
 *.zip
 *.tar
+toto*
 karto.jco
 karto.dafang
 programada_medio/fontoj/*/*.o

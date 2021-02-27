@@ -604,7 +604,7 @@ int ImpEncoder::sample_jpeg_init() {
         return -1;
     }
 
-    /* Resigter Channel */
+    /* Register Channel */
     ret = IMP_Encoder_RegisterChn(0, 2);
     if (ret < 0) {
         IMP_LOG_ERR(TAG, "IMP_Encoder_RegisterChn(0, %d) error: %d\n",
