@@ -2,6 +2,7 @@ karto.zip
 *.old
 *.zip
 *.tar
+*.swp
 toto*
 karto.jco
 karto.dafang

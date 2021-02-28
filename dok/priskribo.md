@@ -1,5 +1,6 @@
 
-Priskribo :
+
+# Priskribo :
 https://fr.aliexpress.com/item/4000146161270.html
     Brand Name: shiningpo
     Style: Dome Camera
@@ -98,7 +99,7 @@ ffplay -i rtsp://admin:admin@192.168.24.39:554/stream2
 la instalita firmvaro indikas:
 DeviceName:     INGENIC-V01
 DeviceModel:    IPCAM-100
-DeviceSN:       30901607543
+DeviceSN:       12345678901
 KernelVersion:  Thu Jul 9 15:46:54 CST 2015
 ServerVersion:  WS3.53.1243-20190717-DANALE-GEN
 WebVersion:     V2.3.4-20190709
