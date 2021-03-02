@@ -18,16 +18,16 @@ INC     	= -I$(BASE)/include
 INC 		+= -I$(PWD)/include
 
 ## toolchain
-EXTRA_LDFLAGS	= -std=c++11$
-EXTRA_CFLAGS	+= -I$(AUTOCONF_DIR)
+EXTRA_LDFLAGS	= -std=c++11$ 
+EXTRA_CFLAGS	+= -I$(AUTOCONF_DIR) 
 
 CFLAGS      += -Wall -I. $(INC) -DSOCKLEN_T=socklen_t -DNO_SSTREAM=1 -D_LARGEFILE_SOURCE=1  -D_FILE_OFFSET_BITS=64
 #CFLAGS		+= -DBSD=1 -DLOCALE_NOT_USED
 #CFLAGS		+= -DAUDIO_STREAM=1
 #CFLAGS		+= -DDEBUG
-CFLAGS		+= -std=c++11
+CFLAGS		+= -std=c++11 -g
 
-LDFLAGS     = -L../../lib -muclibc -lpthread -lm -lrt -lliveMedia -lgroupsock -lUsageEnvironment -lBasicUsageEnvironment -limp -lalog
+LDFLAGS     = -L../../lib -muclibc -lpthread -lm -lrt -lliveMedia -lgroupsock -lUsageEnvironment -lBasicUsageEnvironment -limp -lalog -g
 
 SRC_OBJ	= main.o 
 SRC_OBJ	+=ServerMediaSubsession.o

@@ -20,6 +20,7 @@ video-sentilo : GC2053
 Multa laboro estis farita por kameraoj ekipitaj per inĝenia T20-procesoro.  
 modifitaj firmvaroj :  https://github.com/EliasKotlyar/Xiaomi-Dafang-Hacks  
 fontoj de modifitaj firmvaroj : https://github.com/Dafang-Hacks/Main  
+https://github.com/openmiko/openmiko
 lanĉante programojn sen ŝanĝi la firmvaro :  https://github.com/ThatUsernameAlreadyExist/JCO-PM203-Fisheye-Ingenic-T20-P2P-camera-hacks  
 # Alternativa Firmvaro
 
@@ -38,7 +39,6 @@ Kio funkcias en alternativa firmvaro:
 
 
 Kio ne funkcias en alternativa firmvaro:
-* video sistemo pravalorizado  (ĝi devas esti pravalorizita per la originala firmvaro)
 * Video-Agordoj
 * duaranga videorivereto
 * sondosistemo

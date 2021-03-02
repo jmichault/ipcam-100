@@ -17,4 +17,4 @@ local.rc lanĉas run.sh el la SDa karto.
  * pravalorizas la CRONTABo se necese
  * komencitas crond-servon, reton, ntpd-servon, reteja-servon
  * komencitas enabligajn servojn (en config/autostart)
- * komencitas uza skriptojn (en config/userscripts)
+ * komencitas uzantajn skriptojn (en config/userscripts)

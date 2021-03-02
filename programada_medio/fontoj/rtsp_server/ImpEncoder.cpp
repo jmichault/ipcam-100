@@ -68,7 +68,7 @@ extern "C" int IMP_Encoder_SetPoolSize(int);
     static pthread_mutex_t m_mutex;
     static chn_conf chn;
     static int encoderMode;
-    static impParams currentParams;
+    static impParams currentParams={1280,720,IMP_MODE_JPEG,10,false};
     static int framesCount;
 
 void *ImpEncoder::getBuffer() {
@@ -274,6 +274,8 @@ int ImpEncoder::snap_jpeg() {
     int ret;
     int bytesRead = 0;
 
+    if(! isInited)
+      init_all(currentParams);
 
 
     /* Polling JPEG Snap, set timeout as 1000msec */
@@ -391,11 +393,11 @@ int ImpEncoder::sample_system_init() {
     int ret = 0;
     IMP_LOG_ERR(TAG, "sample_system_init\n");
 
-    memset(&sensor_info, 0, sizeof(IMPSensorInfo));
-    memcpy(sensor_info.name, SENSOR_NAME, sizeof(SENSOR_NAME));
-    sensor_info.cbus_type = SENSOR_CUBS_TYPE;
-    memcpy(sensor_info.i2c.type, SENSOR_NAME, sizeof(SENSOR_NAME));
-    sensor_info.i2c.addr = SENSOR_I2C_ADDR;
+    memset(&sensor_info, 0, sizeof(sensor_info));
+    memcpy(sensor_info[0].name, SENSOR_NAME, sizeof(SENSOR_NAME));
+    sensor_info[0].cbus_type = SENSOR_CUBS_TYPE;
+    memcpy(sensor_info[0].i2c.type, SENSOR_NAME, sizeof(SENSOR_NAME));
+    sensor_info[0].i2c.addr = SENSOR_I2C_ADDR;
 
     //IMP_LOG_ERR(TAG, "Imp Log %d\n", IMP_Log_Get_Option());
     //IMP_Log_Set_Option()
@@ -407,7 +409,7 @@ int ImpEncoder::sample_system_init() {
     }
 
 
-    ret = IMP_ISP_AddSensor(&sensor_info);
+    ret = IMP_ISP_AddSensor(&sensor_info[0]);
     if (ret < 0) {
         IMP_LOG_ERR(TAG, "failed to AddSensor\n");
         return -1;
@@ -448,7 +450,7 @@ int ImpEncoder::sample_system_init() {
         return -1;
     }
 
-    setNightVision(currentParams.nightvision);
+    //setNightVision(currentParams.nightvision);
 
 
     /*
@@ -472,7 +474,6 @@ int ImpEncoder::sample_system_init() {
 
 int ImpEncoder::sample_system_exit() {
     int ret = 0;
-    isInited = false;
 
     IMP_LOG_ERR(TAG, "sample_system_exit start\n");
 
@@ -485,7 +486,7 @@ int ImpEncoder::sample_system_exit() {
         return -1;
     }
 
-    ret = IMP_ISP_DelSensor(&sensor_info);
+    ret = IMP_ISP_DelSensor(&sensor_info[0]);
     if (ret < 0) {
         IMP_LOG_ERR(TAG, "failed to DelSensor\n");
         return -1;
@@ -498,11 +499,12 @@ int ImpEncoder::sample_system_exit() {
     }
 
     if (IMP_ISP_Close()) {
-        IMP_LOG_ERR(TAG, "failed to open ISP\n");
+        IMP_LOG_ERR(TAG, "failed to close ISP\n");
         return -1;
     }
 
     IMP_LOG_ERR(TAG, " sample_system_exit success\n");
+    isInited = false;
 
     return 0;
 }

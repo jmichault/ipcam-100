@@ -10,6 +10,7 @@
 ** -------------------------------------------------------------------------*/
 
 #include <sstream>
+#include <utility>
 
 // live555
 #include <liveMedia/Base64.hh>
@@ -49,7 +50,8 @@ std::list< std::pair<unsigned char*,size_t> > H264_V4L2DeviceSource::splitFrames
 	unsigned char* buffer = this->extractFrame(frame, bufSize, size);
 	while (buffer != NULL)				
 	{
-		frameList.push_back(std::make_pair<unsigned char*,size_t>(buffer, size));
+		//frameList.push_back(std::make_pair<unsigned char*,size_t>(buffer, size));
+		frameList.push_back(std::make_pair(buffer, size));
 		switch (buffer[0]&0x1F)					
 		{
 			case 7: 

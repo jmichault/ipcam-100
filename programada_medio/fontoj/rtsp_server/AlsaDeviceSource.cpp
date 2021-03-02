@@ -221,7 +221,7 @@ std::list< std::pair<unsigned char*,size_t> > AlsaDeviceSource::splitFrames(unsi
 	std::list< std::pair<unsigned char*,size_t> > frameList;
 	if (frame != NULL)
 	{
-		frameList.push_back(std::make_pair<unsigned char*,size_t>(frame, frameSize));
+		frameList.push_back(std::make_pair(frame, frameSize));
 	}
 	return frameList;
 }

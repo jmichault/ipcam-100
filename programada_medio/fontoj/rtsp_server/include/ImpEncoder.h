@@ -123,7 +123,7 @@ private:
 
     int sample_do_get_jpeg_snap(void);
 
-    IMPSensorInfo sensor_info;
+    IMPSensorInfo sensor_info[2];
 
 
     int encoder_chn_exit(int encChn);
