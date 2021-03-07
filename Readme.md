@@ -1,6 +1,6 @@
 pliaj informoj ĉi tie : <https://jmichault.github.io/ipcam-100-dok/>
 
-#celo:
+# celo:
 
 krei alternativan firmvaron por ĉi tiu kamerao:
 
