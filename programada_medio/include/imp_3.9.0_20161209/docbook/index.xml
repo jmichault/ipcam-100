@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<book xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <info>
+    <title>Programmation T20</title>
+    </info>
+    <chapter>
+        <title>Documentation des modules</title>
+        <xi:include href="group__imp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    </chapter>
+    <chapter>
+        <title>Documentation des classes</title>
+        <xi:include href="structcoverData.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structimp__isp__temper__denoise__attr.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMP__IVS__MoveOutput.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMP__IVS__MoveParam.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPAudioAgcConfig.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPAudioDecChnAttr.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPAudioDecDecoder.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPAudioEncChnAttr.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPAudioEncEncoder.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPAudioFrame.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPAudioIChnParam.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPAudioIOAttr.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPAudioOChnState.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPAudioStream.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPCell.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPDecoderAttr.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPDecoderCHNAttr.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPDecoderNal.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPDecoderStream.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPEncoderAttr.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPEncoderAttrH264BSkip.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPEncoderAttrH264CBR.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPEncoderAttrH264Demask.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPEncoderAttrH264Denoise.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPEncoderAttrH264FixQP.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPEncoderAttrH264FrmUsed.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPEncoderAttrH264HSkip.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPEncoderAttrH264VBR.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPEncoderCHNAttr.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPEncoderCHNStat.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPEncoderColor2GreyCfg.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPEncoderCropCfg.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="unionIMPEncoderDataType.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPEncoderEnIDRCfg.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPEncoderFrmRate.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPEncoderGOPSizeCfg.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPEncoderPack.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPEncoderRcAttr.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPEncoderROICfg.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPEncoderStream.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPEncoderUserDataCfg.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPFrameInfo.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPFSChnAttr.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPFSChnCrop.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPFSChnScaler.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPI2CInfo.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPISPDrcAttr.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPISPEVAttr.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPISPGamma.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPISPSinterDenoiseAttr.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPIVSInterface.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPOSDGrpRgnAttr.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPOSDRgnAttr.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="unionIMPOSDRgnAttrData.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPPoint.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPRect.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPSensorInfo.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPSPIInfo.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structIMPVersion.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="unionisp__core__ae__roi__select.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="unionisp__core__expr__attr.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structisp__core__wb__attr.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structlineRectData.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="structpicData.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    </chapter>
+    <chapter>
+        <title>Documentation des fichiers</title>
+        <xi:include href="imp__audio_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="imp__common_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="imp__decoder_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="imp__encoder_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="imp__framesource_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="imp__isp_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="imp__ivs_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="imp__ivs__move_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="imp__log_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="imp__osd_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="imp__system_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="imp__utils_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    </chapter>
+</book>

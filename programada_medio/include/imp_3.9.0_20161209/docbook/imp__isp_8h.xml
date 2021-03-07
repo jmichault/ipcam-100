@@ -1,0 +1,898 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="imp__isp_8h">
+    <title>imp_isp.h File Reference</title>
+    <programlisting>#include &quot;imp_common.h&quot;</programlisting>
+<para>Include dependency diagram for imp_isp.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="imp__isp_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for imp_isp.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="imp__isp_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPI2CInfo">IMPI2CInfo</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPSPIInfo">IMPSPIInfo</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPSensorInfo">IMPSensorInfo</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPISPDrcAttr">IMPISPDrcAttr</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPISPSinterDenoiseAttr">IMPISPSinterDenoiseAttr</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structimp__isp__temper__denoise__attr">imp_isp_temper_denoise_attr</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPISPGamma">IMPISPGamma</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="unionisp__core__expr__attr">isp_core_expr_attr</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="unionisp__core__ae__roi__select">isp_core_ae_roi_select</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structisp__core__wb__attr">isp_core_wb_attr</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPISPEVAttr">IMPISPEVAttr</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Énumérations</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="group__IMP__ISP_1ga38ee4d645812c12b28cd37d5320ccfb2">IMPSensorControlBusType</link> {
+<link linkend="group__IMP__ISP_1gga38ee4d645812c12b28cd37d5320ccfb2a97f8ef07011482201851230c9e944752">TX_SENSOR_CONTROL_INTERFACE_I2C</link>= 1,
+<link linkend="group__IMP__ISP_1gga38ee4d645812c12b28cd37d5320ccfb2aacc0aa36ed6d54a7064f49eb987f7bc6">TX_SENSOR_CONTROL_INTERFACE_SPI</link>
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="group__IMP__ISP_1ga45aca860233255ad78614e2fa38520b9">IMPISPTuningOpsMode</link> {
+<link linkend="group__IMP__ISP_1gga45aca860233255ad78614e2fa38520b9ab61200e52980316eaea2a9c2bd5abcf1">IMPISP_TUNING_OPS_MODE_DISABLE</link>,
+<link linkend="group__IMP__ISP_1gga45aca860233255ad78614e2fa38520b9aa3b9036e0facac6e3165ef4a24b41790">IMPISP_TUNING_OPS_MODE_ENABLE</link>,
+<link linkend="group__IMP__ISP_1gga45aca860233255ad78614e2fa38520b9ab22cf50d640c3fa6e43566e45f60fb80">IMPISP_TUNING_OPS_MODE_BUTT</link>
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="group__IMP__ISP_1ga51cbf4116bb59389dc30a6840764e73e">IMPISPTuningOpsType</link> {
+<link linkend="group__IMP__ISP_1gga51cbf4116bb59389dc30a6840764e73ea5e63521a46939be32170e2f44596b086">IMPISP_TUNING_OPS_TYPE_AUTO</link>,
+<link linkend="group__IMP__ISP_1gga51cbf4116bb59389dc30a6840764e73eabc9c9bf5f177c50dbc895ef196d2d825">IMPISP_TUNING_OPS_TYPE_MANUAL</link>,
+<link linkend="group__IMP__ISP_1gga51cbf4116bb59389dc30a6840764e73ead55a5e7f03b4cf92f09ca928730d2799">IMPISP_TUNING_OPS_TYPE_BUTT</link>
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="group__IMP__ISP_1ga452cdc199a01922aa7a5e10d06225f0e">IMPISPAntiflickerAttr</link> {
+<link linkend="group__IMP__ISP_1gga452cdc199a01922aa7a5e10d06225f0ea87cb7a4e8538d789e73e25fcf030ccf2">IMPISP_ANTIFLICKER_DISABLE</link>,
+<link linkend="group__IMP__ISP_1gga452cdc199a01922aa7a5e10d06225f0eada18ffe50bfe6dfe686f37c4d16f574b">IMPISP_ANTIFLICKER_50HZ</link>,
+<link linkend="group__IMP__ISP_1gga452cdc199a01922aa7a5e10d06225f0eac2c914da54c8ce3dcef396ea0edce902">IMPISP_ANTIFLICKER_60HZ</link>,
+<link linkend="group__IMP__ISP_1gga452cdc199a01922aa7a5e10d06225f0ea5877a1a388b494636e1250e30e5e707a">IMPISP_ANTIFLICKER_BUTT</link>
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="group__IMP__ISP_1gac26c8dff17c099abd9903e2e87550fcc">IMPISPDrcMode</link> {
+<link linkend="group__IMP__ISP_1ggac26c8dff17c099abd9903e2e87550fcca9f11265260ec95c317f53a6bb5fa5014">IMPISP_DRC_MANUAL</link>,
+<link linkend="group__IMP__ISP_1ggac26c8dff17c099abd9903e2e87550fccab272d75ebf76c4d7109c266782044e85">IMPISP_DRC_UNLIMIT</link>,
+<link linkend="group__IMP__ISP_1ggac26c8dff17c099abd9903e2e87550fccaf92cfdad2c655dc786d07bc525a2b05f">IMPISP_DRC_HIGH</link>,
+<link linkend="group__IMP__ISP_1ggac26c8dff17c099abd9903e2e87550fcca322d78b393d627de736e27987f34af86">IMPISP_DRC_MEDIUM</link>,
+<link linkend="group__IMP__ISP_1ggac26c8dff17c099abd9903e2e87550fcca82189cc8176e8ffeee5d501f20506827">IMPISP_DRC_LOW</link>,
+<link linkend="group__IMP__ISP_1ggac26c8dff17c099abd9903e2e87550fccae3956c97d333890ebb70ec34b2b6d15e">IMPISP_DRC_DISABLE</link>
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="group__IMP__ISP_1ga69126b2fc2c675a0f7fc799a95aa24f0">IMPISPTemperMode</link> {
+<link linkend="group__IMP__ISP_1gga69126b2fc2c675a0f7fc799a95aa24f0a66eeb72afd354abdb8f9fc1c6ab7a17e">IMPISP_TEMPER_DISABLE</link>,
+<link linkend="group__IMP__ISP_1gga69126b2fc2c675a0f7fc799a95aa24f0ac7734e353079f64eb3411429c7f1043d">IMPISP_TEMPER_AUTO</link>,
+<link linkend="group__IMP__ISP_1gga69126b2fc2c675a0f7fc799a95aa24f0a140a9107ecaf9573d8c399b81b3c8cca">IMPISP_TEMPER_MANUAL</link>
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="group__IMP__ISP_1ga43e34d291aed58536d3e48fe57dc4c7c">IMPISPSceneMode</link> {
+<link linkend="group__IMP__ISP_1gga43e34d291aed58536d3e48fe57dc4c7cae48ed37140ea25149811b5e67db9fe84">IMPISP_SCENE_MODE_AUTO</link>= 0,
+<link linkend="group__IMP__ISP_1gga43e34d291aed58536d3e48fe57dc4c7ca90430188976f0029fa5321ba58671676">IMPISP_SCENE_MODE_BEACH_SNOW</link>= 2,
+<link linkend="group__IMP__ISP_1gga43e34d291aed58536d3e48fe57dc4c7ca0650cbc4195d27b672accfc200aaad06">IMPISP_SCENE_MODE_CANDLE_LIGHT</link>= 3,
+<link linkend="group__IMP__ISP_1gga43e34d291aed58536d3e48fe57dc4c7cac7921551feae092ae3cd0cb053d3f00a">IMPISP_SCENE_MODE_DAWN_DUSK</link>= 4,
+<link linkend="group__IMP__ISP_1gga43e34d291aed58536d3e48fe57dc4c7ca9bf8928b7209e46092aea01087a96ec4">IMPISP_SCENE_MODE_FALL_COLORS</link>= 5,
+<link linkend="group__IMP__ISP_1gga43e34d291aed58536d3e48fe57dc4c7ca40ead598466e6ebc6201053b407600b2">IMPISP_SCENE_MODE_FIREWORKS</link>= 6,
+<link linkend="group__IMP__ISP_1gga43e34d291aed58536d3e48fe57dc4c7caec3ff35093b19cf31b478304703fd8a4">IMPISP_SCENE_MODE_LANDSCAPE</link>= 7,
+<link linkend="group__IMP__ISP_1gga43e34d291aed58536d3e48fe57dc4c7ca911755b9257199362013493febba67b1">IMPISP_SCENE_MODE_NIGHT</link>= 8,
+<link linkend="group__IMP__ISP_1gga43e34d291aed58536d3e48fe57dc4c7ca7573422e0b5bb5f62eb4c356f0d4fdb4">IMPISP_SCENE_MODE_PARTY_INDOOR</link>= 9,
+<link linkend="group__IMP__ISP_1gga43e34d291aed58536d3e48fe57dc4c7caad81db654a7761b5fd03901b8c0108eb">IMPISP_SCENE_MODE_SPORTS</link>= 11,
+<link linkend="group__IMP__ISP_1gga43e34d291aed58536d3e48fe57dc4c7caad0557764e698b8e2f3532f5ba0d1e37">IMPISP_SCENE_MODE_SUNSET</link>= 12,
+<link linkend="group__IMP__ISP_1gga43e34d291aed58536d3e48fe57dc4c7caeb511459f7c171e07be68ec5216416e5">IMPISP_SCENE_MODE_TEXT</link>= 13,
+<link linkend="group__IMP__ISP_1gga43e34d291aed58536d3e48fe57dc4c7cab440e7ee681b613008de5aa8e4db20ca">IMPISP_SCENE_MODE_NIGHT_PORTRAIT</link>= 14
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="group__IMP__ISP_1ga601945262e25baf0e55e71a754bfd513">IMPISPColorfxMode</link> {
+<link linkend="group__IMP__ISP_1gga601945262e25baf0e55e71a754bfd513a0e89ac9db92e79734c4d76e5fd4e45bf">IMPISP_COLORFX_MODE_AUTO</link>= 0,
+<link linkend="group__IMP__ISP_1gga601945262e25baf0e55e71a754bfd513aa5d5d7a821cdf475b5e073e1eb3bcf28">IMPISP_COLORFX_MODE_BW</link>= 1,
+<link linkend="group__IMP__ISP_1gga601945262e25baf0e55e71a754bfd513ac1770c4cfc1b8be99af0e876efb505b7">IMPISP_COLORFX_MODE_SEPIA</link>= 2,
+<link linkend="group__IMP__ISP_1gga601945262e25baf0e55e71a754bfd513a934186e6916699fa59058a4d4cd1ab41">IMPISP_COLORFX_MODE_NEGATIVE</link>= 3,
+<link linkend="group__IMP__ISP_1gga601945262e25baf0e55e71a754bfd513a69ae683f9b69175346eed9823a386d24">IMPISP_COLORFX_MODE_VIVID</link>= 9
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="group__IMP__ISP_1ga00373cf71fd22df5eaa2f7eed6973100">IMPISPRunningMode</link> {
+<link linkend="group__IMP__ISP_1gga00373cf71fd22df5eaa2f7eed6973100a3311b00220b304cc33887dc596255633">IMPISP_RUNNING_MODE_DAY</link>= 0,
+<link linkend="group__IMP__ISP_1gga00373cf71fd22df5eaa2f7eed6973100aca258162fd7afe8a1a81fe5b63723c73">IMPISP_RUNNING_MODE_NIGHT</link>= 1,
+<link linkend="group__IMP__ISP_1gga00373cf71fd22df5eaa2f7eed6973100acdceafc2c7437b0cfc100c28afdc49cc">IMPISP_RUNNING_MODE_BUTT</link>
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="group__IMP__ISP_1gac3e4bae428eda21cd8cd9446e9b3fa38">IMPISPAeStrategy</link> {
+<link linkend="group__IMP__ISP_1ggac3e4bae428eda21cd8cd9446e9b3fa38a72d451a5a838a7bce4833374471872ff">IMPISP_AE_STRATEGY_SPLIT_BALANCED</link>= 0,
+<link linkend="group__IMP__ISP_1ggac3e4bae428eda21cd8cd9446e9b3fa38ad8840416f2ec15d513ea27f6de3b62b0">IMPISP_AE_STRATEGY_SPLIT_INTEGRATION_PRIORITY</link>= 1,
+<link linkend="group__IMP__ISP_1ggac3e4bae428eda21cd8cd9446e9b3fa38a5ae30b08048dd5cb894c53d5160f06e8">IMPISP_AE_STRATEGY_BUTT</link>
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="group__IMP__ISP_1ga15dbea9727fd70901275c90a3e5ef2d2">isp_core_expr_mode</link> {
+<link linkend="group__IMP__ISP_1gga15dbea9727fd70901275c90a3e5ef2d2afc30999bcaa40b4d78b7917b5831857a">ISP_CORE_EXPR_MODE_AUTO</link>,
+<link linkend="group__IMP__ISP_1gga15dbea9727fd70901275c90a3e5ef2d2ac1c6437b2649ae7f6444dd8fabc140b5">ISP_CORE_EXPR_MODE_MANUAL</link>
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="group__IMP__ISP_1ga119b1782b6d972e38d604528ad72b65e">isp_core_expr_unit</link> {
+<link linkend="group__IMP__ISP_1gga119b1782b6d972e38d604528ad72b65eaccd13313b10d37bb3631b3f63222acd1">ISP_CORE_EXPR_UNIT_LINE</link>,
+<link linkend="group__IMP__ISP_1gga119b1782b6d972e38d604528ad72b65ea78fe9c564ee2464a75aab02dfe770ef1">ISP_CORE_EXPR_UNIT_US</link>
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="group__IMP__ISP_1ga8322e3086b65300b1aca801a5ad1b22e">isp_core_wb_mode</link> {
+<link linkend="group__IMP__ISP_1gga8322e3086b65300b1aca801a5ad1b22ea6ce1e0466ff7747983d1b152285369c9">ISP_CORE_WB_MODE_AUTO</link>= 0,
+<link linkend="group__IMP__ISP_1gga8322e3086b65300b1aca801a5ad1b22ea82c9447a0616b465eae5b9a341148c6c">ISP_CORE_WB_MODE_MANUAL</link>,
+<link linkend="group__IMP__ISP_1gga8322e3086b65300b1aca801a5ad1b22eaaa36a59a0bc0b75b8e078ca54c96d306">ISP_CORE_WB_MODE_DAY_LIGHT</link>,
+<link linkend="group__IMP__ISP_1gga8322e3086b65300b1aca801a5ad1b22eaf767ffefd8e9cb997495bed0c3f4017c">ISP_CORE_WB_MODE_CLOUDY</link>,
+<link linkend="group__IMP__ISP_1gga8322e3086b65300b1aca801a5ad1b22ea4d72e8d03f8e0cfb4097e42320a8a0f4">ISP_CORE_WB_MODE_INCANDESCENT</link>,
+<link linkend="group__IMP__ISP_1gga8322e3086b65300b1aca801a5ad1b22ea68920c1dbcde0b7e22af79ce92f230a2">ISP_CORE_WB_MODE_FLOURESCENT</link>,
+<link linkend="group__IMP__ISP_1gga8322e3086b65300b1aca801a5ad1b22ea0b524369d95f89cc2838614378f01f15">ISP_CORE_WB_MODE_TWILIGHT</link>,
+<link linkend="group__IMP__ISP_1gga8322e3086b65300b1aca801a5ad1b22ea10f484032b57286297764ad66e3959b0">ISP_CORE_WB_MODE_SHADE</link>,
+<link linkend="group__IMP__ISP_1gga8322e3086b65300b1aca801a5ad1b22ea9860e8998bd2b3f3623e60ddd2c4c763">ISP_CORE_WB_MODE_WARM_FLOURESCENT</link>
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="group__IMP__ISP_1ga1c6ee3079840b5204cf27fce0a6a1058">IMPISPAntiFogAttr</link> {
+<link linkend="group__IMP__ISP_1gga1c6ee3079840b5204cf27fce0a6a1058aeabcf20ff04d2145bd31adb11befbcff">ANTIFOG_DISABLE</link>,
+<link linkend="group__IMP__ISP_1gga1c6ee3079840b5204cf27fce0a6a1058a1cac631833ecf5935ddc2bcb07e50f2b">ANTIFOG_STRONG</link>,
+<link linkend="group__IMP__ISP_1gga1c6ee3079840b5204cf27fce0a6a1058a131450cfb81fc13ac02f1a34acb7357c">ANTIFOG_MEDIUM</link>,
+<link linkend="group__IMP__ISP_1gga1c6ee3079840b5204cf27fce0a6a1058ae6589ef075b875e897d9954e60e036af">ANTIFOG_WEAK</link>
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Définitions de type</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef struct <link linkend="structimp__isp__temper__denoise__attr">imp_isp_temper_denoise_attr</link>  <link linkend="group__IMP__ISP_1gafeecdffc4d7d1b9a0d6fe7aafd0354e3">IMPISPTemperDenoiseAttr</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef union <link linkend="unionisp__core__expr__attr">isp_core_expr_attr</link>  <link linkend="group__IMP__ISP_1ga42cce6933c6242e9944874321756f62c">IMPISPExpr</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef union <link linkend="unionisp__core__ae__roi__select">isp_core_ae_roi_select</link>  <link linkend="group__IMP__ISP_1gad50c1f6042c643570d9148832ac60dba">IMPISPAERoi</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef struct <link linkend="structisp__core__wb__attr">isp_core_wb_attr</link>  <link linkend="group__IMP__ISP_1gadb085866bbf4d5576e01762beb11b2e1">IMPISPWB</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Fonctions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1gac80de0e7f019c1718e58bb9d728203c3">IMP_ISP_Open</link> (
+void )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga5c2fdfdad046856bff32937c5ac05b90">IMP_ISP_Close</link> (
+void )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga8e4d951a6a80e88026f41e310090c44d">IMP_ISP_AddSensor</link> (
+<link linkend="structIMPSensorInfo">IMPSensorInfo</link> * pinfo)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga87ea0697f417532c191bf86677e281b5">IMP_ISP_DelSensor</link> (
+<link linkend="structIMPSensorInfo">IMPSensorInfo</link> * pinfo)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga72bd61d7ffa8f06b239c1ce43a6b5274">IMP_ISP_EnableSensor</link> (
+void )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga823f71e232236129da016cbbd0079295">IMP_ISP_DisableSensor</link> (
+void )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga8a86c7fac741e7d38daae9767f06a9f7">IMP_ISP_SetSensorRegister</link> (
+uint32_t reg, uint32_t value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga121bb07b3c434d708ff9d2627f230884">IMP_ISP_GetSensorRegister</link> (
+uint32_t reg, uint32_t * value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga34e80ddfdcab5e5f1b500d9271e8a332">IMP_ISP_EnableTuning</link> (
+void )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga75329730dcf100da4839ead7d585662c">IMP_ISP_DisableTuning</link> (
+void )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1gac974214ea084793ccba91d0209ccf3a7">IMP_ISP_Tuning_SetSensorFPS</link> (
+uint32_t fps_num, uint32_t fps_den)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1gac0b29cb7b14957eef86d65501b1979d3">IMP_ISP_Tuning_GetSensorFPS</link> (
+uint32_t * fps_num, uint32_t * fps_den)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga1c82db22ede96a92628c96a5b891ae11">IMP_ISP_Tuning_SetAntiFlickerAttr</link> (
+<link linkend="group__IMP__ISP_1ga452cdc199a01922aa7a5e10d06225f0e">IMPISPAntiflickerAttr</link> attr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga608cd103824bbb2297ff7f63c111ba65">IMP_ISP_Tuning_GetAntiFlickerAttr</link> (
+<link linkend="group__IMP__ISP_1ga452cdc199a01922aa7a5e10d06225f0e">IMPISPAntiflickerAttr</link> * pattr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga87b90450eda2ddc8c98bd632522e1d4c">IMP_ISP_Tuning_SetRawDRC</link> (
+<link linkend="structIMPISPDrcAttr">IMPISPDrcAttr</link> * pinfo)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1gad05176742423b72b4c1acce1a020a409">IMP_ISP_Tuning_GetRawDRC</link> (
+<link linkend="structIMPISPDrcAttr">IMPISPDrcAttr</link> * pinfo)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga47225447e000a4b26dd61522661c4ab8">IMP_ISP_Tuning_SetSinterDnsAttr</link> (
+<link linkend="structIMPISPSinterDenoiseAttr">IMPISPSinterDenoiseAttr</link> * pinfo)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga884eab099484b4b91a242a46e97aa39d">IMP_ISP_Tuning_GetSinterDnsAttr</link> (
+<link linkend="structIMPISPSinterDenoiseAttr">IMPISPSinterDenoiseAttr</link> * pinfo)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga311aa474d39dbb4fd38d45914ea9fd3c">IMP_ISP_Tuning_SetTemperDnsAttr</link> (
+<link linkend="group__IMP__ISP_1gafeecdffc4d7d1b9a0d6fe7aafd0354e3">IMPISPTemperDenoiseAttr</link> * pinfo)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga8e9b4a0b436c9c87a8c96ca4755d77ac">IMP_ISP_Tuning_GetTemperDnsAttr</link> (
+<link linkend="group__IMP__ISP_1gafeecdffc4d7d1b9a0d6fe7aafd0354e3">IMPISPTemperDenoiseAttr</link> * pinfo)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1gaf0bc7d23d1b03971adf0ff487ca90076">IMP_ISP_Tuning_SetWDRAttr</link> (
+<link linkend="group__IMP__ISP_1ga45aca860233255ad78614e2fa38520b9">IMPISPTuningOpsMode</link> mode)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga14396aecbcec0579a9163045ae77037c">IMP_ISP_Tuning_GetWDRAttr</link> (
+<link linkend="group__IMP__ISP_1ga45aca860233255ad78614e2fa38520b9">IMPISPTuningOpsMode</link> * pmode)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1gaf4cc536e10083446015f101b94b23159">IMP_ISP_Tuning_SetSceneMode</link> (
+<link linkend="group__IMP__ISP_1ga43e34d291aed58536d3e48fe57dc4c7c">IMPISPSceneMode</link> mode)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1gae11a3c98e598964ca27889e6dbda0937">IMP_ISP_Tuning_GetSceneMode</link> (
+<link linkend="group__IMP__ISP_1ga43e34d291aed58536d3e48fe57dc4c7c">IMPISPSceneMode</link> * pmode)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga015584d806c3dd5bc7f70213b784c90b">IMP_ISP_Tuning_SetColorfxMode</link> (
+<link linkend="group__IMP__ISP_1ga601945262e25baf0e55e71a754bfd513">IMPISPColorfxMode</link> mode)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1gab0ddcbac4ec14ef6f3493d8125081555">IMP_ISP_Tuning_GetColorfxMode</link> (
+<link linkend="group__IMP__ISP_1ga601945262e25baf0e55e71a754bfd513">IMPISPColorfxMode</link> * pmode)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1gaa420ab671dc3ac21664e68f7471499ce">IMP_ISP_Tuning_SetBrightness</link> (
+unsigned char bright)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga95eace973c2c84c22acd607e1a81292d">IMP_ISP_Tuning_GetBrightness</link> (
+unsigned char * pbright)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga9ad8f252ce6bdf00a3682c1ebecfb149">IMP_ISP_Tuning_SetContrast</link> (
+unsigned char contrast)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1gaa3571e3f4f0e2a5759f403241dbc1bde">IMP_ISP_Tuning_GetContrast</link> (
+unsigned char * pcontrast)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga37c58c97c2970aa01e438c189c25ef6d">IMP_ISP_Tuning_SetSharpness</link> (
+unsigned char sharpness)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga1e088f85ea78d4a58df1983fa8c3bbae">IMP_ISP_Tuning_GetSharpness</link> (
+unsigned char * psharpness)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga67c1bce041ce6ba21c81ae86a45d7a49">IMP_ISP_Tuning_SetSaturation</link> (
+unsigned char sat)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1gab376dc9de94e58d63d0126ca3e232da3">IMP_ISP_Tuning_GetSaturation</link> (
+unsigned char * psat)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1gacc802954d9f7881dc18214bd9f6236f1">IMP_ISP_Tuning_SetFWFreeze</link> (
+<link linkend="group__IMP__ISP_1ga45aca860233255ad78614e2fa38520b9">IMPISPTuningOpsMode</link> mode)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1gafe130e2a58ee71532dcc4903f56c52e7">IMP_ISP_Tuning_SaveAllParam</link> (
+char * path)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga02de99774dc0257c7613d9ef4dd7ae94">IMP_ISP_Tuning_SetISPBypass</link> (
+<link linkend="group__IMP__ISP_1ga45aca860233255ad78614e2fa38520b9">IMPISPTuningOpsMode</link> enable)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga0c301c0b728ffee66209fa536866a629">IMP_ISP_Tuning_GetTotalGain</link> (
+uint32_t * gain)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga663cc368f688229e2766a2cc2a2cdc52">IMP_ISP_Tuning_SetISPHflip</link> (
+<link linkend="group__IMP__ISP_1ga45aca860233255ad78614e2fa38520b9">IMPISPTuningOpsMode</link> mode)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1gab0ad06b6d923c498476e367bf2e6a401">IMP_ISP_Tuning_GetISPHflip</link> (
+<link linkend="group__IMP__ISP_1ga45aca860233255ad78614e2fa38520b9">IMPISPTuningOpsMode</link> * pmode)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1gaf1f07a434ff4d5d0786d713aad2ffc26">IMP_ISP_Tuning_SetISPVflip</link> (
+<link linkend="group__IMP__ISP_1ga45aca860233255ad78614e2fa38520b9">IMPISPTuningOpsMode</link> mode)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga1b6f33516c68ac7cf293efd247712dfc">IMP_ISP_Tuning_GetISPVflip</link> (
+<link linkend="group__IMP__ISP_1ga45aca860233255ad78614e2fa38520b9">IMPISPTuningOpsMode</link> * pmode)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga9a8ba3dfe858dde56672a5160ec1fdfd">IMP_ISP_Tuning_SetISPRunningMode</link> (
+<link linkend="group__IMP__ISP_1ga00373cf71fd22df5eaa2f7eed6973100">IMPISPRunningMode</link> mode)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga15176aa01cdc235ea1877154176cda57">IMP_ISP_Tuning_GetISPRunningMode</link> (
+<link linkend="group__IMP__ISP_1ga00373cf71fd22df5eaa2f7eed6973100">IMPISPRunningMode</link> * pmode)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1gaebfe22a1dc952d6459e0a0d96d068864">IMP_ISP_Tuning_SetAeStrategy</link> (
+<link linkend="group__IMP__ISP_1gac3e4bae428eda21cd8cd9446e9b3fa38">IMPISPAeStrategy</link> strategy)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga51f749dbaaf74c44158c8a9b98e4e7a7">IMP_ISP_Tuning_GetAeStrategy</link> (
+<link linkend="group__IMP__ISP_1gac3e4bae428eda21cd8cd9446e9b3fa38">IMPISPAeStrategy</link> * pstrategy)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1gafbea574db862f5e4afacbb42f5cee103">IMP_ISP_Tuning_SetGamma</link> (
+<link linkend="structIMPISPGamma">IMPISPGamma</link> * gamma)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1gaefda984f8fb1aed9fd540edec6f2c7ad">IMP_ISP_Tuning_GetGamma</link> (
+<link linkend="structIMPISPGamma">IMPISPGamma</link> * gamma)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1gad53a4789425c0ca6aefa236d223c62ef">IMP_ISP_Tuning_SetAeComp</link> (
+int comp)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga4259acd6ef932cbd6c9cde02fc4a5b21">IMP_ISP_Tuning_GetAeComp</link> (
+int * comp)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga414b5866577205f3cd28b7252d463adf">IMP_ISP_Tuning_SetExpr</link> (
+<link linkend="group__IMP__ISP_1ga42cce6933c6242e9944874321756f62c">IMPISPExpr</link> * expr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga7c888732fd3ca06fabb28ff65a1acdec">IMP_ISP_Tuning_GetExpr</link> (
+<link linkend="group__IMP__ISP_1ga42cce6933c6242e9944874321756f62c">IMPISPExpr</link> * expr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga192e5f53c32e870d9a12a5635a86fce2">IMP_ISP_Tuning_AE_GetROI</link> (
+<link linkend="group__IMP__ISP_1gad50c1f6042c643570d9148832ac60dba">IMPISPAERoi</link> * isp_ae_roi)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga26daa03af98e4c8bc74c8c80a128d420">IMP_ISP_Tuning_AE_SetROI</link> (
+<link linkend="group__IMP__ISP_1gad50c1f6042c643570d9148832ac60dba">IMPISPAERoi</link> * isp_ae_roi)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga304964ed99e1065b27eca47dada5fbab">IMP_ISP_Tuning_SetWB</link> (
+<link linkend="group__IMP__ISP_1gadb085866bbf4d5576e01762beb11b2e1">IMPISPWB</link> * wb)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga96d8ab201444c78b1c7c4dba013a1488">IMP_ISP_Tuning_GetWB</link> (
+<link linkend="group__IMP__ISP_1gadb085866bbf4d5576e01762beb11b2e1">IMPISPWB</link> * wb)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1gad035e477da1a52c6e29c4a4d1f5f7870">IMP_ISP_Tuning_GetWB_Statis</link> (
+<link linkend="group__IMP__ISP_1gadb085866bbf4d5576e01762beb11b2e1">IMPISPWB</link> * wb)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1gaa3163f26fb6466b9ab8d713f5775c769">IMP_ISP_Tuning_Awb_GetCwfShift</link> (
+<link linkend="group__IMP__ISP_1gadb085866bbf4d5576e01762beb11b2e1">IMPISPWB</link> * isp_wb_attr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga14d497e42aca17c2910ac26b8a0a45b5">IMP_ISP_Tuning_Awb_SetCwfShift</link> (
+<link linkend="group__IMP__ISP_1gadb085866bbf4d5576e01762beb11b2e1">IMPISPWB</link> * isp_wb_attr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga0820554570a63eb90162c6c7f5517dbc">IMP_ISP_Tuning_SetMaxAgain</link> (
+uint32_t gain)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga8cdf6b9860c9da65862237dd680b081b">IMP_ISP_Tuning_GetMaxAgain</link> (
+uint32_t * gain)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga90b7e9914551eb69a86df246215509a5">IMP_ISP_Tuning_SetMaxDgain</link> (
+uint32_t gain)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1gad81e923e3ac738c0419f17edf02e41c8">IMP_ISP_Tuning_GetMaxDgain</link> (
+uint32_t * gain)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1gafe069e5c3207bdf58267062eebe6e32c">IMP_ISP_Tuning_SetVideoDrop</link> (
+void(*)(void) cb)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga83fc4b0b60b4d4113c9bc5764edd7edc">IMP_ISP_Tuning_SetHiLightDepress</link> (
+uint32_t strength)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga5694e1f015f99d9be41c1c65830207c8">IMP_ISP_Tuning_SetTemperStrength</link> (
+uint32_t ratio)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga60fbe448743f263c1e990ccaa07c3365">IMP_ISP_Tuning_SetSinterStrength</link> (
+uint32_t ratio)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1gab77a9f9ac76c1274220acc4e9699ddc9">IMP_ISP_Tuning_SetDPStrength</link> (
+uint32_t ratio)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1gaffe4c444f061405d4d83fa6f1733971b">IMP_ISP_Tuning_SetAntiFogAttr</link> (
+<link linkend="group__IMP__ISP_1ga1c6ee3079840b5204cf27fce0a6a1058">IMPISPAntiFogAttr</link> attr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__ISP_1ga985a3366fc38e2d7053b1a9e4e5d7089">IMP_ISP_Tuning_GetEVAttr</link> (
+<link linkend="structIMPISPEVAttr">IMPISPEVAttr</link> * attr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Description détaillée</title>
+
+<para>ISP模块头文件 </para>
+    <para>Definition in file /home2/jean/projets/ipcam-100/programada_medio/include/imp/imp_isp.h</para>
+    </simplesect>
+</section>

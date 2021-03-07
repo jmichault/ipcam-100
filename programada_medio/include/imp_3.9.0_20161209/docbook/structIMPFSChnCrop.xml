@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="structIMPFSChnCrop">
+<title>IMPFSChnCrop struct Reference</title>
+<para>
+    <programlisting>#include <link linkend="imp__framesource_8h">&lt;imp_framesource.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for IMPFSChnCrop</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structIMPFSChnCrop__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for IMPFSChnCrop</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structIMPFSChnCrop__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Attributs publics</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int enable</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int left</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int top</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int width</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int height</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title>Description détaillée</title>
+
+<para>通道裁剪结构体 </para>
+                <para>Definition at line 90 of file imp_framesource.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_framesource.h</para></listitem></itemizedlist></para>
+        </simplesect>
+        <section>
+            <title>Documentation des données membres</title>
+            <simplesect>
+                <title>int IMPFSChnCrop::enable</title>                
+<para>使能裁剪功能 </para>
+
+                <para>Definition at line 91 of file imp_framesource.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_framesource.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>int IMPFSChnCrop::left</title>                
+<para>裁剪左起始点 </para>
+
+                <para>Definition at line 92 of file imp_framesource.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_framesource.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>int IMPFSChnCrop::top</title>                
+<para>裁剪上起始点 </para>
+
+                <para>Definition at line 93 of file imp_framesource.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_framesource.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>int IMPFSChnCrop::width</title>                
+<para>图片裁剪宽度 </para>
+
+                <para>Definition at line 94 of file imp_framesource.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_framesource.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>int IMPFSChnCrop::height</title>                
+<para>图片裁剪高度 </para>
+
+                <para>Definition at line 95 of file imp_framesource.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_framesource.h</para></listitem></itemizedlist></para>
+            </simplesect>
+        </section>
+</section>

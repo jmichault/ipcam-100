@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="structimp__isp__temper__denoise__attr">
+<title>imp_isp_temper_denoise_attr struct Reference</title>
+<para>
+    <programlisting>#include <link linkend="imp__isp_8h">&lt;imp_isp.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for imp_isp_temper_denoise_attr</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structimp__isp__temper__denoise__attr__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for imp_isp_temper_denoise_attr</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structimp__isp__temper__denoise__attr__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Attributs publics</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>IMPISPTemperMode type</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>unsigned char temper_strength</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title>Description détaillée</title>
+
+<para>ISP 时域降噪模块属性参数。 </para>
+                <para>Definition at line 463 of file imp_isp.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_isp.h</para></listitem></itemizedlist></para>
+        </simplesect>
+        <section>
+            <title>Documentation des données membres</title>
+            <simplesect>
+                <title>IMPISPTemperMode imp_isp_temper_denoise_attr::type</title>                
+<para>时域降噪功能操作类型，不使能，自动或手动 </para>
+
+                <para>Definition at line 464 of file imp_isp.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_isp.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>unsigned char imp_isp_temper_denoise_attr::temper_strength</title>                
+<para>时域降噪强度，手动模式有效，取值范围为[0, 0xff] </para>
+
+                <para>Definition at line 465 of file imp_isp.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_isp.h</para></listitem></itemizedlist></para>
+            </simplesect>
+        </section>
+</section>

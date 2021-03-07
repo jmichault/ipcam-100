@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Programmation T20:  Fichier source de imp_ivs_move.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Programmation T20
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">imp_ivs_move.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="imp__ivs__move_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * IMP IVS Move func header file.</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright (C) 2016 Ingenic Semiconductor Co.,Ltd</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef __IMP_IVS_MOVE_H__</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define __IMP_IVS_MOVE_H__</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#if __cplusplus</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* __cplusplus */</span><span class="preprocessor"></span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#define IMP_IVS_MOVE_MAX_ROI_CNT        4</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="imp__ivs_8h.html">imp/imp_ivs.h</a>&gt;</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div><div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="structIMP__IVS__MoveParam.html">   36</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="structIMP__IVS__MoveParam.html#ae2c9872fc0f9e92447b711eba1ddbd1b">   37</a></span>&#160;    <span class="keywordtype">int</span>             sense[IMP_IVS_MOVE_MAX_ROI_CNT];   </div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">int</span>             skipFrameCnt;                      <span class="comment">/*&lt; 隔帧检测的个数 */</span></div><div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="structIMP__IVS__MoveParam.html#a7c9a6d18220ab58560efb38df63773e7">   39</a></span>&#160;    <a class="code" href="structIMPFrameInfo.html">IMPFrameInfo</a>    <a class="code" href="structIMP__IVS__MoveParam.html#a7c9a6d18220ab58560efb38df63773e7">frameInfo</a>;                         </div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="structIMPRect.html">IMPRect</a>         roiRect[IMP_IVS_MOVE_MAX_ROI_CNT]; <span class="comment">/*&lt; 需要检测的roi区域坐标信息 */</span></div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">int</span>             roiRectCnt;                        <span class="comment">/*&lt; 需要检测的roi区域数量，范围为0-4，若为0：则不检测，1：检测roiRect 0</span></div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">                                                         区域，2、检测roiRect 0,1区域，3、检测roiRect 0,1,2区域，依次类推 */</span></div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;} <a class="code" href="structIMP__IVS__MoveParam.html">IMP_IVS_MoveParam</a>;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">// I suppose it has something to do with this sequence of bytes which is located in appfs/etc/sensor/jxf22move.txt:</span></div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">// 50 50 14 26 05 2b 3c 96 28 73 14 32 0f 28</span></div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"> * 移动侦测算法的输出结构体</span></div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="structIMP__IVS__MoveOutput.html">   50</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">int</span> retRoi[IMP_IVS_MOVE_MAX_ROI_CNT];               <span class="comment">/*&lt; 区域检测移动结果，与roiRect坐标信息严格对应 */</span></div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;} <a class="code" href="structIMP__IVS__MoveOutput.html">IMP_IVS_MoveOutput</a>;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<a class="code" href="structIMPIVSInterface.html">IMPIVSInterface</a> *<a class="code" href="group__MoveDetection.html#ga0a500236744b55e6a1787c8d1c8afa85">IMP_IVS_CreateMoveInterface</a>(<a class="code" href="structIMP__IVS__MoveParam.html">IMP_IVS_MoveParam</a> *param);</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__MoveDetection.html#ga09825798faad818b955d4a6b115693ff">IMP_IVS_DestroyMoveInterface</a>(<a class="code" href="structIMPIVSInterface.html">IMPIVSInterface</a> *moveInterface);</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#if __cplusplus</span></div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* __cplusplus */</span><span class="preprocessor"></span></div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* __IMP_IVS_MOVE_H__ */</span><span class="preprocessor"></span></div><div class="ttc" id="structIMPIVSInterface_html"><div class="ttname"><a href="structIMPIVSInterface.html">IMPIVSInterface</a></div><div class="ttdef"><b>Definition:</b> imp_ivs.h:126</div></div>
+<div class="ttc" id="structIMPFrameInfo_html"><div class="ttname"><a href="structIMPFrameInfo.html">IMPFrameInfo</a></div><div class="ttdef"><b>Definition:</b> imp_common.h:54</div></div>
+<div class="ttc" id="group__MoveDetection_html_ga0a500236744b55e6a1787c8d1c8afa85"><div class="ttname"><a href="group__MoveDetection.html#ga0a500236744b55e6a1787c8d1c8afa85">IMP_IVS_CreateMoveInterface</a></div><div class="ttdeci">IMPIVSInterface * IMP_IVS_CreateMoveInterface(IMP_IVS_MoveParam *param)</div></div>
+<div class="ttc" id="structIMPRect_html"><div class="ttname"><a href="structIMPRect.html">IMPRect</a></div><div class="ttdef"><b>Definition:</b> imp_common.h:151</div></div>
+<div class="ttc" id="imp__ivs_8h_html"><div class="ttname"><a href="imp__ivs_8h.html">imp_ivs.h</a></div></div>
+<div class="ttc" id="structIMP__IVS__MoveParam_html_a7c9a6d18220ab58560efb38df63773e7"><div class="ttname"><a href="structIMP__IVS__MoveParam.html#a7c9a6d18220ab58560efb38df63773e7">IMP_IVS_MoveParam::frameInfo</a></div><div class="ttdeci">IMPFrameInfo frameInfo</div><div class="ttdef"><b>Definition:</b> imp_ivs_move.h:39</div></div>
+<div class="ttc" id="structIMP__IVS__MoveParam_html"><div class="ttname"><a href="structIMP__IVS__MoveParam.html">IMP_IVS_MoveParam</a></div><div class="ttdef"><b>Definition:</b> imp_ivs_move.h:36</div></div>
+<div class="ttc" id="group__MoveDetection_html_ga09825798faad818b955d4a6b115693ff"><div class="ttname"><a href="group__MoveDetection.html#ga09825798faad818b955d4a6b115693ff">IMP_IVS_DestroyMoveInterface</a></div><div class="ttdeci">void IMP_IVS_DestroyMoveInterface(IMPIVSInterface *moveInterface)</div></div>
+<div class="ttc" id="structIMP__IVS__MoveOutput_html"><div class="ttname"><a href="structIMP__IVS__MoveOutput.html">IMP_IVS_MoveOutput</a></div><div class="ttdef"><b>Definition:</b> imp_ivs_move.h:50</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

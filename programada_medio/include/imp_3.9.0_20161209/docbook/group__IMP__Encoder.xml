@@ -1,0 +1,3263 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="group__IMP__Encoder">
+    <title>IMP_Encoder</title>
+<para>Collaboration diagram for IMP_Encoder</para>
+<para>
+    <figure>
+        <title>Group Collaboration diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="group__IMP__Encoder.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+
+<para>视频编码（H264, JPEG）模块，包含编码通道管理，编码参数设置等功能 </para>
+        <section>
+            <title>Description détaillée</title>
+<section xml:id="group__IMP__Encoder_1enc_struct">
+<title>1 模块结构</title>
+
+<para>Encoder模块内部结构如下如：  如上图所示，编码模块由若干个Group组成（在T15上支持两个Group），每个Group由编码Channel组成。 每个编码Channel附带一个输出码流缓冲区，这个缓冲区由多个buffer组成。 </para>
+</section>
+<section xml:id="group__IMP__Encoder_1enc_channel">
+<title>2 编码Channel</title>
+
+<para>一个编码Channel可以完成一种协议的编码。每个Group可以添加一个H264编码Channel与一个JPEG编码Channel。 </para>
+</section>
+<section xml:id="group__IMP__Encoder_1enc_rc">
+<title>3 码率控制</title>
+<section xml:id="group__IMP__Encoder_1enc_cbr">
+<title>3.1 CBR</title>
+
+<para>CBR（Constent Bit Rate）恒定比特率，即在码率统计时间内编码码率恒定。 以H.264 编码为例，用户可设置maxQp，minQp，bitrate等。 maxQp，minQp 用于控制图像的质量范围， bitrate 用于钳位码率统计时间内的平均编码码率。 当编码码率大于恒定码率时，图像QP 会逐步向maxQp 调整，当编码码率远小于恒定码率时，图像QP 会逐步向minQp 调整。 当图像QP 达到maxQp 时，QP 被钳位到最大值，bitrate 的钳位效果失效，编码码率有可能会超出bitrate。 当图像QP 达到minQp 时，QP 被钳位到最小值，此时编码的码率已经达到最大值，而且图像质量最好。 </para>
+</section>
+<section xml:id="group__IMP__Encoder_1enc_FixQP">
+<title>3.2 FixQP</title>
+
+<para>Fix Qp 固定Qp 值。在码率统计时间内，编码图像所有宏块Qp 值相同，采用用户设定的图像Qp值。 </para>
+</section>
+</section>
+        </section>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPEncoderFrmRate">IMPEncoderFrmRate</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPEncoderAttrH264FixQP">IMPEncoderAttrH264FixQP</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPEncoderAttrH264CBR">IMPEncoderAttrH264CBR</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPEncoderAttrH264VBR">IMPEncoderAttrH264VBR</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPEncoderAttrH264Demask">IMPEncoderAttrH264Demask</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPEncoderAttrH264Denoise">IMPEncoderAttrH264Denoise</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPEncoderAttrH264FrmUsed">IMPEncoderAttrH264FrmUsed</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPEncoderAttrH264HSkip">IMPEncoderAttrH264HSkip</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPEncoderAttrH264BSkip">IMPEncoderAttrH264BSkip</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPEncoderRcAttr">IMPEncoderRcAttr</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="unionIMPEncoderDataType">IMPEncoderDataType</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPEncoderPack">IMPEncoderPack</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPEncoderStream">IMPEncoderStream</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPEncoderCropCfg">IMPEncoderCropCfg</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPEncoderUserDataCfg">IMPEncoderUserDataCfg</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPEncoderAttr">IMPEncoderAttr</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPEncoderCHNAttr">IMPEncoderCHNAttr</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPEncoderCHNStat">IMPEncoderCHNStat</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPEncoderColor2GreyCfg">IMPEncoderColor2GreyCfg</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPEncoderEnIDRCfg">IMPEncoderEnIDRCfg</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPEncoderGOPSizeCfg">IMPEncoderGOPSizeCfg</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPEncoderROICfg">IMPEncoderROICfg</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Énumérations</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="group__IMP__Encoder_1gad5eed0dacdb612ee46f7632bfbe84887">IMPEncoderRcMode</link> {
+<link linkend="group__IMP__Encoder_1ggad5eed0dacdb612ee46f7632bfbe84887acc2e3e2a30ce0ba2985e9c2888581a96">ENC_RC_MODE_H264FIXQP</link>= 0,
+<link linkend="group__IMP__Encoder_1ggad5eed0dacdb612ee46f7632bfbe84887a9ae81a303dba193d1a5567b6f9b71114">ENC_RC_MODE_H264CBR</link>= 1,
+<link linkend="group__IMP__Encoder_1ggad5eed0dacdb612ee46f7632bfbe84887a699cac21642c603685f55691f68ab1e0">ENC_RC_MODE_H264ABR</link>= 2,
+<link linkend="group__IMP__Encoder_1ggad5eed0dacdb612ee46f7632bfbe84887ace8eaba12a5e712a368704fbb7a9041a">ENC_RC_MODE_H264VBR</link>= 3,
+<link linkend="group__IMP__Encoder_1ggad5eed0dacdb612ee46f7632bfbe84887ae0c329512aa5d7913ce2fd6fb1bcd8cd">ENC_RC_MODE_H264INV</link>= 4
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="group__IMP__Encoder_1gaa6daecd284e71915516b1a1b0beb0539">EncFrmUsedMode</link> {
+<link linkend="group__IMP__Encoder_1ggaa6daecd284e71915516b1a1b0beb0539a6cebe0b784335c2e8e9b450aade5bb53">ENC_FRM_BYPASS</link>= 0,
+<link linkend="group__IMP__Encoder_1ggaa6daecd284e71915516b1a1b0beb0539a72afacc8c9b69e1dbd4a956e47a68cfe">ENC_FRM_REUSED</link>= 1,
+<link linkend="group__IMP__Encoder_1ggaa6daecd284e71915516b1a1b0beb0539a53e9f5432580b0dd750213a6f3e46af5">ENC_FRM_SKIP</link>= 2
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="group__IMP__Encoder_1ga2d06ca8ebaf229b874ac585f08d60592">IMPH264SkipType</link> {
+<link linkend="group__IMP__Encoder_1gga2d06ca8ebaf229b874ac585f08d60592a91b81c014a517d1401b3c471b887af6e">IMP_H264_STYPE_N11</link>= 0,
+<link linkend="group__IMP__Encoder_1gga2d06ca8ebaf229b874ac585f08d60592acb3e88ae5d432a840295c7752c360d88">IMP_H264_STYPE_N1X</link>= 1,
+<link linkend="group__IMP__Encoder_1gga2d06ca8ebaf229b874ac585f08d60592a3386e5b0e8b0abaebcba0c5d4dd6071c">IMP_H264_STYPE_N2X</link>= 2,
+<link linkend="group__IMP__Encoder_1gga2d06ca8ebaf229b874ac585f08d60592a9ebaf9ad7fb7fc7d3ad3ea7727e3afda">IMP_H264_STYPE_N4X</link>= 3,
+<link linkend="group__IMP__Encoder_1gga2d06ca8ebaf229b874ac585f08d60592ab670215a37521e97fae9f4f2b435bcec">IMP_H264_STYPE_HN1_FALSE</link>= 4,
+<link linkend="group__IMP__Encoder_1gga2d06ca8ebaf229b874ac585f08d60592acdd735f0603b1c51c3542b27f87b26bf">IMP_H264_STYPE_HN1_TRUE</link>= 5,
+<link linkend="group__IMP__Encoder_1gga2d06ca8ebaf229b874ac585f08d60592a4f4a0ba417b2a848fb6829048f673de7">IMP_H264_STYPE_H1M_TRUE</link>= 6
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="group__IMP__Encoder_1ga6efe3f5c06d92d4c8d2efcfc5c9bcf9e">IMPH264RefType</link> {
+<link linkend="group__IMP__Encoder_1gga6efe3f5c06d92d4c8d2efcfc5c9bcf9ea883bcee0bf7690317f7cdffb3d2b4821">IMP_H264_FS_IDR</link>= 0,
+<link linkend="group__IMP__Encoder_1gga6efe3f5c06d92d4c8d2efcfc5c9bcf9ea3a1a29c9b83e2d1928bde2c99897c5b3">IMP_H264_FS_BASE</link>= 1,
+<link linkend="group__IMP__Encoder_1gga6efe3f5c06d92d4c8d2efcfc5c9bcf9eab58b99eaee184473424b288c02032bfa">IMP_H264_FS_ENHANCE</link>= 2
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="group__IMP__Encoder_1ga5878b6210ca20db23cd0ec337fe02256">IMPEncoderH264NaluType</link> {
+<link linkend="group__IMP__Encoder_1gga5878b6210ca20db23cd0ec337fe02256aa3cdebae908c724e7cbddbfb47afd806">IMP_NAL_UNKNOWN</link>= 0,
+<link linkend="group__IMP__Encoder_1gga5878b6210ca20db23cd0ec337fe02256aa1724f07ff17d7e0abf7a9357d8b5a54">IMP_NAL_SLICE</link>= 1,
+<link linkend="group__IMP__Encoder_1gga5878b6210ca20db23cd0ec337fe02256a612ebc0180ca61600dc35607d5c7bd42">IMP_NAL_SLICE_DPA</link>= 2,
+<link linkend="group__IMP__Encoder_1gga5878b6210ca20db23cd0ec337fe02256a5f6e7b958fabdb9aec19f0712f41715f">IMP_NAL_SLICE_DPB</link>= 3,
+<link linkend="group__IMP__Encoder_1gga5878b6210ca20db23cd0ec337fe02256a14c8c3e7ba0fd7f954a13fc221d69277">IMP_NAL_SLICE_DPC</link>= 4,
+<link linkend="group__IMP__Encoder_1gga5878b6210ca20db23cd0ec337fe02256a9871468577bec810533ee78f05e9e28c">IMP_NAL_SLICE_IDR</link>= 5,
+<link linkend="group__IMP__Encoder_1gga5878b6210ca20db23cd0ec337fe02256a3dca5bd23c26d93c5edece1fdec07816">IMP_NAL_SEI</link>= 6,
+<link linkend="group__IMP__Encoder_1gga5878b6210ca20db23cd0ec337fe02256ae722f384afebe910949d107d276e0af8">IMP_NAL_SPS</link>= 7,
+<link linkend="group__IMP__Encoder_1gga5878b6210ca20db23cd0ec337fe02256a5be3d222ad4371a7e453db8df38a8aa8">IMP_NAL_PPS</link>= 8,
+<link linkend="group__IMP__Encoder_1gga5878b6210ca20db23cd0ec337fe02256a9a0472bfa06d303604df32cba22f0840">IMP_NAL_AUD</link>= 9,
+<link linkend="group__IMP__Encoder_1gga5878b6210ca20db23cd0ec337fe02256a4431fcbc85b85648dfc7f32ec99384b8">IMP_NAL_FILLER</link>= 12
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Fonctions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Encoder_1ga96199baedda4efe1bb1b1c0d26a2fe76">IMP_Encoder_CreateGroup</link> (
+int encGroup)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Encoder_1ga757f098ab2eabe6c7c4344f73d5bec51">IMP_Encoder_DestroyGroup</link> (
+int encGroup)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Encoder_1ga83b8af8deb1af4409fabcfeeee4e9f83">IMP_Encoder_CreateChn</link> (
+int encChn, const <link linkend="structIMPEncoderCHNAttr">IMPEncoderCHNAttr</link> * attr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Encoder_1gae169e594d5ba0573da4d87b61b23206a">IMP_Encoder_DestroyChn</link> (
+int encChn)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Encoder_1gaa3c8bf9ed10ce53d782521eae77cc557">IMP_Encoder_GetChnAttr</link> (
+int encChn, <link linkend="structIMPEncoderCHNAttr">IMPEncoderCHNAttr</link> *const attr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Encoder_1gab5b49fb276c463b7a62ddfad44a45a93">IMP_Encoder_RegisterChn</link> (
+int encGroup, int encChn)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Encoder_1gaaa31d5bcd407054992c2a56060a1795d">IMP_Encoder_UnRegisterChn</link> (
+int encChn)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Encoder_1ga8fe7e5b00167cf122da13f1d2e07eb6d">IMP_Encoder_StartRecvPic</link> (
+int encChn)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Encoder_1ga30a590183b70833aac280a84b153990b">IMP_Encoder_StopRecvPic</link> (
+int encChn)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Encoder_1ga03a1a3a1e81cfd87af27fb48f50f0140">IMP_Encoder_Query</link> (
+int encChn, <link linkend="structIMPEncoderCHNStat">IMPEncoderCHNStat</link> * stat)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Encoder_1ga6964862ca76079154db97cf135acd320">IMP_Encoder_GetStream</link> (
+int encChn, <link linkend="structIMPEncoderStream">IMPEncoderStream</link> * stream, bool blockFlag)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Encoder_1gad33dd934911cf7bd318bfad4af16dd2f">IMP_Encoder_ReleaseStream</link> (
+int encChn, <link linkend="structIMPEncoderStream">IMPEncoderStream</link> * stream)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Encoder_1ga489eaff2c945a840054b165011825932">IMP_Encoder_PollingStream</link> (
+int encChn, uint32_t timeoutMsec)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Encoder_1ga26d0491a35a43e156823b2f5f384e4cb">IMP_Encoder_SetMaxStreamCnt</link> (
+int encChn, int nrMaxStream)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Encoder_1ga785e84d3d6acbe878e2c27f54e3d70cb">IMP_Encoder_GetMaxStreamCnt</link> (
+int encChn, int * nrMaxStream)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Encoder_1ga76af240bb189528c1451acf328448f3a">IMP_Encoder_RequestIDR</link> (
+int encChn)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Encoder_1gae9b2ff7b20b172bb9a892fe5e0f333c0">IMP_Encoder_FlushStream</link> (
+int encChn)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Encoder_1ga90194e455e8673609a04137fc7a39741">IMP_Encoder_SetChnColor2Grey</link> (
+int encChn, const <link linkend="structIMPEncoderColor2GreyCfg">IMPEncoderColor2GreyCfg</link> * pstColor2Grey)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Encoder_1ga08be4837c32bc225a517124802206978">IMP_Encoder_GetChnColor2Grey</link> (
+int encChn, <link linkend="structIMPEncoderColor2GreyCfg">IMPEncoderColor2GreyCfg</link> * pstColor2Grey)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Encoder_1ga92c7e9c18cd76648fef6037fa46292a2">IMP_Encoder_SetChnRcAttr</link> (
+int encChn, const <link linkend="structIMPEncoderRcAttr">IMPEncoderRcAttr</link> * pstRcCfg)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Encoder_1gadd0625182442c01687c759b3d889ecd3">IMP_Encoder_GetChnRcAttr</link> (
+int encChn, <link linkend="structIMPEncoderRcAttr">IMPEncoderRcAttr</link> * pstRcCfg)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Encoder_1ga4c8e301e6090fb27bd0bc2f2795229f2">IMP_Encoder_SetChnFrmRate</link> (
+int encChn, const <link linkend="structIMPEncoderFrmRate">IMPEncoderFrmRate</link> * pstFps)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Encoder_1ga8636080246a8ec7844745b8c6cc862a6">IMP_Encoder_GetChnFrmRate</link> (
+int encChn, <link linkend="structIMPEncoderFrmRate">IMPEncoderFrmRate</link> * pstFps)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Encoder_1ga8d981749a3f1ee9b482152ce367d9ba2">IMP_Encoder_SetChnROI</link> (
+int encChn, const <link linkend="structIMPEncoderROICfg">IMPEncoderROICfg</link> * pstVencRoiCfg)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Encoder_1gabe8b833d724ed6ff312390843a5ec98b">IMP_Encoder_GetChnROI</link> (
+int encChn, <link linkend="structIMPEncoderROICfg">IMPEncoderROICfg</link> * pstVencRoiCfg)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Encoder_1ga48eb55dbb0b14c7e4a1416b620e263d1">IMP_Encoder_GetGOPSize</link> (
+int encChn, <link linkend="structIMPEncoderGOPSizeCfg">IMPEncoderGOPSizeCfg</link> * pstGOPSizeCfg)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Encoder_1ga1b4bd71c5c1828bcfffd88fc6c390b78">IMP_Encoder_SetGOPSize</link> (
+int encChn, const <link linkend="structIMPEncoderGOPSizeCfg">IMPEncoderGOPSizeCfg</link> * pstGOPSizeCfg)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Encoder_1gab411469004836f222e1004994fa30517">IMP_Encoder_SetChnH264Demask</link> (
+int encChn, const <link linkend="structIMPEncoderAttrH264Demask">IMPEncoderAttrH264Demask</link> * pdemaskAttr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Encoder_1ga1de6bf93238e99c87e96ad185fcd03cf">IMP_Encoder_GetChnH264Demask</link> (
+int encChn, <link linkend="structIMPEncoderAttrH264Demask">IMPEncoderAttrH264Demask</link> * pdemaskAttr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Encoder_1ga8f6309334d825eaa050719f3a2d435ee">IMP_Encoder_SetChnH264FrmUsedMode</link> (
+int encChn, const <link linkend="structIMPEncoderAttrH264FrmUsed">IMPEncoderAttrH264FrmUsed</link> * pfrmUsedAttr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Encoder_1ga877a389fe2632b7042a8d0a8d872d4c6">IMP_Encoder_GetChnH264FrmUsedMode</link> (
+int encChn, <link linkend="structIMPEncoderAttrH264FrmUsed">IMPEncoderAttrH264FrmUsed</link> * pfrmUsedAttr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Encoder_1gafa66a94468da7567b6a9b0e65b8a98ee">IMP_Encoder_SetChnH264Denoise</link> (
+int encChn, const <link linkend="structIMPEncoderAttrH264Denoise">IMPEncoderAttrH264Denoise</link> * pdenoiseAttr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Encoder_1gad0f9dd9cb56142bf3869cb8a2735a5e8">IMP_Encoder_GetChnH264Denoise</link> (
+int encChn, <link linkend="structIMPEncoderAttrH264Denoise">IMPEncoderAttrH264Denoise</link> * pdenoiseAttr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Encoder_1gac9be6a8b3faf5df3e07346f40d673327">IMP_Encoder_InsertUserData</link> (
+int encChn, void * userData, uint32_t userDataLen)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Encoder_1ga7eddd99abbfeeafa72ef008c8ea24c21">IMP_Encoder_SetFisheyeEnableStatus</link> (
+int encChn, int enable)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Encoder_1gabf6b911bb55ca6806fa0a072d1b7e83a">IMP_Encoder_GetFisheyeEnableStatus</link> (
+int encChn, int * enable)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Documentation du type de l'énumération</title>
+            <section xml:id="group__IMP__Encoder_1gad5eed0dacdb612ee46f7632bfbe84887">
+               <title>enum IMPEncoderRcMode </title>
+               
+<para>定义编码Channel码率控制器模式 </para>
+
+               <formalpara>
+                    <title>Valeurs énumérées:</title>
+                    <variablelist>
+                        <varlistentry xml:id="group__IMP__Encoder_1ggad5eed0dacdb612ee46f7632bfbe84887acc2e3e2a30ce0ba2985e9c2888581a96">
+                            <term>ENC_RC_MODE_H264FIXQP</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="group__IMP__Encoder_1ggad5eed0dacdb612ee46f7632bfbe84887a9ae81a303dba193d1a5567b6f9b71114">
+                            <term>ENC_RC_MODE_H264CBR</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="group__IMP__Encoder_1ggad5eed0dacdb612ee46f7632bfbe84887a699cac21642c603685f55691f68ab1e0">
+                            <term>ENC_RC_MODE_H264ABR</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="group__IMP__Encoder_1ggad5eed0dacdb612ee46f7632bfbe84887ace8eaba12a5e712a368704fbb7a9041a">
+                            <term>ENC_RC_MODE_H264VBR</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="group__IMP__Encoder_1ggad5eed0dacdb612ee46f7632bfbe84887ae0c329512aa5d7913ce2fd6fb1bcd8cd">
+                            <term>ENC_RC_MODE_H264INV</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 52 of file imp_encoder.h
+                    <computeroutput><literallayout>
+{
+ENC_RC_MODE_H264FIXQP= 0, 
+ENC_RC_MODE_H264CBR= 1, 
+ENC_RC_MODE_H264ABR= 2, 
+ENC_RC_MODE_H264VBR= 3, 
+ENC_RC_MODE_H264INV= 4, 
+}IMPEncoderRcMode;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+            <section xml:id="group__IMP__Encoder_1gaa6daecd284e71915516b1a1b0beb0539">
+               <title>enum EncFrmUsedMode </title>
+               
+<para>定义H.264编码Channel输入帧使用模式 </para>
+
+               <formalpara>
+                    <title>Valeurs énumérées:</title>
+                    <variablelist>
+                        <varlistentry xml:id="group__IMP__Encoder_1ggaa6daecd284e71915516b1a1b0beb0539a6cebe0b784335c2e8e9b450aade5bb53">
+                            <term>ENC_FRM_BYPASS</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="group__IMP__Encoder_1ggaa6daecd284e71915516b1a1b0beb0539a72afacc8c9b69e1dbd4a956e47a68cfe">
+                            <term>ENC_FRM_REUSED</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="group__IMP__Encoder_1ggaa6daecd284e71915516b1a1b0beb0539a53e9f5432580b0dd750213a6f3e46af5">
+                            <term>ENC_FRM_SKIP</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 133 of file imp_encoder.h
+                    <computeroutput><literallayout>
+{
+ENC_FRM_BYPASS= 0, 
+ENC_FRM_REUSED= 1, 
+ENC_FRM_SKIP= 2, 
+}EncFrmUsedMode;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+            <section xml:id="group__IMP__Encoder_1ga2d06ca8ebaf229b874ac585f08d60592">
+               <title>enum IMPH264SkipType </title>
+               
+               <formalpara>
+                    <title>Valeurs énumérées:</title>
+                    <variablelist>
+                        <varlistentry xml:id="group__IMP__Encoder_1gga2d06ca8ebaf229b874ac585f08d60592a91b81c014a517d1401b3c471b887af6e">
+                            <term>IMP_H264_STYPE_N11</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="group__IMP__Encoder_1gga2d06ca8ebaf229b874ac585f08d60592acb3e88ae5d432a840295c7752c360d88">
+                            <term>IMP_H264_STYPE_N1X</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="group__IMP__Encoder_1gga2d06ca8ebaf229b874ac585f08d60592a3386e5b0e8b0abaebcba0c5d4dd6071c">
+                            <term>IMP_H264_STYPE_N2X</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="group__IMP__Encoder_1gga2d06ca8ebaf229b874ac585f08d60592a9ebaf9ad7fb7fc7d3ad3ea7727e3afda">
+                            <term>IMP_H264_STYPE_N4X</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="group__IMP__Encoder_1gga2d06ca8ebaf229b874ac585f08d60592ab670215a37521e97fae9f4f2b435bcec">
+                            <term>IMP_H264_STYPE_HN1_FALSE</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="group__IMP__Encoder_1gga2d06ca8ebaf229b874ac585f08d60592acdd735f0603b1c51c3542b27f87b26bf">
+                            <term>IMP_H264_STYPE_HN1_TRUE</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="group__IMP__Encoder_1gga2d06ca8ebaf229b874ac585f08d60592a4f4a0ba417b2a848fb6829048f673de7">
+                            <term>IMP_H264_STYPE_H1M_TRUE</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 148 of file imp_encoder.h
+                    <computeroutput><literallayout>
+{
+IMP_H264_STYPE_N11= 0, 
+IMP_H264_STYPE_N1X= 1, 
+IMP_H264_STYPE_N2X= 2, 
+IMP_H264_STYPE_N4X= 3, 
+IMP_H264_STYPE_HN1_FALSE= 4, 
+IMP_H264_STYPE_HN1_TRUE= 5, 
+IMP_H264_STYPE_H1M_TRUE= 6, 
+}IMPH264SkipType;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+            <section xml:id="group__IMP__Encoder_1ga6efe3f5c06d92d4c8d2efcfc5c9bcf9e">
+               <title>enum IMPH264RefType </title>
+               
+               <formalpara>
+                    <title>Valeurs énumérées:</title>
+                    <variablelist>
+                        <varlistentry xml:id="group__IMP__Encoder_1gga6efe3f5c06d92d4c8d2efcfc5c9bcf9ea883bcee0bf7690317f7cdffb3d2b4821">
+                            <term>IMP_H264_FS_IDR</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="group__IMP__Encoder_1gga6efe3f5c06d92d4c8d2efcfc5c9bcf9ea3a1a29c9b83e2d1928bde2c99897c5b3">
+                            <term>IMP_H264_FS_BASE</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="group__IMP__Encoder_1gga6efe3f5c06d92d4c8d2efcfc5c9bcf9eab58b99eaee184473424b288c02032bfa">
+                            <term>IMP_H264_FS_ENHANCE</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 158 of file imp_encoder.h
+                    <computeroutput><literallayout>
+{
+IMP_H264_FS_IDR= 0, 
+IMP_H264_FS_BASE= 1, 
+IMP_H264_FS_ENHANCE= 2, 
+}IMPH264RefType;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+            <section xml:id="group__IMP__Encoder_1ga5878b6210ca20db23cd0ec337fe02256">
+               <title>enum IMPEncoderH264NaluType </title>
+               
+<para>H264码流NALU类型 </para>
+
+               <formalpara>
+                    <title>Valeurs énumérées:</title>
+                    <variablelist>
+                        <varlistentry xml:id="group__IMP__Encoder_1gga5878b6210ca20db23cd0ec337fe02256aa3cdebae908c724e7cbddbfb47afd806">
+                            <term>IMP_NAL_UNKNOWN</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="group__IMP__Encoder_1gga5878b6210ca20db23cd0ec337fe02256aa1724f07ff17d7e0abf7a9357d8b5a54">
+                            <term>IMP_NAL_SLICE</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="group__IMP__Encoder_1gga5878b6210ca20db23cd0ec337fe02256a612ebc0180ca61600dc35607d5c7bd42">
+                            <term>IMP_NAL_SLICE_DPA</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="group__IMP__Encoder_1gga5878b6210ca20db23cd0ec337fe02256a5f6e7b958fabdb9aec19f0712f41715f">
+                            <term>IMP_NAL_SLICE_DPB</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="group__IMP__Encoder_1gga5878b6210ca20db23cd0ec337fe02256a14c8c3e7ba0fd7f954a13fc221d69277">
+                            <term>IMP_NAL_SLICE_DPC</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="group__IMP__Encoder_1gga5878b6210ca20db23cd0ec337fe02256a9871468577bec810533ee78f05e9e28c">
+                            <term>IMP_NAL_SLICE_IDR</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="group__IMP__Encoder_1gga5878b6210ca20db23cd0ec337fe02256a3dca5bd23c26d93c5edece1fdec07816">
+                            <term>IMP_NAL_SEI</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="group__IMP__Encoder_1gga5878b6210ca20db23cd0ec337fe02256ae722f384afebe910949d107d276e0af8">
+                            <term>IMP_NAL_SPS</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="group__IMP__Encoder_1gga5878b6210ca20db23cd0ec337fe02256a5be3d222ad4371a7e453db8df38a8aa8">
+                            <term>IMP_NAL_PPS</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="group__IMP__Encoder_1gga5878b6210ca20db23cd0ec337fe02256a9a0472bfa06d303604df32cba22f0840">
+                            <term>IMP_NAL_AUD</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="group__IMP__Encoder_1gga5878b6210ca20db23cd0ec337fe02256a4431fcbc85b85648dfc7f32ec99384b8">
+                            <term>IMP_NAL_FILLER</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 201 of file imp_encoder.h
+                    <computeroutput><literallayout>
+{
+IMP_NAL_UNKNOWN= 0, 
+IMP_NAL_SLICE= 1, 
+IMP_NAL_SLICE_DPA= 2, 
+IMP_NAL_SLICE_DPB= 3, 
+IMP_NAL_SLICE_DPC= 4, 
+IMP_NAL_SLICE_IDR= 5, 
+IMP_NAL_SEI= 6, 
+IMP_NAL_SPS= 7, 
+IMP_NAL_PPS= 8, 
+IMP_NAL_AUD= 9, 
+IMP_NAL_FILLER= 12, 
+}IMPEncoderH264NaluType;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+        </section>
+        <section>
+            <title>Documentation des fonctions</title>
+            <section xml:id="group__IMP__Encoder_1ga96199baedda4efe1bb1b1c0d26a2fe76">
+                <title>int IMP_Encoder_CreateGroup (int encGroup)</title> <emphasis></emphasis>
+                
+<para>创建编码Group</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>encGroup</entry>
+                                <entry>
+<para>Group号,取值范围:[0, NR_MAX_ENC_GROUPS - 1]</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>一路Group仅支持一路分辨率，不同分辨率需启动新的Group。一路Group同时支持一路H264和一路JPEG抓拍</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>如果指定的Group已经存在，则返回失败 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Encoder_1ga757f098ab2eabe6c7c4344f73d5bec51">
+                <title>int IMP_Encoder_DestroyGroup (int encGroup)</title> <emphasis></emphasis>
+                
+<para>销毁编码Grouop.</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>encGroup</entry>
+                                <entry>
+<para>Group号,取值范围:[0, NR_MAX_ENC_GROUPS - 1]</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>销毁Group时，必须保证Group为空，即没有任何Channel在Group中注册，或注册到Group中 的Channel已经反注册，否则返回失败</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>销毁并不存在的Group，则返回失败 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Encoder_1ga83b8af8deb1af4409fabcfeeee4e9f83">
+                <title>int IMP_Encoder_CreateChn (int encChn, const IMPEncoderCHNAttr *attr)</title> <emphasis></emphasis>
+                
+<para>创建编码Channel</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>encChn</entry>
+                                <entry>
+<para>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>attr</entry>
+                                <entry>
+<para>编码Channel属性指针</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>编码Channel属性由两部分组成，编码器属性和码率控制属性 </para>
+<simplesect/>
+<para>编码器属性首先需要选择编码协议，然后分别对各种协议对应的属性进行赋值 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Encoder_1gae169e594d5ba0573da4d87b61b23206a">
+                <title>int IMP_Encoder_DestroyChn (int encChn)</title> <emphasis></emphasis>
+                
+<para>销毁编码Channel</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>encChn</entry>
+                                <entry>
+<para>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1]</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Attention: </title>
+
+<para>销毁并不存在的Channel，则返回失败 </para>
+<simplesect/>
+<para>销毁前必须保证Channel已经从Group反注册，否则返回失败 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Encoder_1gaa3c8bf9ed10ce53d782521eae77cc557">
+                <title>int IMP_Encoder_GetChnAttr (int encChn, IMPEncoderCHNAttr *const attr)</title> <emphasis></emphasis>
+                
+<para>获取编码Channel的属性</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>encChn</entry>
+                                <entry>
+<para>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>attr</entry>
+                                <entry>
+<para>编码Channel属性</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败 </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="group__IMP__Encoder_1gab5b49fb276c463b7a62ddfad44a45a93">
+                <title>int IMP_Encoder_RegisterChn (int encGroup, int encChn)</title> <emphasis></emphasis>
+                
+<para>注册编码Channel到Group</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>encGroup</entry>
+                                <entry>
+<para>编码Group号,取值范围: [0, NR_MAX_ENC_GROUPS - 1] </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>encChn</entry>
+                                <entry>
+<para>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1]</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Attention: </title>
+
+<para>注册并不存在的Channel，则返回失败 </para>
+<simplesect/>
+<para>注册Channel到不存在的Group，否则返回失败 </para>
+<simplesect/>
+<para>同一个编码Channel只能注册到一个Group，如果该Channel已经注册到某个Group，则返回失败 </para>
+<simplesect/>
+<para>如果一个Group已经被注册，那么这个Group就不能再被其他的Channel注册，除非之前注册关系被解除 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Encoder_1gaaa31d5bcd407054992c2a56060a1795d">
+                <title>int IMP_Encoder_UnRegisterChn (int encChn)</title> <emphasis></emphasis>
+                
+<para>反注册编码Channel到Group</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>encChn</entry>
+                                <entry>
+<para>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1]</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>Channel注销之后，编码Channel会被复位，编码Channel里的码流buffer都会被清空，如果用户还在使用 未及时释放的码流buffer，将不能保证buffer数据的正确性，用户可以使用IMP_Encoder_Query接口来查询编 码Channel码流buffer状态，确认码流buffer里的码流取完之后再反注册Channel</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>注销未创建的Channel，则返回失败 </para>
+<simplesect/>
+<para>注销未注册的Channel，则返回失败 </para>
+<simplesect/>
+<para>如果编码Channel未停止接收图像编码，则返回失败 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Encoder_1ga8fe7e5b00167cf122da13f1d2e07eb6d">
+                <title>int IMP_Encoder_StartRecvPic (int encChn)</title> <emphasis></emphasis>
+                
+<para>开启编码Channel接收图像</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>encChn</entry>
+                                <entry>
+<para>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1]</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>开启编码Channel接收图像后才能开始编码</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>如果Channel未创建，则返回失败 </para>
+<simplesect/>
+<para>如果Channel没有注册到Group，则返回失败 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Encoder_1ga30a590183b70833aac280a84b153990b">
+                <title>int IMP_Encoder_StopRecvPic (int encChn)</title> <emphasis></emphasis>
+                
+<para>停止编码Channel接收图像</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>encChn</entry>
+                                <entry>
+<para>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1]</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>此接口并不判断当前是否停止接收，即允许重复停止接收不返回错误 </para>
+<simplesect/>
+<para>调用此接口仅停止接收原始数据编码，码流buffer并不会被消除</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>如果Channel未创建，则返回失败 </para>
+<simplesect/>
+<para>如果Channel没有注册到Group，则返回失败 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Encoder_1ga03a1a3a1e81cfd87af27fb48f50f0140">
+                <title>int IMP_Encoder_Query (int encChn, IMPEncoderCHNStat *stat)</title> <emphasis></emphasis>
+                
+<para>查询编码Channel状态</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>encChn</entry>
+                                <entry>
+<para>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>stat</entry>
+                                <entry>
+<para>编码Channel状态</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>无</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Encoder_1ga6964862ca76079154db97cf135acd320">
+                <title>int IMP_Encoder_GetStream (int encChn, IMPEncoderStream *stream, bool blockFlag)</title> <emphasis></emphasis>
+                
+<para>获取编码的码流</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>encChn</entry>
+                                <entry>
+<para>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>stream</entry>
+                                <entry>
+<para>码流结构体指针 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>blockFlag</entry>
+                                <entry>
+<para>是否使用阻塞方式获取，0：非阻塞，1：阻塞</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>每次获取一帧码流的数据 </para>
+<simplesect/>
+<para>如果用户长时间不获取码流,码流缓冲区就会满。一个编码Channel如果发生码流缓冲区满,就会把后 面接收的图像丢掉,直到用户获取码流,从而有足够的码流缓冲可以用于编码时,才开始继续编码。建议用户 获取码流接口调用与释放码流的接口调用成对出现,且尽快释放码流,防止出现由于用户态获取码流,释放不 及时而导致的码流 buffer 满,停止编码。 </para>
+<simplesect/>
+<para>对于H264类型码流，一次调用成功获取一帧的码流，这帧码流可能包含多个包。 </para>
+<simplesect/>
+<para>对于JPEG类型码流，一次调用成功获取一帧的码流，这帧码流只包含一个包，这一帧包含了JPEG图片文件的完整信息。</para>
+</formalpara>
+示例： <literallayout><computeroutput>int&#32;ret;
+ret&#32;=&#32;IMP_Encoder_PollingStream(ENC_H264_CHANNEL,&#32;1000);&#32;//Polling码流Buffer，等待可获取状态
+if&#32;(ret&#32;&lt;&#32;0)&#32;{
+&#32;&#32;&#32;&#32;printf(&quot;Polling&#32;stream&#32;timeout\n&quot;);
+&#32;&#32;&#32;&#32;return&#32;-1;
+}
+
+IMPEncoderStream&#32;stream;
+ret&#32;=&#32;IMP_Encoder_GetStream(ENC_H264_CHANNEL,&#32;&amp;stream,&#32;1);&#32;//获取一帧码流，阻塞方式
+if&#32;(ret&#32;&lt;&#32;0)&#32;{
+&#32;&#32;&#32;&#32;printf(&quot;Get&#32;Stream&#32;failed\n&quot;);
+&#32;&#32;&#32;&#32;return&#32;-1;
+}
+
+int&#32;i,&#32;nr_pack&#32;=&#32;stream.packCount;
+for&#32;(i&#32;=&#32;0;&#32;i&#32;&lt;&#32;nr_pack;&#32;i++)&#32;{&#32;//保存这一帧码流的每个包
+&#32;&#32;&#32;&#32;ret&#32;=&#32;write(stream_fd,&#32;(void&#32;*)stream.pack[i].virAddr,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;stream.pack[i].length);
+&#32;&#32;&#32;&#32;if&#32;(ret&#32;!=&#32;stream.pack[i].length)&#32;{
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;printf(&quot;stream&#32;write&#32;error:%s\n&quot;,&#32;strerror(errno));
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;return&#32;-1;
+&#32;&#32;&#32;&#32;}
+}
+</computeroutput></literallayout></para>
+
+<para><formalpara><title>Attention: </title>
+
+<para>如果pstStream为NULL,则返回失败； </para>
+<simplesect/>
+<para>如果Channel未创建，则返回失败； </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Encoder_1gad33dd934911cf7bd318bfad4af16dd2f">
+                <title>int IMP_Encoder_ReleaseStream (int encChn, IMPEncoderStream *stream)</title> <emphasis></emphasis>
+                
+<para>释放码流缓存</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>encChn</entry>
+                                <entry>
+<para>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>stream</entry>
+                                <entry>
+<para>码流结构体指针</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>此接口应当和IMP_Encoder_GetStream配对起来使用，
+<literallayout>
+</literallayout>
+用户获取码流后必须及时释放已经获取的码流缓存，否则可能会导致码流buffer满，影响编码器编码。
+<literallayout>
+</literallayout>
+并且用户必须按先获取先 释放的顺序释放已经获取的码流缓存； </para>
+<simplesect/>
+<para>在编码Channel反注册后，所有未释放的码流包均无效，不能再使用或者释放这部分无效的码流缓存。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>如果pstStream为NULL,则返回失败； </para>
+<simplesect/>
+<para>如果Channel未创建，则返回失败； </para>
+<simplesect/>
+<para>释放无效的码流会返回失败。 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Encoder_1ga489eaff2c945a840054b165011825932">
+                <title>int IMP_Encoder_PollingStream (int encChn, uint32_t timeoutMsec)</title> <emphasis></emphasis>
+                
+<para>Polling码流缓存</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>encChn</entry>
+                                <entry>
+<para>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>timeoutMsec</entry>
+                                <entry>
+<para>超时时间，单位：毫秒</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>在获取码流之前可以用过此API进行Polling，当码流缓存不为空时或超时时函数返回。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Encoder_1ga26d0491a35a43e156823b2f5f384e4cb">
+                <title>int IMP_Encoder_SetMaxStreamCnt (int encChn, int nrMaxStream)</title> <emphasis></emphasis>
+                
+<para>设置码流缓存Buffer个数</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>encChn</entry>
+                                <entry>
+<para>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>nrMaxStream</entry>
+                                <entry>
+<para>码流Buffer数,取值范围: [1, NR_MAX_ENC_CHN_STREAM]</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>由于码流缓存Buffer个数在通道创建时就已经固定，因此次API需要在通道创建之前调用。 </para>
+<simplesect/>
+<para>若通道创建之前不调用此API设置码流缓存Buffer个数，则H264通道默认个数为5，JPEG通道默认个数为1。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Encoder_1ga785e84d3d6acbe878e2c27f54e3d70cb">
+                <title>int IMP_Encoder_GetMaxStreamCnt (int encChn, int *nrMaxStream)</title> <emphasis></emphasis>
+                
+<para>获取码流Buffer数</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>encChn</entry>
+                                <entry>
+<para>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>nrMaxStream</entry>
+                                <entry>
+<para>码流Buffer数变量指针</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>无</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Encoder_1ga76af240bb189528c1451acf328448f3a">
+                <title>int IMP_Encoder_RequestIDR (int encChn)</title> <emphasis></emphasis>
+                
+<para>请求IDR帧</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>encChn</entry>
+                                <entry>
+<para>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1]</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>在调用此API后，会在最近的编码帧申请IDR帧编码。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Encoder_1gae9b2ff7b20b172bb9a892fe5e0f333c0">
+                <title>int IMP_Encoder_FlushStream (int encChn)</title> <emphasis></emphasis>
+                
+<para>刷掉编码器里残留的旧码流，并以IDR帧开始编码</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>encChn</entry>
+                                <entry>
+<para>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1]</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>在调用此API后，会在最近的编码帧申请IDR帧编码。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Encoder_1ga90194e455e8673609a04137fc7a39741">
+                <title>int IMP_Encoder_SetChnColor2Grey (int encChn, const IMPEncoderColor2GreyCfg *pstColor2Grey)</title> <emphasis></emphasis>
+                
+<para>设置彩转灰功能</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>encChn</entry>
+                                <entry>
+<para>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>pstColor2Grey</entry>
+                                <entry>
+<para>彩转灰功能的参数</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>调用此API设置通道的彩转灰功能，在下一个IDR或者P帧生效。 调用此API需要通道已经存在。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Encoder_1ga08be4837c32bc225a517124802206978">
+                <title>int IMP_Encoder_GetChnColor2Grey (int encChn, IMPEncoderColor2GreyCfg *pstColor2Grey)</title> <emphasis></emphasis>
+                
+<para>获取彩转灰功能属性</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>encChn</entry>
+                                <entry>
+<para>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>pstColor2Grey</entry>
+                                <entry>
+<para>彩转灰功能的参数</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>调用此API会获取通道的彩转灰功能属性，调用此API需要通道已经存在。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>此函数对JPEG通道无意义。 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Encoder_1ga92c7e9c18cd76648fef6037fa46292a2">
+                <title>int IMP_Encoder_SetChnRcAttr (int encChn, const IMPEncoderRcAttr *pstRcCfg)</title> <emphasis></emphasis>
+                
+<para>设置码率控制属性</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>encChn</entry>
+                                <entry>
+<para>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>pstRcCfg</entry>
+                                <entry>
+<para>码率控制属性参数</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>调用此API会设置通道的码率控制属性，下一个IDR生效,调用此API需要通道已经存在。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>目前，码率控制支持ENC_RC_MODE_H264FIXQP与ENC_RC_MODE_H264CBR。 ENC_RC_MODE_H264FIXQP支持配置qp，ENC_RC_MODE_H264CBR支持配置outBitRate。 </para>
+<simplesect/>
+<para>此函数对JPEG通道无意义。 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Encoder_1gadd0625182442c01687c759b3d889ecd3">
+                <title>int IMP_Encoder_GetChnRcAttr (int encChn, IMPEncoderRcAttr *pstRcCfg)</title> <emphasis></emphasis>
+                
+<para>获取码率控制属性</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>encChn</entry>
+                                <entry>
+<para>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>pstRcCfg</entry>
+                                <entry>
+<para>码率控制属性参数</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>调用此API会获取通道的码率控制属性，调用此API需要通道已经存在。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>此函数对JPEG通道无意义。 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Encoder_1ga4c8e301e6090fb27bd0bc2f2795229f2">
+                <title>int IMP_Encoder_SetChnFrmRate (int encChn, const IMPEncoderFrmRate *pstFps)</title> <emphasis></emphasis>
+                
+<para>动态设置帧率控制属性</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>encChn</entry>
+                                <entry>
+<para>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>pstFpsCfg</entry>
+                                <entry>
+<para>帧率控制属性参数</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>调用此API会重新设置编码器帧率属性，帧率属性在下一个GOP生效，最大延时1秒钟生效，调用此API需要通道已经存在。 </para>
+<simplesect/>
+<para>如果调用IMP_FrameSource_SetChnFPS()函数动态改变系统帧率，那么需要调用该函数修改编码器帧率，完成正确参数配置。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无。 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Encoder_1ga8636080246a8ec7844745b8c6cc862a6">
+                <title>int IMP_Encoder_GetChnFrmRate (int encChn, IMPEncoderFrmRate *pstFps)</title> <emphasis></emphasis>
+                
+<para>获取帧率控制属性</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>encChn</entry>
+                                <entry>
+<para>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>pstFpsCfg</entry>
+                                <entry>
+<para>帧率控制属性参数</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>调用此API会获取通道的帧率控制属性，调用此API需要通道已经存在。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>此函数对JPEG通道无意义。 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Encoder_1ga8d981749a3f1ee9b482152ce367d9ba2">
+                <title>int IMP_Encoder_SetChnROI (int encChn, const IMPEncoderROICfg *pstVencRoiCfg)</title> <emphasis></emphasis>
+                
+<para>设置通道ROI属性</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>encChn</entry>
+                                <entry>
+<para>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>pstFpsCfg</entry>
+                                <entry>
+<para>ROI属性参数</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>调用此API会设置通道的ROI属性，调用此API需要通道已经存在。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无。 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Encoder_1gabe8b833d724ed6ff312390843a5ec98b">
+                <title>int IMP_Encoder_GetChnROI (int encChn, IMPEncoderROICfg *pstVencRoiCfg)</title> <emphasis></emphasis>
+                
+<para>获取通道ROI属性</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>encChn</entry>
+                                <entry>
+<para>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>pstFpsCfg</entry>
+                                <entry>
+<para>ROI属性参数</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>调用此API会获取通道的ROI属性，调用此API需要通道已经存在。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>此函数对JPEG通道无意义。 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Encoder_1ga48eb55dbb0b14c7e4a1416b620e263d1">
+                <title>int IMP_Encoder_GetGOPSize (int encChn, IMPEncoderGOPSizeCfg *pstGOPSizeCfg)</title> <emphasis></emphasis>
+                
+<para>获取通道GOP属性</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>encChn</entry>
+                                <entry>
+<para>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>pstGOPSizeCfg</entry>
+                                <entry>
+<para>GOPSize属性参数</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>调用此API会获取通道的GOPSize属性，调用此API需要通道已经存在。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>此函数对JPEG通道无意义。 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Encoder_1ga1b4bd71c5c1828bcfffd88fc6c390b78">
+                <title>int IMP_Encoder_SetGOPSize (int encChn, const IMPEncoderGOPSizeCfg *pstGOPSizeCfg)</title> <emphasis></emphasis>
+                
+<para>设置通道GOP属性</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>encChn</entry>
+                                <entry>
+<para>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>pstGOPSizeCfg</entry>
+                                <entry>
+<para>GOP属性参数</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>调用此API会设置通道的GOPSize属性，调用此API需要通道已经存在。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无。 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Encoder_1gab411469004836f222e1004994fa30517">
+                <title>int IMP_Encoder_SetChnH264Demask (int encChn, const IMPEncoderAttrH264Demask *pdemaskAttr)</title> <emphasis></emphasis>
+                
+<para>设置通道去马赛克属性</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>encChn</entry>
+                                <entry>
+<para>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>pdemaskAttr</entry>
+                                <entry>
+<para>去马赛克属性参数</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>调用此API会设置通道的去马赛克属性，调用此API需要通道已经存在。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无。 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Encoder_1ga1de6bf93238e99c87e96ad185fcd03cf">
+                <title>int IMP_Encoder_GetChnH264Demask (int encChn, IMPEncoderAttrH264Demask *pdemaskAttr)</title> <emphasis></emphasis>
+                
+<para>获取通道去马赛克属性</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>encChn</entry>
+                                <entry>
+<para>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>pdemaskAttr</entry>
+                                <entry>
+<para>去马赛克属性参数</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>调用此API会获取通道的去马赛克属性，调用此API需要通道已经存在。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无。 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Encoder_1ga8f6309334d825eaa050719f3a2d435ee">
+                <title>int IMP_Encoder_SetChnH264FrmUsedMode (int encChn, const IMPEncoderAttrH264FrmUsed *pfrmUsedAttr)</title> <emphasis></emphasis>
+                
+<para>设置通道输入帧使用模式属性</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>encChn</entry>
+                                <entry>
+<para>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>pfrmUsedAttr</entry>
+                                <entry>
+<para>输入帧使用模式属性参数</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>调用此API会设置通道的输入帧使用模式属性，调用此API需要通道已经存在。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无。 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Encoder_1ga877a389fe2632b7042a8d0a8d872d4c6">
+                <title>int IMP_Encoder_GetChnH264FrmUsedMode (int encChn, IMPEncoderAttrH264FrmUsed *pfrmUsedAttr)</title> <emphasis></emphasis>
+                
+<para>获取通道输入帧使用模式属性</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>encChn</entry>
+                                <entry>
+<para>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>pfrmUsedAttr</entry>
+                                <entry>
+<para>输入帧使用模式属性参数</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>调用此API会获取通道的输入帧使用模式属性，调用此API需要通道已经存在。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无。 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Encoder_1gafa66a94468da7567b6a9b0e65b8a98ee">
+                <title>int IMP_Encoder_SetChnH264Denoise (int encChn, const IMPEncoderAttrH264Denoise *pdenoiseAttr)</title> <emphasis></emphasis>
+                
+<para>设置通道去噪属性</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>encChn</entry>
+                                <entry>
+<para>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>pdenoiseAttr</entry>
+                                <entry>
+<para>去噪属性参数</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>调用此API会设置通道的去噪属性，调用此API需要通道已经存在。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无。 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Encoder_1gad0f9dd9cb56142bf3869cb8a2735a5e8">
+                <title>int IMP_Encoder_GetChnH264Denoise (int encChn, IMPEncoderAttrH264Denoise *pdenoiseAttr)</title> <emphasis></emphasis>
+                
+<para>获取通道去噪属性</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>encChn</entry>
+                                <entry>
+<para>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>pdenoiseAttr</entry>
+                                <entry>
+<para>去噪属性参数</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>调用此API会获取通道的去噪属性，调用此API需要通道已经存在。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>此函数对JPEG通道无意义。 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Encoder_1gac9be6a8b3faf5df3e07346f40d673327">
+                <title>int IMP_Encoder_InsertUserData (int encChn, void *userData, uint32_t userDataLen)</title> <emphasis></emphasis>
+                
+<para>插入用户数据</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>encChn</entry>
+                                <entry>
+<para>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>userData</entry>
+                                <entry>
+<para>用户数据指针 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>userDataLen</entry>
+                                <entry>
+<para>用户数据长度, 取值范围:(0, 1024],以 byte 为单位</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>调用此API需要通道已经存在 </para>
+<simplesect/>
+<para>如果通道未创建,则返回失败 </para>
+<simplesect/>
+<para>如果userData为空或userDataLen为0,则返回失败 </para>
+<simplesect/>
+<para>插入用户数据,只支持H.264编码协议 </para>
+<simplesect/>
+<para>H.264协议通道最多分配2块内存空间用于缓存用户数据,且每段用户数据大小不超过1k byte。 如果用户插入的数据多余2块,或插入的一段用户数据大于1k byte 时,此接口会返回错误。 </para>
+<simplesect/>
+<para>每段用户数据以SEI包的形式被插入到最新的图像码流包之前。在某段用户数据包被编码发送之后, H.264 通道内缓存这段用户数据的内存空间被清零,用于存放新的用户数据</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无。 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Encoder_1ga7eddd99abbfeeafa72ef008c8ea24c21">
+                <title>int IMP_Encoder_SetFisheyeEnableStatus (int encChn, int enable)</title> <emphasis></emphasis>
+                
+<para>设置Ingenic提供的鱼眼矫正算法的使能状态</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>encChn</entry>
+                                <entry>
+<para>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>enable</entry>
+                                <entry>
+<para>0:不使能(默认),1:使能</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>由于鱼眼矫正算法的使能状态在通道创建时就已经固定，因此次API需要在通道创建之前调用。 </para>
+<simplesect/>
+<para>若通道创建之前不调用此API设置Ingenic提供的鱼眼矫正算法的使能状态,则默认不使能，即不能使用君正提供的鱼眼矫正算法。 </para>
+<simplesect/>
+<para>此API只适用于H264</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Encoder_1gabf6b911bb55ca6806fa0a072d1b7e83a">
+                <title>int IMP_Encoder_GetFisheyeEnableStatus (int encChn, int *enable)</title> <emphasis></emphasis>
+                
+<para>获取Ingenic提供的鱼眼矫正算法的使能状态</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>encChn</entry>
+                                <entry>
+<para>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>enable</entry>
+                                <entry>
+<para>返回设置的Ingenic提供的鱼眼矫正算法的使能状态,0:未使能,1:已使能</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>此API只适用于H264</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无 </para>
+</formalpara>
+</para>
+
+            </section>
+        </section>
+</section>

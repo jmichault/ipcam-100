@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="structIMPAudioStream">
+<title>IMPAudioStream struct Reference</title>
+<para>
+    <programlisting>#include <link linkend="imp__audio_8h">&lt;imp_audio.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for IMPAudioStream</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structIMPAudioStream__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for IMPAudioStream</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structIMPAudioStream__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Attributs publics</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint8_t * stream</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t phyAddr</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int len</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int64_t timeStamp</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int seq</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title>Description détaillée</title>
+
+<para>定义音频码流结构体. </para>
+                <para>Definition at line 181 of file imp_audio.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_audio.h</para></listitem></itemizedlist></para>
+        </simplesect>
+        <section>
+            <title>Documentation des données membres</title>
+            <simplesect>
+                <title>uint8_t* IMPAudioStream::stream</title>                
+<para>数据流指针 </para>
+
+                <para>Definition at line 182 of file imp_audio.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_audio.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>uint32_t IMPAudioStream::phyAddr</title>                
+<para>数据流物理地址 </para>
+
+                <para>Definition at line 183 of file imp_audio.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_audio.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>int IMPAudioStream::len</title>                
+<para>音频码流长度 </para>
+
+                <para>Definition at line 184 of file imp_audio.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_audio.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>int64_t IMPAudioStream::timeStamp</title>                
+<para>时间戳 </para>
+
+                <para>Definition at line 185 of file imp_audio.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_audio.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>int IMPAudioStream::seq</title>                
+<para>音频码流序号 </para>
+
+                <para>Definition at line 186 of file imp_audio.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_audio.h</para></listitem></itemizedlist></para>
+            </simplesect>
+        </section>
+</section>

@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="structIMPAudioFrame">
+<title>IMPAudioFrame struct Reference</title>
+<para>
+    <programlisting>#include <link linkend="imp__audio_8h">&lt;imp_audio.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for IMPAudioFrame</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structIMPAudioFrame__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for IMPAudioFrame</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structIMPAudioFrame__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Attributs publics</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>IMPAudioBitWidth bitwidth</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>IMPAudioSoundMode soundmode</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t * virAddr</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t phyAddr</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int64_t timeStamp</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int seq</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int len</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title>Description détaillée</title>
+
+<para>音频帧结构体. </para>
+                <para>Definition at line 151 of file imp_audio.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_audio.h</para></listitem></itemizedlist></para>
+        </simplesect>
+        <section>
+            <title>Documentation des données membres</title>
+            <simplesect>
+                <title>IMPAudioBitWidth IMPAudioFrame::bitwidth</title>                
+<para>音频采样精度 </para>
+
+                <para>Definition at line 152 of file imp_audio.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_audio.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>IMPAudioSoundMode IMPAudioFrame::soundmode</title>                
+<para>音频声道模式 </para>
+
+                <para>Definition at line 153 of file imp_audio.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_audio.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>uint32_t* IMPAudioFrame::virAddr</title>                
+<para>音频帧数据虚拟地址 </para>
+
+                <para>Definition at line 154 of file imp_audio.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_audio.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>uint32_t IMPAudioFrame::phyAddr</title>                
+<para>音频帧数据物理地址 </para>
+
+                <para>Definition at line 155 of file imp_audio.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_audio.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>int64_t IMPAudioFrame::timeStamp</title>                
+<para>音频帧数据时间戳 </para>
+
+                <para>Definition at line 156 of file imp_audio.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_audio.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>int IMPAudioFrame::seq</title>                
+<para>音频帧序号 </para>
+
+                <para>Definition at line 157 of file imp_audio.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_audio.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>int IMPAudioFrame::len</title>                
+<para>音频帧长度 </para>
+
+                <para>Definition at line 158 of file imp_audio.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_audio.h</para></listitem></itemizedlist></para>
+            </simplesect>
+        </section>
+</section>

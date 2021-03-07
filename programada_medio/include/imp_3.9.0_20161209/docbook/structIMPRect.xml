@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="structIMPRect">
+<title>IMPRect struct Reference</title>
+<para>
+    <programlisting>#include <link linkend="imp__common_8h">&lt;imp_common.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for IMPRect</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structIMPRect__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for IMPRect</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structIMPRect__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Attributs publics</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>IMPPoint p0</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>IMPPoint p1</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title>Description détaillée</title>
+
+<para>IMP 矩形区域信息.</para>
+
+<para>如下图所示，当p0(100,100)作为起始点，要使width和height为100时，则p1为(199,199) width = abs(p1.x-p0.x)+1 height = abs(p1.y-p0.y)+1 点数等于距离+1 p0(100,100) _____100______ | | | | 100| | | | |______________| p1(199,199) </para>
+                <para>Definition at line 151 of file imp_common.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_common.h</para></listitem></itemizedlist></para>
+        </simplesect>
+        <section>
+            <title>Documentation des données membres</title>
+            <simplesect>
+                <title>IMPPoint IMPRect::p0</title>                
+<para>左上角点坐标信息 </para>
+
+                <para>Definition at line 152 of file imp_common.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_common.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>IMPPoint IMPRect::p1</title>                
+<para>右下角点坐标信息 </para>
+
+                <para>Definition at line 153 of file imp_common.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_common.h</para></listitem></itemizedlist></para>
+            </simplesect>
+        </section>
+</section>

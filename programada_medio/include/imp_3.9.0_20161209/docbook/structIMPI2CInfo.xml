@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="structIMPI2CInfo">
+<title>IMPI2CInfo struct Reference</title>
+<para>
+    <programlisting>#include <link linkend="imp__isp_8h">&lt;imp_isp.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for IMPI2CInfo</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structIMPI2CInfo__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for IMPI2CInfo</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structIMPI2CInfo__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Attributs publics</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char type[20]</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int addr</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int i2c_adapter_id</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title>Description détaillée</title>
+
+<para>摄像头控制总线类型是I2C时，需要配置的参数结构体 </para>
+                <para>Definition at line 117 of file imp_isp.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_isp.h</para></listitem></itemizedlist></para>
+        </simplesect>
+        <section>
+            <title>Documentation des données membres</title>
+            <simplesect>
+                <title>char IMPI2CInfo::type[20]</title>                
+<para>I2C设备名字，必须与摄像头驱动中struct i2c_device_id中name变量一致 </para>
+
+                <para>Definition at line 118 of file imp_isp.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_isp.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>int IMPI2CInfo::addr</title>                
+<para>I2C地址 </para>
+
+                <para>Definition at line 119 of file imp_isp.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_isp.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>int IMPI2CInfo::i2c_adapter_id</title>                
+<para>I2C控制器 </para>
+
+                <para>Definition at line 120 of file imp_isp.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_isp.h</para></listitem></itemizedlist></para>
+            </simplesect>
+        </section>
+</section>

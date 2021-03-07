@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="imp__ivs_8h">
+    <title>imp_ivs.h File Reference</title>
+    <programlisting>#include &lt;imp/imp_common.h&gt;</programlisting>
+<para>Include dependency diagram for imp_ivs.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="imp__ivs_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for imp_ivs.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="imp__ivs_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPIVSInterface">IMPIVSInterface</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Macros</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__ivs_8h_1a195536be860255bd8e303a940df0ce23">IMP_IVS_DEFAULT_TIMEOUTMS</link> (-1)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Fonctions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__IVS_1gaf4bb6f49f2a0bf8f0d5f448b6a62e6a5">IMP_IVS_CreateGroup</link> (
+int GrpNum)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__IVS_1ga2400f2ef403e471bd1d7c6a4eb1356f6">IMP_IVS_DestroyGroup</link> (
+int GrpNum)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__IVS_1gada895e87ff289b637330935379e081d6">IMP_IVS_CreateChn</link> (
+int ChnNum, <link linkend="structIMPIVSInterface">IMPIVSInterface</link> * handler)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__IVS_1gacd3e4340777295519e7d097e4e5f30cd">IMP_IVS_DestroyChn</link> (
+int ChnNum)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__IVS_1ga001fe0e1ee94b91bc4f2a08474ecd652">IMP_IVS_RegisterChn</link> (
+int GrpNum, int ChnNum)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__IVS_1ga9b756088952b6ff0f483b0d5826109ec">IMP_IVS_UnRegisterChn</link> (
+int ChnNum)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__IVS_1gaf1ffe26e56f2d8f8bce812b3d26111db">IMP_IVS_StartRecvPic</link> (
+int ChnNum)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__IVS_1ga3452e6eb4c0838a6ce1e5c2907f51fc3">IMP_IVS_StopRecvPic</link> (
+int ChnNum)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__IVS_1ga4ff339164b80826f2288766482da907c">IMP_IVS_PollingResult</link> (
+int ChnNum, int timeoutMs)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__IVS_1ga39b67051ba392735d9719c37968717f6">IMP_IVS_GetResult</link> (
+int ChnNum, void ** result)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__IVS_1ga4c8a0109894c69f3e83ec5c4f73e5e74">IMP_IVS_ReleaseResult</link> (
+int ChnNum, void * result)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__IVS_1ga079dccc637f16934f905a7518fb44e9e">IMP_IVS_ReleaseData</link> (
+void * vaddr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__IVS_1ga59ddb3579c4d1221da6e2c45d929bfc2">IMP_IVS_GetParam</link> (
+int chnNum, void * param)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__IVS_1ga2a0e9458531fb623d2af6dacfab5acc0">IMP_IVS_SetParam</link> (
+int chnNum, void * param)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Description détaillée</title>
+
+<para>IMP IVS模块 </para>
+    <para>Definition in file /home2/jean/projets/ipcam-100/programada_medio/include/imp/imp_ivs.h</para>
+    </simplesect>
+</section>

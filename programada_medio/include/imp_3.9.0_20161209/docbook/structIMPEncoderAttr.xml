@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="structIMPEncoderAttr">
+<title>IMPEncoderAttr struct Reference</title>
+<para>
+    <programlisting>#include <link linkend="imp__encoder_8h">&lt;imp_encoder.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for IMPEncoderAttr</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structIMPEncoderAttr__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for IMPEncoderAttr</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structIMPEncoderAttr__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Attributs publics</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>IMPPayloadType enType</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t bufSize</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t profile</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t picWidth</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t picHeight</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>IMPEncoderCropCfg crop</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>IMPEncoderUserDataCfg userData</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title>Description détaillée</title>
+
+<para>定义编码器属性结构体 </para>
+                <para>Definition at line 270 of file imp_encoder.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_encoder.h</para></listitem></itemizedlist></para>
+        </simplesect>
+        <section>
+            <title>Documentation des données membres</title>
+            <simplesect>
+                <title>IMPPayloadType IMPEncoderAttr::enType</title>                
+<para>编码协议类型 </para>
+
+                <para>Definition at line 271 of file imp_encoder.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_encoder.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>uint32_t IMPEncoderAttr::bufSize</title>                
+<para>配置 buffer 大小，取值范围:不小于图像宽高乘积的1.5倍。设置通道编码属性时，将此参数设置为0，IMP内部会自动计算大小 </para>
+
+                <para>Definition at line 272 of file imp_encoder.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_encoder.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>uint32_t IMPEncoderAttr::profile</title>                
+<para>编码的等级, 0: baseline; 1:MP; 2:HP </para>
+
+                <para>Definition at line 273 of file imp_encoder.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_encoder.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>uint32_t IMPEncoderAttr::picWidth</title>                
+<para>编码图像宽度 </para>
+
+                <para>Definition at line 274 of file imp_encoder.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_encoder.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>uint32_t IMPEncoderAttr::picHeight</title>                
+<para>编码图像高度 </para>
+
+                <para>Definition at line 275 of file imp_encoder.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_encoder.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>IMPEncoderCropCfg IMPEncoderAttr::crop</title>                
+<para>编码器裁剪属性 </para>
+
+                <para>Definition at line 276 of file imp_encoder.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_encoder.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>IMPEncoderUserDataCfg IMPEncoderAttr::userData</title>                
+<para>插入用户数据属性,只针对H264 </para>
+
+                <para>Definition at line 277 of file imp_encoder.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_encoder.h</para></listitem></itemizedlist></para>
+            </simplesect>
+        </section>
+</section>

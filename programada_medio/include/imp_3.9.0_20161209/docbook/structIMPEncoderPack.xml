@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="structIMPEncoderPack">
+<title>IMPEncoderPack struct Reference</title>
+<para>
+    <programlisting>#include <link linkend="imp__encoder_8h">&lt;imp_encoder.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for IMPEncoderPack</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structIMPEncoderPack__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for IMPEncoderPack</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structIMPEncoderPack__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Attributs publics</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t phyAddr</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t virAddr</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t length</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int64_t timestamp</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool frameEnd</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>IMPEncoderDataType dataType</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title>Description détaillée</title>
+
+<para>定义帧码流包结构体 </para>
+                <para>Definition at line 225 of file imp_encoder.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_encoder.h</para></listitem></itemizedlist></para>
+        </simplesect>
+        <section>
+            <title>Documentation des données membres</title>
+            <simplesect>
+                <title>uint32_t IMPEncoderPack::phyAddr</title>                
+<para>码流包物理地址 </para>
+
+                <para>Definition at line 226 of file imp_encoder.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_encoder.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>uint32_t IMPEncoderPack::virAddr</title>                
+<para>码流包虚拟地址 </para>
+
+                <para>Definition at line 227 of file imp_encoder.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_encoder.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>uint32_t IMPEncoderPack::length</title>                
+<para>码流包长度 </para>
+
+                <para>Definition at line 228 of file imp_encoder.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_encoder.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>int64_t IMPEncoderPack::timestamp</title>                
+<para>时间戳，单位us </para>
+
+                <para>Definition at line 230 of file imp_encoder.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_encoder.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>bool IMPEncoderPack::frameEnd</title>                
+<para>帧结束标识 </para>
+
+                <para>Definition at line 231 of file imp_encoder.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_encoder.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>IMPEncoderDataType IMPEncoderPack::dataType</title>                
+<para>码流类型 </para>
+
+                <para>Definition at line 233 of file imp_encoder.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_encoder.h</para></listitem></itemizedlist></para>
+            </simplesect>
+        </section>
+</section>

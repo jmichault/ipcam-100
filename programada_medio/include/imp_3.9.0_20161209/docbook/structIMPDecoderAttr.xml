@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="structIMPDecoderAttr">
+<title>IMPDecoderAttr struct Reference</title>
+<para>
+    <programlisting>#include <link linkend="imp__decoder_8h">&lt;imp_decoder.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for IMPDecoderAttr</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structIMPDecoderAttr__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for IMPDecoderAttr</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structIMPDecoderAttr__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Attributs publics</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>IMPPayloadType decType</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t maxWidth</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t maxHeight</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>IMPPixelFormat pixelFormat</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t nrKeepStream</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t frmRateNum</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t frmRateDen</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title>Description détaillée</title>
+
+<para>定义解码器属性 </para>
+                <para>Definition at line 35 of file imp_decoder.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_decoder.h</para></listitem></itemizedlist></para>
+        </simplesect>
+        <section>
+            <title>Documentation des données membres</title>
+            <simplesect>
+                <title>IMPPayloadType IMPDecoderAttr::decType</title>                
+<para>解码帧原数据协议类型 </para>
+
+                <para>Definition at line 36 of file imp_decoder.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_decoder.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>uint32_t IMPDecoderAttr::maxWidth</title>                
+<para>解码帧最大的宽度 </para>
+
+                <para>Definition at line 37 of file imp_decoder.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_decoder.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>uint32_t IMPDecoderAttr::maxHeight</title>                
+<para>解码帧最大的高度 </para>
+
+                <para>Definition at line 38 of file imp_decoder.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_decoder.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>IMPPixelFormat IMPDecoderAttr::pixelFormat</title>                
+<para>解码帧目标数据协议类型 </para>
+
+                <para>Definition at line 39 of file imp_decoder.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_decoder.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>uint32_t IMPDecoderAttr::nrKeepStream</title>                
+<para>解码器缓存帧个数 </para>
+
+                <para>Definition at line 40 of file imp_decoder.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_decoder.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>uint32_t IMPDecoderAttr::frmRateNum</title>                
+<para>在一秒钟内的时间单元的数量, 以时间单元为单位。即帧率的分子 </para>
+
+                <para>Definition at line 41 of file imp_decoder.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_decoder.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>uint32_t IMPDecoderAttr::frmRateDen</title>                
+<para>在一帧内的时间单元的数量, 以时间单元为单位。即帧率的分母 </para>
+
+                <para>Definition at line 42 of file imp_decoder.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_decoder.h</para></listitem></itemizedlist></para>
+            </simplesect>
+        </section>
+</section>

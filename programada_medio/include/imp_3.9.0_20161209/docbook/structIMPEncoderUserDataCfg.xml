@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="structIMPEncoderUserDataCfg">
+<title>IMPEncoderUserDataCfg struct Reference</title>
+<para>
+    <programlisting>#include <link linkend="imp__encoder_8h">&lt;imp_encoder.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for IMPEncoderUserDataCfg</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structIMPEncoderUserDataCfg__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for IMPEncoderUserDataCfg</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structIMPEncoderUserDataCfg__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Attributs publics</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t maxUserDataCnt</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t maxUserDataSize</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title>Description détaillée</title>
+
+<para>定义编码器插入用户数据属性,只针对H264 </para>
+                <para>Definition at line 262 of file imp_encoder.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_encoder.h</para></listitem></itemizedlist></para>
+        </simplesect>
+        <section>
+            <title>Documentation des données membres</title>
+            <simplesect>
+                <title>uint32_t IMPEncoderUserDataCfg::maxUserDataCnt</title>                
+<para>最大用户插入数据缓存空间个数,范围：0-2 </para>
+
+                <para>Definition at line 263 of file imp_encoder.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_encoder.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>uint32_t IMPEncoderUserDataCfg::maxUserDataSize</title>                
+<para>最大用户插入数据缓存空间大小,范围：16-1024 </para>
+
+                <para>Definition at line 264 of file imp_encoder.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_encoder.h</para></listitem></itemizedlist></para>
+            </simplesect>
+        </section>
+</section>

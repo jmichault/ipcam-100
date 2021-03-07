@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="imp__decoder_8h">
+    <title>imp_decoder.h File Reference</title>
+    <programlisting>#include &lt;stdint.h&gt;</programlisting>
+    <programlisting>#include &lt;stdbool.h&gt;</programlisting>
+<para>Include dependency diagram for imp_decoder.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="imp__decoder_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for imp_decoder.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="imp__decoder_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPDecoderAttr">IMPDecoderAttr</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPDecoderCHNAttr">IMPDecoderCHNAttr</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPDecoderNal">IMPDecoderNal</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPDecoderStream">IMPDecoderStream</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Fonctions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Decoder_1gaf2847173e6e99d0859782d396431135e">IMP_Decoder_CreateChn</link> (
+int decChn, const <link linkend="structIMPDecoderCHNAttr">IMPDecoderCHNAttr</link> * attr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Decoder_1ga00a630779788c07c9daf523443c5abb0">IMP_Decoder_DestroyChn</link> (
+int decChn)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Decoder_1ga45b743d81c9e6a5b529c7cf52a12fedf">IMP_Decoder_StartRecvPic</link> (
+int decChn)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Decoder_1ga3ee251bcb7ac2b55f8ef67dfd43d0429">IMP_Decoder_StopRecvPic</link> (
+int decChn)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Decoder_1gac2bc3fa07236594a07ca630cf1cb437c">IMP_Decoder_SendStreamTimeout</link> (
+int decChn, <link linkend="structIMPDecoderStream">IMPDecoderStream</link> * stream, uint32_t timeoutMsec)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Decoder_1gae42cbf89e1e1cf4b8fa1b84ab0ac41e7">IMP_Decoder_PollingFrame</link> (
+int decChn, uint32_t timeoutMsec)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Decoder_1ga396b6cbf537d265617ab2ee13ac17c4e">IMP_Decoder_GetFrame</link> (
+int decChn, <link linkend="structIMPFrameInfo">IMPFrameInfo</link> ** frame)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Decoder_1ga522ce60cb85c8865cf7304835946639a">IMP_Decoder_ReleaseFrame</link> (
+int decChn, <link linkend="structIMPFrameInfo">IMPFrameInfo</link> * frame)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Description détaillée</title>
+
+<para>IMP解码器头文件 </para>
+    <para>Definition in file /home2/jean/projets/ipcam-100/programada_medio/include/imp/imp_decoder.h</para>
+    </simplesect>
+</section>

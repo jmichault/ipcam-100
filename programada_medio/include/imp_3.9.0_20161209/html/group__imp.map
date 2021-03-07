@@ -1,0 +1,10 @@
+<map id="IMP(Ingenic Media Platform)" name="IMP(Ingenic Media Platform)">
+<area shape="rect" id="node1" href="$group__IMP__System.html" title="系统控制模块，包括IMP的基础功能以及模块间绑定的相关功能 " alt="" coords="257,5,356,32"/>
+<area shape="rect" id="node2" href="$group__IMP__ISP.html" title="图像信号处理单元。主要包含图像效果设置、模式切换以及Sensor的注册添加删除等操作 " alt="" coords="269,56,344,83"/>
+<area shape="rect" id="node3" href="$group__IMP__IVS.html" title="IVS智能分析通用接口API. " alt="" coords="269,107,344,133"/>
+<area shape="rect" id="node4" href="$group__IMP__Encoder.html" title="视频编码（H264, JPEG）模块，包含编码通道管理，编码参数设置等功能 " alt="" coords="256,157,357,184"/>
+<area shape="rect" id="node5" href="$group__IMP__Decoder.html" title="视频解码模块，当前只支持JPEG解码 " alt="" coords="255,208,358,235"/>
+<area shape="rect" id="node6" href="$group__IMP__FrameSource.html" title="视频源，是IMP系统的图像数据源，可设置图像的分辨率、裁减、缩放等属性，以及后端降噪功能 ..." alt="" coords="241,259,372,285"/>
+<area shape="rect" id="node7" href="$group__IMP__OSD.html" title="OSD模块，可在视频流上叠加图片、位图、直线、矩形框 " alt="" coords="265,309,348,336"/>
+<area shape="rect" id="node9" href="$group__IMP__Audio.html" title="音频模块，包含录放音、音频编解码、音量及增益设置、回声消除、自动增益等功能 " alt="" coords="263,360,350,387"/>
+</map>

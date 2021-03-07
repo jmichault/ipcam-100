@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="structIMPAudioIOAttr">
+<title>IMPAudioIOAttr struct Reference</title>
+<para>
+    <programlisting>#include <link linkend="imp__audio_8h">&lt;imp_audio.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for IMPAudioIOAttr</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structIMPAudioIOAttr__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for IMPAudioIOAttr</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structIMPAudioIOAttr__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Attributs publics</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>IMPAudioSampleRate samplerate</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>IMPAudioBitWidth bitwidth</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>IMPAudioSoundMode soundmode</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int frmNum</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int numPerFrm</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int chnCnt</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title>Description détaillée</title>
+
+<para>音频输入输出设备属性. </para>
+                <para>Definition at line 139 of file imp_audio.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_audio.h</para></listitem></itemizedlist></para>
+        </simplesect>
+        <section>
+            <title>Documentation des données membres</title>
+            <simplesect>
+                <title>IMPAudioSampleRate IMPAudioIOAttr::samplerate</title>                
+<para>音频采样率 </para>
+
+                <para>Definition at line 140 of file imp_audio.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_audio.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>IMPAudioBitWidth IMPAudioIOAttr::bitwidth</title>                
+<para>音频采样精度 </para>
+
+                <para>Definition at line 141 of file imp_audio.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_audio.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>IMPAudioSoundMode IMPAudioIOAttr::soundmode</title>                
+<para>音频声道模式 </para>
+
+                <para>Definition at line 142 of file imp_audio.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_audio.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>int IMPAudioIOAttr::frmNum</title>                
+<para>缓存帧的数目, 取值范围:[2, MAX_AUDIO_FRAME_NUM] </para>
+
+                <para>Definition at line 143 of file imp_audio.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_audio.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>int IMPAudioIOAttr::numPerFrm</title>                
+<para>每帧的采样点个数 </para>
+
+                <para>Definition at line 144 of file imp_audio.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_audio.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>int IMPAudioIOAttr::chnCnt</title>                
+<para>支持的通道数目 </para>
+
+                <para>Definition at line 145 of file imp_audio.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_audio.h</para></listitem></itemizedlist></para>
+            </simplesect>
+        </section>
+</section>

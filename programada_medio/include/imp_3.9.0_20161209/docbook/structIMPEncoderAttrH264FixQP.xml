@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="structIMPEncoderAttrH264FixQP">
+<title>IMPEncoderAttrH264FixQP struct Reference</title>
+<para>
+    <programlisting>#include <link linkend="imp__encoder_8h">&lt;imp_encoder.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for IMPEncoderAttrH264FixQP</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structIMPEncoderAttrH264FixQP__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for IMPEncoderAttrH264FixQP</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structIMPEncoderAttrH264FixQP__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Attributs publics</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t maxGop</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>IMPEncoderFrmRate outFrmRate</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t qp</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title>Description détaillée</title>
+
+<para>定义H.264编码Channel Fixqp属性结构 </para>
+                <para>Definition at line 71 of file imp_encoder.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_encoder.h</para></listitem></itemizedlist></para>
+        </simplesect>
+        <section>
+            <title>Documentation des données membres</title>
+            <simplesect>
+                <title>uint32_t IMPEncoderAttrH264FixQP::maxGop</title>                
+<para>H.264 gop值，必须是帧率的整数倍 </para>
+
+                <para>Definition at line 72 of file imp_encoder.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_encoder.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>IMPEncoderFrmRate IMPEncoderAttrH264FixQP::outFrmRate</title>                
+<para>编码Channel的输出帧率（输出帧率不能大于输入帧率） </para>
+
+                <para>Definition at line 73 of file imp_encoder.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_encoder.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>uint32_t IMPEncoderAttrH264FixQP::qp</title>                
+<para>帧级Qp值 </para>
+
+                <para>Definition at line 74 of file imp_encoder.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_encoder.h</para></listitem></itemizedlist></para>
+            </simplesect>
+        </section>
+</section>

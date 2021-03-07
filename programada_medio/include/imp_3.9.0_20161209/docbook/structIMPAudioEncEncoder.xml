@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="structIMPAudioEncEncoder">
+<title>IMPAudioEncEncoder struct Reference</title>
+<para>
+    <programlisting>#include <link linkend="imp__audio_8h">&lt;imp_audio.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for IMPAudioEncEncoder</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structIMPAudioEncEncoder__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for IMPAudioEncEncoder</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structIMPAudioEncEncoder__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Attributs publics</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>IMPAudioPalyloadType type</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int maxFrmLen</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char name[16]</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int(* openEncoder)(void *encoderAttr, void *encoder)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int(* encoderFrm)(void *encoder, IMPAudioFrame *data, unsigned char *outbuf, int *outLen)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int(* closeEncoder)(void *encoder)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title>Description détaillée</title>
+
+<para>定义编码器属性结构体. </para>
+                <para>Definition at line 201 of file imp_audio.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_audio.h</para></listitem></itemizedlist></para>
+        </simplesect>
+        <section>
+            <title>Documentation des données membres</title>
+            <simplesect>
+                <title>IMPAudioPalyloadType IMPAudioEncEncoder::type</title>                
+<para>编码协议类型 </para>
+
+                <para>Definition at line 202 of file imp_audio.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_audio.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>int IMPAudioEncEncoder::maxFrmLen</title>                
+<para>最大码流长度 </para>
+
+                <para>Definition at line 203 of file imp_audio.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_audio.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>char IMPAudioEncEncoder::name[16]</title>                
+<para>编码器名称 </para>
+
+                <para>Definition at line 204 of file imp_audio.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_audio.h</para></listitem></itemizedlist></para>
+            </simplesect>
+        </section>
+</section>

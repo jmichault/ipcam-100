@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="structIMPIVSInterface">
+<title>IMPIVSInterface struct Reference</title>
+<para>
+    <programlisting>#include <link linkend="imp__ivs_8h">&lt;imp_ivs.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for IMPIVSInterface</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structIMPIVSInterface__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for IMPIVSInterface</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structIMPIVSInterface__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Attributs publics</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void * param</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int paramSize</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>IMPPixelFormat pixfmt</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int(* init)(void *param)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void(* exit)(void)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int(* PreprocessSync)(IMPFrameInfo *frame)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int(* ProcessAsync)(IMPFrameInfo *frame)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int(* GetResult)(void **result)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int(* ReleaseResult)(void *result)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int(* GetParam)(void *param)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int(* SetParam)(void *param)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int(* FlushFrame)(void)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title>Description détaillée</title>
+
+<para>ivs 的通用接口 </para>
+                <para>Definition at line 126 of file imp_ivs.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_ivs.h</para></listitem></itemizedlist></para>
+        </simplesect>
+        <section>
+            <title>Documentation des données membres</title>
+            <simplesect>
+                <title>void* IMPIVSInterface::param</title>                
+<para>输入参数 </para>
+
+                <para>Definition at line 127 of file imp_ivs.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_ivs.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>int IMPIVSInterface::paramSize</title>                
+<para>参数空间大小 </para>
+
+                <para>Definition at line 128 of file imp_ivs.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_ivs.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>IMPPixelFormat IMPIVSInterface::pixfmt</title>                
+<para>算法需要数据格式 </para>
+
+                <para>Definition at line 129 of file imp_ivs.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_ivs.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>int(* IMPIVSInterface::init) (void *param)</title>                
+<para>初始化函数 </para>
+
+                <para>Definition at line 130 of file imp_ivs.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_ivs.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>void(* IMPIVSInterface::exit) (void)</title>                
+<para>注销函数 </para>
+
+                <para>Definition at line 131 of file imp_ivs.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_ivs.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>int(* IMPIVSInterface::PreprocessSync) (IMPFrameInfo *frame)</title>                
+<para>预处理函数，返回值：0-&gt;frame未被free,1-&gt;frame已free;-1-&gt;错误,frame已free </para>
+
+                <para>Definition at line 132 of file imp_ivs.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_ivs.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>int(* IMPIVSInterface::ProcessAsync) (IMPFrameInfo *frame)</title>                
+<para>处理函数,必须确保每个已用完的frame处于free状态,返回值:0-&gt;实际检测正常返回,1-&gt;跳帧检测正常返回,-1-&gt;错误 </para>
+
+                <para>Definition at line 133 of file imp_ivs.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_ivs.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>int(* IMPIVSInterface::GetResult) (void **result)</title>                
+<para>获取结果资源 </para>
+
+                <para>Definition at line 134 of file imp_ivs.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_ivs.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>int(* IMPIVSInterface::ReleaseResult) (void *result)</title>                
+<para>释放结果资源 </para>
+
+                <para>Definition at line 135 of file imp_ivs.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_ivs.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>int(* IMPIVSInterface::GetParam) (void *param)</title>                
+<para>获得算法参数 </para>
+
+                <para>Definition at line 136 of file imp_ivs.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_ivs.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>int(* IMPIVSInterface::SetParam) (void *param)</title>                
+<para>设置算法参数 </para>
+
+                <para>Definition at line 137 of file imp_ivs.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_ivs.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>int(* IMPIVSInterface::FlushFrame) (void)</title>                
+<para>释放由外部通过ProcessAsync输入给算法后被缓存的所有frame </para>
+
+                <para>Definition at line 138 of file imp_ivs.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_ivs.h</para></listitem></itemizedlist></para>
+            </simplesect>
+        </section>
+</section>

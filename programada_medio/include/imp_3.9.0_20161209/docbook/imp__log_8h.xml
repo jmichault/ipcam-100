@@ -1,0 +1,314 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="imp__log_8h">
+    <title>imp_log.h File Reference</title>
+<para>Include dependency diagram for imp_log.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="imp__log_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for imp_log.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="imp__log_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Macros</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__log_8h_1a2649fe96847f27458b20d74d2f1c6345">IMP_LOG_LEVEL_DEFAULT</link> IMP_LOG_LEVEL_DEBUG</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__log_8h_1a66e5ebc09debac51f358cfa44614c986">IMP_LOG_OUT_STDOUT</link> 0</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__log_8h_1a9a4f5219a1ba389ca509ae345afe3597">IMP_LOG_OUT_LOCAL_FILE</link> 1</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__log_8h_1a3a0c83365556e0e2358bee0e20687125">IMP_LOG_OUT_SERVER</link> 2</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__log_8h_1ae312969f52247e22cf1b65193c9c99ec">IMP_LOG_OUT_DEFAULT</link> <link linkend="imp__log_8h_1a66e5ebc09debac51f358cfa44614c986">IMP_LOG_OUT_STDOUT</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__log_8h_1a2f91ff785691082c431962bc1a584638">IMP_LOG_OP_PID_SHIFT</link> 0</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__log_8h_1a280e2285ebc635b7ee3a1ec7ffa4410a">IMP_LOG_OP_USTIME_SHIFT</link> 1</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__log_8h_1a0c7ce9596ee78515a5b20a17e2a0306c">IMP_LOG_OP_MODULE_SHIFT</link> 2</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__log_8h_1ab538fc8f23a893e14f1abd30b82e49d9">IMP_LOG_OP_FILE_SHIFT</link> 3</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__log_8h_1a8daf22f1f46f303544a5e5bbf11f7056">IMP_LOG_OP_FUNC_SHIFT</link> 4</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__log_8h_1a1a7f73dc6096ba4d16453a44b205088a">IMP_LOG_OP_LINE_SHIFT</link> 5</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__log_8h_1a180a0c518eb6b2f8e69782512a04a74f">IMP_LOG_OP_PID</link> (1&lt;&lt;<link linkend="imp__log_8h_1a2f91ff785691082c431962bc1a584638">IMP_LOG_OP_PID_SHIFT</link>)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__log_8h_1a2ed3d204b6e09aa4de6beb6d0d20fa44">IMP_LOG_OP_USTIME</link> (1&lt;&lt;IMP_LOG_OP_USTIME_SHIFT)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__log_8h_1aa0c07ee632cdc45d8fd116fffe59ea8f">IMP_LOG_OP_MODULE</link> (1&lt;&lt;IMP_LOG_OP_MODULE_SHIFT)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__log_8h_1a3d6faedc1fe13f789191692603d55879">IMP_LOG_OP_FILE</link> (1&lt;&lt;IMP_LOG_OP_FILE_SHIFT)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__log_8h_1afe6ebfee6271290adfa93fb0537e93b0">IMP_LOG_OP_FUNC</link> (1&lt;&lt;IMP_LOG_OP_FUNC_SHIFT)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__log_8h_1af6442cf583d3dd57e05eec2154ae2a4d">IMP_LOG_OP_LINE</link> (1&lt;&lt;IMP_LOG_OP_LINE_SHIFT)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__log_8h_1a545b26f6548e5bbe97d75c55e5f43c46">IMP_LOG_OP_NONE</link> 0</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__log_8h_1aba5d07f9506ad4ba07f002d7568e1c62">IMP_LOG_OP_ALL</link> (IMP_LOG_OP_PID|IMP_LOG_OP_USTIME|IMP_LOG_OP_MODULE|IMP_LOG_OP_FILE|IMP_LOG_OP_FUNC|IMP_LOG_OP_LINE)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__log_8h_1a2299b20cb42ea5a6437daf4e0f2dd7b6">IMP_LOG_OP_DEFAULT</link> IMP_LOG_OP_ALL</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__log_8h_1a481512b0627a10fe35e4d98577e4b0f9">IMP_LOG_PRINT</link> <link linkend="imp__log_8h_1a4fd6d2fa42d0501a10de167579a6385d">imp_log_fun</link>(le, op, <link linkend="imp__log_8h_1a66e5ebc09debac51f358cfa44614c986">IMP_LOG_OUT_STDOUT</link>, tag, __FILE__, __LINE__, __func__, fmt, ##__VA_ARGS__)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__log_8h_1a04f6ce09cecdc583c2a91ed6ff08da4c">IMP_LOG_TO_FILE</link> <link linkend="imp__log_8h_1a4fd6d2fa42d0501a10de167579a6385d">imp_log_fun</link>(le, op, IMP_LOG_OUT_LOCAL_FILE, tag, __FILE__, __LINE__, __func__, fmt, ##__VA_ARGS__)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__log_8h_1a3ecbb232a0079162b96897c2989b28bf">IMP_LOG_TO_SERVER</link> <link linkend="imp__log_8h_1a4fd6d2fa42d0501a10de167579a6385d">imp_log_fun</link>(le, op, IMP_LOG_OUT_SERVER, tag, __FILE__, __LINE__, __func__, fmt, ##__VA_ARGS__)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__log_8h_1a7ed7b6df137ab1d0416e8bb2a6265c0e">IMP_LOG_GET_OPTION</link> <link linkend="imp__log_8h_1aab55c0c1c9e7c65932edbc28bf8bb63d">IMP_Log_Get_Option</link>()</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__log_8h_1a38905e85fdbcdad6b83346c89f4013a4">IMP_LOG</link> <link linkend="imp__log_8h_1a481512b0627a10fe35e4d98577e4b0f9">IMP_LOG_PRINT</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__log_8h_1a50729ab97ef0fb578096a2c975ccac60">IMP_LOG_UNK</link> IMP_LOG(tag, IMP_LOG_LEVEL_UNKNOWN, IMP_LOG_GET_OPTION, fmt, ##__VA_ARGS__)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__log_8h_1a630104ebaa80b0931434c64e80dd9e49">IMP_LOG_VERBOSE</link> IMP_LOG(tag, IMP_LOG_LEVEL_VERBOSE, IMP_LOG_GET_OPTION, fmt, ##__VA_ARGS__)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__log_8h_1a04452638fe72d70f3007a4cd5d8db7bf">IMP_LOG_DBG</link> IMP_LOG(tag, IMP_LOG_LEVEL_DEBUG, IMP_LOG_GET_OPTION, fmt, ##__VA_ARGS__)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__log_8h_1a9403f31ff83a9969c34394b470908a41">IMP_LOG_INFO</link> IMP_LOG(tag, IMP_LOG_LEVEL_INFO, IMP_LOG_GET_OPTION, fmt, ##__VA_ARGS__)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__log_8h_1ab1aa3f8f688ba91dfe459fdfcb48bd15">IMP_LOG_WARN</link> IMP_LOG(tag, IMP_LOG_LEVEL_WARN, IMP_LOG_GET_OPTION, fmt, ##__VA_ARGS__)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__log_8h_1a59492a06ae7e667b02bda8f246902a7c">IMP_LOG_ERR</link> IMP_LOG(tag, IMP_LOG_LEVEL_ERROR, IMP_LOG_GET_OPTION, fmt, ##__VA_ARGS__)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__log_8h_1ae1f636324f707f65a79e6a0ac1384c86">IMP_LOG_FATAL</link> IMP_LOG(tag, IMP_LOG_LEVEL_FATAL, IMP_LOG_GET_OPTION, fmt, ##__VA_ARGS__)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__log_8h_1a5c4f1f0923cf0ea63ac17f0b1f32fb41">IMP_LOG_SILENT</link> IMP_LOG(tag, IMP_LOG_LEVEL_SILENT, IMP_LOG_GET_OPTION, fmt, ##__VA_ARGS__)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Énumérations</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="imp__log_8h_1a385c44f6fb256e5716a2302a5b940388">@10</link> {
+<link linkend="imp__log_8h_1a385c44f6fb256e5716a2302a5b940388a4faf0a20590de6427075ed8930b9f6e9">IMP_LOG_LEVEL_UNKNOWN</link>,
+<link linkend="imp__log_8h_1a385c44f6fb256e5716a2302a5b940388a5a0cad25132cd426aa38866fc1c43ad4">IMP_LOG_LEVEL_RESERVED</link>,
+<link linkend="imp__log_8h_1a385c44f6fb256e5716a2302a5b940388a213cf77efce0aabbf3ef1781c657cadd">IMP_LOG_LEVEL_VERBOSE</link>,
+<link linkend="imp__log_8h_1a385c44f6fb256e5716a2302a5b940388a0d013a75c898d489a3774c44afb32583">IMP_LOG_LEVEL_DEBUG</link>,
+<link linkend="imp__log_8h_1a385c44f6fb256e5716a2302a5b940388a44707b43af0b68f0d41c3d97738f58b2">IMP_LOG_LEVEL_INFO</link>,
+<link linkend="imp__log_8h_1a385c44f6fb256e5716a2302a5b940388a16e96beb6ddf373a634958fd2952703c">IMP_LOG_LEVEL_WARN</link>,
+<link linkend="imp__log_8h_1a385c44f6fb256e5716a2302a5b940388aa7c5ff85e5d19edcc394ce7ad268c2a0">IMP_LOG_LEVEL_ERROR</link>,
+<link linkend="imp__log_8h_1a385c44f6fb256e5716a2302a5b940388a853f994f634043f063b036339e543894">IMP_LOG_LEVEL_FATAL</link>,
+<link linkend="imp__log_8h_1a385c44f6fb256e5716a2302a5b940388af228fed158eccac0b46198a6963f6a4b">IMP_LOG_LEVEL_SILENT</link>
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Fonctions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="imp__log_8h_1a4fd6d2fa42d0501a10de167579a6385d">imp_log_fun</link> (
+int le, int op, int out, const char * tag, const char * file, int line, const char * func, const char * fmt, ... )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="imp__log_8h_1a6a09f2431dba86d4a51a4d9c0eefed0c">IMP_Log_Set_Option</link> (
+int op)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="imp__log_8h_1aab55c0c1c9e7c65932edbc28bf8bb63d">IMP_Log_Get_Option</link> (
+void )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Description détaillée</title>
+
+<para>Log接口头文件 </para>
+    <para>Definition in file /home2/jean/projets/ipcam-100/programada_medio/include/imp/imp_log.h</para>
+    </simplesect>
+</section>

@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="structIMPISPSinterDenoiseAttr">
+<title>IMPISPSinterDenoiseAttr struct Reference</title>
+<para>
+    <programlisting>#include <link linkend="imp__isp_8h">&lt;imp_isp.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for IMPISPSinterDenoiseAttr</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structIMPISPSinterDenoiseAttr__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for IMPISPSinterDenoiseAttr</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structIMPISPSinterDenoiseAttr__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Attributs publics</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>IMPISPTuningOpsMode enable</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>IMPISPTuningOpsType type</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>unsigned char sinter_strength</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title>Description détaillée</title>
+
+<para>ISP 空间降噪模块属性参数。 </para>
+                <para>Definition at line 445 of file imp_isp.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_isp.h</para></listitem></itemizedlist></para>
+        </simplesect>
+        <section>
+            <title>Documentation des données membres</title>
+            <simplesect>
+                <title>IMPISPTuningOpsMode IMPISPSinterDenoiseAttr::enable</title>                
+<para>使能空间降噪功能 </para>
+
+                <para>Definition at line 446 of file imp_isp.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_isp.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>IMPISPTuningOpsType IMPISPSinterDenoiseAttr::type</title>                
+<para>空间降噪功能操作类型，自动或手动 </para>
+
+                <para>Definition at line 447 of file imp_isp.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_isp.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>unsigned char IMPISPSinterDenoiseAttr::sinter_strength</title>                
+<para>空间降噪强度，手动模式有效，取值范围为[0, 0xff] </para>
+
+                <para>Definition at line 448 of file imp_isp.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_isp.h</para></listitem></itemizedlist></para>
+            </simplesect>
+        </section>
+</section>

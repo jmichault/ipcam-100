@@ -1,0 +1,456 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Programmation T20: IMP_Decoder</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Programmation T20
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">IMP_Decoder<div class="ingroups"><a class="el" href="group__imp.html">IMP(Ingenic Media Platform)</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>视频解码模块，当前只支持JPEG解码  
+<a href="#details">Plus de détails...</a></p>
+<div class="dynheader">
+Graphe de collaboration de IMP_Decoder:</div>
+<div class="dyncontent">
+<center><table><tr><td><img src="group__IMP__Decoder.png" border="0" alt="" usemap="#group____IMP____Decoder"/>
+<map name="group____IMP____Decoder" id="group____IMP____Decoder">
+<area shape="rect" id="node2" href="group__imp.html" title="IMP(Ingenic Media Platform)" alt="" coords="5,5,193,32"/>
+</map>
+</td></tr></table></center>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIMPDecoderAttr.html">IMPDecoderAttr</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIMPDecoderCHNAttr.html">IMPDecoderCHNAttr</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIMPDecoderNal.html">IMPDecoderNal</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIMPDecoderStream.html">IMPDecoderStream</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:gaf2847173e6e99d0859782d396431135e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Decoder.html#gaf2847173e6e99d0859782d396431135e">IMP_Decoder_CreateChn</a> (int decChn, const <a class="el" href="structIMPDecoderCHNAttr.html">IMPDecoderCHNAttr</a> *attr)</td></tr>
+<tr class="separator:gaf2847173e6e99d0859782d396431135e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga00a630779788c07c9daf523443c5abb0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Decoder.html#ga00a630779788c07c9daf523443c5abb0">IMP_Decoder_DestroyChn</a> (int decChn)</td></tr>
+<tr class="separator:ga00a630779788c07c9daf523443c5abb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga45b743d81c9e6a5b529c7cf52a12fedf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Decoder.html#ga45b743d81c9e6a5b529c7cf52a12fedf">IMP_Decoder_StartRecvPic</a> (int decChn)</td></tr>
+<tr class="separator:ga45b743d81c9e6a5b529c7cf52a12fedf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3ee251bcb7ac2b55f8ef67dfd43d0429"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Decoder.html#ga3ee251bcb7ac2b55f8ef67dfd43d0429">IMP_Decoder_StopRecvPic</a> (int decChn)</td></tr>
+<tr class="separator:ga3ee251bcb7ac2b55f8ef67dfd43d0429"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac2bc3fa07236594a07ca630cf1cb437c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Decoder.html#gac2bc3fa07236594a07ca630cf1cb437c">IMP_Decoder_SendStreamTimeout</a> (int decChn, <a class="el" href="structIMPDecoderStream.html">IMPDecoderStream</a> *stream, uint32_t timeoutMsec)</td></tr>
+<tr class="separator:gac2bc3fa07236594a07ca630cf1cb437c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae42cbf89e1e1cf4b8fa1b84ab0ac41e7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Decoder.html#gae42cbf89e1e1cf4b8fa1b84ab0ac41e7">IMP_Decoder_PollingFrame</a> (int decChn, uint32_t timeoutMsec)</td></tr>
+<tr class="separator:gae42cbf89e1e1cf4b8fa1b84ab0ac41e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga396b6cbf537d265617ab2ee13ac17c4e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Decoder.html#ga396b6cbf537d265617ab2ee13ac17c4e">IMP_Decoder_GetFrame</a> (int decChn, <a class="el" href="structIMPFrameInfo.html">IMPFrameInfo</a> **frame)</td></tr>
+<tr class="separator:ga396b6cbf537d265617ab2ee13ac17c4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga522ce60cb85c8865cf7304835946639a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Decoder.html#ga522ce60cb85c8865cf7304835946639a">IMP_Decoder_ReleaseFrame</a> (int decChn, <a class="el" href="structIMPFrameInfo.html">IMPFrameInfo</a> *frame)</td></tr>
+<tr class="separator:ga522ce60cb85c8865cf7304835946639a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<p>视频解码模块，当前只支持JPEG解码 </p>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a id="gaf2847173e6e99d0859782d396431135e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf2847173e6e99d0859782d396431135e">&#9670;&nbsp;</a></span>IMP_Decoder_CreateChn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Decoder_CreateChn </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>decChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structIMPDecoderCHNAttr.html">IMPDecoderCHNAttr</a> *&#160;</td>
+          <td class="paramname"><em>attr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>创建解码Channel</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">decChn</td><td>解码Channel号,取值范围: [0, NR_MAX_DEC_CHN - 1] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">attr</td><td>解码Channel属性指针</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>无。 </dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>无。 </dd></dl>
+
+</div>
+</div>
+<a id="ga00a630779788c07c9daf523443c5abb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga00a630779788c07c9daf523443c5abb0">&#9670;&nbsp;</a></span>IMP_Decoder_DestroyChn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Decoder_DestroyChn </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>decChn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>销毁解码Channel</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">decChn</td><td>解码Channel号,取值范围: [0, NR_MAX_DEC_CHN - 1]</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>无。 </dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>无。 </dd></dl>
+
+</div>
+</div>
+<a id="ga396b6cbf537d265617ab2ee13ac17c4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga396b6cbf537d265617ab2ee13ac17c4e">&#9670;&nbsp;</a></span>IMP_Decoder_GetFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Decoder_GetFrame </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>decChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structIMPFrameInfo.html">IMPFrameInfo</a> **&#160;</td>
+          <td class="paramname"><em>frame</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>获取解码码流</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">decChn</td><td>解码Channel号,取值范围: [0, NR_MAX_DEC_CHN - 1] </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">frame</td><td>解码码流结构体指针</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>无。</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>解码码流buffer由解码器内部申请，该函数只需要传入结构体指针即可。 </dd></dl>
+
+</div>
+</div>
+<a id="gae42cbf89e1e1cf4b8fa1b84ab0ac41e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae42cbf89e1e1cf4b8fa1b84ab0ac41e7">&#9670;&nbsp;</a></span>IMP_Decoder_PollingFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Decoder_PollingFrame </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>decChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>timeoutMsec</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Polling 解码码流缓存</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">decChn</td><td>解码Channel号,取值范围: [0, NR_MAX_DEC_CHN - 1] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">timeoutMsec</td><td>超时时间 单位ms</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>无。</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>如果Channel未创建，则返回失败 </dd></dl>
+
+</div>
+</div>
+<a id="ga522ce60cb85c8865cf7304835946639a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga522ce60cb85c8865cf7304835946639a">&#9670;&nbsp;</a></span>IMP_Decoder_ReleaseFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Decoder_ReleaseFrame </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>decChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structIMPFrameInfo.html">IMPFrameInfo</a> *&#160;</td>
+          <td class="paramname"><em>frame</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>释放码流缓存</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">decChn</td><td>解码Channel号,取值范围: [0, NR_MAX_DEC_CHN - 1] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">frame</td><td>解码码流结构体指针</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>无。</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>无。 </dd></dl>
+
+</div>
+</div>
+<a id="gac2bc3fa07236594a07ca630cf1cb437c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac2bc3fa07236594a07ca630cf1cb437c">&#9670;&nbsp;</a></span>IMP_Decoder_SendStreamTimeout()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Decoder_SendStreamTimeout </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>decChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structIMPDecoderStream.html">IMPDecoderStream</a> *&#160;</td>
+          <td class="paramname"><em>stream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>timeoutMsec</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>发送需解码数据</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">decChn</td><td>解码Channel号,取值范围: [0, NR_MAX_DEC_CHN - 1] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">stream</td><td>需解码的数据流结构体指针 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">timeoutMsec</td><td>解码超时时间 单位ms</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>无。</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>如果Channel未创建，则返回失败 </dd></dl>
+
+</div>
+</div>
+<a id="ga45b743d81c9e6a5b529c7cf52a12fedf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga45b743d81c9e6a5b529c7cf52a12fedf">&#9670;&nbsp;</a></span>IMP_Decoder_StartRecvPic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Decoder_StartRecvPic </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>decChn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>开启解码Channel接收图像</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">decChn</td><td>解码Channel号,取值范围: [0, NR_MAX_DEC_CHN - 1]</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>开启解码Channel接收图像后才能开始解码</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>如果Channel未创建，则返回失败 </dd></dl>
+
+</div>
+</div>
+<a id="ga3ee251bcb7ac2b55f8ef67dfd43d0429"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3ee251bcb7ac2b55f8ef67dfd43d0429">&#9670;&nbsp;</a></span>IMP_Decoder_StopRecvPic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Decoder_StopRecvPic </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>decChn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>停止解码Channel接收图像</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">decChn</td><td>解码Channel号,取值范围: [0, NR_MAX_DEC_CHN - 1]</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>停止解码Channel接收图像</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>如果Channel未创建，则返回失败 </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

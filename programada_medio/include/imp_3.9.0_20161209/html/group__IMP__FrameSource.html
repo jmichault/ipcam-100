@@ -1,0 +1,592 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Programmation T20: IMP_FrameSource</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Programmation T20
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Énumérations</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">IMP_FrameSource<div class="ingroups"><a class="el" href="group__imp.html">IMP(Ingenic Media Platform)</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>视频源，是IMP系统的图像数据源，可设置图像的分辨率、裁减、缩放等属性，以及后端降噪功能  
+<a href="#details">Plus de détails...</a></p>
+<div class="dynheader">
+Graphe de collaboration de IMP_FrameSource:</div>
+<div class="dyncontent">
+<center><table><tr><td><img src="group__IMP__FrameSource.png" border="0" alt="" usemap="#group____IMP____FrameSource"/>
+<map name="group____IMP____FrameSource" id="group____IMP____FrameSource">
+<area shape="rect" id="node2" href="group__imp.html" title="IMP(Ingenic Media Platform)" alt="" coords="5,5,193,32"/>
+</map>
+</td></tr></table></center>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIMPFSChnCrop.html">IMPFSChnCrop</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIMPFSChnScaler.html">IMPFSChnScaler</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIMPFSChnAttr.html">IMPFSChnAttr</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Énumérations</h2></td></tr>
+<tr class="memitem:ga155b3408c5b20686f020a351a56d34a1"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__FrameSource.html#ga155b3408c5b20686f020a351a56d34a1">IMPFSChnType</a> { <a class="el" href="group__IMP__FrameSource.html#gga155b3408c5b20686f020a351a56d34a1aa44fd626db4a97c40ffc9f231396d67c">FS_PHY_CHANNEL</a>, 
+<a class="el" href="group__IMP__FrameSource.html#gga155b3408c5b20686f020a351a56d34a1aa7d8a412ff0cf06f92fad8b1a976bd9f">FS_EXT_CHANNEL</a>
+ }</td></tr>
+<tr class="separator:ga155b3408c5b20686f020a351a56d34a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:ga997d40cc97abc963f96b2ee963f27220"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__FrameSource.html#ga997d40cc97abc963f96b2ee963f27220">IMP_FrameSource_CreateChn</a> (int chnNum, <a class="el" href="structIMPFSChnAttr.html">IMPFSChnAttr</a> *chn_attr)</td></tr>
+<tr class="separator:ga997d40cc97abc963f96b2ee963f27220"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae800f0c0ad967bcd2692087d17ebb685"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__FrameSource.html#gae800f0c0ad967bcd2692087d17ebb685">IMP_FrameSource_DestroyChn</a> (int chnNum)</td></tr>
+<tr class="separator:gae800f0c0ad967bcd2692087d17ebb685"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1c59f4918ceae7635123da1d253b5904"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__FrameSource.html#ga1c59f4918ceae7635123da1d253b5904">IMP_FrameSource_EnableChn</a> (int chnNum)</td></tr>
+<tr class="separator:ga1c59f4918ceae7635123da1d253b5904"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9f8c6b444fefa927f0bc02d0031f34d8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__FrameSource.html#ga9f8c6b444fefa927f0bc02d0031f34d8">IMP_FrameSource_DisableChn</a> (int chnNum)</td></tr>
+<tr class="separator:ga9f8c6b444fefa927f0bc02d0031f34d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab59545186250a59d17e44eaa78089fa6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__FrameSource.html#gab59545186250a59d17e44eaa78089fa6">IMP_FrameSource_GetChnAttr</a> (int chnNum, <a class="el" href="structIMPFSChnAttr.html">IMPFSChnAttr</a> *chnAttr)</td></tr>
+<tr class="separator:gab59545186250a59d17e44eaa78089fa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf359a4e61fd4d2f8ff5cd8b28d321eb6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__FrameSource.html#gaf359a4e61fd4d2f8ff5cd8b28d321eb6">IMP_FrameSource_SetChnAttr</a> (int chnNum, const <a class="el" href="structIMPFSChnAttr.html">IMPFSChnAttr</a> *chnAttr)</td></tr>
+<tr class="separator:gaf359a4e61fd4d2f8ff5cd8b28d321eb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5a433ca616cb0c1fe82f400161a411b1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__FrameSource.html#ga5a433ca616cb0c1fe82f400161a411b1">IMP_FrameSource_SetFrameDepth</a> (int chnNum, int depth)</td></tr>
+<tr class="separator:ga5a433ca616cb0c1fe82f400161a411b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga235cece30871f6672a2c69bbcc8926e5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__FrameSource.html#ga235cece30871f6672a2c69bbcc8926e5">IMP_FrameSource_GetFrameDepth</a> (int chnNum, int *depth)</td></tr>
+<tr class="separator:ga235cece30871f6672a2c69bbcc8926e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga058ab102f6c968ce09bc3bc871a6f56c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__FrameSource.html#ga058ab102f6c968ce09bc3bc871a6f56c">IMP_FrameSource_GetFrame</a> (int chnNum, <a class="el" href="structIMPFrameInfo.html">IMPFrameInfo</a> **frame)</td></tr>
+<tr class="separator:ga058ab102f6c968ce09bc3bc871a6f56c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacbb1d1fe8cc98ed0a4d8b4e3ed74eec7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__FrameSource.html#gacbb1d1fe8cc98ed0a4d8b4e3ed74eec7">IMP_FrameSource_ReleaseFrame</a> (int chnNum, <a class="el" href="structIMPFrameInfo.html">IMPFrameInfo</a> *frame)</td></tr>
+<tr class="separator:gacbb1d1fe8cc98ed0a4d8b4e3ed74eec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<p>视频源，是IMP系统的图像数据源，可设置图像的分辨率、裁减、缩放等属性，以及后端降噪功能 </p>
+<p>FrameSource是一个数据流相关概念，可以设置图像分辨率，格式等，并向后端提供原始图像。</p>
+<p>FrameSource的结构如下图： </p><div class="image">
+<img src="FrameSource.png" alt="FrameSource.png"/>
+</div>
+<p> 如上图所示，FrameSource有三路输出，三路输出均可用来编码，其中：</p><ul>
+<li>Channel 0一般作为高清视频流</li>
+<li>Channel 1一般作为标清视频流，或者IVS只能算法的数据源</li>
+<li>Channel 2是拓展通道，在特殊应用下使用，一般不建议使用</li>
+</ul>
+<p>FrameSource的初始化步骤如下（以两路输出为例）： </p><div class="fragment"><div class="line"><a class="code" href="structIMPFSChnAttr.html">IMPFSChnAttr</a> fs_chn_attr;</div><div class="line">fs_chn_attr.<a class="code" href="structIMPFSChnAttr.html#a904df5e9bf3fdeb216993071f14e8a08">pixFmt</a> = <a class="code" href="imp__common_8h.html#a41dd79af5cc134fac5e24c98272824c0ade518e7f48c29de6b877a63115d970dc">PIX_FMT_NV12</a>;</div><div class="line">fs_chn_attr.<a class="code" href="structIMPFSChnAttr.html#a73f08a5799791ca5d8238c254440281a">outFrmRateNum</a> = SENSOR_FRAME_RATE;</div><div class="line">fs_chn_attr.<a class="code" href="structIMPFSChnAttr.html#ad3d58bb119f3fa6cd97e93fffd8f984f">outFrmRateDen</a> = 1;</div><div class="line">fs_chn_attr.<a class="code" href="structIMPFSChnAttr.html#aa752418a19c20886f7f9cb4108e588c7">nrVBs</a> = 3;</div><div class="line">fs_chn_attr.<a class="code" href="structIMPFSChnAttr.html#a8f2b5574b53fd0af56143b6fecc50a2e">type</a> = <a class="code" href="group__IMP__FrameSource.html#gga155b3408c5b20686f020a351a56d34a1aa44fd626db4a97c40ffc9f231396d67c">FS_PHY_CHANNEL</a>;</div><div class="line"></div><div class="line">fs_chn_attr.<a class="code" href="structIMPFSChnAttr.html#afda01a1a3dddd00113ccf85285806c8c">crop</a>.<a class="code" href="structIMPFSChnCrop.html#a9c4012720caf98c415eacb924641654f">enable</a> = 1;</div><div class="line">fs_chn_attr.<a class="code" href="structIMPFSChnAttr.html#afda01a1a3dddd00113ccf85285806c8c">crop</a>.<a class="code" href="structIMPFSChnCrop.html#a88d91dcc5ae464d3ef50655fba122014">top</a> = 0;</div><div class="line">fs_chn_attr.<a class="code" href="structIMPFSChnAttr.html#afda01a1a3dddd00113ccf85285806c8c">crop</a>.<a class="code" href="structIMPFSChnCrop.html#a6c373b69e17b80f538897131b128cc03">left</a> = 0;</div><div class="line">fs_chn_attr.<a class="code" href="structIMPFSChnAttr.html#afda01a1a3dddd00113ccf85285806c8c">crop</a>.<a class="code" href="structIMPFSChnCrop.html#a73a6138ee22ef20601976e70ec8c3319">width</a> = 960;</div><div class="line">fs_chn_attr.<a class="code" href="structIMPFSChnAttr.html#afda01a1a3dddd00113ccf85285806c8c">crop</a>.<a class="code" href="structIMPFSChnCrop.html#a0b8051634500f1b10f25758ed390a63d">height</a> = 640;</div><div class="line"></div><div class="line">fs_chn_attr.<a class="code" href="structIMPFSChnAttr.html#a62a17931c70bd2f3b6300d6f2997fb97">scaler</a>.<a class="code" href="structIMPFSChnScaler.html#ab85513e7e9f95dc8dea6ba0e04cdd130">enable</a> = 1;</div><div class="line">fs_chn_attr.<a class="code" href="structIMPFSChnAttr.html#a62a17931c70bd2f3b6300d6f2997fb97">scaler</a>.<a class="code" href="structIMPFSChnScaler.html#a71886a39893389b1fdd8863cffb563c3">outwidth</a> = 320;</div><div class="line">fs_chn_attr.<a class="code" href="structIMPFSChnAttr.html#a62a17931c70bd2f3b6300d6f2997fb97">scaler</a>.<a class="code" href="structIMPFSChnScaler.html#a3751423567c22348b71675abdce55f13">outheight</a> = 240;</div><div class="line"></div><div class="line">ret = <a class="code" href="group__IMP__FrameSource.html#ga997d40cc97abc963f96b2ee963f27220">IMP_FrameSource_CreateChn</a>(0, &amp;fs_chn_attr); <span class="comment">//step.1 创建Channel 0</span></div><div class="line"><span class="keywordflow">if</span> (ret &lt; 0) {</div><div class="line">    printf(<span class="stringliteral">&quot;FrameSource_CreateChn(0) error\n&quot;</span>);</div><div class="line">    <span class="keywordflow">goto</span> createchn_err;</div><div class="line">}</div><div class="line"></div><div class="line">ret = <a class="code" href="group__IMP__FrameSource.html#ga1c59f4918ceae7635123da1d253b5904">IMP_FrameSource_EnableChn</a>(0); <span class="comment">//step.2 Enable Channel 0，channel 0开始输出图像</span></div><div class="line"><span class="keywordflow">if</span> (ret &lt; 0) {</div><div class="line">    printf(<span class="stringliteral">&quot;EnableChn(0) error\n&quot;</span>;</div><div class="line">    <span class="keywordflow">return</span> enablechn_err;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="comment">//至此，FrameSource开始向后端Group传递数据</span></div><div class="line"></div><div class="line">ret = <a class="code" href="group__IMP__FrameSource.html#ga9f8c6b444fefa927f0bc02d0031f34d8">IMP_FrameSource_DisableChn</a>(0); <span class="comment">//step.3 Disable channel 0，channel 0停止输出图像</span></div><div class="line"><span class="keywordflow">if</span> (ret &lt; 0) {</div><div class="line">    printf(<span class="stringliteral">&quot;FrameSource_DisableChn(0) error\n&quot;</span>);</div><div class="line">    <span class="keywordflow">return</span> disablechn_err;</div><div class="line">}</div><div class="line"></div><div class="line">ret = <a class="code" href="group__IMP__FrameSource.html#gae800f0c0ad967bcd2692087d17ebb685">IMP_FrameSource_DestroyChn</a>(0); <span class="comment">//step.4 销毁channel 0</span></div><div class="line"><span class="keywordflow">if</span> (ret &lt; 0) {</div><div class="line">    printf(<span class="stringliteral">&quot;FrameSource_DestroyChn error\n&quot;</span>);</div><div class="line">    <span class="keywordflow">return</span> destorychn_err;</div><div class="line">}</div></div><!-- fragment --><p> 更多使用方法请参考Samples </p>
+<h2 class="groupheader">Documentation du type de l'énumération</h2>
+<a id="ga155b3408c5b20686f020a351a56d34a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga155b3408c5b20686f020a351a56d34a1">&#9670;&nbsp;</a></span>IMPFSChnType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__IMP__FrameSource.html#ga155b3408c5b20686f020a351a56d34a1">IMPFSChnType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="gga155b3408c5b20686f020a351a56d34a1aa44fd626db4a97c40ffc9f231396d67c"></a>FS_PHY_CHANNEL&#160;</td><td class="fielddoc"><p>物理通道 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga155b3408c5b20686f020a351a56d34a1aa7d8a412ff0cf06f92fad8b1a976bd9f"></a>FS_EXT_CHANNEL&#160;</td><td class="fielddoc"><p>拓展通道 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a id="ga997d40cc97abc963f96b2ee963f27220"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga997d40cc97abc963f96b2ee963f27220">&#9670;&nbsp;</a></span>IMP_FrameSource_CreateChn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_FrameSource_CreateChn </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>chnNum</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structIMPFSChnAttr.html">IMPFSChnAttr</a> *&#160;</td>
+          <td class="paramname"><em>chnAttr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>创建通道</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">chnNum</td><td>通道号 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">chnAttr</td><td>通道属性结构体指针</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败，返回错误码</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>创建通道，给后端模块提供数据源; <br />
+可以设置通道的相关属性，包括：图片宽度，图片高度，图片格式，通道的输出帧率, 缓存buf数，裁剪和缩放属性。<br />
+对于T10，通道0、1只能被设置为物理通道，通道2,3只能被设置为拓展通道。</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>无。 </dd></dl>
+
+</div>
+</div>
+<a id="gae800f0c0ad967bcd2692087d17ebb685"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae800f0c0ad967bcd2692087d17ebb685">&#9670;&nbsp;</a></span>IMP_FrameSource_DestroyChn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IMP_FrameSource_DestroyChn </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>chnNum</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>销毁通道</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">chnNum</td><td>通道号</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败，返回错误码</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>销毁通道</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>如果程序调用过IMP_FrameSource_EnableChn，一定要调用IMP_FrameSource_DisableChn之后，再使用此函数。 </dd></dl>
+
+</div>
+</div>
+<a id="ga9f8c6b444fefa927f0bc02d0031f34d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9f8c6b444fefa927f0bc02d0031f34d8">&#9670;&nbsp;</a></span>IMP_FrameSource_DisableChn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_FrameSource_DisableChn </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>chnNum</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>关闭通道</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">chnNum</td><td>通道号</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败，返回错误码</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>无</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>无 </dd></dl>
+
+</div>
+</div>
+<a id="ga1c59f4918ceae7635123da1d253b5904"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1c59f4918ceae7635123da1d253b5904">&#9670;&nbsp;</a></span>IMP_FrameSource_EnableChn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_FrameSource_EnableChn </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>chnNum</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>使能通道</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">chnNum</td><td>通道号</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败，返回错误码</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>无</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>在使用这个函数之前，必须确保所使能的通道已经创建. </dd></dl>
+
+</div>
+</div>
+<a id="gab59545186250a59d17e44eaa78089fa6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab59545186250a59d17e44eaa78089fa6">&#9670;&nbsp;</a></span>IMP_FrameSource_GetChnAttr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_FrameSource_GetChnAttr </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>chnNum</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structIMPFSChnAttr.html">IMPFSChnAttr</a> *&#160;</td>
+          <td class="paramname"><em>chnAttr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>获得通道属性</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">chnNum</td><td>通道号</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">chnAttr</td><td>通道属性结构体指针</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败，返回错误码</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>可以获得通道的相关属性，包括：图片宽度，图片高度，图片格式，通道的输出帧率, 缓存buf数，裁剪和缩放属性.</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>无 </dd></dl>
+
+</div>
+</div>
+<a id="ga058ab102f6c968ce09bc3bc871a6f56c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga058ab102f6c968ce09bc3bc871a6f56c">&#9670;&nbsp;</a></span>IMP_FrameSource_GetFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IMP_FrameSource_GetFrame </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>chnNum</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structIMPFrameInfo.html">IMPFrameInfo</a> **&#160;</td>
+          <td class="paramname"><em>frame</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>获取的图像</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">chnNum</td><td>通道的编号 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">frame</td><td>获取的图像</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败，返回错误码</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd></dd></dl>
+<p>1.此接口可以获取指定通道的视频图像信息。图像信息主要包括：图像的宽度、高度、像素格式以及图片数据起始地址。</p>
+<p>2.此接口需在通道已启用后才有效。</p>
+<p>3.支持多次获取后再释放，但建议获取和释放接口配对使用。</p>
+<p>4.该接口默认超时时间为 2s，即2s 内仍未获取到图像，则超时返回。</p>
+<dl class="section attention"><dt>Attention</dt><dd>无. </dd></dl>
+
+</div>
+</div>
+<a id="ga235cece30871f6672a2c69bbcc8926e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga235cece30871f6672a2c69bbcc8926e5">&#9670;&nbsp;</a></span>IMP_FrameSource_GetFrameDepth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IMP_FrameSource_GetFrameDepth </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>chnNum</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>depth</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>获取的图像最大深度</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">chnNum</td><td>通道的编号 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">depth</td><td>获取的图像最大深度值</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败，返回错误码</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>无.</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>无. </dd></dl>
+
+</div>
+</div>
+<a id="gacbb1d1fe8cc98ed0a4d8b4e3ed74eec7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacbb1d1fe8cc98ed0a4d8b4e3ed74eec7">&#9670;&nbsp;</a></span>IMP_FrameSource_ReleaseFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IMP_FrameSource_ReleaseFrame </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>chnNum</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structIMPFrameInfo.html">IMPFrameInfo</a> *&#160;</td>
+          <td class="paramname"><em>frame</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>释放获取的图像</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">chnNum</td><td>通道的编号 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">frame</td><td>释放获取的图像</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败，返回错误码</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>无.</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>无. </dd></dl>
+
+</div>
+</div>
+<a id="gaf359a4e61fd4d2f8ff5cd8b28d321eb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf359a4e61fd4d2f8ff5cd8b28d321eb6">&#9670;&nbsp;</a></span>IMP_FrameSource_SetChnAttr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_FrameSource_SetChnAttr </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>chnNum</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structIMPFSChnAttr.html">IMPFSChnAttr</a> *&#160;</td>
+          <td class="paramname"><em>chnAttr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>设置通道属性</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">chnNum</td><td>通道号</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">chnAttr</td><td>通道属性结构体指针</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败，返回错误码</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>可以设置通道的相关属性，包括：图片宽度，图片高度，图片格式，通道的输出帧率, 缓存buf数，裁剪和缩放属性.</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>无 </dd></dl>
+
+</div>
+</div>
+<a id="ga5a433ca616cb0c1fe82f400161a411b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5a433ca616cb0c1fe82f400161a411b1">&#9670;&nbsp;</a></span>IMP_FrameSource_SetFrameDepth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IMP_FrameSource_SetFrameDepth </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>chnNum</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>depth</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>设置可获取的图像最大深度</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">chnNum</td><td>通道的编号 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">depth</td><td>设置可获取的图像最大深度值</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败，返回错误码</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd></dd></dl>
+<p>1.此接口用于设置某一通道缓存的视频图像帧数。当用户设置缓存多帧视频图像时，用户可以获取到一定数目的连续图像数据。</p>
+<p>2.若指定depth为0，表示不需要系统为该通道缓存图像，故用户获取不到该通道图像数据。系统默认不为通道缓存图像，即depth默认为0。</p>
+<p>3.系统将自动更新最旧的图像数据，保证用户一旦开始获取，就可获取到最近最新的图像。</p>
+<p>4.系统因获取不到图像而自动停止缓存新的图像，用户也不能获取新的图像。因此建议用户保证获取和释放接口配对使用。</p>
+<p>5.系统将自动更新用户仍未获取的最旧的图像数据，保证缓存的图像队列为最近最新的图像。由于用户不能保证获取速度，导致获取的可能不是连续的图像。</p>
+<p>6.此函数可以调用位置，没有要求。但是只能使用一次。</p>
+<dl class="section attention"><dt>Attention</dt><dd>无. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

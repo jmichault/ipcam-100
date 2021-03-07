@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="unionIMPOSDRgnAttrData">
+<title>IMPOSDRgnAttrData union Reference</title>
+<para>
+    <programlisting>#include <link linkend="imp__osd_8h">&lt;imp_osd.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for IMPOSDRgnAttrData</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="unionIMPOSDRgnAttrData__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for IMPOSDRgnAttrData</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="unionIMPOSDRgnAttrData__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Attributs publics</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void * bitmapData</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>lineRectData lineRectData</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>coverData coverData</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>picData picData</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title>Description détaillée</title>
+
+<para>OSD区域属性数据 </para>
+                <para>Definition at line 120 of file imp_osd.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_osd.h</para></listitem></itemizedlist></para>
+        </simplesect>
+        <section>
+            <title>Documentation des données membres</title>
+            <simplesect>
+                <title>void* IMPOSDRgnAttrData::bitmapData</title>                
+<para>点阵数据 </para>
+
+                <para>Definition at line 121 of file imp_osd.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_osd.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>lineRectData IMPOSDRgnAttrData::lineRectData</title>                
+<para>线、矩形数据 </para>
+
+                <para>Definition at line 122 of file imp_osd.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_osd.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>coverData IMPOSDRgnAttrData::coverData</title>                
+<para>遮挡数据 </para>
+
+                <para>Definition at line 123 of file imp_osd.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_osd.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>picData IMPOSDRgnAttrData::picData</title>                
+<para>图片数据 </para>
+
+                <para>Definition at line 124 of file imp_osd.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_osd.h</para></listitem></itemizedlist></para>
+            </simplesect>
+        </section>
+</section>

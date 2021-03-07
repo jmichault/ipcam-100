@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="unionisp__core__expr__attr">
+<title>isp_core_expr_attr union Reference</title>
+<para>
+    <programlisting>#include <link linkend="imp__isp_8h">&lt;imp_isp.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for isp_core_expr_attr</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="unionisp__core__expr__attr__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for isp_core_expr_attr</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="unionisp__core__expr__attr__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+        </section>
+        <section>
+            <title>Attributs publics</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>enum isp_core_expr_mode mode</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>enum isp_core_expr_unit unit</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t time</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct isp_core_expr_attr::@6 s_attr</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t integration_time</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t integration_time_min</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t integration_time_max</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint16_t one_line_expr_in_us</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct isp_core_expr_attr::@7 g_attr</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title>Description détaillée</title>
+
+<para>曝光参数 </para>
+                <para>Definition at line 1112 of file imp_isp.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_isp.h</para></listitem></itemizedlist></para>
+        </simplesect>
+        <section>
+            <title>Documentation des données membres</title>
+            <simplesect>
+                <title>enum isp_core_expr_mode isp_core_expr_attr::mode</title>                
+<para>设置的曝光模式</para>
+
+<para>获取的曝光模式 </para>
+
+                <para>Definition at line 1038 of file imp_isp.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_isp.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>enum isp_core_expr_unit isp_core_expr_attr::unit</title>                
+<para>设置的曝光单位 </para>
+
+                <para>Definition at line 1038 of file imp_isp.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_isp.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>uint16_t isp_core_expr_attr::integration_time</title>                
+<para>获取的曝光时间，单位为行 </para>
+
+                <para>Definition at line 1120 of file imp_isp.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_isp.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>uint16_t isp_core_expr_attr::integration_time_min</title>                
+<para>获取的曝光最小时间，单位为行 </para>
+
+                <para>Definition at line 1121 of file imp_isp.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_isp.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>uint16_t isp_core_expr_attr::integration_time_max</title>                
+<para>获取的曝光最大时间，单位为行 </para>
+
+                <para>Definition at line 1122 of file imp_isp.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_isp.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>uint16_t isp_core_expr_attr::one_line_expr_in_us</title>                
+<para>获取的一行曝光时间对应的微妙数 </para>
+
+                <para>Definition at line 1123 of file imp_isp.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_isp.h</para></listitem></itemizedlist></para>
+            </simplesect>
+        </section>
+</section>

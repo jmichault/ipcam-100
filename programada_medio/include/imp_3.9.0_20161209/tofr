@@ -1,0 +1,21 @@
+
+
+
+
+awk 'BEGIN{ ORS="";}{
+  split ($0, MSGS , "[ -~\t，]*", SEPS);
+  MSGSLEN = length(MSGS);
+  for (x=1 ; x<=MSGSLEN ; x++)
+  {
+    #print("MSGS "x " : " MSGS[x] ". sep " x " : "  SEPS[x]".");
+    #print("\n");
+    if(length(MSGS[x])>0)
+    {
+      "./traduko.sh zh-CN fr \"" MSGS[x] "\"" |getline MSG
+      print(" "MSG" ");
+    }
+    print(SEPS[x]);
+  }
+  print( "\n");
+
+} '

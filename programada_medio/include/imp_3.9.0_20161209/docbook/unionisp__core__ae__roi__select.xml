@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="unionisp__core__ae__roi__select">
+<title>isp_core_ae_roi_select union Reference</title>
+<para>
+    <programlisting>#include <link linkend="imp__isp_8h">&lt;imp_isp.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for isp_core_ae_roi_select</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="unionisp__core__ae__roi__select__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for isp_core_ae_roi_select</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="unionisp__core__ae__roi__select__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+        </section>
+        <section>
+            <title>Attributs publics</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>unsigned endy</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>unsigned endx</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>unsigned starty</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>unsigned startx</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct isp_core_ae_roi_select::@8 @9</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t value</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title>Description détaillée</title>
+
+<para>曝光统计区域选择 </para>
+                <para>Definition at line 1159 of file imp_isp.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_isp.h</para></listitem></itemizedlist></para>
+        </simplesect>
+        <section>
+            <title>Documentation des données membres</title>
+            <simplesect>
+                <title>unsigned isp_core_ae_roi_select::endy</title>                
+<para>结束点y坐标 (0 ~ 255) </para>
+
+                <para>Definition at line 1161 of file imp_isp.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_isp.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>unsigned isp_core_ae_roi_select::endx</title>                
+<para>结束点x坐标 (0 ~ 255) </para>
+
+                <para>Definition at line 1162 of file imp_isp.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_isp.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>unsigned isp_core_ae_roi_select::starty</title>                
+<para>起始点y坐标 (0 ~ 255) </para>
+
+                <para>Definition at line 1163 of file imp_isp.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_isp.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>unsigned isp_core_ae_roi_select::startx</title>                
+<para>起始点x坐标 (0 ~ 255) </para>
+
+                <para>Definition at line 1164 of file imp_isp.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_isp.h</para></listitem></itemizedlist></para>
+            </simplesect>
+        </section>
+</section>

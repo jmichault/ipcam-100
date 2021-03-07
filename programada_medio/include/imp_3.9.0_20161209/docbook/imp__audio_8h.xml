@@ -1,0 +1,736 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="imp__audio_8h">
+    <title>imp_audio.h File Reference</title>
+    <programlisting>#include &lt;stdint.h&gt;</programlisting>
+<para>Include dependency diagram for imp_audio.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="imp__audio_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for imp_audio.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="imp__audio_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPAudioIOAttr">IMPAudioIOAttr</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPAudioFrame">IMPAudioFrame</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPAudioIChnParam">IMPAudioIChnParam</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPAudioOChnState">IMPAudioOChnState</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPAudioStream">IMPAudioStream</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPAudioEncChnAttr">IMPAudioEncChnAttr</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPAudioEncEncoder">IMPAudioEncEncoder</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPAudioDecChnAttr">IMPAudioDecChnAttr</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPAudioDecDecoder">IMPAudioDecDecoder</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPAudioAgcConfig">IMPAudioAgcConfig</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Macros</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="group__IMP__Audio_1ga1f4605a2927d3cdf35d8ce1b00e30f1c">MAX_AUDIO_FRAME_NUM</link> 50</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Énumérations</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="group__IMP__Audio_1ga7f9bbf0ae482fa7e68855f4bf68c4a1b">IMPBlock</link> {
+<link linkend="group__IMP__Audio_1gga7f9bbf0ae482fa7e68855f4bf68c4a1ba02fc27068fe9a3c151ffcc08ec5bb65d">BLOCK</link>= 0,
+<link linkend="group__IMP__Audio_1gga7f9bbf0ae482fa7e68855f4bf68c4a1ba2be9044f7a5785fb4db63bae7d099a9b">NOBLOCK</link>= 1
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="group__IMP__Audio_1ga3ef9a733efca625c908fb5cb8b319538">IMPAudioSampleRate</link> {
+<link linkend="group__IMP__Audio_1gga3ef9a733efca625c908fb5cb8b319538a69a08037564ba399c3143ec5587c7006">AUDIO_SAMPLE_RATE_8000</link>= 8000,
+<link linkend="group__IMP__Audio_1gga3ef9a733efca625c908fb5cb8b319538ac0e21b9652cf7f8c167b077205360951">AUDIO_SAMPLE_RATE_16000</link>= 16000,
+<link linkend="group__IMP__Audio_1gga3ef9a733efca625c908fb5cb8b319538a1d7722c568db12e6eb254aef04f1c930">AUDIO_SAMPLE_RATE_44100</link>= 44100,
+<link linkend="group__IMP__Audio_1gga3ef9a733efca625c908fb5cb8b319538a276dbfe6b831de49d68b383b9573a722">AUDIO_SAMPLE_RATE_48000</link>= 48000,
+<link linkend="group__IMP__Audio_1gga3ef9a733efca625c908fb5cb8b319538a17e0ee9612a8cad3d761e496f9904897">AUDIO_SAMPLE_RATE_96000</link>= 96000
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="group__IMP__Audio_1gad0c53f3d873672b040af8e2163f10567">IMPAudioBitWidth</link> {
+<link linkend="group__IMP__Audio_1ggad0c53f3d873672b040af8e2163f10567ae4fe6b8ad9ccd205f42fc897d7989adb">AUDIO_BIT_WIDTH_16</link>= 16
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="group__IMP__Audio_1gab930bb2e1619f803e108bec84ea8724e">IMPAudioSoundMode</link> {
+<link linkend="group__IMP__Audio_1ggab930bb2e1619f803e108bec84ea8724eaa8195ed0d999b396c0d3a927e33debd2">AUDIO_SOUND_MODE_MONO</link>= 1,
+<link linkend="group__IMP__Audio_1ggab930bb2e1619f803e108bec84ea8724ea708ac5ff4d9a9109d8caffe117b03526">AUDIO_SOUND_MODE_STEREO</link>= 2
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="group__IMP__Audio_1ga70f33e818e870d815be3dba23d5cd813">IMPAudioPalyloadType</link> {
+<link linkend="group__IMP__Audio_1gga70f33e818e870d815be3dba23d5cd813a81f67c1d222fdc14bef6637388e49dd3">PT_PCM</link>= 0,
+<link linkend="group__IMP__Audio_1gga70f33e818e870d815be3dba23d5cd813acd4a416224044341dec5b24de31e2119">PT_G711A</link>= 1,
+<link linkend="group__IMP__Audio_1gga70f33e818e870d815be3dba23d5cd813a31f6e6ce7666a4da221256da742ba86b">PT_G711U</link>= 2,
+<link linkend="group__IMP__Audio_1gga70f33e818e870d815be3dba23d5cd813a668c23f5129150b439535b0742fee6c7">PT_G726</link>= 3,
+<link linkend="group__IMP__Audio_1gga70f33e818e870d815be3dba23d5cd813ab1802ebf2f8b3290875eb9a67073982b">PT_AEC</link>= 4,
+<link linkend="group__IMP__Audio_1gga70f33e818e870d815be3dba23d5cd813a27757a4e875ab674511e330dc3282637">PT_ADPCM</link>= 5,
+<link linkend="group__IMP__Audio_1gga70f33e818e870d815be3dba23d5cd813a41bf2eeccfb9591b58f163b3eb7854d2">PT_MAX</link>= 6
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="group__IMP__Audio_1gadd8203e0f091956e90bb731343011b56">IMPAudioDecMode</link> {
+<link linkend="group__IMP__Audio_1ggadd8203e0f091956e90bb731343011b56aa6b274a825102f01b1aa08ab7bf79563">ADEC_MODE_PACK</link>= 0,
+<link linkend="group__IMP__Audio_1ggadd8203e0f091956e90bb731343011b56a30e46ec4cb97eee12e1db4fd0db4a1c4">ADEC_MODE_STREAM</link>= 1
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="group__IMP__Audio_1ga6685d9ae470366ad2d95e8e32c7527fc">Level_ns</link> {
+<link linkend="group__IMP__Audio_1gga6685d9ae470366ad2d95e8e32c7527fcac734df19993daf3396374b293197ea71">NS_LOW</link>,
+<link linkend="group__IMP__Audio_1gga6685d9ae470366ad2d95e8e32c7527fca6767e6362ab12a700ef3fe57374ff867">NS_MODERATE</link>,
+<link linkend="group__IMP__Audio_1gga6685d9ae470366ad2d95e8e32c7527fcadacc47f47a5a05d646fc33b7ec007fbb">NS_HIGH</link>,
+<link linkend="group__IMP__Audio_1gga6685d9ae470366ad2d95e8e32c7527fcafde6cb5dee40e524af25ad55d44d9379">NS_VERYHIGH</link>
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Fonctions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1gad8c75d7c39d406c3d6c863bd179b54e1">IMP_AI_SetPubAttr</link> (
+int audioDevId, <link linkend="structIMPAudioIOAttr">IMPAudioIOAttr</link> * attr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga44e8dcbae7c0e0e33edd83a5d2a93693">IMP_AI_GetPubAttr</link> (
+int audioDevId, <link linkend="structIMPAudioIOAttr">IMPAudioIOAttr</link> * attr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1gad5da445269527bee03a0184086e3c293">IMP_AI_Enable</link> (
+int audioDevId)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga17ae30132951f2786a61d0d8e6886de4">IMP_AI_Disable</link> (
+int audioDevId)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1gaba6f0999391cb933b7923d77225d158f">IMP_AI_EnableChn</link> (
+int audioDevId, int aiChn)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1gaeec552f5215c68e299e18e7ba23fb354">IMP_AI_DisableChn</link> (
+int audioDevId, int aiChn)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga6f080ad3f52147b7747fe8c5a3737170">IMP_AI_PollingFrame</link> (
+int audioDevId, int aiChn, unsigned int timeout_ms)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1gab8335839c99279534119273709971414">IMP_AI_GetFrame</link> (
+int audioDevId, int aiChn, <link linkend="structIMPAudioFrame">IMPAudioFrame</link> * frm, <link linkend="group__IMP__Audio_1ga7f9bbf0ae482fa7e68855f4bf68c4a1b">IMPBlock</link> block)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga1233c77454b8a895b02fb0035cbe5bd0">IMP_AI_ReleaseFrame</link> (
+int audioDevId, int aiChn, <link linkend="structIMPAudioFrame">IMPAudioFrame</link> * frm)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga498b982cac5532d1f853ea3356941d02">IMP_AI_SetChnParam</link> (
+int audioDevId, int aiChn, <link linkend="structIMPAudioIChnParam">IMPAudioIChnParam</link> * chnParam)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga2b091c08cfdb4b2d0fc5971ec6ea68f9">IMP_AI_GetChnParam</link> (
+int audioDevId, int aiChn, <link linkend="structIMPAudioIChnParam">IMPAudioIChnParam</link> * chnParam)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1gac8f128fe324a34bca50896259196867c">IMP_AI_EnableAec</link> (
+int aiDevId, int aiChn, int aoDevId, int aoChn)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1gae63925b11092f04fe89008bf8aac779e">IMP_AI_DisableAec</link> (
+int aiDevId, int aiChn)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga57f7097eee1486fade39bc5d38eb09ef">IMP_AI_EnableNs</link> (
+<link linkend="structIMPAudioIOAttr">IMPAudioIOAttr</link> * attr, int mode)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga72afa9dd2bbf005f34ed061d93693bb3">IMP_AI_DisableNs</link> (
+void )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1gadebd352aca9a64c1c66537725cc967f5">IMP_AI_EnableAgc</link> (
+<link linkend="structIMPAudioIOAttr">IMPAudioIOAttr</link> * attr, <link linkend="structIMPAudioAgcConfig">IMPAudioAgcConfig</link> agcConfig)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga824ac244870fdeb3bfe40416a450334e">IMP_AI_DisableAgc</link> (
+void )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga511a088e377119c0cde504e90fdeecba">IMP_AO_EnableAgc</link> (
+<link linkend="structIMPAudioIOAttr">IMPAudioIOAttr</link> * attr, <link linkend="structIMPAudioAgcConfig">IMPAudioAgcConfig</link> agcConfig)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga29f93e756e4a28f3f3cc142cc87939ea">IMP_AO_DisableAgc</link> (
+void )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga51f0132cb297e3c9d63beabd9fd7a2e0">IMP_AI_EnableHpf</link> (
+<link linkend="structIMPAudioIOAttr">IMPAudioIOAttr</link> * attr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1gae34b85461a391ba8a3a817bf85f732bc">IMP_AI_DisableHpf</link> (
+void )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga7b5d95bf8705b2f92da1e2ad227c5bb4">IMP_AO_EnableHpf</link> (
+<link linkend="structIMPAudioIOAttr">IMPAudioIOAttr</link> * attr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga9a2d6a03748a9bbcb2de56183f7c4b0e">IMP_AO_DisableHpf</link> (
+void )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1gab8ac0dbd68ea0a6fc58bd1474dfde138">IMP_AO_SetPubAttr</link> (
+int audioDevId, <link linkend="structIMPAudioIOAttr">IMPAudioIOAttr</link> * attr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1gafb7253ba00a9c18c2c67a1cd40eedbd0">IMP_AO_GetPubAttr</link> (
+int audioDevId, <link linkend="structIMPAudioIOAttr">IMPAudioIOAttr</link> * attr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga4f98f7107a0dee16098abf4f9692e8f6">IMP_AO_Enable</link> (
+int audioDevId)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga6e1f32f994bf2b6838f2c4548ffd5d51">IMP_AO_Disable</link> (
+int audioDevId)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga3370b8ae41d807a4a8cf52a00ad73a61">IMP_AO_EnableChn</link> (
+int audioDevId, int aoChn)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1gaf9fb80db5aeeb090883c794d58ad54c6">IMP_AO_DisableChn</link> (
+int audioDevId, int aoChn)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga04d4a45bef9a56805af383e2c20c44ea">IMP_AO_SendFrame</link> (
+int audioDevId, int aoChn, <link linkend="structIMPAudioFrame">IMPAudioFrame</link> * data, <link linkend="group__IMP__Audio_1ga7f9bbf0ae482fa7e68855f4bf68c4a1b">IMPBlock</link> block)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1gafbcd8674e7ff136200661a1204405dbc">IMP_AO_PauseChn</link> (
+int audioDevId, int aoChn)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga7dbfa38385d212ce13aa1b0eb0e1ad93">IMP_AO_ResumeChn</link> (
+int audioDevId, int aoChn)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga5497d52db8a6863eaf11222ed063b0d1">IMP_AO_ClearChnBuf</link> (
+int audioDevId, int aoChn)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1gaef2b97022ce26e199d7e85561a1ab533">IMP_AO_QueryChnStat</link> (
+int audioDevId, int aoChn, <link linkend="structIMPAudioOChnState">IMPAudioOChnState</link> * status)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga7b22c5e939dd3ea2b8fdadafbb20d0c4">IMP_AENC_CreateChn</link> (
+int aeChn, <link linkend="structIMPAudioEncChnAttr">IMPAudioEncChnAttr</link> * attr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga73961cdcb2337064ebdc2bf997a594dc">IMP_AENC_DestroyChn</link> (
+int aeChn)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga5b969ac455db4694936f0114582eb16e">IMP_AENC_SendFrame</link> (
+int aeChn, <link linkend="structIMPAudioFrame">IMPAudioFrame</link> * frm)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1gae1413a194c8c6e3abf14977bc8643eeb">IMP_AENC_PollingStream</link> (
+int AeChn, unsigned int timeout_ms)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1gae6d5a2043a920d31ebafba014ffa69c8">IMP_AENC_GetStream</link> (
+int aeChn, <link linkend="structIMPAudioStream">IMPAudioStream</link> * stream, <link linkend="group__IMP__Audio_1ga7f9bbf0ae482fa7e68855f4bf68c4a1b">IMPBlock</link> block)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1gad27d4774779123da4654dad83053bdf0">IMP_AENC_ReleaseStream</link> (
+int aeChn, <link linkend="structIMPAudioStream">IMPAudioStream</link> * stream)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1gab3c8f9f9dc80b12476e3d95333bc3ea8">IMP_AENC_RegisterEncoder</link> (
+int * handle, <link linkend="structIMPAudioEncEncoder">IMPAudioEncEncoder</link> * encoder)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga5c9e41486859db8858cd5869dae2bd2c">IMP_AENC_ReleaseEncoder</link> (
+int * handle)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga2caf89ce19b5eb9620c73ff0df71e587">IMP_ADEC_CreateChn</link> (
+int adChn, <link linkend="structIMPAudioDecChnAttr">IMPAudioDecChnAttr</link> * attr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1gaa08a20e319512497576b41e633b0af66">IMP_ADEC_DestroyChn</link> (
+int adChn)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1gadf3125601116c6e776eab97133e997f8">IMP_ADEC_SendStream</link> (
+int adChn, <link linkend="structIMPAudioStream">IMPAudioStream</link> * stream, <link linkend="group__IMP__Audio_1ga7f9bbf0ae482fa7e68855f4bf68c4a1b">IMPBlock</link> block)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga65bca9da47f553dd117778002991f6ef">IMP_ADEC_PollingStream</link> (
+int AdChn, unsigned int timeout_ms)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga18171fa7357246967054d3fd7964f8c3">IMP_ADEC_GetStream</link> (
+int adChn, <link linkend="structIMPAudioStream">IMPAudioStream</link> * stream, <link linkend="group__IMP__Audio_1ga7f9bbf0ae482fa7e68855f4bf68c4a1b">IMPBlock</link> block)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga372a867d48475ac17f3a3d4491ca2ad5">IMP_ADEC_ReleaseStream</link> (
+int adChn, <link linkend="structIMPAudioStream">IMPAudioStream</link> * stream)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga2f1a58237991028312804889cfacfe23">IMP_ADEC_ClearChnBuf</link> (
+int adChn)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga299230124f348a678c74b96d82c37d81">IMP_ADEC_RegisterDecoder</link> (
+int * handle, <link linkend="structIMPAudioDecDecoder">IMPAudioDecDecoder</link> * decoder)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga1ff96d3f6307f07c5e8b51f203049e99">IMP_ADEC_ReleaseDecoder</link> (
+int * handle)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga70d7c4db2a8edb35334c9fcdf5cb0a5e">IMP_AI_SetVol</link> (
+int audioDevId, int aiChn, int aiVol)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1gafdd3294f907892fe4d852091ba18b240">IMP_AI_GetVol</link> (
+int audioDevId, int aiChn, int * vol)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga5d5009f03e5053b44dd81cbf7f37bf6f">IMP_AI_SetVolMute</link> (
+int audioDevId, int aiChn, int mute)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga683010286e7d683afd58e7bd19cdd63f">IMP_AO_SetVol</link> (
+int audioDevId, int aoChn, int aoVol)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga012406e5df543616f2536ba165fd308c">IMP_AO_GetVol</link> (
+int audioDevId, int aoChn, int * vol)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga05a76144df4a8c7369dad24ac0c03cb1">IMP_AO_SetVolMute</link> (
+int audioDevId, int aoChn, int mute)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga87bc378dee0b95c9dccc29b4f7686e7d">IMP_AI_SetGain</link> (
+int audioDevId, int aiChn, int aiGain)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga2b538b811a219fa5c9ffb1fa976f51ee">IMP_AI_GetGain</link> (
+int audioDevId, int aiChn, int * aiGain)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga9b3cad08ad28977d44f2bccb1bcc3159">IMP_AO_SetGain</link> (
+int audioDevId, int aoChn, int aoGain)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1gacb5edfcaad64b1429ef4b48b182ebce4">IMP_AO_GetGain</link> (
+int audioDevId, int aoChn, int * aoGain)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1gaf43c178591d6f6f52e07bbe9d85f2143">IMP_AO_Soft_Mute</link> (
+int audioDevId, int aoChn)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1gab2f5ed8136d6dd928f790ee75162ff7c">IMP_AO_Soft_UNMute</link> (
+int audioDevId, int aoChn)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga3d40f6572878af4a393718bdcd452186">IMP_AI_GetFrameAndRef</link> (
+int audioDevId, int aiChn, <link linkend="structIMPAudioFrame">IMPAudioFrame</link> * frm, <link linkend="structIMPAudioFrame">IMPAudioFrame</link> * ref, <link linkend="group__IMP__Audio_1ga7f9bbf0ae482fa7e68855f4bf68c4a1b">IMPBlock</link> block)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga5f90e62155b035c84b1d964ee702f7af">IMP_AI_EnableAecRefFrame</link> (
+int audioDevId, int aiChn, int audioAoDevId, int aoChn)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Audio_1ga38f1fd77581199871c583fb5a349538a">IMP_AI_DisableAecRefFrame</link> (
+int audioDevId, int aiChn, int audioAoDevId, int aoChn)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Description détaillée</title>
+
+<para>IMP 音频输入输出头文件 </para>
+    <para>Definition in file /home2/jean/projets/ipcam-100/programada_medio/include/imp/imp_audio.h</para>
+    </simplesect>
+</section>

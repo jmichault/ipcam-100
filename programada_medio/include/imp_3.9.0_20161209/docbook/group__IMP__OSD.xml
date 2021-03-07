@@ -1,0 +1,1409 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="group__IMP__OSD">
+    <title>IMP_OSD</title>
+<para>Collaboration diagram for IMP_OSD</para>
+<para>
+    <figure>
+        <title>Group Collaboration diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="group__IMP__OSD.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+
+<para>OSD模块，可在视频流上叠加图片、位图、直线、矩形框 </para>
+        <section>
+            <title>Description détaillée</title>
+<section xml:id="group__IMP__OSD_1osd_summary">
+<title>1 模块介绍</title>
+
+<para>OSD的全称是On-Screen Display。模块的功能就是在每张片源中叠加线条、图片等信息。</para>
+</section>
+<section xml:id="group__IMP__OSD_1osd_concept">
+<title>2 相关概念</title>
+<section xml:id="group__IMP__OSD_1osd_region">
+<title>2.1 Region</title>
+
+<para>Region即是叠加区域，在API中简称Rgn。每个Region具有一定的图像信息，可以经过OSD模块叠加后，与背景图像合为一张图片。 对于图片的叠加，还可以实现Alpha效果。关于各种叠加类型的详细介绍请参考osd_region_type。</para>
+</section>
+<section xml:id="group__IMP__OSD_1osd_region_type">
+<title>2.1 Region type</title>
+
+<para>Region有几种类型，分别为：
+<literallayout>
+</literallayout>
+OSD_REG_LINE：直线
+<literallayout>
+</literallayout>
+OSD_REG_RECT：矩形框
+<literallayout>
+</literallayout>
+OSD_REG_BITMAP：位图
+<literallayout>
+</literallayout>
+OSD_REG_COVER：遮挡
+<literallayout>
+</literallayout>
+OSD_REG_PIC：图片
+<literallayout>
+</literallayout>
+其中，位图与图片的区别是，位图仅进行像素的单色覆盖，而图片是RGBA图像的Alpha叠加。</para>
+</section>
+</section>
+<section xml:id="group__IMP__OSD_1osd_fun">
+<title>3 模块功能</title>
+
+<para>OSD模块支持线条、矩形框、位图叠加、矩形遮挡和图片叠加。 线条、矩形框和位图采用软件实现；矩形遮挡和图片叠加采用硬件实现。</para>
+</section>
+<section xml:id="group__IMP__OSD_1osd_use">
+<title>4 模块使用</title>
+
+<para>OSD的使用一般有以下几个步骤<orderedlist>
+<listitem>
+<para>创建OSD组</para>
+</listitem><listitem>
+<para>绑定OSD组到系统中</para>
+</listitem><listitem>
+<para>创建OSD区域</para>
+</listitem><listitem>
+<para>注册OSD区域到OSD组中</para>
+</listitem><listitem>
+<para>设置OSD组区域属性和区域属性</para>
+</listitem><listitem>
+<para>设置OSD功能开关 </para>
+</listitem></orderedlist>
+</para>
+</section>
+        </section>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structlineRectData">lineRectData</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structcoverData">coverData</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structpicData">picData</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="unionIMPOSDRgnAttrData">IMPOSDRgnAttrData</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPOSDRgnAttr">IMPOSDRgnAttr</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPOSDGrpRgnAttr">IMPOSDGrpRgnAttr</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Énumérations</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="group__IMP__OSD_1ga07a129ad144ef8f2e0df27e448ac6dfb">IMPOsdColour</link> {
+<link linkend="group__IMP__OSD_1gga07a129ad144ef8f2e0df27e448ac6dfba4062b4faf6cfe005ac90c7abcecdfba4">OSD_BLACK</link>= 0xff000000,
+<link linkend="group__IMP__OSD_1gga07a129ad144ef8f2e0df27e448ac6dfba4a0c4635891f6a2ee0ebbdded19b3317">OSD_WHITE</link>= 0xffffffff,
+<link linkend="group__IMP__OSD_1gga07a129ad144ef8f2e0df27e448ac6dfba34d2fe7ad73b8a94e670df571a9e5adc">OSD_RED</link>= 0xffff0000,
+<link linkend="group__IMP__OSD_1gga07a129ad144ef8f2e0df27e448ac6dfbadbe20f373ed8b2446e89bfeb76b87917">OSD_GREEN</link>= 0xff00ff00,
+<link linkend="group__IMP__OSD_1gga07a129ad144ef8f2e0df27e448ac6dfba4c85f2a60bcc904c74aa787f5dd2a4d5">OSD_BLUE</link>= 0xff0000ff
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="group__IMP__OSD_1ga79528856a7d533a7e5ce8f47577beb2c">IMPOsdRgnType</link> {
+<link linkend="group__IMP__OSD_1gga79528856a7d533a7e5ce8f47577beb2ca04ecb838a529cbed99a079c3e88fb159">OSD_REG_INV</link>= 0,
+<link linkend="group__IMP__OSD_1gga79528856a7d533a7e5ce8f47577beb2ca4d19195a69c1d1717b52f0ef9e716066">OSD_REG_LINE</link>= 1,
+<link linkend="group__IMP__OSD_1gga79528856a7d533a7e5ce8f47577beb2ca071cc4253393618911f8fb8d0624ff64">OSD_REG_RECT</link>= 2,
+<link linkend="group__IMP__OSD_1gga79528856a7d533a7e5ce8f47577beb2ca1027eeb5d48d35dadb41e4277bd957d0">OSD_REG_BITMAP</link>= 3,
+<link linkend="group__IMP__OSD_1gga79528856a7d533a7e5ce8f47577beb2ca8a43dbf552eb563a9e897744014dc6c6">OSD_REG_COVER</link>= 4,
+<link linkend="group__IMP__OSD_1gga79528856a7d533a7e5ce8f47577beb2ca9db8b58618342a2796bda61daf06efe7">OSD_REG_PIC</link>= 5
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Définitions de type</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef int  <link linkend="group__IMP__OSD_1gadc0d2d62f9e28e13ca872973e8ff6fa9">IMPRgnHandle</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Fonctions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__OSD_1ga0f20b9a82881e0bde124eaf23d8d8a05">IMP_OSD_CreateGroup</link> (
+int grpNum)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__OSD_1gad57af8e427360576e3caf123ccea1486">IMP_OSD_DestroyGroup</link> (
+int grpNum)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__OSD_1ga7ee1c973352a6c63a9d94ced838b73d5">IMP_OSD_AttachToGroup</link> (
+<link linkend="structIMPCell">IMPCell</link> * from, <link linkend="structIMPCell">IMPCell</link> * to)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="group__IMP__OSD_1gadc0d2d62f9e28e13ca872973e8ff6fa9">IMPRgnHandle</link> <link linkend="group__IMP__OSD_1ga64e2cdf694b204d4cdb6f03792271810">IMP_OSD_CreateRgn</link> (
+<link linkend="structIMPOSDRgnAttr">IMPOSDRgnAttr</link> * prAttr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="group__IMP__OSD_1gae5c2059b379bc06d6a3272fdb638c7f8">IMP_OSD_DestroyRgn</link> (
+<link linkend="group__IMP__OSD_1gadc0d2d62f9e28e13ca872973e8ff6fa9">IMPRgnHandle</link> handle)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__OSD_1gada9245a734dcec9ad3ff64a8f9f1a379">IMP_OSD_RegisterRgn</link> (
+<link linkend="group__IMP__OSD_1gadc0d2d62f9e28e13ca872973e8ff6fa9">IMPRgnHandle</link> handle, int grpNum, <link linkend="structIMPOSDGrpRgnAttr">IMPOSDGrpRgnAttr</link> * pgrAttr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__OSD_1gac6c935a002ba3508e07a159c46543332">IMP_OSD_UnRegisterRgn</link> (
+<link linkend="group__IMP__OSD_1gadc0d2d62f9e28e13ca872973e8ff6fa9">IMPRgnHandle</link> handle, int grpNum)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__OSD_1ga9fa0dcefef685eb851b1457e7a0cafbc">IMP_OSD_SetRgnAttr</link> (
+<link linkend="group__IMP__OSD_1gadc0d2d62f9e28e13ca872973e8ff6fa9">IMPRgnHandle</link> handle, <link linkend="structIMPOSDRgnAttr">IMPOSDRgnAttr</link> * prAttr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__OSD_1ga816fe110eda1f2e5bb221f78a6177ade">IMP_OSD_GetRgnAttr</link> (
+<link linkend="group__IMP__OSD_1gadc0d2d62f9e28e13ca872973e8ff6fa9">IMPRgnHandle</link> handle, <link linkend="structIMPOSDRgnAttr">IMPOSDRgnAttr</link> * prAttr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__OSD_1ga880823c92f7258f2791aa91725683198">IMP_OSD_UpdateRgnAttrData</link> (
+<link linkend="group__IMP__OSD_1gadc0d2d62f9e28e13ca872973e8ff6fa9">IMPRgnHandle</link> handle, <link linkend="unionIMPOSDRgnAttrData">IMPOSDRgnAttrData</link> * prAttrData)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__OSD_1ga6dfff960bc63be5139a8317fa3c2a1ed">IMP_OSD_SetGrpRgnAttr</link> (
+<link linkend="group__IMP__OSD_1gadc0d2d62f9e28e13ca872973e8ff6fa9">IMPRgnHandle</link> handle, int grpNum, <link linkend="structIMPOSDGrpRgnAttr">IMPOSDGrpRgnAttr</link> * pgrAttr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__OSD_1ga72ed932c29bcf7ed54ad8f650403ca12">IMP_OSD_GetGrpRgnAttr</link> (
+<link linkend="group__IMP__OSD_1gadc0d2d62f9e28e13ca872973e8ff6fa9">IMPRgnHandle</link> handle, int grpNum, <link linkend="structIMPOSDGrpRgnAttr">IMPOSDGrpRgnAttr</link> * pgrAttr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__OSD_1gafbbc33cd778b48dd78bc97dabfe933c2">IMP_OSD_ShowRgn</link> (
+<link linkend="group__IMP__OSD_1gadc0d2d62f9e28e13ca872973e8ff6fa9">IMPRgnHandle</link> handle, int grpNum, int showFlag)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__OSD_1gab588ad815812fe2da722467b1e602eb3">IMP_OSD_Start</link> (
+int grpNum)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__OSD_1gae44fa63f34dc18d2d539a2563308fd55">IMP_OSD_Stop</link> (
+int grpNum)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Macros</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="group__IMP__OSD_1gadb17f033bc3cbd6212e32d0b75a0a761">INVHANDLE</link> (-1)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Documentation du type de l'énumération</title>
+            <section xml:id="group__IMP__OSD_1ga07a129ad144ef8f2e0df27e448ac6dfb">
+               <title>enum IMPOsdColour </title>
+               
+<para>OSD颜色类型，颜色格式为bgra </para>
+
+               <formalpara>
+                    <title>Valeurs énumérées:</title>
+                    <variablelist>
+                        <varlistentry xml:id="group__IMP__OSD_1gga07a129ad144ef8f2e0df27e448ac6dfba4062b4faf6cfe005ac90c7abcecdfba4">
+                            <term>OSD_BLACK</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="group__IMP__OSD_1gga07a129ad144ef8f2e0df27e448ac6dfba4a0c4635891f6a2ee0ebbdded19b3317">
+                            <term>OSD_WHITE</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="group__IMP__OSD_1gga07a129ad144ef8f2e0df27e448ac6dfba34d2fe7ad73b8a94e670df571a9e5adc">
+                            <term>OSD_RED</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="group__IMP__OSD_1gga07a129ad144ef8f2e0df27e448ac6dfbadbe20f373ed8b2446e89bfeb76b87917">
+                            <term>OSD_GREEN</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="group__IMP__OSD_1gga07a129ad144ef8f2e0df27e448ac6dfba4c85f2a60bcc904c74aa787f5dd2a4d5">
+                            <term>OSD_BLUE</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 74 of file imp_osd.h
+                    <computeroutput><literallayout>
+{
+OSD_BLACK= 0xff000000, 
+OSD_WHITE= 0xffffffff, 
+OSD_RED= 0xffff0000, 
+OSD_GREEN= 0xff00ff00, 
+OSD_BLUE= 0xff0000ff, 
+}IMPOsdColour;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+            <section xml:id="group__IMP__OSD_1ga79528856a7d533a7e5ce8f47577beb2c">
+               <title>enum IMPOsdRgnType </title>
+               
+<para>OSD区域类型 </para>
+
+               <formalpara>
+                    <title>Valeurs énumérées:</title>
+                    <variablelist>
+                        <varlistentry xml:id="group__IMP__OSD_1gga79528856a7d533a7e5ce8f47577beb2ca04ecb838a529cbed99a079c3e88fb159">
+                            <term>OSD_REG_INV</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="group__IMP__OSD_1gga79528856a7d533a7e5ce8f47577beb2ca4d19195a69c1d1717b52f0ef9e716066">
+                            <term>OSD_REG_LINE</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="group__IMP__OSD_1gga79528856a7d533a7e5ce8f47577beb2ca071cc4253393618911f8fb8d0624ff64">
+                            <term>OSD_REG_RECT</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="group__IMP__OSD_1gga79528856a7d533a7e5ce8f47577beb2ca1027eeb5d48d35dadb41e4277bd957d0">
+                            <term>OSD_REG_BITMAP</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="group__IMP__OSD_1gga79528856a7d533a7e5ce8f47577beb2ca8a43dbf552eb563a9e897744014dc6c6">
+                            <term>OSD_REG_COVER</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="group__IMP__OSD_1gga79528856a7d533a7e5ce8f47577beb2ca9db8b58618342a2796bda61daf06efe7">
+                            <term>OSD_REG_PIC</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 85 of file imp_osd.h
+                    <computeroutput><literallayout>
+{
+OSD_REG_INV= 0, 
+OSD_REG_LINE= 1, 
+OSD_REG_RECT= 2, 
+OSD_REG_BITMAP= 3, 
+OSD_REG_COVER= 4, 
+OSD_REG_PIC= 5, 
+}IMPOsdRgnType;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+        </section>
+        <section>
+            <title>Documentation des définitions de type</title>
+            <section xml:id="group__IMP__OSD_1gadc0d2d62f9e28e13ca872973e8ff6fa9">
+                <title>typedef int IMPRgnHandle</title> <emphasis></emphasis>
+                
+<para>OSD 区域句柄 </para>
+
+            </section>
+        </section>
+        <section>
+            <title>Documentation des fonctions</title>
+            <section xml:id="group__IMP__OSD_1ga0f20b9a82881e0bde124eaf23d8d8a05">
+                <title>int IMP_OSD_CreateGroup (int grpNum)</title> <emphasis></emphasis>
+                
+<para>创建OSD组</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>grpNum</entry>
+                                <entry>
+<para>OSD组号,取值范围: [0, NR_MAX_OSD_GROUPS - 1]</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>无。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无。 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__OSD_1gad57af8e427360576e3caf123ccea1486">
+                <title>int IMP_OSD_DestroyGroup (int grpNum)</title> <emphasis></emphasis>
+                
+<para>销毁OSD组</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>grpNum</entry>
+                                <entry>
+<para>OSD组号,取值范围: [0, NR_MAX_OSD_GROUPS - 1]</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>调用此API时要求对应的组已经创建。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无。 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__OSD_1ga7ee1c973352a6c63a9d94ced838b73d5">
+                <title>int IMP_OSD_AttachToGroup (IMPCell *from, IMPCell *to)</title> <emphasis></emphasis>
+                
+<para>将OSD组加入到系统中</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>from</entry>
+                                <entry>
+<para>OSD单元 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>to</entry>
+                                <entry>
+<para>系统中其他单元</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>新版本的SDK中建议使用Bind的方式将OSD串到系统的数据流中，Attach的方式不再推荐使用，但是API保留，方便兼容以往版本的软件。 具体可以参考<link linkend="group__IMP__System_1bind">2 模块绑定（Bind）</link> 的的示例</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无。 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__OSD_1ga64e2cdf694b204d4cdb6f03792271810">
+                <title>IMPRgnHandle IMP_OSD_CreateRgn (IMPOSDRgnAttr *prAttr)</title> <emphasis></emphasis>
+                
+<para>创建OSD区域</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>prAttr</entry>
+                                <entry>
+<para>OSD区域属性</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>大于等于0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>小于0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>无。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无。 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__OSD_1gae5c2059b379bc06d6a3272fdb638c7f8">
+                <title>void IMP_OSD_DestroyRgn (IMPRgnHandle handle)</title> <emphasis></emphasis>
+                
+<para>销毁OSD区域</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>prAttr</entry>
+                                <entry>
+<para>区域句柄，IMP_OSD_CreateRgn的返回值</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>无</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>无。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无。 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__OSD_1gada9245a734dcec9ad3ff64a8f9f1a379">
+                <title>int IMP_OSD_RegisterRgn (IMPRgnHandle handle, int grpNum, IMPOSDGrpRgnAttr *pgrAttr)</title> <emphasis></emphasis>
+                
+<para>注册OSD区域</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>handle</entry>
+                                <entry>
+<para>区域句柄，IMP_OSD_CreateRgn的返回值 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>grpNum</entry>
+                                <entry>
+<para>OSD组号 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>pgrAttr</entry>
+                                <entry>
+<para>OSD组显示属性</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>调用此API时要求对应的OSD组已经创建。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无。 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__OSD_1gac6c935a002ba3508e07a159c46543332">
+                <title>int IMP_OSD_UnRegisterRgn (IMPRgnHandle handle, int grpNum)</title> <emphasis></emphasis>
+                
+<para>注销OSD区域</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>handle</entry>
+                                <entry>
+<para>区域句柄，IMP_OSD_CreateRgn的返回值 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>grpNum</entry>
+                                <entry>
+<para>OSD组号</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>调用此API时要求对应的OSD组已经创建,对应的区域已经注册。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无。 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__OSD_1ga9fa0dcefef685eb851b1457e7a0cafbc">
+                <title>int IMP_OSD_SetRgnAttr (IMPRgnHandle handle, IMPOSDRgnAttr *prAttr)</title> <emphasis></emphasis>
+                
+<para>设置区域属性</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>handle</entry>
+                                <entry>
+<para>区域句柄，IMP_OSD_CreateRgn的返回值 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>prAttr</entry>
+                                <entry>
+<para>OSD区域属性</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>调用此API时要求对应的区域已经创建。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无。 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__OSD_1ga816fe110eda1f2e5bb221f78a6177ade">
+                <title>int IMP_OSD_GetRgnAttr (IMPRgnHandle handle, IMPOSDRgnAttr *prAttr)</title> <emphasis></emphasis>
+                
+<para>获取区域属性</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>handle</entry>
+                                <entry>
+<para>区域句柄，IMP_OSD_CreateRgn的返回值 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>prAttr</entry>
+                                <entry>
+<para>OSD区域属性</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>调用此API时要求对应的区域已经创建。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无。 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__OSD_1ga880823c92f7258f2791aa91725683198">
+                <title>int IMP_OSD_UpdateRgnAttrData (IMPRgnHandle handle, IMPOSDRgnAttrData *prAttrData)</title> <emphasis></emphasis>
+                
+<para>更新区域数据属性，只针对OSD_REG_BITMAP和OSD_REG_PIC的区域类型</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>handle</entry>
+                                <entry>
+<para>区域句柄，IMP_OSD_CreateRgn的返回值 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>prAttrData</entry>
+                                <entry>
+<para>OSD区域数据属性</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>调用此API时要求对应的区域已经创建且区域属性已经设置成OSD_REG_BITMAP或OSD_REG_PIC。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无。 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__OSD_1ga6dfff960bc63be5139a8317fa3c2a1ed">
+                <title>int IMP_OSD_SetGrpRgnAttr (IMPRgnHandle handle, int grpNum, IMPOSDGrpRgnAttr *pgrAttr)</title> <emphasis></emphasis>
+                
+<para>设置OSD组区域属性</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>handle</entry>
+                                <entry>
+<para>区域句柄，IMP_OSD_CreateRgn的返回值 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>grpNum</entry>
+                                <entry>
+<para>OSD组号 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>pgrAttr</entry>
+                                <entry>
+<para>OSD组区域属性</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>调用此API时要求对应的OSD组已经创建,区域已经创建并注册。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无。 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__OSD_1ga72ed932c29bcf7ed54ad8f650403ca12">
+                <title>int IMP_OSD_GetGrpRgnAttr (IMPRgnHandle handle, int grpNum, IMPOSDGrpRgnAttr *pgrAttr)</title> <emphasis></emphasis>
+                
+<para>获取OSD组区域属性</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>handle</entry>
+                                <entry>
+<para>区域句柄，IMP_OSD_CreateRgn的返回值 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>grpNum</entry>
+                                <entry>
+<para>OSD组号 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>pgrAttr</entry>
+                                <entry>
+<para>OSD组区域属性</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>调用此API时要求对应的OSD组已经创建,区域已经创建并注册。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无。 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__OSD_1gafbbc33cd778b48dd78bc97dabfe933c2">
+                <title>int IMP_OSD_ShowRgn (IMPRgnHandle handle, int grpNum, int showFlag)</title> <emphasis></emphasis>
+                
+<para>设置组区域是否显示</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>handle</entry>
+                                <entry>
+<para>区域句柄，IMP_OSD_CreateRgn的返回值 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>grpNum</entry>
+                                <entry>
+<para>OSD组号 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>showFlag</entry>
+                                <entry>
+<para>OSD组区域显示开关</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>调用此API时要求对应的OSD组已经创建,区域已经创建并注册。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无。 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__OSD_1gab588ad815812fe2da722467b1e602eb3">
+                <title>int IMP_OSD_Start (int grpNum)</title> <emphasis></emphasis>
+                
+<para>设置开始OSD组的显示</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>grpNum</entry>
+                                <entry>
+<para>OSD组号</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>调用此API时要求对应的OSD组已经创建。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无。 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__OSD_1gae44fa63f34dc18d2d539a2563308fd55">
+                <title>int IMP_OSD_Stop (int grpNum)</title> <emphasis></emphasis>
+                
+<para>设置停止OSD组的显示</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>grpNum</entry>
+                                <entry>
+<para>OSD组号</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>调用此API时要求对应的OSD组已经创建。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无。 </para>
+</formalpara>
+</para>
+
+            </section>
+        </section>
+        <section>
+            <title>Documentation des macros</title>
+            <section xml:id="group__IMP__OSD_1gadb17f033bc3cbd6212e32d0b75a0a761">
+                <title>#define INVHANDLE</title>                
+<para>出错返回值 </para>
+
+                <para>Definition at line 64 of file imp_osd.h</para>
+                <para>The Documentation for this define was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_osd.h</para></listitem></itemizedlist></para>
+            </section>
+        </section>
+</section>

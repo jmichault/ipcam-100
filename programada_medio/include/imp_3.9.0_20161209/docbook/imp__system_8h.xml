@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="imp__system_8h">
+    <title>imp_system.h File Reference</title>
+    <programlisting>#include &quot;imp_common.h&quot;</programlisting>
+<para>Include dependency diagram for imp_system.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="imp__system_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for imp_system.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="imp__system_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPVersion">IMPVersion</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Fonctions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__System_1gaad7c81108a7083275a367446fd7aca34">IMP_System_Init</link> (
+void )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__System_1gaefcc500e7341780f43b89fe79499365e">IMP_System_Exit</link> (
+void )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int64_t <link linkend="group__IMP__System_1gad68f51c90e4b9767ae0e630f43b0e393">IMP_System_GetTimeStamp</link> (
+void )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__System_1gab874319e64261966350d807b4b97804a">IMP_System_RebaseTimeStamp</link> (
+int64_t basets)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>uint32_t <link linkend="group__IMP__System_1ga9d59d9242046c456aa5dfd25547a47db">IMP_System_ReadReg32</link> (
+uint32_t regAddr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="group__IMP__System_1ga2f10436194b07b600047ca926cc3660c">IMP_System_WriteReg32</link> (
+uint32_t regAddr, uint32_t value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__System_1ga1350c4d1dfdef3d95b92c981fee82ad2">IMP_System_GetVersion</link> (
+<link linkend="structIMPVersion">IMPVersion</link> * pstVersion)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const char * <link linkend="group__IMP__System_1gaf6bd7318365f365afd757f6b4046802d">IMP_System_GetCPUInfo</link> (
+void )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__System_1gab53c6fd017fab6386696320af29354ed">IMP_System_Bind</link> (
+<link linkend="structIMPCell">IMPCell</link> * srcCell, <link linkend="structIMPCell">IMPCell</link> * dstCell)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__System_1ga759fa36b68ecc83e15362316809ba23d">IMP_System_UnBind</link> (
+<link linkend="structIMPCell">IMPCell</link> * srcCell, <link linkend="structIMPCell">IMPCell</link> * dstCell)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__System_1gae9f076d33c9f09b238fc958851b8799b">IMP_System_GetBindbyDest</link> (
+<link linkend="structIMPCell">IMPCell</link> * dstCell, <link linkend="structIMPCell">IMPCell</link> * srcCell)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Description détaillée</title>
+
+<para>IMP系统模块头文件 </para>
+    <para>Definition in file /home2/jean/projets/ipcam-100/programada_medio/include/imp/imp_system.h</para>
+    </simplesect>
+</section>

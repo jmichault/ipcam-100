@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="imp__framesource_8h">
+    <title>imp_framesource.h File Reference</title>
+    <programlisting>#include &quot;imp_common.h&quot;</programlisting>
+<para>Include dependency diagram for imp_framesource.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="imp__framesource_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for imp_framesource.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="imp__framesource_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPFSChnCrop">IMPFSChnCrop</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPFSChnScaler">IMPFSChnScaler</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPFSChnAttr">IMPFSChnAttr</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Énumérations</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="group__IMP__FrameSource_1ga155b3408c5b20686f020a351a56d34a1">IMPFSChnType</link> {
+<link linkend="group__IMP__FrameSource_1gga155b3408c5b20686f020a351a56d34a1aa44fd626db4a97c40ffc9f231396d67c">FS_PHY_CHANNEL</link>,
+<link linkend="group__IMP__FrameSource_1gga155b3408c5b20686f020a351a56d34a1aa7d8a412ff0cf06f92fad8b1a976bd9f">FS_EXT_CHANNEL</link>
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Fonctions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__FrameSource_1ga997d40cc97abc963f96b2ee963f27220">IMP_FrameSource_CreateChn</link> (
+int chnNum, <link linkend="structIMPFSChnAttr">IMPFSChnAttr</link> * chn_attr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__FrameSource_1gae800f0c0ad967bcd2692087d17ebb685">IMP_FrameSource_DestroyChn</link> (
+int chnNum)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__FrameSource_1ga1c59f4918ceae7635123da1d253b5904">IMP_FrameSource_EnableChn</link> (
+int chnNum)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__FrameSource_1ga9f8c6b444fefa927f0bc02d0031f34d8">IMP_FrameSource_DisableChn</link> (
+int chnNum)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__FrameSource_1gab59545186250a59d17e44eaa78089fa6">IMP_FrameSource_GetChnAttr</link> (
+int chnNum, <link linkend="structIMPFSChnAttr">IMPFSChnAttr</link> * chnAttr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__FrameSource_1gaf359a4e61fd4d2f8ff5cd8b28d321eb6">IMP_FrameSource_SetChnAttr</link> (
+int chnNum, const <link linkend="structIMPFSChnAttr">IMPFSChnAttr</link> * chnAttr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__FrameSource_1ga5a433ca616cb0c1fe82f400161a411b1">IMP_FrameSource_SetFrameDepth</link> (
+int chnNum, int depth)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__FrameSource_1ga235cece30871f6672a2c69bbcc8926e5">IMP_FrameSource_GetFrameDepth</link> (
+int chnNum, int * depth)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__FrameSource_1ga058ab102f6c968ce09bc3bc871a6f56c">IMP_FrameSource_GetFrame</link> (
+int chnNum, <link linkend="structIMPFrameInfo">IMPFrameInfo</link> ** frame)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__FrameSource_1gacbb1d1fe8cc98ed0a4d8b4e3ed74eec7">IMP_FrameSource_ReleaseFrame</link> (
+int chnNum, <link linkend="structIMPFrameInfo">IMPFrameInfo</link> * frame)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Description détaillée</title>
+
+<para>FrameSource模块头文件 </para>
+    <para>Definition in file /home2/jean/projets/ipcam-100/programada_medio/include/imp/imp_framesource.h</para>
+    </simplesect>
+</section>

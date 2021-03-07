@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="group__imp">
+    <title>IMP(Ingenic Media Platform)</title>
+<para>Collaboration diagram for IMP(Ingenic Media Platform)</para>
+<para>
+    <figure>
+        <title>Group Collaboration diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="group__imp.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Description détaillée</title>
+        </section>
+    <simplesect>
+        <title>Modules</title>
+    </simplesect>
+    <para>
+        <itemizedlist>
+            <listitem><para><link linkend="group__IMP__Audio">IMP_Audio</link></para></listitem>
+            <listitem><para><link linkend="group__IMP__Decoder">IMP_Decoder</link></para></listitem>
+            <listitem><para><link linkend="group__IMP__Encoder">IMP_Encoder</link></para></listitem>
+            <listitem><para><link linkend="group__IMP__FrameSource">IMP_FrameSource</link></para></listitem>
+            <listitem><para><link linkend="group__IMP__ISP">IMP_ISP</link></para></listitem>
+            <listitem><para><link linkend="group__IMP__IVS">IMP_IVS</link></para></listitem>
+            <listitem><para><link linkend="group__IMP__OSD">IMP_OSD</link></para></listitem>
+            <listitem><para><link linkend="group__IMP__System">IMP_System</link></para></listitem>
+        </itemizedlist>
+    </para>
+<xi:include href="group__IMP__Audio.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="group__IMP__Decoder.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="group__IMP__Encoder.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="group__IMP__FrameSource.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="group__IMP__ISP.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="group__IMP__IVS.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="group__IMP__OSD.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="group__IMP__System.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</section>

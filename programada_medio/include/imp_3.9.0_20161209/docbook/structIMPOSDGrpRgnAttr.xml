@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="structIMPOSDGrpRgnAttr">
+<title>IMPOSDGrpRgnAttr struct Reference</title>
+<para>
+    <programlisting>#include <link linkend="imp__osd_8h">&lt;imp_osd.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for IMPOSDGrpRgnAttr</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structIMPOSDGrpRgnAttr__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for IMPOSDGrpRgnAttr</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structIMPOSDGrpRgnAttr__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Attributs publics</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int show</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>IMPPoint offPos</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>float scalex</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>float scaley</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int gAlphaEn</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int fgAlhpa</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int bgAlhpa</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int layer</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title>Description détaillée</title>
+
+<para>OSD组区域属性 </para>
+                <para>Definition at line 140 of file imp_osd.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_osd.h</para></listitem></itemizedlist></para>
+        </simplesect>
+        <section>
+            <title>Documentation des données membres</title>
+            <simplesect>
+                <title>int IMPOSDGrpRgnAttr::show</title>                
+<para>是否显示 </para>
+
+                <para>Definition at line 141 of file imp_osd.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_osd.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>IMPPoint IMPOSDGrpRgnAttr::offPos</title>                
+<para>显示起始坐标 </para>
+
+                <para>Definition at line 142 of file imp_osd.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_osd.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>float IMPOSDGrpRgnAttr::scalex</title>                
+<para>缩放x参数 </para>
+
+                <para>Definition at line 143 of file imp_osd.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_osd.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>float IMPOSDGrpRgnAttr::scaley</title>                
+<para>缩放y参数 </para>
+
+                <para>Definition at line 144 of file imp_osd.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_osd.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>int IMPOSDGrpRgnAttr::gAlphaEn</title>                
+<para>Alpha开关 </para>
+
+                <para>Definition at line 145 of file imp_osd.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_osd.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>int IMPOSDGrpRgnAttr::fgAlhpa</title>                
+<para>前景Alpha </para>
+
+                <para>Definition at line 146 of file imp_osd.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_osd.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>int IMPOSDGrpRgnAttr::bgAlhpa</title>                
+<para>背景Alpha </para>
+
+                <para>Definition at line 147 of file imp_osd.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_osd.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>int IMPOSDGrpRgnAttr::layer</title>                
+<para>显示层 </para>
+
+                <para>Definition at line 148 of file imp_osd.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_osd.h</para></listitem></itemizedlist></para>
+            </simplesect>
+        </section>
+</section>

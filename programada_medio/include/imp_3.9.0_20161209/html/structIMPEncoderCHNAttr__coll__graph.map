@@ -1,0 +1,15 @@
+<map id="IMPEncoderCHNAttr" name="IMPEncoderCHNAttr">
+<area shape="rect" id="node2" href="$structIMPEncoderAttr.html" title="IMPEncoderAttr" alt="" coords="638,56,753,83"/>
+<area shape="rect" id="node3" href="$structIMPEncoderUserDataCfg.html" title="IMPEncoderUserDataCfg" alt="" coords="287,5,457,32"/>
+<area shape="rect" id="node4" href="$structIMPEncoderCropCfg.html" title="IMPEncoderCropCfg" alt="" coords="301,56,443,83"/>
+<area shape="rect" id="node5" href="$structIMPEncoderRcAttr.html" title="IMPEncoderRcAttr" alt="" coords="629,259,761,285"/>
+<area shape="rect" id="node6" href="$structIMPEncoderAttrH264VBR.html" title="IMPEncoderAttrH264VBR" alt="" coords="285,107,459,133"/>
+<area shape="rect" id="node7" href="$structIMPEncoderFrmRate.html" title="IMPEncoderFrmRate" alt="" coords="5,157,151,184"/>
+<area shape="rect" id="node11" href="$structIMPEncoderAttrH264FixQP.html" title="IMPEncoderAttrH264FixQP" alt="" coords="281,157,463,184"/>
+<area shape="rect" id="node13" href="$structIMPEncoderAttrH264CBR.html" title="IMPEncoderAttrH264CBR" alt="" coords="285,208,459,235"/>
+<area shape="rect" id="node8" href="$structIMPEncoderAttrH264HSkip.html" title="IMPEncoderAttrH264HSkip" alt="" coords="281,259,463,285"/>
+<area shape="rect" id="node9" href="$structIMPEncoderAttrH264Denoise.html" title="IMPEncoderAttrH264Denoise" alt="" coords="275,309,469,336"/>
+<area shape="rect" id="node10" href="$structIMPEncoderAttrH264BSkip.html" title="IMPEncoderAttrH264BSkip" alt="" coords="281,360,463,387"/>
+<area shape="rect" id="node12" href="$structIMPEncoderAttrH264FrmUsed.html" title="IMPEncoderAttrH264FrmUsed" alt="" coords="272,411,472,437"/>
+<area shape="rect" id="node14" href="$structIMPEncoderAttrH264Demask.html" title="IMPEncoderAttrH264Demask" alt="" coords="275,461,469,488"/>
+</map>

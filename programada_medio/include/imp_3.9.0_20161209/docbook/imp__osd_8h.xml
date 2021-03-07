@@ -1,0 +1,253 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="imp__osd_8h">
+    <title>imp_osd.h File Reference</title>
+    <programlisting>#include &quot;imp_common.h&quot;</programlisting>
+<para>Include dependency diagram for imp_osd.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="imp__osd_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for imp_osd.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="imp__osd_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structlineRectData">lineRectData</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structcoverData">coverData</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structpicData">picData</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="unionIMPOSDRgnAttrData">IMPOSDRgnAttrData</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPOSDRgnAttr">IMPOSDRgnAttr</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPOSDGrpRgnAttr">IMPOSDGrpRgnAttr</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Macros</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="group__IMP__OSD_1gadb17f033bc3cbd6212e32d0b75a0a761">INVHANDLE</link> (-1)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Énumérations</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="group__IMP__OSD_1ga07a129ad144ef8f2e0df27e448ac6dfb">IMPOsdColour</link> {
+<link linkend="group__IMP__OSD_1gga07a129ad144ef8f2e0df27e448ac6dfba4062b4faf6cfe005ac90c7abcecdfba4">OSD_BLACK</link>= 0xff000000,
+<link linkend="group__IMP__OSD_1gga07a129ad144ef8f2e0df27e448ac6dfba4a0c4635891f6a2ee0ebbdded19b3317">OSD_WHITE</link>= 0xffffffff,
+<link linkend="group__IMP__OSD_1gga07a129ad144ef8f2e0df27e448ac6dfba34d2fe7ad73b8a94e670df571a9e5adc">OSD_RED</link>= 0xffff0000,
+<link linkend="group__IMP__OSD_1gga07a129ad144ef8f2e0df27e448ac6dfbadbe20f373ed8b2446e89bfeb76b87917">OSD_GREEN</link>= 0xff00ff00,
+<link linkend="group__IMP__OSD_1gga07a129ad144ef8f2e0df27e448ac6dfba4c85f2a60bcc904c74aa787f5dd2a4d5">OSD_BLUE</link>= 0xff0000ff
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="group__IMP__OSD_1ga79528856a7d533a7e5ce8f47577beb2c">IMPOsdRgnType</link> {
+<link linkend="group__IMP__OSD_1gga79528856a7d533a7e5ce8f47577beb2ca04ecb838a529cbed99a079c3e88fb159">OSD_REG_INV</link>= 0,
+<link linkend="group__IMP__OSD_1gga79528856a7d533a7e5ce8f47577beb2ca4d19195a69c1d1717b52f0ef9e716066">OSD_REG_LINE</link>= 1,
+<link linkend="group__IMP__OSD_1gga79528856a7d533a7e5ce8f47577beb2ca071cc4253393618911f8fb8d0624ff64">OSD_REG_RECT</link>= 2,
+<link linkend="group__IMP__OSD_1gga79528856a7d533a7e5ce8f47577beb2ca1027eeb5d48d35dadb41e4277bd957d0">OSD_REG_BITMAP</link>= 3,
+<link linkend="group__IMP__OSD_1gga79528856a7d533a7e5ce8f47577beb2ca8a43dbf552eb563a9e897744014dc6c6">OSD_REG_COVER</link>= 4,
+<link linkend="group__IMP__OSD_1gga79528856a7d533a7e5ce8f47577beb2ca9db8b58618342a2796bda61daf06efe7">OSD_REG_PIC</link>= 5
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Définitions de type</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef int  <link linkend="group__IMP__OSD_1gadc0d2d62f9e28e13ca872973e8ff6fa9">IMPRgnHandle</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Fonctions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__OSD_1ga0f20b9a82881e0bde124eaf23d8d8a05">IMP_OSD_CreateGroup</link> (
+int grpNum)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__OSD_1gad57af8e427360576e3caf123ccea1486">IMP_OSD_DestroyGroup</link> (
+int grpNum)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__OSD_1ga7ee1c973352a6c63a9d94ced838b73d5">IMP_OSD_AttachToGroup</link> (
+<link linkend="structIMPCell">IMPCell</link> * from, <link linkend="structIMPCell">IMPCell</link> * to)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="group__IMP__OSD_1gadc0d2d62f9e28e13ca872973e8ff6fa9">IMPRgnHandle</link> <link linkend="group__IMP__OSD_1ga64e2cdf694b204d4cdb6f03792271810">IMP_OSD_CreateRgn</link> (
+<link linkend="structIMPOSDRgnAttr">IMPOSDRgnAttr</link> * prAttr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="group__IMP__OSD_1gae5c2059b379bc06d6a3272fdb638c7f8">IMP_OSD_DestroyRgn</link> (
+<link linkend="group__IMP__OSD_1gadc0d2d62f9e28e13ca872973e8ff6fa9">IMPRgnHandle</link> handle)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__OSD_1gada9245a734dcec9ad3ff64a8f9f1a379">IMP_OSD_RegisterRgn</link> (
+<link linkend="group__IMP__OSD_1gadc0d2d62f9e28e13ca872973e8ff6fa9">IMPRgnHandle</link> handle, int grpNum, <link linkend="structIMPOSDGrpRgnAttr">IMPOSDGrpRgnAttr</link> * pgrAttr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__OSD_1gac6c935a002ba3508e07a159c46543332">IMP_OSD_UnRegisterRgn</link> (
+<link linkend="group__IMP__OSD_1gadc0d2d62f9e28e13ca872973e8ff6fa9">IMPRgnHandle</link> handle, int grpNum)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__OSD_1ga9fa0dcefef685eb851b1457e7a0cafbc">IMP_OSD_SetRgnAttr</link> (
+<link linkend="group__IMP__OSD_1gadc0d2d62f9e28e13ca872973e8ff6fa9">IMPRgnHandle</link> handle, <link linkend="structIMPOSDRgnAttr">IMPOSDRgnAttr</link> * prAttr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__OSD_1ga816fe110eda1f2e5bb221f78a6177ade">IMP_OSD_GetRgnAttr</link> (
+<link linkend="group__IMP__OSD_1gadc0d2d62f9e28e13ca872973e8ff6fa9">IMPRgnHandle</link> handle, <link linkend="structIMPOSDRgnAttr">IMPOSDRgnAttr</link> * prAttr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__OSD_1ga880823c92f7258f2791aa91725683198">IMP_OSD_UpdateRgnAttrData</link> (
+<link linkend="group__IMP__OSD_1gadc0d2d62f9e28e13ca872973e8ff6fa9">IMPRgnHandle</link> handle, <link linkend="unionIMPOSDRgnAttrData">IMPOSDRgnAttrData</link> * prAttrData)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__OSD_1ga6dfff960bc63be5139a8317fa3c2a1ed">IMP_OSD_SetGrpRgnAttr</link> (
+<link linkend="group__IMP__OSD_1gadc0d2d62f9e28e13ca872973e8ff6fa9">IMPRgnHandle</link> handle, int grpNum, <link linkend="structIMPOSDGrpRgnAttr">IMPOSDGrpRgnAttr</link> * pgrAttr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__OSD_1ga72ed932c29bcf7ed54ad8f650403ca12">IMP_OSD_GetGrpRgnAttr</link> (
+<link linkend="group__IMP__OSD_1gadc0d2d62f9e28e13ca872973e8ff6fa9">IMPRgnHandle</link> handle, int grpNum, <link linkend="structIMPOSDGrpRgnAttr">IMPOSDGrpRgnAttr</link> * pgrAttr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__OSD_1gafbbc33cd778b48dd78bc97dabfe933c2">IMP_OSD_ShowRgn</link> (
+<link linkend="group__IMP__OSD_1gadc0d2d62f9e28e13ca872973e8ff6fa9">IMPRgnHandle</link> handle, int grpNum, int showFlag)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__OSD_1gab588ad815812fe2da722467b1e602eb3">IMP_OSD_Start</link> (
+int grpNum)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__OSD_1gae44fa63f34dc18d2d539a2563308fd55">IMP_OSD_Stop</link> (
+int grpNum)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Description détaillée</title>
+
+<para>IMP OSD模块头文件 </para>
+    <para>Definition in file /home2/jean/projets/ipcam-100/programada_medio/include/imp/imp_osd.h</para>
+    </simplesect>
+</section>

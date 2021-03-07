@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="group__MoveDetection">
+    <title>MoveDetection</title>
+<para>Collaboration diagram for MoveDetection</para>
+<para>
+    <figure>
+        <title>Group Collaboration diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="group__MoveDetection.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+
+<para>移动侦测接口 </para>
+        <section>
+            <title>Description détaillée</title>
+        </section>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMP__IVS__MoveParam">IMP_IVS_MoveParam</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMP__IVS__MoveOutput">IMP_IVS_MoveOutput</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Fonctions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structIMPIVSInterface">IMPIVSInterface</link> * <link linkend="group__MoveDetection_1ga0a500236744b55e6a1787c8d1c8afa85">IMP_IVS_CreateMoveInterface</link> (
+<link linkend="structIMP__IVS__MoveParam">IMP_IVS_MoveParam</link> * param)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="group__MoveDetection_1ga09825798faad818b955d4a6b115693ff">IMP_IVS_DestroyMoveInterface</link> (
+<link linkend="structIMPIVSInterface">IMPIVSInterface</link> * moveInterface)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Documentation des fonctions</title>
+            <section xml:id="group__MoveDetection_1ga0a500236744b55e6a1787c8d1c8afa85">
+                <title>IMPIVSInterface * IMP_IVS_CreateMoveInterface (IMP_IVS_MoveParam *param)</title> <emphasis></emphasis>
+                
+<para>创建移动侦测接口资源</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>param</entry>
+                                <entry>
+<para>移动侦测算法的输入结构体参数</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>非NULL</entry>
+                                <entry>
+<para>成功,返回移动侦测算法接口指针句柄 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>NULL</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Attention: </title>
+
+<para>无 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__MoveDetection_1ga09825798faad818b955d4a6b115693ff">
+                <title>void IMP_IVS_DestroyMoveInterface (IMPIVSInterface *moveInterface)</title> <emphasis></emphasis>
+                
+<para>销毁移动侦测接口资源</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>moveInterface</entry>
+                                <entry>
+<para>移动侦测算法接口指针句柄</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>无返回值</entry>
+                                <entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Attention: </title>
+
+<para>无 </para>
+</formalpara>
+</para>
+
+            </section>
+        </section>
+</section>

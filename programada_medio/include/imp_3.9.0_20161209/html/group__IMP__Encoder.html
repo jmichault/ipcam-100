@@ -1,0 +1,2023 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Programmation T20: IMP_Encoder</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Programmation T20
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Énumérations</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">IMP_Encoder<div class="ingroups"><a class="el" href="group__imp.html">IMP(Ingenic Media Platform)</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>视频编码（H264, JPEG）模块，包含编码通道管理，编码参数设置等功能  
+<a href="#details">Plus de détails...</a></p>
+<div class="dynheader">
+Graphe de collaboration de IMP_Encoder:</div>
+<div class="dyncontent">
+<center><table><tr><td><img src="group__IMP__Encoder.png" border="0" alt="" usemap="#group____IMP____Encoder"/>
+<map name="group____IMP____Encoder" id="group____IMP____Encoder">
+<area shape="rect" id="node2" href="group__imp.html" title="IMP(Ingenic Media Platform)" alt="" coords="5,5,193,32"/>
+</map>
+</td></tr></table></center>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIMPEncoderFrmRate.html">IMPEncoderFrmRate</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIMPEncoderAttrH264FixQP.html">IMPEncoderAttrH264FixQP</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIMPEncoderAttrH264CBR.html">IMPEncoderAttrH264CBR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIMPEncoderAttrH264VBR.html">IMPEncoderAttrH264VBR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIMPEncoderAttrH264Demask.html">IMPEncoderAttrH264Demask</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIMPEncoderAttrH264Denoise.html">IMPEncoderAttrH264Denoise</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIMPEncoderAttrH264FrmUsed.html">IMPEncoderAttrH264FrmUsed</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIMPEncoderAttrH264HSkip.html">IMPEncoderAttrH264HSkip</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIMPEncoderAttrH264BSkip.html">IMPEncoderAttrH264BSkip</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIMPEncoderRcAttr.html">IMPEncoderRcAttr</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unionIMPEncoderDataType.html">IMPEncoderDataType</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIMPEncoderPack.html">IMPEncoderPack</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIMPEncoderStream.html">IMPEncoderStream</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIMPEncoderCropCfg.html">IMPEncoderCropCfg</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIMPEncoderUserDataCfg.html">IMPEncoderUserDataCfg</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIMPEncoderAttr.html">IMPEncoderAttr</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIMPEncoderCHNAttr.html">IMPEncoderCHNAttr</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIMPEncoderCHNStat.html">IMPEncoderCHNStat</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIMPEncoderColor2GreyCfg.html">IMPEncoderColor2GreyCfg</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIMPEncoderEnIDRCfg.html">IMPEncoderEnIDRCfg</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIMPEncoderGOPSizeCfg.html">IMPEncoderGOPSizeCfg</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIMPEncoderROICfg.html">IMPEncoderROICfg</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Énumérations</h2></td></tr>
+<tr class="memitem:gad5eed0dacdb612ee46f7632bfbe84887"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#gad5eed0dacdb612ee46f7632bfbe84887">IMPEncoderRcMode</a> { <br />
+&#160;&#160;<a class="el" href="group__IMP__Encoder.html#ggad5eed0dacdb612ee46f7632bfbe84887acc2e3e2a30ce0ba2985e9c2888581a96">ENC_RC_MODE_H264FIXQP</a> = 0, 
+<a class="el" href="group__IMP__Encoder.html#ggad5eed0dacdb612ee46f7632bfbe84887a9ae81a303dba193d1a5567b6f9b71114">ENC_RC_MODE_H264CBR</a> = 1, 
+<a class="el" href="group__IMP__Encoder.html#ggad5eed0dacdb612ee46f7632bfbe84887a699cac21642c603685f55691f68ab1e0">ENC_RC_MODE_H264ABR</a> = 2, 
+<a class="el" href="group__IMP__Encoder.html#ggad5eed0dacdb612ee46f7632bfbe84887ace8eaba12a5e712a368704fbb7a9041a">ENC_RC_MODE_H264VBR</a> = 3, 
+<br />
+&#160;&#160;<a class="el" href="group__IMP__Encoder.html#ggad5eed0dacdb612ee46f7632bfbe84887ae0c329512aa5d7913ce2fd6fb1bcd8cd">ENC_RC_MODE_H264INV</a> = 4
+<br />
+ }</td></tr>
+<tr class="separator:gad5eed0dacdb612ee46f7632bfbe84887"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa6daecd284e71915516b1a1b0beb0539"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#gaa6daecd284e71915516b1a1b0beb0539">EncFrmUsedMode</a> { <a class="el" href="group__IMP__Encoder.html#ggaa6daecd284e71915516b1a1b0beb0539a6cebe0b784335c2e8e9b450aade5bb53">ENC_FRM_BYPASS</a> = 0, 
+<a class="el" href="group__IMP__Encoder.html#ggaa6daecd284e71915516b1a1b0beb0539a72afacc8c9b69e1dbd4a956e47a68cfe">ENC_FRM_REUSED</a> = 1, 
+<a class="el" href="group__IMP__Encoder.html#ggaa6daecd284e71915516b1a1b0beb0539a53e9f5432580b0dd750213a6f3e46af5">ENC_FRM_SKIP</a> = 2
+ }</td></tr>
+<tr class="separator:gaa6daecd284e71915516b1a1b0beb0539"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2d06ca8ebaf229b874ac585f08d60592"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#ga2d06ca8ebaf229b874ac585f08d60592">IMPH264SkipType</a> { <br />
+&#160;&#160;<a class="el" href="group__IMP__Encoder.html#gga2d06ca8ebaf229b874ac585f08d60592a91b81c014a517d1401b3c471b887af6e">IMP_H264_STYPE_N11</a> = 0, 
+<a class="el" href="group__IMP__Encoder.html#gga2d06ca8ebaf229b874ac585f08d60592acb3e88ae5d432a840295c7752c360d88">IMP_H264_STYPE_N1X</a> = 1, 
+<a class="el" href="group__IMP__Encoder.html#gga2d06ca8ebaf229b874ac585f08d60592a3386e5b0e8b0abaebcba0c5d4dd6071c">IMP_H264_STYPE_N2X</a> = 2, 
+<a class="el" href="group__IMP__Encoder.html#gga2d06ca8ebaf229b874ac585f08d60592a9ebaf9ad7fb7fc7d3ad3ea7727e3afda">IMP_H264_STYPE_N4X</a> = 3, 
+<br />
+&#160;&#160;<a class="el" href="group__IMP__Encoder.html#gga2d06ca8ebaf229b874ac585f08d60592ab670215a37521e97fae9f4f2b435bcec">IMP_H264_STYPE_HN1_FALSE</a> = 4, 
+<a class="el" href="group__IMP__Encoder.html#gga2d06ca8ebaf229b874ac585f08d60592acdd735f0603b1c51c3542b27f87b26bf">IMP_H264_STYPE_HN1_TRUE</a> = 5, 
+<a class="el" href="group__IMP__Encoder.html#gga2d06ca8ebaf229b874ac585f08d60592a4f4a0ba417b2a848fb6829048f673de7">IMP_H264_STYPE_H1M_TRUE</a> = 6
+<br />
+ }</td></tr>
+<tr class="separator:ga2d06ca8ebaf229b874ac585f08d60592"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6efe3f5c06d92d4c8d2efcfc5c9bcf9e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#ga6efe3f5c06d92d4c8d2efcfc5c9bcf9e">IMPH264RefType</a> { <a class="el" href="group__IMP__Encoder.html#gga6efe3f5c06d92d4c8d2efcfc5c9bcf9ea883bcee0bf7690317f7cdffb3d2b4821">IMP_H264_FS_IDR</a> = 0, 
+<a class="el" href="group__IMP__Encoder.html#gga6efe3f5c06d92d4c8d2efcfc5c9bcf9ea3a1a29c9b83e2d1928bde2c99897c5b3">IMP_H264_FS_BASE</a> = 1, 
+<a class="el" href="group__IMP__Encoder.html#gga6efe3f5c06d92d4c8d2efcfc5c9bcf9eab58b99eaee184473424b288c02032bfa">IMP_H264_FS_ENHANCE</a> = 2
+ }</td></tr>
+<tr class="separator:ga6efe3f5c06d92d4c8d2efcfc5c9bcf9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5878b6210ca20db23cd0ec337fe02256"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#ga5878b6210ca20db23cd0ec337fe02256">IMPEncoderH264NaluType</a> { <br />
+&#160;&#160;<a class="el" href="group__IMP__Encoder.html#gga5878b6210ca20db23cd0ec337fe02256aa3cdebae908c724e7cbddbfb47afd806">IMP_NAL_UNKNOWN</a> = 0, 
+<a class="el" href="group__IMP__Encoder.html#gga5878b6210ca20db23cd0ec337fe02256aa1724f07ff17d7e0abf7a9357d8b5a54">IMP_NAL_SLICE</a> = 1, 
+<a class="el" href="group__IMP__Encoder.html#gga5878b6210ca20db23cd0ec337fe02256a612ebc0180ca61600dc35607d5c7bd42">IMP_NAL_SLICE_DPA</a> = 2, 
+<a class="el" href="group__IMP__Encoder.html#gga5878b6210ca20db23cd0ec337fe02256a5f6e7b958fabdb9aec19f0712f41715f">IMP_NAL_SLICE_DPB</a> = 3, 
+<br />
+&#160;&#160;<a class="el" href="group__IMP__Encoder.html#gga5878b6210ca20db23cd0ec337fe02256a14c8c3e7ba0fd7f954a13fc221d69277">IMP_NAL_SLICE_DPC</a> = 4, 
+<a class="el" href="group__IMP__Encoder.html#gga5878b6210ca20db23cd0ec337fe02256a9871468577bec810533ee78f05e9e28c">IMP_NAL_SLICE_IDR</a> = 5, 
+<a class="el" href="group__IMP__Encoder.html#gga5878b6210ca20db23cd0ec337fe02256a3dca5bd23c26d93c5edece1fdec07816">IMP_NAL_SEI</a> = 6, 
+<a class="el" href="group__IMP__Encoder.html#gga5878b6210ca20db23cd0ec337fe02256ae722f384afebe910949d107d276e0af8">IMP_NAL_SPS</a> = 7, 
+<br />
+&#160;&#160;<a class="el" href="group__IMP__Encoder.html#gga5878b6210ca20db23cd0ec337fe02256a5be3d222ad4371a7e453db8df38a8aa8">IMP_NAL_PPS</a> = 8, 
+<a class="el" href="group__IMP__Encoder.html#gga5878b6210ca20db23cd0ec337fe02256a9a0472bfa06d303604df32cba22f0840">IMP_NAL_AUD</a> = 9, 
+<a class="el" href="group__IMP__Encoder.html#gga5878b6210ca20db23cd0ec337fe02256a4431fcbc85b85648dfc7f32ec99384b8">IMP_NAL_FILLER</a> = 12
+<br />
+ }</td></tr>
+<tr class="separator:ga5878b6210ca20db23cd0ec337fe02256"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:ga96199baedda4efe1bb1b1c0d26a2fe76"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#ga96199baedda4efe1bb1b1c0d26a2fe76">IMP_Encoder_CreateGroup</a> (int encGroup)</td></tr>
+<tr class="separator:ga96199baedda4efe1bb1b1c0d26a2fe76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga757f098ab2eabe6c7c4344f73d5bec51"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#ga757f098ab2eabe6c7c4344f73d5bec51">IMP_Encoder_DestroyGroup</a> (int encGroup)</td></tr>
+<tr class="separator:ga757f098ab2eabe6c7c4344f73d5bec51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga83b8af8deb1af4409fabcfeeee4e9f83"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#ga83b8af8deb1af4409fabcfeeee4e9f83">IMP_Encoder_CreateChn</a> (int encChn, const <a class="el" href="structIMPEncoderCHNAttr.html">IMPEncoderCHNAttr</a> *attr)</td></tr>
+<tr class="separator:ga83b8af8deb1af4409fabcfeeee4e9f83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae169e594d5ba0573da4d87b61b23206a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#gae169e594d5ba0573da4d87b61b23206a">IMP_Encoder_DestroyChn</a> (int encChn)</td></tr>
+<tr class="separator:gae169e594d5ba0573da4d87b61b23206a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa3c8bf9ed10ce53d782521eae77cc557"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#gaa3c8bf9ed10ce53d782521eae77cc557">IMP_Encoder_GetChnAttr</a> (int encChn, <a class="el" href="structIMPEncoderCHNAttr.html">IMPEncoderCHNAttr</a> *const attr)</td></tr>
+<tr class="separator:gaa3c8bf9ed10ce53d782521eae77cc557"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab5b49fb276c463b7a62ddfad44a45a93"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#gab5b49fb276c463b7a62ddfad44a45a93">IMP_Encoder_RegisterChn</a> (int encGroup, int encChn)</td></tr>
+<tr class="separator:gab5b49fb276c463b7a62ddfad44a45a93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaa31d5bcd407054992c2a56060a1795d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#gaaa31d5bcd407054992c2a56060a1795d">IMP_Encoder_UnRegisterChn</a> (int encChn)</td></tr>
+<tr class="separator:gaaa31d5bcd407054992c2a56060a1795d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8fe7e5b00167cf122da13f1d2e07eb6d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#ga8fe7e5b00167cf122da13f1d2e07eb6d">IMP_Encoder_StartRecvPic</a> (int encChn)</td></tr>
+<tr class="separator:ga8fe7e5b00167cf122da13f1d2e07eb6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga30a590183b70833aac280a84b153990b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#ga30a590183b70833aac280a84b153990b">IMP_Encoder_StopRecvPic</a> (int encChn)</td></tr>
+<tr class="separator:ga30a590183b70833aac280a84b153990b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga03a1a3a1e81cfd87af27fb48f50f0140"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#ga03a1a3a1e81cfd87af27fb48f50f0140">IMP_Encoder_Query</a> (int encChn, <a class="el" href="structIMPEncoderCHNStat.html">IMPEncoderCHNStat</a> *stat)</td></tr>
+<tr class="separator:ga03a1a3a1e81cfd87af27fb48f50f0140"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6964862ca76079154db97cf135acd320"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#ga6964862ca76079154db97cf135acd320">IMP_Encoder_GetStream</a> (int encChn, <a class="el" href="structIMPEncoderStream.html">IMPEncoderStream</a> *stream, bool blockFlag)</td></tr>
+<tr class="separator:ga6964862ca76079154db97cf135acd320"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad33dd934911cf7bd318bfad4af16dd2f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#gad33dd934911cf7bd318bfad4af16dd2f">IMP_Encoder_ReleaseStream</a> (int encChn, <a class="el" href="structIMPEncoderStream.html">IMPEncoderStream</a> *stream)</td></tr>
+<tr class="separator:gad33dd934911cf7bd318bfad4af16dd2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga489eaff2c945a840054b165011825932"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#ga489eaff2c945a840054b165011825932">IMP_Encoder_PollingStream</a> (int encChn, uint32_t timeoutMsec)</td></tr>
+<tr class="separator:ga489eaff2c945a840054b165011825932"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga26d0491a35a43e156823b2f5f384e4cb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#ga26d0491a35a43e156823b2f5f384e4cb">IMP_Encoder_SetMaxStreamCnt</a> (int encChn, int nrMaxStream)</td></tr>
+<tr class="separator:ga26d0491a35a43e156823b2f5f384e4cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga785e84d3d6acbe878e2c27f54e3d70cb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#ga785e84d3d6acbe878e2c27f54e3d70cb">IMP_Encoder_GetMaxStreamCnt</a> (int encChn, int *nrMaxStream)</td></tr>
+<tr class="separator:ga785e84d3d6acbe878e2c27f54e3d70cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga76af240bb189528c1451acf328448f3a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#ga76af240bb189528c1451acf328448f3a">IMP_Encoder_RequestIDR</a> (int encChn)</td></tr>
+<tr class="separator:ga76af240bb189528c1451acf328448f3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae9b2ff7b20b172bb9a892fe5e0f333c0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#gae9b2ff7b20b172bb9a892fe5e0f333c0">IMP_Encoder_FlushStream</a> (int encChn)</td></tr>
+<tr class="separator:gae9b2ff7b20b172bb9a892fe5e0f333c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga90194e455e8673609a04137fc7a39741"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#ga90194e455e8673609a04137fc7a39741">IMP_Encoder_SetChnColor2Grey</a> (int encChn, const <a class="el" href="structIMPEncoderColor2GreyCfg.html">IMPEncoderColor2GreyCfg</a> *pstColor2Grey)</td></tr>
+<tr class="separator:ga90194e455e8673609a04137fc7a39741"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga08be4837c32bc225a517124802206978"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#ga08be4837c32bc225a517124802206978">IMP_Encoder_GetChnColor2Grey</a> (int encChn, <a class="el" href="structIMPEncoderColor2GreyCfg.html">IMPEncoderColor2GreyCfg</a> *pstColor2Grey)</td></tr>
+<tr class="separator:ga08be4837c32bc225a517124802206978"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga92c7e9c18cd76648fef6037fa46292a2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#ga92c7e9c18cd76648fef6037fa46292a2">IMP_Encoder_SetChnRcAttr</a> (int encChn, const <a class="el" href="structIMPEncoderRcAttr.html">IMPEncoderRcAttr</a> *pstRcCfg)</td></tr>
+<tr class="separator:ga92c7e9c18cd76648fef6037fa46292a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadd0625182442c01687c759b3d889ecd3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#gadd0625182442c01687c759b3d889ecd3">IMP_Encoder_GetChnRcAttr</a> (int encChn, <a class="el" href="structIMPEncoderRcAttr.html">IMPEncoderRcAttr</a> *pstRcCfg)</td></tr>
+<tr class="separator:gadd0625182442c01687c759b3d889ecd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4c8e301e6090fb27bd0bc2f2795229f2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#ga4c8e301e6090fb27bd0bc2f2795229f2">IMP_Encoder_SetChnFrmRate</a> (int encChn, const <a class="el" href="structIMPEncoderFrmRate.html">IMPEncoderFrmRate</a> *pstFps)</td></tr>
+<tr class="separator:ga4c8e301e6090fb27bd0bc2f2795229f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8636080246a8ec7844745b8c6cc862a6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#ga8636080246a8ec7844745b8c6cc862a6">IMP_Encoder_GetChnFrmRate</a> (int encChn, <a class="el" href="structIMPEncoderFrmRate.html">IMPEncoderFrmRate</a> *pstFps)</td></tr>
+<tr class="separator:ga8636080246a8ec7844745b8c6cc862a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8d981749a3f1ee9b482152ce367d9ba2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#ga8d981749a3f1ee9b482152ce367d9ba2">IMP_Encoder_SetChnROI</a> (int encChn, const <a class="el" href="structIMPEncoderROICfg.html">IMPEncoderROICfg</a> *pstVencRoiCfg)</td></tr>
+<tr class="separator:ga8d981749a3f1ee9b482152ce367d9ba2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabe8b833d724ed6ff312390843a5ec98b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#gabe8b833d724ed6ff312390843a5ec98b">IMP_Encoder_GetChnROI</a> (int encChn, <a class="el" href="structIMPEncoderROICfg.html">IMPEncoderROICfg</a> *pstVencRoiCfg)</td></tr>
+<tr class="separator:gabe8b833d724ed6ff312390843a5ec98b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga48eb55dbb0b14c7e4a1416b620e263d1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#ga48eb55dbb0b14c7e4a1416b620e263d1">IMP_Encoder_GetGOPSize</a> (int encChn, <a class="el" href="structIMPEncoderGOPSizeCfg.html">IMPEncoderGOPSizeCfg</a> *pstGOPSizeCfg)</td></tr>
+<tr class="separator:ga48eb55dbb0b14c7e4a1416b620e263d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1b4bd71c5c1828bcfffd88fc6c390b78"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#ga1b4bd71c5c1828bcfffd88fc6c390b78">IMP_Encoder_SetGOPSize</a> (int encChn, const <a class="el" href="structIMPEncoderGOPSizeCfg.html">IMPEncoderGOPSizeCfg</a> *pstGOPSizeCfg)</td></tr>
+<tr class="separator:ga1b4bd71c5c1828bcfffd88fc6c390b78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab411469004836f222e1004994fa30517"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#gab411469004836f222e1004994fa30517">IMP_Encoder_SetChnH264Demask</a> (int encChn, const <a class="el" href="structIMPEncoderAttrH264Demask.html">IMPEncoderAttrH264Demask</a> *pdemaskAttr)</td></tr>
+<tr class="separator:gab411469004836f222e1004994fa30517"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1de6bf93238e99c87e96ad185fcd03cf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#ga1de6bf93238e99c87e96ad185fcd03cf">IMP_Encoder_GetChnH264Demask</a> (int encChn, <a class="el" href="structIMPEncoderAttrH264Demask.html">IMPEncoderAttrH264Demask</a> *pdemaskAttr)</td></tr>
+<tr class="separator:ga1de6bf93238e99c87e96ad185fcd03cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8f6309334d825eaa050719f3a2d435ee"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#ga8f6309334d825eaa050719f3a2d435ee">IMP_Encoder_SetChnH264FrmUsedMode</a> (int encChn, const <a class="el" href="structIMPEncoderAttrH264FrmUsed.html">IMPEncoderAttrH264FrmUsed</a> *pfrmUsedAttr)</td></tr>
+<tr class="separator:ga8f6309334d825eaa050719f3a2d435ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga877a389fe2632b7042a8d0a8d872d4c6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#ga877a389fe2632b7042a8d0a8d872d4c6">IMP_Encoder_GetChnH264FrmUsedMode</a> (int encChn, <a class="el" href="structIMPEncoderAttrH264FrmUsed.html">IMPEncoderAttrH264FrmUsed</a> *pfrmUsedAttr)</td></tr>
+<tr class="separator:ga877a389fe2632b7042a8d0a8d872d4c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafa66a94468da7567b6a9b0e65b8a98ee"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#gafa66a94468da7567b6a9b0e65b8a98ee">IMP_Encoder_SetChnH264Denoise</a> (int encChn, const <a class="el" href="structIMPEncoderAttrH264Denoise.html">IMPEncoderAttrH264Denoise</a> *pdenoiseAttr)</td></tr>
+<tr class="separator:gafa66a94468da7567b6a9b0e65b8a98ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad0f9dd9cb56142bf3869cb8a2735a5e8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#gad0f9dd9cb56142bf3869cb8a2735a5e8">IMP_Encoder_GetChnH264Denoise</a> (int encChn, <a class="el" href="structIMPEncoderAttrH264Denoise.html">IMPEncoderAttrH264Denoise</a> *pdenoiseAttr)</td></tr>
+<tr class="separator:gad0f9dd9cb56142bf3869cb8a2735a5e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac9be6a8b3faf5df3e07346f40d673327"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#gac9be6a8b3faf5df3e07346f40d673327">IMP_Encoder_InsertUserData</a> (int encChn, void *userData, uint32_t userDataLen)</td></tr>
+<tr class="separator:gac9be6a8b3faf5df3e07346f40d673327"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7eddd99abbfeeafa72ef008c8ea24c21"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#ga7eddd99abbfeeafa72ef008c8ea24c21">IMP_Encoder_SetFisheyeEnableStatus</a> (int encChn, int enable)</td></tr>
+<tr class="separator:ga7eddd99abbfeeafa72ef008c8ea24c21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabf6b911bb55ca6806fa0a072d1b7e83a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IMP__Encoder.html#gabf6b911bb55ca6806fa0a072d1b7e83a">IMP_Encoder_GetFisheyeEnableStatus</a> (int encChn, int *enable)</td></tr>
+<tr class="separator:gabf6b911bb55ca6806fa0a072d1b7e83a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<p>视频编码（H264, JPEG）模块，包含编码通道管理，编码参数设置等功能 </p>
+<h1><a class="anchor" id="enc_struct"></a>
+1 模块结构</h1>
+<p>Encoder模块内部结构如下如： </p><div class="image">
+<img src="encoder_struct.jpg" alt="encoder_struct.jpg"/>
+</div>
+<p> 如上图所示，编码模块由若干个Group组成（在T15上支持两个Group），每个Group由编码Channel组成。 每个编码Channel附带一个输出码流缓冲区，这个缓冲区由多个buffer组成。 </p>
+<h1><a class="anchor" id="enc_channel"></a>
+2 编码Channel</h1>
+<p>一个编码Channel可以完成一种协议的编码。每个Group可以添加一个H264编码Channel与一个JPEG编码Channel。 </p>
+<h1><a class="anchor" id="enc_rc"></a>
+3 码率控制</h1>
+<h2><a class="anchor" id="enc_cbr"></a>
+3.1 CBR</h2>
+<p>CBR（Constent Bit Rate）恒定比特率，即在码率统计时间内编码码率恒定。 以H.264 编码为例，用户可设置maxQp，minQp，bitrate等。 maxQp，minQp 用于控制图像的质量范围， bitrate 用于钳位码率统计时间内的平均编码码率。 当编码码率大于恒定码率时，图像QP 会逐步向maxQp 调整，当编码码率远小于恒定码率时，图像QP 会逐步向minQp 调整。 当图像QP 达到maxQp 时，QP 被钳位到最大值，bitrate 的钳位效果失效，编码码率有可能会超出bitrate。 当图像QP 达到minQp 时，QP 被钳位到最小值，此时编码的码率已经达到最大值，而且图像质量最好。 </p>
+<h2><a class="anchor" id="enc_FixQP"></a>
+3.2 FixQP</h2>
+<p>Fix Qp 固定Qp 值。在码率统计时间内，编码图像所有宏块Qp 值相同，采用用户设定的图像Qp值。 </p>
+<h2 class="groupheader">Documentation du type de l'énumération</h2>
+<a id="gaa6daecd284e71915516b1a1b0beb0539"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa6daecd284e71915516b1a1b0beb0539">&#9670;&nbsp;</a></span>EncFrmUsedMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__IMP__Encoder.html#gaa6daecd284e71915516b1a1b0beb0539">EncFrmUsedMode</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义H.264编码Channel输入帧使用模式 </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="ggaa6daecd284e71915516b1a1b0beb0539a6cebe0b784335c2e8e9b450aade5bb53"></a>ENC_FRM_BYPASS&#160;</td><td class="fielddoc"><p>顺序全使用模式-默认模式 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaa6daecd284e71915516b1a1b0beb0539a72afacc8c9b69e1dbd4a956e47a68cfe"></a>ENC_FRM_REUSED&#160;</td><td class="fielddoc"><p>重复使用帧模式 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggaa6daecd284e71915516b1a1b0beb0539a53e9f5432580b0dd750213a6f3e46af5"></a>ENC_FRM_SKIP&#160;</td><td class="fielddoc"><p>丢帧模式 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="ga5878b6210ca20db23cd0ec337fe02256"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5878b6210ca20db23cd0ec337fe02256">&#9670;&nbsp;</a></span>IMPEncoderH264NaluType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__IMP__Encoder.html#ga5878b6210ca20db23cd0ec337fe02256">IMPEncoderH264NaluType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>H264码流NALU类型 </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="gga5878b6210ca20db23cd0ec337fe02256aa3cdebae908c724e7cbddbfb47afd806"></a>IMP_NAL_UNKNOWN&#160;</td><td class="fielddoc"><p>未指定 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga5878b6210ca20db23cd0ec337fe02256aa1724f07ff17d7e0abf7a9357d8b5a54"></a>IMP_NAL_SLICE&#160;</td><td class="fielddoc"><p>一个非IDR图像的编码条带 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga5878b6210ca20db23cd0ec337fe02256a612ebc0180ca61600dc35607d5c7bd42"></a>IMP_NAL_SLICE_DPA&#160;</td><td class="fielddoc"><p>编码条带数据分割块A </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga5878b6210ca20db23cd0ec337fe02256a5f6e7b958fabdb9aec19f0712f41715f"></a>IMP_NAL_SLICE_DPB&#160;</td><td class="fielddoc"><p>编码条带数据分割块B </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga5878b6210ca20db23cd0ec337fe02256a14c8c3e7ba0fd7f954a13fc221d69277"></a>IMP_NAL_SLICE_DPC&#160;</td><td class="fielddoc"><p>编码条带数据分割块C </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga5878b6210ca20db23cd0ec337fe02256a9871468577bec810533ee78f05e9e28c"></a>IMP_NAL_SLICE_IDR&#160;</td><td class="fielddoc"><p>IDR图像的编码条带 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga5878b6210ca20db23cd0ec337fe02256a3dca5bd23c26d93c5edece1fdec07816"></a>IMP_NAL_SEI&#160;</td><td class="fielddoc"><p>辅助增强信息 (SEI) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga5878b6210ca20db23cd0ec337fe02256ae722f384afebe910949d107d276e0af8"></a>IMP_NAL_SPS&#160;</td><td class="fielddoc"><p>序列参数集 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga5878b6210ca20db23cd0ec337fe02256a5be3d222ad4371a7e453db8df38a8aa8"></a>IMP_NAL_PPS&#160;</td><td class="fielddoc"><p>图像参数集 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga5878b6210ca20db23cd0ec337fe02256a9a0472bfa06d303604df32cba22f0840"></a>IMP_NAL_AUD&#160;</td><td class="fielddoc"><p>访问单元分隔符 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga5878b6210ca20db23cd0ec337fe02256a4431fcbc85b85648dfc7f32ec99384b8"></a>IMP_NAL_FILLER&#160;</td><td class="fielddoc"><p>填充数据 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="gad5eed0dacdb612ee46f7632bfbe84887"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad5eed0dacdb612ee46f7632bfbe84887">&#9670;&nbsp;</a></span>IMPEncoderRcMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__IMP__Encoder.html#gad5eed0dacdb612ee46f7632bfbe84887">IMPEncoderRcMode</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>定义编码Channel码率控制器模式 </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="ggad5eed0dacdb612ee46f7632bfbe84887acc2e3e2a30ce0ba2985e9c2888581a96"></a>ENC_RC_MODE_H264FIXQP&#160;</td><td class="fielddoc"><p>H.264 Fixqp 模式（支持） </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggad5eed0dacdb612ee46f7632bfbe84887a9ae81a303dba193d1a5567b6f9b71114"></a>ENC_RC_MODE_H264CBR&#160;</td><td class="fielddoc"><p>H.264 CBR 模式（支持） </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggad5eed0dacdb612ee46f7632bfbe84887a699cac21642c603685f55691f68ab1e0"></a>ENC_RC_MODE_H264ABR&#160;</td><td class="fielddoc"><p>H.264 ABR 模式 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggad5eed0dacdb612ee46f7632bfbe84887ace8eaba12a5e712a368704fbb7a9041a"></a>ENC_RC_MODE_H264VBR&#160;</td><td class="fielddoc"><p>H.264 VBR 模式 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggad5eed0dacdb612ee46f7632bfbe84887ae0c329512aa5d7913ce2fd6fb1bcd8cd"></a>ENC_RC_MODE_H264INV&#160;</td><td class="fielddoc"><p>H.264 INV 模式 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="ga6efe3f5c06d92d4c8d2efcfc5c9bcf9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6efe3f5c06d92d4c8d2efcfc5c9bcf9e">&#9670;&nbsp;</a></span>IMPH264RefType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__IMP__Encoder.html#ga6efe3f5c06d92d4c8d2efcfc5c9bcf9e">IMPH264RefType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="gga6efe3f5c06d92d4c8d2efcfc5c9bcf9ea883bcee0bf7690317f7cdffb3d2b4821"></a>IMP_H264_FS_IDR&#160;</td><td class="fielddoc"><p>高级跳帧模式中的关键帧 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga6efe3f5c06d92d4c8d2efcfc5c9bcf9ea3a1a29c9b83e2d1928bde2c99897c5b3"></a>IMP_H264_FS_BASE&#160;</td><td class="fielddoc"><p>高级跳帧模式中的参考帧 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga6efe3f5c06d92d4c8d2efcfc5c9bcf9eab58b99eaee184473424b288c02032bfa"></a>IMP_H264_FS_ENHANCE&#160;</td><td class="fielddoc"><p>高级跳帧模式中的增强帧 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="ga2d06ca8ebaf229b874ac585f08d60592"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2d06ca8ebaf229b874ac585f08d60592">&#9670;&nbsp;</a></span>IMPH264SkipType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__IMP__Encoder.html#ga2d06ca8ebaf229b874ac585f08d60592">IMPH264SkipType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="gga2d06ca8ebaf229b874ac585f08d60592a91b81c014a517d1401b3c471b887af6e"></a>IMP_H264_STYPE_N11&#160;</td><td class="fielddoc"><p>1倍跳帧参考（单实例） </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga2d06ca8ebaf229b874ac585f08d60592acb3e88ae5d432a840295c7752c360d88"></a>IMP_H264_STYPE_N1X&#160;</td><td class="fielddoc"><p>1倍跳帧参考（多实例） </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga2d06ca8ebaf229b874ac585f08d60592a3386e5b0e8b0abaebcba0c5d4dd6071c"></a>IMP_H264_STYPE_N2X&#160;</td><td class="fielddoc"><p>2倍跳帧参考 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga2d06ca8ebaf229b874ac585f08d60592a9ebaf9ad7fb7fc7d3ad3ea7727e3afda"></a>IMP_H264_STYPE_N4X&#160;</td><td class="fielddoc"><p>4倍跳帧参考 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga2d06ca8ebaf229b874ac585f08d60592ab670215a37521e97fae9f4f2b435bcec"></a>IMP_H264_STYPE_HN1_FALSE&#160;</td><td class="fielddoc"><p>高级跳帧模式：N,1,HI_FALSE </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga2d06ca8ebaf229b874ac585f08d60592acdd735f0603b1c51c3542b27f87b26bf"></a>IMP_H264_STYPE_HN1_TRUE&#160;</td><td class="fielddoc"><p>高级跳帧模式：NN,1,HI_TURE </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga2d06ca8ebaf229b874ac585f08d60592a4f4a0ba417b2a848fb6829048f673de7"></a>IMP_H264_STYPE_H1M_TRUE&#160;</td><td class="fielddoc"><p>高级跳帧模式：N1,M,HI_TRUE </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a id="ga83b8af8deb1af4409fabcfeeee4e9f83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga83b8af8deb1af4409fabcfeeee4e9f83">&#9670;&nbsp;</a></span>IMP_Encoder_CreateChn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Encoder_CreateChn </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>encChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structIMPEncoderCHNAttr.html">IMPEncoderCHNAttr</a> *&#160;</td>
+          <td class="paramname"><em>attr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>创建编码Channel</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">encChn</td><td>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">attr</td><td>编码Channel属性指针</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>编码Channel属性由两部分组成，编码器属性和码率控制属性 </dd>
+<dd>
+编码器属性首先需要选择编码协议，然后分别对各种协议对应的属性进行赋值 </dd></dl>
+
+</div>
+</div>
+<a id="ga96199baedda4efe1bb1b1c0d26a2fe76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga96199baedda4efe1bb1b1c0d26a2fe76">&#9670;&nbsp;</a></span>IMP_Encoder_CreateGroup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Encoder_CreateGroup </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>encGroup</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>创建编码Group</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">encGroup</td><td>Group号,取值范围:[0, NR_MAX_ENC_GROUPS - 1]</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>一路Group仅支持一路分辨率，不同分辨率需启动新的Group。一路Group同时支持一路H264和一路JPEG抓拍</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>如果指定的Group已经存在，则返回失败 </dd></dl>
+
+</div>
+</div>
+<a id="gae169e594d5ba0573da4d87b61b23206a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae169e594d5ba0573da4d87b61b23206a">&#9670;&nbsp;</a></span>IMP_Encoder_DestroyChn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Encoder_DestroyChn </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>encChn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>销毁编码Channel</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">encChn</td><td>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1]</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section attention"><dt>Attention</dt><dd>销毁并不存在的Channel，则返回失败 </dd>
+<dd>
+销毁前必须保证Channel已经从Group反注册，否则返回失败 </dd></dl>
+
+</div>
+</div>
+<a id="ga757f098ab2eabe6c7c4344f73d5bec51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga757f098ab2eabe6c7c4344f73d5bec51">&#9670;&nbsp;</a></span>IMP_Encoder_DestroyGroup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Encoder_DestroyGroup </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>encGroup</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>销毁编码Grouop.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">encGroup</td><td>Group号,取值范围:[0, NR_MAX_ENC_GROUPS - 1]</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>销毁Group时，必须保证Group为空，即没有任何Channel在Group中注册，或注册到Group中 的Channel已经反注册，否则返回失败</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>销毁并不存在的Group，则返回失败 </dd></dl>
+
+</div>
+</div>
+<a id="gae9b2ff7b20b172bb9a892fe5e0f333c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae9b2ff7b20b172bb9a892fe5e0f333c0">&#9670;&nbsp;</a></span>IMP_Encoder_FlushStream()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Encoder_FlushStream </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>encChn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>刷掉编码器里残留的旧码流，并以IDR帧开始编码</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">encChn</td><td>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1]</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>在调用此API后，会在最近的编码帧申请IDR帧编码。</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>无 </dd></dl>
+
+</div>
+</div>
+<a id="gaa3c8bf9ed10ce53d782521eae77cc557"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa3c8bf9ed10ce53d782521eae77cc557">&#9670;&nbsp;</a></span>IMP_Encoder_GetChnAttr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Encoder_GetChnAttr </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>encChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structIMPEncoderCHNAttr.html">IMPEncoderCHNAttr</a> *const&#160;</td>
+          <td class="paramname"><em>attr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>获取编码Channel的属性</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">encChn</td><td>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">attr</td><td>编码Channel属性</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga08be4837c32bc225a517124802206978"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga08be4837c32bc225a517124802206978">&#9670;&nbsp;</a></span>IMP_Encoder_GetChnColor2Grey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Encoder_GetChnColor2Grey </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>encChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structIMPEncoderColor2GreyCfg.html">IMPEncoderColor2GreyCfg</a> *&#160;</td>
+          <td class="paramname"><em>pstColor2Grey</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>获取彩转灰功能属性</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">encChn</td><td>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstColor2Grey</td><td>彩转灰功能的参数</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>调用此API会获取通道的彩转灰功能属性，调用此API需要通道已经存在。</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>此函数对JPEG通道无意义。 </dd></dl>
+
+</div>
+</div>
+<a id="ga8636080246a8ec7844745b8c6cc862a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8636080246a8ec7844745b8c6cc862a6">&#9670;&nbsp;</a></span>IMP_Encoder_GetChnFrmRate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Encoder_GetChnFrmRate </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>encChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structIMPEncoderFrmRate.html">IMPEncoderFrmRate</a> *&#160;</td>
+          <td class="paramname"><em>pstFps</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>获取帧率控制属性</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">encChn</td><td>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstFpsCfg</td><td>帧率控制属性参数</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>调用此API会获取通道的帧率控制属性，调用此API需要通道已经存在。</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>此函数对JPEG通道无意义。 </dd></dl>
+
+</div>
+</div>
+<a id="ga1de6bf93238e99c87e96ad185fcd03cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1de6bf93238e99c87e96ad185fcd03cf">&#9670;&nbsp;</a></span>IMP_Encoder_GetChnH264Demask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Encoder_GetChnH264Demask </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>encChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structIMPEncoderAttrH264Demask.html">IMPEncoderAttrH264Demask</a> *&#160;</td>
+          <td class="paramname"><em>pdemaskAttr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>获取通道去马赛克属性</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">encChn</td><td>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pdemaskAttr</td><td>去马赛克属性参数</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>调用此API会获取通道的去马赛克属性，调用此API需要通道已经存在。</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>无。 </dd></dl>
+
+</div>
+</div>
+<a id="gad0f9dd9cb56142bf3869cb8a2735a5e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad0f9dd9cb56142bf3869cb8a2735a5e8">&#9670;&nbsp;</a></span>IMP_Encoder_GetChnH264Denoise()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Encoder_GetChnH264Denoise </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>encChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structIMPEncoderAttrH264Denoise.html">IMPEncoderAttrH264Denoise</a> *&#160;</td>
+          <td class="paramname"><em>pdenoiseAttr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>获取通道去噪属性</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">encChn</td><td>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pdenoiseAttr</td><td>去噪属性参数</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>调用此API会获取通道的去噪属性，调用此API需要通道已经存在。</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>此函数对JPEG通道无意义。 </dd></dl>
+
+</div>
+</div>
+<a id="ga877a389fe2632b7042a8d0a8d872d4c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga877a389fe2632b7042a8d0a8d872d4c6">&#9670;&nbsp;</a></span>IMP_Encoder_GetChnH264FrmUsedMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Encoder_GetChnH264FrmUsedMode </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>encChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structIMPEncoderAttrH264FrmUsed.html">IMPEncoderAttrH264FrmUsed</a> *&#160;</td>
+          <td class="paramname"><em>pfrmUsedAttr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>获取通道输入帧使用模式属性</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">encChn</td><td>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pfrmUsedAttr</td><td>输入帧使用模式属性参数</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>调用此API会获取通道的输入帧使用模式属性，调用此API需要通道已经存在。</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>无。 </dd></dl>
+
+</div>
+</div>
+<a id="gadd0625182442c01687c759b3d889ecd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadd0625182442c01687c759b3d889ecd3">&#9670;&nbsp;</a></span>IMP_Encoder_GetChnRcAttr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Encoder_GetChnRcAttr </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>encChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structIMPEncoderRcAttr.html">IMPEncoderRcAttr</a> *&#160;</td>
+          <td class="paramname"><em>pstRcCfg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>获取码率控制属性</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">encChn</td><td>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstRcCfg</td><td>码率控制属性参数</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>调用此API会获取通道的码率控制属性，调用此API需要通道已经存在。</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>此函数对JPEG通道无意义。 </dd></dl>
+
+</div>
+</div>
+<a id="gabe8b833d724ed6ff312390843a5ec98b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabe8b833d724ed6ff312390843a5ec98b">&#9670;&nbsp;</a></span>IMP_Encoder_GetChnROI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Encoder_GetChnROI </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>encChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structIMPEncoderROICfg.html">IMPEncoderROICfg</a> *&#160;</td>
+          <td class="paramname"><em>pstVencRoiCfg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>获取通道ROI属性</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">encChn</td><td>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstFpsCfg</td><td>ROI属性参数</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>调用此API会获取通道的ROI属性，调用此API需要通道已经存在。</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>此函数对JPEG通道无意义。 </dd></dl>
+
+</div>
+</div>
+<a id="gabf6b911bb55ca6806fa0a072d1b7e83a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabf6b911bb55ca6806fa0a072d1b7e83a">&#9670;&nbsp;</a></span>IMP_Encoder_GetFisheyeEnableStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Encoder_GetFisheyeEnableStatus </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>encChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>enable</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>获取Ingenic提供的鱼眼矫正算法的使能状态</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">encChn</td><td>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">enable</td><td>返回设置的Ingenic提供的鱼眼矫正算法的使能状态,0:未使能,1:已使能</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>此API只适用于H264</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>无 </dd></dl>
+
+</div>
+</div>
+<a id="ga48eb55dbb0b14c7e4a1416b620e263d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga48eb55dbb0b14c7e4a1416b620e263d1">&#9670;&nbsp;</a></span>IMP_Encoder_GetGOPSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Encoder_GetGOPSize </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>encChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structIMPEncoderGOPSizeCfg.html">IMPEncoderGOPSizeCfg</a> *&#160;</td>
+          <td class="paramname"><em>pstGOPSizeCfg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>获取通道GOP属性</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">encChn</td><td>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstGOPSizeCfg</td><td>GOPSize属性参数</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>调用此API会获取通道的GOPSize属性，调用此API需要通道已经存在。</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>此函数对JPEG通道无意义。 </dd></dl>
+
+</div>
+</div>
+<a id="ga785e84d3d6acbe878e2c27f54e3d70cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga785e84d3d6acbe878e2c27f54e3d70cb">&#9670;&nbsp;</a></span>IMP_Encoder_GetMaxStreamCnt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Encoder_GetMaxStreamCnt </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>encChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>nrMaxStream</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>获取码流Buffer数</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">encChn</td><td>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">nrMaxStream</td><td>码流Buffer数变量指针</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>无</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>无 </dd></dl>
+
+</div>
+</div>
+<a id="ga6964862ca76079154db97cf135acd320"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6964862ca76079154db97cf135acd320">&#9670;&nbsp;</a></span>IMP_Encoder_GetStream()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Encoder_GetStream </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>encChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structIMPEncoderStream.html">IMPEncoderStream</a> *&#160;</td>
+          <td class="paramname"><em>stream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>blockFlag</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>获取编码的码流</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">encChn</td><td>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">stream</td><td>码流结构体指针 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">blockFlag</td><td>是否使用阻塞方式获取，0：非阻塞，1：阻塞</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>每次获取一帧码流的数据 </dd>
+<dd>
+如果用户长时间不获取码流,码流缓冲区就会满。一个编码Channel如果发生码流缓冲区满,就会把后 面接收的图像丢掉,直到用户获取码流,从而有足够的码流缓冲可以用于编码时,才开始继续编码。建议用户 获取码流接口调用与释放码流的接口调用成对出现,且尽快释放码流,防止出现由于用户态获取码流,释放不 及时而导致的码流 buffer 满,停止编码。 </dd>
+<dd>
+对于H264类型码流，一次调用成功获取一帧的码流，这帧码流可能包含多个包。 </dd>
+<dd>
+对于JPEG类型码流，一次调用成功获取一帧的码流，这帧码流只包含一个包，这一帧包含了JPEG图片文件的完整信息。</dd></dl>
+<p>示例： </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> ret;</div><div class="line">ret = <a class="code" href="group__IMP__Encoder.html#ga489eaff2c945a840054b165011825932">IMP_Encoder_PollingStream</a>(ENC_H264_CHANNEL, 1000); <span class="comment">//Polling码流Buffer，等待可获取状态</span></div><div class="line"><span class="keywordflow">if</span> (ret &lt; 0) {</div><div class="line">    printf(<span class="stringliteral">&quot;Polling stream timeout\n&quot;</span>);</div><div class="line">    <span class="keywordflow">return</span> -1;</div><div class="line">}</div><div class="line"></div><div class="line"><a class="code" href="structIMPEncoderStream.html">IMPEncoderStream</a> stream;</div><div class="line">ret = <a class="code" href="group__IMP__Encoder.html#ga6964862ca76079154db97cf135acd320">IMP_Encoder_GetStream</a>(ENC_H264_CHANNEL, &amp;stream, 1); <span class="comment">//获取一帧码流，阻塞方式</span></div><div class="line"><span class="keywordflow">if</span> (ret &lt; 0) {</div><div class="line">    printf(<span class="stringliteral">&quot;Get Stream failed\n&quot;</span>);</div><div class="line">    <span class="keywordflow">return</span> -1;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> i, nr_pack = stream.<a class="code" href="structIMPEncoderStream.html#aa3513657fb22db479f6707a3f7f1b298">packCount</a>;</div><div class="line"><span class="keywordflow">for</span> (i = 0; i &lt; nr_pack; i++) { <span class="comment">//保存这一帧码流的每个包</span></div><div class="line">    ret = write(stream_fd, (<span class="keywordtype">void</span> *)stream.<a class="code" href="structIMPEncoderStream.html#ab8558d3528bb1a28d5813a6fc7e08eeb">pack</a>[i].<a class="code" href="structIMPEncoderPack.html#a8e0a18ddadeea5e5b253bd5259d34971">virAddr</a>,</div><div class="line">               stream.<a class="code" href="structIMPEncoderStream.html#ab8558d3528bb1a28d5813a6fc7e08eeb">pack</a>[i].<a class="code" href="structIMPEncoderPack.html#a17c09a1ade9bee681201fa3a28a040a7">length</a>);</div><div class="line">    <span class="keywordflow">if</span> (ret != stream.<a class="code" href="structIMPEncoderStream.html#ab8558d3528bb1a28d5813a6fc7e08eeb">pack</a>[i].<a class="code" href="structIMPEncoderPack.html#a17c09a1ade9bee681201fa3a28a040a7">length</a>) {</div><div class="line">        printf(<span class="stringliteral">&quot;stream write error:%s\n&quot;</span>, strerror(errno));</div><div class="line">        <span class="keywordflow">return</span> -1;</div><div class="line">    }</div><div class="line">}</div></div><!-- fragment --><dl class="section attention"><dt>Attention</dt><dd>如果pstStream为NULL,则返回失败； </dd>
+<dd>
+如果Channel未创建，则返回失败； </dd></dl>
+
+</div>
+</div>
+<a id="gac9be6a8b3faf5df3e07346f40d673327"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac9be6a8b3faf5df3e07346f40d673327">&#9670;&nbsp;</a></span>IMP_Encoder_InsertUserData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Encoder_InsertUserData </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>encChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>userData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>userDataLen</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>插入用户数据</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">encChn</td><td>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">userData</td><td>用户数据指针 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">userDataLen</td><td>用户数据长度, 取值范围:(0, 1024],以 byte 为单位</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>调用此API需要通道已经存在 </dd>
+<dd>
+如果通道未创建,则返回失败 </dd>
+<dd>
+如果userData为空或userDataLen为0,则返回失败 </dd>
+<dd>
+插入用户数据,只支持H.264编码协议 </dd>
+<dd>
+H.264协议通道最多分配2块内存空间用于缓存用户数据,且每段用户数据大小不超过1k byte。 如果用户插入的数据多余2块,或插入的一段用户数据大于1k byte 时,此接口会返回错误。 </dd>
+<dd>
+每段用户数据以SEI包的形式被插入到最新的图像码流包之前。在某段用户数据包被编码发送之后, H.264 通道内缓存这段用户数据的内存空间被清零,用于存放新的用户数据</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>无。 </dd></dl>
+
+</div>
+</div>
+<a id="ga489eaff2c945a840054b165011825932"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga489eaff2c945a840054b165011825932">&#9670;&nbsp;</a></span>IMP_Encoder_PollingStream()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Encoder_PollingStream </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>encChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>timeoutMsec</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Polling码流缓存</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">encChn</td><td>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">timeoutMsec</td><td>超时时间，单位：毫秒</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>在获取码流之前可以用过此API进行Polling，当码流缓存不为空时或超时时函数返回。</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>无 </dd></dl>
+
+</div>
+</div>
+<a id="ga03a1a3a1e81cfd87af27fb48f50f0140"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga03a1a3a1e81cfd87af27fb48f50f0140">&#9670;&nbsp;</a></span>IMP_Encoder_Query()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Encoder_Query </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>encChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structIMPEncoderCHNStat.html">IMPEncoderCHNStat</a> *&#160;</td>
+          <td class="paramname"><em>stat</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>查询编码Channel状态</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">encChn</td><td>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">stat</td><td>编码Channel状态</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>无</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>无 </dd></dl>
+
+</div>
+</div>
+<a id="gab5b49fb276c463b7a62ddfad44a45a93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab5b49fb276c463b7a62ddfad44a45a93">&#9670;&nbsp;</a></span>IMP_Encoder_RegisterChn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Encoder_RegisterChn </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>encGroup</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>encChn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>注册编码Channel到Group</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">encGroup</td><td>编码Group号,取值范围: [0, NR_MAX_ENC_GROUPS - 1] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">encChn</td><td>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1]</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section attention"><dt>Attention</dt><dd>注册并不存在的Channel，则返回失败 </dd>
+<dd>
+注册Channel到不存在的Group，否则返回失败 </dd>
+<dd>
+同一个编码Channel只能注册到一个Group，如果该Channel已经注册到某个Group，则返回失败 </dd>
+<dd>
+如果一个Group已经被注册，那么这个Group就不能再被其他的Channel注册，除非之前注册关系被解除 </dd></dl>
+
+</div>
+</div>
+<a id="gad33dd934911cf7bd318bfad4af16dd2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad33dd934911cf7bd318bfad4af16dd2f">&#9670;&nbsp;</a></span>IMP_Encoder_ReleaseStream()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Encoder_ReleaseStream </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>encChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structIMPEncoderStream.html">IMPEncoderStream</a> *&#160;</td>
+          <td class="paramname"><em>stream</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>释放码流缓存</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">encChn</td><td>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">stream</td><td>码流结构体指针</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>此接口应当和IMP_Encoder_GetStream配对起来使用，<br />
+用户获取码流后必须及时释放已经获取的码流缓存，否则可能会导致码流buffer满，影响编码器编码。<br />
+并且用户必须按先获取先 释放的顺序释放已经获取的码流缓存； </dd>
+<dd>
+在编码Channel反注册后，所有未释放的码流包均无效，不能再使用或者释放这部分无效的码流缓存。</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>如果pstStream为NULL,则返回失败； </dd>
+<dd>
+如果Channel未创建，则返回失败； </dd>
+<dd>
+释放无效的码流会返回失败。 </dd></dl>
+
+</div>
+</div>
+<a id="ga76af240bb189528c1451acf328448f3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga76af240bb189528c1451acf328448f3a">&#9670;&nbsp;</a></span>IMP_Encoder_RequestIDR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Encoder_RequestIDR </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>encChn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>请求IDR帧</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">encChn</td><td>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1]</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>在调用此API后，会在最近的编码帧申请IDR帧编码。</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>无 </dd></dl>
+
+</div>
+</div>
+<a id="ga90194e455e8673609a04137fc7a39741"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga90194e455e8673609a04137fc7a39741">&#9670;&nbsp;</a></span>IMP_Encoder_SetChnColor2Grey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Encoder_SetChnColor2Grey </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>encChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structIMPEncoderColor2GreyCfg.html">IMPEncoderColor2GreyCfg</a> *&#160;</td>
+          <td class="paramname"><em>pstColor2Grey</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>设置彩转灰功能</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">encChn</td><td>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstColor2Grey</td><td>彩转灰功能的参数</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>调用此API设置通道的彩转灰功能，在下一个IDR或者P帧生效。 调用此API需要通道已经存在。</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>无 </dd></dl>
+
+</div>
+</div>
+<a id="ga4c8e301e6090fb27bd0bc2f2795229f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4c8e301e6090fb27bd0bc2f2795229f2">&#9670;&nbsp;</a></span>IMP_Encoder_SetChnFrmRate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Encoder_SetChnFrmRate </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>encChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structIMPEncoderFrmRate.html">IMPEncoderFrmRate</a> *&#160;</td>
+          <td class="paramname"><em>pstFps</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>动态设置帧率控制属性</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">encChn</td><td>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstFpsCfg</td><td>帧率控制属性参数</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>调用此API会重新设置编码器帧率属性，帧率属性在下一个GOP生效，最大延时1秒钟生效，调用此API需要通道已经存在。 </dd>
+<dd>
+如果调用IMP_FrameSource_SetChnFPS()函数动态改变系统帧率，那么需要调用该函数修改编码器帧率，完成正确参数配置。</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>无。 </dd></dl>
+
+</div>
+</div>
+<a id="gab411469004836f222e1004994fa30517"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab411469004836f222e1004994fa30517">&#9670;&nbsp;</a></span>IMP_Encoder_SetChnH264Demask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Encoder_SetChnH264Demask </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>encChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structIMPEncoderAttrH264Demask.html">IMPEncoderAttrH264Demask</a> *&#160;</td>
+          <td class="paramname"><em>pdemaskAttr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>设置通道去马赛克属性</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">encChn</td><td>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pdemaskAttr</td><td>去马赛克属性参数</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>调用此API会设置通道的去马赛克属性，调用此API需要通道已经存在。</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>无。 </dd></dl>
+
+</div>
+</div>
+<a id="gafa66a94468da7567b6a9b0e65b8a98ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafa66a94468da7567b6a9b0e65b8a98ee">&#9670;&nbsp;</a></span>IMP_Encoder_SetChnH264Denoise()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Encoder_SetChnH264Denoise </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>encChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structIMPEncoderAttrH264Denoise.html">IMPEncoderAttrH264Denoise</a> *&#160;</td>
+          <td class="paramname"><em>pdenoiseAttr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>设置通道去噪属性</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">encChn</td><td>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pdenoiseAttr</td><td>去噪属性参数</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>调用此API会设置通道的去噪属性，调用此API需要通道已经存在。</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>无。 </dd></dl>
+
+</div>
+</div>
+<a id="ga8f6309334d825eaa050719f3a2d435ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8f6309334d825eaa050719f3a2d435ee">&#9670;&nbsp;</a></span>IMP_Encoder_SetChnH264FrmUsedMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Encoder_SetChnH264FrmUsedMode </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>encChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structIMPEncoderAttrH264FrmUsed.html">IMPEncoderAttrH264FrmUsed</a> *&#160;</td>
+          <td class="paramname"><em>pfrmUsedAttr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>设置通道输入帧使用模式属性</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">encChn</td><td>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pfrmUsedAttr</td><td>输入帧使用模式属性参数</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>调用此API会设置通道的输入帧使用模式属性，调用此API需要通道已经存在。</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>无。 </dd></dl>
+
+</div>
+</div>
+<a id="ga92c7e9c18cd76648fef6037fa46292a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga92c7e9c18cd76648fef6037fa46292a2">&#9670;&nbsp;</a></span>IMP_Encoder_SetChnRcAttr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Encoder_SetChnRcAttr </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>encChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structIMPEncoderRcAttr.html">IMPEncoderRcAttr</a> *&#160;</td>
+          <td class="paramname"><em>pstRcCfg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>设置码率控制属性</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">encChn</td><td>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pstRcCfg</td><td>码率控制属性参数</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>调用此API会设置通道的码率控制属性，下一个IDR生效,调用此API需要通道已经存在。</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>目前，码率控制支持ENC_RC_MODE_H264FIXQP与ENC_RC_MODE_H264CBR。 ENC_RC_MODE_H264FIXQP支持配置qp，ENC_RC_MODE_H264CBR支持配置outBitRate。 </dd>
+<dd>
+此函数对JPEG通道无意义。 </dd></dl>
+
+</div>
+</div>
+<a id="ga8d981749a3f1ee9b482152ce367d9ba2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8d981749a3f1ee9b482152ce367d9ba2">&#9670;&nbsp;</a></span>IMP_Encoder_SetChnROI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Encoder_SetChnROI </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>encChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structIMPEncoderROICfg.html">IMPEncoderROICfg</a> *&#160;</td>
+          <td class="paramname"><em>pstVencRoiCfg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>设置通道ROI属性</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">encChn</td><td>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstFpsCfg</td><td>ROI属性参数</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>调用此API会设置通道的ROI属性，调用此API需要通道已经存在。</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>无。 </dd></dl>
+
+</div>
+</div>
+<a id="ga7eddd99abbfeeafa72ef008c8ea24c21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7eddd99abbfeeafa72ef008c8ea24c21">&#9670;&nbsp;</a></span>IMP_Encoder_SetFisheyeEnableStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Encoder_SetFisheyeEnableStatus </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>encChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>enable</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>设置Ingenic提供的鱼眼矫正算法的使能状态</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">encChn</td><td>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>0:不使能(默认),1:使能</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>由于鱼眼矫正算法的使能状态在通道创建时就已经固定，因此次API需要在通道创建之前调用。 </dd>
+<dd>
+若通道创建之前不调用此API设置Ingenic提供的鱼眼矫正算法的使能状态,则默认不使能，即不能使用君正提供的鱼眼矫正算法。 </dd>
+<dd>
+此API只适用于H264</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>无 </dd></dl>
+
+</div>
+</div>
+<a id="ga1b4bd71c5c1828bcfffd88fc6c390b78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1b4bd71c5c1828bcfffd88fc6c390b78">&#9670;&nbsp;</a></span>IMP_Encoder_SetGOPSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Encoder_SetGOPSize </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>encChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structIMPEncoderGOPSizeCfg.html">IMPEncoderGOPSizeCfg</a> *&#160;</td>
+          <td class="paramname"><em>pstGOPSizeCfg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>设置通道GOP属性</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">encChn</td><td>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pstGOPSizeCfg</td><td>GOP属性参数</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>调用此API会设置通道的GOPSize属性，调用此API需要通道已经存在。</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>无。 </dd></dl>
+
+</div>
+</div>
+<a id="ga26d0491a35a43e156823b2f5f384e4cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga26d0491a35a43e156823b2f5f384e4cb">&#9670;&nbsp;</a></span>IMP_Encoder_SetMaxStreamCnt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Encoder_SetMaxStreamCnt </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>encChn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nrMaxStream</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>设置码流缓存Buffer个数</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">encChn</td><td>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nrMaxStream</td><td>码流Buffer数,取值范围: [1, NR_MAX_ENC_CHN_STREAM]</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>由于码流缓存Buffer个数在通道创建时就已经固定，因此次API需要在通道创建之前调用。 </dd>
+<dd>
+若通道创建之前不调用此API设置码流缓存Buffer个数，则H264通道默认个数为5，JPEG通道默认个数为1。</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>无 </dd></dl>
+
+</div>
+</div>
+<a id="ga8fe7e5b00167cf122da13f1d2e07eb6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8fe7e5b00167cf122da13f1d2e07eb6d">&#9670;&nbsp;</a></span>IMP_Encoder_StartRecvPic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Encoder_StartRecvPic </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>encChn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>开启编码Channel接收图像</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">encChn</td><td>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1]</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>开启编码Channel接收图像后才能开始编码</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>如果Channel未创建，则返回失败 </dd>
+<dd>
+如果Channel没有注册到Group，则返回失败 </dd></dl>
+
+</div>
+</div>
+<a id="ga30a590183b70833aac280a84b153990b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga30a590183b70833aac280a84b153990b">&#9670;&nbsp;</a></span>IMP_Encoder_StopRecvPic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Encoder_StopRecvPic </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>encChn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>停止编码Channel接收图像</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">encChn</td><td>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1]</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>此接口并不判断当前是否停止接收，即允许重复停止接收不返回错误 </dd>
+<dd>
+调用此接口仅停止接收原始数据编码，码流buffer并不会被消除</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>如果Channel未创建，则返回失败 </dd>
+<dd>
+如果Channel没有注册到Group，则返回失败 </dd></dl>
+
+</div>
+</div>
+<a id="gaaa31d5bcd407054992c2a56060a1795d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaaa31d5bcd407054992c2a56060a1795d">&#9670;&nbsp;</a></span>IMP_Encoder_UnRegisterChn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Encoder_UnRegisterChn </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>encChn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>反注册编码Channel到Group</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">encChn</td><td>编码Channel号,取值范围: [0, NR_MAX_ENC_CHN - 1]</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>成功 </td></tr>
+    <tr><td class="paramname">非0</td><td>失败</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarques</dt><dd>Channel注销之后，编码Channel会被复位，编码Channel里的码流buffer都会被清空，如果用户还在使用 未及时释放的码流buffer，将不能保证buffer数据的正确性，用户可以使用IMP_Encoder_Query接口来查询编 码Channel码流buffer状态，确认码流buffer里的码流取完之后再反注册Channel</dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>注销未创建的Channel，则返回失败 </dd>
+<dd>
+注销未注册的Channel，则返回失败 </dd>
+<dd>
+如果编码Channel未停止接收图像编码，则返回失败 </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

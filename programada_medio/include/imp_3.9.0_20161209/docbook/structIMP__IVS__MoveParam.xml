@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="structIMP__IVS__MoveParam">
+<title>IMP_IVS_MoveParam struct Reference</title>
+<para>
+    <programlisting>#include <link linkend="imp__ivs__move_8h">&lt;imp_ivs_move.h&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for IMP_IVS_MoveParam</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structIMP__IVS__MoveParam__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for IMP_IVS_MoveParam</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="structIMP__IVS__MoveParam__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Attributs publics</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int sense[IMP_IVS_MOVE_MAX_ROI_CNT]</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int skipFrameCnt</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>IMPFrameInfo frameInfo</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>IMPRect roiRect[IMP_IVS_MOVE_MAX_ROI_CNT]</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int roiRectCnt</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title>Description détaillée</title>
+
+<para>移动侦测算法的输入结构体 </para>
+                <para>Definition at line 36 of file imp_ivs_move.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_ivs_move.h</para></listitem></itemizedlist></para>
+        </simplesect>
+        <section>
+            <title>Documentation des données membres</title>
+            <simplesect>
+                <title>int IMP_IVS_MoveParam::sense[IMP_IVS_MOVE_MAX_ROI_CNT]</title>                
+<para>移动侦测的灵敏度，范围为0-4 </para>
+
+                <para>Definition at line 37 of file imp_ivs_move.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_ivs_move.h</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>IMPFrameInfo IMP_IVS_MoveParam::frameInfo</title>                
+<para>帧尺寸信息,只需要配置width和height </para>
+
+                <para>Definition at line 39 of file imp_ivs_move.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>imp_ivs_move.h</para></listitem></itemizedlist></para>
+            </simplesect>
+        </section>
+</section>

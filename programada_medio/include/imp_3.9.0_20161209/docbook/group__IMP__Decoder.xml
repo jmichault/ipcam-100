@@ -1,0 +1,637 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="group__IMP__Decoder">
+    <title>IMP_Decoder</title>
+<para>Collaboration diagram for IMP_Decoder</para>
+<para>
+    <figure>
+        <title>Group Collaboration diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="group__IMP__Decoder.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+
+<para>视频解码模块，当前只支持JPEG解码 </para>
+        <section>
+            <title>Description détaillée</title>
+        </section>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPDecoderAttr">IMPDecoderAttr</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPDecoderCHNAttr">IMPDecoderCHNAttr</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPDecoderNal">IMPDecoderNal</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPDecoderStream">IMPDecoderStream</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Fonctions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Decoder_1gaf2847173e6e99d0859782d396431135e">IMP_Decoder_CreateChn</link> (
+int decChn, const <link linkend="structIMPDecoderCHNAttr">IMPDecoderCHNAttr</link> * attr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Decoder_1ga00a630779788c07c9daf523443c5abb0">IMP_Decoder_DestroyChn</link> (
+int decChn)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Decoder_1ga45b743d81c9e6a5b529c7cf52a12fedf">IMP_Decoder_StartRecvPic</link> (
+int decChn)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Decoder_1ga3ee251bcb7ac2b55f8ef67dfd43d0429">IMP_Decoder_StopRecvPic</link> (
+int decChn)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Decoder_1gac2bc3fa07236594a07ca630cf1cb437c">IMP_Decoder_SendStreamTimeout</link> (
+int decChn, <link linkend="structIMPDecoderStream">IMPDecoderStream</link> * stream, uint32_t timeoutMsec)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Decoder_1gae42cbf89e1e1cf4b8fa1b84ab0ac41e7">IMP_Decoder_PollingFrame</link> (
+int decChn, uint32_t timeoutMsec)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Decoder_1ga396b6cbf537d265617ab2ee13ac17c4e">IMP_Decoder_GetFrame</link> (
+int decChn, <link linkend="structIMPFrameInfo">IMPFrameInfo</link> ** frame)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__Decoder_1ga522ce60cb85c8865cf7304835946639a">IMP_Decoder_ReleaseFrame</link> (
+int decChn, <link linkend="structIMPFrameInfo">IMPFrameInfo</link> * frame)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Documentation des fonctions</title>
+            <section xml:id="group__IMP__Decoder_1gaf2847173e6e99d0859782d396431135e">
+                <title>int IMP_Decoder_CreateChn (int decChn, const IMPDecoderCHNAttr *attr)</title> <emphasis></emphasis>
+                
+<para>创建解码Channel</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>decChn</entry>
+                                <entry>
+<para>解码Channel号,取值范围: [0, NR_MAX_DEC_CHN - 1] </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>attr</entry>
+                                <entry>
+<para>解码Channel属性指针</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>无。 </para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无。 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Decoder_1ga00a630779788c07c9daf523443c5abb0">
+                <title>int IMP_Decoder_DestroyChn (int decChn)</title> <emphasis></emphasis>
+                
+<para>销毁解码Channel</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>decChn</entry>
+                                <entry>
+<para>解码Channel号,取值范围: [0, NR_MAX_DEC_CHN - 1]</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>无。 </para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无。 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Decoder_1ga45b743d81c9e6a5b529c7cf52a12fedf">
+                <title>int IMP_Decoder_StartRecvPic (int decChn)</title> <emphasis></emphasis>
+                
+<para>开启解码Channel接收图像</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>decChn</entry>
+                                <entry>
+<para>解码Channel号,取值范围: [0, NR_MAX_DEC_CHN - 1]</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>开启解码Channel接收图像后才能开始解码</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>如果Channel未创建，则返回失败 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Decoder_1ga3ee251bcb7ac2b55f8ef67dfd43d0429">
+                <title>int IMP_Decoder_StopRecvPic (int decChn)</title> <emphasis></emphasis>
+                
+<para>停止解码Channel接收图像</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>decChn</entry>
+                                <entry>
+<para>解码Channel号,取值范围: [0, NR_MAX_DEC_CHN - 1]</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>停止解码Channel接收图像</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>如果Channel未创建，则返回失败 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Decoder_1gac2bc3fa07236594a07ca630cf1cb437c">
+                <title>int IMP_Decoder_SendStreamTimeout (int decChn, IMPDecoderStream *stream, uint32_t timeoutMsec)</title> <emphasis></emphasis>
+                
+<para>发送需解码数据</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>decChn</entry>
+                                <entry>
+<para>解码Channel号,取值范围: [0, NR_MAX_DEC_CHN - 1] </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>stream</entry>
+                                <entry>
+<para>需解码的数据流结构体指针 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>timeoutMsec</entry>
+                                <entry>
+<para>解码超时时间 单位ms</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>无。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>如果Channel未创建，则返回失败 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Decoder_1gae42cbf89e1e1cf4b8fa1b84ab0ac41e7">
+                <title>int IMP_Decoder_PollingFrame (int decChn, uint32_t timeoutMsec)</title> <emphasis></emphasis>
+                
+<para>Polling 解码码流缓存</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>decChn</entry>
+                                <entry>
+<para>解码Channel号,取值范围: [0, NR_MAX_DEC_CHN - 1] </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>timeoutMsec</entry>
+                                <entry>
+<para>超时时间 单位ms</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>无。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>如果Channel未创建，则返回失败 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Decoder_1ga396b6cbf537d265617ab2ee13ac17c4e">
+                <title>int IMP_Decoder_GetFrame (int decChn, IMPFrameInfo **frame)</title> <emphasis></emphasis>
+                
+<para>获取解码码流</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>decChn</entry>
+                                <entry>
+<para>解码Channel号,取值范围: [0, NR_MAX_DEC_CHN - 1] </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>frame</entry>
+                                <entry>
+<para>解码码流结构体指针</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>无。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>解码码流buffer由解码器内部申请，该函数只需要传入结构体指针即可。 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__Decoder_1ga522ce60cb85c8865cf7304835946639a">
+                <title>int IMP_Decoder_ReleaseFrame (int decChn, IMPFrameInfo *frame)</title> <emphasis></emphasis>
+                
+<para>释放码流缓存</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>decChn</entry>
+                                <entry>
+<para>解码Channel号,取值范围: [0, NR_MAX_DEC_CHN - 1] </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>frame</entry>
+                                <entry>
+<para>解码码流结构体指针</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>无。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无。 </para>
+</formalpara>
+</para>
+
+            </section>
+        </section>
+</section>

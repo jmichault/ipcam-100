@@ -1,0 +1,662 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Programmation T20: Référence du fichier imp_log.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Programmation T20
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#enum-members">Énumérations</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier imp_log.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><a href="imp__log_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a2649fe96847f27458b20d74d2f1c6345"><td class="memItemLeft" align="right" valign="top"><a id="a2649fe96847f27458b20d74d2f1c6345"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IMP_LOG_LEVEL_DEFAULT</b>&#160;&#160;&#160;IMP_LOG_LEVEL_DEBUG</td></tr>
+<tr class="separator:a2649fe96847f27458b20d74d2f1c6345"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66e5ebc09debac51f358cfa44614c986"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imp__log_8h.html#a66e5ebc09debac51f358cfa44614c986">IMP_LOG_OUT_STDOUT</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a66e5ebc09debac51f358cfa44614c986"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a4f5219a1ba389ca509ae345afe3597"><td class="memItemLeft" align="right" valign="top"><a id="a9a4f5219a1ba389ca509ae345afe3597"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IMP_LOG_OUT_LOCAL_FILE</b>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a9a4f5219a1ba389ca509ae345afe3597"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a0c83365556e0e2358bee0e20687125"><td class="memItemLeft" align="right" valign="top"><a id="a3a0c83365556e0e2358bee0e20687125"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IMP_LOG_OUT_SERVER</b>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:a3a0c83365556e0e2358bee0e20687125"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae312969f52247e22cf1b65193c9c99ec"><td class="memItemLeft" align="right" valign="top"><a id="ae312969f52247e22cf1b65193c9c99ec"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IMP_LOG_OUT_DEFAULT</b>&#160;&#160;&#160;<a class="el" href="imp__log_8h.html#a66e5ebc09debac51f358cfa44614c986">IMP_LOG_OUT_STDOUT</a></td></tr>
+<tr class="separator:ae312969f52247e22cf1b65193c9c99ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f91ff785691082c431962bc1a584638"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imp__log_8h.html#a2f91ff785691082c431962bc1a584638">IMP_LOG_OP_PID_SHIFT</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a2f91ff785691082c431962bc1a584638"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a280e2285ebc635b7ee3a1ec7ffa4410a"><td class="memItemLeft" align="right" valign="top"><a id="a280e2285ebc635b7ee3a1ec7ffa4410a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IMP_LOG_OP_USTIME_SHIFT</b>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a280e2285ebc635b7ee3a1ec7ffa4410a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c7ce9596ee78515a5b20a17e2a0306c"><td class="memItemLeft" align="right" valign="top"><a id="a0c7ce9596ee78515a5b20a17e2a0306c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IMP_LOG_OP_MODULE_SHIFT</b>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:a0c7ce9596ee78515a5b20a17e2a0306c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab538fc8f23a893e14f1abd30b82e49d9"><td class="memItemLeft" align="right" valign="top"><a id="ab538fc8f23a893e14f1abd30b82e49d9"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IMP_LOG_OP_FILE_SHIFT</b>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:ab538fc8f23a893e14f1abd30b82e49d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8daf22f1f46f303544a5e5bbf11f7056"><td class="memItemLeft" align="right" valign="top"><a id="a8daf22f1f46f303544a5e5bbf11f7056"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IMP_LOG_OP_FUNC_SHIFT</b>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:a8daf22f1f46f303544a5e5bbf11f7056"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a7f73dc6096ba4d16453a44b205088a"><td class="memItemLeft" align="right" valign="top"><a id="a1a7f73dc6096ba4d16453a44b205088a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IMP_LOG_OP_LINE_SHIFT</b>&#160;&#160;&#160;5</td></tr>
+<tr class="separator:a1a7f73dc6096ba4d16453a44b205088a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a180a0c518eb6b2f8e69782512a04a74f"><td class="memItemLeft" align="right" valign="top"><a id="a180a0c518eb6b2f8e69782512a04a74f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IMP_LOG_OP_PID</b>&#160;&#160;&#160;(1&lt;&lt;<a class="el" href="imp__log_8h.html#a2f91ff785691082c431962bc1a584638">IMP_LOG_OP_PID_SHIFT</a>)</td></tr>
+<tr class="separator:a180a0c518eb6b2f8e69782512a04a74f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ed3d204b6e09aa4de6beb6d0d20fa44"><td class="memItemLeft" align="right" valign="top"><a id="a2ed3d204b6e09aa4de6beb6d0d20fa44"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IMP_LOG_OP_USTIME</b>&#160;&#160;&#160;(1&lt;&lt;IMP_LOG_OP_USTIME_SHIFT)</td></tr>
+<tr class="separator:a2ed3d204b6e09aa4de6beb6d0d20fa44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0c07ee632cdc45d8fd116fffe59ea8f"><td class="memItemLeft" align="right" valign="top"><a id="aa0c07ee632cdc45d8fd116fffe59ea8f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IMP_LOG_OP_MODULE</b>&#160;&#160;&#160;(1&lt;&lt;IMP_LOG_OP_MODULE_SHIFT)</td></tr>
+<tr class="separator:aa0c07ee632cdc45d8fd116fffe59ea8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d6faedc1fe13f789191692603d55879"><td class="memItemLeft" align="right" valign="top"><a id="a3d6faedc1fe13f789191692603d55879"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IMP_LOG_OP_FILE</b>&#160;&#160;&#160;(1&lt;&lt;IMP_LOG_OP_FILE_SHIFT)</td></tr>
+<tr class="separator:a3d6faedc1fe13f789191692603d55879"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe6ebfee6271290adfa93fb0537e93b0"><td class="memItemLeft" align="right" valign="top"><a id="afe6ebfee6271290adfa93fb0537e93b0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IMP_LOG_OP_FUNC</b>&#160;&#160;&#160;(1&lt;&lt;IMP_LOG_OP_FUNC_SHIFT)</td></tr>
+<tr class="separator:afe6ebfee6271290adfa93fb0537e93b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6442cf583d3dd57e05eec2154ae2a4d"><td class="memItemLeft" align="right" valign="top"><a id="af6442cf583d3dd57e05eec2154ae2a4d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IMP_LOG_OP_LINE</b>&#160;&#160;&#160;(1&lt;&lt;IMP_LOG_OP_LINE_SHIFT)</td></tr>
+<tr class="separator:af6442cf583d3dd57e05eec2154ae2a4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a545b26f6548e5bbe97d75c55e5f43c46"><td class="memItemLeft" align="right" valign="top"><a id="a545b26f6548e5bbe97d75c55e5f43c46"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IMP_LOG_OP_NONE</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a545b26f6548e5bbe97d75c55e5f43c46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba5d07f9506ad4ba07f002d7568e1c62"><td class="memItemLeft" align="right" valign="top"><a id="aba5d07f9506ad4ba07f002d7568e1c62"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IMP_LOG_OP_ALL</b>&#160;&#160;&#160;(IMP_LOG_OP_PID|IMP_LOG_OP_USTIME|IMP_LOG_OP_MODULE|IMP_LOG_OP_FILE|IMP_LOG_OP_FUNC|IMP_LOG_OP_LINE)</td></tr>
+<tr class="separator:aba5d07f9506ad4ba07f002d7568e1c62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2299b20cb42ea5a6437daf4e0f2dd7b6"><td class="memItemLeft" align="right" valign="top"><a id="a2299b20cb42ea5a6437daf4e0f2dd7b6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IMP_LOG_OP_DEFAULT</b>&#160;&#160;&#160;IMP_LOG_OP_ALL</td></tr>
+<tr class="separator:a2299b20cb42ea5a6437daf4e0f2dd7b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a481512b0627a10fe35e4d98577e4b0f9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imp__log_8h.html#a481512b0627a10fe35e4d98577e4b0f9">IMP_LOG_PRINT</a>(tag,  le,  op,  fmt, ...)&#160;&#160;&#160;<a class="el" href="imp__log_8h.html#a4fd6d2fa42d0501a10de167579a6385d">imp_log_fun</a>(le, op, <a class="el" href="imp__log_8h.html#a66e5ebc09debac51f358cfa44614c986">IMP_LOG_OUT_STDOUT</a>, tag, __FILE__, __LINE__, __func__, fmt, ##__VA_ARGS__)</td></tr>
+<tr class="separator:a481512b0627a10fe35e4d98577e4b0f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04f6ce09cecdc583c2a91ed6ff08da4c"><td class="memItemLeft" align="right" valign="top"><a id="a04f6ce09cecdc583c2a91ed6ff08da4c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IMP_LOG_TO_FILE</b>(tag,  le,  op,  fmt, ...)&#160;&#160;&#160;<a class="el" href="imp__log_8h.html#a4fd6d2fa42d0501a10de167579a6385d">imp_log_fun</a>(le, op, IMP_LOG_OUT_LOCAL_FILE, tag, __FILE__, __LINE__, __func__, fmt, ##__VA_ARGS__)</td></tr>
+<tr class="separator:a04f6ce09cecdc583c2a91ed6ff08da4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ecbb232a0079162b96897c2989b28bf"><td class="memItemLeft" align="right" valign="top"><a id="a3ecbb232a0079162b96897c2989b28bf"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IMP_LOG_TO_SERVER</b>(tag,  le,  op,  fmt, ...)&#160;&#160;&#160;<a class="el" href="imp__log_8h.html#a4fd6d2fa42d0501a10de167579a6385d">imp_log_fun</a>(le, op, IMP_LOG_OUT_SERVER, tag, __FILE__, __LINE__, __func__, fmt, ##__VA_ARGS__)</td></tr>
+<tr class="separator:a3ecbb232a0079162b96897c2989b28bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ed7b6df137ab1d0416e8bb2a6265c0e"><td class="memItemLeft" align="right" valign="top"><a id="a7ed7b6df137ab1d0416e8bb2a6265c0e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IMP_LOG_GET_OPTION</b>&#160;&#160;&#160;<a class="el" href="imp__log_8h.html#aab55c0c1c9e7c65932edbc28bf8bb63d">IMP_Log_Get_Option</a>()</td></tr>
+<tr class="separator:a7ed7b6df137ab1d0416e8bb2a6265c0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38905e85fdbcdad6b83346c89f4013a4"><td class="memItemLeft" align="right" valign="top"><a id="a38905e85fdbcdad6b83346c89f4013a4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IMP_LOG</b>&#160;&#160;&#160;<a class="el" href="imp__log_8h.html#a481512b0627a10fe35e4d98577e4b0f9">IMP_LOG_PRINT</a></td></tr>
+<tr class="separator:a38905e85fdbcdad6b83346c89f4013a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50729ab97ef0fb578096a2c975ccac60"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imp__log_8h.html#a50729ab97ef0fb578096a2c975ccac60">IMP_LOG_UNK</a>(tag,  fmt, ...)&#160;&#160;&#160;IMP_LOG(tag, IMP_LOG_LEVEL_UNKNOWN, IMP_LOG_GET_OPTION, fmt, ##__VA_ARGS__)</td></tr>
+<tr class="separator:a50729ab97ef0fb578096a2c975ccac60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a630104ebaa80b0931434c64e80dd9e49"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imp__log_8h.html#a630104ebaa80b0931434c64e80dd9e49">IMP_LOG_VERBOSE</a>(tag,  fmt, ...)&#160;&#160;&#160;IMP_LOG(tag, IMP_LOG_LEVEL_VERBOSE, IMP_LOG_GET_OPTION, fmt, ##__VA_ARGS__)</td></tr>
+<tr class="separator:a630104ebaa80b0931434c64e80dd9e49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04452638fe72d70f3007a4cd5d8db7bf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imp__log_8h.html#a04452638fe72d70f3007a4cd5d8db7bf">IMP_LOG_DBG</a>(tag,  fmt, ...)&#160;&#160;&#160;IMP_LOG(tag, IMP_LOG_LEVEL_DEBUG, IMP_LOG_GET_OPTION, fmt, ##__VA_ARGS__)</td></tr>
+<tr class="separator:a04452638fe72d70f3007a4cd5d8db7bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9403f31ff83a9969c34394b470908a41"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imp__log_8h.html#a9403f31ff83a9969c34394b470908a41">IMP_LOG_INFO</a>(tag,  fmt, ...)&#160;&#160;&#160;IMP_LOG(tag, IMP_LOG_LEVEL_INFO, IMP_LOG_GET_OPTION, fmt, ##__VA_ARGS__)</td></tr>
+<tr class="separator:a9403f31ff83a9969c34394b470908a41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1aa3f8f688ba91dfe459fdfcb48bd15"><td class="memItemLeft" align="right" valign="top"><a id="ab1aa3f8f688ba91dfe459fdfcb48bd15"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IMP_LOG_WARN</b>(tag,  fmt, ...)&#160;&#160;&#160;IMP_LOG(tag, IMP_LOG_LEVEL_WARN, IMP_LOG_GET_OPTION, fmt, ##__VA_ARGS__)</td></tr>
+<tr class="separator:ab1aa3f8f688ba91dfe459fdfcb48bd15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59492a06ae7e667b02bda8f246902a7c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imp__log_8h.html#a59492a06ae7e667b02bda8f246902a7c">IMP_LOG_ERR</a>(tag,  fmt, ...)&#160;&#160;&#160;IMP_LOG(tag, IMP_LOG_LEVEL_ERROR, IMP_LOG_GET_OPTION, fmt, ##__VA_ARGS__)</td></tr>
+<tr class="separator:a59492a06ae7e667b02bda8f246902a7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1f636324f707f65a79e6a0ac1384c86"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imp__log_8h.html#ae1f636324f707f65a79e6a0ac1384c86">IMP_LOG_FATAL</a>(tag,  fmt, ...)&#160;&#160;&#160;IMP_LOG(tag, IMP_LOG_LEVEL_FATAL, IMP_LOG_GET_OPTION, fmt, ##__VA_ARGS__)</td></tr>
+<tr class="separator:ae1f636324f707f65a79e6a0ac1384c86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c4f1f0923cf0ea63ac17f0b1f32fb41"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imp__log_8h.html#a5c4f1f0923cf0ea63ac17f0b1f32fb41">IMP_LOG_SILENT</a>(tag,  fmt, ...)&#160;&#160;&#160;IMP_LOG(tag, IMP_LOG_LEVEL_SILENT, IMP_LOG_GET_OPTION, fmt, ##__VA_ARGS__)</td></tr>
+<tr class="separator:a5c4f1f0923cf0ea63ac17f0b1f32fb41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Énumérations</h2></td></tr>
+<tr class="memitem:a385c44f6fb256e5716a2302a5b940388"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <br />
+&#160;&#160;<b>IMP_LOG_LEVEL_UNKNOWN</b>, 
+<b>IMP_LOG_LEVEL_RESERVED</b>, 
+<b>IMP_LOG_LEVEL_VERBOSE</b>, 
+<b>IMP_LOG_LEVEL_DEBUG</b>, 
+<br />
+&#160;&#160;<b>IMP_LOG_LEVEL_INFO</b>, 
+<b>IMP_LOG_LEVEL_WARN</b>, 
+<b>IMP_LOG_LEVEL_ERROR</b>, 
+<b>IMP_LOG_LEVEL_FATAL</b>, 
+<br />
+&#160;&#160;<b>IMP_LOG_LEVEL_SILENT</b>
+<br />
+ }</td></tr>
+<tr class="separator:a385c44f6fb256e5716a2302a5b940388"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a4fd6d2fa42d0501a10de167579a6385d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imp__log_8h.html#a4fd6d2fa42d0501a10de167579a6385d">imp_log_fun</a> (int le, int op, int out, const char *tag, const char *file, int line, const char *func, const char *fmt,...)</td></tr>
+<tr class="separator:a4fd6d2fa42d0501a10de167579a6385d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a09f2431dba86d4a51a4d9c0eefed0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imp__log_8h.html#a6a09f2431dba86d4a51a4d9c0eefed0c">IMP_Log_Set_Option</a> (int op)</td></tr>
+<tr class="separator:a6a09f2431dba86d4a51a4d9c0eefed0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab55c0c1c9e7c65932edbc28bf8bb63d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imp__log_8h.html#aab55c0c1c9e7c65932edbc28bf8bb63d">IMP_Log_Get_Option</a> (void)</td></tr>
+<tr class="separator:aab55c0c1c9e7c65932edbc28bf8bb63d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Log接口头文件 </p>
+</div><h2 class="groupheader">Documentation des macros</h2>
+<a id="a04452638fe72d70f3007a4cd5d8db7bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04452638fe72d70f3007a4cd5d8db7bf">&#9670;&nbsp;</a></span>IMP_LOG_DBG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IMP_LOG_DBG</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">tag, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">fmt, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;IMP_LOG(tag, IMP_LOG_LEVEL_DEBUG, IMP_LOG_GET_OPTION, fmt, ##__VA_ARGS__)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>DEBUG等級打印接口 </p>
+
+</div>
+</div>
+<a id="a59492a06ae7e667b02bda8f246902a7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59492a06ae7e667b02bda8f246902a7c">&#9670;&nbsp;</a></span>IMP_LOG_ERR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IMP_LOG_ERR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">tag, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">fmt, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;IMP_LOG(tag, IMP_LOG_LEVEL_ERROR, IMP_LOG_GET_OPTION, fmt, ##__VA_ARGS__)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>ERROR等級打印接口 </p>
+
+</div>
+</div>
+<a id="ae1f636324f707f65a79e6a0ac1384c86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1f636324f707f65a79e6a0ac1384c86">&#9670;&nbsp;</a></span>IMP_LOG_FATAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IMP_LOG_FATAL</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">tag, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">fmt, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;IMP_LOG(tag, IMP_LOG_LEVEL_FATAL, IMP_LOG_GET_OPTION, fmt, ##__VA_ARGS__)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>FATAL等級打印接口 </p>
+
+</div>
+</div>
+<a id="a9403f31ff83a9969c34394b470908a41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9403f31ff83a9969c34394b470908a41">&#9670;&nbsp;</a></span>IMP_LOG_INFO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IMP_LOG_INFO</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">tag, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">fmt, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;IMP_LOG(tag, IMP_LOG_LEVEL_INFO, IMP_LOG_GET_OPTION, fmt, ##__VA_ARGS__)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>INFO等級打印接口 </p>
+
+</div>
+</div>
+<a id="a2f91ff785691082c431962bc1a584638"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f91ff785691082c431962bc1a584638">&#9670;&nbsp;</a></span>IMP_LOG_OP_PID_SHIFT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IMP_LOG_OP_PID_SHIFT&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>define log option </p>
+
+</div>
+</div>
+<a id="a66e5ebc09debac51f358cfa44614c986"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66e5ebc09debac51f358cfa44614c986">&#9670;&nbsp;</a></span>IMP_LOG_OUT_STDOUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IMP_LOG_OUT_STDOUT&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>define log out </p>
+
+</div>
+</div>
+<a id="a481512b0627a10fe35e4d98577e4b0f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a481512b0627a10fe35e4d98577e4b0f9">&#9670;&nbsp;</a></span>IMP_LOG_PRINT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IMP_LOG_PRINT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">tag, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">le, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">op, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">fmt, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="imp__log_8h.html#a4fd6d2fa42d0501a10de167579a6385d">imp_log_fun</a>(le, op, <a class="el" href="imp__log_8h.html#a66e5ebc09debac51f358cfa44614c986">IMP_LOG_OUT_STDOUT</a>, tag, __FILE__, __LINE__, __func__, fmt, ##__VA_ARGS__)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>reserved interface </p>
+
+</div>
+</div>
+<a id="a5c4f1f0923cf0ea63ac17f0b1f32fb41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c4f1f0923cf0ea63ac17f0b1f32fb41">&#9670;&nbsp;</a></span>IMP_LOG_SILENT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IMP_LOG_SILENT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">tag, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">fmt, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;IMP_LOG(tag, IMP_LOG_LEVEL_SILENT, IMP_LOG_GET_OPTION, fmt, ##__VA_ARGS__)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>SILENT等級打印接口 </p>
+
+</div>
+</div>
+<a id="a50729ab97ef0fb578096a2c975ccac60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50729ab97ef0fb578096a2c975ccac60">&#9670;&nbsp;</a></span>IMP_LOG_UNK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IMP_LOG_UNK</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">tag, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">fmt, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;IMP_LOG(tag, IMP_LOG_LEVEL_UNKNOWN, IMP_LOG_GET_OPTION, fmt, ##__VA_ARGS__)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>UNKNOWN等級打印接口 </p>
+
+</div>
+</div>
+<a id="a630104ebaa80b0931434c64e80dd9e49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a630104ebaa80b0931434c64e80dd9e49">&#9670;&nbsp;</a></span>IMP_LOG_VERBOSE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IMP_LOG_VERBOSE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">tag, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">fmt, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;IMP_LOG(tag, IMP_LOG_LEVEL_VERBOSE, IMP_LOG_GET_OPTION, fmt, ##__VA_ARGS__)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>VERBOSE等級打印接口 </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation du type de l'énumération</h2>
+<a id="a385c44f6fb256e5716a2302a5b940388"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a385c44f6fb256e5716a2302a5b940388">&#9670;&nbsp;</a></span>anonymous enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>define log level </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a4fd6d2fa42d0501a10de167579a6385d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fd6d2fa42d0501a10de167579a6385d">&#9670;&nbsp;</a></span>imp_log_fun()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void imp_log_fun </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>le</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>op</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>tag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>line</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>used internal </p>
+
+</div>
+</div>
+<a id="aab55c0c1c9e7c65932edbc28bf8bb63d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab55c0c1c9e7c65932edbc28bf8bb63d">&#9670;&nbsp;</a></span>IMP_Log_Get_Option()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IMP_Log_Get_Option </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>获取打印选项</p>
+<dl class="retval"><dt>Valeurs retournées</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">返回系统中的打印选项</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6a09f2431dba86d4a51a4d9c0eefed0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a09f2431dba86d4a51a4d9c0eefed0c">&#9670;&nbsp;</a></span>IMP_Log_Set_Option()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IMP_Log_Set_Option </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>op</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>设置打印选项</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">op</td><td>设置打印选项 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

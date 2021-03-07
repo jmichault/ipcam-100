@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="imp__ivs__move_8h">
+    <title>imp_ivs_move.h File Reference</title>
+    <programlisting>#include &lt;imp/imp_ivs.h&gt;</programlisting>
+<para>Include dependency diagram for imp_ivs_move.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="imp__ivs__move_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for imp_ivs_move.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="imp__ivs__move_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMP__IVS__MoveParam">IMP_IVS_MoveParam</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMP__IVS__MoveOutput">IMP_IVS_MoveOutput</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Macros</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__ivs__move_8h_1a837c8e786f0588c124b2c370be6cacd4">IMP_IVS_MOVE_MAX_ROI_CNT</link> 4</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Fonctions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structIMPIVSInterface">IMPIVSInterface</link> * <link linkend="group__MoveDetection_1ga0a500236744b55e6a1787c8d1c8afa85">IMP_IVS_CreateMoveInterface</link> (
+<link linkend="structIMP__IVS__MoveParam">IMP_IVS_MoveParam</link> * param)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="group__MoveDetection_1ga09825798faad818b955d4a6b115693ff">IMP_IVS_DestroyMoveInterface</link> (
+<link linkend="structIMPIVSInterface">IMPIVSInterface</link> * moveInterface)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Description détaillée</title>
+
+<para>IMP IVS 移动侦测模块 </para>
+    <para>Definition in file /home2/jean/projets/ipcam-100/programada_medio/include/imp/imp_ivs_move.h</para>
+    </simplesect>
+</section>

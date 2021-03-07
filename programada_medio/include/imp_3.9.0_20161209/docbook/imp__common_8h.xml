@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="imp__common_8h">
+    <title>imp_common.h File Reference</title>
+    <programlisting>#include &lt;stdint.h&gt;</programlisting>
+    <programlisting>#include &lt;pthread.h&gt;</programlisting>
+    <programlisting>#include &lt;linux/videodev2.h&gt;</programlisting>
+    <programlisting>#include &lt;stdio.h&gt;</programlisting>
+<para>Include dependency diagram for imp_common.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="imp__common_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for imp_common.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="imp__common_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPCell">IMPCell</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPFrameInfo">IMPFrameInfo</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPPoint">IMPPoint</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPRect">IMPRect</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Macros</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__common_8h_1a7bdedd4eacf2e3fc19a7827c0f43fbbf">BPP</link> case FMT: bpp1 = A;bpp2 = B;break</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Énumérations</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="imp__common_8h_1a6dadfc8115cc4a18ce760e442584c4e7">IMPDeviceID</link> {
+<link linkend="imp__common_8h_1a6dadfc8115cc4a18ce760e442584c4e7a162de33439c347ecba2e19b30644b208">DEV_ID_FS</link>,
+<link linkend="imp__common_8h_1a6dadfc8115cc4a18ce760e442584c4e7a132bce719450c185ea6fe09090e39c9c">DEV_ID_ENC</link>,
+<link linkend="imp__common_8h_1a6dadfc8115cc4a18ce760e442584c4e7a8f67a5e4c4b25676975ae7a52805dbd1">DEV_ID_DEC</link>,
+<link linkend="imp__common_8h_1a6dadfc8115cc4a18ce760e442584c4e7ae0021eea40513cbb341cd5078bca3da6">DEV_ID_IVS</link>,
+<link linkend="imp__common_8h_1a6dadfc8115cc4a18ce760e442584c4e7aaaafd084a936f2a8b60bb5e13e30acba">DEV_ID_OSD</link>,
+<link linkend="imp__common_8h_1a6dadfc8115cc4a18ce760e442584c4e7a20ffd238c1b14036bf0cd11c2a6c7aab">DEV_ID_FG1DIRECT</link>,
+<link linkend="imp__common_8h_1a6dadfc8115cc4a18ce760e442584c4e7a879368e794b4a647ed2fa6de16350954">DEV_ID_RESERVED_START</link>,
+<link linkend="imp__common_8h_1a6dadfc8115cc4a18ce760e442584c4e7a0addbbf85fcf1c9be1a0a0bcccc5bf70">DEV_ID_RESERVED_END</link>= 23,
+<link linkend="imp__common_8h_1a6dadfc8115cc4a18ce760e442584c4e7aefc69f7bc661541779acd3e0e59480e3">NR_MAX_DEVICES</link>
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="imp__common_8h_1ad505915c7d90c3f6ff7f21df277fbe21">IMPPayloadType</link> {
+<link linkend="imp__common_8h_1ad505915c7d90c3f6ff7f21df277fbe21a3fdcf2cb7c4348eb729bbda85c9c8b1a">PT_JPEG</link>,
+<link linkend="imp__common_8h_1ad505915c7d90c3f6ff7f21df277fbe21ab08825164e49f50cfed94180494e7ad7">PT_H264</link>
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0">IMPPixelFormat</link> {
+<link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0aec990b392e8ae3dc9b75105fec653dd4">PIX_FMT_YUV420P</link>,
+<link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0a2bbf7bf6e9a366188eb4ab5d0cf6f20a">PIX_FMT_YUYV422</link>,
+<link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0ad807d1f5d7eaf35453e348c536a15833">PIX_FMT_UYVY422</link>,
+<link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0a3c7e7e6066c6c748a8be5e0dc2bd9727">PIX_FMT_YUV422P</link>,
+<link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0a497de7bd9f1d2265470009528f02a533">PIX_FMT_YUV444P</link>,
+<link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0ab2063f2581a3325a4e36c57d0f9c1c50">PIX_FMT_YUV410P</link>,
+<link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0a47770de8f5acd94b6c5506602f67eee2">PIX_FMT_YUV411P</link>,
+<link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0a9a97169b5b2b8f8768879ae699f4458e">PIX_FMT_GRAY8</link>,
+<link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0ab2562c88f4d491c5a091a4924d985e55">PIX_FMT_MONOWHITE</link>,
+<link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0a63df9ff29cdb3e442ca235d7741f9e0c">PIX_FMT_MONOBLACK</link>,
+<link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0ade518e7f48c29de6b877a63115d970dc">PIX_FMT_NV12</link>,
+<link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0a5f9661a7159620e5913f631505c390b4">PIX_FMT_NV21</link>,
+<link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0ac4f1af6c892ebca0e1e9524b6ac901ae">PIX_FMT_RGB24</link>,
+<link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0af506ed2ad47c370a46dfa3b3e145b6d5">PIX_FMT_BGR24</link>,
+<link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0ac2ceaf5c4d25bc1c96da677862f8aefa">PIX_FMT_ARGB</link>,
+<link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0a540e13d5a8c9eec10c49d685f4906c3b">PIX_FMT_RGBA</link>,
+<link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0a244391e43ac32d33140b77599b99ea9c">PIX_FMT_ABGR</link>,
+<link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0a8363dc7b894ceba76f98db13dd165d66">PIX_FMT_BGRA</link>,
+<link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0aaf24607eef8bb5a508bbc23d7d33abde">PIX_FMT_RGB565BE</link>,
+<link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0a4d667f3258ab3c085575827e50215643">PIX_FMT_RGB565LE</link>,
+<link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0a35c769fbf02160921ab47151df780563">PIX_FMT_RGB555BE</link>,
+<link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0adebacc234127c48f00dc199fac1cf2d9">PIX_FMT_RGB555LE</link>,
+<link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0aa08b9ae015cc108458d2e7e5c3e2486b">PIX_FMT_BGR565BE</link>,
+<link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0ae2c37ca84dc54b91d6e877877de34b8e">PIX_FMT_BGR565LE</link>,
+<link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0ac751d7a354773d046f1d35c3d04699d4">PIX_FMT_BGR555BE</link>,
+<link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0a6469340ff914a18445ef0e084f504a7c">PIX_FMT_BGR555LE</link>,
+<link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0a2fef25410e7e5cafc27890d9a0ddb632">PIX_FMT_0RGB</link>,
+<link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0a29df9af3d190a8f8ba241601947b52d0">PIX_FMT_RGB0</link>,
+<link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0a5a4df001e7c6c9f959f84f994868b9af">PIX_FMT_0BGR</link>,
+<link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0a208d51c1207980b6ab25b9b83c7af474">PIX_FMT_BGR0</link>,
+<link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0ac57b1bc5c453112f75f55f63b9afadbe">PIX_FMT_BAYER_BGGR8</link>,
+<link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0aaad3e51a426696b0b81c93e78819bb83">PIX_FMT_BAYER_RGGB8</link>,
+<link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0ae4f2a2f36be0a4d06014677b5bfc0171">PIX_FMT_BAYER_GBRG8</link>,
+<link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0a93edabef6c41cdf8c2e8cd3305088c4c">PIX_FMT_BAYER_GRBG8</link>,
+<link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0a3f3d9f0c801f633a8291c78c5bdc9c46">PIX_FMT_RAW</link>,
+<link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0a276e24b4c33f3bc9cec7a01523d6011b">PIX_FMT_NB</link>
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Fonctions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static int <link linkend="imp__common_8h_1ab8c550125ad200c3858fedb304b74b58">calc_pic_size</link> (
+int width, int height, <link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0">IMPPixelFormat</link> imp_pixfmt)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static const char * <link linkend="imp__common_8h_1a04597459a58986c328d274d5fb8e662e">fmt_to_string</link> (
+<link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0">IMPPixelFormat</link> imp_pixfmt)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Description détaillée</title>
+
+<para>SDK-T15公共数据结构头文件 </para>
+    <para>Definition in file /home2/jean/projets/ipcam-100/programada_medio/include/imp/imp_common.h</para>
+    </simplesect>
+</section>

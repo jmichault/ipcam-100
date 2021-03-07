@@ -1,0 +1,900 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="group__IMP__FrameSource">
+    <title>IMP_FrameSource</title>
+<para>Collaboration diagram for IMP_FrameSource</para>
+<para>
+    <figure>
+        <title>Group Collaboration diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="group__IMP__FrameSource.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+
+<para>视频源，是IMP系统的图像数据源，可设置图像的分辨率、裁减、缩放等属性，以及后端降噪功能 </para>
+        <section>
+            <title>Description détaillée</title>
+
+<para>FrameSource是一个数据流相关概念，可以设置图像分辨率，格式等，并向后端提供原始图像。</para>
+
+<para>FrameSource的结构如下图：  如上图所示，FrameSource有三路输出，三路输出均可用来编码，其中：<itemizedlist>
+<listitem>
+<para>Channel 0一般作为高清视频流</para>
+</listitem><listitem>
+<para>Channel 1一般作为标清视频流，或者IVS只能算法的数据源</para>
+</listitem><listitem>
+<para>Channel 2是拓展通道，在特殊应用下使用，一般不建议使用</para>
+</listitem></itemizedlist>
+</para>
+
+<para>FrameSource的初始化步骤如下（以两路输出为例）： <literallayout><computeroutput>IMPFSChnAttr&#32;fs_chn_attr;
+fs_chn_attr.pixFmt&#32;=&#32;PIX_FMT_NV12;
+fs_chn_attr.outFrmRateNum&#32;=&#32;SENSOR_FRAME_RATE;
+fs_chn_attr.outFrmRateDen&#32;=&#32;1;
+fs_chn_attr.nrVBs&#32;=&#32;3;
+fs_chn_attr.type&#32;=&#32;FS_PHY_CHANNEL;
+
+fs_chn_attr.crop.enable&#32;=&#32;1;
+fs_chn_attr.crop.top&#32;=&#32;0;
+fs_chn_attr.crop.left&#32;=&#32;0;
+fs_chn_attr.crop.width&#32;=&#32;960;
+fs_chn_attr.crop.height&#32;=&#32;640;
+
+fs_chn_attr.scaler.enable&#32;=&#32;1;
+fs_chn_attr.scaler.outwidth&#32;=&#32;320;
+fs_chn_attr.scaler.outheight&#32;=&#32;240;
+
+ret&#32;=&#32;IMP_FrameSource_CreateChn(0,&#32;&amp;fs_chn_attr);&#32;//step.1&#32;创建Channel&#32;0
+if&#32;(ret&#32;&lt;&#32;0)&#32;{
+&#32;&#32;&#32;&#32;printf(&quot;FrameSource_CreateChn(0)&#32;error\n&quot;);
+&#32;&#32;&#32;&#32;goto&#32;createchn_err;
+}
+
+ret&#32;=&#32;IMP_FrameSource_EnableChn(0);&#32;//step.2&#32;Enable&#32;Channel&#32;0，channel&#32;0开始输出图像
+if&#32;(ret&#32;&lt;&#32;0)&#32;{
+&#32;&#32;&#32;&#32;printf(&quot;EnableChn(0)&#32;error\n&quot;;
+&#32;&#32;&#32;&#32;return&#32;enablechn_err;
+}
+
+//至此，FrameSource开始向后端Group传递数据
+
+ret&#32;=&#32;IMP_FrameSource_DisableChn(0);&#32;//step.3&#32;Disable&#32;channel&#32;0，channel&#32;0停止输出图像
+if&#32;(ret&#32;&lt;&#32;0)&#32;{
+&#32;&#32;&#32;&#32;printf(&quot;FrameSource_DisableChn(0)&#32;error\n&quot;);
+&#32;&#32;&#32;&#32;return&#32;disablechn_err;
+}
+
+ret&#32;=&#32;IMP_FrameSource_DestroyChn(0);&#32;//step.4&#32;销毁channel&#32;0
+if&#32;(ret&#32;&lt;&#32;0)&#32;{
+&#32;&#32;&#32;&#32;printf(&quot;FrameSource_DestroyChn&#32;error\n&quot;);
+&#32;&#32;&#32;&#32;return&#32;destorychn_err;
+}
+</computeroutput></literallayout> 更多使用方法请参考Samples </para>
+        </section>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPFSChnCrop">IMPFSChnCrop</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPFSChnScaler">IMPFSChnScaler</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPFSChnAttr">IMPFSChnAttr</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Énumérations</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="group__IMP__FrameSource_1ga155b3408c5b20686f020a351a56d34a1">IMPFSChnType</link> {
+<link linkend="group__IMP__FrameSource_1gga155b3408c5b20686f020a351a56d34a1aa44fd626db4a97c40ffc9f231396d67c">FS_PHY_CHANNEL</link>,
+<link linkend="group__IMP__FrameSource_1gga155b3408c5b20686f020a351a56d34a1aa7d8a412ff0cf06f92fad8b1a976bd9f">FS_EXT_CHANNEL</link>
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Fonctions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__FrameSource_1ga997d40cc97abc963f96b2ee963f27220">IMP_FrameSource_CreateChn</link> (
+int chnNum, <link linkend="structIMPFSChnAttr">IMPFSChnAttr</link> * chn_attr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__FrameSource_1gae800f0c0ad967bcd2692087d17ebb685">IMP_FrameSource_DestroyChn</link> (
+int chnNum)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__FrameSource_1ga1c59f4918ceae7635123da1d253b5904">IMP_FrameSource_EnableChn</link> (
+int chnNum)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__FrameSource_1ga9f8c6b444fefa927f0bc02d0031f34d8">IMP_FrameSource_DisableChn</link> (
+int chnNum)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__FrameSource_1gab59545186250a59d17e44eaa78089fa6">IMP_FrameSource_GetChnAttr</link> (
+int chnNum, <link linkend="structIMPFSChnAttr">IMPFSChnAttr</link> * chnAttr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__FrameSource_1gaf359a4e61fd4d2f8ff5cd8b28d321eb6">IMP_FrameSource_SetChnAttr</link> (
+int chnNum, const <link linkend="structIMPFSChnAttr">IMPFSChnAttr</link> * chnAttr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__FrameSource_1ga5a433ca616cb0c1fe82f400161a411b1">IMP_FrameSource_SetFrameDepth</link> (
+int chnNum, int depth)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__FrameSource_1ga235cece30871f6672a2c69bbcc8926e5">IMP_FrameSource_GetFrameDepth</link> (
+int chnNum, int * depth)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__FrameSource_1ga058ab102f6c968ce09bc3bc871a6f56c">IMP_FrameSource_GetFrame</link> (
+int chnNum, <link linkend="structIMPFrameInfo">IMPFrameInfo</link> ** frame)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__FrameSource_1gacbb1d1fe8cc98ed0a4d8b4e3ed74eec7">IMP_FrameSource_ReleaseFrame</link> (
+int chnNum, <link linkend="structIMPFrameInfo">IMPFrameInfo</link> * frame)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Documentation du type de l'énumération</title>
+            <section xml:id="group__IMP__FrameSource_1ga155b3408c5b20686f020a351a56d34a1">
+               <title>enum IMPFSChnType </title>
+               
+               <formalpara>
+                    <title>Valeurs énumérées:</title>
+                    <variablelist>
+                        <varlistentry xml:id="group__IMP__FrameSource_1gga155b3408c5b20686f020a351a56d34a1aa44fd626db4a97c40ffc9f231396d67c">
+                            <term>FS_PHY_CHANNEL</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="group__IMP__FrameSource_1gga155b3408c5b20686f020a351a56d34a1aa7d8a412ff0cf06f92fad8b1a976bd9f">
+                            <term>FS_EXT_CHANNEL</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 107 of file imp_framesource.h
+                    <computeroutput><literallayout>
+{
+FS_PHY_CHANNEL, 
+FS_EXT_CHANNEL, 
+}IMPFSChnType;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+        </section>
+        <section>
+            <title>Documentation des fonctions</title>
+            <section xml:id="group__IMP__FrameSource_1ga997d40cc97abc963f96b2ee963f27220">
+                <title>int IMP_FrameSource_CreateChn (int chnNum, IMPFSChnAttr *chn_attr)</title> <emphasis></emphasis>
+                
+<para>创建通道</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>chnNum</entry>
+                                <entry>
+<para>通道号 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>chnAttr</entry>
+                                <entry>
+<para>通道属性结构体指针</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败，返回错误码</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>创建通道，给后端模块提供数据源; 
+<literallayout>
+</literallayout>
+可以设置通道的相关属性，包括：图片宽度，图片高度，图片格式，通道的输出帧率, 缓存buf数，裁剪和缩放属性。
+<literallayout>
+</literallayout>
+对于T10，通道0、1只能被设置为物理通道，通道2,3只能被设置为拓展通道。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无。 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__FrameSource_1gae800f0c0ad967bcd2692087d17ebb685">
+                <title>IMP_FrameSource_DestroyChn (int chnNum)</title> <emphasis></emphasis>
+                
+<para>销毁通道</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>chnNum</entry>
+                                <entry>
+<para>通道号</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败，返回错误码</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>销毁通道</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>如果程序调用过IMP_FrameSource_EnableChn，一定要调用IMP_FrameSource_DisableChn之后，再使用此函数。 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__FrameSource_1ga1c59f4918ceae7635123da1d253b5904">
+                <title>int IMP_FrameSource_EnableChn (int chnNum)</title> <emphasis></emphasis>
+                
+<para>使能通道</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>chnNum</entry>
+                                <entry>
+<para>通道号</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败，返回错误码</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>无</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>在使用这个函数之前，必须确保所使能的通道已经创建. </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__FrameSource_1ga9f8c6b444fefa927f0bc02d0031f34d8">
+                <title>int IMP_FrameSource_DisableChn (int chnNum)</title> <emphasis></emphasis>
+                
+<para>关闭通道</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>chnNum</entry>
+                                <entry>
+<para>通道号</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败，返回错误码</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>无</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__FrameSource_1gab59545186250a59d17e44eaa78089fa6">
+                <title>int IMP_FrameSource_GetChnAttr (int chnNum, IMPFSChnAttr *chnAttr)</title> <emphasis></emphasis>
+                
+<para>获得通道属性</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>chnNum</entry>
+                                <entry>
+<para>通道号</para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>chnAttr</entry>
+                                <entry>
+<para>通道属性结构体指针</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败，返回错误码</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>可以获得通道的相关属性，包括：图片宽度，图片高度，图片格式，通道的输出帧率, 缓存buf数，裁剪和缩放属性.</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__FrameSource_1gaf359a4e61fd4d2f8ff5cd8b28d321eb6">
+                <title>int IMP_FrameSource_SetChnAttr (int chnNum, const IMPFSChnAttr *chnAttr)</title> <emphasis></emphasis>
+                
+<para>设置通道属性</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>chnNum</entry>
+                                <entry>
+<para>通道号</para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>chnAttr</entry>
+                                <entry>
+<para>通道属性结构体指针</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败，返回错误码</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>可以设置通道的相关属性，包括：图片宽度，图片高度，图片格式，通道的输出帧率, 缓存buf数，裁剪和缩放属性.</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__FrameSource_1ga5a433ca616cb0c1fe82f400161a411b1">
+                <title>IMP_FrameSource_SetFrameDepth (int chnNum, int depth)</title> <emphasis></emphasis>
+                
+<para>设置可获取的图像最大深度</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>chnNum</entry>
+                                <entry>
+<para>通道的编号 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>depth</entry>
+                                <entry>
+<para>设置可获取的图像最大深度值</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败，返回错误码</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para></para>
+</formalpara>
+1.此接口用于设置某一通道缓存的视频图像帧数。当用户设置缓存多帧视频图像时，用户可以获取到一定数目的连续图像数据。</para>
+
+<para>2.若指定depth为0，表示不需要系统为该通道缓存图像，故用户获取不到该通道图像数据。系统默认不为通道缓存图像，即depth默认为0。</para>
+
+<para>3.系统将自动更新最旧的图像数据，保证用户一旦开始获取，就可获取到最近最新的图像。</para>
+
+<para>4.系统因获取不到图像而自动停止缓存新的图像，用户也不能获取新的图像。因此建议用户保证获取和释放接口配对使用。</para>
+
+<para>5.系统将自动更新用户仍未获取的最旧的图像数据，保证缓存的图像队列为最近最新的图像。由于用户不能保证获取速度，导致获取的可能不是连续的图像。</para>
+
+<para>6.此函数可以调用位置，没有要求。但是只能使用一次。</para>
+
+<para><formalpara><title>Attention: </title>
+
+<para>无. </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__FrameSource_1ga235cece30871f6672a2c69bbcc8926e5">
+                <title>IMP_FrameSource_GetFrameDepth (int chnNum, int *depth)</title> <emphasis></emphasis>
+                
+<para>获取的图像最大深度</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>chnNum</entry>
+                                <entry>
+<para>通道的编号 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>depth</entry>
+                                <entry>
+<para>获取的图像最大深度值</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败，返回错误码</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>无.</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无. </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__FrameSource_1ga058ab102f6c968ce09bc3bc871a6f56c">
+                <title>IMP_FrameSource_GetFrame (int chnNum, IMPFrameInfo **frame)</title> <emphasis></emphasis>
+                
+<para>获取的图像</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>chnNum</entry>
+                                <entry>
+<para>通道的编号 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>frame</entry>
+                                <entry>
+<para>获取的图像</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败，返回错误码</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para></para>
+</formalpara>
+1.此接口可以获取指定通道的视频图像信息。图像信息主要包括：图像的宽度、高度、像素格式以及图片数据起始地址。</para>
+
+<para>2.此接口需在通道已启用后才有效。</para>
+
+<para>3.支持多次获取后再释放，但建议获取和释放接口配对使用。</para>
+
+<para>4.该接口默认超时时间为 2s，即2s 内仍未获取到图像，则超时返回。</para>
+
+<para><formalpara><title>Attention: </title>
+
+<para>无. </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__FrameSource_1gacbb1d1fe8cc98ed0a4d8b4e3ed74eec7">
+                <title>IMP_FrameSource_ReleaseFrame (int chnNum, IMPFrameInfo *frame)</title> <emphasis></emphasis>
+                
+<para>释放获取的图像</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>chnNum</entry>
+                                <entry>
+<para>通道的编号 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>frame</entry>
+                                <entry>
+<para>释放获取的图像</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>非0</entry>
+                                <entry>
+<para>失败，返回错误码</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>无.</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无. </para>
+</formalpara>
+</para>
+
+            </section>
+        </section>
+</section>

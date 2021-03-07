@@ -637,37 +637,37 @@ int ImpEncoder::sample_encoder_init() {
     rc_attr = &channel_attr.rcAttr;
 
 
-    rc_attr->rcMode = ENC_RC_MODE_H264CBR;
-    rc_attr->attrH264Cbr.outFrmRate.frmRateNum = imp_chn_attr_tmp->outFrmRateNum;
-    rc_attr->attrH264Cbr.outFrmRate.frmRateDen = imp_chn_attr_tmp->outFrmRateDen;
-    rc_attr->attrH264Cbr.maxGop =
-            2 * rc_attr->attrH264Cbr.outFrmRate.frmRateNum / rc_attr->attrH264Cbr.outFrmRate.frmRateDen;
-    rc_attr->attrH264Cbr.outBitRate = currentParams.bitrate;
-    rc_attr->attrH264Cbr.maxQp = 38;
-    rc_attr->attrH264Cbr.minQp = 15;
-    rc_attr->attrH264Cbr.maxFPS = 100;
-    rc_attr->attrH264Cbr.minFPS = 1;
-    rc_attr->attrH264Cbr.IBiasLvl = 2;
-    rc_attr->attrH264Cbr.FrmQPStep = 3;
-    rc_attr->attrH264Cbr.GOPQPStep = 15;
-    rc_attr->attrH264Cbr.AdaptiveMode = false;
-    rc_attr->attrH264Cbr.GOPRelation = false;
+    rc_attr->attrRcMode.rcMode = ENC_RC_MODE_CBR;
+    //rc_attr->attrRcMode.attrH264Cbr.outFrmRate.frmRateNum = imp_chn_attr_tmp->outFrmRateNum;
+    //rc_attr->attrRcMode.attrH264Cbr.outFrmRate.frmRateDen = imp_chn_attr_tmp->outFrmRateDen;
+    //rc_attr->attrRcMode.attrH264Cbr.maxGop =
+    //        2 * rc_attr->attrRcMode.attrH264Cbr.outFrmRate.frmRateNum / rc_attr->attrRcMode.attrH264Cbr.outFrmRate.frmRateDen;
+    rc_attr->attrRcMode.attrH264Cbr.outBitRate = currentParams.bitrate;
+    rc_attr->attrRcMode.attrH264Cbr.maxQp = 38;
+    rc_attr->attrRcMode.attrH264Cbr.minQp = 15;
+    //rc_attr->attrRcMode.attrH264Cbr.maxFPS = 100;
+    //rc_attr->attrRcMode.attrH264Cbr.minFPS = 1;
+    //rc_attr->attrRcMode.attrH264Cbr.IBiasLvl = 2;
+    rc_attr->attrRcMode.attrH264Cbr.frmQPStep = 3;
+    rc_attr->attrRcMode.attrH264Cbr.gopQPStep = 15;
+    //rc_attr->attrRcMode.attrH264Cbr.AdaptiveMode = false;
+    //rc_attr->attrRcMode.attrH264Cbr.GOPRelation = false;
 
 
-    rc_attr->attrH264Denoise.enable = false;
-    rc_attr->attrH264Denoise.dnType = 2;
-    rc_attr->attrH264Denoise.dnIQp = 1;
-    rc_attr->attrH264Denoise.dnPQp = 1;
+    //rc_attr->attrRcMode.attrH264Denoise.enable = false;
+    //rc_attr->attrRcMode.attrH264Denoise.dnType = 2;
+    //rc_attr->attrRcMode.attrH264Denoise.dnIQp = 1;
+    //rc_attr->attrRcMode.attrH264Denoise.dnPQp = 1;
 
 
-    rc_attr->attrH264FrmUsed.enable = 1;
-    rc_attr->attrH264FrmUsed.frmUsedMode = ENC_FRM_SKIP;
-    rc_attr->attrH264FrmUsed.frmUsedTimes = 2000;
+    //rc_attr->attrRcMode.attrH264FrmUsed.enable = 1;
+    //rc_attr->attrRcMode.attrH264FrmUsed.frmUsedMode = ENC_FRM_SKIP;
+    //rc_attr->attrRcMode.attrH264FrmUsed.frmUsedTimes = 2000;
 
     /*
-    rc_attr->attrH264FrmUsed.enable = true;
-    rc_attr->attrH264FrmUsed.dnIQp = ENC_FRM_REUSED ;
-    rc_attr->attrH264FrmUsed.frmUsedTimes = 50;
+    rc_attr->attrRcMode.attrH264FrmUsed.enable = true;
+    rc_attr->attrRcMode.attrH264FrmUsed.dnIQp = ENC_FRM_REUSED ;
+    rc_attr->attrRcMode.attrH264FrmUsed.frmUsedTimes = 50;
 */
 
 

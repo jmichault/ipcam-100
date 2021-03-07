@@ -1,0 +1,1146 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="group__IMP__IVS">
+    <title>IMP_IVS</title>
+<para>Collaboration diagram for IMP_IVS</para>
+<para>
+    <figure>
+        <title>Group Collaboration diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="group__IMP__IVS.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+
+<para>IVS智能分析通用接口API. </para>
+        <section>
+            <title>Description détaillée</title>
+<section xml:id="group__IMP__System_1concept">
+<title>1 相关概念</title>
+
+<para>IMP IVS 通过IVS通用接口API调用实例化的IMPIVSInterface以将智能分析算法嵌入到SDK中来分析SDK中的frame图像。</para>
+<section xml:id="group__IMP__IVS_1IMPIVSInterface">
+<title>1.1 IMPIVSInterface</title>
+
+<para><link linkend="structIMPIVSInterface">IMPIVSInterface</link> 为通用算法接口，具体算法通过实现此接口并将其传给IMP IVS达到在SDK中运行具体算法的目的。
+<literallayout>
+</literallayout>
+一个channel有且仅为单个算法实例的载体，必须将具体实现的通用算法接口传给具体的channel才能在SDK中运行算法。 
+<literallayout>
+</literallayout>
+<link linkend="structIMPIVSInterface">IMPIVSInterface</link> 成员param为成员函数init的参数。 
+<literallayout>
+</literallayout>
+IMP_IVS会在传给成员函数ProcessAsync参数的frame时对其进行外部加锁，ProcessAsync必须在使用完frame后调用IMP_IVS_ReleaseData释放frame，以免死锁。</para>
+</section>
+</section>
+<section xml:id="group__IMP__IVS_1ivs_usage">
+<title>2 使用方法</title>
+
+<para>以移动侦测算法为例，函数的具体实现见sample-move_c.c文件
+<literallayout>
+</literallayout>
+step.1 初始化系统，可以直接调用范例中的sample_system_init()函数。
+<literallayout>
+</literallayout>
+整个应用程序只能初始化系统一次，若之前初始化了，这儿不需要再初始化。
+<literallayout>
+</literallayout>
+step.2 初始化framesource 
+<literallayout>
+</literallayout>
+若算法所使用的framesource通道已创建，直接使用已经创建好的通道即可。
+<literallayout>
+</literallayout>
+若算法所使用的framesource通道未创建，可以调用范列中的sample_framesource_init(IVS_FS_CHN, &amp;fs_chn_attr)进行创建。
+<literallayout>
+</literallayout>
+step.3 创建ivs具体算法通道组。
+<literallayout>
+</literallayout>
+多个算法可以共用一个通道组，也可以分别使用通道组，具体件sample_ivs_move_init() 
+<literallayout>
+</literallayout>
+<literallayout><computeroutput>int&#32;sample_ivs_move_init(int&#32;grp_num)
+{
+&#32;&#32;&#32;&#32;int&#32;ret&#32;=&#32;0;
+
+&#32;&#32;&#32;&#32;ret&#32;=&#32;IMP_IVS_CreateGroup(grp_num);
+&#32;&#32;&#32;&#32;if&#32;(ret&#32;&lt;&#32;0)&#32;{
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;IMP_LOG_ERR(TAG,&#32;&quot;IMP_IVS_CreateGroup(%d)&#32;failed\n&quot;,&#32;grp_num);
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;return&#32;-1;
+&#32;&#32;&#32;&#32;}
+&#32;&#32;&#32;&#32;return&#32;0;
+}
+</computeroutput></literallayout> step.4 绑定算法通道组和framesource通道组 <literallayout><computeroutput>IMPCell&#32;framesource_cell&#32;=&#32;{DEV_ID_FS,&#32;IVS_FS_CHN,&#32;0};
+IMPCell&#32;ivs_cell&#32;=&#32;{DEV_ID_IVS,&#32;0,&#32;0};
+ret&#32;=&#32;IMP_System_Bind(&amp;framesource_cell,&#32;&amp;ivs_cell);
+if&#32;(ret&#32;&lt;&#32;0)&#32;{
+&#32;&#32;&#32;IMP_LOG_ERR(TAG,&#32;&quot;Bind&#32;FrameSource&#32;channel%d&#32;and&#32;ivs0&#32;failed\n&quot;,&#32;IVS_FS_CHN);
+&#32;&#32;&#32;return&#32;-1;
+}
+</computeroutput></literallayout> step.5 启动framesource和算法。建议算法通道号和算法编号一致，以便可以直接对应当前操作哪一个算法。 <literallayout><computeroutput>IMP_FrameSource_SetFrameDepth(0,&#32;0);
+ret&#32;=&#32;sample_framesource_streamon(IVS_FS_CHN);
+if&#32;(ret&#32;&lt;&#32;0)&#32;{
+&#32;&#32;&#32;IMP_LOG_ERR(TAG,&#32;&quot;ImpStreamOn&#32;failed\n&quot;);
+&#32;&#32;&#32;return&#32;-1;
+}
+ret&#32;=&#32;sample_ivs_move_start(0,&#32;0,&#32;&amp;inteface);
+if&#32;(ret&#32;&lt;&#32;0)&#32;{
+&#32;&#32;&#32;IMP_LOG_ERR(TAG,&#32;&quot;sample_ivs_move_start(0,&#32;0)&#32;failed\n&quot;);
+&#32;&#32;&#32;return&#32;-1;
+}
+</computeroutput></literallayout></para>
+
+<para>step.6 获取算法结果 
+<literallayout>
+</literallayout>
+Polling结果、获取结果和释放结果必须严格对应，不能中间有中断; 只有Polling结果正确返回，获取到的结果才会被更新，否则获取到的结果无法预知。 <literallayout><computeroutput>for&#32;(i&#32;=&#32;0;&#32;i&#32;&lt;&#32;NR_FRAMES_TO_IVS;&#32;i++)&#32;{
+&#32;&#32;&#32;ret&#32;=&#32;IMP_IVS_PollingResult(0,&#32;IMP_IVS_DEFAULT_TIMEOUTMS);
+&#32;&#32;&#32;if&#32;(ret&#32;&lt;&#32;0)&#32;{
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;IMP_LOG_ERR(TAG,&#32;&quot;IMP_IVS_PollingResult(%d,&#32;%d)&#32;failed\n&quot;,&#32;0,&#32;IMP_IVS_DEFAULT_TIMEOUTMS);
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;return&#32;-1;
+&#32;&#32;&#32;}
+&#32;&#32;&#32;ret&#32;=&#32;IMP_IVS_GetResult(0,&#32;(void&#32;**)&amp;result);
+&#32;&#32;&#32;if&#32;(ret&#32;&lt;&#32;0)&#32;{
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;IMP_LOG_ERR(TAG,&#32;&quot;IMP_IVS_GetResult(%d)&#32;failed\n&quot;,&#32;0);
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;return&#32;-1;
+&#32;&#32;&#32;}
+&#32;&#32;&#32;IMP_LOG_INFO(TAG,&#32;&quot;frame[%d],&#32;result-&gt;ret=%d\n&quot;,&#32;i,&#32;result-&gt;ret);
+
+&#32;&#32;&#32;ret&#32;=&#32;IMP_IVS_ReleaseResult(0,&#32;(void&#32;*)result);
+&#32;&#32;&#32;if&#32;(ret&#32;&lt;&#32;0)&#32;{
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;IMP_LOG_ERR(TAG,&#32;&quot;IMP_IVS_ReleaseResult(%d)&#32;failed\n&quot;,&#32;0);
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;return&#32;-1;
+&#32;&#32;&#32;}
+}
+</computeroutput></literallayout> step.7 释放资源 <literallayout><computeroutput>sample_ivs_move_stop(0,&#32;inteface);
+sample_framesource_streamoff(1);
+IMP_System_UnBind(&amp;framesource_cell,&#32;&amp;ivs_cell);
+sample_ivs_move_exit(0);
+sample_framesource_exit(IVS_FS_CHN);
+sample_system_exit();
+</computeroutput></literallayout> </para>
+</section>
+        </section>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIMPIVSInterface">IMPIVSInterface</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Modules</title>
+    </simplesect>
+    <para>
+        <itemizedlist>
+            <listitem><para><link linkend="group__MoveDetection">MoveDetection</link></para></listitem>
+        </itemizedlist>
+    </para>
+        <section>
+            <title>Fonctions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__IVS_1gaf4bb6f49f2a0bf8f0d5f448b6a62e6a5">IMP_IVS_CreateGroup</link> (
+int GrpNum)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__IVS_1ga2400f2ef403e471bd1d7c6a4eb1356f6">IMP_IVS_DestroyGroup</link> (
+int GrpNum)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__IVS_1gada895e87ff289b637330935379e081d6">IMP_IVS_CreateChn</link> (
+int ChnNum, <link linkend="structIMPIVSInterface">IMPIVSInterface</link> * handler)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__IVS_1gacd3e4340777295519e7d097e4e5f30cd">IMP_IVS_DestroyChn</link> (
+int ChnNum)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__IVS_1ga001fe0e1ee94b91bc4f2a08474ecd652">IMP_IVS_RegisterChn</link> (
+int GrpNum, int ChnNum)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__IVS_1ga9b756088952b6ff0f483b0d5826109ec">IMP_IVS_UnRegisterChn</link> (
+int ChnNum)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__IVS_1gaf1ffe26e56f2d8f8bce812b3d26111db">IMP_IVS_StartRecvPic</link> (
+int ChnNum)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__IVS_1ga3452e6eb4c0838a6ce1e5c2907f51fc3">IMP_IVS_StopRecvPic</link> (
+int ChnNum)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__IVS_1ga4ff339164b80826f2288766482da907c">IMP_IVS_PollingResult</link> (
+int ChnNum, int timeoutMs)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__IVS_1ga39b67051ba392735d9719c37968717f6">IMP_IVS_GetResult</link> (
+int ChnNum, void ** result)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__IVS_1ga4c8a0109894c69f3e83ec5c4f73e5e74">IMP_IVS_ReleaseResult</link> (
+int ChnNum, void * result)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__IVS_1ga079dccc637f16934f905a7518fb44e9e">IMP_IVS_ReleaseData</link> (
+void * vaddr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__IVS_1ga59ddb3579c4d1221da6e2c45d929bfc2">IMP_IVS_GetParam</link> (
+int chnNum, void * param)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="group__IMP__IVS_1ga2a0e9458531fb623d2af6dacfab5acc0">IMP_IVS_SetParam</link> (
+int chnNum, void * param)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Documentation des fonctions</title>
+            <section xml:id="group__IMP__IVS_1gaf4bb6f49f2a0bf8f0d5f448b6a62e6a5">
+                <title>int IMP_IVS_CreateGroup (int GrpNum)</title> <emphasis></emphasis>
+                
+<para>创建通道组</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>GrpNum</entry>
+                                <entry>
+<para>IVS功能对应的通道组号</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>-1</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>无</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__IVS_1ga2400f2ef403e471bd1d7c6a4eb1356f6">
+                <title>int IMP_IVS_DestroyGroup (int GrpNum)</title> <emphasis></emphasis>
+                
+<para>销毁通道组</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>GrpNum</entry>
+                                <entry>
+<para>IVS功能对应的通道组号</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>-1</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>无</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__IVS_1gada895e87ff289b637330935379e081d6">
+                <title>int IMP_IVS_CreateChn (int ChnNum, IMPIVSInterface *handler)</title> <emphasis></emphasis>
+                
+<para>创建IVS功能对应的通道</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ChnNum</entry>
+                                <entry>
+<para>通道号</para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>handler</entry>
+                                <entry>
+<para>IVS功能句柄</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>-1</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>无.</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__IVS_1gacd3e4340777295519e7d097e4e5f30cd">
+                <title>int IMP_IVS_DestroyChn (int ChnNum)</title> <emphasis></emphasis>
+                
+<para>销毁IVS功能句柄对应的通道</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ChnNum</entry>
+                                <entry>
+<para>通道号</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>-1</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>无</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__IVS_1ga001fe0e1ee94b91bc4f2a08474ecd652">
+                <title>int IMP_IVS_RegisterChn (int GrpNum, int ChnNum)</title> <emphasis></emphasis>
+                
+<para>注册通道到通道组</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>GrpNum</entry>
+                                <entry>
+<para>IVS功能对应的通道组号</para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>ChnNum</entry>
+                                <entry>
+<para>IVS功能对应的通道号</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>-1</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>将号为Chnnum的通道注册到号为Grpnum通道组中</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__IVS_1ga9b756088952b6ff0f483b0d5826109ec">
+                <title>int IMP_IVS_UnRegisterChn (int ChnNum)</title> <emphasis></emphasis>
+                
+<para>从通道组注消通道</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ChnNum</entry>
+                                <entry>
+<para>IVS功能对应的通道号</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>-1</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>从号为Grpnum的通道组中注销号为Chnnum通道</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__IVS_1gaf1ffe26e56f2d8f8bce812b3d26111db">
+                <title>int IMP_IVS_StartRecvPic (int ChnNum)</title> <emphasis></emphasis>
+                
+<para>通道开始接收图像</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ChnNum</entry>
+                                <entry>
+<para>通道号</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>-1</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>通道号为Chnnum的IVS功能通道开始接收图像做智能分析</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__IVS_1ga3452e6eb4c0838a6ce1e5c2907f51fc3">
+                <title>int IMP_IVS_StopRecvPic (int ChnNum)</title> <emphasis></emphasis>
+                
+<para>通道停止接收图像</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ChnNum</entry>
+                                <entry>
+<para>通道号</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>-1</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>通道号为Chnnum的IVS功能通道停止接收图像，暂停智能分析</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__IVS_1ga4ff339164b80826f2288766482da907c">
+                <title>int IMP_IVS_PollingResult (int ChnNum, int timeoutMs)</title> <emphasis></emphasis>
+                
+<para>阻塞判断是否可以获得IVS功能已计算出的智能分析结果</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ChnNum</entry>
+                                <entry>
+<para>IVS功能对应的通道号</para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>timeout</entry>
+                                <entry>
+<para>最大等待时间，单位ms; IMP_IVS_DEFAULT_TIMEOUTMS:库内部默认的等待时间,0:不等待,&gt;0:用户设定的等待时间</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>-1</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>只有该通道创建时参数IMPIVSInterface结构体中ProcessAsync函数成员返回0时，即实际检测正常返回时，此Polling函数才返回成功</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__IVS_1ga39b67051ba392735d9719c37968717f6">
+                <title>int IMP_IVS_GetResult (int ChnNum, void **result)</title> <emphasis></emphasis>
+                
+<para>获得IVS功能计算出的智能分析结果</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ChnNum</entry>
+                                <entry>
+<para>IVS功能对应的通道号</para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>result</entry>
+                                <entry>
+<para>IVS功能对应的通道号输出的结果，返回此通道对应的智能分析算法的结果指针，外部客户无需分配空间。</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>-1</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>根据不同IVS功能绑定的通道,输出其对应的结果.</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__IVS_1ga4c8a0109894c69f3e83ec5c4f73e5e74">
+                <title>int IMP_IVS_ReleaseResult (int ChnNum, void *result)</title> <emphasis></emphasis>
+                
+<para>释放IVS功能计算出的结果资源</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>GrpNum</entry>
+                                <entry>
+<para>通道组号</para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>ChnNum</entry>
+                                <entry>
+<para>IVS功能对应的通道号</para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>result</entry>
+                                <entry>
+<para>IVS功能对应的通道号输出的结果</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>-1</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>根据不同IVS功能绑定的通道,释放其输出的结果资源.</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__IVS_1ga079dccc637f16934f905a7518fb44e9e">
+                <title>int IMP_IVS_ReleaseData (void *vaddr)</title> <emphasis></emphasis>
+                
+<para>释放传给Datacallback的参数frame</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>vaddr</entry>
+                                <entry>
+<para>释放的空间虚拟地址</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>-1</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Remarques: </title>
+
+<para>必须使用此函数释放传给Datacallback的frame参数，否则肯定造成死锁。 </para>
+<simplesect/>
+<para>此接口仅供算法提供商使用，算法使用客户无须关注。</para>
+</formalpara>
+<formalpara><title>Attention: </title>
+
+<para>无 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__IVS_1ga59ddb3579c4d1221da6e2c45d929bfc2">
+                <title>int IMP_IVS_GetParam (int chnNum, void *param)</title> <emphasis></emphasis>
+                
+<para>获取通道算法参数</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ChnNum</entry>
+                                <entry>
+<para>IVS功能对应的通道号 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>param</entry>
+                                <entry>
+<para>算法参数虚拟地址指针</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>-1</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Attention: </title>
+
+<para>无 </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="group__IMP__IVS_1ga2a0e9458531fb623d2af6dacfab5acc0">
+                <title>int IMP_IVS_SetParam (int chnNum, void *param)</title> <emphasis></emphasis>
+                
+<para>设置通道算法参数</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Paramètres                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ChnNum</entry>
+                                <entry>
+<para>IVS功能对应的通道号 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>param</entry>
+                                <entry>
+<para>算法参数虚拟地址指针</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Valeurs retournées                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>0</entry>
+                                <entry>
+<para>成功 </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>-1</entry>
+                                <entry>
+<para>失败</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Attention: </title>
+
+<para>无 </para>
+</formalpara>
+</para>
+
+            </section>
+        </section>
+<xi:include href="group__MoveDetection.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</section>

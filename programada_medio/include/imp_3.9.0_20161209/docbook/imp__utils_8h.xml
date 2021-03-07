@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="imp__utils_8h">
+    <title>imp_utils.h File Reference</title>
+    <programlisting>#include &quot;imp_common.h&quot;</programlisting>
+<para>Include dependency diagram for imp_utils.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="imp__utils_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for imp_utils.h</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="imp__utils_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Macros</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__utils_8h_1a276e8a32e0bbf024aadd9420b8f2d3b3">offsetof</link> ((size_t) &amp;((TYPE *)0)-&gt;MEMBER)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__utils_8h_1af8c317a42292b61c93aae91e59118a46">container_of</link> ({			\
+	const typeof( ((type *)0)-&gt;member ) *__mptr = (ptr);	\
+	(type *)( (char *)__mptr - offsetof(type,member) );})</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="imp__utils_8h_1a3c7c6a69f690fc8d2abf0e385280a532">ARRAY_SIZE</link> (sizeof(arr) / sizeof((arr)[0]))</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Fonctions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>char * <link linkend="imp__utils_8h_1a76a4a44fbac14f0f297bdb779de5c3f7">IMPPixfmtToString</link> (
+<link linkend="imp__common_8h_1a41dd79af5cc134fac5e24c98272824c0">IMPPixelFormat</link> pixfmt)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Description détaillée</title>
+
+<para>IMP utils头文件 </para>
+    <para>Definition in file /home2/jean/projets/ipcam-100/programada_medio/include/imp/imp_utils.h</para>
+    </simplesect>
+</section>
