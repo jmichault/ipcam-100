@@ -47,73 +47,6 @@
 
 #define FS_CHN_NUM      1        //MIN 1,MAX 2
 
-struct chn_conf
-{
-  unsigned int index;            //0 for main channel ,1 for second channel
-  unsigned int enable;
-  IMPFSChnAttr fs_chn_attr;
-  IMPCell framesource_chn;
-  IMPCell imp_encoder;
-};
-
-struct chn_conf chn[] =
-{
-  {
-    .index = CH0_INDEX,
-    .enable = CHN0_EN,
-    .fs_chn_attr =
-    {
-      .pixFmt = PIX_FMT_NV12,
-      .outFrmRateNum = SENSOR_FRAME_RATE_NUM,
-      .outFrmRateDen = SENSOR_FRAME_RATE_DEN,
-      .nrVBs = 2,
-      .type = FS_PHY_CHANNEL,
-
-      .crop.enable = CROP_EN,
-      .crop.top = 0,
-      .crop.left = 0,
-      .crop.width = SENSOR_WIDTH,
-      .crop.height = SENSOR_HEIGHT,
-
-      .scaler.enable = 1,
-      .scaler.outwidth = SENSOR_WIDTH_SECOND,
-      .scaler.outheight = SENSOR_HEIGHT_SECOND,
-
-      .picWidth = SENSOR_WIDTH_SECOND,
-      .picHeight = SENSOR_HEIGHT_SECOND,
-    },
-    .framesource_chn =  { DEV_ID_FS, 0, 0},
-    .imp_encoder = { DEV_ID_ENC, 0, 0},
-  },
-  {
-    .index = CH1_INDEX,
-    .enable = CHN1_EN,
-    .fs_chn_attr =
-    {
-      .pixFmt = PIX_FMT_NV12,
-      .outFrmRateNum = SENSOR_FRAME_RATE_NUM,
-      .outFrmRateDen = SENSOR_FRAME_RATE_DEN,
-      .nrVBs = 2,
-      .type = FS_PHY_CHANNEL,
-
-      .crop.enable = CROP_EN,
-      .crop.top = 0,
-      .crop.left = 0,
-      .crop.width = SENSOR_WIDTH,
-      .crop.height = SENSOR_HEIGHT,
-
-      .scaler.enable = 1,
-      .scaler.outwidth = 640,
-      .scaler.outheight = 480,
-
-      .picWidth = 640,
-      .picHeight = 480,
-    },
-    .framesource_chn =  { DEV_ID_FS, 1, 0},
-    .imp_encoder = { DEV_ID_ENC, 1, 0},
-  },
-};
-
 int IMP_Encoder_SetPoolSize(int);
 int IMP_OSD_SetPoolSize(int);
 
@@ -125,6 +58,141 @@ IMPSensorInfo sensor_info[2]
    }
   ,{.name=""}
  };
+
+// 3 framesources :
+// canal 0 = haute résolution
+// canal 1 = basse résolution
+// canal 2 = trés basse résolution, pour détection de mouvement ?
+static IMPFSChnAttr fs_chn_attrs[3]=
+{
+  {
+   .picWidth = 1280 , .picHeight = 720 ,
+   .pixFmt = PIX_FMT_NV12  ,
+   .crop = { .enable = 0 , .left = 0 , .top = 0 , .width = 1920 , .height = 1080 } ,
+   .scaler = { .enable = 1 , .outwidth = 1280 , .outheight = 720 } ,
+   .outFrmRateNum = 25 , .outFrmRateDen = 1 ,
+   .nrVBs = 2 ,
+   .type = FS_PHY_CHANNEL ,
+   .x = 1 ,
+  },
+  {
+   .picWidth = 640 , .picHeight = 480 ,
+   .pixFmt = PIX_FMT_NV12  ,
+   .crop = { .enable = 0 , .left = 0 , .top = 0 , .width = 1920 , .height = 1080 } ,
+   .scaler = { .enable = 1 , .outwidth = 640 , .outheight = 480 } ,
+   .outFrmRateNum = 25 , .outFrmRateDen = 1 ,
+   .nrVBs = 2 ,
+   .type = FS_PHY_CHANNEL ,
+   .x = 1 ,
+  },
+  {
+   .picWidth = 320 , .picHeight = 184 ,
+   .pixFmt = PIX_FMT_NV12  ,
+   .crop = { .enable = 0 , .left = 0 , .top = 0 , .width = 1920 , .height = 1080 } ,
+   .scaler = { .enable = 1 , .outwidth = 320 , .outheight = 184 } ,
+   .outFrmRateNum = 5 , .outFrmRateDen = 1 ,
+   .nrVBs = 2 ,
+   .type = FS_PHY_CHANNEL ,
+   .x = 0 ,
+  },
+};
+
+// 2 canaux encodeur :
+// 0 = haute résolution
+// 1 = basse résolution
+IMPEncoderCHNAttr channel_attrs[2] =
+{
+  {
+    .encAttr =
+      {
+        .enType=PT_H264 , .bufSize=0 , .profile=2 , //
+        .picWidth=1280, .picHeight=720 ,
+        .crop = { .enable = 0 , .x = 0 , .y = 0 , .w = 0 , .h = 0 } ,
+        .userData = { .maxUserDataCnt = 2 , .maxUserDataSize = 128 } ,
+      },
+    .rcAttr =
+      {
+        .outFrmRate = { .frmRateNum=12 , .frmRateDen=1 },
+        .maxGop = 24,
+        .attrRcMode = {
+          .rcMode = ENC_RC_MODE_SMART , // 3
+          .attrH264Vbr= {
+            .maxQp=48 , .minQp=15 ,
+            .staticTime = 2 ,
+            .maxBitRate = 600 ,
+            .iBiasLvl = 0,
+            .changePos = 80,
+            .qualityLvl = 2,
+            .frmQPStep = 3, .gopQPStep = 15,
+            .gopRelation = 0,
+           },
+         },
+        .attrFrmUsed = {
+            .enable=0 , .frmUsedMode=ENC_FRM_BYPASS , .frmUsedTimes=0,
+         },
+        .attrDenoise = {
+            .enable =0 , .dnType=0 , .dnIQp = 23 , .dnPQp=1 ,
+         },
+        .attrHSkip = {
+            .hSkipAttr = {.skipType=3 , .m=0 , .n=0 ,.maxSameSceneCnt=0 ,.bEnableScenecut=0 ,.bBlackEnhance= 0},
+            .maxHSkipType = 0,
+         },
+      },
+    .xW=1280 , .xH = 720,
+  },
+  {
+    .encAttr =
+      {
+        .enType=PT_H264 , .bufSize=0 , .profile=2 ,
+        .picWidth=640 , .picHeight=480 ,
+        .crop = { .enable = 0 , .x = 0 , .y = 0 , .w = 0 , .h = 0 } ,
+        .userData = { .maxUserDataCnt = 2 , .maxUserDataSize = 128 } ,
+      },
+    .rcAttr =
+      {
+        .outFrmRate = { .frmRateNum=10 , .frmRateDen=1 },
+        .maxGop = 20,
+        .attrRcMode = {
+          .rcMode = ENC_RC_MODE_VBR , // 2 ENC_RC_MODE_VBR
+          .attrH264Vbr= {
+            .maxQp=48 , .minQp=20 ,
+            .staticTime = 2 ,
+            .maxBitRate = 512 ,
+            .iBiasLvl = 0,
+            .changePos = 80,
+            .qualityLvl = 2,
+            .frmQPStep = 3, .gopQPStep = 15,
+            .gopRelation = 0,
+           },
+         },
+        .attrFrmUsed = {
+            .enable=0 , .frmUsedMode=ENC_FRM_BYPASS , .frmUsedTimes=0,
+         },
+        .attrDenoise = {
+            .enable =0 , .dnType=0 , .dnIQp = 0 , .dnPQp=0 ,
+         },
+        .attrHSkip = {
+            .hSkipAttr = {.skipType=0 , .m=0 , .n=0 ,.maxSameSceneCnt=0 ,.bEnableScenecut=0 ,.bBlackEnhance= 0},
+            .maxHSkipType = 0,
+         },
+      },
+    .xW=720 , .xH = 576,
+  },
+};
+
+
+// cellules :
+IMPCell inCells[] = 
+{
+ { .deviceID=DEV_ID_FS, .groupID=0, .outputID=0},
+ { .deviceID=DEV_ID_FS, .groupID=1, .outputID=0},
+};
+IMPCell outCells[] = 
+{
+ { .deviceID=DEV_ID_ENC, .groupID=0, .outputID=0},
+ { .deviceID=DEV_ID_ENC, .groupID=1, .outputID=0},
+};
+
 
 // définie plus loin
 void *get_h264_stream(void *args);
@@ -193,14 +261,14 @@ int main(int argc, char **argv)
   doIMP( IMP_ISP_Open(), "failed to open ISP\n");
   doIMP( IMP_ISP_AddSensor(&sensor_info[0]) , "failed to AddSensor\n");
   doIMP( IMP_ISP_EnableSensor() , "failed to EnableSensor\n");
-  doIMP( IMP_Encoder_SetPoolSize(0x200000) , "failed to SetPoolSize\n");
-  doIMP( IMP_OSD_SetPoolSize(0x160000) , "failed to SetPoolSize\n");
+  doIMP( IMP_Encoder_SetPoolSize(1036800) , "failed to SetPoolSize\n");
+  doIMP( IMP_OSD_SetPoolSize(1048576) , "failed to SetPoolSize\n");
 
   doIMP( IMP_System_Init() , "IMP_System_Init failed\n");
   /* enable tuning, to tune graphics */
   doIMP( IMP_ISP_EnableTuning() , "IMP_ISP_EnableTuning failed\n");
-  //doIMP( IMP_ISP_Tuning_SetSaturation(128) , "IMP_ISP_Tuning_SetSaturation failed\n");
-  //doIMP( IMP_ISP_Tuning_SetBrightness(128) , "IMP_ISP_Tuning_SetBrightness failed\n");
+  doIMP( IMP_ISP_Tuning_SetSaturation(128) , "IMP_ISP_Tuning_SetSaturation failed\n");
+  doIMP( IMP_ISP_Tuning_SetBrightness(128) , "IMP_ISP_Tuning_SetBrightness failed\n");
   IMPVersion pstVersion;
   memset(&pstVersion,0,sizeof(pstVersion));
 
@@ -215,25 +283,22 @@ int main(int argc, char **argv)
   IMP_LOG_DBG(TAG, "ImpSystemInit success\n");
   // step2 : sample_framesource_init
 
-  for (int i = 0; i <  FS_CHN_NUM; i++)
+  for (int i = 0; i <= 2  ; i++)
   {
-    if (chn[i].enable)
-    {
-      ret = IMP_FrameSource_CreateChn(chn[i].index, &chn[i].fs_chn_attr);
+      ret = IMP_FrameSource_CreateChn(i, &fs_chn_attrs[i]);
       if(ret < 0)
       {
-        IMP_LOG_ERR(TAG, "IMP_FrameSource_CreateChn(chn%d) error !\n", chn[i].index);
+        IMP_LOG_ERR(TAG, "IMP_FrameSource_CreateChn(chn%d) error !\n", i);
         return -1;
       }
 
-      ret = IMP_FrameSource_SetChnAttr(chn[i].index, &chn[i].fs_chn_attr);
+      ret = IMP_FrameSource_SetChnAttr(i, &fs_chn_attrs[i]);
       if (ret < 0)
       {
-        IMP_LOG_ERR(TAG, "IMP_FrameSource_SetChnAttr(chn%d) error !\n",  chn[i].index);
+        IMP_LOG_ERR(TAG, "IMP_FrameSource_SetChnAttr(chn%d) error !\n",  i);
         return -1;
       }
       IMP_LOG_DBG(TAG, "1.1 %d success\n",i);
-    }
   }
   IMP_LOG_DBG(TAG, "2.1 success\n");
   ret = IMP_ISP_Tuning_SetSensorFPS(20,1);
@@ -250,11 +315,10 @@ int main(int argc, char **argv)
   }
 
   // step 2.2 :
-  for (int i = 0; i < FS_CHN_NUM; i++)
+  for (int i = 0; i <= 1 ; i++)
   {
-    if (chn[i].enable)
     {
-      ret = IMP_Encoder_CreateGroup(chn[i].index);
+      ret = IMP_Encoder_CreateGroup(i);
       if (ret < 0)
       {
         IMP_LOG_ERR(TAG, "IMP_Encoder_CreateGroup(%d) error !\n", i);
@@ -266,73 +330,38 @@ int main(int argc, char **argv)
   IMP_LOG_DBG(TAG, "2.2 success\n");
 
   // Step.3 Encoder init  sample_encoder_init();
-  IMPEncoderAttr *enc_attr;
-  IMPEncoderRcAttr *rc_attr;
-  IMPFSChnAttr *imp_chn_attr_tmp;
-  IMPEncoderCHNAttr channel_attr;
 
-  for (int i = 0; i <  FS_CHN_NUM; i++)
+  for (int i = 0; i <= 1; i++)
   {
-    if (chn[i].enable)
-    {
-      imp_chn_attr_tmp = &chn[i].fs_chn_attr;
-      memset(&channel_attr, 0, sizeof(IMPEncoderCHNAttr));
-      enc_attr = &channel_attr.encAttr;
-      enc_attr->enType = PT_H264;
-      enc_attr->bufSize = 0;
-      enc_attr->profile = 1;
-      enc_attr->picWidth = imp_chn_attr_tmp->picWidth;
-      enc_attr->picHeight = imp_chn_attr_tmp->picHeight;
-      rc_attr = &channel_attr.rcAttr;
-
-      rc_attr->rcMode = ENC_RC_MODE_H264CBR;
-        rc_attr->rcMode.attrH264Cbr.maxQp = 45;
-        rc_attr->rcMode.attrH264Cbr.minQp = 15;
-        rc_attr->rcMode.attrH264Cbr.iBiasLvl = 0;
-        rc_attr->rcMode.attrH264Cbr.frmQPStep = 3;
-        rc_attr->rcMode.attrH264Cbr.gopQPStep = 15;
-        rc_attr->rcMode.attrH264Cbr.adaptiveMode = false;
-        rc_attr->rcMode.attrH264Cbr.gopRelation = false;
-
-        rc_attr->attrHSkip.hSkipAttr.skipType = (IMPSkipType) skiptype; //IMP_Encoder_STYPE_N1X;
-        rc_attr->attrHSkip.hSkipAttr.m = 0;
-        rc_attr->attrHSkip.hSkipAttr.n = 0;
-        rc_attr->attrHSkip.hSkipAttr.maxSameSceneCnt = maxSameSceneCnt;
-        rc_attr->attrHSkip.hSkipAttr.bEnableScenecut = bEnableScenecut;
-        rc_attr->attrHSkip.hSkipAttr.bBlackEnhance = 0;
-        rc_attr->attrHSkip.maxHSkipType = (IMPSkipType) skiptype; //IMP_Encoder_STYPE_N1X;
-
-
-      //ret = IMP_Encoder_SetMaxStreamCnt(chn[i].index, 1);
+      ret = IMP_Encoder_SetMaxStreamCnt(i, 5);
       if (ret < 0)
       {
         IMP_LOG_ERR(TAG, "IMP_Encoder_SetMaxStreamCnt(%d) error !\n", i);
         return -1;
       }
-      ret = IMP_Encoder_CreateChn(chn[i].index, &channel_attr);
+      ret = IMP_Encoder_CreateChn(i, &channel_attrs[i]);
       if (ret < 0)
       {
         IMP_LOG_ERR(TAG, "IMP_Encoder_CreateChn(%d) error !\n", i);
         return -1;
       }
 
-      ret = IMP_Encoder_RegisterChn(chn[i].index, chn[i].index);
+      ret = IMP_Encoder_RegisterChn(i, i);
       if (ret < 0)
       {
         IMP_LOG_ERR(TAG, "IMP_Encoder_RegisterChn(%d, %d) error: %d\n",
-          chn[i].index, chn[i].index, ret);
+          i,i, ret);
         return -1;
       }
       IMP_LOG_DBG(TAG, "3.1 %d success\n",i);
-    }
   }
   IMP_LOG_DBG(TAG, "3 success\n");
+
   /* Step.4 Bind */
-  for (int i = 0; i < FS_CHN_NUM; i++)
+  for (int i = 0; i <= 1 ; i++)
   {
-    if (chn[i].enable)
     {
-      ret = IMP_System_Bind(&chn[i].framesource_chn, &chn[i].imp_encoder);
+      ret = IMP_System_Bind(&inCells[i], &outCells[i]);
       if (ret < 0)
       {
         IMP_LOG_ERR(TAG, "Bind FrameSource channel%d and Encoder failed\n",i);
@@ -347,12 +376,11 @@ int main(int argc, char **argv)
   /* Enable channels */
   for (int i = 0; i < FS_CHN_NUM; i++)
   {
-    if (chn[i].enable)
     {
-      ret = IMP_FrameSource_EnableChn(chn[i].index);
+      ret = IMP_FrameSource_EnableChn(i);
       if (ret < 0)
       {
-        IMP_LOG_ERR(TAG, "IMP_FrameSource_EnableChn(%d) error: %d\n", ret, chn[i].index);
+        IMP_LOG_ERR(TAG, "IMP_FrameSource_EnableChn(%d) error: %d\n", ret, i);
         return -1;
       }
       IMP_LOG_DBG(TAG, "5.1 %d success\n",i);
@@ -362,15 +390,15 @@ int main(int argc, char **argv)
 
   /* Step.6 Get stream */
   pthread_t tid[FS_CHN_NUM];
+  int pthread_ids[2]={0,1};
 
   for (int i = 0; i < FS_CHN_NUM; i++)
   {
-    if (chn[i].enable)
     {
-      ret = pthread_create(&tid[i], NULL, get_h264_stream, &chn[i].index);
+      ret = pthread_create(&tid[i], NULL, get_h264_stream, &pthread_ids[i]);
       if (ret < 0)
       {
-        IMP_LOG_ERR(TAG, "Create Chn%d get_h264_stream \n",chn[i].index);
+        IMP_LOG_ERR(TAG, "Create Chn%d get_h264_stream \n",i);
       }
       else
         IMP_LOG_DBG(TAG, "6.1 %d success\n",i);
@@ -380,7 +408,6 @@ int main(int argc, char **argv)
 
   for (int i = 0; i < FS_CHN_NUM; i++)
   {
-    if (chn[i].enable)
     {
       pthread_join(tid[i],NULL);
     }
@@ -392,23 +419,21 @@ int main(int argc, char **argv)
   /* Step.a Stream Off */
   for (int i = 0; i < FS_CHN_NUM; i++)
   {
-    if (chn[i].enable)
     {
-      ret = IMP_FrameSource_DisableChn(chn[i].index);
+      ret = IMP_FrameSource_DisableChn(i);
       if (ret < 0)
       {
-        IMP_LOG_ERR(TAG, "IMP_FrameSource_DisableChn(%d) error: %d\n", ret, chn[i].index);
+        IMP_LOG_ERR(TAG, "IMP_FrameSource_DisableChn(%d) error: %d\n", ret, i);
         return -1;
       }
     }
   }
 
   /* Step.b UnBind */
-  for (int i = 0; i < FS_CHN_NUM; i++)
+  for (int i = 0; i <= 1 ; i++)
   {
-    if (chn[i].enable)
     {
-      ret = IMP_System_UnBind(&chn[i].framesource_chn, &chn[i].imp_encoder);
+      ret = IMP_System_UnBind(&inCells[i], &outCells[i]);
       if (ret < 0)
       {
         IMP_LOG_ERR(TAG, "UnBind FrameSource channel%d and Encoder failed\n",i);
@@ -441,7 +466,6 @@ int main(int argc, char **argv)
   /* Step.d FrameSource exit */
   for (int i = 0; i <  FS_CHN_NUM; i++)
   {
-    if (chn[i].enable)
     {
       /*Destroy channel i*/
       ret = IMP_FrameSource_DestroyChn(i);
@@ -533,7 +557,7 @@ void *get_h264_stream(void *args)
       IMP_LOG_ERR(TAG, "IMP_Encoder_GetStream() failed\n");
       return ((void *)-1);
     }
-    //IMP_LOG_DBG(TAG, "i=%d, stream.packCount=%d, stream.h264RefType=%d\n", i, stream.packCount, stream.h264RefType);
+    printf( "stream :i=%d,j=%d, packCount=%d,seq=%d, refType=%d\n", i,j, stream.packCount,stream.seq, stream.refType);
 
     ret = save_stream(stream_fd, &stream);
     if (ret < 0)
