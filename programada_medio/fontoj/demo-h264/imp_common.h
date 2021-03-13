@@ -17,7 +17,7 @@
 /*
  * variabloj uzataj por pravalorizi IMP 
  */
-IMPSensorInfo sensor_info[2];
+IMPSensorInfo sensor_info;
 IMPFSChnAttr fs_chn_attrs[3];
 IMPEncoderCHNAttr channel_attrs[2];
 IMPCell inCells[2]; 

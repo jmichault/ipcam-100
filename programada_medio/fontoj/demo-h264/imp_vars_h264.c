@@ -52,13 +52,11 @@
 
 
 
-IMPSensorInfo sensor_info[2]
-={ {.name = SENSOR_NAME,
-    .cbus_type = SENSOR_CUBS_TYPE,
-    .i2c.type = SENSOR_NAME,
-    .i2c.addr = SENSOR_I2C_ADDR
-   }
-  ,{.name=""}
+IMPSensorInfo sensor_info
+={ .name = SENSOR_NAME,
+   .cbus_type = SENSOR_CUBS_TYPE,
+   .i2c.type = SENSOR_NAME,
+   .i2c.addr = SENSOR_I2C_ADDR
  };
 
 // 3 framesources :

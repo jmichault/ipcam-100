@@ -43,7 +43,7 @@ int imp_init()
 {
   // Paŝo 1 : inicialigo de la sensilo
   doIMP( IMP_ISP_Open(), "failed to open ISP\n");
-  doIMP( IMP_ISP_AddSensor(&sensor_info[0]) , "failed to AddSensor\n");
+  doIMP( IMP_ISP_AddSensor(&sensor_info) , "failed to AddSensor\n");
   doIMP( IMP_ISP_EnableSensor() , "failed to EnableSensor\n");
   IMP_LOG_DBG(TAG, "Paŝo 1 sukceso\n");
 
@@ -138,7 +138,7 @@ int imp_exit()
   /* Paŝo 5 : System exit */
   IMP_System_Exit();
   doIMP( IMP_ISP_DisableSensor() , "failed to DisableSensor\n");
-  doIMP( IMP_ISP_DelSensor(&sensor_info[0]) , "failed to DelSensor\n");
+  doIMP( IMP_ISP_DelSensor(&sensor_info) , "failed to DelSensor\n");
   doIMP( IMP_ISP_DisableTuning() , "IMP_ISP_DisableTuning failed\n");
   doIMP( IMP_ISP_Close() , "failed to close ISP\n");
 
