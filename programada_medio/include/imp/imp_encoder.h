@@ -1299,6 +1299,9 @@ int IMP_Encoder_SetJpegeQl(int encChn, const IMPEncoderJpegeQl *pstJpegeQl);
 int IMP_Encoder_GetJpegeQl(int encChn, IMPEncoderJpegeQl *pstJpegeQl);
 
 
+int IMP_Encoder_SetPoolSize(int);
+
+
 /**
  * @}
  */

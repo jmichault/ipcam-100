@@ -12,9 +12,9 @@ LDFLAGS += -muclibc -limp -lpthread -lm -lrt -L../../lib -lalog
 LDFLAGS += -Wl,-gc-sections -g
 
 
-all: 	test-h264
+all: 	demo-h264
 
-test-h264: test-h264.o
+demo-h264: imp_common.o imp_vars_h264.o demo-h264.o
 	$(CPLUSPLUS) $(LDFLAGS) -o $@ $^ $(LIBS)
 #	$(STRIP) $@
 

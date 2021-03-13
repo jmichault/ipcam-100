@@ -429,6 +429,8 @@ int IMP_OSD_Start(int grpNum);
  */
 int IMP_OSD_Stop(int grpNum);
 
+int IMP_OSD_SetPoolSize(int);
+
 /**
  * @}
  */
