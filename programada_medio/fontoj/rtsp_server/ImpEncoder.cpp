@@ -34,126 +34,34 @@ extern "C" int IMP_Encoder_SetPoolSize(int);
 #define TAG "Sample-Encoder-jpeg"
 
 
-// 3 framesources :
-// canal 0 = haute résolution
-// canal 1 = basse résolution
-// canal 2 = trés basse résolution, pour détection de mouvement ?
-static IMPFSChnAttr fs_chn_attrs[3]=
+/*
 {
-  {
-   .picWidth = 1280 , .picHeight = 720 ,
-   .pixFmt = PIX_FMT_NV12  ,
-   .crop = { .enable = 0 , .left = 0 , .top = 0 , .width = 1920 , .height = 1080 } ,
-   .scaler = { .enable = 1 , .outwidth = 1280 , .outheight = 720 } ,
-   .outFrmRateNum = 25 , .outFrmRateDen = 1 ,
-   .nrVBs = 2 ,
-   .type = FS_PHY_CHANNEL ,
-   .x = 1 ,
-  },
-  {
-   .picWidth = 640 , .picHeight = 480 ,
-   .pixFmt = PIX_FMT_NV12  ,
-   .crop = { .enable = 0 , .left = 0 , .top = 0 , .width = 1920 , .height = 1080 } ,
-   .scaler = { .enable = 1 , .outwidth = 640 , .outheight = 480 } ,
-   .outFrmRateNum = 25 , .outFrmRateDen = 1 ,
-   .nrVBs = 2 ,
-   .type = FS_PHY_CHANNEL ,
-   .x = 1 ,
-  },
-  {
-   .picWidth = 320 , .picHeight = 184 ,
-   .pixFmt = PIX_FMT_NV12  ,
-   .crop = { .enable = 0 , .left = 0 , .top = 0 , .width = 1920 , .height = 1080 } ,
-   .scaler = { .enable = 1 , .outwidth = 320 , .outheight = 184 } ,
-   .outFrmRateNum = 5 , .outFrmRateDen = 1 ,
-   .nrVBs = 2 ,
-   .type = FS_PHY_CHANNEL ,
-   .x = 0 ,
-  },
-};
+        .index = CH1_INDEX,
+        .enable = CHN1_EN,
+        .fs_chn_attr = {
+                .pixFmt = PIX_FMT_NV12,
+                .outFrmRateNum = SENSOR_FRAME_RATE_NUM,
+                .outFrmRateDen = SENSOR_FRAME_RATE_DEN,
+                .nrVBs = 2,
+                .type = FS_PHY_CHANNEL,
 
-// 2 canaux encodeur :
-// 0 = haute résolution
-// 1 = basse résolution
-IMPEncoderCHNAttr channel_attrs[2] = 
-{
-  {
-    .encAttr =
-      {
-	.enType=PT_H264 , .bufSize=0 , .profile=2 , // 
-	.picWidth=1280, .picHeight=720 ,
-   	.crop = { .enable = 0 , .x = 0 , .y = 0 , .w = 0 , .h = 0 } ,
-	.userData = { .maxUserDataCnt = 2 , .maxUserDataSize = 128 } ,
-      },
-    .rcAttr = 
-      {
-	.outFrmRate = { .frmRateNum=12 , .frmRateDen=1 },
-	.maxGop = 24,
-	.attrRcMode = {
-	  .rcMode = ENC_RC_MODE_SMART , // 3 
-	  .attrH264Vbr= {
-	    .maxQp=48 , .minQp=15 ,
-	    .staticTime = 2 ,
-	    .maxBitRate = 600 ,
-	    .iBiasLvl = 0,
-	    .changePos = 80,
-	    .qualityLvl = 2,
-	    .frmQPStep = 3, .gopQPStep = 15,
-	    .gopRelation = 0,
-	   },
-	 },
-	.attrFrmUsed = {
-	    .enable=0 , .frmUsedMode=ENC_FRM_BYPASS , .frmUsedTimes=0,
-	 },
-	.attrDenoise = {
-	    .enable =0 , .dnType=0 , .dnIQp = 0 , .dnPQp=0 ,
-	 },
-	.attrHSkip = {	
-	    .hSkipAttr = {.skipType=0 , .m=23 , .n=1 ,.maxSameSceneCnt=3 ,.bEnableScenecut=0 ,.bBlackEnhance= 0},
-	    .maxHSkipType = 0,
-	 },
-      },
-    .xW=1280 , .xH = 720,
-  },
-  {
-    .encAttr =
-      {
-	.enType=PT_H264 , .bufSize=0 , .profile=2 ,
-	.picWidth=640 , .picHeight=480 ,
-   	.crop = { .enable = 0 , .x = 0 , .y = 0 , .w = 0 , .h = 0 } ,
-	.userData = { .maxUserDataCnt = 2 , .maxUserDataSize = 128 } ,
-      },
-    .rcAttr = 
-      {
-	.outFrmRate = { .frmRateNum=10 , .frmRateDen=1 },
-	.maxGop = 20,
-	.attrRcMode = {
-	  .rcMode = ENC_RC_MODE_VBR , // 2 ENC_RC_MODE_VBR
-	  .attrH264Vbr= {
-	    .maxQp=48 , .minQp=20 ,
-	    .staticTime = 2 ,
-	    .maxBitRate = 512 ,
-	    .iBiasLvl = 0,
-	    .changePos = 80,
-	    .qualityLvl = 2,
-	    .frmQPStep = 3, .gopQPStep = 15,
-	    .gopRelation = 0,
-	   },
-	 },
-	.attrFrmUsed = {
-	    .enable=0 , .frmUsedMode=ENC_FRM_BYPASS , .frmUsedTimes=0,
-	 },
-	.attrDenoise = {
-	    .enable =0 , .dnType=0 , .dnIQp = 0 , .dnPQp=0 ,
-	 },
-	.attrHSkip = {	
-	    .hSkipAttr = {.skipType=0 , .m=0 , .n=0 ,.maxSameSceneCnt=0 ,.bEnableScenecut=0 ,.bBlackEnhance= 0},
-	    .maxHSkipType = 0,
-	 },
-      },
-    .xW=720 , .xH = 576,
-  },
-};
+                .crop.enable = CROP_EN,
+                .crop.top = 0,
+                .crop.left = 0,
+                .crop.width = SENSOR_WIDTH,
+                .crop.height = SENSOR_HEIGHT,
+
+                .scaler.enable = 1,
+                .scaler.outwidth = SENSOR_WIDTH_SECOND,
+                .scaler.outheight = SENSOR_HEIGHT_SECOND,
+
+                .picWidth = SENSOR_WIDTH_SECOND,
+                .picHeight = SENSOR_HEIGHT_SECOND,
+        },
+        .framesource_chn =    {DEV_ID_FS, 1, 0},
+        .imp_encoder = {DEV_ID_ENC, 1, 0},
+},
+ */
 
     static bool isInited=false;
     static int instances=0;
@@ -196,7 +104,6 @@ int ImpEncoder::init_all(impParams params)
     chn.fs_chn_attr.picWidth = currentParams.width;
     chn.fs_chn_attr.picHeight = currentParams.height;
 
-
     chn.framesource_chn.deviceID = DEV_ID_FS;
     chn.framesource_chn.groupID = 0;
     chn.framesource_chn.outputID = 0;
@@ -228,12 +135,7 @@ int ImpEncoder::init_all(impParams params)
     if (ret < 0) {
         IMP_LOG_ERR(TAG, "IMP_Encoder_CreateGroup(%d) error !\n", 0);
     }
-    ret = IMP_Encoder_CreateGroup(1);
-    if (ret < 0) {
-        IMP_LOG_ERR(TAG, "IMP_Encoder_CreateGroup(%d) error !\n", 1);
-    }
 
-    // création des canaux encodeurs :
 
     if (encoderMode == IMP_MODE_JPEG) {
         /* Step.3 Encoder init */
@@ -286,6 +188,7 @@ int ImpEncoder::init_all(impParams params)
 }
 
 ImpEncoder::ImpEncoder(impParams params) {
+ int ret;
   instances++;
   if(! isInited)
     init_all(params);
@@ -360,6 +263,7 @@ void ImpEncoder::exit_all()
 
 }
 ImpEncoder::~ImpEncoder() {
+    int ret;
     instances--;
 
     if (instances <= 0)
@@ -647,20 +551,19 @@ int ImpEncoder::sample_framesource_streamoff() {
 int ImpEncoder::sample_framesource_init() {
     int ret;
 
-  for (int chn=0 ; chn <= 2 ; chn++)
-  {
-    ret = IMP_FrameSource_CreateChn(chn, &fs_chn_attrs[chn] );
+
+    ret = IMP_FrameSource_CreateChn(0, &chn.fs_chn_attr);
     if (ret < 0) {
-        IMP_LOG_ERR(TAG, "IMP_FrameSource_CreateChn(chn%d) error !\n", chn);
+        IMP_LOG_ERR(TAG, "IMP_FrameSource_CreateChn(chn%d) error !\n", 0);
         return -1;
     }
 
-    ret = IMP_FrameSource_SetChnAttr(chn, &fs_chn_attrs[chn] );
+    ret = IMP_FrameSource_SetChnAttr(0, &chn.fs_chn_attr);
     if (ret < 0) {
-        IMP_LOG_ERR(TAG, "IMP_FrameSource_SetChnAttr(chn%d) error !\n", chn);
+        IMP_LOG_ERR(TAG, "IMP_FrameSource_SetChnAttr(chn%d) error !\n", 0);
         return -1;
     }
-  }
+
 
     return 0;
 }
@@ -669,15 +572,12 @@ int ImpEncoder::sample_framesource_exit() {
     int ret;
 
 
-  for (int chn=0 ; chn <= 2 ; chn++)
-  {
     /*Destroy channel i*/
-    ret = IMP_FrameSource_DestroyChn(chn);
+    ret = IMP_FrameSource_DestroyChn(0);
     if (ret < 0) {
         IMP_LOG_ERR(TAG, "IMP_FrameSource_DestroyChn() error: %d\n", ret);
         return -1;
     }
-  }
 
     return 0;
 }
@@ -750,6 +650,54 @@ int ImpEncoder::sample_encoder_init() {
     //rc_attr->attrRcMode.attrH264Cbr.IBiasLvl = 2;
     rc_attr->attrRcMode.attrH264Cbr.frmQPStep = 3;
     rc_attr->attrRcMode.attrH264Cbr.gopQPStep = 15;
+    //rc_attr->attrRcMode.attrH264Cbr.AdaptiveMode = false;
+    //rc_attr->attrRcMode.attrH264Cbr.GOPRelation = false;
+
+
+    //rc_attr->attrRcMode.attrH264Denoise.enable = false;
+    //rc_attr->attrRcMode.attrH264Denoise.dnType = 2;
+    //rc_attr->attrRcMode.attrH264Denoise.dnIQp = 1;
+    //rc_attr->attrRcMode.attrH264Denoise.dnPQp = 1;
+
+
+    //rc_attr->attrRcMode.attrH264FrmUsed.enable = 1;
+    //rc_attr->attrRcMode.attrH264FrmUsed.frmUsedMode = ENC_FRM_SKIP;
+    //rc_attr->attrRcMode.attrH264FrmUsed.frmUsedTimes = 2000;
+
+    /*
+    rc_attr->attrRcMode.attrH264FrmUsed.enable = true;
+    rc_attr->attrRcMode.attrH264FrmUsed.dnIQp = ENC_FRM_REUSED ;
+    rc_attr->attrRcMode.attrH264FrmUsed.frmUsedTimes = 50;
+*/
+
+
+
+
+    /*
+    rc_attr->attrH264FrmUsed.enable = true;
+    rc_attr->attrH264FrmUsed.frmUsedMode = ENC_FRM_REUSED ;
+    rc_attr->attrH264FrmUsed.frmUsedTimes = 50;
+    */
+
+
+/*
+    rc_attr->rcMode = ENC_RC_MODE_H264VBR;
+    rc_attr->attrH264Vbr.outFrmRate.frmRateNum = imp_chn_attr_tmp->outFrmRateNum;
+    rc_attr->attrH264Vbr.outFrmRate.frmRateDen = imp_chn_attr_tmp->outFrmRateDen;
+    rc_attr->attrH264Vbr.maxGop =
+            1 * rc_attr->attrH264Vbr.outFrmRate.frmRateNum / rc_attr->attrH264Vbr.outFrmRate.frmRateDen;
+    rc_attr->attrH264Vbr.maxQp = 38;
+    rc_attr->attrH264Vbr.minQp = 15;
+    rc_attr->attrH264Vbr.staticTime = 1;
+    rc_attr->attrH264Vbr.maxBitRate =
+            100 ;
+    rc_attr->attrH264Vbr.changePos = 50;
+    rc_attr->attrH264Vbr.FrmQPStep = 3;
+    rc_attr->attrH264Vbr.GOPQPStep = 15;
+    rc_attr->attrH264FrmUsed.enable = 1;
+    */
+
+
 
     ret = IMP_Encoder_CreateChn(0, &channel_attr);
     if (ret < 0) {

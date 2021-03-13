@@ -10,10 +10,6 @@ programada_medio/fontoj/*/*.o
 programada_medio/fontoj/rtsp_server/rtsp_server
 programada_medio/fontoj/motor/motor
 
-programada_medio/fontoj/freetype2/
-programada_medio/fontoj/lame/
-programada_medio/fontoj/live/
-programada_medio/fontoj/opus/
-programada_medio/fontoj/testimp/
-programada_medio/fontoj/v4l2rtspserver-master/
+programada_medio/fontoj/test*
+
 
