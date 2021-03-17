@@ -7,6 +7,7 @@ toto*
 karto.jco
 karto.dafang
 programada_medio/fontoj/*/*.o
+programada_medio/fontoj/*/*/*.o
 programada_medio/fontoj/rtsp_server/rtsp_server
 programada_medio/fontoj/motor/motor
 

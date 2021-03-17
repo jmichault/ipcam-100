@@ -36,7 +36,7 @@ SRC_OBJ	+=AlsaDeviceSource.o
 SRC_OBJ	+=ImpJpegVideoDeviceSource.o
 SRC_OBJ	+=JpegFrameParser.o
 SRC_OBJ	+=ImpEncoder.o
-SRC_OBJ +=../v4l2rtspserver-tools/sharedmem.o
+SRC_OBJ +=../rtspserver-tools/sharedmem.o
 
 #targets =
 targets = rtsp_server
