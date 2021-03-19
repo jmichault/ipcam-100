@@ -15,6 +15,7 @@
  */
 
 #include <BasicUsageEnvironment/BasicUsageEnvironment.hh>
+#include <GroupsockHelper.hh> // for "weHaveAnIPv*Address()"
 #include "DynamicRTSPServer.hh"
 #include "imp_komuna.h"
 
@@ -55,9 +56,19 @@ int main(int argc, char** argv) {
 
   *env << "T21-hacks RTSP Server\n";
 
-  char* urlPrefix = rtspServer->rtspURLPrefix();
-  *env << "Play streams from this server using the URL\n\t"
-       << urlPrefix << "stream1.\n";
+  *env << "Play streams from this server using the URL\n";
+  if (weHaveAnIPv4Address(*env)) {
+    char* rtspURLPrefix = rtspServer->ipv4rtspURLPrefix();
+    *env << "\t" << rtspURLPrefix << "stream1\n";
+    delete[] rtspURLPrefix;
+    if (weHaveAnIPv6Address(*env)) *env << "or\n";
+  }
+  if (weHaveAnIPv6Address(*env)) {
+    char* rtspURLPrefix = rtspServer->ipv6rtspURLPrefix();
+    *env << "\t" << rtspURLPrefix << "stream1\n";
+    delete[] rtspURLPrefix;
+  }
+
 
   // Also, attempt to create a HTTP server for RTSP-over-HTTP tunneling.
   // Try first with the default HTTP port (80), and then with the alternative HTTP

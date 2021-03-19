@@ -13,7 +13,7 @@ You should have received a copy of the GNU Lesser General Public License
 along with this library; if not, write to the Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 **********/
-// Copyright (c) 1996-2020 Live Networks, Inc.  All rights reserved.
+// Copyright (c) 1996-2021 Live Networks, Inc.  All rights reserved.
 // Usage Environment
 // C++ header
 
@@ -25,7 +25,7 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #endif
 
 #ifndef _NETCOMMON_H
-#include "groupsock/NetCommon.h"
+#include "NetCommon.h"
 #endif
 
 #ifndef _BOOLEAN_HH

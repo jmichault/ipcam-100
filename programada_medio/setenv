@@ -1,0 +1,8 @@
+#!/bin/bash
+
+#BASE=$(dirname $(readlink -f $0))
+BASE=$PWD
+PATH=$BASE/toolchain/bin/:$PATH
+
+export HOST=mips-linux-gnu
+

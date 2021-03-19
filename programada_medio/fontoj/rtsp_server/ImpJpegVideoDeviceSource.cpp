@@ -28,7 +28,7 @@
 #include <sys/time.h>
 #include <sys/mman.h>
 #include <sys/ioctl.h>
-#include "../v4l2rtspserver-tools/sharedmem.h"
+#include "../rtspserver-tools/sharedmem.h"
 //#include <sys/ipc.h>
 //#include <sys/shm.h>
 

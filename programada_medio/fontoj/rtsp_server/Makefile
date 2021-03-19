@@ -15,6 +15,9 @@ LIB_INS_DIR	:= $(INSTALL_DIR)/lib/example
 CATEGORY	:= ipc_func/rtsp_server
 
 INC     	= -I$(BASE)/include
+INC     	+= -I$(BASE)/include/liveMedia
+INC     	+= -I$(BASE)/include/groupsock
+INC     	+= -I$(BASE)/include/UsageEnvironment
 INC 		+= -I$(PWD)/include
 
 ## toolchain
@@ -27,7 +30,10 @@ CFLAGS      += -Wall -I. $(INC) -DSOCKLEN_T=socklen_t -DNO_SSTREAM=1 -D_LARGEFIL
 #CFLAGS		+= -DDEBUG
 CFLAGS		+= -std=c++11 -g
 
-LDFLAGS     = -L../../lib -muclibc -lpthread -lm -lrt -lliveMedia -lgroupsock -lUsageEnvironment -lBasicUsageEnvironment -limp -lalog -g
+LDFLAGS     = -L../../lib -muclibc -lpthread -lm -lrt -g
+LDFLAGS += -lliveMedia -lgroupsock -lUsageEnvironment -lBasicUsageEnvironment
+LDFLAGS += -limp -lalog 
+LDFLAGS += -lssl -ltls -lcrypto
 
 SRC_OBJ	= main.o 
 SRC_OBJ	+=ServerMediaSubsession.o

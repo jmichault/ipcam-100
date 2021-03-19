@@ -24,16 +24,19 @@ DynamicRTSPServer*
 DynamicRTSPServer::createNew(UsageEnvironment& env, Port ourPort,
 			     UserAuthenticationDatabase* authDatabase,
 			     unsigned reclamationTestSeconds) {
-  int ourSocket = setUpOurSocket(env, ourPort);
-  if (ourSocket == -1) return NULL;
+  int ourSocketIPv4 = setUpOurSocket(env, ourPort, AF_INET);
+  int ourSocketIPv6 = setUpOurSocket(env, ourPort, AF_INET6);
+  if (ourSocketIPv4 < 0 && ourSocketIPv6 < 0) return NULL;
 
-  return new DynamicRTSPServer(env, ourSocket, ourPort, authDatabase, reclamationTestSeconds);
+  return new DynamicRTSPServer(env, ourSocketIPv4, ourSocketIPv6, ourPort,
+			       authDatabase, reclamationTestSeconds);
+
 }
 
-DynamicRTSPServer::DynamicRTSPServer(UsageEnvironment& env, int ourSocket,
+DynamicRTSPServer::DynamicRTSPServer(UsageEnvironment& env, int ourSocketIPv4, int ourSocketIPv6,
 				     Port ourPort,
 				     UserAuthenticationDatabase* authDatabase, unsigned reclamationTestSeconds)
-  : RTSPServerSupportingHTTPStreaming(env, ourSocket, ourPort, authDatabase, reclamationTestSeconds) {
+  : RTSPServer(env, ourSocketIPv4, ourSocketIPv6, ourPort, authDatabase, reclamationTestSeconds) {
 }
 
 DynamicRTSPServer::~DynamicRTSPServer() {
@@ -42,18 +45,23 @@ DynamicRTSPServer::~DynamicRTSPServer() {
 static ServerMediaSession* createNewSMS(UsageEnvironment& env,
 					char const* fileName, FILE* fid); // forward
 
-ServerMediaSession* DynamicRTSPServer
-::lookupServerMediaSession(char const* streamName, Boolean isFirstLookupInSession) {
+void DynamicRTSPServer
+::lookupServerMediaSession(char const* streamName,
+	lookupServerMediaSessionCompletionFunc* completionFunc,
+	void* completionClientData,
+	 Boolean isFirstLookupInSession)
+{
 
   // check whether we already have a "ServerMediaSession" for this name:
-  ServerMediaSession* sms = RTSPServer::lookupServerMediaSession(streamName);
+  ServerMediaSession* sms = getServerMediaSession(streamName);
 
     if (sms == NULL) {
       sms = createNewSMS(envir(), streamName, NULL); 
       addServerMediaSession(sms);
     }
-
-    return sms;
+  if (completionFunc != NULL) {
+    (*completionFunc)(completionClientData, sms);
+  }
 }
 
 

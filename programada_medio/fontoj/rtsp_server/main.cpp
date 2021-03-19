@@ -345,26 +345,6 @@ int main(int argc, char **argv) {
 #if AUDIO_STREAM
 
 #endif
-            // Create Server Multicast Session
-            if (multicast) {
-                ServerMediaSubsession *multicast_video_subSession = NULL;
-                ServerMediaSubsession *multicast_audio_subSession = NULL;
-                if (maddr == INADDR_NONE) maddr = chooseRandomIPv4SSMAddress(*env);
-                destinationAddress.s_addr = maddr;
-                //LOG(NOTICE) << "Mutlicast address " << inet_ntoa(destinationAddress);
-                fprintf(stderr, "Mutlicast address  %s \n", inet_ntoa(destinationAddress));
-
-
-                multicast_video_subSession = MulticastServerMediaSubsession::createNew(*env, destinationAddress,
-                                                                                       Port(rtpPortNum),
-                                                                                       Port(rtcpPortNum), ttl,
-                                                                                       replicator, format);
-#if AUDIO_STREAM
-
-#endif
-                addSession(rtspServer, murl.c_str(), multicast_video_subSession, multicast_audio_subSession);
-
-            }
 
             ServerMediaSubsession *video_subSession = NULL;
             ServerMediaSubsession *audio_subSession = NULL;

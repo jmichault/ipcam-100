@@ -5,12 +5,16 @@ CPP = $(CROSS_COMPILE)g++
 LD = $(CROSS_COMPILE)ld
 AR = $(CROSS_COMPILE)ar cr
 STRIP = $(CROSS_COMPILE)strip
-CFLAGS = $(INCLUDES) -I include -I../../include -O2 -Wall -march=mips32r2 -std=gnu99
+INCLUDES += -I include -I../../include
+INCLUDES += -I../../include/liveMedia
+INCLUDES += -I../../include/groupsock
+INCLUDES += -I../../include/UsageEnvironment
+CFLAGS = $(INCLUDES) -O2 -Wall -march=mips32r2 -std=gnu99
 CFLAGS += -muclibc -g
 CPPFLAGS = $(INCLUDES) -I include -I../../include -O2 -Wall -muclibc -std=c++11 -g
 LDFLAGS += -muclibc -limp -lpthread -lm -lrt -L../../lib -lalog
 LDFLAGS += -Wl,-gc-sections -g
-LDFLAGS += -lliveMedia -lgroupsock -lBasicUsageEnvironment -lUsageEnvironment
+LDFLAGS += -lssl -ltls -lcrypto -lliveMedia -lgroupsock -lBasicUsageEnvironment -lUsageEnvironment
 
 
 all: 	rtsp_server

@@ -14,7 +14,7 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 **********/
 // "liveMedia"
-// Copyright (c) 1996-2017 Live Networks, Inc.  All rights reserved.
+// Copyright (c) 1996-2021 Live Networks, Inc.  All rights reserved.
 // Base64 encoding and decoding
 // C++ header
 
@@ -22,7 +22,7 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #define _BASE64_HH
 
 #ifndef _BOOLEAN_HH
-#include "UsageEnvironment/Boolean.hh"
+#include "Boolean.hh"
 #endif
 
 unsigned char* base64Decode(char const* in, unsigned& resultSize,
