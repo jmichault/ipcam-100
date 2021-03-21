@@ -1,5 +1,5 @@
 #!/bin/sh
-export LD_LIBRARY_PATH='/opt/media/sdc/lib/:/lib/:/ipc/lib/'
+export LD_LIBRARY_PATH=${SDCARD}/lib/:/lib/:/ipc/lib/
 CONFIGPATH="/opt/media/sdc/config"
 ## Load some common functions:
 . /opt/media/sdc/scripts/common_functions.sh
@@ -15,4 +15,4 @@ fi
 if [ ! -f $CONFIGPATH/lighttpd.conf ]; then
     cp $CONFIGPATH/lighttpd.conf.dist $CONFIGPATH/lighttpd.conf
 fi
-/opt/media/sdc/bin/lighttpd -f /opt/media/sdc/config/lighttpd.conf
+${SDCARD}/bin/lighttpd -f ${SDCARD}/config/lighttpd.conf

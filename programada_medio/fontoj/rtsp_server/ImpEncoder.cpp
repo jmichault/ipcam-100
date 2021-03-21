@@ -279,7 +279,7 @@ int ImpEncoder::snap_jpeg() {
 
 
     /* Polling JPEG Snap, set timeout as 1000msec */
-    ret = IMP_Encoder_PollingStream(2, 1000);
+    ret = IMP_Encoder_PollingStream(1, 1000);
     if (ret < 0) {
         IMP_LOG_ERR(TAG, "Polling stream timeout\n");
         return -1;
@@ -287,7 +287,7 @@ int ImpEncoder::snap_jpeg() {
 
     IMPEncoderStream stream;
     /* Get JPEG Snap */
-    ret = IMP_Encoder_GetStream(2, &stream, 1);
+    ret = IMP_Encoder_GetStream(1, &stream, 1);
     if (ret < 0) {
         IMP_LOG_ERR(TAG, "IMP_Encoder_GetStream() failed\n");
         return -1;
@@ -303,7 +303,7 @@ int ImpEncoder::snap_jpeg() {
         return -1;
     }
 
-    IMP_Encoder_ReleaseStream(2, &stream);
+    IMP_Encoder_ReleaseStream(1, &stream);
 
 
     return bytesRead;
@@ -393,77 +393,6 @@ int ImpEncoder::sample_system_init() {
     int ret = 0;
     IMP_LOG_ERR(TAG, "sample_system_init\n");
 
-    memset(&sensor_info, 0, sizeof(sensor_info));
-    memcpy(sensor_info[0].name, SENSOR_NAME, sizeof(SENSOR_NAME));
-    sensor_info[0].cbus_type = SENSOR_CUBS_TYPE;
-    memcpy(sensor_info[0].i2c.type, SENSOR_NAME, sizeof(SENSOR_NAME));
-    sensor_info[0].i2c.addr = SENSOR_I2C_ADDR;
-
-    //IMP_LOG_ERR(TAG, "Imp Log %d\n", IMP_Log_Get_Option());
-    //IMP_Log_Set_Option()
-
-    ret = IMP_ISP_Open();
-    if (ret < 0) {
-        IMP_LOG_ERR(TAG, "failed to open ISP\n");
-        return -1;
-    }
-
-
-    ret = IMP_ISP_AddSensor(&sensor_info[0]);
-    if (ret < 0) {
-        IMP_LOG_ERR(TAG, "failed to AddSensor\n");
-        return -1;
-    }
-
-    ret = IMP_ISP_EnableSensor();
-    if (ret < 0) {
-        IMP_LOG_ERR(TAG, "failed to EnableSensor\n");
-        return -1;
-    }
-    //ret = IMP_Encoder_SetPoolSize(1430016);
-    ret = IMP_Encoder_SetPoolSize(0x200000);
-    if(ret < 0){
-    	IMP_LOG_ERR(TAG, "failed to SetPoolSize\n");
-    	return -1;
-    }
-    ret = IMP_OSD_SetPoolSize(0x160000);
-    if(ret < 0){
-    	IMP_LOG_ERR(TAG, "failed to SetPoolSize\n");
-    	return -1;
-    }
-
-
-    ret = IMP_System_Init();
-    if (ret < 0) {
-        IMP_LOG_ERR(TAG, "IMP_System_Init failed\n");
-        return -1;
-    }
-
-
-
-
-    /* enable turning, to debug graphics */
-
-    ret = IMP_ISP_EnableTuning();
-    if (ret < 0) {
-        IMP_LOG_ERR(TAG, "IMP_ISP_EnableTuning failed\n");
-        return -1;
-    }
-
-    //setNightVision(currentParams.nightvision);
-
-
-    /*
-    ret = IMP_ISP_Tuning_SetWDRAttr(IMPISP_TUNING_OPS_MODE_DISABLE);
-    if (ret < 0) {
-        IMP_LOG_ERR(TAG, "failed to set WDR\n");
-        return -1;
-    }
-     */
-
-
-
-
 
     //IMP_LOG_ERR(TAG, "ImpSystemInit success\n");
     isInited=true;
@@ -476,35 +405,6 @@ int ImpEncoder::sample_system_exit() {
     int ret = 0;
 
     IMP_LOG_ERR(TAG, "sample_system_exit start\n");
-
-
-    IMP_System_Exit();
-
-    ret = IMP_ISP_DisableSensor();
-    if (ret < 0) {
-        IMP_LOG_ERR(TAG, "failed to EnableSensor\n");
-        return -1;
-    }
-
-    ret = IMP_ISP_DelSensor(&sensor_info[0]);
-    if (ret < 0) {
-        IMP_LOG_ERR(TAG, "failed to DelSensor\n");
-        return -1;
-    }
-
-    ret = IMP_ISP_DisableTuning();
-    if (ret < 0) {
-        IMP_LOG_ERR(TAG, "IMP_ISP_DisableTuning failed\n");
-        return -1;
-    }
-
-    if (IMP_ISP_Close()) {
-        IMP_LOG_ERR(TAG, "failed to close ISP\n");
-        return -1;
-    }
-
-    IMP_LOG_ERR(TAG, " sample_system_exit success\n");
-    isInited = false;
 
     return 0;
 }
@@ -549,21 +449,6 @@ int ImpEncoder::sample_framesource_streamoff() {
 }
 
 int ImpEncoder::sample_framesource_init() {
-    int ret;
-
-
-    ret = IMP_FrameSource_CreateChn(0, &chn.fs_chn_attr);
-    if (ret < 0) {
-        IMP_LOG_ERR(TAG, "IMP_FrameSource_CreateChn(chn%d) error !\n", 0);
-        return -1;
-    }
-
-    ret = IMP_FrameSource_SetChnAttr(0, &chn.fs_chn_attr);
-    if (ret < 0) {
-        IMP_LOG_ERR(TAG, "IMP_FrameSource_SetChnAttr(chn%d) error !\n", 0);
-        return -1;
-    }
-
 
     return 0;
 }
@@ -571,200 +456,26 @@ int ImpEncoder::sample_framesource_init() {
 int ImpEncoder::sample_framesource_exit() {
     int ret;
 
-
-    /*Destroy channel i*/
-    ret = IMP_FrameSource_DestroyChn(0);
-    if (ret < 0) {
-        IMP_LOG_ERR(TAG, "IMP_FrameSource_DestroyChn() error: %d\n", ret);
-        return -1;
-    }
-
     return 0;
 }
 
 int ImpEncoder::sample_jpeg_init() {
-    int ret;
-    IMPEncoderAttr *enc_attr;
-    IMPEncoderCHNAttr channel_attr;
-    IMPFSChnAttr *imp_chn_attr_tmp;
-
-
-    imp_chn_attr_tmp = &chn.fs_chn_attr;
-    memset(&channel_attr, 0, sizeof(IMPEncoderCHNAttr));
-    enc_attr = &channel_attr.encAttr;
-    enc_attr->enType = PT_JPEG;
-    enc_attr->bufSize = 0;
-    enc_attr->profile = 0;
-    enc_attr->picWidth = imp_chn_attr_tmp->picWidth;
-    enc_attr->picHeight = imp_chn_attr_tmp->picHeight;
-
-    /* Create Channel */
-    ret = IMP_Encoder_CreateChn(2, &channel_attr);
-    if (ret < 0) {
-        IMP_LOG_ERR(TAG, "IMP_Encoder_CreateChn(%d) error: %d\n",
-                    0, ret);
-        return -1;
-    }
-
-    /* Register Channel */
-    ret = IMP_Encoder_RegisterChn(0, 2);
-    if (ret < 0) {
-        IMP_LOG_ERR(TAG, "IMP_Encoder_RegisterChn(0, %d) error: %d\n",
-                    0, ret);
-        return -1;
-    }
 
     return 0;
 }
 
 int ImpEncoder::sample_encoder_init() {
 
-    int ret;
-    IMPEncoderAttr *enc_attr;
-    IMPEncoderRcAttr *rc_attr;
-    IMPFSChnAttr *imp_chn_attr_tmp;
-    IMPEncoderCHNAttr channel_attr;
-
-
-    imp_chn_attr_tmp = &chn.fs_chn_attr;
-    memset(&channel_attr, 0, sizeof(IMPEncoderCHNAttr));
-    enc_attr = &channel_attr.encAttr;
-    enc_attr->enType = PT_H264;
-    enc_attr->bufSize = 0;
-    enc_attr->profile = 0;
-    enc_attr->picWidth = imp_chn_attr_tmp->picWidth;
-    enc_attr->picHeight = imp_chn_attr_tmp->picHeight;
-    rc_attr = &channel_attr.rcAttr;
-
-
-    rc_attr->attrRcMode.rcMode = ENC_RC_MODE_CBR;
-    //rc_attr->attrRcMode.attrH264Cbr.outFrmRate.frmRateNum = imp_chn_attr_tmp->outFrmRateNum;
-    //rc_attr->attrRcMode.attrH264Cbr.outFrmRate.frmRateDen = imp_chn_attr_tmp->outFrmRateDen;
-    //rc_attr->attrRcMode.attrH264Cbr.maxGop =
-    //        2 * rc_attr->attrRcMode.attrH264Cbr.outFrmRate.frmRateNum / rc_attr->attrRcMode.attrH264Cbr.outFrmRate.frmRateDen;
-    rc_attr->attrRcMode.attrH264Cbr.outBitRate = currentParams.bitrate;
-    rc_attr->attrRcMode.attrH264Cbr.maxQp = 38;
-    rc_attr->attrRcMode.attrH264Cbr.minQp = 15;
-    //rc_attr->attrRcMode.attrH264Cbr.maxFPS = 100;
-    //rc_attr->attrRcMode.attrH264Cbr.minFPS = 1;
-    //rc_attr->attrRcMode.attrH264Cbr.IBiasLvl = 2;
-    rc_attr->attrRcMode.attrH264Cbr.frmQPStep = 3;
-    rc_attr->attrRcMode.attrH264Cbr.gopQPStep = 15;
-    //rc_attr->attrRcMode.attrH264Cbr.AdaptiveMode = false;
-    //rc_attr->attrRcMode.attrH264Cbr.GOPRelation = false;
-
-
-    //rc_attr->attrRcMode.attrH264Denoise.enable = false;
-    //rc_attr->attrRcMode.attrH264Denoise.dnType = 2;
-    //rc_attr->attrRcMode.attrH264Denoise.dnIQp = 1;
-    //rc_attr->attrRcMode.attrH264Denoise.dnPQp = 1;
-
-
-    //rc_attr->attrRcMode.attrH264FrmUsed.enable = 1;
-    //rc_attr->attrRcMode.attrH264FrmUsed.frmUsedMode = ENC_FRM_SKIP;
-    //rc_attr->attrRcMode.attrH264FrmUsed.frmUsedTimes = 2000;
-
-    /*
-    rc_attr->attrRcMode.attrH264FrmUsed.enable = true;
-    rc_attr->attrRcMode.attrH264FrmUsed.dnIQp = ENC_FRM_REUSED ;
-    rc_attr->attrRcMode.attrH264FrmUsed.frmUsedTimes = 50;
-*/
-
-
-
-
-    /*
-    rc_attr->attrH264FrmUsed.enable = true;
-    rc_attr->attrH264FrmUsed.frmUsedMode = ENC_FRM_REUSED ;
-    rc_attr->attrH264FrmUsed.frmUsedTimes = 50;
-    */
-
-
-/*
-    rc_attr->rcMode = ENC_RC_MODE_H264VBR;
-    rc_attr->attrH264Vbr.outFrmRate.frmRateNum = imp_chn_attr_tmp->outFrmRateNum;
-    rc_attr->attrH264Vbr.outFrmRate.frmRateDen = imp_chn_attr_tmp->outFrmRateDen;
-    rc_attr->attrH264Vbr.maxGop =
-            1 * rc_attr->attrH264Vbr.outFrmRate.frmRateNum / rc_attr->attrH264Vbr.outFrmRate.frmRateDen;
-    rc_attr->attrH264Vbr.maxQp = 38;
-    rc_attr->attrH264Vbr.minQp = 15;
-    rc_attr->attrH264Vbr.staticTime = 1;
-    rc_attr->attrH264Vbr.maxBitRate =
-            100 ;
-    rc_attr->attrH264Vbr.changePos = 50;
-    rc_attr->attrH264Vbr.FrmQPStep = 3;
-    rc_attr->attrH264Vbr.GOPQPStep = 15;
-    rc_attr->attrH264FrmUsed.enable = 1;
-    */
-
-
-
-    ret = IMP_Encoder_CreateChn(0, &channel_attr);
-    if (ret < 0) {
-        IMP_LOG_ERR(TAG, "IMP_Encoder_CreateChn(%d) error !\n", 0);
-        return -1;
-    }
-
-    ret = IMP_Encoder_RegisterChn(0, 0);
-    if (ret < 0) {
-        IMP_LOG_ERR(TAG, "IMP_Encoder_RegisterChn(%d, %d) error: %d\n",
-                    0, 0, ret);
-        return -1;
-    }
     return 0;
 }
 
 int ImpEncoder::encoder_chn_exit(int encChn) {
-    int ret;
-    IMPEncoderCHNStat chn_stat;
-    ret = IMP_Encoder_Query(encChn, &chn_stat);
-    if (ret < 0) {
-        IMP_LOG_ERR(TAG, "IMP_Encoder_Query(%d) error: %d\n",
-                    encChn, ret);
-        return -1;
-    }
-
-    if (chn_stat.registered) {
-        ret = IMP_Encoder_UnRegisterChn(encChn);
-        if (ret < 0) {
-            IMP_LOG_ERR(TAG, "IMP_Encoder_UnRegisterChn(%d) error: %d\n",
-                        encChn, ret);
-            return -1;
-        }
-
-        ret = IMP_Encoder_DestroyChn(encChn);
-        if (ret < 0) {
-            IMP_LOG_ERR(TAG, "IMP_Encoder_DestroyChn(%d) error: %d\n",
-                        encChn, ret);
-            return -1;
-        }
-    }
 
     return 0;
 }
 
 int ImpEncoder::sample_encoder_exit(void) {
     int ret;
-
-    ret = encoder_chn_exit(0);
-    if (ret < 0) {
-        IMP_LOG_ERR(TAG, "Encoder Channel %d exit  error: %d\n",
-                    0, ret);
-        return -1;
-    }
-
-    ret = encoder_chn_exit(ENC_JPEG_CHANNEL);
-    if (ret < 0) {
-        IMP_LOG_ERR(TAG, "Encoder Channel %d exit  error: %d\n",
-                    ENC_JPEG_CHANNEL, ret);
-        return -1;
-    }
-
-    ret = IMP_Encoder_DestroyGroup(0);
-    if (ret < 0) {
-        IMP_LOG_ERR(TAG, "IMP_Encoder_DestroyGroup(0) error: %d\n", ret);
-        return -1;
-    }
 
     return 0;
 }

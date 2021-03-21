@@ -68,7 +68,7 @@ IMPFSChnAttr fs_chn_attrs[3]=
   {
    .picWidth = ELIGO_WIDTH , .picHeight = ELIGO_HEIGHT ,
    .pixFmt = PIX_FMT_NV12  ,
-   .crop = { .enable = 0 , .left = 0 , .top = 0 , .width = SENSOR_WIDTH , .height = SENSOR_WIDTH } ,
+   .crop = { .enable = 0 , .left = 0 , .top = 0 , .width = SENSOR_WIDTH , .height = SENSOR_HEIGHT } ,
    .scaler = { .enable = 1 , .outwidth = ELIGO_WIDTH , .outheight = ELIGO_HEIGHT } ,
    .outFrmRateNum = 25 , .outFrmRateDen = 1 ,
    .nrVBs = 2 ,
@@ -78,7 +78,7 @@ IMPFSChnAttr fs_chn_attrs[3]=
   {
    .picWidth = ELIGO_WIDTH_DUA , .picHeight = ELIGO_HEIGHT_DUA ,
    .pixFmt = PIX_FMT_NV12  ,
-   .crop = { .enable = 0 , .left = 0 , .top = 0 , .width = SENSOR_WIDTH , .height = SENSOR_WIDTH } ,
+   .crop = { .enable = 0 , .left = 0 , .top = 0 , .width = SENSOR_WIDTH , .height = SENSOR_HEIGHT } ,
    .scaler = { .enable = 1 , .outwidth = ELIGO_WIDTH_DUA , .outheight = ELIGO_HEIGHT_DUA } ,
    .outFrmRateNum = 25 , .outFrmRateDen = 1 ,
    .nrVBs = 2 ,
@@ -88,7 +88,7 @@ IMPFSChnAttr fs_chn_attrs[3]=
   {
    .picWidth = 320 , .picHeight = 184 ,
    .pixFmt = PIX_FMT_NV12  ,
-   .crop = { .enable = 0 , .left = 0 , .top = 0 , .width = SENSOR_WIDTH , .height = SENSOR_WIDTH } ,
+   .crop = { .enable = 0 , .left = 0 , .top = 0 , .width = SENSOR_WIDTH , .height = SENSOR_HEIGHT } ,
    .scaler = { .enable = 1 , .outwidth = 320 , .outheight = 184 } ,
    .outFrmRateNum = 5 , .outFrmRateDen = 1 ,
    .nrVBs = 2 ,

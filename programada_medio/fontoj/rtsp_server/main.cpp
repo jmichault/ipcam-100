@@ -23,20 +23,18 @@
 #include <sys/time.h>
 #include <unistd.h>
 #include <fcntl.h>
-#include "ImpJpegVideoDeviceSource.h"
-
 // libv4l2
 #include <linux/videodev2.h>
-
 // live555
 #include <BasicUsageEnvironment/BasicUsageEnvironment.hh>
 #include <groupsock/GroupsockHelper.hh>
 
 // project
-
 #include "H264_V4l2DeviceSource.h"
 #include "ServerMediaSubsession.h"
 #include "AlsaDeviceSource.h"
+#include "ImpJpegVideoDeviceSource.h"
+#include "imp_komuna.h"
 
 
 #define SNX_RTSP_SERVER_VERSION        ("V00.01.04")
@@ -267,6 +265,15 @@ int main(int argc, char **argv) {
     if (optind < argc) {
         dev_name = argv[optind];
     }
+  // ŝanĝas agordojn de kodigilo al mjpg
+  for ( int i = 0; i <= 1; i++)
+  {
+    channel_attrs[i].encAttr.enType=PT_JPEG;
+    channel_attrs[i].encAttr.profile=0;
+  }
+
+    // pravalorizo de T21
+    imp_init();
 
     // create live555 environment
     scheduler = BasicTaskScheduler::createNew();
@@ -288,17 +295,6 @@ int main(int argc, char **argv) {
         fprintf(stderr, "create Video source = %s \n", dev_name);
 
 
-#if AUDIO_STREAM
-
-#endif
-
-#if AUDIO_STREAM
-        /*
-            Start Audio Device
-
-        */
-
-#endif
         /* Determind which Class to use */
         if (format == V4L2_PIX_FMT_H264)
             videoES = H264_V4L2DeviceSource::createNew(*env, 0, useThread);
@@ -380,6 +376,7 @@ fprintf(stderr,"session créée.\n");
     }
     Medium::close(rtspServer);
 
+    imp_exit();
 
     env->reclaim();
     delete scheduler;

@@ -17,9 +17,9 @@ LDFLAGS += -Wl,-gc-sections -g
 LDFLAGS += -lssl -ltls -lcrypto -lliveMedia -lgroupsock -lBasicUsageEnvironment -lUsageEnvironment
 
 
-all: 	rtsp_server
+all: 	h264_rtsp_server
 
-rtsp_server: DynamicRTSPServer.o main.o H264ImpServerMediaSubsession.o imp_komuna.o imp_vars_h264.o ImpSource.o
+h264_rtsp_server: DynamicRTSPServer.o main.o H264ImpServerMediaSubsession.o imp_komuna.o imp_vars_h264.o ImpSource.o
 	$(CPLUSPLUS) $(LDFLAGS) -o $@ $^ $(LIBS)
 #	$(STRIP) $@
 

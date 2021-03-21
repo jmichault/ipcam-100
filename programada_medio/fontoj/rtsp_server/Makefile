@@ -5,7 +5,7 @@ BASE := ../..
 TARGET      ?= ../../toolchain/bin/mips-linux-gnu
 CROSS_COMPILE   ?= $(TARGET)-
 CPP     	:= $(CROSS_COMPILE)g++
-CC      	:= $(CROSS_COMPILE)g++
+CC      	:= $(CROSS_COMPILE)gcc
 AR      	:= $(CROSS_COMPILE)ar
 RANLIB      := $(CROSS_COMPILE)ranlib
 STRIP 		:= $(CROSS_COMPILE)strip
@@ -21,14 +21,14 @@ INC     	+= -I$(BASE)/include/UsageEnvironment
 INC 		+= -I$(PWD)/include
 
 ## toolchain
-EXTRA_LDFLAGS	= -std=c++11$ 
+EXTRA_LDFLAGS	= -std=c++11 
 EXTRA_CFLAGS	+= -I$(AUTOCONF_DIR) 
 
 CFLAGS      += -Wall -I. $(INC) -DSOCKLEN_T=socklen_t -DNO_SSTREAM=1 -D_LARGEFILE_SOURCE=1  -D_FILE_OFFSET_BITS=64
 #CFLAGS		+= -DBSD=1 -DLOCALE_NOT_USED
 #CFLAGS		+= -DAUDIO_STREAM=1
 #CFLAGS		+= -DDEBUG
-CFLAGS		+= -std=c++11 -g
+CFLAGS		+= -g
 
 LDFLAGS     = -L../../lib -muclibc -lpthread -lm -lrt -g
 LDFLAGS += -lliveMedia -lgroupsock -lUsageEnvironment -lBasicUsageEnvironment
@@ -42,6 +42,7 @@ SRC_OBJ	+=AlsaDeviceSource.o
 SRC_OBJ	+=ImpJpegVideoDeviceSource.o
 SRC_OBJ	+=JpegFrameParser.o
 SRC_OBJ	+=ImpEncoder.o
+SRC_OBJ	+=imp_komuna.o imp_vars_h264.o
 SRC_OBJ +=../rtspserver-tools/sharedmem.o
 
 #targets =
@@ -50,10 +51,10 @@ targets = rtsp_server
 
 .PHONY : clean distclean all
 %.o : %.cpp
-	$(CPP) -c $(CFLAGS) $< -o $@
+	$(CPP) -c $(CFLAGS) -std=c++11 $< -o $@
 
 %.o : %.c
-	$(CC) -c $(CFLAGS) $<
+	$(CC) -c $(CFLAGS) -std=c99 $<
 
 all: $(targets)
 

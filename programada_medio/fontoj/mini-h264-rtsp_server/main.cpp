@@ -33,11 +33,6 @@ int main(int argc, char** argv) {
   // access to the server.
 #endif
   // init T21
-//  for ( int i = 0; i <= 1; i++)
-//  {// ĉiuj kanaloj al MJPEG
-//    channel_attrs[i].encAttr.enType=PT_JPEG;
-//    channel_attrs[i].encAttr.profile=0;
-//  }
   imp_init();
 
   // Create the RTSP server.  Try first with the default port number (554),
@@ -60,12 +55,14 @@ int main(int argc, char** argv) {
   if (weHaveAnIPv4Address(*env)) {
     char* rtspURLPrefix = rtspServer->ipv4rtspURLPrefix();
     *env << "\t" << rtspURLPrefix << "stream1\n";
+    *env << "\t" << rtspURLPrefix << "stream2\n";
     delete[] rtspURLPrefix;
     if (weHaveAnIPv6Address(*env)) *env << "or\n";
   }
   if (weHaveAnIPv6Address(*env)) {
     char* rtspURLPrefix = rtspServer->ipv6rtspURLPrefix();
     *env << "\t" << rtspURLPrefix << "stream1\n";
+    *env << "\t" << rtspURLPrefix << "stream2\n";
     delete[] rtspURLPrefix;
   }
 
