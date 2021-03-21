@@ -37,14 +37,8 @@ FramedSource *BaseServerMediaSubsession::createSource(UsageEnvironment &env, Fra
 
         case V4L2_PIX_FMT_MJPEG:
 
-            impParams params;
-            params.width = 1280;
-            params.height = 720;
-            params.mode = IMP_MODE_JPEG;
-            params.framerate = 10;
-            params.nightvision = false;
             fprintf(stderr,"avant source = ImpJpegVideoDeviceSource::createNew(env, params)\n");
-            source = ImpJpegVideoDeviceSource::createNew(env, params);
+            source = ImpJpegVideoDeviceSource::createNew(env, 0);
 
 
             //source = videoES;

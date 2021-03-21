@@ -299,15 +299,6 @@ int main(int argc, char **argv) {
         if (format == V4L2_PIX_FMT_H264)
             videoES = H264_V4L2DeviceSource::createNew(*env, 0, useThread);
         else {
-            impParams params;
-            params.width = width;
-            params.height = height;
-            params.mode = IMP_MODE_JPEG;
-            params.framerate = fps;
-            params.nightvision = false;
-            //videoES = ImpJpegVideoDeviceSource::createNew(*env, params);
-
-
             //videoES = V4L2DeviceSource::createNew(*env, 0, useThread);
             //mjpeg_qp
         }

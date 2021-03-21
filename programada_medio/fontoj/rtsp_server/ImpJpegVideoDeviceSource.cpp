@@ -18,11 +18,12 @@
 // Implementation
 
 #include "ImpJpegVideoDeviceSource.h"
-#include "ImpEncoder.h"
+#include "imp_komuna.h"
 
 #include <fcntl.h>              /* low-level i/o */
 #include <unistd.h>
 #include <errno.h>
+#include <malloc.h>
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <sys/time.h>
@@ -41,7 +42,7 @@
 
 ImpJpegVideoDeviceSource *
 ImpJpegVideoDeviceSource::createNew(UsageEnvironment &env,
-                                    impParams params) {
+                                    int params) {
     //int fd = -1;
 #ifndef JPEG_TEST
 
@@ -54,11 +55,13 @@ ImpJpegVideoDeviceSource::createNew(UsageEnvironment &env,
 }
 
 #ifndef JPEG_TEST
+char * bufferStream=NULL;
 
-int ImpJpegVideoDeviceSource::initDevice(impParams params) {
+int ImpJpegVideoDeviceSource::initDevice(int canal) {
     fprintf(stderr, "début Init Device...\n");
-    impEncoder = new ImpEncoder(params);
-    unsigned timePerFrame = 1000000 / params.framerate;
+    //impEncoder = new ImpEncoder(params);
+  bufferStream = (char *) malloc(fs_chn_attrs[0].crop.width * fs_chn_attrs[0].crop.height);
+    unsigned timePerFrame = 1000000 * fs_chn_attrs[0].outFrmRateDen /  fs_chn_attrs[0].outFrmRateNum;
     fTimePerFrame = timePerFrame;
     fprintf(stderr, "fin Init Device...\n");
     return 0;
@@ -67,7 +70,7 @@ int ImpJpegVideoDeviceSource::initDevice(impParams params) {
 #endif // JPEG_TEST
 
 ImpJpegVideoDeviceSource
-::ImpJpegVideoDeviceSource(UsageEnvironment &env, impParams params)
+::ImpJpegVideoDeviceSource(UsageEnvironment &env, int params)
         : JPEGVideoSource(env), fFd(0) {
 #ifdef JPEG_TEST
     jpeg_dat = new unsigned char [MAX_JPEG_FILE_SZ];
@@ -89,7 +92,7 @@ ImpJpegVideoDeviceSource::~ImpJpegVideoDeviceSource() {
 #ifdef JPEG_TEST
     delete [] jpeg_dat;
 #else
-    delete impEncoder;
+    //delete impEncoder;
 #endif
 }
 
@@ -118,7 +121,33 @@ void ImpJpegVideoDeviceSource::doGetNextFrame() {
     framecount++;
     fPresentationTime = fLastCaptureTime;
 
-    int bytesRead = impEncoder->snap_jpeg();
+    //int bytesRead = snap_jpeg();
+    int bytesRead = 0;
+
+    /* Polling JPEG Snap, set timeout as 1000msec */
+    int ret = IMP_Encoder_PollingStream(0, 1000);
+    if (ret >= 0)
+    {
+      IMPEncoderStream stream;
+      /* Get JPEG Snap */
+      ret = IMP_Encoder_GetStream(0, &stream, 1);
+      if (ret >= 0) //bytesRead = save_stream(bufferStream, &stream);
+      {
+        int nr_pack = stream.packCount;
+        void *memoryAddress = (void *)bufferStream;
+        bytesRead = 0;
+        for (int i = 0; i < nr_pack; i++)
+        {
+          int packLen = stream.pack[i].length;
+          memcpy(memoryAddress, (void *) stream.pack[i].virAddr, packLen);
+          memoryAddress = (void *) ((int) memoryAddress + packLen);
+          bytesRead = bytesRead + packLen;
+        }
+
+      }
+      IMP_Encoder_ReleaseStream(0, &stream);
+    }
+
 
     if (bytesRead > (int) fMaxSize) {
         fprintf(stderr,
@@ -131,7 +160,7 @@ void ImpJpegVideoDeviceSource::doGetNextFrame() {
 
 
 
-    fFrameSize = jpeg_to_rtp(fTo, impEncoder->getBuffer(), bytesRead);
+    fFrameSize = jpeg_to_rtp(fTo, bufferStream, bytesRead);
 
 #endif // JPEG_TEST
     // Switch to another task, and inform the reader that he has data:

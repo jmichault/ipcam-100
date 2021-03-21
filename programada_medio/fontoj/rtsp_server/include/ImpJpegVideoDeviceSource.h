@@ -28,7 +28,6 @@
 #define MAX_JPEG_FILE_SZ 100000
 
 #define IMP_BUFFER_SIZE 200000
-#include "ImpEncoder.h"
 
 class DeviceException : public std::exception {
 
@@ -37,12 +36,12 @@ class DeviceException : public std::exception {
 class ImpJpegVideoDeviceSource : public JPEGVideoSource {
 public:
     static ImpJpegVideoDeviceSource *createNew(UsageEnvironment &env,
-                                               impParams params);
+                                               int canal );
     // "timePerFrame" is in microseconds
 
 protected:
     ImpJpegVideoDeviceSource(UsageEnvironment &env,
-                             impParams params);
+                             int params);
 
     // called only by createNew()
     virtual ~ImpJpegVideoDeviceSource();
@@ -64,7 +63,7 @@ private:
 private:
 #ifndef JPEG_TEST
 
-    int initDevice(impParams fd);
+    int initDevice(int fd);
 
 #endif
     struct buffer {
@@ -89,7 +88,6 @@ private:
     size_t jpeg_datlen;
 #endif
 
-    ImpEncoder* impEncoder;
 
 };
 
