@@ -33,9 +33,6 @@
 //#include <sys/ipc.h>
 //#include <sys/shm.h>
 
-#ifndef JPEG_TEST
-#endif
-
 #include "JpegFrameParser.hh"
 #include <algorithm>
 #include <iostream>
@@ -43,10 +40,6 @@
 ImpJpegVideoDeviceSource *
 ImpJpegVideoDeviceSource::createNew(UsageEnvironment &env,
                                     int params) {
-    //int fd = -1;
-#ifndef JPEG_TEST
-
-#endif
     try {
         return new ImpJpegVideoDeviceSource(env, params);
     } catch (DeviceException) {
@@ -54,7 +47,6 @@ ImpJpegVideoDeviceSource::createNew(UsageEnvironment &env,
     }
 }
 
-#ifndef JPEG_TEST
 char * bufferStream=NULL;
 
 int ImpJpegVideoDeviceSource::initDevice(int canal) {
@@ -67,33 +59,15 @@ int ImpJpegVideoDeviceSource::initDevice(int canal) {
     return 0;
 }
 
-#endif // JPEG_TEST
-
 ImpJpegVideoDeviceSource
 ::ImpJpegVideoDeviceSource(UsageEnvironment &env, int params)
         : JPEGVideoSource(env), fFd(0) {
-#ifdef JPEG_TEST
-    jpeg_dat = new unsigned char [MAX_JPEG_FILE_SZ];
-    FILE *fp = fopen("test.jpg", "rb");
-    if(fp==NULL) {
-        env.setResultErrMsg("could not open test.jpg.\n");
-        throw DeviceException();
-    }
-    jpeg_datlen = fread(jpeg_dat, 1, MAX_JPEG_FILE_SZ, fp);
-    fclose(fp);
-#else
     if (initDevice(params)) {
         throw DeviceException();
     }
-#endif
 }
 
 ImpJpegVideoDeviceSource::~ImpJpegVideoDeviceSource() {
-#ifdef JPEG_TEST
-    delete [] jpeg_dat;
-#else
-    //delete impEncoder;
-#endif
 }
 
 
@@ -102,18 +76,6 @@ static struct timezone Idunno;
 void ImpJpegVideoDeviceSource::doGetNextFrame() {
     static unsigned long framecount = 0;
     static struct timeval starttime;
-
-#ifdef JPEG_TEST
-    fFrameSize = jpeg_to_rtp(fTo, jpeg_dat, jpeg_datlen);
-    gettimeofday(&fLastCaptureTime, &Idunno);
-    if(framecount==0)
-        starttime = fLastCaptureTime;
-    framecount++;
-    fPresentationTime = fLastCaptureTime;
-    fDurationInMicroseconds = fTimePerFrame;
-#else
-//    fprintf(stderr,
-//            "Got Frame...\n");
 
     gettimeofday(&fLastCaptureTime, &Idunno);
     if (framecount == 0)
@@ -162,7 +124,6 @@ void ImpJpegVideoDeviceSource::doGetNextFrame() {
 
     fFrameSize = jpeg_to_rtp(fTo, bufferStream, bytesRead);
 
-#endif // JPEG_TEST
     // Switch to another task, and inform the reader that he has data:
     nextTask() = envir().taskScheduler().scheduleDelayedTask(0,
                                                              (TaskFunc *) FramedSource::afterGetting, this);
@@ -176,18 +137,8 @@ size_t ImpJpegVideoDeviceSource::jpeg_to_rtp(void *pto, void *pfrom, size_t len)
     if (parser.parse(from, len) == 0) { // successful parsing
         dat = parser.scandata(datlen);
       // kopio al dividita memoro
-SharedMem &sharedMem = SharedMem::instance();
-sharedMem.copyImage(pfrom,len);
-/*
-                key_t key1;
-                key1 = ftok("/usr/include", 'x');
-                int shm_id;
-                shm_id = shmget( key1, len, IPC_CREAT);
-                void* shared_mem;
-                shared_mem = shmat( shm_id, NULL, 0);
-                memcpy(shared_mem,pfrom,len);
-                shmdt(shared_mem);
-*/
+    SharedMem &sharedMem = SharedMem::instance();
+    sharedMem.copyImage(pfrom,len);
         memcpy(to, dat, datlen);
         to += datlen;
         return datlen;

@@ -24,15 +24,13 @@ class V4L2DeviceSource;
 class BaseServerMediaSubsession
 {
 	public:
-		BaseServerMediaSubsession(StreamReplicator* replicator): m_replicator(replicator) {};
+		BaseServerMediaSubsession() {};
 	
 	public:
-		static FramedSource* createSource(UsageEnvironment& env, FramedSource * videoES, int format);
+		static FramedSource* createSource(UsageEnvironment& env, int format);
 		static RTPSink* createSink(UsageEnvironment& env, Groupsock * rtpGroupsock, unsigned char rtpPayloadTypeIfDynamic, int format);
-		char const* getAuxLine(V4L2DeviceSource* source,unsigned char rtpPayloadType);
 		
 	protected:
-		StreamReplicator* m_replicator;
 
 };
 
@@ -46,16 +44,14 @@ class MulticastServerMediaSubsession : public PassiveServerMediaSubsession , pub
 								, struct in_addr destinationAddress
 								, Port rtpPortNum, Port rtcpPortNum
 								, int ttl
-								, StreamReplicator* replicator
 								, int format
 								);
 		
 	protected:
-		MulticastServerMediaSubsession(StreamReplicator* replicator, RTPSink* rtpSink, RTCPInstance* rtcpInstance) 
-				: PassiveServerMediaSubsession(*rtpSink, rtcpInstance), BaseServerMediaSubsession(replicator), m_rtpSink(rtpSink) {};			
+		MulticastServerMediaSubsession( RTPSink* rtpSink, RTCPInstance* rtcpInstance) 
+				: PassiveServerMediaSubsession(*rtpSink, rtcpInstance), BaseServerMediaSubsession(), m_rtpSink(rtpSink) {};			
 
 		virtual char const* sdpLines() ;
-		virtual char const* getAuxSDPLine(RTPSink* rtpSink,FramedSource* inputSource);
 		
 	protected:
 		RTPSink* m_rtpSink;
@@ -68,15 +64,14 @@ class MulticastServerMediaSubsession : public PassiveServerMediaSubsession , pub
 class UnicastServerMediaSubsession : public OnDemandServerMediaSubsession , public BaseServerMediaSubsession
 {
 	public:
-		static UnicastServerMediaSubsession* createNew(UsageEnvironment& env, StreamReplicator* replicator, int format);
+		static UnicastServerMediaSubsession* createNew(UsageEnvironment& env, int format);
 		
 	protected:
-		UnicastServerMediaSubsession(UsageEnvironment& env, StreamReplicator* replicator, int format)
-				: OnDemandServerMediaSubsession(env, False), BaseServerMediaSubsession(replicator), m_format(format) {};
+		UnicastServerMediaSubsession(UsageEnvironment& env, int format)
+				: OnDemandServerMediaSubsession(env, False), m_format(format) {};
 
 		virtual FramedSource* createNewStreamSource(unsigned clientSessionId, unsigned& estBitrate);
 		virtual RTPSink* createNewRTPSink(Groupsock* rtpGroupsock,  unsigned char rtpPayloadTypeIfDynamic, FramedSource* inputSource);		
-		virtual char const* getAuxSDPLine(RTPSink* rtpSink,FramedSource* inputSource);
 					
 	protected:
 		int m_format;

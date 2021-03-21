@@ -5,9 +5,6 @@
 **
 ** main.cpp
 ** 
-** V4L2 RTSP streamer                                                                 
-**                                                                                    
-** H264 capture using middleware_video                                                            
 ** RTSP using live555                                                                 
 **                                                                                    
 ** -------------------------------------------------------------------------*/
@@ -32,7 +29,6 @@
 // project
 #include "H264_V4l2DeviceSource.h"
 #include "ServerMediaSubsession.h"
-#include "AlsaDeviceSource.h"
 #include "ImpJpegVideoDeviceSource.h"
 #include "imp_komuna.h"
 
@@ -46,14 +42,6 @@ TaskScheduler *scheduler = NULL;
 // create RTSP server
 RTSPServer *rtspServer = NULL;
 FramedSource *videoES = NULL;
-
-StreamReplicator *replicator = NULL;
-
-#if AUDIO_STREAM
-
-AlsaDeviceSource*  audioES = NULL;
-#endif
-
 
 // -----------------------------------------
 //    add an RTSP session
@@ -92,17 +80,10 @@ void sighandler(int n) {
     printf("Signal received (%d)\n", n);
     quit = 1;
 #if 0
-#if AUDIO_STREAM
-    if(audioES)
-        Medium::close(audioES);
-#endif
 
     if(videoES)
         Medium::close(videoES);
 
-#if AUDIO_STREAM
-
-#endif
 
 
 
@@ -121,10 +102,6 @@ void sighandler(int n) {
 // -----------------------------------------
 int main(int argc, char **argv) {
 
-#if AUDIO_STREAM
-
-    StreamReplicator* audio_replicator = NULL;
-#endif
     // default parameters
     const char *dev_name = "/dev/video1";
     int format = V4L2_PIX_FMT_MJPEG;
@@ -156,12 +133,7 @@ int main(int argc, char **argv) {
     // decode parameters
     int c = 0;
     //while ((c = getopt (argc, argv, "hW:H:Q:P:F:v::O:T:m:u:rsM:")) != -1)
-#if AUDIO_STREAM
-    bool audio_en = false;
-    while ((c = getopt (argc, argv, "hb:W:H:g:Q:P:F:i:O:T:m:u:M:aj:")) != -1)
-#else
     while ((c = getopt(argc, argv, "hb:W:H:g:Q:P:F:i:O:T:m:u:M:j:")) != -1)
-#endif
     {
         switch (c) {
             case 'O':
@@ -211,9 +183,6 @@ int main(int argc, char **argv) {
             case 'u':
                 url = optarg;
                 break;
-#if AUDIO_STREAM
-                case 'a':	audio_en = true; break;
-#endif
             case 'j':
                 format = V4L2_PIX_FMT_MJPEG;
                 mjpeg_qp = atoi(optarg);
@@ -250,12 +219,7 @@ int main(int argc, char **argv) {
                 std::cout << "\t V4L2 MJPEG options :" << std::endl;
                 std::cout << "\t -j mjpeg_qp : MJPEG streaming and qp (default is 60)" << std::endl;
 
-#if AUDIO_STREAM
-                std::cout << "\t -a         : enable A-law pcm streaming "											 << std::endl;
-                std::cout << "\t H264 example : "<< argv[0] << " -a -Q 5 -u media/stream1 -P 554"                       << std::endl;
-#else
                 std::cout << "\t H264 example : " << argv[0] << " -Q 5 -u media/stream1 -P 554" << std::endl;
-#endif
                 std::cout << "\t MJPEG example : " << argv[0] << " -W 640 -H 480 -j 120 -Q 5 -u media/stream1 -P 554"
                           << std::endl;
                 exit(0);
@@ -302,8 +266,6 @@ int main(int argc, char **argv) {
             fprintf(stderr, "Unable to create source for device  %s \n", dev_name);
         } else {
 
-            //videoCapture->devicesource = videoES;
-
             // Setup the outpacket size;
             if (m2m_en) {
                 //OutPacketBuffer::maxSize = (unsigned int)videoCapture->m2m->isp_buffers->length;
@@ -313,28 +275,12 @@ int main(int argc, char **argv) {
                 OutPacketBuffer::maxSize = width * height * 3 / 2;
             }
 
-#if AUDIO_STREAM
-            /*
-                create Alsa Device source Class
-            */
-
-#endif
-
-            replicator = StreamReplicator::createNew(*env, videoES, false);
-
-#if AUDIO_STREAM
-
-#endif
-
             ServerMediaSubsession *video_subSession = NULL;
             ServerMediaSubsession *audio_subSession = NULL;
 
-            video_subSession = UnicastServerMediaSubsession::createNew(*env, replicator, format);
+            video_subSession = UnicastServerMediaSubsession::createNew(*env, format);
 fprintf(stderr,"session créée.\n");
 
-#if AUDIO_STREAM
-
-#endif
             // Create Server Unicast Session
             addSession(rtspServer, url.c_str(), video_subSession, audio_subSession);
 
@@ -344,18 +290,8 @@ fprintf(stderr,"session créée.\n");
 
             fprintf(stderr, "Exiting....  \n");
 
-#if AUDIO_STREAM
-            if (audioES)
-            {
-                Medium::close(audioES);
-            }
-#endif
             Medium::close(videoES);
         }
-#if AUDIO_STREAM
-
-#endif
-
 
     }
     Medium::close(rtspServer);

@@ -61,11 +61,9 @@ private:
     virtual u_int8_t const *quantizationTables(u_int8_t &precision, u_int16_t &length);
 
 private:
-#ifndef JPEG_TEST
 
     int initDevice(int fd);
 
-#endif
     struct buffer {
         void *start;
         size_t length;
@@ -77,16 +75,9 @@ private:
     int fFd;
     unsigned fTimePerFrame;
     struct timeval fLastCaptureTime;
-#ifndef JPEG_TEST
     struct buffer *fBuffers;
     unsigned int fNbuffers;
-#endif
     JpegFrameParser parser;
-
-#ifdef JPEG_TEST
-    unsigned char *jpeg_dat;
-    size_t jpeg_datlen;
-#endif
 
 
 };
