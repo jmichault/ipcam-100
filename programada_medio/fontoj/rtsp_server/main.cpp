@@ -295,13 +295,6 @@ int main(int argc, char **argv) {
         fprintf(stderr, "create Video source = %s \n", dev_name);
 
 
-        /* Determind which Class to use */
-        if (format == V4L2_PIX_FMT_H264)
-            videoES = H264_V4L2DeviceSource::createNew(*env, 0, useThread);
-        else {
-            //videoES = V4L2DeviceSource::createNew(*env, 0, useThread);
-            //mjpeg_qp
-        }
 
         /*  check if create a Device source success */
         if (videoES != NULL) {

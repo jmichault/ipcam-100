@@ -37,8 +37,6 @@ LDFLAGS += -lssl -ltls -lcrypto
 
 SRC_OBJ	= main.o 
 SRC_OBJ	+=ServerMediaSubsession.o
-SRC_OBJ	+=H264_V4l2DeviceSource.o V4l2DeviceSource.o
-SRC_OBJ	+=AlsaDeviceSource.o
 SRC_OBJ	+=ImpJpegVideoDeviceSource.o
 SRC_OBJ	+=JpegFrameParser.o
 SRC_OBJ	+=imp_komuna.o imp_vars_h264.o
