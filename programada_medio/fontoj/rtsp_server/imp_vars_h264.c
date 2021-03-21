@@ -176,7 +176,7 @@ IMPEncoderCHNAttr channel_attrs[2] =
             .maxHSkipType = 0,
          },
       },
-    .xW=ELIGO_HEIGHT , .xH = 576,
+    .xW=ELIGO_WIDTH_DUA , .xH = ELIGO_HEIGHT_DUA,
   },
 };
 

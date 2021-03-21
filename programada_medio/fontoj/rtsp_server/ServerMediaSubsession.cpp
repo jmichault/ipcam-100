@@ -20,22 +20,20 @@
 
 // project
 #include "ServerMediaSubsession.h"
-#include "V4l2DeviceSource.h"
-#include "MJPEGVideoSource.h"
 #include "ImpJpegVideoDeviceSource.h"
 #define SAMPLE_RATE 8000 // 8K
 
 // ---------------------------------
 //   BaseServerMediaSubsession
 // ---------------------------------
-FramedSource *BaseServerMediaSubsession::createSource(UsageEnvironment &env, int format) {
+FramedSource *BaseServerMediaSubsession::createSource(UsageEnvironment &env, int canal) {
     FramedSource *source = NULL;
-   source = ImpJpegVideoDeviceSource::createNew(env, 0);
+   source = ImpJpegVideoDeviceSource::createNew(env, canal);
     return source;
 }
 
 RTPSink *BaseServerMediaSubsession::createSink(UsageEnvironment &env, Groupsock *rtpGroupsock,
-                                               unsigned char rtpPayloadTypeIfDynamic, int format) {
+                                               unsigned char rtpPayloadTypeIfDynamic, int canal) {
     RTPSink *videoSink = NULL;
             videoSink = JPEGVideoRTPSink::createNew(env, rtpGroupsock);
     return videoSink;
@@ -45,20 +43,19 @@ RTPSink *BaseServerMediaSubsession::createSink(UsageEnvironment &env, Groupsock 
 //    ServerMediaSubsession for Unicast
 // -----------------------------------------
 UnicastServerMediaSubsession *
-UnicastServerMediaSubsession::createNew(UsageEnvironment &env, int format) {
-    return new UnicastServerMediaSubsession(env, format);
+UnicastServerMediaSubsession::createNew(UsageEnvironment &env, int canal) {
+    return new UnicastServerMediaSubsession(env, canal);
 }
 
 FramedSource *UnicastServerMediaSubsession::createNewStreamSource(unsigned clientSessionId, unsigned &estBitrate) {
-    fprintf(stderr,"UnicastServerMediaSubsession::createNewStreamSource\n");
     estBitrate = 50;
-    return createSource(envir(), m_format);
+    return createSource(envir(), m_canal);
 }
 
 
 RTPSink *UnicastServerMediaSubsession::createNewRTPSink(Groupsock *rtpGroupsock, unsigned char rtpPayloadTypeIfDynamic,
                                                         FramedSource *inputSource) {
     //printf("UnicastServerMediaSubsession::createNewRTPSink\n");
-    return createSink(envir(), rtpGroupsock, rtpPayloadTypeIfDynamic, m_format);
+    return createSink(envir(), rtpGroupsock, rtpPayloadTypeIfDynamic, m_canal);
 }
 

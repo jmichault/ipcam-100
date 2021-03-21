@@ -30,39 +30,38 @@
 #include <sys/mman.h>
 #include <sys/ioctl.h>
 #include "../rtspserver-tools/sharedmem.h"
-//#include <sys/ipc.h>
-//#include <sys/shm.h>
 
 #include "JpegFrameParser.hh"
 #include <algorithm>
 #include <iostream>
 
+#define KOMUNA_KANALO 0
+
 ImpJpegVideoDeviceSource *
 ImpJpegVideoDeviceSource::createNew(UsageEnvironment &env,
-                                    int params) {
+                                    int canal) {
     try {
-        return new ImpJpegVideoDeviceSource(env, params);
+        return new ImpJpegVideoDeviceSource(env, canal);
     } catch (DeviceException) {
         return NULL;
     }
 }
 
-char * bufferStream=NULL;
+unsigned char * bufferStream=NULL;
 
 int ImpJpegVideoDeviceSource::initDevice(int canal) {
-    fprintf(stderr, "début Init Device...\n");
-    //impEncoder = new ImpEncoder(params);
-  bufferStream = (char *) malloc(fs_chn_attrs[0].crop.width * fs_chn_attrs[0].crop.height);
-    unsigned timePerFrame = 1000000 * fs_chn_attrs[0].outFrmRateDen /  fs_chn_attrs[0].outFrmRateNum;
+    fMaxSize = fs_chn_attrs[canal].crop.width * fs_chn_attrs[canal].crop.height;
+    bufferStream = (unsigned char *) malloc(fMaxSize);
+    unsigned timePerFrame = 1000000 * fs_chn_attrs[canal].outFrmRateDen /  fs_chn_attrs[canal].outFrmRateNum;
     fTimePerFrame = timePerFrame;
-    fprintf(stderr, "fin Init Device...\n");
     return 0;
 }
 
 ImpJpegVideoDeviceSource
-::ImpJpegVideoDeviceSource(UsageEnvironment &env, int params)
-        : JPEGVideoSource(env), fFd(0) {
-    if (initDevice(params)) {
+::ImpJpegVideoDeviceSource(UsageEnvironment &env, int canal)
+        : JPEGVideoSource(env)  {
+    m_canal=canal;
+    if (initDevice(canal)) {
         throw DeviceException();
     }
 }
@@ -83,17 +82,16 @@ void ImpJpegVideoDeviceSource::doGetNextFrame() {
     framecount++;
     fPresentationTime = fLastCaptureTime;
 
-    //int bytesRead = snap_jpeg();
     int bytesRead = 0;
 
     /* Polling JPEG Snap, set timeout as 1000msec */
-    int ret = IMP_Encoder_PollingStream(0, 1000);
+    int ret = IMP_Encoder_PollingStream(m_canal, 1000);
     if (ret >= 0)
     {
       IMPEncoderStream stream;
       /* Get JPEG Snap */
-      ret = IMP_Encoder_GetStream(0, &stream, 1);
-      if (ret >= 0) //bytesRead = save_stream(bufferStream, &stream);
+      ret = IMP_Encoder_GetStream(m_canal, &stream, 1);
+      if (ret >= 0) 
       {
         int nr_pack = stream.packCount;
         void *memoryAddress = (void *)bufferStream;
@@ -102,27 +100,43 @@ void ImpJpegVideoDeviceSource::doGetNextFrame() {
         {
           int packLen = stream.pack[i].length;
           memcpy(memoryAddress, (void *) stream.pack[i].virAddr, packLen);
-          memoryAddress = (void *) ((int) memoryAddress + packLen);
+          memoryAddress = (void *) ((char *) memoryAddress + packLen);
           bytesRead = bytesRead + packLen;
         }
 
       }
-      IMP_Encoder_ReleaseStream(0, &stream);
+      IMP_Encoder_ReleaseStream(m_canal, &stream);
     }
 
-
-    if (bytesRead > (int) fMaxSize) {
-        fprintf(stderr,
-                "WebcamJPEGDeviceSource::doGetNextFrame(): read maximum buffer size: %d bytes.  Frame may be truncated\n",
-                fMaxSize);
-    }
-    else
+    if(m_canal == KOMUNA_KANALO)
     {
+      // kopio al komuna memoro
+      SharedMem &sharedMem = SharedMem::instance();
+      sharedMem.copyImage(bufferStream,bytesRead);
+    }
+    fFrameSize =bytesRead;
+    if (parser.parse(bufferStream, bytesRead) == 0)
+    { // successful parsing
+      unsigned int datlen;
+      unsigned char const *dat;
+      dat = parser.scandata(datlen);
+      if(datlen > fMaxSize)
+      {
+        fprintf(stderr
+                ,"ImpJpegVideoDeviceSource::doGetNextFrame(): read maximum buffer size: %d bytes.  Frame may be truncated (%d).\n"
+		,fMaxSize,datlen);
+          memcpy(fTo, dat, fMaxSize);
+          fNumTruncatedBytes = bytesRead-fMaxSize;
+      }
+        else
+      {
+          memcpy(fTo, dat, datlen);
+      }
     }
 
 
 
-    fFrameSize = jpeg_to_rtp(fTo, bufferStream, bytesRead);
+
 
     // Switch to another task, and inform the reader that he has data:
     nextTask() = envir().taskScheduler().scheduleDelayedTask(0,
@@ -130,21 +144,6 @@ void ImpJpegVideoDeviceSource::doGetNextFrame() {
 }
 
 
-size_t ImpJpegVideoDeviceSource::jpeg_to_rtp(void *pto, void *pfrom, size_t len) {
-    unsigned char *to = (unsigned char *) pto, *from = (unsigned char *) pfrom;
-    unsigned int datlen;
-    unsigned char const *dat;
-    if (parser.parse(from, len) == 0) { // successful parsing
-        dat = parser.scandata(datlen);
-      // kopio al dividita memoro
-    SharedMem &sharedMem = SharedMem::instance();
-    sharedMem.copyImage(pfrom,len);
-        memcpy(to, dat, datlen);
-        to += datlen;
-        return datlen;
-    }
-    return 0;
-}
 
 u_int8_t const *ImpJpegVideoDeviceSource::quantizationTables(u_int8_t &precision, u_int16_t &length) {
     precision = parser.precision();

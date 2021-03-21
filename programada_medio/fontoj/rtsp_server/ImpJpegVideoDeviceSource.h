@@ -25,10 +25,6 @@
 
 #include <exception>
 
-#define MAX_JPEG_FILE_SZ 100000
-
-#define IMP_BUFFER_SIZE 200000
-
 class DeviceException : public std::exception {
 
 };
@@ -41,7 +37,7 @@ public:
 
 protected:
     ImpJpegVideoDeviceSource(UsageEnvironment &env,
-                             int params);
+                             int canal);
 
     // called only by createNew()
     virtual ~ImpJpegVideoDeviceSource();
@@ -61,22 +57,15 @@ private:
     virtual u_int8_t const *quantizationTables(u_int8_t &precision, u_int16_t &length);
 
 private:
+    int m_canal;
 
     int initDevice(int fd);
-
-    struct buffer {
-        void *start;
-        size_t length;
-    };
 
     size_t jpeg_to_rtp(void *to, void *from, size_t len);
 
 private:
-    int fFd;
     unsigned fTimePerFrame;
     struct timeval fLastCaptureTime;
-    struct buffer *fBuffers;
-    unsigned int fNbuffers;
     JpegFrameParser parser;
 
 

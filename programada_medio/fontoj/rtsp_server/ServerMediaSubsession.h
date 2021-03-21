@@ -27,35 +27,11 @@ class BaseServerMediaSubsession
 		BaseServerMediaSubsession() {};
 	
 	public:
-		static FramedSource* createSource(UsageEnvironment& env, int format);
+		static FramedSource* createSource(UsageEnvironment& env, int canal);
 		static RTPSink* createSink(UsageEnvironment& env, Groupsock * rtpGroupsock, unsigned char rtpPayloadTypeIfDynamic, int format);
 		
 	protected:
 
-};
-
-// -----------------------------------------
-//    ServerMediaSubsession for Multicast
-// -----------------------------------------
-class MulticastServerMediaSubsession : public PassiveServerMediaSubsession , public BaseServerMediaSubsession
-{
-	public:
-		static MulticastServerMediaSubsession* createNew(UsageEnvironment& env
-								, struct in_addr destinationAddress
-								, Port rtpPortNum, Port rtcpPortNum
-								, int ttl
-								, int format
-								);
-		
-	protected:
-		MulticastServerMediaSubsession( RTPSink* rtpSink, RTCPInstance* rtcpInstance) 
-				: PassiveServerMediaSubsession(*rtpSink, rtcpInstance), BaseServerMediaSubsession(), m_rtpSink(rtpSink) {};			
-
-		virtual char const* sdpLines() ;
-		
-	protected:
-		RTPSink* m_rtpSink;
-		std::string m_SDPLines;
 };
 
 // -----------------------------------------
@@ -64,17 +40,17 @@ class MulticastServerMediaSubsession : public PassiveServerMediaSubsession , pub
 class UnicastServerMediaSubsession : public OnDemandServerMediaSubsession , public BaseServerMediaSubsession
 {
 	public:
-		static UnicastServerMediaSubsession* createNew(UsageEnvironment& env, int format);
+		static UnicastServerMediaSubsession* createNew(UsageEnvironment& env, int canal);
 		
 	protected:
-		UnicastServerMediaSubsession(UsageEnvironment& env, int format)
-				: OnDemandServerMediaSubsession(env, False), m_format(format) {};
+		UnicastServerMediaSubsession(UsageEnvironment& env, int canal)
+				: OnDemandServerMediaSubsession(env, False), m_canal(canal) {};
 
 		virtual FramedSource* createNewStreamSource(unsigned clientSessionId, unsigned& estBitrate);
 		virtual RTPSink* createNewRTPSink(Groupsock* rtpGroupsock,  unsigned char rtpPayloadTypeIfDynamic, FramedSource* inputSource);		
 					
 	protected:
-		int m_format;
+		int m_canal;
 
 };
 
