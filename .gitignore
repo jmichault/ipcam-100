@@ -4,8 +4,7 @@ karto.zip
 *.tar
 *.swp
 toto*
-karto.jco
-karto.dafang
+karto.*
 programada_medio/fontoj/live
 programada_medio/fontoj/*/*.o
 programada_medio/fontoj/*/*/*.o

@@ -1,13 +1,13 @@
 #!/bin/sh
 export LD_LIBRARY_PATH=${SDCARD}/lib/:/lib/:/ipc/lib/
-CONFIGPATH="/opt/media/sdc/config"
+CONFIGPATH="${SDCARD}/config"
 ## Load some common functions:
-. /opt/media/sdc/scripts/common_functions.sh
+. ${SDCARD}/scripts/common_functions.sh
 
 ## Create a certificate for the webserver
 if [ ! -f $CONFIGPATH/lighttpd.pem ]; then
     export OPENSSL_CONF=$CONFIGPATH/openssl.cnf
-    /opt/media/sdc/bin/openssl req -new -x509 -keyout $CONFIGPATH/lighttpd.pem -out $CONFIGPATH/lighttpd.pem -days 365 -nodes -subj "/C=DE/ST=Mars/L=HellasPlanitia/O=.../OU=.../CN=.../emailAddress=..."
+    ${SDCARD}/bin/openssl req -new -x509 -keyout $CONFIGPATH/lighttpd.pem -out $CONFIGPATH/lighttpd.pem -days 365 -nodes -subj "/C=DE/ST=Mars/L=HellasPlanitia/O=.../OU=.../CN=.../emailAddress=..."
     chmod 400 $CONFIGPATH/lighttpd.pem
 fi
 
