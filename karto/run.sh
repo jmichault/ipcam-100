@@ -66,9 +66,10 @@ webrtc_profile.ini
 END
 echo "Created etc directory on sdcard" >> $LOGPATH
 
+if [ ! -d /opt/root ]; then mkdir /opt/root; fi
 mount -o bind ${SDCARD}/bin/busybox /bin/busybox
 echo "Bind mounted ${SDCARD}/bin/busybox to /bin/busybox" >> $LOGPATH
-mount -o bind ${SDCARD}/root /root
+mount -o bind /opt/root /root
 echo "Bind mounted ${SDCARD}/root to /root" >> $LOGPATH
 mount -o bind ${SDCARD}/etc /etc
 echo "Bind mounted ${SDCARD}/etc to /etc" >> $LOGPATH
@@ -95,6 +96,12 @@ EOF
   echo "Created cron directories and standard interval jobs" >> $LOGPATH
 fi
 ${SDCARD}/bin/busybox crond -L ${SDCARD}/log/crond.log -c ${SDCARD}/config/cron/crontabs
+
+# krei linkoj por ssh kaj scp
+if [ ! -d /opt/bin ] ; then mkdir /opt/bin; fi
+for x in ssh scp dbclient ; do
+  if [ ! -L /opt/bin/$x ] ; then ln -s ${SDCARD}/bin/dropbearmulti /opt/bin/$x ; fi
+done
 
 ## Set Hostname
 if [ ! -f $CONFIGPATH/hostname.conf ]; then

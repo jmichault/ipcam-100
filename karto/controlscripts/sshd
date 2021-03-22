@@ -1,0 +1,68 @@
+#!/bin/sh
+. /etc/profile >/dev/null
+SERVICE_NAME="sshd Server"
+PIDFILE="/var/run/dropbear.pid"
+LOGDIR="${SDCARD}/log"
+LOGPATH="$LOGDIR/sshd.log"
+export LD_LIBRARY_PATH="${SDCARD}/lib:/thirdlib:/system/lib/:/ipc/lib/"
+
+status()
+{
+  pid="$(cat "$PIDFILE" 2>/dev/null)"
+  if [ "$pid" ]; then
+    # Prints PID: $pid if exists and returns 0(no error) else returns 1(error condition)
+    kill -0 "$pid" >/dev/null && echo "PID: $pid" || return 1
+  fi
+}
+
+start()
+{
+  if [ "$(status)" != "" ]; then
+    echo "A sshd is already running, please stop it or reboot"
+  else
+    if [ ! -f /opt/media/sdc/config/dropbear_rsa_host_key ]
+    then
+      echo "Generating rsa key for sshd"
+      echo "======= Generating rsa key for START ==========" >> "$LOGPATH"
+      echo "${SDCARD}/bin/dropbearmulti dropbearkey -t rsa -f /opt/media/sdc/config/dropbear_rsa_host_key" >> "$LOGPATH"
+      ${SDCARD}/bin/dropbearmulti dropbearkey -t rsa -f /opt/media/sdc/config/dropbear_rsa_host_key >> "$LOGPATH" 2>&1
+    fi
+    if [ ! -f /opt/media/sdc/config/dropbear_dss_host_key ]
+    then
+      echo "Generating dss key for sshd"
+      echo "======= Generating dss key for START ==========" >> "$LOGPATH"
+      echo "${SDCARD}/bin/dropbearmulti dropbearkey -t dss -f /opt/media/sdc/config/dropbear_dss_host_key" >> "$LOGPATH"
+      ${SDCARD}/bin/dropbearmulti dropbearkey -t dss -f /opt/media/sdc/config/dropbear_dss_host_key >> "$LOGPATH" 2>&1
+    fi
+    if [ ! -f /opt/media/sdc/config/dropbear_ecdsa_host_key ]
+    then
+      echo "Generating ecdsa key for sshd"
+      echo "======= Generating ecdsa key for START ==========" >> "$LOGPATH"
+      echo "${SDCARD}/bin/dropbearmulti dropbearkey -t ecdsa -f /opt/media/sdc/config/dropbear_ecdsa_host_key" >> "$LOGPATH"
+      ${SDCARD}/bin/dropbearmulti dropbearkey -t ecdsa -f /opt/media/sdc/config/dropbear_ecdsa_host_key >> "$LOGPATH" 2>&1
+    fi
+    echo "Starting sshd"
+    echo "================== START ===============" >> "$LOGPATH"
+    echo "${SDCARD}/bin/dropbearmulti dropbear " >> "$LOGPATH"
+    ${SDCARD}/bin/dropbearmulti dropbear 2>> "$LOGPATH" >> "$LOGPATH" &
+    echo "$!" > "$PIDFILE"
+  fi
+}
+
+stop()
+{
+  pid="$(cat "$PIDFILE" 2>/dev/null)"
+  if [ "$pid" ]; then
+    kill "$pid"
+    rm "$PIDFILE" 1> /dev/null 2>&1
+  fi
+}
+
+if [ $# -eq 0 ]; then
+  start
+else
+  case $1 in start|stop|status)
+    $1
+    ;;
+  esac
+fi
