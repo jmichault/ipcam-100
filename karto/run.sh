@@ -30,9 +30,8 @@ init_gpio 81
 (${SDCARD}/bin/motor -p;${SDCARD}/bin/motor -x $X0 -y $Y0 -r $RAPIDECO) &
 
 ## Create root user home directory and etc directory on sdcard:
-if [ ! -d ${SDCARD}/root ]; then
-  mkdir ${SDCARD}/root
-  echo 'PATH=${SDCARD}/bin:$PATH' > ${SDCARD}/root/.profile
+if [ ! -d /opt/root ]; then
+  mkdir /opt/root
   echo "Created root user home directory" >> $LOGPATH
 fi
 mkdir -p ${SDCARD}/etc
@@ -40,6 +39,9 @@ if [ ! -f "${SDCARD}/etc/profile" ]
 then
     cp -fRL "/etc/profile" ${SDCARD}/etc
     echo "
+export SDCARD=/opt/media/mmcblk0p1
+export PATH=${SDCARD}/bin:$PATH
+export LD_LIBRARY_PATH=\"${SDCARD}/lib:/lib/:/ipc/lib/\"
 export CONFIGPATH=\"${SDCARD}/config\"
 export LOGDIR=\"${SDCARD}/log\"
 export LOGPATH=\"$LOGDIR/startup.log\"

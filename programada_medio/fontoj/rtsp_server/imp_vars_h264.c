@@ -43,8 +43,8 @@
 #define SENSOR_HEIGHT     1080
 
 // apriora dimensio de la unua rivereto
-#define ELIGO_WIDTH   1280
-#define ELIGO_HEIGHT   720
+#define ELIGO_WIDTH   1920
+#define ELIGO_HEIGHT  1080
 
 // apriora dimensio de la dua rivereto
 #define ELIGO_WIDTH_DUA   640
@@ -69,7 +69,7 @@ IMPFSChnAttr fs_chn_attrs[3]=
    .picWidth = ELIGO_WIDTH , .picHeight = ELIGO_HEIGHT ,
    .pixFmt = PIX_FMT_NV12  ,
    .crop = { .enable = 0 , .left = 0 , .top = 0 , .width = SENSOR_WIDTH , .height = SENSOR_HEIGHT } ,
-   .scaler = { .enable = 1 , .outwidth = ELIGO_WIDTH , .outheight = ELIGO_HEIGHT } ,
+   .scaler = { .enable = 0 , .outwidth = ELIGO_WIDTH , .outheight = ELIGO_HEIGHT } ,
    .outFrmRateNum = 25 , .outFrmRateDen = 1 ,
    .nrVBs = 2 ,
    .type = FS_PHY_CHANNEL ,

@@ -21,9 +21,12 @@ apply_patch()
         if [ ! -f $WIFI_USER_CONFIG ]; then
             cp -f $WIFI_SYSTEM_CONFIG $WIFI_USER_CONFIG
         fi
-        echo "SUCCESS install patch! Reboot in 3 seconds..."
+        echo "SUCCESS install patch!"
         sleep 3
-        reboot -f
+        echo "EXECUTING application"
+        ./run.sh
+	echo "PLEASE change root password :"
+	passwd
     fi
 }
 
@@ -44,4 +47,5 @@ else
         esac
     done
 fi
+
 
