@@ -18,6 +18,7 @@
 #include <GroupsockHelper.hh> // for "weHaveAnIPv*Address()"
 #include "DynamicRTSPServer.hh"
 #include "imp_komuna.h"
+#include "agordolegilo.h"
 
 
 int main(int argc, char** argv) {
@@ -27,16 +28,135 @@ int main(int argc, char** argv) {
   UsageEnvironment* env = BasicUsageEnvironment::createNew(*scheduler);
 
   UserAuthenticationDatabase* authDB = NULL;
-#ifdef ACCESS_CONTROL
   // To implement client access control to the RTSP server, do the following:
   authDB = new UserAuthenticationDatabase;
-  authDB->addUserRecord("username1", "password1"); // replace these with real strings
+  authDB->addUserRecord("admin", "ismart21"); // replace these with real strings
   // Repeat the above with each <username>, <password> that you wish to allow
   // access to the server.
-#endif
-  // ŝanĝas agordojn de kodigilo al mjpg
-  channel_attrs[1].encAttr.enType=PT_JPEG;
-  channel_attrs[1].encAttr.profile=0;
+
+  agordoLegilo();
+  if(KanAgordo[0].picWidth != fs_chn_attrs[0].picWidth
+	|| KanAgordo[0].picHeight != fs_chn_attrs[0].picHeight)
+  {
+    fs_chn_attrs[0].picWidth = KanAgordo[0].picWidth;
+    fs_chn_attrs[0].picHeight = KanAgordo[0].picHeight;
+    if(KanAgordo[0].picWidth != 1920 || KanAgordo[0].picHeight != 1080 ) // sensorwidth , sensorheight
+      fs_chn_attrs[0].scaler.enable=1;
+    else
+      fs_chn_attrs[0].scaler.enable=0;
+    fs_chn_attrs[0].scaler.outwidth = KanAgordo[0].picWidth;
+    fs_chn_attrs[0].scaler.outheight = KanAgordo[0].picHeight;
+    channel_attrs[0].encAttr.picWidth = KanAgordo[0].picWidth;
+    channel_attrs[0].encAttr.picHeight = KanAgordo[0].picHeight;
+    channel_attrs[0].xW = KanAgordo[0].picWidth;
+    channel_attrs[0].xH = KanAgordo[0].picHeight;
+  }
+  if(KanAgordo[1].picWidth != fs_chn_attrs[1].picWidth
+	|| KanAgordo[1].picHeight != fs_chn_attrs[1].picHeight)
+  {
+    fs_chn_attrs[1].picWidth = KanAgordo[1].picWidth;
+    fs_chn_attrs[1].picHeight = KanAgordo[1].picHeight;
+    if(KanAgordo[1].picWidth != 1920 || KanAgordo[1].picHeight != 1080 ) // sensorwidth , sensorheight
+      fs_chn_attrs[1].scaler.enable=1;
+    else
+      fs_chn_attrs[0].scaler.enable=0;
+    fs_chn_attrs[1].scaler.outwidth = KanAgordo[1].picWidth;
+    fs_chn_attrs[1].scaler.outheight = KanAgordo[1].picHeight;
+    channel_attrs[1].encAttr.picWidth = KanAgordo[1].picWidth;
+    channel_attrs[1].encAttr.picHeight = KanAgordo[1].picHeight;
+    channel_attrs[1].xW = KanAgordo[1].picWidth;
+    channel_attrs[1].xH = KanAgordo[1].picHeight;
+  }
+  if (SenAgordo.cbus_type==1) sensor_info.cbus_type = TX_SENSOR_CONTROL_INTERFACE_I2C;
+  else if (SenAgordo.cbus_type==2) sensor_info.cbus_type = TX_SENSOR_CONTROL_INTERFACE_SPI;
+  if (SenAgordo.name[0])
+  {
+    strncpy(sensor_info.name,SenAgordo.name,32);
+    strncpy(sensor_info.i2c.type,SenAgordo.name,32);
+  }
+  if (SenAgordo.addr)
+  {
+    if ( sensor_info.cbus_type == TX_SENSOR_CONTROL_INTERFACE_I2C)
+      sensor_info.i2c.addr = SenAgordo.addr;
+    else
+      sensor_info.spi.bus_num = SenAgordo.addr;
+  }
+  fs_chn_attrs[0].outFrmRateNum = KanAgordo[0].fpnum;
+  channel_attrs[0].rcAttr.outFrmRate.frmRateNum = KanAgordo[0].fpnum;
+  fs_chn_attrs[1].outFrmRateNum = KanAgordo[1].fpnum;
+  channel_attrs[1].rcAttr.outFrmRate.frmRateNum = KanAgordo[1].fpnum;
+  if (KanAgordo[0].format <0)
+  { // ŝanĝas agordojn de kodigilo al mjpg
+    channel_attrs[0].encAttr.enType=PT_JPEG;
+    channel_attrs[0].encAttr.profile=0;
+  }
+  else
+  {
+    channel_attrs[0].encAttr.enType=PT_H264;
+    channel_attrs[0].encAttr.profile=2;
+    channel_attrs[0].rcAttr.attrRcMode.rcMode = (IMPEncoderRcMode)KanAgordo[0].format;
+    channel_attrs[0].rcAttr.attrRcMode.attrH264Vbr.maxQp = KanAgordo[0].maxQP;
+    if (   channel_attrs[0].rcAttr.attrRcMode.rcMode == ENC_RC_MODE_SMART
+             || channel_attrs[0].rcAttr.attrRcMode.rcMode == ENC_RC_MODE_VBR)
+    {
+      channel_attrs[0].rcAttr.attrRcMode.attrH264Vbr.minQp = KanAgordo[0].minQP;
+      channel_attrs[0].rcAttr.attrRcMode.attrH264Vbr.maxBitRate = KanAgordo[0].bitrate;
+      channel_attrs[0].rcAttr.attrRcMode.attrH264Vbr.staticTime = 2;
+      channel_attrs[0].rcAttr.attrRcMode.attrH264Vbr.iBiasLvl = 0;
+      channel_attrs[0].rcAttr.attrRcMode.attrH264Vbr.changePos = 80;
+      channel_attrs[0].rcAttr.attrRcMode.attrH264Vbr.qualityLvl = 2;
+      channel_attrs[0].rcAttr.attrRcMode.attrH264Vbr.frmQPStep = 3;
+      channel_attrs[0].rcAttr.attrRcMode.attrH264Vbr.gopQPStep = 15;
+      channel_attrs[0].rcAttr.attrRcMode.attrH264Vbr.gopRelation = 0;
+
+    }
+    else if (channel_attrs[0].rcAttr.attrRcMode.rcMode == ENC_RC_MODE_CBR)
+    {
+      channel_attrs[0].rcAttr.attrRcMode.attrH264Cbr.minQp = KanAgordo[0].minQP;
+      channel_attrs[0].rcAttr.attrRcMode.attrH264Cbr.outBitRate = KanAgordo[0].bitrate;
+      channel_attrs[0].rcAttr.attrRcMode.attrH264Cbr.iBiasLvl = 0;
+      channel_attrs[0].rcAttr.attrRcMode.attrH264Cbr.frmQPStep = 3;
+      channel_attrs[0].rcAttr.attrRcMode.attrH264Cbr.gopQPStep = 15;
+      channel_attrs[0].rcAttr.attrRcMode.attrH264Cbr.adaptiveMode = 1;
+      channel_attrs[0].rcAttr.attrRcMode.attrH264Cbr.gopRelation = 0;
+    }
+  }
+  if (KanAgordo[1].format <0)
+  { // ŝanĝas agordojn de kodigilo al mjpg
+    channel_attrs[1].encAttr.enType=PT_JPEG;
+    channel_attrs[1].encAttr.profile=0;
+  }
+  else
+  {
+    channel_attrs[1].encAttr.enType=PT_H264;
+    channel_attrs[1].encAttr.profile=2;
+    channel_attrs[1].rcAttr.attrRcMode.rcMode = (IMPEncoderRcMode)KanAgordo[1].format;
+    channel_attrs[1].rcAttr.attrRcMode.attrH264Vbr.maxQp = KanAgordo[1].maxQP;
+    if (   channel_attrs[1].rcAttr.attrRcMode.rcMode == ENC_RC_MODE_SMART
+             || channel_attrs[1].rcAttr.attrRcMode.rcMode == ENC_RC_MODE_VBR)
+    {
+      channel_attrs[1].rcAttr.attrRcMode.attrH264Vbr.minQp = KanAgordo[1].minQP;
+      channel_attrs[1].rcAttr.attrRcMode.attrH264Vbr.maxBitRate = KanAgordo[1].bitrate;
+      channel_attrs[1].rcAttr.attrRcMode.attrH264Vbr.staticTime = 2;
+      channel_attrs[1].rcAttr.attrRcMode.attrH264Vbr.iBiasLvl = 0;
+      channel_attrs[1].rcAttr.attrRcMode.attrH264Vbr.changePos = 80;
+      channel_attrs[1].rcAttr.attrRcMode.attrH264Vbr.qualityLvl = 2;
+      channel_attrs[1].rcAttr.attrRcMode.attrH264Vbr.frmQPStep = 3;
+      channel_attrs[1].rcAttr.attrRcMode.attrH264Vbr.gopQPStep = 15;
+      channel_attrs[1].rcAttr.attrRcMode.attrH264Vbr.gopRelation = 0;
+
+    }
+    else if (channel_attrs[1].rcAttr.attrRcMode.rcMode == ENC_RC_MODE_CBR)
+    {
+      channel_attrs[1].rcAttr.attrRcMode.attrH264Cbr.minQp = KanAgordo[1].minQP;
+      channel_attrs[1].rcAttr.attrRcMode.attrH264Cbr.outBitRate = KanAgordo[1].bitrate;
+      channel_attrs[1].rcAttr.attrRcMode.attrH264Cbr.iBiasLvl = 0;
+      channel_attrs[1].rcAttr.attrRcMode.attrH264Cbr.frmQPStep = 3;
+      channel_attrs[1].rcAttr.attrRcMode.attrH264Cbr.gopQPStep = 15;
+      channel_attrs[1].rcAttr.attrRcMode.attrH264Cbr.adaptiveMode = 1;
+      channel_attrs[1].rcAttr.attrRcMode.attrH264Cbr.gopRelation = 0;
+    }
+  }
   // init T21
   imp_init();
 
