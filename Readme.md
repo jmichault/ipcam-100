@@ -38,11 +38,11 @@ Kio funkcias en alternativa firmvaro:
 * ŝanĝo de pasvorto por http-aliro
 * blua kaj IR LED kontrolo
 * FTP servilo
+* Video-Agordoj
+* duaranga videorivereto
 
 
 Kio ne funkcias en alternativa firmvaro:
-* Video-Agordoj
-* duaranga videorivereto
 * sondosistemo
 * OSD
 * ĝisdatigo de firmvaro
@@ -71,7 +71,8 @@ Instalado alternativan firmvaron :
 * Faru "killall -9 auto_run.sh" por eviti fermi la konekton.
 * Faru "cd /opt/media/mmcblk0p1;./install.sh"
 * Vi povas konekti al la URL "https://IP" (uzanto admin, pasvorto jco66688).
-* ffplay -i rtsp://IP_adreso/media/stream1
+* ffplay -i rtsp://admin:ismart21@IP_adreso/media/stream1
+* ffplay -i rtsp://admin:ismart21@IP_adreso/media/stream2
 
 Malinstalado alternativan firmvaron :
 * Konektu al la kamerao per "telnet IP 9527" (uzanto root, pasvorto ismart12).
