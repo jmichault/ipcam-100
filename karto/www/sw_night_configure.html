@@ -395,7 +395,7 @@ Please stop autonight detection service if its running.
         <td><table class='mode'>
             <tr><td>Commandline to use:</td>
             <td><input type="text" id="command_line" disabled=true value="-S" size="60" style="text-align:left;"></td></tr>
-            <tr><td colspan="2"><input style="display: block; text-align: center; margin: auto;" class='button is-primary' id="sw_night_submit" type="submit" value="Save"></button></td></tr>
+            <tr><td colspan="2"><input style="display: block; text-align: center; margin: auto;" class='button is-primary' id="sw_night_submit" type="submit" value="Save"></td></tr>
         </table></td>
     </tr>
     </table>
@@ -425,7 +425,7 @@ Please stop autonight detection service if its running.
                 </table></td>
                 <td><input type="text" id="eq1_user_exposure" value=1200000  size="8"></td>
                 <td allign='center' class='code_text'>enable night mode </td>
-            </td></tr>
+            </tr>
         </table>
 
     <br>
@@ -442,16 +442,16 @@ Please stop autonight detection service if its running.
                         <td><table border='0'>
                             <tr><td>  <input type="text" id="iridix_eq2" disabled=true value=10 size="3">  </td></tr>
                             <tr border='1' ><td allign='center' class='code_text'>Iridix &lt; &MediumSpace; </td></tr>
-                        </td></table>
+                        </table></td>
                         <td><input type="text" id="eq2_user_iridix" value=14 size="3"></td>
-                        <td><td class='code_text'> &ThinSpace; then increment count</td>
-                </tr></table></td>
-            </td></tr>
+                        <td><td class='code_text'> &ThinSpace; then increment count</td></td>
+                </tr></tr></table></td>
+            </tr>
             <tr><td colspan="3"></td>
                 <td><table>
                     <tr><td><input type="text" id="count_eq2" disabled=true value=0 size="2"></td></tr>
-                    <tr><td class='code_text'>if  count &gt;  <input type="text" id="eq2_count" value=10 size="3"  class='code_text'> switch to day mode  </tr>
-                    </table></td></td>
+                    <tr><td class='code_text'>if  count &gt;  <input type="text" id="eq2_count" value=10 size="3"  class='code_text'> switch to day mode  </td></tr>
+                    </table></td>
             </tr>
     </table>
     <br>
@@ -468,16 +468,17 @@ Please stop autonight detection service if its running.
                         <td><table border='0'>
                             <tr><td class='code_text'>  <input type="text" id="iridix_eq3" disabled=true value=10 size="3">  </td></tr>
                             <tr><td allign='center' class='code_text'>Iridix &gt; &MediumSpace;</td></tr>
-                        </td></table>
+                        </table></td>
                         <td class='code_text'><input type="text" id="eq3_user_iridix" value=17 size="3"></td>
                         <td class='code_text'> &ThinSpace; then increment count</td>
+                    </tr>
                 </tr></table></td>
-            </td></tr>
+            </tr>
             <tr><td colspan="3"></td>
                 <td><table>
                     <tr><td><input type="text" id="count_eq3" disabled=true value=0 size="2"></td></tr>
-                    <tr><td class='code_text'>if  count &gt;  <input type="text" id="eq3_count" value=8 size="3"  class='code_text'> switch to day mode  </tr>
-                    </table></td></td>
+                    <tr><td class='code_text'>if  count &gt;  <input type="text" id="eq3_count" value=8 size="3"  class='code_text'> switch to day mode  </td></tr>
+                </table></td>
             </tr>
         </table>
     <br>

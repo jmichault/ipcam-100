@@ -3,7 +3,7 @@
 
 <head>
     <meta charset=utf-8 />
-    <title>T21 Hacks</title>
+    <title class="lang" data-lang="T21 Kodumoj"></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSS Framework -->
@@ -177,7 +177,7 @@
     <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="container">
             <div class="navbar-brand">
-                <a class="navbar-item" href="." id="title">T21 Hacks</a>
+                <a class="navbar-item" href="." id="title"><div class="lang" data-lang="T21 Kodumoj"></div></a>
                 <a id="navbar_burger" role="button" class="navbar-burger" data-target="nav_menu" aria-label="menu" aria-expanded="false">
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
@@ -188,39 +188,39 @@
                 <!-- left menu -->
                 <div class="navbar-start" id="common_nav">
                     <div class="navbar-item has-dropdown is-hoverable">
-                        <span class="navbar-link">Status</span>
+                        <span class="navbar-link"><div class="lang" data-lang="Stato"></div></span>
                         <div class="navbar-dropdown is-boxed">
-                            <a id="status_overview" class="navbar-item onpage" href="javascript: void(0)" data-target="cgi-bin/status_overview.cgi">Overview</a>
-                            <a id="logs" class="navbar-item onpage" href="javascript: void(0)" data-target="logs.html">Logs</a>
+                            <a id="status_overview" class="navbar-item onpage" href="javascript: void(0)" data-target="cgi-bin/status_overview.cgi"><div class="lang" data-lang="Superrigardo"></div></a>
+                            <a id="logs" class="navbar-item onpage" href="javascript: void(0)" data-target="logs.html"><div class="lang" data-lang="Protokoloj"></div></a>
                         </div>
                     </div>
                     <div class="navbar-item has-dropdown is-hoverable">
-                        <span class="navbar-link">System</span>
+                        <span class="navbar-link"><div class="lang" data-lang="Sistemo"></div></span>
                         <div class="navbar-dropdown is-boxed">
-                            <a id="system" class="navbar-item onpage" href="javascript: void(0)" data-target="cgi-bin/system_system.cgi">System</a>
-                            <a id="admin" class="navbar-item onpage" href="javascript: void(0)" data-target="cgi-bin/system_admin.cgi">Administration</a>
-                            <a id="videoconfig" class="navbar-item onpage" href="javascript: void(0)" data-target="rtsp.html">Video</a>
-                            <a id="audioconfig" class="navbar-item onpage" href="javascript: void(0)" data-target="cgi-bin/system_audio.cgi">Audio</a>
-                            <a id="osdconfig" class="navbar-item onpage" href="javascript: void(0)" data-target="cgi-bin/system_osd.cgi">OSD</a>
-                            <a id="ptconfig" class="navbar-item onpage" href="javascript: void(0)" data-target="cgi-bin/system_pt.cgi">Pan / Tilt</a>
-                            <a id="ledconfig" class="navbar-item onpage" href="javascript: void(0)" data-target="cgi-bin/system_led.cgi">LED configuration</a>
-                            <a id="update" class="navbar-item onpage" href="javascript: void(0)" data-target="update.html">Update</a>
-                            <a class="navbar-item prompt" href="javascript: void(0)" data-message="Are you sure you wish to reboot?" data-target="cgi-bin/action.cgi?cmd=reboot">Reboot</a>
-                            <a class="navbar-item prompt" href="javascript: void(0)" data-message="Are you sure you wish to shutdown?" data-target="cgi-bin/action.cgi?cmd=shutdown">Shutdown</a>
+                            <a id="system" class="navbar-item onpage" href="javascript: void(0)" data-target="cgi-bin/system_system.cgi"><div class="lang" data-lang="Sistemo"></div></a>
+                            <a id="admin" class="navbar-item onpage" href="javascript: void(0)" data-target="cgi-bin/system_admin.cgi"><div class="lang" data-lang="Pasvortoj"></div></a>
+                            <a id="videoconfig" class="navbar-item onpage" href="javascript: void(0)" data-target="rtsp.html"><div class="lang" data-lang="RTSP Agordoj"></div></a>
+                            <a id="audioconfig" class="navbar-item onpage" href="javascript: void(0)" data-target="cgi-bin/system_audio.cgi"><div class="lang" data-lang="Sono"></div></a>
+                            <a id="osdconfig" class="navbar-item onpage" href="javascript: void(0)" data-target="cgi-bin/system_osd.cgi"><div class="lang" data-lang="OSD"></div></a>
+                            <a id="ptconfig" class="navbar-item onpage" href="javascript: void(0)" data-target="cgi-bin/system_pt.cgi"><div class="lang" data-lang="Pan/Tilt"></div></a>
+                            <a id="ledconfig" class="navbar-item onpage" href="javascript: void(0)" data-target="cgi-bin/system_led.cgi"><div class="lang" data-lang="LED agordoj"></div></a>
+                            <a id="update" class="navbar-item onpage" href="javascript: void(0)" data-target="update.html"><div class="lang" data-lang="Ĝisdatigi"></div></a>
+                            <a class="navbar-item prompt" href="javascript: void(0)" data-message="Are you sure you wish to reboot?" data-target="cgi-bin/action.cgi?cmd=reboot"><div class="lang" data-lang="Restartigi"></div></a>
+                            <a class="navbar-item prompt" href="javascript: void(0)" data-message="Are you sure you wish to shutdown?" data-target="cgi-bin/action.cgi?cmd=shutdown"><div class="lang" data-lang="Malŝalti"></div></a>
                         </div>
                     </div>
                     <div class="navbar-item has-dropdown is-hoverable">
-                        <span class="navbar-link">Services</span>
+                        <span class="navbar-link"><div class="lang" data-lang="Servoj"></div></span>
                         <div class="navbar-dropdown is-boxed">
-                            <a id="scripts" class="navbar-item onpage" href="javascript: void(0)" data-target="cgi-bin/scripts.cgi">Services</a>
-                            <a id="configmotion" class="navbar-item onpage" href="javascript: void(0)" data-target="configmotion.html">Motion Detection</a>
-                            <a id="sw_night" class="navbar-item onpage" href="javascript: void(0)" data-target="sw_night_configure.html">SW night configuration</a>
+                            <a id="scripts" class="navbar-item onpage" href="javascript: void(0)" data-target="cgi-bin/scripts.cgi"><div class="lang" data-lang="Servoj"></div></a>
+                            <a id="configmotion" class="navbar-item onpage" href="javascript: void(0)" data-target="configmotion.html"><div class="lang" data-lang="Movado-Detekto"></div></a>
+                            <a id="sw_night" class="navbar-item onpage" href="javascript: void(0)" data-target="sw_night_configure.html"><div class="lang" data-lang="Nokta Agordoj"></div></a>
                         </div>
                     </div>
                     <div class="navbar-item has-dropdown is-hoverable">
-                        <span class="navbar-link">Network</span>
+                        <span class="navbar-link"><div class="lang" data-lang="Reto"></div></span>
                         <div class="navbar-dropdown is-boxed">
-                            <a id="network" class="navbar-item onpage" href="javascript: void(0)" data-target="cgi-bin/network.cgi">Network Information</a>
+                            <a id="network" class="navbar-item onpage" href="javascript: void(0)" data-target="cgi-bin/network.cgi"><div class="lang" data-lang="Reto Informoj"></div></a>
                         </div>
                     </div>                    
 
@@ -229,100 +229,94 @@
                 <div class="navbar-end">
                     <div id="camcontrol_link" class="navbar-item has-dropdown">
                         <!-- Camera Movement Controls -->
-                        <span class="navbar-link">Camera Controls</span>
+                        <span class="navbar-link"><div class="lang" data-lang="Kamerao Kontroloj"></div></span>
                         <div class="navbar-dropdown is-boxed is-right">
                             <!-- Led: IR -->
                             <span class="navbar-item">
                                 <input id="ir_led" type="checkbox" name="ir_led" class="switch" data-checked="cgi-bin/action.cgi?cmd=ir_led_on" data-unchecked="cgi-bin/action.cgi?cmd=ir_led_off">
-                                <label for="ir_led">IR Led</label>
+                                <label for="ir_led"><div class="lang" data-lang="Transruĝa LED"></div></label>
                             </span>
                             <!-- IR Cut -->
                             <span class="navbar-item">
                                 <input id="ir_cut" type="checkbox" name="ir_cut" class="switch" data-checked="cgi-bin/action.cgi?cmd=ir_cut_on" data-unchecked="cgi-bin/action.cgi?cmd=ir_cut_off">
-                                <label for="ir_cut">IR-Cut</label>
+                                <label for="ir_cut"><div class="lang" data-lang="Transruĝa Filtrilo"></div></label>
                             </span>
                             <!-- Auto Night Detect -->
                             <span class="navbar-item">
                                 <input id="auto_night_detection" type="checkbox" name="auto_night_detection" class="switch" data-checked="cgi-bin/scripts.cgi?cmd=start&script=auto-night-detection"
                                     data-unchecked="cgi-bin/scripts.cgi?cmd=stop&script=auto-night-detection">
-                                <label for="auto_night_detection">Auto Night Detection</label>
+                                <label for="auto_night_detection"><div class="lang" data-lang="Aŭtomata Nokta Detekto"></div></label>
                             </span>
                             <!-- LED: Blue -->
                             <span class="navbar-item">
                                 <input id="blue_led" type="checkbox" name="blue_led" class="switch" data-checked="cgi-bin/action.cgi?cmd=blue_led_on" data-unchecked="cgi-bin/action.cgi?cmd=blue_led_off">
-                                <label for="blue_led">Blue LED</label>
-                            </span>
-                            <!-- LED: Yellow -->
-                            <span class="navbar-item">
-                                <input id="yellow_led" type="checkbox" name="yellow_led" class="switch" data-checked="cgi-bin/action.cgi?cmd=yellow_led_on"
-                                    data-unchecked="cgi-bin/action.cgi?cmd=yellow_led_off">
-                                <label for="yellow_led">Yellow LED</label>
+                                <label for="blue_led"><div class="lang" data-lang="Blanko LED"></div></label>
                             </span>
                             <!-- Motion Detection -->
                             <span class="navbar-item">
                                 <input id="motion_detection" type="checkbox" name="motion_detection" class="switch" data-checked="cgi-bin/action.cgi?cmd=motion_detection_on"
                                     data-unchecked="cgi-bin/action.cgi?cmd=motion_detection_off">
-                                <label for="motion_detection">Motion Detection</label>
+                                <label for="motion_detection"><div class="lang" data-lang="Movado-Detekto"></div></label>
                             </span>
                             <!-- RTSP -->
                             <span class="navbar-item">
                                 <input id="rtsp" type="checkbox" name="rtsp" class="switch" data-checked="cgi-bin/scripts.cgi?cmd=start&script=rtsp"
                                     data-unchecked="cgi-bin/scripts.cgi?cmd=stop&script=rtsp">
-                                <label for="rtsp">RTSP Server</label>
+                                <label for="rtsp"><div class="lang" data-lang="RTSP-Servilo"></div></label>
                             </span>
                             <!-- MQTT Status -->
                             <span class="navbar-item">
                                 <input id="mqtt_status" type="checkbox" name="mqtt_status" class="switch" data-checked="cgi-bin/scripts.cgi?cmd=start&script=mqtt-status"
                                     data-unchecked="cgi-bin/scripts.cgi?cmd=stop&script=mqtt-status">
-                                <label for="mqtt_status">MQTT Status Server</label>
+                                <label for="mqtt_status"><div class="lang" data-lang="MQTT-Statuso Servilo"></div></label>
                             </span>
                             <!-- MQTT Control -->
                             <span class="navbar-item">
                                 <input id="mqtt_control" type="checkbox" name="mqtt_control" class="switch" data-checked="cgi-bin/scripts.cgi?cmd=start&script=mqtt-control"
                                     data-unchecked="cgi-bin/scripts.cgi?cmd=stop&script=mqtt-control">
-                                <label for="mqtt_control">MQTT Control Server</label>
+                                <label for="mqtt_control"><div class="lang" data-lang="MQTT-Kontrolo Servilo"></div></label>
                             </span>
                             <!-- Startup Sound -->
                             <span class="navbar-item">
                                 <input id="sound_on_startup" type="checkbox" name="sound_on_startup" class="switch" data-checked="cgi-bin/scripts.cgi?cmd=start&script=sound-on-startup"
                                     data-unchecked="cgi-bin/scripts.cgi?cmd=stop&script=sound-on-startup">
-                                <label for="sound_on_startup">Sound on Startup</label>
+                                <label for="sound_on_startup"><div class="lang" data-lang="Sono ĉe Lanĉo"></div></label>
                             </span>
                             <!-- Motion: mail -->
                             <span class="navbar-item">
                                 <input id="motion_mail" type="checkbox" name="motion_mail" class="switch" data-checked="cgi-bin/action.cgi?cmd=motion_detection_mail_on"
                                        data-unchecked="cgi-bin/action.cgi?cmd=motion_detection_mail_off">
-                                <label for="motion_mail">Motion - Send emails</label>
+                                <label for="motion_mail"><div class="lang" data-lang="Movado - Sendi retpoŝtojn"></div></label>
                             </span>
                             <!-- Motion: Telegram -->
                             <span class="navbar-item">
                                 <input id="motion_telegram" type="checkbox" name="motion_telegram" class="switch" data-checked="cgi-bin/action.cgi?cmd=motion_detection_telegram_on"
                                        data-unchecked="cgi-bin/action.cgi?cmd=motion_detection_telegram_off">
-                                <label for="motion_telegram">Motion - Send Telegram</label>
+                                <label for="motion_telegram"><div class="lang" data-lang="Movado - Sendi Telegramon"></div></label>
                             </span>
                             <!-- Motion: LED -->
                             <span class="navbar-item">
                                 <input id="motion_led" type="checkbox" name="motion_led" class="switch" data-checked="cgi-bin/action.cgi?cmd=motion_detection_led_on"
                                        data-unchecked="cgi-bin/action.cgi?cmd=motion_detection_led_off">
-                                <label for="motion_led">Motion - LED</label>
+                                <label for="motion_led"><div class="lang" data-lang="Movado - LED"></div></label>
                             </span>
                             <!-- Motion: SNAPSHOT -->
                             <span class="navbar-item">
                                 <input id="motion_snapshot" type="checkbox" name="motion_snapshot" class="switch" data-checked="cgi-bin/action.cgi?cmd=motion_detection_snapshot_on"
                                        data-unchecked="cgi-bin/action.cgi?cmd=motion_detection_snapshot_off">
-                                <label for="motion_snapshot">Motion - Snapshots</label>
+                                <label for="motion_snapshot"><div class="lang" data-lang="Movado - Momentfotoj"></div></label>
                             </span>
                             <!-- Motion: MQTT Message -->
                             <span class="navbar-item">
                                 <input id="motion_mqtt" type="checkbox" name="motion_mqtt" class="switch" data-checked="cgi-bin/action.cgi?cmd=motion_detection_mqtt_publish_on"
                                        data-unchecked="cgi-bin/action.cgi?cmd=motion_detection_mqtt_publish_off">
-                                <label for="motion_mqtt">Motion - MQTT Message</label>
+                                <label for="motion_mqtt"><div class="lang" data-lang="Movado - MQTT-Mesaĝo"></div></label>
                             </span>
                             <!-- Motion: MQTT Message -->
                             <span class="navbar-item">
                                 <input id="motion_mqtt_snapshot" type="checkbox" name="motion_mqtt_snapshot" class="switch" data-checked="cgi-bin/action.cgi?cmd=motion_detection_mqtt_snapshot_on"
                                        data-unchecked="cgi-bin/action.cgi?cmd=motion_detection_mqtt_snapshot_off">
-                                <label for="motion_mqtt_snapshot">Motion - MQTT Snapshot</label>
+                                <label for="motion_mqtt_snapshot"><div class="lang" data-lang="Movado - MQTT-Momentfoto"></div></label>
                             </span>
                         </div>
                     </div>
@@ -381,28 +375,29 @@
             <div class="has-text-centered is-size-7">
                 <p>
                     <a href="https://github.com/jmichault/ipcam-100" target="_blank">
-                        <strong>T21 Hacks</strong>
-                    </a> Version: <em id="version">VERSION</em>
-                    <a href="https://github.com/jmichault/ipcam-100/issues" target="_blank">Issues?</a>
+                        <strong><div class="lang" data-lang="T21 Kodumoj"></div></strong>
+                    </a><div class="lang" data-lang=" Versio : "></div><em id="version">21.04.1</em>
+                    <a href="https://github.com/jmichault/ipcam-100/issues" target="_blank"><div class="lang" data-lang="Problemoj?"></div></a>
                 </p>
                 <div class="dropdown is-hoverable">
                     <div class="dropdown-trigger">
                         <a class="is-small is-link" aria-haspopup="true" aria-controls="dropdown-menu">
-                            <span>Theme</span>
+                            <span><div class="lang" data-lang="Temo"></div></span>
                         </a>
                     </div>
                     <div class="dropdown-menu" role="menu">
                         <div class="dropdown-content">
                             <a id="theme_choice_0" href="javascript: setTheme('0')" class="theme_choice dropdown-item" data-css="css/bulma.0.7.2.min.css">
-                                Light
+                                <div class="lang" data-lang="Brila"></div>
                             </a>
                             <a id="theme_choice_1" href="javascript: setTheme('1')" class="theme_choice dropdown-item" data-css="css/bulmaswatch.min.css">
-                                Dark
+                                <div class="lang" data-lang="Obskura"></div>
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     </footer>
 
     <div id="quickviewDefault" class="quickview">
@@ -422,6 +417,44 @@
     </div>
 
     <script src="scripts/index.html.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/gettext.min.js"></script>
+
+<script type="text/javascript">
+function Get(yourUrl){
+  var Httpreq = new XMLHttpRequest(); // a new request
+  Httpreq.open("GET",yourUrl,false);
+  Httpreq.send(null);
+  return Httpreq.responseText;
+}
+ 
+$(document).ready(function(){
+  var i18n = window.i18n();
+  var userLangs = navigator.languages ||
+               [navigator.language] ||
+               [navigator.userLanguage ];
+  var userLang="eo";
+  var i18njson, i;
+  for (i = 0; i < userLangs.length ; i++)
+  {
+    i18njson=Get("js/index."+userLangs[i].substring(0,2)+".json");
+    try 
+    {
+      i18n.loadJSON(i18njson, 'messages');
+      userLang = userLangs[i].substring(0,2);
+      break;
+    }
+    catch(e)
+    {
+      continue;
+    };
+  }
+  i18n.setLocale(userLang);
+  
+  $(".lang").each(function(){$(this).html(
+	i18n.gettext($(this).data("lang") )
+	);});
+});
+</script>
 
 </body>
 

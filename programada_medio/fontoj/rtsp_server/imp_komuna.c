@@ -75,6 +75,13 @@ int imp_init()
     doIMP2arg( IMP_Encoder_RegisterChn(i, i) , "IMP_Encoder_RegisterChn(%d, ) error: %d\n" , i, ret);
   }
   IMP_LOG_DBG(TAG, "Paŝo 5 sukceso\n");
+  
+  // ivs init
+  doIMP( IMP_IVS_CreateGroup(0) , "IMP_IVS_CreateGroup(0) failed\n");
+  IMPCell fs_cell = {DEV_ID_FS, 2, 2};// use FrameSource 2
+  IMPCell ivs_cell = {DEV_ID_IVS, 0, 0};
+  doIMP( IMP_System_Bind (&fs_cell, &ivs_cell) , "IMP_System_Bind\n" );
+  IMP_LOG_DBG(TAG, "ivs init sukceso\n");
 
   // Paŝo 6
   for (int i = 0; i <= 1 ; i++)
@@ -111,6 +118,9 @@ int imp_exit()
   {
     doIMParg( IMP_System_UnBind(&inCells[i], &outCells[i]) , "UnBind FrameSource channel%d and Encoder failed\n",i);
   }
+  
+  // ivs exit 
+  doIMP( IMP_IVS_DestroyGroup(0), "IMP_IVS_DestroyGroup(0) failed\n");
 
   // Paŝo 3 : Encoder exit
   for (int encChn = 0; encChn <= 1 ; encChn++)
