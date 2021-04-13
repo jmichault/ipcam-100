@@ -12,159 +12,120 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: html2pot\n"
 
-#, fuzzy
 msgid "Aŭtomata Nokta Detekto"
-msgstr "Automatic Night Detection"
+msgstr "Auto Night Detection"
 
-#, fuzzy
 msgid "Blanko LED"
 msgstr "White LED"
 
-#, fuzzy
 msgid "Brila"
-msgstr "Bright"
+msgstr "Light"
 
-#, fuzzy
 msgid "Ĝisdatigi"
 msgstr "Update"
 
-#, fuzzy
 msgid "Kamerao Kontroloj"
 msgstr "Camera controls"
 
-#, fuzzy
 msgid "LED agordoj"
 msgstr "LED settings"
 
-#, fuzzy
 msgid "Malŝalti"
 msgstr "Turn off"
 
-#, fuzzy
 msgid "Movado-Detekto"
-msgstr "Movement detection"
+msgstr "Motion detection"
 
-#, fuzzy
 msgid "Movado - LED"
-msgstr "Movement - LED"
+msgstr "Motion - LED"
 
-#, fuzzy
 msgid "Movado - Momentfotoj"
-msgstr "Movement - Moment Photos"
+msgstr "Motion - Snapshots"
 
-#, fuzzy
 msgid "Movado - MQTT-Mesaĝo"
-msgstr "Movement - MQTT message"
+msgstr "Motion - MQTT message"
 
-#, fuzzy
 msgid "Movado - MQTT-Momentfoto"
-msgstr "Movement - MQTT-momentfoto"
+msgstr "Motion - MQTT Snapshot"
 
-#, fuzzy
 msgid "Movado - Sendi retpoŝtojn"
-msgstr "Movement - send emails"
+msgstr "Motion - send emails"
 
-#, fuzzy
 msgid "Movado - Sendi Telegramon"
-msgstr "Movement - Send a telegram"
+msgstr "Motion - Send Telegram"
 
-#, fuzzy
 msgid "MQTT-Kontrolo Servilo"
 msgstr "MQTT control server"
 
-#, fuzzy
 msgid "MQTT-Statuso Servilo"
 msgstr "MQTT status server"
 
-#, fuzzy
 msgid "Nokta Agordoj"
-msgstr "Night settings"
+msgstr "SW night configuration"
 
-#, fuzzy
 msgid "Obskura"
-msgstr "Obscure"
+msgstr "Dark"
 
-#, fuzzy
 msgid "OSD"
 msgstr "OSD"
 
-#, fuzzy
 msgid "Pan/Tilt"
-msgstr "Pan / tilt"
+msgstr "Pan / Tilt"
 
-#, fuzzy
 msgid "Pasvortoj"
-msgstr "Passwords"
+msgstr "HTTP Password"
 
-#, fuzzy
 msgid "Problemoj?"
-msgstr "Problems?"
+msgstr "Issues?"
 
-#, fuzzy
 msgid "Protokoloj"
-msgstr "Protocols"
+msgstr "Services"
 
-#, fuzzy
 msgid "Restartigi"
-msgstr "To restart"
+msgstr "Reboot"
 
-#, fuzzy
 msgid "Reto"
 msgstr "Network"
 
-#, fuzzy
 msgid "Reto Informoj"
 msgstr "Network Information"
 
-#, fuzzy
 msgid "RTSP Agordoj"
 msgstr "RTSP settings"
 
-#, fuzzy
 msgid "RTSP-Servilo"
 msgstr "RTSP server"
 
-#, fuzzy
 msgid "Servoj"
 msgstr "Services"
 
-#, fuzzy
 msgid "Sistemo"
 msgstr "System"
 
-#, fuzzy
 msgid "Sono"
-msgstr "Sound"
+msgstr "Audio"
 
-#, fuzzy
 msgid "Sono ĉe Lanĉo"
-msgstr "Sound at launch"
+msgstr "Sound on Startup"
 
-#, fuzzy
 msgid "Stato"
-msgstr "State"
+msgstr "Status"
 
-#, fuzzy
 msgid "Superrigardo"
 msgstr "Overview"
 
-#, fuzzy
 msgid "T21 Kodumoj"
-msgstr "T21 CODES"
+msgstr "T21 Hacks"
 
-#, fuzzy
 msgid "Temo"
-msgstr "Subject"
+msgstr "Theme"
 
-#, fuzzy
 msgid "Transruĝa Filtrilo"
-msgstr "Infrared filter"
+msgstr "IR-Cut"
 
-#, fuzzy
 msgid "Transruĝa LED"
-msgstr "Infrared LED"
+msgstr "IR LED"
 
-#, fuzzy
 msgid "Versio :"
 msgstr "Version:"
 

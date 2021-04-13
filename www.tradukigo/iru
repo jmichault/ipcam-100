@@ -6,8 +6,8 @@ cd "$BAZO"
 for FIC in index
 do
   
-  if [ ../www/$FIC.html -nt pot/$FIC.pot ] ; then
-    lib/html2pot ../www/$FIC.html >pot/$FIC.pot
+  if [ ../karto/www/$FIC.html -nt pot/$FIC.pot ] ; then
+    lib/html2pot ../karto/www/$FIC.html >pot/$FIC.pot
   fi
   
   for lang in ar bn de en es fr hi it ja ms nl pa po pt ru zh
@@ -31,12 +31,12 @@ do
         rm pot/${FIC}.${lang}.po.nova
       fi
     fi
-    if [ ! -f ../www/js/${FIC}.${lang}.json ] ; then
-      echo krei www/js/${FIC}.${lang}.json
-      lib/po2json pot/${FIC}.${lang}.po ../www/js/${FIC}.${lang}.json
-    elif [ pot/${FIC}.${lang}.po -nt ../www/js/${FIC}.${lang}.json ] ; then
-      echo ĝisdatigi www/js/${FIC}.${lang}.json
-      lib/po2json pot/${FIC}.${lang}.po ../www/js/${FIC}.${lang}.json
+    if [ ! -f ../karto/www/js/${FIC}.${lang}.json ] ; then
+      echo krei karto/www/js/${FIC}.${lang}.json
+      lib/po2json pot/${FIC}.${lang}.po ../karto/www/js/${FIC}.${lang}.json
+    elif [ pot/${FIC}.${lang}.po -nt ../karto/www/js/${FIC}.${lang}.json ] ; then
+      echo ĝisdatigi karto/www/js/${FIC}.${lang}.json
+      lib/po2json pot/${FIC}.${lang}.po ../karto/www/js/${FIC}.${lang}.json
     fi
   done
 done  
