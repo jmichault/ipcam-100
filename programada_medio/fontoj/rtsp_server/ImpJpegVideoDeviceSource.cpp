@@ -35,7 +35,7 @@
 #include <algorithm>
 #include <iostream>
 
-#define KOMUNA_KANALO 0
+#define KOMUNA_KANALO 1
 
 ImpJpegVideoDeviceSource *
 ImpJpegVideoDeviceSource::createNew(UsageEnvironment &env,

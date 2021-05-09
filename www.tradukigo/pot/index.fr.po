@@ -80,7 +80,7 @@ msgid "Problemoj?"
 msgstr "Problèmes?"
 
 msgid "Protokoloj"
-msgstr "Protocoles"
+msgstr "Journaux"
 
 msgid "Restartigi"
 msgstr "Redémarrer"

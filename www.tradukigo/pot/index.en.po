@@ -79,7 +79,7 @@ msgid "Problemoj?"
 msgstr "Issues?"
 
 msgid "Protokoloj"
-msgstr "Services"
+msgstr "Logs"
 
 msgid "Restartigi"
 msgstr "Reboot"

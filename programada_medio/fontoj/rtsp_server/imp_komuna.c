@@ -33,6 +33,55 @@
 
 #define TAG "imp_komuna"
 
+static void *ivs_move_get_result_process(void *arg)
+{
+  int i = 0, ret = 0;
+  int chn_num = (int)arg;
+  IMP_IVS_MoveOutput *result = NULL;
+  printf("get_result_process komenco\n");
+
+  for (i = 0;  ; i++)
+  {
+    //printf("avant IMP_IVS_PollingResult\n");
+    ret = IMP_IVS_PollingResult(chn_num, 2000); // timeout 2s
+    if (ret < 0) {
+      IMP_LOG_ERR(TAG, "IMP_IVS_PollingResult(%d, %d) failed\n", chn_num, 2000);
+      //printf("timeout IMP_IVS_PollingResult\n");
+      usleep(1000);
+      continue;
+    }
+    printf("apres IMP_IVS_PollingResult\n");
+    ret = IMP_IVS_GetResult(chn_num, (void **)&result);
+    if (ret < 0) {
+      IMP_LOG_ERR(TAG, "IMP_IVS_GetResult(%d) failed\n", chn_num);
+      usleep(1000);
+      continue;
+    }
+   IMP_LOG_ERR(TAG, "frame[%d], result->retRoi(%d,%d,%d,%d)\n", i, result->retRoi[0], result->retRoi[1], result->retRoi[2], result->retRoi[3]);
+
+    ret = IMP_IVS_ReleaseResult(chn_num, (void *)result);
+    if (ret < 0) {
+      IMP_LOG_ERR(TAG, "IMP_IVS_ReleaseResult(%d) failed\n", chn_num);
+      return (void *)-1;
+    }
+/*
+                if (i % 20 == 0) {
+                        ret = sample_ivs_set_sense(chn_num, i % 5);
+                        if (ret < 0) {
+                                IMP_LOG_ERR(TAG, "sample_ivs_set_sense(%d, %d) failed\n", chn_num, i % 5);
+                                return (void *)-1;
+                        }
+                }
+*/
+        }
+  printf("get_result_process fino.\n");
+
+        return (void *)0;
+
+}
+
+static pthread_t ivs_tid;
+
 int imp_init()
 {
   // Paŝo 1 : inicialigo de la sensilo
@@ -77,24 +126,84 @@ int imp_init()
   IMP_LOG_DBG(TAG, "Paŝo 5 sukceso\n");
   
   // ivs init
+  printf("ivs init\n");
   doIMP( IMP_IVS_CreateGroup(0) , "IMP_IVS_CreateGroup(0) failed\n");
-  IMPCell fs_cell = {DEV_ID_FS, 2, 2};// use FrameSource 2
+  // Bind framesource channel.2-output.0 to IVS group
+  IMPCell fs_cell = {DEV_ID_FS, 2, 0};// use FrameSource 2
   IMPCell ivs_cell = {DEV_ID_IVS, 0, 0};
-  doIMP( IMP_System_Bind (&fs_cell, &ivs_cell) , "IMP_System_Bind\n" );
+  doIMP( IMP_System_Bind (&fs_cell, &ivs_cell) , "Bind FrameSource IVS\n" );
   IMP_LOG_DBG(TAG, "ivs init sukceso\n");
+
+  // ivs move start
+  printf("ivs move start\n");
+  IMP_IVS_MoveParam param;
+  memset(&param, 0, sizeof(IMP_IVS_MoveParam));
+  param.skipFrameCnt = 5;
+  int width=param.frameInfo.width = 320;
+  int height=param.frameInfo.height = 184;
+  // initialize 4 regions
+  param.roiRectCnt = 4;
+  for(int i=0; i<param.roiRectCnt; i++)
+    param.sense[i] = 4;
+        // 0,0 +--------------------+-----------------+
+        //     |                    |                 |
+        //     |           0        |      1          |
+        //     |                    |                 |
+        // h/2 +--------------------+-----------------+
+        //     |                    |                 |
+        //     |          2         |      3          |
+        //     |                    |                 |
+        // h   +--------------------+-----------------+
+        //                          w/2               w
+        // Region 0
+        param.roiRect[0].p0.x = 0;
+        param.roiRect[0].p0.y = 0;
+        param.roiRect[0].p1.x = (width/2)- 1;
+        param.roiRect[0].p1.y = (height/2) - 1;
+
+        // Region 1
+        param.roiRect[1].p0.x = (width/2);
+        param.roiRect[1].p0.y = 0;
+        param.roiRect[1].p1.x = (width)- 1;
+        param.roiRect[1].p1.y = (height/2) - 1;
+
+        // Region 2
+        param.roiRect[2].p0.x = 0;
+        param.roiRect[2].p0.y = (height/2);
+        param.roiRect[2].p1.x = (width/2)- 1;
+        param.roiRect[2].p1.y = (height) - 1;
+
+        // Region 3
+        param.roiRect[3].p0.x = width/2;
+        param.roiRect[3].p0.y = (height/2);
+        param.roiRect[3].p1.x = width-1;
+        param.roiRect[3].p1.y = (height) - 1;
+
+  IMPIVSInterface *interface=NULL;
+  interface = IMP_IVS_CreateMoveInterface(&param);
+  if (interface == NULL)
+    IMP_LOG_ERR(TAG, "IMP_IVS_CreateGroup(%d) failed\n", 0);
+  doIMP( IMP_IVS_CreateChn(0, interface) , "IMP_IVS_CreateChn failed\n");
+  doIMP( IMP_IVS_RegisterChn(0, 0) , "IMP_IVS_RegisterChn failed\n");
+  doIMP( IMP_IVS_StartRecvPic(0) , "IMP_IVS_StartRecvPic failed\n");
+  // end ivs move start
+
+  // start get result thread
+  int chn_num=0;
+  printf("ivs thread start\n");
+  if (pthread_create(&ivs_tid, NULL, ivs_move_get_result_process, (void *)chn_num) < 0)
+    IMP_LOG_ERR(TAG, "create ivs_move_get_result_process failed\n");
+
+
 
   // Paŝo 6
   for (int i = 0; i <= 1 ; i++)
-  {
     doIMParg( IMP_System_Bind(&inCells[i], &outCells[i]) , "Bind FrameSource channel%d and Encoder failed\n",i);
-  }
   IMP_LOG_DBG(TAG, "Paŝo 6 sukceso\n");
 
   // Paŝo 7
   for (int i = 0; i <=1 ; i++)
-  {
     doIMParg( IMP_FrameSource_EnableChn(i) , "IMP_FrameSource_EnableChn(%d) error\n", i);
-  }
   IMP_LOG_DBG(TAG, "Paŝo 7 sukceso\n");
 
   // Paŝo 8
