@@ -29,13 +29,10 @@
 #include <sys/time.h>
 #include <sys/mman.h>
 #include <sys/ioctl.h>
-#include "../rtspserver-tools/sharedmem.h"
 
 #include "JpegFrameParser.hh"
 #include <algorithm>
 #include <iostream>
-
-#define KOMUNA_KANALO 1
 
 ImpJpegVideoDeviceSource *
 ImpJpegVideoDeviceSource::createNew(UsageEnvironment &env,
@@ -108,12 +105,6 @@ void ImpJpegVideoDeviceSource::doGetNextFrame() {
       IMP_Encoder_ReleaseStream(m_canal, &stream);
     }
 
-    if(m_canal == KOMUNA_KANALO)
-    {
-      // kopio al komuna memoro
-      SharedMem &sharedMem = SharedMem::instance();
-      sharedMem.copyImage(bufferStream,bytesRead);
-    }
     fFrameSize =bytesRead;
     if (parser.parse(bufferStream, bytesRead) == 0)
     { // successful parsing

@@ -158,7 +158,12 @@ int main(int argc, char** argv) {
     }
   }
   // init T21
-  imp_init();
+  int ret=imp_init();
+  if(ret<0)
+  {
+    fprintf(stderr,"imp_init failed\n");
+    exit(1);
+  }
 
   // Create the RTSP server.  Try first with the default port number (554),
   // and then with the alternative port number (8554):

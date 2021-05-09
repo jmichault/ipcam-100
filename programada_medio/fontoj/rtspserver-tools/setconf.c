@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include <getopt.h>
-#include <cstdlib>
+#include <stdlib.h>
 #include "sharedmem.h"
 
 #define SETGETSHAREDMEMORYINT(INT) if (get) printf("%d\n",  INT); else INT = atoi(value);
@@ -115,10 +115,10 @@ int main(int argc, char *argv[]) {
                 exit(EXIT_FAILURE);
         }
     }
-    SharedMem &mem = SharedMem::instance();
-    shared_conf *conf = mem.getConfig();
+    SharedMem_init();
+    struct shared_conf *conf = SharedMem_getConfig();
     //printf("%d,%d\n", conf->nightmode, conf->flip);
-    mem.readConfig();
+    SharedMem_readConfig();
     //printf("%d,%d\n", conf->nightmode, conf->flip);
     switch (key) {
         case 'f':
@@ -199,9 +199,7 @@ int main(int argc, char *argv[]) {
         usage(argv[0]);
         exit(EXIT_FAILURE);
     }
-    mem.setConfig();
-    //mem.readConfig();
-    //printf("%d,%d\n", conf->nightmode, conf->flip);
+    SharedMem_setConfig();
 
     return 0;
 

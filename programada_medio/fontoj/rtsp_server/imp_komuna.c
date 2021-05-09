@@ -29,35 +29,78 @@
 #include <imp/imp_ivs_move.h>
 #include <imp/imp_osd.h>
 
-#include "imp_komuna.h"
-
+#define IMP_LOG IMP_LOG_TO_FILE
+#define IMP_LOG_OUT_DEFAULT IMP_LOG_OUT_STDOUT
 #define TAG "imp_komuna"
+#include "imp_komuna.h"
+#include "../rtspserver-tools/sharedmem.h"
+
 
 static void *ivs_move_get_result_process(void *arg)
 {
   int i = 0, ret = 0;
   int chn_num = (int)arg;
+  struct timespec last,current;
+  clock_gettime(CLOCK_MONOTONIC,&last);
   IMP_IVS_MoveOutput *result = NULL;
   printf("get_result_process komenco\n");
 
   for (i = 0;  ; i++)
   {
-    //printf("avant IMP_IVS_PollingResult\n");
-    ret = IMP_IVS_PollingResult(chn_num, 2000); // timeout 2s
+    ret = IMP_IVS_PollingResult(chn_num, 1000); // timeout 1s
     if (ret < 0) {
       IMP_LOG_ERR(TAG, "IMP_IVS_PollingResult(%d, %d) failed\n", chn_num, 2000);
-      //printf("timeout IMP_IVS_PollingResult\n");
+      printf("timeout IMP_IVS_PollingResult\n");
       usleep(1000);
       continue;
     }
-    printf("apres IMP_IVS_PollingResult\n");
+    clock_gettime(CLOCK_MONOTONIC,&current);
+    int snap_num=-1;
+    if( channel_attrs[0].encAttr.enType==PT_JPEG) snap_num=0;
+    else if( channel_attrs[1].encAttr.enType==PT_JPEG) snap_num=1;
+    if( snap_num>=0
+	&& current.tv_sec != last.tv_sec)
+    {
+      clock_gettime(CLOCK_MONOTONIC,&last);
+      SharedMem_init();
+      /* JPEG Snap */
+      int ret = IMP_Encoder_PollingStream(snap_num, 1000);
+      if (ret >= 0)
+      {
+        IMPEncoderStream stream;
+        int bytesRead=0;
+        static unsigned char *bufferStream = NULL;
+        if(!bufferStream) bufferStream = (unsigned char *) malloc(1920*1080);
+        /* Get JPEG Snap */
+        ret = IMP_Encoder_GetStream(snap_num, &stream, 1);
+        if (ret >= 0)
+        {
+          int nr_pack = stream.packCount;
+          void *memoryAddress = (void *)bufferStream;
+          bytesRead = 0;
+          for (int i = 0; i < nr_pack; i++)
+          {
+            int packLen = stream.pack[i].length;
+            memcpy(memoryAddress, (void *) stream.pack[i].virAddr, packLen);
+            memoryAddress = (void *) ((char *) memoryAddress + packLen);
+            bytesRead = bytesRead + packLen;
+          }
+  
+        }
+        IMP_Encoder_ReleaseStream(snap_num, &stream);
+        SharedMem_copyImage(bufferStream,bytesRead);
+      }
+    }
+
     ret = IMP_IVS_GetResult(chn_num, (void **)&result);
     if (ret < 0) {
-      IMP_LOG_ERR(TAG, "IMP_IVS_GetResult(%d) failed\n", chn_num);
+      fprintf(stderr , "%s: IMP_IVS_GetResult(%d) failed\n",TAG, chn_num);
       usleep(1000);
       continue;
     }
-   IMP_LOG_ERR(TAG, "frame[%d], result->retRoi(%d,%d,%d,%d)\n", i, result->retRoi[0], result->retRoi[1], result->retRoi[2], result->retRoi[3]);
+    if (result->retRoi[0] || result->retRoi[1] || result->retRoi[2] || result->retRoi[3] )
+      fprintf(stderr , "%s: frame[%d], result->retRoi(%d,%d,%d,%d)\n"
+	, TAG, i, result->retRoi[0], result->retRoi[1], result->retRoi[2], result->retRoi[3]);
 
     ret = IMP_IVS_ReleaseResult(chn_num, (void *)result);
     if (ret < 0) {
@@ -73,7 +116,8 @@ static void *ivs_move_get_result_process(void *arg)
                         }
                 }
 */
-        }
+    usleep(1000);
+  }
   printf("get_result_process fino.\n");
 
         return (void *)0;
@@ -110,17 +154,22 @@ int imp_init()
   doIMP( IMP_ISP_Tuning_SetISPBypass(IMPISP_TUNING_OPS_MODE_ENABLE) , "IMP_ISP_Tuning_SetISPBypass failed.\n");
 
   // Paŝo 4
-  for (int i = 0; i <= 1 ; i++)
+  printf("Paŝo 4\n");
+  for (int i = 0; i <= 2 ; i++)
   {
     doIMParg( IMP_Encoder_CreateGroup(i) , "IMP_Encoder_CreateGroup(%d) error !\n", i);
   }
   IMP_LOG_DBG(TAG, "Paŝo 4 sukceso\n");
 
   // Paŝo 5
+  printf("Paŝo 5\n");
   for (int i = 0; i <= 1; i++)
   {
+    printf("Paŝo 5-1 %d\n",i);
     doIMParg( IMP_Encoder_SetMaxStreamCnt(i, 5) , "IMP_Encoder_SetMaxStreamCnt(%d) error !\n", i);
+    printf("Paŝo 5-2 %d\n",i);
     doIMParg( IMP_Encoder_CreateChn(i, &channel_attrs[i]) , "IMP_Encoder_CreateChn(%d) error !\n", i);
+    printf("Paŝo 5-3 %d\n",i);
     doIMP2arg( IMP_Encoder_RegisterChn(i, i) , "IMP_Encoder_RegisterChn(%d, ) error: %d\n" , i, ret);
   }
   IMP_LOG_DBG(TAG, "Paŝo 5 sukceso\n");
@@ -129,7 +178,7 @@ int imp_init()
   printf("ivs init\n");
   doIMP( IMP_IVS_CreateGroup(0) , "IMP_IVS_CreateGroup(0) failed\n");
   // Bind framesource channel.2-output.0 to IVS group
-  IMPCell fs_cell = {DEV_ID_FS, 2, 0};// use FrameSource 2
+  IMPCell fs_cell = {DEV_ID_FS, 2, 1};// use FrameSource 2
   IMPCell ivs_cell = {DEV_ID_IVS, 0, 0};
   doIMP( IMP_System_Bind (&fs_cell, &ivs_cell) , "Bind FrameSource IVS\n" );
   IMP_LOG_DBG(TAG, "ivs init sukceso\n");
@@ -197,12 +246,12 @@ int imp_init()
 
 
   // Paŝo 6
-  for (int i = 0; i <= 1 ; i++)
+  for (int i = 0; i <= 2 ; i++)
     doIMParg( IMP_System_Bind(&inCells[i], &outCells[i]) , "Bind FrameSource channel%d and Encoder failed\n",i);
   IMP_LOG_DBG(TAG, "Paŝo 6 sukceso\n");
 
   // Paŝo 7
-  for (int i = 0; i <=1 ; i++)
+  for (int i = 0; i <=2 ; i++)
     doIMParg( IMP_FrameSource_EnableChn(i) , "IMP_FrameSource_EnableChn(%d) error\n", i);
   IMP_LOG_DBG(TAG, "Paŝo 7 sukceso\n");
 

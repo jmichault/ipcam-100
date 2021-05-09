@@ -1,7 +1,26 @@
-#include <cstdlib>
+#include <malloc.h>
+
 #include "sharedmem.h"
 
-SharedMem::SharedMem() {
+
+static key_t key_image_mem;
+static key_t key_image_semaphore;
+static key_t key_config_mem;
+static key_t key_config_semaphore;
+static struct shared_conf currentConfig;
+static void readMemory(key_t key, void *memory, int memorylenght);
+static void lockSemaphore(key_t key);
+static void unlockSemaphore(key_t key);
+static void writeMemory(key_t key, void *memory, int memorylenght);
+static int getMemorySize(key_t key);
+static struct sembuf semaphore_lock[1];
+static struct sembuf semaphore_unlock[1];
+static bool inita=false;
+
+
+void SharedMem_init() {
+  if(inita) return;
+  inita=true;
     currentConfig.nightmode = 0;
     currentConfig.flip = 0;
     memset(currentConfig.osdTimeDisplay,0,STRING_MAX_SIZE);
@@ -43,59 +62,55 @@ SharedMem::SharedMem() {
 
 }
 
-SharedMem::~SharedMem() {
-
+int SharedMem_getImageSize() {
+    return getMemorySize(key_image_mem);
 }
 
-int SharedMem::getImageSize() {
-    return this->getMemorySize(key_image_mem);
-}
-
-void *SharedMem::getImageBuffer() {
-    int memlen = this->getImageSize();
+void *SharedMem_getImageBuffer() {
+    size_t memlen = SharedMem_getImageSize();
     void *memory = malloc(memlen);
 
-    this->lockSemaphore(key_image_semaphore);
-    this->readMemory(key_image_mem, memory, memlen);
-    this->unlockSemaphore(key_image_semaphore);
+    lockSemaphore(key_image_semaphore);
+    readMemory(key_image_mem, memory, memlen);
+    unlockSemaphore(key_image_semaphore);
 
 
     return memory;
 }
 
-void SharedMem::copyImage(void *imageMemory, int imageSize) {
-    this->lockSemaphore(key_image_semaphore);
-    this->writeMemory(key_image_mem, imageMemory, imageSize);
-    this->unlockSemaphore(key_image_semaphore);
+void SharedMem_copyImage(void *imageMemory, int imageSize) {
+    lockSemaphore(key_image_semaphore);
+    writeMemory(key_image_mem, imageMemory, imageSize);
+    unlockSemaphore(key_image_semaphore);
 }
 
-shared_conf *SharedMem::getConfig() {
+struct shared_conf *SharedMem_getConfig() {
     return &currentConfig;
 }
 
-void SharedMem::readConfig(){
-    this->lockSemaphore(key_config_semaphore);
-    this->readMemory(key_config_mem, &currentConfig, sizeof(shared_conf));
-    this->unlockSemaphore(key_config_semaphore);
+void SharedMem_readConfig(){
+    lockSemaphore(key_config_semaphore);
+    readMemory(key_config_mem, &currentConfig, sizeof(struct shared_conf));
+    unlockSemaphore(key_config_semaphore);
 }
 
-void SharedMem::setConfig() {
-    this->lockSemaphore(key_config_semaphore);
-    this->writeMemory(key_config_mem, &currentConfig, sizeof(shared_conf));
-    this->unlockSemaphore(key_config_semaphore);
+void SharedMem_setConfig() {
+    lockSemaphore(key_config_semaphore);
+    writeMemory(key_config_mem, &currentConfig, sizeof(struct shared_conf));
+    unlockSemaphore(key_config_semaphore);
 }
 
-void SharedMem::lockSemaphore(key_t key) {
+static void lockSemaphore(key_t key) {
     semop(key, &semaphore_lock[0], 1);
 }
 
-void SharedMem::unlockSemaphore(key_t key) {
+static void unlockSemaphore(key_t key) {
     semop(key, &semaphore_unlock[0], 1);
 
 
 }
 
-void SharedMem::readMemory(key_t key, void *memory, int memorylenght) {
+static void readMemory(key_t key, void *memory, int memorylenght) {
     void *shared_mem;
     int shm_id = shmget(key, 0, 0);
     if (shm_id == -1) {
@@ -106,7 +121,7 @@ void SharedMem::readMemory(key_t key, void *memory, int memorylenght) {
     shmdt(shared_mem);
 }
 
-int SharedMem::getMemorySize(key_t key) {
+static int getMemorySize(key_t key) {
     int shm_id = shmget(key, 0, 0);
     struct shmid_ds buf;
     shmctl(shm_id, IPC_STAT, &buf);
@@ -114,13 +129,13 @@ int SharedMem::getMemorySize(key_t key) {
     return memlen;
 }
 
-void SharedMem::writeMemory(key_t key, void *memory, int memorylenght) {
+static void writeMemory(key_t key, void *memory, int memorylenght) {
 
     int shm_id;
 
     shm_id = shmget(key, 0, 0);
     if (shm_id != -1) {
-        int memlen = this->getMemorySize(key);
+        int memlen = getMemorySize(key);
         if (memlen != memorylenght) {
             shmctl(shm_id, IPC_RMID, NULL);
         }
@@ -140,12 +155,12 @@ void SharedMem::writeMemory(key_t key, void *memory, int memorylenght) {
 
 }
 
-void *SharedMem::getImage() {
-    int memlen = getImageSize();
+void *SharedMem_getImage() {
+    int memlen = SharedMem_getImageSize();
     void *memory = malloc((size_t) memlen);
-    this->lockSemaphore(key_image_semaphore);
-    this->readMemory(key_image_mem, memory, memlen);
-    this->unlockSemaphore(key_image_semaphore);
+    lockSemaphore(key_image_semaphore);
+    readMemory(key_image_mem, memory, memlen);
+    unlockSemaphore(key_image_semaphore);
     return memory;
 
 }

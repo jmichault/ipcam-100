@@ -1,17 +1,18 @@
 #ifndef SHAREDMEM_H
 #define SHAREDMEM_H
 
+#include <stdbool.h>
+#include <stdint.h>
 #include <sys/types.h>
 #include <sys/ipc.h>
 #include <sys/shm.h>
 #include <string.h>
 #include <sys/sem.h>
 
-#include <cstdint>
-
 #define STRING_MAX_SIZE          256
 
-struct shared_conf {
+struct shared_conf
+{
     int nightmode;
     int flip;
     char osdTimeDisplay[STRING_MAX_SIZE];
@@ -36,58 +37,13 @@ struct shared_conf {
 };
 
 
-class SharedMem {
-public:
-    SharedMem();
-
-    void* getImage();
-
-    static SharedMem &instance() {
-        static SharedMem _instance;
-        return _instance;
-    }
-
-
-    ~SharedMem();
-
-    shared_conf *getConfig();
-    void setConfig();
-
-
-    int getImageSize();
-    void *getImageBuffer();
-    void copyImage(void *imageMemory, int imageSize);
-    void readConfig();
-
-private:
-    key_t key_image_mem;
-    key_t key_image_semaphore;
-    key_t key_config_mem;
-    key_t key_config_semaphore;
-
-    struct shared_conf currentConfig;
-
-
-
-    void readMemory(key_t key, void *memory, int memorylenght);
-
-    void lockSemaphore(key_t key);
-
-    void unlockSemaphore(key_t key);
-
-
-
-    void writeMemory(key_t key, void *memory, int memorylenght);
-
-
-    int getMemorySize(key_t key);
-
-    struct sembuf semaphore_lock[1];
-    struct sembuf semaphore_unlock[1];
-
-
-
-};
-
+void SharedMem_init();
+void* SharedMem_getImage();
+struct shared_conf *SharedMem_getConfig();
+void SharedMem_setConfig();
+int SharedMem_getImageSize();
+void *SharedMem_getImageBuffer();
+void SharedMem_copyImage(void *imageMemory, int imageSize);
+void SharedMem_readConfig();
 
 #endif
