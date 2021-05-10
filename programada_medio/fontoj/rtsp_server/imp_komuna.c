@@ -107,15 +107,6 @@ static void *ivs_move_get_result_process(void *arg)
       IMP_LOG_ERR(TAG, "IMP_IVS_ReleaseResult(%d) failed\n", chn_num);
       return (void *)-1;
     }
-/*
-                if (i % 20 == 0) {
-                        ret = sample_ivs_set_sense(chn_num, i % 5);
-                        if (ret < 0) {
-                                IMP_LOG_ERR(TAG, "sample_ivs_set_sense(%d, %d) failed\n", chn_num, i % 5);
-                                return (void *)-1;
-                        }
-                }
-*/
     usleep(1000);
   }
   printf("get_result_process fino.\n");
