@@ -1,0 +1,132 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+msgid "Aŭtomata Nokta Detekto"
+msgstr "Détection automatique de la nuit"
+
+msgid "Blanko LED"
+msgstr "LED blanche"
+
+#, fuzzy
+msgid "Brila"
+msgstr "Brillant"
+
+msgid "Ĝisdatigi"
+msgstr "Mettre à jour"
+
+msgid "Kamerao Kontroloj"
+msgstr "Contrôles de la caméra"
+
+msgid "LED agordoj"
+msgstr "Paramètres LED"
+
+msgid "Malŝalti"
+msgstr "Éteindre"
+
+msgid "Movado-Detekto"
+msgstr "Détection de mouvement"
+
+msgid "Movado - LED"
+msgstr "Mouvement - LED"
+
+msgid "Movado - Momentfotoj"
+msgstr "Mouvement - Captures Photos"
+
+msgid "Movado - MQTT-Mesaĝo"
+msgstr "Mouvement - Message MQTT"
+
+msgid "Movado - MQTT-Momentfoto"
+msgstr "Mouvement - Captures Photos MQTT"
+
+msgid "Movado - Sendi retpoŝtojn"
+msgstr "Mouvement - Envoyer des emails"
+
+msgid "Movado - Sendi Telegramon"
+msgstr "Mouvement - Envoyer un télégramme"
+
+msgid "MQTT-Kontrolo Servilo"
+msgstr "Service de contrôle MQTT"
+
+msgid "MQTT-Statuso Servilo"
+msgstr "Service de statut MQTT"
+
+msgid "Nokta Agordoj"
+msgstr "Réglages nocturnes"
+
+msgid "Obskura"
+msgstr "Sombre"
+
+msgid "OSD"
+msgstr "OSD"
+
+msgid "Pan/Tilt"
+msgstr "Pan/Tilt"
+
+msgid "Pasvortoj"
+msgstr "Mots de passe"
+
+msgid "Problemoj?"
+msgstr "Problèmes?"
+
+msgid "Protokoloj"
+msgstr "Journaux"
+
+msgid "Restartigi"
+msgstr "Redémarrer"
+
+msgid "Reto"
+msgstr "Réseau"
+
+msgid "Reto Informoj"
+msgstr "Informations sur le réseau"
+
+msgid "RTSP Agordoj"
+msgstr "Paramètres RTSP"
+
+msgid "RTSP-Servilo"
+msgstr "Service RTSP"
+
+msgid "Servoj"
+msgstr "Services"
+
+msgid "Sistemo"
+msgstr "Système"
+
+msgid "Sono"
+msgstr "Audio"
+
+msgid "Sono ĉe Lanĉo"
+msgstr "Audio au démarrage"
+
+msgid "Stato"
+msgstr "État"
+
+msgid "Superrigardo"
+msgstr "Aperçu"
+
+msgid "T21 Kodumoj"
+msgstr "Codes T21"
+
+msgid "Temo"
+msgstr "Thème"
+
+msgid "Transruĝa Filtrilo"
+msgstr "Filtre infrarouge"
+
+msgid "Transruĝa LED"
+msgstr "LED infrarouge"
+
+msgid "Versio :"
+msgstr "Version:"
+

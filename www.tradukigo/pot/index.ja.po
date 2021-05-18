@@ -13,158 +13,33 @@ msgstr ""
 "X-Generator: html2pot\n"
 
 #, fuzzy
-msgid "Aŭtomata Nokta Detekto"
-msgstr "自動夜景"
+msgid "Elektu lingvon"
+msgstr "言語を選択してください"
 
 #, fuzzy
-msgid "Blanko LED"
-msgstr "白色LED."
+msgid "Hello!"
+msgstr "こんにちは！"
 
 #, fuzzy
-msgid "Brila"
-msgstr "明るい"
-
-#, fuzzy
-msgid "Ĝisdatigi"
-msgstr "更新"
-
-#, fuzzy
-msgid "Kamerao Kontroloj"
-msgstr "カメラコントロール"
-
-#, fuzzy
-msgid "LED agordoj"
-msgstr "LEDの設定"
-
-#, fuzzy
-msgid "Malŝalti"
-msgstr "消す"
-
-#, fuzzy
-msgid "Movado-Detekto"
-msgstr "動き検出"
-
-#, fuzzy
-msgid "Movado - LED"
-msgstr "移動 -  LED"
-
-#, fuzzy
-msgid "Movado - Momentfotoj"
-msgstr "動き - 瞬間写真"
-
-#, fuzzy
-msgid "Movado - MQTT-Mesaĝo"
-msgstr "移動 -  MQTTメッセージ"
-
-#, fuzzy
-msgid "Movado - MQTT-Momentfoto"
-msgstr "移動 -  MQTTモーメントフォト"
-
-#, fuzzy
-msgid "Movado - Sendi retpoŝtojn"
-msgstr "動き - メールを送る"
-
-#, fuzzy
-msgid "Movado - Sendi Telegramon"
-msgstr "移動 - 電信を送る"
-
-#, fuzzy
-msgid "MQTT-Kontrolo Servilo"
-msgstr "MQTT制御サーバー"
-
-#, fuzzy
-msgid "MQTT-Statuso Servilo"
-msgstr "MQTTステータスサーバー"
-
-#, fuzzy
-msgid "Nokta Agordoj"
-msgstr "夜の設定"
-
-#, fuzzy
-msgid "Obskura"
-msgstr "邪険"
-
-#, fuzzy
-msgid "OSD"
-msgstr "os os"
-
-#, fuzzy
-msgid "Pan/Tilt"
-msgstr "パン/チルト"
-
-#, fuzzy
-msgid "Pasvortoj"
+msgid "Pasvorto"
 msgstr "パスワード"
 
 #, fuzzy
-msgid "Problemoj?"
-msgstr "問題？"
+msgid "Sign in"
+msgstr "サインイン"
 
 #, fuzzy
-msgid "Protokoloj"
-msgstr "プロトコル"
+msgid "Sign In"
+msgstr "サインイン"
 
 #, fuzzy
-msgid "Restartigi"
-msgstr "再起動します"
+msgid "Uzantnomo"
+msgstr "ユーザー名"
 
 #, fuzzy
-msgid "Reto"
-msgstr "通信網"
+msgid "Vi ne estas ensalutinta!"
+msgstr "あなたはログインしていません！"
 
 #, fuzzy
-msgid "Reto Informoj"
-msgstr "ネットワーク情報"
-
-#, fuzzy
-msgid "RTSP Agordoj"
-msgstr "RTSP設定"
-
-#, fuzzy
-msgid "RTSP-Servilo"
-msgstr "RTSPサーバー"
-
-#, fuzzy
-msgid "Servoj"
-msgstr "サービス"
-
-#, fuzzy
-msgid "Sistemo"
-msgstr "システム"
-
-#, fuzzy
-msgid "Sono"
-msgstr "音"
-
-#, fuzzy
-msgid "Sono ĉe Lanĉo"
-msgstr "起動時の音"
-
-#, fuzzy
-msgid "Stato"
-msgstr "状態"
-
-#, fuzzy
-msgid "Superrigardo"
-msgstr "概要"
-
-#, fuzzy
-msgid "T21 Kodumoj"
-msgstr "T21コード"
-
-#, fuzzy
-msgid "Temo"
-msgstr "被験者"
-
-#, fuzzy
-msgid "Transruĝa Filtrilo"
-msgstr "赤外線フィルター"
-
-#, fuzzy
-msgid "Transruĝa LED"
-msgstr "赤外線LED"
-
-#, fuzzy
-msgid "Versio :"
-msgstr "バージョン："
-
+#~ msgid "You are not logged in!"
+#~ msgstr "あなたはログインしていません！"

@@ -13,158 +13,33 @@ msgstr ""
 "X-Generator: html2pot\n"
 
 #, fuzzy
-msgid "Aŭtomata Nokta Detekto"
-msgstr "كشف ليلة التلقائي"
+msgid "Elektu lingvon"
+msgstr "اختر لغة"
 
 #, fuzzy
-msgid "Blanko LED"
-msgstr "بقيادة بيضاء"
+msgid "Hello!"
+msgstr "مرحبا!"
 
 #, fuzzy
-msgid "Brila"
-msgstr "لامع"
+msgid "Pasvorto"
+msgstr "كلمه السر"
 
 #, fuzzy
-msgid "Ĝisdatigi"
-msgstr "تحديث"
+msgid "Sign in"
+msgstr "تسجيل الدخول"
 
 #, fuzzy
-msgid "Kamerao Kontroloj"
-msgstr "ضوابط الكاميرا"
+msgid "Sign In"
+msgstr "تسجيل الدخول"
 
 #, fuzzy
-msgid "LED agordoj"
-msgstr "إعدادات LED."
+msgid "Uzantnomo"
+msgstr "اسم المستخدم"
 
 #, fuzzy
-msgid "Malŝalti"
-msgstr "اطفئه"
+msgid "Vi ne estas ensalutinta!"
+msgstr "لم يتم دخولك!"
 
 #, fuzzy
-msgid "Movado-Detekto"
-msgstr "اكتشاف الحركة"
-
-#, fuzzy
-msgid "Movado - LED"
-msgstr "الحركة - أدى"
-
-#, fuzzy
-msgid "Movado - Momentfotoj"
-msgstr "الحركة - صور لحظات"
-
-#, fuzzy
-msgid "Movado - MQTT-Mesaĝo"
-msgstr "الحركة - رسالة MQTT"
-
-#, fuzzy
-msgid "Movado - MQTT-Momentfoto"
-msgstr "الحركة - MQTT-MOUSTITFOTO"
-
-#, fuzzy
-msgid "Movado - Sendi retpoŝtojn"
-msgstr "الحركة - إرسال رسائل البريد الإلكتروني"
-
-#, fuzzy
-msgid "Movado - Sendi Telegramon"
-msgstr "الحركة - إرسال برقية"
-
-#, fuzzy
-msgid "MQTT-Kontrolo Servilo"
-msgstr "MQTT Control Server."
-
-#, fuzzy
-msgid "MQTT-Statuso Servilo"
-msgstr "خادم حالة MQTT"
-
-#, fuzzy
-msgid "Nokta Agordoj"
-msgstr "إعدادات الليل"
-
-#, fuzzy
-msgid "Obskura"
-msgstr "غامض"
-
-#, fuzzy
-msgid "OSD"
-msgstr "osd"
-
-#, fuzzy
-msgid "Pan/Tilt"
-msgstr "عموم / الميل"
-
-#, fuzzy
-msgid "Pasvortoj"
-msgstr "كلمات المرور"
-
-#, fuzzy
-msgid "Problemoj?"
-msgstr "مشاكل؟"
-
-#, fuzzy
-msgid "Protokoloj"
-msgstr "البروتوكولات"
-
-#, fuzzy
-msgid "Restartigi"
-msgstr "لإعادة التشغيل"
-
-#, fuzzy
-msgid "Reto"
-msgstr "شبكة الاتصال"
-
-#, fuzzy
-msgid "Reto Informoj"
-msgstr "معلومات الشبكة"
-
-#, fuzzy
-msgid "RTSP Agordoj"
-msgstr "إعدادات RTSP."
-
-#, fuzzy
-msgid "RTSP-Servilo"
-msgstr "خادم RTSP"
-
-#, fuzzy
-msgid "Servoj"
-msgstr "خدمات"
-
-#, fuzzy
-msgid "Sistemo"
-msgstr "نظام"
-
-#, fuzzy
-msgid "Sono"
-msgstr "صوت"
-
-#, fuzzy
-msgid "Sono ĉe Lanĉo"
-msgstr "الصوت في إطلاق"
-
-#, fuzzy
-msgid "Stato"
-msgstr "حالة"
-
-#, fuzzy
-msgid "Superrigardo"
-msgstr "ملخص"
-
-#, fuzzy
-msgid "T21 Kodumoj"
-msgstr "رموز T21"
-
-#, fuzzy
-msgid "Temo"
-msgstr "موضوع"
-
-#, fuzzy
-msgid "Transruĝa Filtrilo"
-msgstr "فلتر الأشعة تحت الحمراء"
-
-#, fuzzy
-msgid "Transruĝa LED"
-msgstr "أدى الأشعة تحت الحمراء"
-
-#, fuzzy
-msgid "Versio :"
-msgstr "إصدار:"
-
+#~ msgid "You are not logged in!"
+#~ msgstr "لم يتم دخولك!"

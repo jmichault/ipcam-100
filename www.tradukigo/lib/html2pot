@@ -24,5 +24,11 @@ do
   echo msgstr \"\"
   echo
 done
+grep 'gettext("' $1|sed 's/.*gettext("//;s/\").*//'|sort -u|while read TXT
+do
+  echo msgid \"$TXT\"
+  echo msgstr \"\"
+  echo
+done
 
 

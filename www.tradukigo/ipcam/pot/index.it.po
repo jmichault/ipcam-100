@@ -1,0 +1,98 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+#, fuzzy
+msgid "Ĝisdatigi"
+msgstr "Aggiornare"
+
+#, fuzzy
+msgid "Kamerao"
+msgstr "telecamera"
+
+#, fuzzy
+msgid "LED agordoj"
+msgstr "Impostazioni a LED"
+
+#, fuzzy
+msgid "Malŝalti"
+msgstr "Spegni"
+
+#, fuzzy
+msgid "Movado-Detekto"
+msgstr "Rilevamento del movimento"
+
+#, fuzzy
+msgid "Nokta Agordoj"
+msgstr "Impostazioni notturne"
+
+#, fuzzy
+msgid "OSD"
+msgstr "Osd."
+
+#, fuzzy
+msgid "Pan/Tilt"
+msgstr "Pan / inclinazione"
+
+#, fuzzy
+msgid "Pasvortoj"
+msgstr "Le password"
+
+#, fuzzy
+msgid "Problemoj?"
+msgstr "I problemi?"
+
+#, fuzzy
+msgid "Protokoloj"
+msgstr "Protocolli"
+
+#, fuzzy
+msgid "Restartigi"
+msgstr "Ricominciare"
+
+#, fuzzy
+msgid "Reto Informoj"
+msgstr "Informazioni sulla rete"
+
+#, fuzzy
+msgid "RTSP Agordoj"
+msgstr "Impostazioni RTSP."
+
+#, fuzzy
+msgid "Servoj"
+msgstr "Servizi"
+
+#, fuzzy
+msgid "Sistemo"
+msgstr "Sistema"
+
+#, fuzzy
+msgid "Sono"
+msgstr "Suono"
+
+#, fuzzy
+msgid "Stato"
+msgstr "Stato"
+
+#, fuzzy
+msgid "Superrigardo"
+msgstr "Panoramica"
+
+#, fuzzy
+msgid "T21 Kodumoj"
+msgstr "Codici T21."
+
+#, fuzzy
+msgid "Versio :"
+msgstr "Versione:"
+

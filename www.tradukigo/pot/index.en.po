@@ -12,120 +12,34 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: html2pot\n"
 
-msgid "Aŭtomata Nokta Detekto"
-msgstr "Auto Night Detection"
+#, fuzzy
+msgid "Elektu lingvon"
+msgstr "Choose a language"
 
-msgid "Blanko LED"
-msgstr "White LED"
+#, fuzzy
+msgid "Hello!"
+msgstr "Hello!"
 
-msgid "Brila"
-msgstr "Light"
+#, fuzzy
+msgid "Pasvorto"
+msgstr "Password"
 
-msgid "Ĝisdatigi"
-msgstr "Update"
+#, fuzzy
+msgid "Sign in"
+msgstr "Sign in"
 
-msgid "Kamerao Kontroloj"
-msgstr "Camera controls"
+#, fuzzy
+msgid "Sign In"
+msgstr "Sign in"
 
-msgid "LED agordoj"
-msgstr "LED settings"
+#, fuzzy
+msgid "Uzantnomo"
+msgstr "Username"
 
-msgid "Malŝalti"
-msgstr "Turn off"
+#, fuzzy
+msgid "Vi ne estas ensalutinta!"
+msgstr "You are not logged in!"
 
-msgid "Movado-Detekto"
-msgstr "Motion detection"
-
-msgid "Movado - LED"
-msgstr "Motion - LED"
-
-msgid "Movado - Momentfotoj"
-msgstr "Motion - Snapshots"
-
-msgid "Movado - MQTT-Mesaĝo"
-msgstr "Motion - MQTT message"
-
-msgid "Movado - MQTT-Momentfoto"
-msgstr "Motion - MQTT Snapshot"
-
-msgid "Movado - Sendi retpoŝtojn"
-msgstr "Motion - send emails"
-
-msgid "Movado - Sendi Telegramon"
-msgstr "Motion - Send Telegram"
-
-msgid "MQTT-Kontrolo Servilo"
-msgstr "MQTT control server"
-
-msgid "MQTT-Statuso Servilo"
-msgstr "MQTT status server"
-
-msgid "Nokta Agordoj"
-msgstr "SW night configuration"
-
-msgid "Obskura"
-msgstr "Dark"
-
-msgid "OSD"
-msgstr "OSD"
-
-msgid "Pan/Tilt"
-msgstr "Pan / Tilt"
-
-msgid "Pasvortoj"
-msgstr "HTTP Password"
-
-msgid "Problemoj?"
-msgstr "Issues?"
-
-msgid "Protokoloj"
-msgstr "Logs"
-
-msgid "Restartigi"
-msgstr "Reboot"
-
-msgid "Reto"
-msgstr "Network"
-
-msgid "Reto Informoj"
-msgstr "Network Information"
-
-msgid "RTSP Agordoj"
-msgstr "RTSP settings"
-
-msgid "RTSP-Servilo"
-msgstr "RTSP server"
-
-msgid "Servoj"
-msgstr "Services"
-
-msgid "Sistemo"
-msgstr "System"
-
-msgid "Sono"
-msgstr "Audio"
-
-msgid "Sono ĉe Lanĉo"
-msgstr "Sound on Startup"
-
-msgid "Stato"
-msgstr "Status"
-
-msgid "Superrigardo"
-msgstr "Overview"
-
-msgid "T21 Kodumoj"
-msgstr "T21 Hacks"
-
-msgid "Temo"
-msgstr "Theme"
-
-msgid "Transruĝa Filtrilo"
-msgstr "IR-Cut"
-
-msgid "Transruĝa LED"
-msgstr "IR LED"
-
-msgid "Versio :"
-msgstr "Version:"
-
+#, fuzzy
+#~ msgid "You are not logged in!"
+#~ msgstr "You are not logged in!"

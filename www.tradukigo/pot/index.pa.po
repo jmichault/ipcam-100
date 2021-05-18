@@ -13,158 +13,33 @@ msgstr ""
 "X-Generator: html2pot\n"
 
 #, fuzzy
-msgid "Aŭtomata Nokta Detekto"
-msgstr "ਆਟੋਮੈਟਿਕ ਰਾਤ ਦੀ ਪਛਾਣ"
+msgid "Elektu lingvon"
+msgstr "ਕੋਈ ਭਾਸ਼ਾ ਚੁਣੋ"
 
 #, fuzzy
-msgid "Blanko LED"
-msgstr "ਚਿੱਟਾ ਅਗਵਾਈ"
+msgid "Hello!"
+msgstr "ਸਤ ਸ੍ਰੀ ਅਕਾਲ!"
 
 #, fuzzy
-msgid "Brila"
-msgstr "ਚਮਕਦਾਰ"
-
-#, fuzzy
-msgid "Ĝisdatigi"
-msgstr "ਅਪਡੇਟ"
-
-#, fuzzy
-msgid "Kamerao Kontroloj"
-msgstr "ਕੈਮਰਾ ਨਿਯੰਤਰਣ"
-
-#, fuzzy
-msgid "LED agordoj"
-msgstr "ਐਲਈਡੀ ਸੈਟਿੰਗਜ਼"
-
-#, fuzzy
-msgid "Malŝalti"
-msgstr "ਬੰਦ ਕਰ ਦਿਓ"
-
-#, fuzzy
-msgid "Movado-Detekto"
-msgstr "ਅੰਦੋਲਨ ਦੀ ਪਛਾਣ"
-
-#, fuzzy
-msgid "Movado - LED"
-msgstr "ਅੰਦੋਲਨ - ਅਗਵਾਈ"
-
-#, fuzzy
-msgid "Movado - Momentfotoj"
-msgstr "ਅੰਦੋਲਨ - ਪਲ ਦੀਆਂ ਫੋਟੋਆਂ"
-
-#, fuzzy
-msgid "Movado - MQTT-Mesaĝo"
-msgstr "ਅੰਦੋਲਨ - MQTT ਸੁਨੇਹਾ"
-
-#, fuzzy
-msgid "Movado - MQTT-Momentfoto"
-msgstr "ਅੰਦੋਲਨ - mqtt-rapwtfoto"
-
-#, fuzzy
-msgid "Movado - Sendi retpoŝtojn"
-msgstr "ਅੰਦੋਲਨ - ਈਮੇਲਾਂ ਭੇਜੋ"
-
-#, fuzzy
-msgid "Movado - Sendi Telegramon"
-msgstr "ਅੰਦੋਲਨ - ਇੱਕ ਤਾਰ ਭੇਜਦਾ ਹੈ"
-
-#, fuzzy
-msgid "MQTT-Kontrolo Servilo"
-msgstr "ਐਮਕਿਟੀ ਕੰਟਰੋਲ ਸਰਵਰ"
-
-#, fuzzy
-msgid "MQTT-Statuso Servilo"
-msgstr "Mqtt ਸਥਿਤੀ ਸਰਵਰ"
-
-#, fuzzy
-msgid "Nokta Agordoj"
-msgstr "ਰਾਤ ਦੀਆਂ ਸੈਟਿੰਗਾਂ"
-
-#, fuzzy
-msgid "Obskura"
-msgstr "ਅਸਪਸ਼ਟ"
-
-#, fuzzy
-msgid "OSD"
-msgstr "ਓਐਸਡੀ"
-
-#, fuzzy
-msgid "Pan/Tilt"
-msgstr "ਪੈਨ / ਝੁਕਾਅ"
-
-#, fuzzy
-msgid "Pasvortoj"
+msgid "Pasvorto"
 msgstr "ਪਾਸਵਰਡ"
 
 #, fuzzy
-msgid "Problemoj?"
-msgstr "ਸਮੱਸਿਆਵਾਂ?"
+msgid "Sign in"
+msgstr "ਸਾਈਨ - ਇਨ"
 
 #, fuzzy
-msgid "Protokoloj"
-msgstr "ਪ੍ਰੋਟੋਕੋਲ"
+msgid "Sign In"
+msgstr "ਸਾਈਨ - ਇਨ"
 
 #, fuzzy
-msgid "Restartigi"
-msgstr "ਮੁੜ ਚਾਲੂ ਕਰਨ ਲਈ"
+msgid "Uzantnomo"
+msgstr "ਉਪਯੋਗਕਰਤਾ ਨਾਮ"
 
 #, fuzzy
-msgid "Reto"
-msgstr "ਨੈੱਟਵਰਕ"
+msgid "Vi ne estas ensalutinta!"
+msgstr "ਤੁਸੀਂ ਲੌਗਇਨ ਨਹੀਂ ਹੋ!"
 
 #, fuzzy
-msgid "Reto Informoj"
-msgstr "ਨੈੱਟਵਰਕ ਜਾਣਕਾਰੀ"
-
-#, fuzzy
-msgid "RTSP Agordoj"
-msgstr "ਆਰਟੀਐਸਪੀ ਸੈਟਿੰਗਜ਼"
-
-#, fuzzy
-msgid "RTSP-Servilo"
-msgstr "ਆਰਟੀਐਸਪੀ ਸਰਵਰ"
-
-#, fuzzy
-msgid "Servoj"
-msgstr "ਸੇਵਾਵਾਂ"
-
-#, fuzzy
-msgid "Sistemo"
-msgstr "ਸਿਸਟਮ"
-
-#, fuzzy
-msgid "Sono"
-msgstr "ਆਵਾਜ਼"
-
-#, fuzzy
-msgid "Sono ĉe Lanĉo"
-msgstr "ਲਾਂਚ 'ਤੇ ਆਵਾਜ਼"
-
-#, fuzzy
-msgid "Stato"
-msgstr "ਰਾਜ"
-
-#, fuzzy
-msgid "Superrigardo"
-msgstr "ਸੰਖੇਪ ਜਾਣਕਾਰੀ"
-
-#, fuzzy
-msgid "T21 Kodumoj"
-msgstr "ਟੀ 21 ਕੋਡ"
-
-#, fuzzy
-msgid "Temo"
-msgstr "ਵਿਸ਼ਾ"
-
-#, fuzzy
-msgid "Transruĝa Filtrilo"
-msgstr "ਇਨਫਰਾਰੈੱਡ ਫਿਲਟਰ"
-
-#, fuzzy
-msgid "Transruĝa LED"
-msgstr "ਇਨਫਰਾਰੈੱਡ ਐਲਈਡੀ"
-
-#, fuzzy
-msgid "Versio :"
-msgstr "ਵਰਜਨ:"
-
+#~ msgid "You are not logged in!"
+#~ msgstr "ਤੁਸੀਂ ਲੌਗਇਨ ਨਹੀਂ ਹੋ!"

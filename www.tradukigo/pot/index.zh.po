@@ -13,158 +13,33 @@ msgstr ""
 "X-Generator: html2pot\n"
 
 #, fuzzy
-msgid "Aŭtomata Nokta Detekto"
-msgstr "自动夜间检测"
+msgid "Elektu lingvon"
+msgstr "选择一种语言"
 
 #, fuzzy
-msgid "Blanko LED"
-msgstr "白色LED"
+msgid "Hello!"
+msgstr "你好！"
 
 #, fuzzy
-msgid "Brila"
-msgstr "明亮的"
-
-#, fuzzy
-msgid "Ĝisdatigi"
-msgstr "更新"
-
-#, fuzzy
-msgid "Kamerao Kontroloj"
-msgstr "相机控件"
-
-#, fuzzy
-msgid "LED agordoj"
-msgstr "LED设置"
-
-#, fuzzy
-msgid "Malŝalti"
-msgstr "关"
-
-#, fuzzy
-msgid "Movado-Detekto"
-msgstr "运动检测"
-
-#, fuzzy
-msgid "Movado - LED"
-msgstr "运动 -  LED"
-
-#, fuzzy
-msgid "Movado - Momentfotoj"
-msgstr "运动 - 时刻照片"
-
-#, fuzzy
-msgid "Movado - MQTT-Mesaĝo"
-msgstr "运动 -  MQTT消息"
-
-#, fuzzy
-msgid "Movado - MQTT-Momentfoto"
-msgstr "运动 -  mqtt-moneyfoto"
-
-#, fuzzy
-msgid "Movado - Sendi retpoŝtojn"
-msgstr "运动 - 发送电子邮件"
-
-#, fuzzy
-msgid "Movado - Sendi Telegramon"
-msgstr "运动 - 发送电报"
-
-#, fuzzy
-msgid "MQTT-Kontrolo Servilo"
-msgstr "MQTT控制服务器"
-
-#, fuzzy
-msgid "MQTT-Statuso Servilo"
-msgstr "MQTT状态服务器"
-
-#, fuzzy
-msgid "Nokta Agordoj"
-msgstr "夜间设置"
-
-#, fuzzy
-msgid "Obskura"
-msgstr "朦胧"
-
-#, fuzzy
-msgid "OSD"
-msgstr "OSD."
-
-#, fuzzy
-msgid "Pan/Tilt"
-msgstr "泛/倾斜"
-
-#, fuzzy
-msgid "Pasvortoj"
+msgid "Pasvorto"
 msgstr "密码"
 
 #, fuzzy
-msgid "Problemoj?"
-msgstr "问题？"
+msgid "Sign in"
+msgstr "登入"
 
 #, fuzzy
-msgid "Protokoloj"
-msgstr "协议"
+msgid "Sign In"
+msgstr "登入"
 
 #, fuzzy
-msgid "Restartigi"
-msgstr "重新启动"
+msgid "Uzantnomo"
+msgstr "用户名"
 
 #, fuzzy
-msgid "Reto"
-msgstr "网络"
+msgid "Vi ne estas ensalutinta!"
+msgstr "你没有登录！"
 
 #, fuzzy
-msgid "Reto Informoj"
-msgstr "网络信息"
-
-#, fuzzy
-msgid "RTSP Agordoj"
-msgstr "RTSP设置"
-
-#, fuzzy
-msgid "RTSP-Servilo"
-msgstr "RTSP服务器"
-
-#, fuzzy
-msgid "Servoj"
-msgstr "服务"
-
-#, fuzzy
-msgid "Sistemo"
-msgstr "系统"
-
-#, fuzzy
-msgid "Sono"
-msgstr "声音"
-
-#, fuzzy
-msgid "Sono ĉe Lanĉo"
-msgstr "发射时声音"
-
-#, fuzzy
-msgid "Stato"
-msgstr "状态"
-
-#, fuzzy
-msgid "Superrigardo"
-msgstr "概述"
-
-#, fuzzy
-msgid "T21 Kodumoj"
-msgstr "T21代码"
-
-#, fuzzy
-msgid "Temo"
-msgstr "主题"
-
-#, fuzzy
-msgid "Transruĝa Filtrilo"
-msgstr "红外线过滤器"
-
-#, fuzzy
-msgid "Transruĝa LED"
-msgstr "红外LED"
-
-#, fuzzy
-msgid "Versio :"
-msgstr "版本："
-
+#~ msgid "You are not logged in!"
+#~ msgstr "你没有登录！"

@@ -1,0 +1,170 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+#, fuzzy
+msgid "Aŭtomata Nokta Detekto"
+msgstr "Автоматическое ночное обнаружение"
+
+#, fuzzy
+msgid "Blanko LED"
+msgstr "Белый светодиод"
+
+#, fuzzy
+msgid "Brila"
+msgstr "Яркий"
+
+#, fuzzy
+msgid "Ĝisdatigi"
+msgstr "Обновлять"
+
+#, fuzzy
+msgid "Kamerao Kontroloj"
+msgstr "Управление камерой"
+
+#, fuzzy
+msgid "LED agordoj"
+msgstr "Светодиодные настройки"
+
+#, fuzzy
+msgid "Malŝalti"
+msgstr "Выключать"
+
+#, fuzzy
+msgid "Movado-Detekto"
+msgstr "Обнаружение движения"
+
+#, fuzzy
+msgid "Movado - LED"
+msgstr "Движение - Светодиод"
+
+#, fuzzy
+msgid "Movado - Momentfotoj"
+msgstr "Движение - момент Фотографии"
+
+#, fuzzy
+msgid "Movado - MQTT-Mesaĝo"
+msgstr "Движение - MQTT сообщение"
+
+#, fuzzy
+msgid "Movado - MQTT-Momentfoto"
+msgstr "Движение - MQTT-MomentFoto"
+
+#, fuzzy
+msgid "Movado - Sendi retpoŝtojn"
+msgstr "Движение - Отправить электронные письма"
+
+#, fuzzy
+msgid "Movado - Sendi Telegramon"
+msgstr "Движение - Отправить телеграмму"
+
+#, fuzzy
+msgid "MQTT-Kontrolo Servilo"
+msgstr "MQTT Control Server"
+
+#, fuzzy
+msgid "MQTT-Statuso Servilo"
+msgstr "MQTT Status Server"
+
+#, fuzzy
+msgid "Nokta Agordoj"
+msgstr "Ночные настройки"
+
+#, fuzzy
+msgid "Obskura"
+msgstr "Затемнять"
+
+#, fuzzy
+msgid "OSD"
+msgstr "Ось"
+
+#, fuzzy
+msgid "Pan/Tilt"
+msgstr "Pan / Tilt."
+
+#, fuzzy
+msgid "Pasvortoj"
+msgstr "Пароли"
+
+#, fuzzy
+msgid "Problemoj?"
+msgstr "Проблемы?"
+
+#, fuzzy
+msgid "Protokoloj"
+msgstr "Протоколы"
+
+#, fuzzy
+msgid "Restartigi"
+msgstr "Заново"
+
+#, fuzzy
+msgid "Reto"
+msgstr "Сеть"
+
+#, fuzzy
+msgid "Reto Informoj"
+msgstr "Сетевая информация"
+
+#, fuzzy
+msgid "RTSP Agordoj"
+msgstr "RTSP Настройки"
+
+#, fuzzy
+msgid "RTSP-Servilo"
+msgstr "Rtsp server."
+
+#, fuzzy
+msgid "Servoj"
+msgstr "Услуги"
+
+#, fuzzy
+msgid "Sistemo"
+msgstr "Система"
+
+#, fuzzy
+msgid "Sono"
+msgstr "Звук"
+
+#, fuzzy
+msgid "Sono ĉe Lanĉo"
+msgstr "Звук в запуске"
+
+#, fuzzy
+msgid "Stato"
+msgstr "Состояние"
+
+#, fuzzy
+msgid "Superrigardo"
+msgstr "Обзор"
+
+#, fuzzy
+msgid "T21 Kodumoj"
+msgstr "T21 коды"
+
+#, fuzzy
+msgid "Temo"
+msgstr "Предмет"
+
+#, fuzzy
+msgid "Transruĝa Filtrilo"
+msgstr "Инфракрасный фильтр"
+
+#, fuzzy
+msgid "Transruĝa LED"
+msgstr "Инфракрасный светодиод"
+
+#, fuzzy
+msgid "Versio :"
+msgstr "Версия:"
+

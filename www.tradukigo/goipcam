@@ -1,0 +1,42 @@
+#!/bin/bash
+
+BAZO=$(dirname $(readlink -f $0))
+cd "$BAZO"
+
+for FIC in index
+do
+  
+  if [ ../karto/www/ipcam/$FIC.html -nt ipcam/pot/$FIC.pot ] ; then
+    lib/html2pot ../karto/www/ipcam/$FIC.html >ipcam/pot/$FIC.pot
+  fi
+  
+  for lang in ar bn de en es fr hi it ja ms nl pa pl pt ru zh
+  do
+    if [ ! -f ipcam/pot/$FIC.$lang.po ] ; then
+      echo "krei ipcam/pot/${FIC}.${lang}.po"
+      cat ipcam/pot/${FIC}.pot|sed "s/^\"Language: .*\\\n\"/\"Language: "${lang}"\\\n\"/" > ipcam/pot/${FIC}.${lang}.po
+      lib/traduki_po.sh ipcam/pot/${FIC}.${lang}.po
+      mv ipcam/pot/${FIC}.${lang}.po.nova ipcam/pot/${FIC}.${lang}.po
+    elif [ ipcam/pot/$FIC.pot -nt ipcam/pot/${FIC}.${lang}.po ]; then
+      echo "kunfandi ipcam/pot/${FIC}.${lang}.po"
+      msgmerge -U ipcam/pot/${FIC}.${lang}.po ipcam/pot/$FIC.pot
+      lib/traduki_po.sh ipcam/pot/${FIC}.${lang}.po
+      mv ipcam/pot/${FIC}.${lang}.po.nova ipcam/pot/${FIC}.${lang}.po
+    else
+      lib/traduki_po.sh ipcam/pot/${FIC}.${lang}.po
+      if ! diff ipcam/pot/${FIC}.${lang}.po.nova ipcam/pot/${FIC}.${lang}.po >/dev/null 2>&1 ; then
+        echo "ĝisdatigi ipcam/pot/${FIC}.${lang}.po"
+        mv ipcam/pot/${FIC}.${lang}.po.nova ipcam/pot/${FIC}.${lang}.po
+      else
+        rm ipcam/pot/${FIC}.${lang}.po.nova
+      fi
+    fi
+    if [ ! -f ../karto/www/ipcam/lok/${FIC}.${lang}.json ] ; then
+      echo krei karto/www/ipcam/lok/${FIC}.${lang}.json
+      lib/po2json ipcam/pot/${FIC}.${lang}.po ../karto/www/ipcam/lok/${FIC}.${lang}.json
+    elif [ ipcam/pot/${FIC}.${lang}.po -nt ../karto/www/ipcam/lok/${FIC}.${lang}.json ] ; then
+      echo ĝisdatigi karto/www/ipcam/lok/${FIC}.${lang}.json
+      lib/po2json ipcam/pot/${FIC}.${lang}.po ../karto/www/ipcam/lok/${FIC}.${lang}.json
+    fi
+  done
+done  

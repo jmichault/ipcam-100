@@ -1,0 +1,98 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+#, fuzzy
+msgid "Ĝisdatigi"
+msgstr "تحديث"
+
+#, fuzzy
+msgid "Kamerao"
+msgstr ""
+
+#, fuzzy
+msgid "LED agordoj"
+msgstr "إعدادات LED."
+
+#, fuzzy
+msgid "Malŝalti"
+msgstr "اطفئه"
+
+#, fuzzy
+msgid "Movado-Detekto"
+msgstr "اكتشاف الحركة"
+
+#, fuzzy
+msgid "Nokta Agordoj"
+msgstr "إعدادات الليل"
+
+#, fuzzy
+msgid "OSD"
+msgstr "osd"
+
+#, fuzzy
+msgid "Pan/Tilt"
+msgstr "عموم / الميل"
+
+#, fuzzy
+msgid "Pasvortoj"
+msgstr "كلمات المرور"
+
+#, fuzzy
+msgid "Problemoj?"
+msgstr "مشاكل؟"
+
+#, fuzzy
+msgid "Protokoloj"
+msgstr "البروتوكولات"
+
+#, fuzzy
+msgid "Restartigi"
+msgstr "لإعادة التشغيل"
+
+#, fuzzy
+msgid "Reto Informoj"
+msgstr "معلومات الشبكة"
+
+#, fuzzy
+msgid "RTSP Agordoj"
+msgstr "إعدادات RTSP."
+
+#, fuzzy
+msgid "Servoj"
+msgstr "خدمات"
+
+#, fuzzy
+msgid "Sistemo"
+msgstr "نظام"
+
+#, fuzzy
+msgid "Sono"
+msgstr "صوت"
+
+#, fuzzy
+msgid "Stato"
+msgstr "حالة"
+
+#, fuzzy
+msgid "Superrigardo"
+msgstr "ملخص"
+
+#, fuzzy
+msgid "T21 Kodumoj"
+msgstr "رموز T21"
+
+#, fuzzy
+msgid "Versio :"
+msgstr "إصدار:"
+

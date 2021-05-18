@@ -1,0 +1,116 @@
+
+<h1>Logs</h1>
+<div class="container" id="tabs">
+    <ul class="nav nav-tabs">
+        <li class="nav-item" data-tab="1">
+            <a class="nav-link active" id="nav-tab1" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="false">
+                Summary </a> </li>
+        <li class="nav-item" data-tab="2">
+            <a class="nav-link" id="nav-tab2" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">
+                dmesg </a> </li>
+        <li class="nav-item" data-tab="3">
+            <a class="nav-link" id="nav-tab3" data-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">
+                logcat </a> </li>
+        <li class="nav-item" data-tab="4">
+            <a class="nav-link" id="nav-tab4" data-toggle="tab" href="#tab4" role="tab" aria-controls="tab4" aria-selected="false">
+                video server </a> </li>
+        <li class="nav-item" data-tab="5">
+            <a class="nav-link" id="nav-tab5" data-toggle="tab" href="#tab5" role="tab" aria-controls="tab5" aria-selected="false">
+                Last update </a> </li>
+        <li class="nav-item" data-tab="6">
+            <a class="nav-link" id="nav-tab6" data-toggle="tab" href="#tab6" role="tab" aria-controls="tab6" aria-selected="false">
+                Process List </a> </li>
+        <li class="nav-item" data-tab="7">
+            <a class="nav-link" id="nav-tab7" data-toggle="tab" href="#tab7" role="tab" aria-controls="tab7" aria-selected="false">
+                Mounts </a> </li>
+    </ul>
+
+<div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" data-content="1" id="tab1" role="tabpanel" aria-labelledby="nav-tab1"></div>
+    <div class="tab-pane fade" data-content="2" id="tab2" role="tabpanel" aria-labelledby="nav-tab2"></div>
+    <div class="tab-pane fade" data-content="3" id="tab3" role="tabpanel" aria-labelledby="nav-tab3"></div>
+    <div class="tab-pane fade" data-content="4" id="tab4" role="tabpanel" aria-labelledby="nav-tab4"></div>
+    <div class="tab-pane fade" data-content="5" id="tab5" role="tabpanel" aria-labelledby="nav-tab5"></div>
+    <div class="tab-pane fade" data-content="6" id="tab6" role="tabpanel" aria-labelledby="nav-tab6"></div>
+    <div class="tab-pane fade" data-content="7" id="tab7" role="tabpanel" aria-labelledby="nav-tab7"></div>
+</div>
+
+<a href="#" id="back-to-top" title="Back to top">&uarr;</a>
+</div>
+<script type="text/javascript">
+    if ($('#back-to-top').length) {
+        var scrollTrigger = 100, // px
+            backToTop = function () {
+                var scrollTop = $(window).scrollTop();
+                if (scrollTop > scrollTrigger) {
+                    $('#back-to-top').addClass('show');
+                } else {
+                    $('#back-to-top').removeClass('show');
+                }
+            };
+        backToTop();
+        $(window).on('scroll', function () {
+            backToTop();
+        });
+        $('#back-to-top').on('click', function (e) {
+            e.preventDefault();
+            $('html,body').animate({
+                scrollTop: 0
+            }, 700);
+        });
+    }
+    $(document).ready(function() {
+
+                jQuery.fn.single_double_click = function(single_click_callback, double_click_callback, timeout) {
+                    return this.each(function() {
+                        var clicks = 0,
+                            self = this;
+                        jQuery(this).click(function(event) {
+                            clicks++;
+                            if (clicks == 1) {
+                                setTimeout(function() {
+                                    if (clicks == 1) {
+                                        single_click_callback.call(self, event);
+                                    } else {
+                                        double_click_callback.call(self, event);
+                                    }
+                                    clicks = 0;
+                                }, timeout || 300);
+                            }
+                        });
+                    });
+                }
+                $.ajax({
+                    'url': 'cgi-bin/action.cgi?cmd=showlog',
+                }).done(function(log) {
+                    $('#tab1').html(log);
+
+                    $('#tabs li').single_double_click(function() {
+                        var tab = $(this).data('tab');
+                        var str = "logname=" + tab
+                        //console.log("Print:"+str);
+                        $.ajax({
+                            'url': 'cgi-bin/action.cgi?cmd=showlog',
+                            'type': 'POST',
+                            'data': str
+                        }).done(function(log) {
+                            $('#tab'+tab).html(log);
+
+                        });
+
+                    }, function() {
+                        var tab = $(this).data('tab');
+                        var str = "logname=" + tab
+                        //console.log("Clear:"+str);
+                        $.ajax({
+                            'url': 'cgi-bin/action.cgi?cmd=clearlog',
+                            'type': 'POST',
+                            'data': str
+                        }).done(function(log) {
+                            $('#tab-content div').html(log);
+                        });
+
+                    });
+                });
+    });
+</script>

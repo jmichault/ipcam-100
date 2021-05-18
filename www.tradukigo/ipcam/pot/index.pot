@@ -1,0 +1,77 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: eo\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+msgid "Ĝisdatigi"
+msgstr ""
+
+msgid "Kamerao"
+msgstr ""
+
+msgid "LED agordoj"
+msgstr ""
+
+msgid "Malŝalti"
+msgstr ""
+
+msgid "Movado-Detekto"
+msgstr ""
+
+msgid "Nokta Agordoj"
+msgstr ""
+
+msgid "OSD"
+msgstr ""
+
+msgid "Pan/Tilt"
+msgstr ""
+
+msgid "Pasvortoj"
+msgstr ""
+
+msgid "Problemoj?"
+msgstr ""
+
+msgid "Protokoloj"
+msgstr ""
+
+msgid "Restartigi"
+msgstr ""
+
+msgid "Reto Informoj"
+msgstr ""
+
+msgid "RTSP Agordoj"
+msgstr ""
+
+msgid "Servoj"
+msgstr ""
+
+msgid "Sistemo"
+msgstr ""
+
+msgid "Sono"
+msgstr ""
+
+msgid "Stato"
+msgstr ""
+
+msgid "Superrigardo"
+msgstr ""
+
+msgid "T21 Kodumoj"
+msgstr ""
+
+msgid "Versio :"
+msgstr ""
+

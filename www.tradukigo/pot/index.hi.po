@@ -13,158 +13,33 @@ msgstr ""
 "X-Generator: html2pot\n"
 
 #, fuzzy
-msgid "Aŭtomata Nokta Detekto"
-msgstr "स्वचालित नाइट डिटेक्शन"
+msgid "Elektu lingvon"
+msgstr "एक भाषा चुनें"
 
 #, fuzzy
-msgid "Blanko LED"
-msgstr "व्हाइट एलईडी"
+msgid "Hello!"
+msgstr "हैलो!"
 
 #, fuzzy
-msgid "Brila"
-msgstr "उज्ज्वल"
+msgid "Pasvorto"
+msgstr "कुंजिका"
 
 #, fuzzy
-msgid "Ĝisdatigi"
-msgstr "अपडेट करें"
+msgid "Sign in"
+msgstr "साइन इन करें"
 
 #, fuzzy
-msgid "Kamerao Kontroloj"
-msgstr "कैमरा नियंत्रण"
+msgid "Sign In"
+msgstr "साइन इन करें"
 
 #, fuzzy
-msgid "LED agordoj"
-msgstr "एलईडी सेटिंग्स"
+msgid "Uzantnomo"
+msgstr "उपयोगकर्ता नाम"
 
 #, fuzzy
-msgid "Malŝalti"
-msgstr "बंद करें"
+msgid "Vi ne estas ensalutinta!"
+msgstr "आपने लॉग - इन नहीं किया!"
 
 #, fuzzy
-msgid "Movado-Detekto"
-msgstr "आंदोलन का पता लगाने"
-
-#, fuzzy
-msgid "Movado - LED"
-msgstr "आंदोलन - एलईडी"
-
-#, fuzzy
-msgid "Movado - Momentfotoj"
-msgstr "आंदोलन - पल तस्वीरें"
-
-#, fuzzy
-msgid "Movado - MQTT-Mesaĝo"
-msgstr "आंदोलन - एमक्यूटीटी संदेश"
-
-#, fuzzy
-msgid "Movado - MQTT-Momentfoto"
-msgstr "आंदोलन - एमक्यूटीटी-पलफोटो"
-
-#, fuzzy
-msgid "Movado - Sendi retpoŝtojn"
-msgstr "आंदोलन - ईमेल भेजें"
-
-#, fuzzy
-msgid "Movado - Sendi Telegramon"
-msgstr "आंदोलन - एक टेलीग्राम भेजें"
-
-#, fuzzy
-msgid "MQTT-Kontrolo Servilo"
-msgstr "एमक्यूटीटी नियंत्रण सर्वर"
-
-#, fuzzy
-msgid "MQTT-Statuso Servilo"
-msgstr "MQTT स्थिति सर्वर"
-
-#, fuzzy
-msgid "Nokta Agordoj"
-msgstr "रात की सेटिंग्स"
-
-#, fuzzy
-msgid "Obskura"
-msgstr "अस्पष्ट"
-
-#, fuzzy
-msgid "OSD"
-msgstr "ओएसडी"
-
-#, fuzzy
-msgid "Pan/Tilt"
-msgstr "पैन टिल्ट"
-
-#, fuzzy
-msgid "Pasvortoj"
-msgstr "पासवर्डों"
-
-#, fuzzy
-msgid "Problemoj?"
-msgstr "समस्या?"
-
-#, fuzzy
-msgid "Protokoloj"
-msgstr "प्रोटोकॉल"
-
-#, fuzzy
-msgid "Restartigi"
-msgstr "पुनः आरंभ करने के लिए"
-
-#, fuzzy
-msgid "Reto"
-msgstr "नेटवर्क"
-
-#, fuzzy
-msgid "Reto Informoj"
-msgstr "नेटवर्क जानकारी"
-
-#, fuzzy
-msgid "RTSP Agordoj"
-msgstr "आरटीएसपी सेटिंग्स"
-
-#, fuzzy
-msgid "RTSP-Servilo"
-msgstr "आरटीएसपी सर्वर"
-
-#, fuzzy
-msgid "Servoj"
-msgstr "सेवाएं"
-
-#, fuzzy
-msgid "Sistemo"
-msgstr "प्रणाली"
-
-#, fuzzy
-msgid "Sono"
-msgstr "ध्वनि"
-
-#, fuzzy
-msgid "Sono ĉe Lanĉo"
-msgstr "लॉन्च पर ध्वनि"
-
-#, fuzzy
-msgid "Stato"
-msgstr "राज्य"
-
-#, fuzzy
-msgid "Superrigardo"
-msgstr "अवलोकन"
-
-#, fuzzy
-msgid "T21 Kodumoj"
-msgstr "T21 कोड"
-
-#, fuzzy
-msgid "Temo"
-msgstr "विषय"
-
-#, fuzzy
-msgid "Transruĝa Filtrilo"
-msgstr "इन्फ्रारेड फ़िल्टर"
-
-#, fuzzy
-msgid "Transruĝa LED"
-msgstr "इन्फ्रारेड एलईडी"
-
-#, fuzzy
-msgid "Versio :"
-msgstr "संस्करण:"
-
+#~ msgid "You are not logged in!"
+#~ msgstr "आपने लॉग - इन नहीं किया!"

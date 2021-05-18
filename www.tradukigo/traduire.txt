@@ -1,0 +1,35 @@
+
+
+# pour le html :
+* pour les textes
+
+le mettre dans un attribut (<div>,<a>, ...) de classe lang, avec data-lang contenant le message :
+<div class="lang" data-lang="hello"></div>
+mettre data-lang en dernier (le script se sert du > pour repérer la fin du texte), utiliser des ", ne pas rajouter d'espaces ou autres.
+
+# pour les textes javascript :  i18n.gettext("texte")
+
+# créer les .json contenant les traductions :
+* créer un fichier .pot :
+lib/html2pot index.html >pot/index.pot
+
+* générer les .po pour chaque langue.
+cat pot/${FIC}.pot|sed "s/^\"Language: \\\n\"/\"Language: "${lang}"\\\n\"/" > pot/${FIC}.${lang}.po
+* les traduire
+
+* générer les .json à partir des .po :
+po2json
+
+* mettre à jour les .po après changement du fichier source :
+
+
+# ajouter un script de traduction :
+
+<script type="text/javascript" src="lib/gettext.min.js"></script>
+<script type="text/javascript" src="js/traduki.js"></script>
+<script>
+  $(document).ready(function () {
+    setPageLang("index");
+   })
+</script>
+
