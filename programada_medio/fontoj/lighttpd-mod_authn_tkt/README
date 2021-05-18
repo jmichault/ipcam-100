@@ -1,0 +1,206 @@
+
+========
+mod_authn_tkt for Lighttpd
+========
+
+
+Overview
+========
+
+mod_authn_tkt provides secure cookie-based authentification for Lighttpd.
+It is a port of Apache module of the same name.
+
+Basically it works as follows:
+1) User tries to access a restricted URI
+2) mod_authn_tkt checks if the request contains a valid ticket in a cookie
+   with predetermined name. If not, module redirects the user to login URI
+   setting reference to the original page via URI parameter or another cookie
+3) At the login URI the user is authentified and is given a ticket (a cookie
+   is set)
+4) Original page can be accessed as long as ticket is valid and not expired
+5) Valid ticket is periodically refreshed on subsequent requests of protected
+   pages
+
+More information may be found at the homepage of the original Apache module:
+http://www.openfusion.com.au/labs/mod_auth_tkt
+
+
+Directives
+==========
+
+auth.method.tkt.opts = ( <options> )
+	all options are collected into a single directive to attempt to
+	keep auth site config and policy together.  mod_auth auth.require
+	directive is used to set the authorized users config and to employ
+	mod_authn_tkt
+
+
+Options
+=======
+
+"secret" - string, required
+	secret component of MD5 hash
+
+"secret-old" - string, optional
+	(previous) secret component of MD5 hash
+
+"login-url" - string, required
+	unauthorized requests are redirected to this URI
+
+"timeout-url" - string, default="login-url"
+	requests that send tickets with timestamp older than specified in
+	"timeout" are redirected to this URI
+
+"post-timeout-url" - string, default="timeout_url"
+	requests that send tickets with timestamp older than specified in
+	"timeout" via POST are redirected to this URI
+
+"unauth-url" - string, default="login_url"
+	requests that send tickets without required tokens are redirected
+	to this URI
+
+"timeout" - string, default=7200
+	period of time before ticket is considered expired (not the same
+	as cookie expiration - it is protected by MD5 hash).
+	Last char of the string may be one of:
+	m, h, d, w, M, y
+	to specify minutes, hours, days, weeks, months and years respectively.
+	With no char the setting is treated to be in seconds.
+
+"timeout-refresh" - float, default=0
+	From documentation of mod_auth_tkt for Apache:
+	"A number between 0 and 1 indicating whether and how to refresh ticket
+	timestamps. 0 means never refresh (hard timeouts). 1 means refresh
+	tickets every time. .33 (for example) means refresh if less than .33
+	of the timeout period remains."
+
+"digest-type" - string, default="MD5"
+	Digest used in cookie.
+	"SHA256" or "SHA512" available if module linked with openssl libcrypto
+
+"ignore-ip" - boolean, default=disable
+	If set, client's IP is included in ticket.
+
+"require-ssl" - boolean, default=disable
+	If set, ignore tickets that are sent over clear HTTP
+
+"cookie-secure" - boolean, default=disable
+	Whether to set 'Secure' flag on ticket cookies
+	(default=enabled when "require-ssl" is enabled)
+
+"cookie-name" - string, default="auth_tkt"
+	ticket is set as a cookie with this name
+
+"cookie-domain" - string, default=<value of server.name option>
+	'Domain' field of the ticket cookie
+
+"cookie-expires" - string, default=0
+	'Expires' field of the ticket cookie. Format is the same as
+	"timeout"
+
+"back-cookie-name" - string, optional
+	If set, cookie with this name is used instead of GET parameter,
+	to remember the requested page
+
+"back-arg-name" - string, default=back
+	From documentation of mod_auth_tkt for Apache:
+	"will add a GET parameter to all redirect URLs containing a URI-escaped
+	version of the current requested page e.g. if the requested page is
+	http://www.example.com/index.html and "back-arg-name" is set to
+	'back', mod_auth_tkt will add a parameter like:
+
+	  back=http%3A%2F%2Fwww.example.com%2Findex.html
+
+	to the "login-url" it redirects to, allowing your login script
+	to redirect back to the requested page upon successful login."
+
+"guest-user" - string, default="guest"
+	guest username
+	If string contains %U or %<digits>U, then that will be substituted
+	in guest username string with random hex chars (1 - 32 hex chars)
+
+"guest-login" - boolean, default=disable
+	permit guest login (if cookie is invalid or missing)
+
+"guest-cookie" - boolean, default=disable
+	create cookie for guestnot supported yet
+
+"guest-fallback" - boolean, default=disable
+	fallback to guest login if cookie expired
+
+"tokens" - list, default=(), optional
+	List of URL-path prefixes and additional required authorization tokens
+	If a URL-path matches a prefix and target list of string is not empty,
+	then user is allowed to access resource only if his/her ticket has
+	any of the specified tokens.
+
+
+Samples
+=======
+server.modules  = (
+...
+                   "mod_auth",
+                   "mod_authn_tkt",
+...
+)
+
+
+# (sample mod_authn_tkt config)
+auth.method.tkt.opts = (
+    "secret" = "longlonglongsecretkey"
+    "secret-old" = "previously-rotated-longlonglongsecretkey"
+    "login-url" = "https://www.example.org/login.html"
+    "timeout-url" = "https://www.example.org/login.html?timeout=1 "
+    "post-timeout-url" = "https://www.example.org/login.html?posttimeout=1"
+    "unauth-url" = "https://www.example.org/login.html?unauth=1"
+    "timeout" = "20m"
+    "timeout-refresh" = ".25"
+    "digest-type" = "MD5"  # "MD5", "SHA256", or "SHA512"
+    "ignore-ip" = "disable"
+    "require-ssl" = "enable"
+    "cookie-secure" = "enable"
+    "cookie-name" = "auth_tkt"
+    "cookie-domain" = "example.org"
+    "cookie-expires" = "20m"
+    "back-arg-name" = "back"
+    "back-cookie-name" = "auth_tkt_back"
+    "guest-user" = "guest-%16U"
+    "guest-login" = "disable"
+    "guest-cookie" = "disable"
+    "guest-fallback" = "disable"
+    "tokens" = ("/protected-folder/protected.txt" => ("token1", "admin"),
+                "/download/"                      => ("downloader")
+                "/server-info"                    => ("admin")
+               )
+)
+
+# (sample mod_auth config to use mod_authn_tkt.  Note: "method" => "authn_tkt")
+auth.require = ( "/download/" =>
+                 (
+                   "method"  => "authn_tkt",
+                   "realm"   => "ignored-for-authn-tkt", # must be non-empty
+                   "require" => "user=agent007|user=agent008"
+                 ),
+                 "/server-info" =>
+                 (
+                   # limit access to valid user with "admin" token (above)
+                   "method"  => "authn_tkt",
+                   "realm"   => "ignored-for-authn-tkt", # must be non-empty
+                   "require" => "valid-user"
+                 )
+                 "/protected-folder/" =>
+                 (
+                   # limit access to valid user
+                   # additionally require tokens for protected.txt (above)
+                   "method"  => "authn_tkt",
+                   "realm"   => "ignored-for-authn-tkt", # must be non-empty
+                   "require" => "valid-user"
+                 )
+               )
+
+
+TODO
+====
+
+- tests
+

@@ -1,0 +1,14 @@
+--- a/src/Makefile.am
++++ b/src/Makefile.am
+@@ -382,6 +382,11 @@
+ mod_authn_sasl_la_CPPFLAGS = $(SASL_CFLAGS)
+ endif
+ 
++lib_LTLIBRARIES += mod_authn_tkt.la
++mod_authn_tkt_la_SOURCES = mod_authn_tkt.c
++mod_authn_tkt_la_LDFLAGS = $(common_module_ldflags)
++mod_authn_tkt_la_LIBADD = $(common_libadd) $(CRYPTO_LIB)
++
+ if BUILD_WITH_OPENSSL
+ lib_LTLIBRARIES += mod_openssl.la
+ mod_openssl_la_SOURCES = mod_openssl.c

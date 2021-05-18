@@ -1,4 +1,4 @@
-server.document-root = "/opt/media/sdc/www"
+server.document-root = "/opt/media/mmcblk0p1/www"
 
 server.port = 80
 
@@ -15,13 +15,15 @@ mimetype.assign = (
 )
 index-file.names = ( "index.html" )
 server.modules = ("mod_auth",
-                  "mod_authn_file",
+                  "mod_authn_tkt",
                   "mod_redirect",
                   "mod_cgi",
                   "mod_staticfile",
                   "mod_openssl")
 
+#cgi.assign = ( "login.cgi" => "" )
 cgi.assign = ( ".cgi" => "/bin/sh" )
+
 alias.url = ( "/DCIM/" => "/opt/media/sdc/DCIM/" )
 
 $SERVER["socket"] == ":443" {
@@ -29,23 +31,45 @@ $SERVER["socket"] == ":443" {
   ssl.pemfile = "/opt/media/sdc/config/lighttpd.pem"
 }
 
+# (sample mod_authn_tkt config)
+auth.method.tkt.opts = (
+    "secret" => "xbcdefghijklmnopqrstuvwxyz0123456789", # "longlonglongsecretkey",
+    #"secret-old" => "previously-rotated-longlonglongsecretkey",
+    "login-url" => "/index.html?arg=UNAUTHORIZED",
+    "timeout-url" => "/index.html?arg=TIMEDOUT",
+    "post-timeout-url" => "/index.html?arg=POSTIMEDOUT",
+    "unauth-url" => "/index.html?arg=UNAUTH",
+    "timeout" => "1800",
+    "timeout-refresh" => ".25",
+    "digest-type" => "MD5",  # "MD5", "SHA256", or "SHA512"
+    "ignore-ip" => "disable",
+    "require-ssl" => "enable",
+    "cookie-secure" => "disable",
+    "cookie-name" => "auth_tkt",
+    "cookie-domain" => "192.168.5.44",
+    "cookie-expires" => "20m",
+    "back-arg-name" => "back",
+    #"back-cookie-name" => "auth_tkt_back",
+    "guest-user" => "guest-%16U",
+    "guest-login" => "disable",
+    "guest-cookie" => "disable",
+    "guest-fallback" => "disable",
+    #"tokens" => ("/protected-folder/protected.txt" => ("token1", "admin"),
+    #            "/download/"                      => ("downloader"),
+    #            "/server-info"                    => ("admin")
+    #           )
+)
 
-# Support letsencrypt SSL cert paths
-# (we don't want to upgrade to SSL nor auth' this path)
-$HTTP["url"] !~ "^/.well-known/(.*)" {
+# (sample mod_auth config to use mod_authn_tkt.  Note: "method" => "authn_tkt")
+auth.require = ( "/ipcam" =>
+                 (
+                   "method"  => "authn_tkt",
+                   "realm"   => "ignored-for-authn-tkt", # must be non-empty
+                   "require" => "valid-user"
+                 ),
+               )
 
-    auth.backend                = "htdigest"
-    auth.backend.htdigest.userfile = "/opt/media/sdc/config/lighttpd.user"
-    auth.require = ( "/" => ("method" => "basic", "realm" => "all", "require" => "user=root"))
 
-    $HTTP["scheme"] == "http" {
-        # capture vhost name with regex conditiona -> %0 in redirect pattern
-        # must be the most inner block to the redirect rule
-        $HTTP["host"] =~ ".*" {
-            url.redirect = (".*" => "https://%0$0")
-        }
-    }
-}
 
 ## enable debugging
 #debug.log-request-header     = "enable"
