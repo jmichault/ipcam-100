@@ -19,6 +19,7 @@
 #include "DynamicRTSPServer.hh"
 #include "imp_komuna.h"
 #include "agordolegilo.h"
+#include "movolegilo.h"
 
 
 int main(int argc, char** argv) {
@@ -35,6 +36,7 @@ int main(int argc, char** argv) {
   // access to the server.
 
   agordoLegilo();
+  movoLegilo();
   if(KanAgordo[0].picWidth != fs_chn_attrs[0].picWidth
 	|| KanAgordo[0].picHeight != fs_chn_attrs[0].picHeight)
   {
