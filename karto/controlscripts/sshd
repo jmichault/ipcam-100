@@ -20,26 +20,26 @@ start()
   if [ "$(status)" != "" ]; then
     echo "A sshd is already running, please stop it or reboot"
   else
-    if [ ! -f /opt/media/sdc/config/dropbear_rsa_host_key ]
+    if [ ! -f ${SDCARD}/config/dropbear_rsa_host_key ]
     then
       echo "Generating rsa key for sshd"
       echo "======= Generating rsa key for START ==========" >> "$LOGPATH"
-      echo "${SDCARD}/bin/dropbearmulti dropbearkey -t rsa -f /opt/media/sdc/config/dropbear_rsa_host_key" >> "$LOGPATH"
-      ${SDCARD}/bin/dropbearmulti dropbearkey -t rsa -f /opt/media/sdc/config/dropbear_rsa_host_key >> "$LOGPATH" 2>&1
+      echo "${SDCARD}/bin/dropbearmulti dropbearkey -t rsa -f ${SDCARD}/config/dropbear_rsa_host_key" >> "$LOGPATH"
+      ${SDCARD}/bin/dropbearmulti dropbearkey -t rsa -f ${SDCARD}/config/dropbear_rsa_host_key >> "$LOGPATH" 2>&1
     fi
-    if [ ! -f /opt/media/sdc/config/dropbear_dss_host_key ]
+    if [ ! -f ${SDCARD}/config/dropbear_dss_host_key ]
     then
       echo "Generating dss key for sshd"
       echo "======= Generating dss key for START ==========" >> "$LOGPATH"
-      echo "${SDCARD}/bin/dropbearmulti dropbearkey -t dss -f /opt/media/sdc/config/dropbear_dss_host_key" >> "$LOGPATH"
-      ${SDCARD}/bin/dropbearmulti dropbearkey -t dss -f /opt/media/sdc/config/dropbear_dss_host_key >> "$LOGPATH" 2>&1
+      echo "${SDCARD}/bin/dropbearmulti dropbearkey -t dss -f ${SDCARD}/config/dropbear_dss_host_key" >> "$LOGPATH"
+      ${SDCARD}/bin/dropbearmulti dropbearkey -t dss -f ${SDCARD}/config/dropbear_dss_host_key >> "$LOGPATH" 2>&1
     fi
-    if [ ! -f /opt/media/sdc/config/dropbear_ecdsa_host_key ]
+    if [ ! -f ${SDCARD}/config/dropbear_ecdsa_host_key ]
     then
       echo "Generating ecdsa key for sshd"
       echo "======= Generating ecdsa key for START ==========" >> "$LOGPATH"
-      echo "${SDCARD}/bin/dropbearmulti dropbearkey -t ecdsa -f /opt/media/sdc/config/dropbear_ecdsa_host_key" >> "$LOGPATH"
-      ${SDCARD}/bin/dropbearmulti dropbearkey -t ecdsa -f /opt/media/sdc/config/dropbear_ecdsa_host_key >> "$LOGPATH" 2>&1
+      echo "${SDCARD}/bin/dropbearmulti dropbearkey -t ecdsa -f ${SDCARD}/config/dropbear_ecdsa_host_key" >> "$LOGPATH"
+      ${SDCARD}/bin/dropbearmulti dropbearkey -t ecdsa -f ${SDCARD}/config/dropbear_ecdsa_host_key >> "$LOGPATH" 2>&1
     fi
     echo "Starting sshd"
     echo "================== START ===============" >> "$LOGPATH"

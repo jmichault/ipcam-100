@@ -1,12 +1,15 @@
 #!/bin/sh
 . /etc/profile >/dev/null
-SERVICE_NAME="RTSP Server"
-PIDFILE="/var/run/rtsp_server.pid"
-LOGDIR="${SDCARD}/log"
-LOGPATH="$LOGDIR/rtsp_server.log"
 export LD_LIBRARY_PATH="${SDCARD}/lib:/thirdlib:/system/lib/:/ipc/lib/"
 
-CONFPATH=${SDCARD}/www/ipcam/config
+SERVICE_NAME="udhcpd"
+PIDFILE="/var/run/${SERVICE_NAME}.pid"
+LOGDIR="${SDCARD}/log"
+LOGPATH="$LOGDIR/${SERVICE_NAME}.log"
+BIN=/ipc/bin/${SERVICE_NAME}
+CONFIG="${SDCARD}/config/${SERVICE_NAME}.conf"
+OPTS="-fS "$CONFIG""
+
 
 status()
 {
@@ -20,13 +23,12 @@ status()
 start()
 {
   if [ "$(status)" != "" ]; then
-    echo "A rtsp_server is already running, please stop it or reboot"
+    echo "A ${SERVICE_NAME} is already running, please stop it or reboot"
   else
-    echo "Starting rtsp_server"
-
+    echo "Starting ${SERVICE_NAME}"
     echo "================== START ===============" >> "$LOGPATH"
-    echo "${SDCARD}/bin/rtsp_server ${CONFPATH}" >> "$LOGPATH"
-    ${SDCARD}/bin/rtsp_server ${CONFPATH} 2>> "$LOGPATH" >> "$LOGPATH" &
+    echo "${BIN} ${OPTS}" >> "$LOGPATH"
+    ${BIN} ${OPTS} 2>> "$LOGPATH" >> "$LOGPATH" &
     echo "$!" > "$PIDFILE"
   fi
 }

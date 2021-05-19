@@ -1,0 +1,7 @@
+# min   hour    day     month   weekday command
+*/15    *       *       *       *       busybox run-parts ${CRONPERIODIC}/15min
+0       *       *       *       *       busybox run-parts ${CRONPERIODIC}/hourly
+0       2       *       *       *       busybox run-parts ${CRONPERIODIC}/daily
+0       3       *       *       6       busybox run-parts ${CRONPERIODIC}/weekly
+0       5       1       *       *       busybox run-parts ${CRONPERIODIC}/monthly
+

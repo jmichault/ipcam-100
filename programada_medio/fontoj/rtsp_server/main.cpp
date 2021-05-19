@@ -21,8 +21,12 @@
 #include "agordolegilo.h"
 #include "movolegilo.h"
 
+char * AgordoVojo=NULL;
+
 
 int main(int argc, char** argv) {
+  
+  if(argc>1) AgordoVojo=argv[1];
   OutPacketBuffer::maxSize = (1920*1080*3/2);
   // Begin by setting up our usage environment:
   TaskScheduler* scheduler = BasicTaskScheduler::createNew();

@@ -1,13 +1,12 @@
 #!/bin/sh
 . /etc/profile >/dev/null 2>&1
 
-SDPATH=${DOCUMENT_ROOT}/..
-. ${SDPATH}/www/cgi-bin/func.cgi
+. ${SDCARD}/www/cgi-bin/func.cgi
 
 echo "Pragma: no-cache"
 echo "Cache-Control: max-age=0, no-store, no-cache"
 
-SCRIPT_HOME="${DOCUMENT_ROOT}/../controlscripts/"
+SCRIPT_HOME="${SDCARD}/controlscripts/"
 if [ -n "$F_script" ]; then
   script="${F_script##*/}"
   if [ -e "$SCRIPT_HOME/$script" ]; then
@@ -20,7 +19,7 @@ if [ -n "$F_script" ]; then
         echo "<pre>$("$SCRIPT_HOME/$script" 2>&1)</pre>"
         ;;  
       disable)
-        rm "${DOCUMENT_ROOT}/../config/autostart/$script"
+        rm "${SDCARD}/config/autostart/$script"
         echo "Content-type: application/json"
         echo ""
         echo "{\"status\": \"ok\"}"
@@ -35,8 +34,8 @@ if [ -n "$F_script" ]; then
         echo "</pre>"
         ;;
       enable)
-        echo "#!/bin/sh" > "${DOCUMENT_ROOT}/../config/autostart/$script"
-        echo "$SCRIPT_HOME$script" >> "${DOCUMENT_ROOT}/../config/autostart/$script"
+        echo "#!/bin/sh" > "${SDCARD}/config/autostart/$script"
+        echo "$SCRIPT_HOME$script" >> "${SDCARD}/config/autostart/$script"
         echo "Content-type: application/json"
         echo ""
         echo "{\"status\": \"ok\"}"
@@ -64,16 +63,17 @@ fi
 echo "Content-type: text/html"
 echo ""
 
+
 if [ ! -d "$SCRIPT_HOME" ]; then
   echo "<p>No scripts.cgi found in $SCRIPT_HOME</p>"
 else
-  SCRIPTS=$(ls -A "$SCRIPT_HOME")
+  SCRIPTS=$(/bin/ls -A --color=never "$SCRIPT_HOME")
 
   for i in $SCRIPTS; do
     # Card - start
-    echo "<div class='card script_card'>"
+    echo "<div class='card'>"
     # Header
-    echo "<header class='card-header'><p class='card-header-title'>"
+    echo "<div class='card-header'><h4 class='card-title'>"
     # echo "<div class='card-content'>"
     if [ -x "$SCRIPT_HOME/$i" ]; then
       if grep -q "^status()" "$SCRIPT_HOME/$i"; then
@@ -93,7 +93,7 @@ else
         echo "$i"
       fi
       # echo "</div>"
-      echo "</p></header>"
+      echo "</h4></div>"
 
       # Footer
       echo "<footer class='card-footer'>"
@@ -113,7 +113,7 @@ else
       fi
 
       if grep -q "^stop()" "$SCRIPT_HOME/$i"; then
-        echo "<button data-target='cgi-bin/scripts.cgi?cmd=stop&script=$i' class='button is-danger script_action_stop' data-script='$i' "
+        echo "<button data-target='cgi-bin/scripts.cgi?cmd=stop&script=$i' class='btn is-danger script_action_stop' data-script='$i' "
         if [ ! -n "$status" ]; then
           echo "disabled"
         fi
@@ -127,7 +127,7 @@ else
       echo "<input type='checkbox' id='autorun_$i' name='autorun_$i' class='switch is-rtl autostart' data-script='$i' "
         echo " data-unchecked='cgi-bin/scripts.cgi?cmd=disable&script=$i'"
         echo " data-checked='cgi-bin/scripts.cgi?cmd=enable&script=$i'"
-      if [ -f "${DOCUMENT_ROOT}/../config/autostart/$i" ]; then
+      if [ -f "${SDCARD}/config/autostart/$i" ]; then
         echo " checked='checked'"
       fi
       echo "'>"
@@ -143,5 +143,5 @@ else
   done
 fi
 
-script=$(cat ${DOCUMENT_ROOT}/../www/js/scripts.cgi.js)
+script=$(cat js/scripts.cgi.js)
 echo "<script>$script</script>"

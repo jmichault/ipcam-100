@@ -24,16 +24,26 @@
 #include "movolegilo.h"
 
 extern IMP_IVS_MoveParam MovoParam;
+extern char * AgordoVojo;
 
 // var config=[{"id":0,"x":4,"y":161,"z":0,"height":70,"width":67}, ...
 
 void movoLegilo()
 {
-FILE *ficin = fopen("/opt/media/mmcblk0p1/www/config/movo.conf","r");
+FILE *ficin;
 char buffer[81];
 char bufferValue[81];
 int ret;
 int nbRect=0;
+  if ( !AgordoVojo)
+  {
+    ficin = fopen("/opt/media/mmcblk0p1/www/ipcam/config/movo.conf","r");
+  }
+  else
+  {
+    sprintf(buffer,"%s/movo.conf",AgordoVojo);
+    ficin = fopen(buffer,"r");
+  }
   for(ret=0 ; ret!= EOF ; )
   {
     ret=fgetc(ficin);
