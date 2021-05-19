@@ -68,11 +68,11 @@ export LOGPATH=\"$LOGDIR/startup.log\"
 fi
 
 # create config directories if needed
-if [ ! -f $CONFIGPATH ]; then
+if [ ! -d $CONFIGPATH ]; then
   mkdir $CONFIGPATH
   cp -rp ${CONFIGPATH}.dist/* $CONFIGPATH
 fi
-if [ ! -f ${SDCARD}/www/ipcam/config ]; then
+if [ ! -d ${SDCARD}/www/ipcam/config ]; then
   mkdir ${SDCARD}/www/ipcam/config
   cp -rp ${SDCARD}/www/ipcam/config.dist/* ${SDCARD}/www/ipcam/config
 fi
