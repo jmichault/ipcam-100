@@ -5,8 +5,6 @@ SDCARD=`pwd`
 DST_PATCH="/opt/etc/local.rc"
 SRC_PATCH="${SDCARD}/patch/local.rc"
 AUTORUN_FILE="/ipc/etc/auto_run.sh"
-WIFI_SYSTEM_CONFIG="/opt/conf/airlink/supplicant.conf"
-WIFI_USER_CONFIG="${SDCARD}/wpa_supplicant.conf"
 
 . ${SDCARD}/scripts/common_functions.sh
 
@@ -18,15 +16,13 @@ apply_patch()
         echo "ERROR: patch not installed!"
     else
         chmod +x $DST_PATCH
-        if [ ! -f $WIFI_USER_CONFIG ]; then
-            cp -f $WIFI_SYSTEM_CONFIG $WIFI_USER_CONFIG
-        fi
+        sync
         echo "SUCCESS install patch!"
-        sleep 3
-        echo "EXECUTING application"
-        ./run.sh
-	echo "PLEASE change root password :"
-	passwd
+        sleep 5
+	# mount...
+	#echo "PLEASE change root password :"
+	#passwd
+        reboot
     fi
 }
 

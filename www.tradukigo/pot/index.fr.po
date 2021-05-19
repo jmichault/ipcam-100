@@ -12,121 +12,34 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: html2pot\n"
 
-msgid "Aŭtomata Nokta Detekto"
-msgstr "Détection automatique de la nuit"
-
-msgid "Blanko LED"
-msgstr "LED blanche"
+#, fuzzy
+msgid "Elektu lingvon"
+msgstr "Choisissez une langue"
 
 #, fuzzy
-msgid "Brila"
-msgstr "Brillant"
+msgid "Hello!"
+msgstr "Bonjour!"
 
-msgid "Ĝisdatigi"
-msgstr "Mettre à jour"
+#, fuzzy
+msgid "Pasvorto"
+msgstr "Mot de passe"
 
-msgid "Kamerao Kontroloj"
-msgstr "Contrôles de la caméra"
+#, fuzzy
+msgid "Sign in"
+msgstr "S'identifier"
 
-msgid "LED agordoj"
-msgstr "Paramètres LED"
+#, fuzzy
+msgid "Sign In"
+msgstr "S'identifier"
 
-msgid "Malŝalti"
-msgstr "Éteindre"
+#, fuzzy
+msgid "Uzantnomo"
+msgstr "Nom d'utilisateur"
 
-msgid "Movado-Detekto"
-msgstr "Détection de mouvement"
+#, fuzzy
+msgid "Vi ne estas ensalutinta!"
+msgstr "Vous n'êtes pas connecté!"
 
-msgid "Movado - LED"
-msgstr "Mouvement - LED"
-
-msgid "Movado - Momentfotoj"
-msgstr "Mouvement - Captures Photos"
-
-msgid "Movado - MQTT-Mesaĝo"
-msgstr "Mouvement - Message MQTT"
-
-msgid "Movado - MQTT-Momentfoto"
-msgstr "Mouvement - Captures Photos MQTT"
-
-msgid "Movado - Sendi retpoŝtojn"
-msgstr "Mouvement - Envoyer des emails"
-
-msgid "Movado - Sendi Telegramon"
-msgstr "Mouvement - Envoyer un télégramme"
-
-msgid "MQTT-Kontrolo Servilo"
-msgstr "Service de contrôle MQTT"
-
-msgid "MQTT-Statuso Servilo"
-msgstr "Service de statut MQTT"
-
-msgid "Nokta Agordoj"
-msgstr "Réglages nocturnes"
-
-msgid "Obskura"
-msgstr "Sombre"
-
-msgid "OSD"
-msgstr "OSD"
-
-msgid "Pan/Tilt"
-msgstr "Pan/Tilt"
-
-msgid "Pasvortoj"
-msgstr "Mots de passe"
-
-msgid "Problemoj?"
-msgstr "Problèmes?"
-
-msgid "Protokoloj"
-msgstr "Protocoles"
-
-msgid "Restartigi"
-msgstr "Redémarrer"
-
-msgid "Reto"
-msgstr "Réseau"
-
-msgid "Reto Informoj"
-msgstr "Informations sur le réseau"
-
-msgid "RTSP Agordoj"
-msgstr "Paramètres RTSP"
-
-msgid "RTSP-Servilo"
-msgstr "Service RTSP"
-
-msgid "Servoj"
-msgstr "Services"
-
-msgid "Sistemo"
-msgstr "Système"
-
-msgid "Sono"
-msgstr "Audio"
-
-msgid "Sono ĉe Lanĉo"
-msgstr "Audio au démarrage"
-
-msgid "Stato"
-msgstr "État"
-
-msgid "Superrigardo"
-msgstr "Aperçu"
-
-msgid "T21 Kodumoj"
-msgstr "Codes T21"
-
-msgid "Temo"
-msgstr "Thème"
-
-msgid "Transruĝa Filtrilo"
-msgstr "Filtre infrarouge"
-
-msgid "Transruĝa LED"
-msgstr "LED infrarouge"
-
-msgid "Versio :"
-msgstr "Version:"
-
+#, fuzzy
+#~ msgid "You are not logged in!"
+#~ msgstr "Vous n'êtes pas connecté!"

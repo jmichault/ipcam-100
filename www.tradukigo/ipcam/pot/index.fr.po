@@ -1,0 +1,77 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+msgid "Ĝisdatigi"
+msgstr "Mettre à jour"
+
+msgid "Kamerao"
+msgstr "Caméra"
+
+msgid "LED agordoj"
+msgstr "Paramètres LED"
+
+msgid "Malŝalti"
+msgstr "Éteindre"
+
+msgid "Movado-Detekto"
+msgstr "Détection de mouvement"
+
+msgid "Nokta Agordoj"
+msgstr "Réglages nocturnes"
+
+msgid "OSD"
+msgstr "OSD"
+
+msgid "Pan/Tilt"
+msgstr "Pan/Tilt"
+
+msgid "Pasvortoj"
+msgstr "Mots de passe"
+
+msgid "Problemoj?"
+msgstr "Problèmes?"
+
+msgid "Protokoloj"
+msgstr "Journaux"
+
+msgid "Restartigi"
+msgstr "Redémarrer"
+
+msgid "Reto Informoj"
+msgstr "Informations sur le réseau"
+
+msgid "RTSP Agordoj"
+msgstr "Paramètres RTSP"
+
+msgid "Servoj"
+msgstr "Services"
+
+msgid "Sistemo"
+msgstr "Système"
+
+msgid "Sono"
+msgstr "Audio"
+
+msgid "Stato"
+msgstr "État"
+
+msgid "Superrigardo"
+msgstr "Aperçu"
+
+msgid "T21 Kodumoj"
+msgstr "Codes T21"
+
+msgid "Versio :"
+msgstr "Version:"
+

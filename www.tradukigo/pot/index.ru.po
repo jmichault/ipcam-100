@@ -13,158 +13,33 @@ msgstr ""
 "X-Generator: html2pot\n"
 
 #, fuzzy
-msgid "Aŭtomata Nokta Detekto"
-msgstr "Автоматическое ночное обнаружение"
+msgid "Elektu lingvon"
+msgstr "Выберите язык"
 
 #, fuzzy
-msgid "Blanko LED"
-msgstr "Белый светодиод"
+msgid "Hello!"
+msgstr "Привет!"
 
 #, fuzzy
-msgid "Brila"
-msgstr "Яркий"
+msgid "Pasvorto"
+msgstr "Пароль"
 
 #, fuzzy
-msgid "Ĝisdatigi"
-msgstr "Обновлять"
+msgid "Sign in"
+msgstr "Войти"
 
 #, fuzzy
-msgid "Kamerao Kontroloj"
-msgstr "Управление камерой"
+msgid "Sign In"
+msgstr "Войти"
 
 #, fuzzy
-msgid "LED agordoj"
-msgstr "Светодиодные настройки"
+msgid "Uzantnomo"
+msgstr "Имя пользователя"
 
 #, fuzzy
-msgid "Malŝalti"
-msgstr "Выключать"
+msgid "Vi ne estas ensalutinta!"
+msgstr "Вы не авторизованы!"
 
 #, fuzzy
-msgid "Movado-Detekto"
-msgstr "Обнаружение движения"
-
-#, fuzzy
-msgid "Movado - LED"
-msgstr "Движение - Светодиод"
-
-#, fuzzy
-msgid "Movado - Momentfotoj"
-msgstr "Движение - момент Фотографии"
-
-#, fuzzy
-msgid "Movado - MQTT-Mesaĝo"
-msgstr "Движение - MQTT сообщение"
-
-#, fuzzy
-msgid "Movado - MQTT-Momentfoto"
-msgstr "Движение - MQTT-MomentFoto"
-
-#, fuzzy
-msgid "Movado - Sendi retpoŝtojn"
-msgstr "Движение - Отправить электронные письма"
-
-#, fuzzy
-msgid "Movado - Sendi Telegramon"
-msgstr "Движение - Отправить телеграмму"
-
-#, fuzzy
-msgid "MQTT-Kontrolo Servilo"
-msgstr "MQTT Control Server"
-
-#, fuzzy
-msgid "MQTT-Statuso Servilo"
-msgstr "MQTT Status Server"
-
-#, fuzzy
-msgid "Nokta Agordoj"
-msgstr "Ночные настройки"
-
-#, fuzzy
-msgid "Obskura"
-msgstr "Затемнять"
-
-#, fuzzy
-msgid "OSD"
-msgstr "Ось"
-
-#, fuzzy
-msgid "Pan/Tilt"
-msgstr "Pan / Tilt."
-
-#, fuzzy
-msgid "Pasvortoj"
-msgstr "Пароли"
-
-#, fuzzy
-msgid "Problemoj?"
-msgstr "Проблемы?"
-
-#, fuzzy
-msgid "Protokoloj"
-msgstr "Протоколы"
-
-#, fuzzy
-msgid "Restartigi"
-msgstr "Заново"
-
-#, fuzzy
-msgid "Reto"
-msgstr "Сеть"
-
-#, fuzzy
-msgid "Reto Informoj"
-msgstr "Сетевая информация"
-
-#, fuzzy
-msgid "RTSP Agordoj"
-msgstr "RTSP Настройки"
-
-#, fuzzy
-msgid "RTSP-Servilo"
-msgstr "Rtsp server."
-
-#, fuzzy
-msgid "Servoj"
-msgstr "Услуги"
-
-#, fuzzy
-msgid "Sistemo"
-msgstr "Система"
-
-#, fuzzy
-msgid "Sono"
-msgstr "Звук"
-
-#, fuzzy
-msgid "Sono ĉe Lanĉo"
-msgstr "Звук в запуске"
-
-#, fuzzy
-msgid "Stato"
-msgstr "Состояние"
-
-#, fuzzy
-msgid "Superrigardo"
-msgstr "Обзор"
-
-#, fuzzy
-msgid "T21 Kodumoj"
-msgstr "T21 коды"
-
-#, fuzzy
-msgid "Temo"
-msgstr "Предмет"
-
-#, fuzzy
-msgid "Transruĝa Filtrilo"
-msgstr "Инфракрасный фильтр"
-
-#, fuzzy
-msgid "Transruĝa LED"
-msgstr "Инфракрасный светодиод"
-
-#, fuzzy
-msgid "Versio :"
-msgstr "Версия:"
-
+#~ msgid "You are not logged in!"
+#~ msgstr "Вы не авторизованы!"

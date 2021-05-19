@@ -1,0 +1,22 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Protected Test Page</title>
+  <script>
+function logout()
+{
+    /* Just delete the cookie */
+    document.cookie = "auth_tkt= ; expires = Thu, 01 Jan 1970 00:00:00 GMT"
+    document.getElementById("paragraph").innerHTML = "The cookie has been deleted, try reloading now and you'll be redirected by the server";
+}
+  </script>
+</head>
+
+<body>
+  <p>This page contains secrets accessible only with an appropriate auth cookie. If you are reading this, it means that you have succesfully logged in.<p>
+  <p id="paragraph"></p>
+  <p><button id="logout" onclick="logout();">Log out</button></p>
+</body>
+</html>

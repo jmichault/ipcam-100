@@ -10,23 +10,25 @@ status()
 
 start()
 {
- ifconfig eth0 up
+ network_interface_name="eth0"
+ ifconfig "$network_interface_name" up
+ udhcpc_status=$(udhcpc -i "$network_interface_name" -p /var/run/udhcpc.pid -b -x hostname:"$(hostname)")
+ echo "udhcpc: $udhcpc_status" >> $LOGPATH
  sleep 5
  eth0_state=`cat /sys/class/net/eth0/operstate`
 
  ## elektu la interfacon por komenci.
  if [ x$eth0_state = xdown ]
  then
-  ifconfig wlan0 up
-  ifconfig eth0 down
-  network_interface_name="wlan0"
   if [ ! -f $CONFIGPATH/wpa_supplicant.conf ]; then
    echo "Averto: Vi devas agordi wpa_supplicant por uzi wifi. Bonvolu vidi /system/sdcard/config/wpa_supplicant.conf.dist ." >> $LOGPATH
   fi
+ fi
+ if [ -f $CONFIGPATH/wpa_supplicant.conf ]; then 
+  ifconfig wlan0 up
+  network_interface_name="wlan0"
   wpa_supplicant_status="$(wpa_supplicant -d -B -i wlan0 -c $CONFIGPATH/wpa_supplicant.conf -P /var/run/wpa_supplicant.pid)"
   echo "wpa_supplicant: $wpa_supplicant_status" >> $LOGPATH
- else
-  network_interface_name="eth0"
  fi
 
  ## Configure network address

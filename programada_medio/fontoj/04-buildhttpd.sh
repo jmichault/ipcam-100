@@ -6,6 +6,38 @@ if [ ! -d lighttpd1.4 ]
 then
   git clone https://github.com/lighttpd/lighttpd1.4.git
 fi
+if [ ! -d lighttpd-mod_authn_tkt ]
+then
+  git clone https://github.com/gstrauss/lighttpd-mod_authn_tkt.git
+fi
+
+if [ ! -f lighttpd1.4/src/mod_authn_tkt.c ]
+then
+  cp -p lighttpd-mod_authn_tkt/mod_authn_tkt.c lighttpd1.4/src
+fi
+if [ ! -f lighttpd1.4/src/Makefile.am.patch ]
+then
+  cp -p lighttpd-mod_authn_tkt/Makefile.am.patch lighttpd1.4/src
+fi
+if ! grep "  mod_authn_tkt.c " lighttpd1.4/src/Makefile.am.patch 
+then
+  cat >>lighttpd1.4/src/Makefile.am.patch <<EOF
+@@ -502,6 +502,7 @@
+   mod_alias.c \\
+   mod_auth.c \\
+   mod_authn_file.c \\
++  mod_authn_tkt.c \\
+   mod_cgi.c \\
+   mod_deflate.c \\
+   mod_dirlisting.c \\
+EOF
+fi
+if ! grep "mod_authn_tkt.c" lighttpd1.4/src/Makefile.am
+then
+  cd lighttpd1.4/src
+  patch Makefile.am Makefile.am.patch
+  cd ../..
+fi
 
 # 
 cd lighttpd1.4/
@@ -37,6 +69,7 @@ then
 cat >src/plugin-static.h  <<'EOF'
 PLUGIN_INIT(mod_alias)
 PLUGIN_INIT(mod_auth)
+PLUGIN_INIT(mod_authn_file)
 PLUGIN_INIT(mod_redirect)
 PLUGIN_INIT(mod_rewrite)
 PLUGIN_INIT(mod_cgi)
@@ -47,7 +80,6 @@ PLUGIN_INIT(mod_proxy)
 PLUGIN_INIT(mod_indexfile)
 PLUGIN_INIT(mod_dirlisting)
 PLUGIN_INIT(mod_staticfile)
-PLUGIN_INIT(mod_authn_file)
 PLUGIN_INIT(mod_accesslog)
 PLUGIN_INIT(mod_openssl)
 PLUGIN_INIT(mod_setenv)

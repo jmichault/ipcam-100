@@ -1,0 +1,98 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+#, fuzzy
+msgid "Ĝisdatigi"
+msgstr "Update"
+
+#, fuzzy
+msgid "Kamerao"
+msgstr "Camera"
+
+#, fuzzy
+msgid "LED agordoj"
+msgstr "LED settings"
+
+#, fuzzy
+msgid "Malŝalti"
+msgstr "Turn off"
+
+#, fuzzy
+msgid "Movado-Detekto"
+msgstr "Motion detection"
+
+#, fuzzy
+msgid "Nokta Agordoj"
+msgstr "SW night configuration"
+
+#, fuzzy
+msgid "OSD"
+msgstr "OSD"
+
+#, fuzzy
+msgid "Pan/Tilt"
+msgstr "Pan / Tilt"
+
+#, fuzzy
+msgid "Pasvortoj"
+msgstr "HTTP Password"
+
+#, fuzzy
+msgid "Problemoj?"
+msgstr "Issues?"
+
+#, fuzzy
+msgid "Protokoloj"
+msgstr "Logs"
+
+#, fuzzy
+msgid "Restartigi"
+msgstr "Reboot"
+
+#, fuzzy
+msgid "Reto Informoj"
+msgstr "Network Information"
+
+#, fuzzy
+msgid "RTSP Agordoj"
+msgstr "RTSP settings"
+
+#, fuzzy
+msgid "Servoj"
+msgstr "Services"
+
+#, fuzzy
+msgid "Sistemo"
+msgstr "System"
+
+#, fuzzy
+msgid "Sono"
+msgstr "Audio"
+
+#, fuzzy
+msgid "Stato"
+msgstr "Status"
+
+#, fuzzy
+msgid "Superrigardo"
+msgstr "Overview"
+
+#, fuzzy
+msgid "T21 Kodumoj"
+msgstr "T21 Hacks"
+
+#, fuzzy
+msgid "Versio :"
+msgstr "Version:"
+

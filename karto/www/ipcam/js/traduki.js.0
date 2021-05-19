@@ -1,0 +1,35 @@
+function Get(yourUrl){
+  var Httpreq = new XMLHttpRequest(); // a new request
+  Httpreq.open("GET",yourUrl,false);
+  Httpreq.send(null);
+  return Httpreq.responseText;
+}
+ 
+$(document).ready(function(){
+  var i18n = window.i18n();
+  var userLangs = navigator.languages ||
+               [navigator.language] ||
+               [navigator.userLanguage ];
+  var userLang="eo";
+  var i18njson, i;
+  for (i = 0; i < userLangs.length ; i++)
+  {
+    i18njson=Get("lok/index."+userLangs[i].substring(0,2)+".json");
+    try 
+    {
+      i18n.loadJSON(i18njson, 'messages');
+      userLang = userLangs[i].substring(0,2);
+      break;
+    }
+    catch(e)
+    {
+      continue;
+    };
+  }
+  i18n.setLocale(userLang);
+  
+  $(".lang").each(function(){$(this).html(
+	i18n.gettext($(this).data("lang") )
+	);});
+});
+

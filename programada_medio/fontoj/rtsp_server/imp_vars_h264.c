@@ -178,6 +178,44 @@ IMPEncoderCHNAttr channel_attrs[2] =
       },
     .xW=ELIGO_WIDTH_DUA , .xH = ELIGO_HEIGHT_DUA,
   },
+  {
+    .encAttr =
+      {
+        .enType=PT_JPEG , .bufSize=0 , .profile=0 ,
+        .picWidth=320 , .picHeight=184 ,
+        .crop = { .enable = 0 , .x = 0 , .y = 0 , .w = 0 , .h = 0 } ,
+        .userData = { .maxUserDataCnt = 2 , .maxUserDataSize = 128 } ,
+      },
+    .rcAttr =
+      {
+        .outFrmRate = { .frmRateNum=10 , .frmRateDen=1 },
+        .maxGop = 20,
+        .attrRcMode = {
+          .rcMode = ENC_RC_MODE_VBR , // 2 ENC_RC_MODE_VBR
+          .attrH264Vbr= {
+            .maxQp=48 , .minQp=20 ,
+            .staticTime = 2 ,
+            .maxBitRate = 512 ,
+            .iBiasLvl = 0,
+            .changePos = 80,
+            .qualityLvl = 2,
+            .frmQPStep = 3, .gopQPStep = 15,
+            .gopRelation = 0,
+           },
+         },
+        .attrFrmUsed = {
+            .enable=0 , .frmUsedMode=ENC_FRM_BYPASS , .frmUsedTimes=0,
+         },
+        .attrDenoise = {
+            .enable =0 , .dnType=0 , .dnIQp = 0 , .dnPQp=0 ,
+         },
+        .attrHSkip = {
+            .hSkipAttr = {.skipType=0 , .m=0 , .n=0 ,.maxSameSceneCnt=0 ,.bEnableScenecut=0 ,.bBlackEnhance= 0},
+            .maxHSkipType = 0,
+         },
+      },
+    .xW=320 , .xH = 184,
+  },
 };
 
 
@@ -186,10 +224,12 @@ IMPCell inCells[] =
 {
  { .deviceID=DEV_ID_FS, .groupID=0, .outputID=0},
  { .deviceID=DEV_ID_FS, .groupID=1, .outputID=0},
+ { .deviceID=DEV_ID_FS, .groupID=2, .outputID=0},
 };
 IMPCell outCells[] = 
 {
  { .deviceID=DEV_ID_ENC, .groupID=0, .outputID=0},
  { .deviceID=DEV_ID_ENC, .groupID=1, .outputID=0},
+ { .deviceID=DEV_ID_ENC, .groupID=2, .outputID=0},
 };
 

@@ -28,7 +28,7 @@ OBJS += H264ImpServerMediaSubsession.o ImpSource.o
 # Mjpeg Objs :
 OBJS += ImpJpegVideoDeviceSource.o JpegFrameParser.o ServerMediaSubsession.o
 OBJS += ../rtspserver-tools/sharedmem.o
-OBJS += agordolegilo.o
+OBJS += agordolegilo.o movolegilo.o
 
 rtsp_server: $(OBJS)
 	$(CPLUSPLUS) $(LDFLAGS) -o $@ $^ $(LIBS)

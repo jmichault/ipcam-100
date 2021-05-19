@@ -155,15 +155,6 @@ http_server(){
   esac
 }
 
-# Set a new http password
-http_password(){
-  user="root" # by default root until we have proper user management
-  realm="all" # realm is defined in the lightppd.conf
-  pass=$1
-  hash=$(echo -n "$user:$realm:$pass" | md5sum | cut -b -32)
-  echo "$user:$realm:$hash" > /opt/media/sdc/config/lighttpd.user
-}
-
 # Control the RTSP h264 server
 rtsp_h264_server(){
   case "$1" in

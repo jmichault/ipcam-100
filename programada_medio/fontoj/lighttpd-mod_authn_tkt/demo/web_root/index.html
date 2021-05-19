@@ -1,0 +1,24 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>mod_authn_tkt Test Page</title>
+  <script>
+
+window.onload = function() {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    if (queryString.includes("UNAUTHORIZED")) {
+        document.getElementById("paragraph").innerHTML = "You are not logged in!";
+    }
+};
+  </script>
+</head>
+
+<body>
+  <p id="paragraph">Hello!<p>
+  <p>Try to access the <a href="/protected.html">Secrets</a><p>
+  <p>You must <a href="/login.cgi">Login</a> first<p>
+</body>
+</html>

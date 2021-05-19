@@ -6,6 +6,8 @@ LOGDIR="${SDCARD}/log"
 LOGPATH="$LOGDIR/rtsp_server.log"
 export LD_LIBRARY_PATH="${SDCARD}/lib:/thirdlib:/system/lib/:/ipc/lib/"
 
+CONFPATH=${SDCARD}/www/ipcam/config
+
 status()
 {
   pid="$(cat "$PIDFILE" 2>/dev/null)"
@@ -23,8 +25,8 @@ start()
     echo "Starting rtsp_server"
 
     echo "================== START ===============" >> "$LOGPATH"
-    echo "${SDCARD}/bin/rtsp_server " >> "$LOGPATH"
-    ${SDCARD}/bin/rtsp_server 2>> "$LOGPATH" >> "$LOGPATH" &
+    echo "${SDCARD}/bin/rtsp_server ${CONFPATH}" >> "$LOGPATH"
+    ${SDCARD}/bin/rtsp_server ${CONFPATH} 2>> "$LOGPATH" >> "$LOGPATH" &
     echo "$!" > "$PIDFILE"
   fi
 }

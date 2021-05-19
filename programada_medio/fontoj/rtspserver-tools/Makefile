@@ -9,30 +9,26 @@ CFLAGS += -muclibc
 LDFLAG += -muclibc
 
 
-LDFLAG += -Wl,-gc-sections -std=c++11
+LDFLAG += -Wl,-gc-sections -std=gnu99
 
 
 all:  getimage setconf
 
-getimage: getimage.cpp sharedmem.cpp
-	$(CPLUSPLUS) $(LDFLAG) -o $@ $^ $(LIBS) -lpthread -lm -lrt
+getimage: getimage.c sharedmem.c
+	$(CC) $(LDFLAG) -o $@ $^ $(LIBS) -lpthread -lm -lrt
 	$(STRIP) $@
 
-setconf: setconf.cpp sharedmem.cpp
-	$(CPLUSPLUS) $(LDFLAG) -o $@ $^ $(LIBS) -lpthread -lm -lrt
+setconf: setconf.c sharedmem.c
+	$(CC) $(LDFLAG) -o $@ $^ $(LIBS) -lpthread -lm -lrt
 	$(STRIP) $@
 
 
 
-%.o:%.c sample-common.h
+%.o:%.c sample-common.h sharedmem.h
 	$(CC) -c $(CFLAGS) $< -o $@
-
-%.o:%.cpp
-	$(CPLUSPLUS) -c $(CFLAGS) $< -o $@
-
 
 clean:
 	rm -f *.o *~
 
 distclean: clean
-	rm -f $(SAMPLES)
+	rm -f getimage setconf

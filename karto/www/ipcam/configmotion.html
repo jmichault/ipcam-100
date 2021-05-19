@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="eo" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Movdetekto agordoj</title>
+    <!--  langetoj -->
+    <link href="css/tabs.css" media="screen" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/tabs.js"></script>
+
+    <!-- rektanguloj -->
+    <link href="../lib/jquery.selectareas.css" media="screen" rel="stylesheet" type="text/css" />
+    <script src="../lib/jquery.min.js" type="text/javascript"></script>
+    <script src="../lib/jquery.selectareas.js" type="text/javascript"></script>
+
+    <!-- jsonform -->
+    <link rel="stylesheet" href="../lib/bootstrap.min.css">
+    <script src="../lib/underscore.js" ></script>
+    <script src="../lib/jsv.js" ></script>
+    <script src="../lib/jsonform.min.js"></script>
+
+    <script src="forms/movo_detekto.js"></script>
+
+    <!-- datenoj -->
+    <script type="text/javascript" src="config/movo.conf"></script>
+
+    <script type="text/javascript">
+      function setformval(elt,index,array){
+        var $el = $('[name="'+elt.name+'"]'),
+         type = $el.attr('type');
+        $el.val(elt.value);
+        switch(type){
+          case 'checkbox':
+            $el.attr('checked', 'checked');
+            break;
+          case 'radio':
+            $el.filter('[value="'+elt.value+'"]').attr('checked', 'checked');
+            break;
+          default:
+            $el.val(elt.value);
+        }
+       };
+
+      $(document).ready(function () {
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+
+        // inicializi detekto form
+        $('#formDetekto').jsonForm(movo_detekto_jsForm );
+        DetektoDatenoj.forEach(setformval);
+
+
+        // inicializi rektangulojn
+        $('img#ekrankopio').selectAreas({
+          minSize: [10, 10],
+          onChanged: debugQtyAreas,
+          width: 640,
+          height: 368,
+          maxAreas: 52,
+          areas: [
+          ]
+        });
+        Rektoj.forEach( function (area){
+          $('img#ekrankopio').selectAreas('add', area);
+        });
+        $('#btnView').click(function () {
+          var areas = $('img#ekrankopio').selectAreas('areas');
+          displayAreas(areas);
+        });
+        $('#btnReset22').click(function () {
+          output("reset to 2x2")
+          $('img#ekrankopio').selectAreas('reset');
+          var areaOptions=[
+              { x:   0, y:   0, width: 320, height: 180 },
+              { x: 320, y:   0, width: 320, height: 180 },
+              { x:   0, y: 180, width: 320, height: 180 },
+              { x: 320, y: 180, width: 320, height: 180 }];
+          $('img#ekrankopio').selectAreas('add', areaOptions);
+        });
+        $('#btnReset33').click(function () {
+          output("reset to 3x3")
+          $('img#ekrankopio').selectAreas('reset');
+          var areaOptions=[
+              { x:   0, y:   0, width: 213, height: 120 },
+              { x:   0, y: 120, width: 213, height: 120 },
+              { x:   0, y: 240, width: 213, height: 120 }];
+          var i=0,j=0;
+          for ( i=0 ; i<3 ; i++)
+          {
+            for ( j =0 ; j<3 ; j++)
+              areaOptions[j].x =i*213;
+            $('img#ekrankopio').selectAreas('add', areaOptions);
+          }
+        });
+        $('#btnNew').click(function () {
+          var areaOptions = {
+            x: Math.floor((Math.random() * 200)),
+            y: Math.floor((Math.random() * 200)),
+            width: Math.floor((Math.random() * 100)) + 50,
+            height: Math.floor((Math.random() * 100)) + 20,
+          };
+          output("Add a new area: " + areaToString(areaOptions))
+          $('img#ekrankopio').selectAreas('add', areaOptions);
+        });
+        $('#btnSave').click(function () {
+          var XHR = new XMLHttpRequest();
+          XHR.addEventListener("load", function(event) {
+              $('#output').html('<p> Changements enregistrés.</p>');
+            });
+          XHR.addEventListener("error", function(event) {
+              $('#output').html('<p> Erreur dans l enregistrement.</p>');
+            });
+          XHR.open("POST", "/cgi-bin/conf_sav.cgi?file=movo.conf");
+          var textRect=JSON.stringify($('img#ekrankopio').selectAreas('areas'));
+          var textDetekto = JSON.stringify($("#formDetekto").serializeArray());
+          XHR.send( 'var Rektoj=' + textRect + ';\nvar DetektoDatenoj='+ textDetekto + ';\n' );
+        });
+      });
+
+      var selectionExists;
+
+      function areaToString (area) {
+        return (typeof area.id === "undefined" ? "" : (area.id + ": ")) + area.x + ':' + area.y  + ' ' + area.width + 'x' + area.height + '<br />'
+      }
+
+      function output (text) {
+        $('#output').html(text);
+      }
+
+      // Log the quantity of selections
+      function debugQtyAreas (event, id, areas) {
+        console.log(areas.length + " areas", arguments);
+      };
+
+      // Display areas coordinates in a div
+      function displayAreas (areas) {
+        var text = "";
+        $.each(areas, function (id, area) {
+          text += areaToString(area);
+        });
+        output(text);
+      };
+
+    </script>
+  </head>
+
+  <body>
+    <h1 class="is-size-4">Movo Detekto</h1>
+    <div class="tab is-toggle is-fullwidth" id="tabs">
+      <button id="defaultOpen" class="tablinks" onclick="openTab(event, 'Detekto')">Detekto</button>
+      <button class="tablinks" onclick="openTab(event, 'Stokado')">Stokado</button>
+      <button class="tablinks" onclick="openTab(event, 'Sciigo')">Sciigo</button>
+      <button class="tablinks" onclick="openTab(event, 'Areoj')">Areoj</button>
+    </div>
+
+    <div id="Detekto" class="tabcontent">
+     <form class="form-inline" id="formDetekto">
+     </form>
+    </div>
+
+    <div id="Stokado" class="tabcontent">
+    </div>
+
+    <div id="Sciigo" class="tabcontent">
+    </div>
+
+    <div id="Areoj" class="tabcontent">
+      <h1>Selektu rektangulojn por movdetekto</h1>
+      <br>
+
+      <div class="image-decorator">
+        <img alt="Image principale" id="ekrankopio" width="640" height="368" src="cgi-bin/currentpic.cgi" onerror="this.src='img/unable_load.png';"/>
+      </div>
+      <table>
+        <tr>
+          <td class="actions">
+            <input type="button" id="btnView" value="Display areas" class="actionOn" />
+            <input type="button" id="btnNew" value="Add New" class="actionOn" />
+            <input type="button" id="btnReset33" value="Reset to 3x3" class="actionOn" />
+            <input type="button" id="btnReset22" value="Reset to 2x2" class="actionOn" />
+          </td>
+        </tr>
+      </table>
+
+    </div>
+      <table>
+        <tr>
+          <td>
+          <input type="button" id="btnSave" value="Save" class="actionOn" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div id="output" class='output'> </div>
+          </td>
+        </tr>
+      </table>
+  </body>
+</html>

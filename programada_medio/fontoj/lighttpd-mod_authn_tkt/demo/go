@@ -1,0 +1,2 @@
+mips-linux-gnu-gcc -std=gnu99 -muclibc -mel tkt_token.c -o tkt_token -lcrypto -I $BASE/include -L $BASE/lib
+

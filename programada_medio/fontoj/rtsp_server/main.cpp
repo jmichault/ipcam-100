@@ -19,9 +19,14 @@
 #include "DynamicRTSPServer.hh"
 #include "imp_komuna.h"
 #include "agordolegilo.h"
+#include "movolegilo.h"
+
+char * AgordoVojo=NULL;
 
 
 int main(int argc, char** argv) {
+  
+  if(argc>1) AgordoVojo=argv[1];
   OutPacketBuffer::maxSize = (1920*1080*3/2);
   // Begin by setting up our usage environment:
   TaskScheduler* scheduler = BasicTaskScheduler::createNew();
@@ -35,6 +40,7 @@ int main(int argc, char** argv) {
   // access to the server.
 
   agordoLegilo();
+  movoLegilo();
   if(KanAgordo[0].picWidth != fs_chn_attrs[0].picWidth
 	|| KanAgordo[0].picHeight != fs_chn_attrs[0].picHeight)
   {
@@ -158,7 +164,12 @@ int main(int argc, char** argv) {
     }
   }
   // init T21
-  imp_init();
+  int ret=imp_init();
+  if(ret<0)
+  {
+    fprintf(stderr,"imp_init failed\n");
+    exit(1);
+  }
 
   // Create the RTSP server.  Try first with the default port number (554),
   // and then with the alternative port number (8554):

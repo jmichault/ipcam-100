@@ -4,6 +4,8 @@
 #include <string.h>
 #include "agordolegilo.h"
 
+extern char * AgordoVojo;
+
 struct sensilo_agordo SenAgordo=
 {
   .cbus_type=1, // 1=I2C , 2=SPI
@@ -113,11 +115,20 @@ static void doTrt( char * nomo, char * valoro)
 
 void agordoLegilo()
 {
-FILE *ficin = fopen("/opt/media/mmcblk0p1/www/config/rtsp.conf","r");
+FILE *ficin;
 char buffer[81];
 char bufferValue[81];
 int ret;
 int lastret=0;
+  if ( !AgordoVojo)
+  {
+    ficin = fopen("/opt/media/mmcblk0p1/www/ipcam/config/rtsp.conf","r");
+  }
+  else
+  {
+    sprintf(buffer,"%s/rtsp.conf",AgordoVojo);
+    ficin = fopen(buffer,"r");
+  }
   AgordoNeedReset=false;
   for(lastret=0 ; ret!= EOF ; lastret=ret)
   {

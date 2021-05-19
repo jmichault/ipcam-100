@@ -12,120 +12,24 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: html2pot\n"
 
-msgid "Aŭtomata Nokta Detekto"
+msgid "Elektu lingvon"
 msgstr ""
 
-msgid "Blanko LED"
+msgid "Hello!"
 msgstr ""
 
-msgid "Brila"
+msgid "Pasvorto"
 msgstr ""
 
-msgid "Ĝisdatigi"
+msgid "Sign in"
 msgstr ""
 
-msgid "Kamerao Kontroloj"
+msgid "Sign In"
 msgstr ""
 
-msgid "LED agordoj"
+msgid "Uzantnomo"
 msgstr ""
 
-msgid "Malŝalti"
-msgstr ""
-
-msgid "Movado-Detekto"
-msgstr ""
-
-msgid "Movado - LED"
-msgstr ""
-
-msgid "Movado - Momentfotoj"
-msgstr ""
-
-msgid "Movado - MQTT-Mesaĝo"
-msgstr ""
-
-msgid "Movado - MQTT-Momentfoto"
-msgstr ""
-
-msgid "Movado - Sendi retpoŝtojn"
-msgstr ""
-
-msgid "Movado - Sendi Telegramon"
-msgstr ""
-
-msgid "MQTT-Kontrolo Servilo"
-msgstr ""
-
-msgid "MQTT-Statuso Servilo"
-msgstr ""
-
-msgid "Nokta Agordoj"
-msgstr ""
-
-msgid "Obskura"
-msgstr ""
-
-msgid "OSD"
-msgstr ""
-
-msgid "Pan/Tilt"
-msgstr ""
-
-msgid "Pasvortoj"
-msgstr ""
-
-msgid "Problemoj?"
-msgstr ""
-
-msgid "Protokoloj"
-msgstr ""
-
-msgid "Restartigi"
-msgstr ""
-
-msgid "Reto"
-msgstr ""
-
-msgid "Reto Informoj"
-msgstr ""
-
-msgid "RTSP Agordoj"
-msgstr ""
-
-msgid "RTSP-Servilo"
-msgstr ""
-
-msgid "Servoj"
-msgstr ""
-
-msgid "Sistemo"
-msgstr ""
-
-msgid "Sono"
-msgstr ""
-
-msgid "Sono ĉe Lanĉo"
-msgstr ""
-
-msgid "Stato"
-msgstr ""
-
-msgid "Superrigardo"
-msgstr ""
-
-msgid "T21 Kodumoj"
-msgstr ""
-
-msgid "Temo"
-msgstr ""
-
-msgid "Transruĝa Filtrilo"
-msgstr ""
-
-msgid "Transruĝa LED"
-msgstr ""
-
-msgid "Versio :"
+msgid "Vi ne estas ensalutinta!"
 msgstr ""
 

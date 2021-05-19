@@ -29,7 +29,7 @@ lanĉante programojn sen ŝanĝi la firmvaro :  https://github.com/ThatUsernameA
 
 Kio funkcias en alternativa firmvaro:
 * lan kaj wlan
-* RTSP MJPEG servilo
+* RTSP h264 kaj MJPEG servilo
 * HTTP servilo
 * motora kontrolo
 * kalibrado de motoro
@@ -40,42 +40,36 @@ Kio funkcias en alternativa firmvaro:
 * FTP servilo
 * Video-Agordoj
 * duaranga videorivereto
-
+* movado-detekto
+* mail
 
 Kio ne funkcias en alternativa firmvaro:
 * sondosistemo
 * OSD
 * ĝisdatigo de firmvaro
 * aŭtomata nokta detekto
-* movado-detekto
 * ir-cut
-* mail
 * mqtt
-* h264
 * pasvorto por rtsp.
 * ktp ...
-
-Preparado de la kameraon :  
-* Konektu la kameraon al via loka reto kaj funkciigu la kameraon.
-* Trovu la IP-adreson de la fotilo.
-* Konektu al la kamerao per la URL "http://IP" (uzanto admin, pasvorto admin)
-* en la langeto "Audio & Video" starigu la ĉefan rivereton al 720p, alklaku "Save".
-* laŭvole agordu la kablan reton en la langeto "Network".
 
 Instalado alternativan firmvaron :  
 * Kopiu ĉion el la dosierujo "karto" en la radikon de la mikroSD.
 * laŭvole agordu la reton (config/staticip.conf, config/resolv.conf, config/wpa_supplicant.conf)
 * Enmetu la karton mikroSD.
 * Konektu la kameraon al via loka reto kaj funkciigu la kameraon.
-* Konektu al la kamerao per "telnet IP 9527" (uzanto root, pasvorto jco66688).
-* Faru "killall -9 auto_run.sh" por eviti fermi la konekton.
+* Trovu la IP-adreson de la kamerao.
+* (vi ankaŭ povas uzi la reton wifi de la kamerao: konekti vian komputilon al la reto _HSIPC-******_. Ĉi-kaze la IP-adreso de la kamerao estas 172.25.0.1) )
+* Konektu al la kamerao per "telnet IP 9527" (uzanto root, pasvorto jco66688), ne pli ol 5 minutojn post la funkciigo de la kamerao.
+* Faru "killall -9 auto_run.sh" por por malebligi ke la konekto estu tranĉita.
 * Faru "cd /opt/media/mmcblk0p1;./install.sh"
-* Vi povas konekti al la URL "https://IP" (uzanto admin, pasvorto jco66688).
+* Vi povas konekti al la URL "https://IP" (uzanto admin, pasvorto ismart21).
+* Vi povas konekti per ssh (uzanto admin, pasvorto ismart12).
 * ffplay -i rtsp://admin:ismart21@IP_adreso/media/stream1
 * ffplay -i rtsp://admin:ismart21@IP_adreso/media/stream2
 
 Malinstalado alternativan firmvaron :
-* Konektu al la kamerao per "telnet IP 9527" (uzanto root, pasvorto ismart12).
+* Konektu al la kamerao per ssh.
 * Faru "killall -9 run.sh system-emergency-telnet" por eviti fermi la konekton.
 * Faru "cd /opt/media/mmcblk0p1;./uninstall.sh;reboot"
 Vi ankaǔ povas simple forigi la karton mikroSD.

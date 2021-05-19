@@ -108,7 +108,8 @@ int  IMP_Log_Get_Option(void);
 #define IMP_LOG_GET_OPTION IMP_Log_Get_Option()
 
 /* Default log to logcat */
-#define IMP_LOG IMP_LOG_TO_SERVER
+//#define IMP_LOG IMP_LOG_TO_SERVER
+#define IMP_LOG IMP_LOG_TO_FILE
 
 /**
  * @def IMP_LOG_UNK

@@ -1,0 +1,58 @@
+#!/bin/sh
+. /etc/profile >/dev/null
+export LD_LIBRARY_PATH="${SDCARD}/lib:/thirdlib:/system/lib/:/ipc/lib/"
+
+SERVICE_NAME="hostapd"
+PIDFILE="/var/run/${SERVICE_NAME}.pid"
+LOGDIR="${SDCARD}/log"
+LOGPATH="$LOGDIR/${SERVICE_NAME}.log"
+BIN=/ipc/bin/${SERVICE_NAME}
+CONFIG="${SDCARD}/config/${SERVICE_NAME}.conf"
+OPTS="-d -B -P "$PIDFILE" "$CONFIG""
+
+
+status()
+{
+  pid="$(cat "$PIDFILE" 2>/dev/null)"
+  if [ "$pid" ]; then
+    # Prints PID: $pid if exists and returns 0(no error) else returns 1(error condition)
+    kill -0 "$pid" >/dev/null && echo "PID: $pid" || return 1
+  fi
+}
+
+start()
+{
+  if [ "$(status)" != "" ]; then
+    echo "A ${SERVICE_NAME} is already running, please stop it or reboot"
+  else
+    if [ ! -f ${SDCARD}/config/hostapd.conf ]
+    then
+      echo "Generating config hostapd"
+      MAC=$(ifconfig wlan0|grep HWaddr|sed "s/.*HWaddr *//")
+      sed "s/ssid=\(.*\$\)/ssid=\ipcam100-${MAC}/" ${SDCARD}/config/hostapd.conf.dist > ${SDCARD}/config/hostapd.conf
+    fi
+    echo "Starting ${SERVICE_NAME}"
+    echo "================== START ===============" >> "$LOGPATH"
+    echo "${BIN} ${OPTS}" >> "$LOGPATH"
+    ${BIN} ${OPTS} 2>> "$LOGPATH" >> "$LOGPATH" &
+    echo "$!" > "$PIDFILE"
+  fi
+}
+
+stop()
+{
+  pid="$(cat "$PIDFILE" 2>/dev/null)"
+  if [ "$pid" ]; then
+    kill "$pid"
+    rm "$PIDFILE" 1> /dev/null 2>&1
+  fi
+}
+
+if [ $# -eq 0 ]; then
+  start
+else
+  case $1 in start|stop|status)
+    $1
+    ;;
+  esac
+fi
