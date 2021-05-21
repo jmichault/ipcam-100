@@ -114,9 +114,6 @@ ntp_srv="$(cat "$CONFIGPATH/ntp_srv.conf")"
 timeout -t 30 sh -c "until ping -c1 \"$ntp_srv\" &>/dev/null; do sleep 3; done";
 ${SDCARD}/bin/busybox ntpd -p "$ntp_srv"
 
-## retservilo estas deviga
-${SDCARD}/config/autostart/system-webserver
-
 ## Autostart all enabled services:
 for i in ${SDCARD}/config/autostart/*; do
   $i &
