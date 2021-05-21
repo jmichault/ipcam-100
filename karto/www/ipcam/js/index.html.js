@@ -7,16 +7,6 @@ var SWITCHES = [
 
 var timeoutJobs = {};
 
-function refreshLiveImage() {
-    var ts = new Date().getTime();
-    $("#liveview").attr("src", "cgi-bin/currentpic.cgi?" + ts);
-}
-function scheduleRefreshLiveImage(interval) {
-    if (timeoutJobs['refreshLiveImage'] != undefined) {
-        clearTimeout(timeoutJobs['refreshLiveImage']);
-    }
-    timeoutJobs['refreshLiveImage'] = setTimeout(refreshLiveImage, interval);
-}
 function syncSwitch(sw) {
     var e = $('#' + sw);
     if (!e.prop('disabled')) {
@@ -158,7 +148,12 @@ $(document).ready(function () {
     }
 
     // Make liveview self refresh
-    $("#liveview").attr("onload", "scheduleRefreshLiveImage(1000);");
+    //$("#liveview").attr("onload", "scheduleRefreshLiveImage(1000);");
+    var image = document.getElementById("liveview");
+    function updateImage() {
+        image.src = image.src.split("?")[0] + "?" + new Date().getTime();
+    }
+    setInterval(updateImage, 1000);
 
 });
 

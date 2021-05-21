@@ -55,7 +55,7 @@ cat << EOF
                     <div class="control">
                         <div class="select">
                             <select name="timeZone">
-                                $(${DOCUMENT_ROOT}/../bin/busybox awk -F '\t' -v tzn="$(cat ${DOCUMENT_ROOT}/../config/timezone.conf)" '{print "<option value=\""$1"\""; if ($1==tzn) print "selected"; print ">" $1 "</option>"}' ${DOCUMENT_ROOT}/../www/timezones.tsv)
+                                $(${DOCUMENT_ROOT}/../bin/busybox awk -F '\t' -v tzn="$(cat ${DOCUMENT_ROOT}/../config/timezone.conf)" '{print "<option value=\""$1"\""; if ($1==tzn) print "selected"; print ">" $1 "</option>"}' ${DOCUMENT_ROOT}/ipcam/timezones.tsv)
                             </select>
                         </div>
                         <p class="help">$(date) - $(cat /etc/TZ)</p>

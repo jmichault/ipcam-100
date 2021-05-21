@@ -18,6 +18,11 @@
  <script type="text/javascript" src="js/traduki.js"></script>
 
   <script>
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  if (queryString.includes("TIMEDOUT") ) {
+        window.open("/index.html?arg=TIMED-OUT","_top","","true");
+  }
 $(document).ready(function () {
   setPageLang("index");
   $('.langsel').click(function () {
@@ -27,7 +32,10 @@ $(document).ready(function () {
   })
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
-  if (queryString.includes("UNAUTHORIZED")) {
+  if (queryString.includes("TIMED-OUT")) {
+        document.getElementById("paragraph").innerHTML = loki18n.gettext("ensaluto eksvalidiĝis!");
+  }
+  else if (queryString.includes("UNAUTHORIZED")) {
         document.getElementById("paragraph").innerHTML = loki18n.gettext("Vi ne estas ensalutinta!");
   }
 })
