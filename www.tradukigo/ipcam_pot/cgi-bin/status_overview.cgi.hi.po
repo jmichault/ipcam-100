@@ -1,0 +1,57 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+#, fuzzy
+msgid "Averto"
+msgstr "चेतावनी"
+
+#, fuzzy
+msgid "Daŭro de funkciado"
+msgstr "ऑपरेशन की लंबाई"
+
+#, fuzzy
+msgid "Firmprogramo"
+msgstr "दृढ़ कार्यक्रम"
+
+#, fuzzy
+msgid "Gastnomo"
+msgstr "होस्ट का नाम"
+
+#, fuzzy
+msgid "Kerno Versio"
+msgstr "कोर संस्करण"
+
+#, fuzzy
+msgid "Loka Tempo"
+msgstr "स्थानीय समय"
+
+#, fuzzy
+msgid "Modelo"
+msgstr "नमूना"
+
+#, fuzzy
+msgid "Praŝargilo Versio"
+msgstr "बोर्ड संस्करण"
+
+#, fuzzy
+msgid "Ŝarĝa Mezumo"
+msgstr "चार्ज औसत"
+
+#, fuzzy
+msgid "Sistemo"
+msgstr "प्रणाली"
+
+#, fuzzy
+msgid "Via sdcard estas muntita nurlegebla. Agordoj ne konserveblas."
+msgstr "आपका एसडीकार्ड केवल पठनीय घुड़सवार है। "

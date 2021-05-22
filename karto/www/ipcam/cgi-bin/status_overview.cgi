@@ -16,11 +16,11 @@ cat << EOF
   <!-- sdcard warning -->
   <article class="message is-warning">
     <div class="message-header">
-      <p>Warning</p>
+      <p class="lang" data-lang="Averto"></p>
       <button class="delete" aria-label="delete"></button>
     </div>
     <div class="message-body">
-      Your sdcard is mounted read-only. Settings can't be saved.
+      <a lang" data-lang="Via sdcard estas muntita nurlegebla. Agordoj ne konserveblas."></a>
       <br>
       <p>Please try rebooting. If the problem persists, please <a target="_blank" href="https://github.com/EliasKotlyar/Xiaomi-Dafang-Hacks/search?q=read+only+sdcard&type=Issues">search
       for possible solutions.</a></p>
@@ -32,43 +32,43 @@ EOF
 fi
 
 cat << EOF
-<!-- System -->
+<!-- Sistemo -->
 <div class='card status_card'>
-    <header class='card-header'><p class='card-header-title'>System</p></header>
+    <header class='card-header'><p class='card-header-title lang' data-lang="Sistemo"></p></header>
     <div class='card-content'>
         <div class='content'>
             <table>
               <tbody>
                 <tr>
-                  <td> Hostname </td>
+                  <td class="lang" data-lang="Gastnomo"> </td>
                   <td> $(hostname) </td>
                 </tr>
                 <tr>
-                  <td> Model </td>
+                  <td class="lang" data-lang="Modelo"></td>
                   <td> $(detect_model) </td>
                 </tr>
                 <tr>
-                  <td> Firmware Version </td>
+                  <td class="lang" data-lang="Firmprogramo"></td>
                   <td> $(if [ -s "${DOCUMENT_ROOT}/../.lastCommitDate" ]; then cat ${DOCUMENT_ROOT}/../.lastCommitDate; else echo "Update for version string"; fi) </td>
                 </tr>
                 <tr>
-                  <td> Kernel Version </td>
+                  <td class="lang" data-lang="Kerno Versio"></td>
                   <td> $(${DOCUMENT_ROOT}/../bin/busybox uname -v) </td>
                 </tr>
                 <tr>
-                  <td> Bootloader Version </td>
+                  <td class="lang" data-lang="Praŝargilo Versio"></td>
                   <td> $(busybox strings /dev/mtd0 | grep "U-Boot 2") </td>
                 <tr>
                 <tr>
-                  <td> Local Time </td>
+                  <td class="lang" data-lang="Loka Tempo"></td>
                   <td> $(date) </td>
                 </tr>
                 <tr>
-                  <td> Uptime </td>
+                  <td class="lang" data-lang="Daŭro de funkciado"></td>
                   <td> $(uptime | sed 's/^.*up *//;s/, *[0-9]* user.*$/m/; s/ day[^0-9]*/d, /;s/ \([hms]\).*m$/\1/;s/:/h, /') </td>
                 </tr>
                 <tr>
-                  <td> Load Average </td>
+                  <td class="lang" data-lang="Ŝarĝa Mezumo"></td>
                   <td> $(uptime | awk -F': ' '{print $2}') </td>
                 </tr>
               </tbody>

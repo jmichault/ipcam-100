@@ -30,6 +30,9 @@ msgstr ""
 msgid "Uzantnomo"
 msgstr ""
 
+msgid "ensaluto eksvalidiĝis!"
+msgstr ""
+
 msgid "Vi ne estas ensalutinta!"
 msgstr ""
 

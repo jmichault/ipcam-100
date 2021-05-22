@@ -1,0 +1,46 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+#, fuzzy
+msgid "Elektu lingvon"
+msgstr "Wybierz język"
+
+#, fuzzy
+msgid "Hello!"
+msgstr "Witaj!"
+
+#, fuzzy
+msgid "Pasvorto"
+msgstr "Hasło"
+
+#, fuzzy
+msgid "Sign in"
+msgstr "Zaloguj się"
+
+#, fuzzy
+msgid "Sign In"
+msgstr "Zaloguj się"
+
+#, fuzzy
+msgid "Uzantnomo"
+msgstr "Nazwa Użytkownika"
+
+#, fuzzy
+msgid "ensaluto eksvalidiĝis!"
+msgstr "Logowanie wygasł!"
+
+#, fuzzy
+msgid "Vi ne estas ensalutinta!"
+msgstr "Nie jesteś zalogowany!"
+

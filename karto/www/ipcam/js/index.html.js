@@ -41,7 +41,7 @@ function showResult(txt) {
 }
 
 $(document).ready(function () {
-    setPageLang("index");
+    setPageLang("index",$(document));
     setTheme(getThemeChoice());
     
     // Set title page and menu with hostname
@@ -63,7 +63,9 @@ $(document).ready(function () {
             // new param
             cachebuster = "?" + cachebuster;
         }
-        $('#content').load(target + cachebuster);
+        $('#content').load(target + cachebuster,function() {
+          setPageLang(target,$('#content'));
+        });
     });
     // Load link into window
     $('.direct').click(function () {

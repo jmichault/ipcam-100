@@ -1,0 +1,46 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+msgid "Averto"
+msgstr "Avertissement"
+
+msgid "Daŭro de funkciado"
+msgstr "Durée de fonctionnement"
+
+msgid "Firmprogramo"
+msgstr "Micrologiciel"
+
+msgid "Gastnomo"
+msgstr "Nom d'hôte"
+
+msgid "Kerno Versio"
+msgstr "Version du noyau"
+
+msgid "Loka Tempo"
+msgstr "Heure locale"
+
+msgid "Modelo"
+msgstr "Modèle"
+
+msgid "Praŝargilo Versio"
+msgstr "Version du pré-chargement"
+
+msgid "Ŝarĝa Mezumo"
+msgstr "Charge moyenne"
+
+msgid "Sistemo"
+msgstr "Système"
+
+msgid "Via sdcard estas muntita nurlegebla. Agordoj ne konserveblas."
+msgstr "Votre SDCard est montée en lecture seule. Les paramètres ne seront pas conservés."

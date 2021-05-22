@@ -37,6 +37,10 @@ msgid "Uzantnomo"
 msgstr "Gebruikersnaam"
 
 #, fuzzy
+msgid "ensaluto eksvalidiĝis!"
+msgstr "Login verlopen!"
+
+#, fuzzy
 msgid "Vi ne estas ensalutinta!"
 msgstr "Je bent niet ingelogd!"
 

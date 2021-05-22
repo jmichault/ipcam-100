@@ -1,0 +1,47 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: eo\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+msgid "Averto"
+msgstr ""
+
+msgid "Daŭro de funkciado"
+msgstr ""
+
+msgid "Firmprogramo"
+msgstr ""
+
+msgid "Gastnomo"
+msgstr ""
+
+msgid "Kerno Versio"
+msgstr ""
+
+msgid "Loka Tempo"
+msgstr ""
+
+msgid "Modelo"
+msgstr ""
+
+msgid "Praŝargilo Versio"
+msgstr ""
+
+msgid "Ŝarĝa Mezumo"
+msgstr ""
+
+msgid "Sistemo"
+msgstr ""
+
+msgid "Via sdcard estas muntita nurlegebla. Agordoj ne konserveblas."
+msgstr ""
+

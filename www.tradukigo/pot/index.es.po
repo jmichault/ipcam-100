@@ -37,6 +37,10 @@ msgid "Uzantnomo"
 msgstr "Nombre de usuario"
 
 #, fuzzy
+msgid "ensaluto eksvalidiĝis!"
+msgstr "Inicio de sesión expirado!"
+
+#, fuzzy
 msgid "Vi ne estas ensalutinta!"
 msgstr "¡Usted no se ha identificado!"
 
