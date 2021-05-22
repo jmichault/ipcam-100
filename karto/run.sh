@@ -21,6 +21,20 @@ killall -9 hostapd
 killall -9 udhcpd
 killall -9 udhcpc
 
+if [ -f "${SDCARD}/update.zip" ]
+then
+  cd "${SDCARD}"
+  echo "========================" > log/update.log
+  echo "ĝisdatigo per «update.zip»" >>log/update.log
+  echo "========================" >>log/update.log
+  unzip -o update.zip >>log/update.log 2>&1
+  rm update.zip >>log/update.log 2>&1
+  sync >>log/update.log 2>&1
+  echo "========================" >>log/update.log
+  echo "ĝisdatigo finita." >>log/update.log
+  echo "========================" >>log/update.log
+fi
+
 ## Load some common functions:
 . ${SDCARD}/scripts/common_functions.sh
 
