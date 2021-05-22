@@ -1,0 +1,68 @@
+#!/bin/sh
+. /etc/profile >/dev/null
+export LD_LIBRARY_PATH="${SDCARD}/lib:/thirdlib:/system/lib/:/ipc/lib/"
+
+SERVICE_NAME="lighttpd"
+BIN=${SDCARD}/bin/lighttpd
+OPTS="-f ${SDCARD}/config/lighttpd.conf"
+
+PIDFILE="/var/run/${SERVICE_NAME}.pid"
+LOGDIR="${SDCARD}/log"
+LOGPATH="$LOGDIR/${SERVICE_NAME}.log"
+CONFIG="${SDCARD}/config/${SERVICE_NAME}.conf"
+
+
+status()
+{
+  pid="$(cat "$PIDFILE" 2>/dev/null)"
+  if [ "$pid" ]; then
+    # Prints PID: $pid if exists and returns 0(no error) else returns 1(error condition)
+    kill -0 "$pid" >/dev/null && echo "PID: $pid" || return 1
+  fi
+}
+
+start()
+{
+  if [ "$(status)" != "" ]; then
+    echo "A ${SERVICE_NAME} is already running, please stop it or reboot"
+  else
+    ## Create a certificate for the webserver
+    CONFIGPATH="${SDCARD}/config"
+    if [ ! -f $CONFIGPATH/lighttpd.pem ]; then
+     export OPENSSL_CONF=$CONFIGPATH/openssl.cnf
+     ${SDCARD}/bin/openssl req -new -x509 -keyout $CONFIGPATH/lighttpd.pem -out $CONFIGPATH/lighttpd.pem -days 365 -nodes -subj "/C=DE/ST=Mars/L=HellasPlanitia/O=.../OU=.../CN=.../emailAddress=..."
+      chmod 400 $CONFIGPATH/lighttpd.pem
+    fi
+    ## change secret
+    SEC=$(openssl rand -base64 36)
+    cat "$CONFIGPATH/lighttpd.conf"|grep -v "auth.*\"secret\"" >/tmp/lighttpd.conf.$$
+    mv "$CONFIGPATH/lighttpd.conf.2" "$CONFIGPATH/lighttpd.conf.3"
+    mv "$CONFIGPATH/lighttpd.conf.1" "$CONFIGPATH/lighttpd.conf.2"
+    mv "$CONFIGPATH/lighttpd.conf" "$CONFIGPATH/lighttpd.conf.1"
+    mv /tmp/lighttpd.conf.$$ "$CONFIGPATH/lighttpd.conf"
+    echo "auth.method.tkt.opts += (\"secret\" => \"${SEC}\")" >>"$CONFIGPATH/lighttpd.conf"
+    ## 
+    echo "Starting ${SERVICE_NAME}"
+    echo "================== START ===============" >> "$LOGPATH"
+    echo "${BIN} ${OPTS}" >> "$LOGPATH"
+    ${BIN} ${OPTS} 2>> "$LOGPATH" >> "$LOGPATH" &
+  fi
+}
+
+stop()
+{
+  pid="$(cat "$PIDFILE" 2>/dev/null)"
+  if [ "$pid" ]; then
+    kill "$pid"
+    rm "$PIDFILE" 1> /dev/null 2>&1
+  fi
+}
+
+if [ $# -eq 0 ]; then
+  start
+else
+  case $1 in start|stop|status)
+    $1
+    ;;
+  esac
+fi

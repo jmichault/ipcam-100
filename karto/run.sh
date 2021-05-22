@@ -21,6 +21,21 @@ killall -9 hostapd
 killall -9 udhcpd
 killall -9 udhcpc
 
+if [ -f "${SDCARD}/update.zip" ]
+then
+  cd "${SDCARD}"
+  echo "========================" > log/update.log
+  echo "ĝisdatigo per «update.zip»" >>log/update.log
+  ls -l update.zip >>log/update.log
+  echo "========================" >>log/update.log
+  unzip -o update.zip >>log/update.log 2>&1
+  rm update.zip >>log/update.log 2>&1
+  sync >>log/update.log 2>&1
+  echo "========================" >>log/update.log
+  echo "ĝisdatigo finita." >>log/update.log
+  echo "========================" >>log/update.log
+fi
+
 ## Load some common functions:
 . ${SDCARD}/scripts/common_functions.sh
 
@@ -113,9 +128,6 @@ set_timezone
 ntp_srv="$(cat "$CONFIGPATH/ntp_srv.conf")"
 timeout -t 30 sh -c "until ping -c1 \"$ntp_srv\" &>/dev/null; do sleep 3; done";
 ${SDCARD}/bin/busybox ntpd -p "$ntp_srv"
-
-## retservilo estas deviga
-${SDCARD}/config/autostart/system-webserver
 
 ## Autostart all enabled services:
 for i in ${SDCARD}/config/autostart/*; do

@@ -37,6 +37,10 @@ msgid "Uzantnomo"
 msgstr "用户名"
 
 #, fuzzy
+msgid "ensaluto eksvalidiĝis!"
+msgstr "登录过期！"
+
+#, fuzzy
 msgid "Vi ne estas ensalutinta!"
 msgstr "你没有登录！"
 

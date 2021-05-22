@@ -1,0 +1,173 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+#, fuzzy
+msgid "Blanka LED"
+msgstr "بقيادة بيضاء"
+
+#, fuzzy
+msgid "Ĝisdatigi"
+msgstr "تحديث"
+
+#, fuzzy
+msgid "Kamerao"
+msgstr "                                                                                                                      ﺮﻳﻮﺼﺗ ﺔﻟﺁ"
+
+#, fuzzy
+msgid "LED agordoj"
+msgstr "إعدادات LED."
+
+#, fuzzy
+msgid "Malŝalti"
+msgstr "اطفئه"
+
+#, fuzzy
+msgid "Movado-Detekto"
+msgstr "اكتشاف الحركة"
+
+#, fuzzy
+msgid "Nokta Agordoj"
+msgstr "إعدادات الليل"
+
+#, fuzzy
+msgid "OSD"
+msgstr "osd"
+
+#, fuzzy
+msgid "Pan/Tilt"
+msgstr "عموم / الميل"
+
+#, fuzzy
+msgid "Pasvortoj"
+msgstr "كلمات المرور"
+
+#, fuzzy
+msgid "Problemoj?"
+msgstr "مشاكل؟"
+
+#, fuzzy
+msgid "Protokoloj"
+msgstr "البروتوكولات"
+
+#, fuzzy
+msgid "Restartigi"
+msgstr "لإعادة التشغيل"
+
+#, fuzzy
+msgid "Reto Informoj"
+msgstr "معلومات الشبكة"
+
+#, fuzzy
+msgid "RTSP Agordoj"
+msgstr "إعدادات RTSP."
+
+#, fuzzy
+msgid "Servoj"
+msgstr "خدمات"
+
+#, fuzzy
+msgid "Sistemo"
+msgstr "نظام"
+
+#, fuzzy
+msgid "Sono"
+msgstr "صوت"
+
+#, fuzzy
+msgid "Stato"
+msgstr "حالة"
+
+#, fuzzy
+msgid "Superrigardo"
+msgstr "ملخص"
+
+#, fuzzy
+msgid "T21 Kodumoj"
+msgstr "رموز T21"
+
+#, fuzzy
+msgid "Transruĝa LED"
+msgstr "أدى الأشعة تحت الحمراء"
+
+#, fuzzy
+msgid "Versio :"
+msgstr "إصدار:"
+
+#, fuzzy
+#~ msgid "Aŭtomata Nokta Detekto"
+#~ msgstr "كشف ليلة التلقائي"
+
+#, fuzzy
+#~ msgid "Brila"
+#~ msgstr "لامع"
+
+#, fuzzy
+#~ msgid "Kamerao Kontroloj"
+#~ msgstr "ضوابط الكاميرا"
+
+#, fuzzy
+#~ msgid "Movado - LED"
+#~ msgstr "الحركة - أدى"
+
+#, fuzzy
+#~ msgid "Movado - Momentfotoj"
+#~ msgstr "الحركة - صور لحظات"
+
+#, fuzzy
+#~ msgid "Movado - MQTT-Mesaĝo"
+#~ msgstr "الحركة - رسالة MQTT"
+
+#, fuzzy
+#~ msgid "Movado - MQTT-Momentfoto"
+#~ msgstr "الحركة - MQTT-MOUSTITFOTO"
+
+#, fuzzy
+#~ msgid "Movado - Sendi retpoŝtojn"
+#~ msgstr "الحركة - إرسال رسائل البريد الإلكتروني"
+
+#, fuzzy
+#~ msgid "Movado - Sendi Telegramon"
+#~ msgstr "الحركة - إرسال برقية"
+
+#, fuzzy
+#~ msgid "MQTT-Kontrolo Servilo"
+#~ msgstr "MQTT Control Server."
+
+#, fuzzy
+#~ msgid "MQTT-Statuso Servilo"
+#~ msgstr "خادم حالة MQTT"
+
+#, fuzzy
+#~ msgid "Obskura"
+#~ msgstr "غامض"
+
+#, fuzzy
+#~ msgid "Reto"
+#~ msgstr "شبكة الاتصال"
+
+#, fuzzy
+#~ msgid "RTSP-Servilo"
+#~ msgstr "خادم RTSP"
+
+#, fuzzy
+#~ msgid "Sono ĉe Lanĉo"
+#~ msgstr "الصوت في إطلاق"
+
+#, fuzzy
+#~ msgid "Temo"
+#~ msgstr "موضوع"
+
+#, fuzzy
+#~ msgid "Transruĝa Filtrilo"
+#~ msgstr "فلتر الأشعة تحت الحمراء"

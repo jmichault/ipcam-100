@@ -1,0 +1,173 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+#, fuzzy
+msgid "Blanka LED"
+msgstr "Biała dioda"
+
+#, fuzzy
+msgid "Ĝisdatigi"
+msgstr "Aktualizacja"
+
+#, fuzzy
+msgid "Kamerao"
+msgstr "Aparat fotograficzny"
+
+#, fuzzy
+msgid "LED agordoj"
+msgstr "Ustawienia LED."
+
+#, fuzzy
+msgid "Malŝalti"
+msgstr "Wyłączyć"
+
+#, fuzzy
+msgid "Movado-Detekto"
+msgstr "Wykrywanie ruchu"
+
+#, fuzzy
+msgid "Nokta Agordoj"
+msgstr "Ustawienia nocne."
+
+#, fuzzy
+msgid "OSD"
+msgstr "OSD."
+
+#, fuzzy
+msgid "Pan/Tilt"
+msgstr "PAN / TILT."
+
+#, fuzzy
+msgid "Pasvortoj"
+msgstr "Hasła"
+
+#, fuzzy
+msgid "Problemoj?"
+msgstr "Problemy?"
+
+#, fuzzy
+msgid "Protokoloj"
+msgstr "Protokoły"
+
+#, fuzzy
+msgid "Restartigi"
+msgstr "Zrestartować"
+
+#, fuzzy
+msgid "Reto Informoj"
+msgstr "Informacje o sieci"
+
+#, fuzzy
+msgid "RTSP Agordoj"
+msgstr "Ustawienia RTSP."
+
+#, fuzzy
+msgid "Servoj"
+msgstr "Usługi"
+
+#, fuzzy
+msgid "Sistemo"
+msgstr "System"
+
+#, fuzzy
+msgid "Sono"
+msgstr "Dźwięk"
+
+#, fuzzy
+msgid "Stato"
+msgstr "Stan"
+
+#, fuzzy
+msgid "Superrigardo"
+msgstr "Przegląd"
+
+#, fuzzy
+msgid "T21 Kodumoj"
+msgstr "Kody T21."
+
+#, fuzzy
+msgid "Transruĝa LED"
+msgstr "Dioda LED podczerwona"
+
+#, fuzzy
+msgid "Versio :"
+msgstr "Wersja:"
+
+#, fuzzy
+#~ msgid "Aŭtomata Nokta Detekto"
+#~ msgstr "Automatyczne wykrywanie nocy."
+
+#, fuzzy
+#~ msgid "Brila"
+#~ msgstr "Jasny"
+
+#, fuzzy
+#~ msgid "Kamerao Kontroloj"
+#~ msgstr "Sterowanie kamerami"
+
+#, fuzzy
+#~ msgid "Movado - LED"
+#~ msgstr "Ruch - dioda LED."
+
+#, fuzzy
+#~ msgid "Movado - Momentfotoj"
+#~ msgstr "Ruch - zdjęcia zdjęć"
+
+#, fuzzy
+#~ msgid "Movado - MQTT-Mesaĝo"
+#~ msgstr "Ruch - wiadomość MQTT"
+
+#, fuzzy
+#~ msgid "Movado - MQTT-Momentfoto"
+#~ msgstr "Ruch - MQTT-Momentfoto"
+
+#, fuzzy
+#~ msgid "Movado - Sendi retpoŝtojn"
+#~ msgstr "Ruch - Wyślij e-maile"
+
+#, fuzzy
+#~ msgid "Movado - Sendi Telegramon"
+#~ msgstr "Ruch - Wyślij telegram"
+
+#, fuzzy
+#~ msgid "MQTT-Kontrolo Servilo"
+#~ msgstr "Serwer sterujący MQTT."
+
+#, fuzzy
+#~ msgid "MQTT-Statuso Servilo"
+#~ msgstr "MQTT Status Server."
+
+#, fuzzy
+#~ msgid "Obskura"
+#~ msgstr "Niejasny"
+
+#, fuzzy
+#~ msgid "Reto"
+#~ msgstr "Sieć"
+
+#, fuzzy
+#~ msgid "RTSP-Servilo"
+#~ msgstr "Serwer RTSP."
+
+#, fuzzy
+#~ msgid "Sono ĉe Lanĉo"
+#~ msgstr "Dźwięk w uruchamianiu"
+
+#, fuzzy
+#~ msgid "Temo"
+#~ msgstr "Przedmiot"
+
+#, fuzzy
+#~ msgid "Transruĝa Filtrilo"
+#~ msgstr "Filtr podczerwieni"

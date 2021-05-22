@@ -37,6 +37,10 @@ msgid "Uzantnomo"
 msgstr "اسم المستخدم"
 
 #, fuzzy
+msgid "ensaluto eksvalidiĝis!"
+msgstr "انتهت صلاحية تسجيل الدخول!"
+
+#, fuzzy
 msgid "Vi ne estas ensalutinta!"
 msgstr "لم يتم دخولك!"
 

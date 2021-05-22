@@ -1,0 +1,173 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+#, fuzzy
+msgid "Blanka LED"
+msgstr "Witte led"
+
+#, fuzzy
+msgid "Ĝisdatigi"
+msgstr "Bijwerken"
+
+#, fuzzy
+msgid "Kamerao"
+msgstr "Camera"
+
+#, fuzzy
+msgid "LED agordoj"
+msgstr "LED-instellingen"
+
+#, fuzzy
+msgid "Malŝalti"
+msgstr "Uitschakelen"
+
+#, fuzzy
+msgid "Movado-Detekto"
+msgstr "Bewegingsdetectie"
+
+#, fuzzy
+msgid "Nokta Agordoj"
+msgstr "Nachtinstellingen"
+
+#, fuzzy
+msgid "OSD"
+msgstr "OSD"
+
+#, fuzzy
+msgid "Pan/Tilt"
+msgstr "Pan / tilt"
+
+#, fuzzy
+msgid "Pasvortoj"
+msgstr "Wachtwoorden"
+
+#, fuzzy
+msgid "Problemoj?"
+msgstr "Problemen?"
+
+#, fuzzy
+msgid "Protokoloj"
+msgstr "Protocollen"
+
+#, fuzzy
+msgid "Restartigi"
+msgstr "Herstarten"
+
+#, fuzzy
+msgid "Reto Informoj"
+msgstr "Netwerkinformatie"
+
+#, fuzzy
+msgid "RTSP Agordoj"
+msgstr "RTSP-instellingen"
+
+#, fuzzy
+msgid "Servoj"
+msgstr "Diensten"
+
+#, fuzzy
+msgid "Sistemo"
+msgstr "Systeem"
+
+#, fuzzy
+msgid "Sono"
+msgstr "Geluid"
+
+#, fuzzy
+msgid "Stato"
+msgstr "Staat"
+
+#, fuzzy
+msgid "Superrigardo"
+msgstr "Overzicht"
+
+#, fuzzy
+msgid "T21 Kodumoj"
+msgstr "T21-codes"
+
+#, fuzzy
+msgid "Transruĝa LED"
+msgstr "Infrarood-LED"
+
+#, fuzzy
+msgid "Versio :"
+msgstr "Versie:"
+
+#, fuzzy
+#~ msgid "Aŭtomata Nokta Detekto"
+#~ msgstr "Automatische nachtdetectie"
+
+#, fuzzy
+#~ msgid "Brila"
+#~ msgstr "Helder"
+
+#, fuzzy
+#~ msgid "Kamerao Kontroloj"
+#~ msgstr "Camera-controles"
+
+#, fuzzy
+#~ msgid "Movado - LED"
+#~ msgstr "Beweging - LED"
+
+#, fuzzy
+#~ msgid "Movado - Momentfotoj"
+#~ msgstr "Beweging - moment foto's"
+
+#, fuzzy
+#~ msgid "Movado - MQTT-Mesaĝo"
+#~ msgstr "Beweging - MQTT-bericht"
+
+#, fuzzy
+#~ msgid "Movado - MQTT-Momentfoto"
+#~ msgstr "Beweging - MQTT-Momentfoto"
+
+#, fuzzy
+#~ msgid "Movado - Sendi retpoŝtojn"
+#~ msgstr "Beweging - Stuur e-mails"
+
+#, fuzzy
+#~ msgid "Movado - Sendi Telegramon"
+#~ msgstr "Beweging - stuur een telegram"
+
+#, fuzzy
+#~ msgid "MQTT-Kontrolo Servilo"
+#~ msgstr "MQTT-besturingsserver"
+
+#, fuzzy
+#~ msgid "MQTT-Statuso Servilo"
+#~ msgstr "MQTT Status Server"
+
+#, fuzzy
+#~ msgid "Obskura"
+#~ msgstr "Duister"
+
+#, fuzzy
+#~ msgid "Reto"
+#~ msgstr "Netwerk"
+
+#, fuzzy
+#~ msgid "RTSP-Servilo"
+#~ msgstr "RTSP-server"
+
+#, fuzzy
+#~ msgid "Sono ĉe Lanĉo"
+#~ msgstr "Geluid bij de lancering"
+
+#, fuzzy
+#~ msgid "Temo"
+#~ msgstr "Onderwerpen"
+
+#, fuzzy
+#~ msgid "Transruĝa Filtrilo"
+#~ msgstr "Infraroodfilter"

@@ -7,16 +7,6 @@ var SWITCHES = [
 
 var timeoutJobs = {};
 
-function refreshLiveImage() {
-    var ts = new Date().getTime();
-    $("#liveview").attr("src", "cgi-bin/currentpic.cgi?" + ts);
-}
-function scheduleRefreshLiveImage(interval) {
-    if (timeoutJobs['refreshLiveImage'] != undefined) {
-        clearTimeout(timeoutJobs['refreshLiveImage']);
-    }
-    timeoutJobs['refreshLiveImage'] = setTimeout(refreshLiveImage, interval);
-}
 function syncSwitch(sw) {
     var e = $('#' + sw);
     if (!e.prop('disabled')) {
@@ -51,7 +41,7 @@ function showResult(txt) {
 }
 
 $(document).ready(function () {
-    setPageLang("index");
+    setPageLang("index.html",$(document));
     setTheme(getThemeChoice());
     
     // Set title page and menu with hostname
@@ -73,7 +63,9 @@ $(document).ready(function () {
             // new param
             cachebuster = "?" + cachebuster;
         }
-        $('#content').load(target + cachebuster);
+        $('#content').load(target + cachebuster,function() {
+          setPageLang(target,$('#content'));
+        });
     });
     // Load link into window
     $('.direct').click(function () {
@@ -158,7 +150,12 @@ $(document).ready(function () {
     }
 
     // Make liveview self refresh
-    $("#liveview").attr("onload", "scheduleRefreshLiveImage(1000);");
+    //$("#liveview").attr("onload", "scheduleRefreshLiveImage(1000);");
+    var image = document.getElementById("liveview");
+    function updateImage() {
+        image.src = image.src.split("?")[0] + "?" + new Date().getTime();
+    }
+    setInterval(updateImage, 1000);
 
 });
 

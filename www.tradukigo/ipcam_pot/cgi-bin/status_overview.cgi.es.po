@@ -1,0 +1,117 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+#, fuzzy
+msgid "Averto"
+msgstr "Advertencia"
+
+#, fuzzy
+msgid "Bonvolu provi restartigi."
+msgstr "Intente reiniciar."
+
+#, fuzzy
+msgid "Daŭro de funkciado"
+msgstr "Duración de la operación"
+
+#, fuzzy
+msgid "Elŝutu Praŝarĝilo"
+msgstr "Descargar la máquina de arranque"
+
+#, fuzzy
+msgid "Firmprogramo"
+msgstr "Programa firme"
+
+#, fuzzy
+msgid "Gastnomo"
+msgstr "Nombre de host"
+
+#, fuzzy
+msgid "IP-Adreso"
+msgstr "dirección IP"
+
+#, fuzzy
+msgid "Kerno Versio"
+msgstr "Versión principal"
+
+#, fuzzy
+msgid "Kluzadreso"
+msgstr "Dirección del club"
+
+#, fuzzy
+msgid "Komandlinio :"
+msgstr "Línea de comando:"
+
+#, fuzzy
+msgid "Liga Kvalito"
+msgstr "Calidad de la liga"
+
+#, fuzzy
+msgid "Loka Tempo"
+msgstr "Hora local"
+
+#, fuzzy
+msgid "MAC-Adreso"
+msgstr "Dirección MAC"
+
+#, fuzzy
+msgid "MD5-Sumo de Praŝarĝilo :"
+msgstr "Versión de la junta"
+
+#, fuzzy
+msgid "Modelo"
+msgstr "Modelo"
+
+#, fuzzy
+msgid "Network (WLAN0)"
+msgstr "Red (WLAN0)"
+
+#, fuzzy
+msgid "Praŝarĝilo"
+msgstr "Versión de la junta"
+
+#, fuzzy
+msgid "Praŝargilo Versio"
+msgstr "Versión de la junta"
+
+#, fuzzy
+msgid "Retmasko"
+msgstr "Recuperar"
+
+#, fuzzy
+msgid "Ŝarĝa Mezumo"
+msgstr "Promedio de carga"
+
+#, fuzzy
+msgid "Sistemo"
+msgstr "Sistema"
+
+#, fuzzy
+msgid "Versio de Praŝarĝilo :"
+msgstr "Versión de la junta"
+
+#, fuzzy
+msgid "Via sdcard estas muntita nurlegebla. Agordoj ne konserveblas."
+msgstr "Su tarjeta SDCARD está montada solo legible. "
+
+#, fuzzy
+#~ msgid "Praŝarĝilo MD5-Sumo :"
+#~ msgstr "Modo de arranque de suma MD5:"
+
+#, fuzzy
+#~ msgid "Praŝarĝilo Versio :"
+#~ msgstr "Versión de la junta"
+
+#, fuzzy
+#~ msgid "Please try rebooting."
+#~ msgstr "Por favor, intente reiniciar."

@@ -37,6 +37,10 @@ msgid "Uzantnomo"
 msgstr "ਉਪਯੋਗਕਰਤਾ ਨਾਮ"
 
 #, fuzzy
+msgid "ensaluto eksvalidiĝis!"
+msgstr "ਲੌਗਇਨ ਦੀ ਮਿਆਦ ਖਤਮ!"
+
+#, fuzzy
 msgid "Vi ne estas ensalutinta!"
 msgstr "ਤੁਸੀਂ ਲੌਗਇਨ ਨਹੀਂ ਹੋ!"
 

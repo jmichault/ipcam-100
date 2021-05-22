@@ -1,0 +1,117 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+#, fuzzy
+msgid "Averto"
+msgstr "警告"
+
+#, fuzzy
+msgid "Bonvolu provi restartigi."
+msgstr "请尝试重新启动。"
+
+#, fuzzy
+msgid "Daŭro de funkciado"
+msgstr "操作长度"
+
+#, fuzzy
+msgid "Elŝutu Praŝarĝilo"
+msgstr "下载启动机器"
+
+#, fuzzy
+msgid "Firmprogramo"
+msgstr "公司计划"
+
+#, fuzzy
+msgid "Gastnomo"
+msgstr "主机名"
+
+#, fuzzy
+msgid "IP-Adreso"
+msgstr "IP地址"
+
+#, fuzzy
+msgid "Kerno Versio"
+msgstr "核心版本"
+
+#, fuzzy
+msgid "Kluzadreso"
+msgstr "俱乐部地址"
+
+#, fuzzy
+msgid "Komandlinio :"
+msgstr "命令行："
+
+#, fuzzy
+msgid "Liga Kvalito"
+msgstr "联盟质量"
+
+#, fuzzy
+msgid "Loka Tempo"
+msgstr "当地时间"
+
+#, fuzzy
+msgid "MAC-Adreso"
+msgstr "MAC地址"
+
+#, fuzzy
+msgid "MD5-Sumo de Praŝarĝilo :"
+msgstr "板版本"
+
+#, fuzzy
+msgid "Modelo"
+msgstr "模型"
+
+#, fuzzy
+msgid "Network (WLAN0)"
+msgstr "网络 (WLAN0)"
+
+#, fuzzy
+msgid "Praŝarĝilo"
+msgstr "板版本"
+
+#, fuzzy
+msgid "Praŝargilo Versio"
+msgstr "板版本"
+
+#, fuzzy
+msgid "Retmasko"
+msgstr "取回"
+
+#, fuzzy
+msgid "Ŝarĝa Mezumo"
+msgstr "平均充电"
+
+#, fuzzy
+msgid "Sistemo"
+msgstr "系统"
+
+#, fuzzy
+msgid "Versio de Praŝarĝilo :"
+msgstr "板版本"
+
+#, fuzzy
+msgid "Via sdcard estas muntita nurlegebla. Agordoj ne konserveblas."
+msgstr "您的SDCard仅安装可读。"
+
+#, fuzzy
+#~ msgid "Praŝarĝilo MD5-Sumo :"
+#~ msgstr "MD5 SUM启动模式："
+
+#, fuzzy
+#~ msgid "Praŝarĝilo Versio :"
+#~ msgstr "板版本"
+
+#, fuzzy
+#~ msgid "Please try rebooting."
+#~ msgstr "请尝试重新启动。"

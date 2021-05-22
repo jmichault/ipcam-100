@@ -1,0 +1,85 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+msgid "Averto"
+msgstr "Avertissement"
+
+msgid "Bonvolu provi restartigi."
+msgstr "Veuillez essayer de redémarrer."
+
+msgid "Daŭro de funkciado"
+msgstr "Durée de fonctionnement"
+
+msgid "Elŝutu Praŝarĝilo"
+msgstr "Télécharger le pré-chargeur"
+
+msgid "Firmprogramo"
+msgstr "Micrologiciel"
+
+msgid "Gastnomo"
+msgstr "Nom d'hôte"
+
+msgid "IP-Adreso"
+msgstr "adresse IP"
+
+msgid "Kerno Versio"
+msgstr "Version du noyau"
+
+msgid "Kluzadreso"
+msgstr "Adresse du routeur"
+
+msgid "Komandlinio :"
+msgstr "Ligne de commande:"
+
+msgid "Liga Kvalito"
+msgstr "Qualité du lien"
+
+msgid "Loka Tempo"
+msgstr "Heure locale"
+
+msgid "MAC-Adreso"
+msgstr "Adresse MAC"
+
+msgid "MD5-Sumo de Praŝarĝilo :"
+msgstr "Somme MD5 du pré-chargeur"
+
+msgid "Modelo"
+msgstr "Modèle"
+
+msgid "Network (WLAN0)"
+msgstr "Réseau (WLAN0)"
+
+msgid "Praŝarĝilo"
+msgstr "Pré-chargeur"
+
+msgid "Praŝargilo Versio"
+msgstr "Version du pré-chargeur"
+
+msgid "Retmasko"
+msgstr "Masque réseau"
+
+msgid "Ŝarĝa Mezumo"
+msgstr "Charge moyenne"
+
+msgid "Sistemo"
+msgstr "Système"
+
+msgid "Versio de Praŝarĝilo :"
+msgstr "Version du pré-chargeur"
+
+msgid "Via sdcard estas muntita nurlegebla. Agordoj ne konserveblas."
+msgstr ""
+"Votre SDCard est montée en lecture seule. Les paramètres ne seront pas "
+"conservés."
+

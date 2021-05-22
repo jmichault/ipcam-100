@@ -37,6 +37,10 @@ msgid "Uzantnomo"
 msgstr "Имя пользователя"
 
 #, fuzzy
+msgid "ensaluto eksvalidiĝis!"
+msgstr "Вход срок действия!"
+
+#, fuzzy
 msgid "Vi ne estas ensalutinta!"
 msgstr "Вы не авторизованы!"
 

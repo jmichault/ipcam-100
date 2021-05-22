@@ -1,0 +1,117 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+#, fuzzy
+msgid "Averto"
+msgstr "Warnung"
+
+#, fuzzy
+msgid "Bonvolu provi restartigi."
+msgstr "Bitte versuchen Sie einen Neustart."
+
+#, fuzzy
+msgid "Daŭro de funkciado"
+msgstr "Betriebsdauer."
+
+#, fuzzy
+msgid "Elŝutu Praŝarĝilo"
+msgstr "Bootmaschine herunterladen"
+
+#, fuzzy
+msgid "Firmprogramo"
+msgstr "Festes Programm"
+
+#, fuzzy
+msgid "Gastnomo"
+msgstr "Hostname"
+
+#, fuzzy
+msgid "IP-Adreso"
+msgstr "IP Adresse"
+
+#, fuzzy
+msgid "Kerno Versio"
+msgstr "Kernversion."
+
+#, fuzzy
+msgid "Kluzadreso"
+msgstr "Clubadresse"
+
+#, fuzzy
+msgid "Komandlinio :"
+msgstr "Befehlszeile:"
+
+#, fuzzy
+msgid "Liga Kvalito"
+msgstr "Ligaqualität"
+
+#, fuzzy
+msgid "Loka Tempo"
+msgstr "Ortszeit"
+
+#, fuzzy
+msgid "MAC-Adreso"
+msgstr "MAC-Adresse"
+
+#, fuzzy
+msgid "MD5-Sumo de Praŝarĝilo :"
+msgstr "Board-Version."
+
+#, fuzzy
+msgid "Modelo"
+msgstr "Modell"
+
+#, fuzzy
+msgid "Network (WLAN0)"
+msgstr "Netzwerk (WLAN0)"
+
+#, fuzzy
+msgid "Praŝarĝilo"
+msgstr "Board-Version."
+
+#, fuzzy
+msgid "Praŝargilo Versio"
+msgstr "Board-Version."
+
+#, fuzzy
+msgid "Retmasko"
+msgstr "Abrufen"
+
+#, fuzzy
+msgid "Ŝarĝa Mezumo"
+msgstr "Gebührendurchschnitt"
+
+#, fuzzy
+msgid "Sistemo"
+msgstr "System"
+
+#, fuzzy
+msgid "Versio de Praŝarĝilo :"
+msgstr "Board-Version."
+
+#, fuzzy
+msgid "Via sdcard estas muntita nurlegebla. Agordoj ne konserveblas."
+msgstr "Ihre SDCARD ist nur lesbar montiert. "
+
+#, fuzzy
+#~ msgid "Praŝarĝilo MD5-Sumo :"
+#~ msgstr "MD5-Summenstartmodus:"
+
+#, fuzzy
+#~ msgid "Praŝarĝilo Versio :"
+#~ msgstr "Board-Version."
+
+#, fuzzy
+#~ msgid "Please try rebooting."
+#~ msgstr "Bitte versuchen Sie das Neustart."

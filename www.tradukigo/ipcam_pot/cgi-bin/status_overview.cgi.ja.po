@@ -1,0 +1,117 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+#, fuzzy
+msgid "Averto"
+msgstr "警告"
+
+#, fuzzy
+msgid "Bonvolu provi restartigi."
+msgstr "再起動してみてください。"
+
+#, fuzzy
+msgid "Daŭro de funkciado"
+msgstr "運営の長さ"
+
+#, fuzzy
+msgid "Elŝutu Praŝarĝilo"
+msgstr "ブートマシンをダウンロードしてください"
+
+#, fuzzy
+msgid "Firmprogramo"
+msgstr "しっかりしたプログラム"
+
+#, fuzzy
+msgid "Gastnomo"
+msgstr "ホスト名"
+
+#, fuzzy
+msgid "IP-Adreso"
+msgstr "IPアドレス"
+
+#, fuzzy
+msgid "Kerno Versio"
+msgstr "コアバージョン"
+
+#, fuzzy
+msgid "Kluzadreso"
+msgstr "クラブアドレス"
+
+#, fuzzy
+msgid "Komandlinio :"
+msgstr "コマンドライン："
+
+#, fuzzy
+msgid "Liga Kvalito"
+msgstr "リーグ品質"
+
+#, fuzzy
+msgid "Loka Tempo"
+msgstr "現地時間"
+
+#, fuzzy
+msgid "MAC-Adreso"
+msgstr "Macアドレス"
+
+#, fuzzy
+msgid "MD5-Sumo de Praŝarĝilo :"
+msgstr "ボードバージョン"
+
+#, fuzzy
+msgid "Modelo"
+msgstr "モデル"
+
+#, fuzzy
+msgid "Network (WLAN0)"
+msgstr "ネットワーク (WLAN0)"
+
+#, fuzzy
+msgid "Praŝarĝilo"
+msgstr "ボードバージョン"
+
+#, fuzzy
+msgid "Praŝargilo Versio"
+msgstr "ボードバージョン"
+
+#, fuzzy
+msgid "Retmasko"
+msgstr "検索します"
+
+#, fuzzy
+msgid "Ŝarĝa Mezumo"
+msgstr "充電平均"
+
+#, fuzzy
+msgid "Sistemo"
+msgstr "システム"
+
+#, fuzzy
+msgid "Versio de Praŝarĝilo :"
+msgstr "ボードバージョン"
+
+#, fuzzy
+msgid "Via sdcard estas muntita nurlegebla. Agordoj ne konserveblas."
+msgstr "あなたのSDカードは読みやすいだけです。"
+
+#, fuzzy
+#~ msgid "Praŝarĝilo MD5-Sumo :"
+#~ msgstr "MD5 SUMブートモード："
+
+#, fuzzy
+#~ msgid "Praŝarĝilo Versio :"
+#~ msgstr "ボードバージョン"
+
+#, fuzzy
+#~ msgid "Please try rebooting."
+#~ msgstr "再起動してみてください。"

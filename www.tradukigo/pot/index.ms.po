@@ -37,6 +37,10 @@ msgid "Uzantnomo"
 msgstr "Nama pengguna"
 
 #, fuzzy
+msgid "ensaluto eksvalidiĝis!"
+msgstr "Masuk Tamat tempoh!"
+
+#, fuzzy
 msgid "Vi ne estas ensalutinta!"
 msgstr "Anda tidak log masuk!"
 

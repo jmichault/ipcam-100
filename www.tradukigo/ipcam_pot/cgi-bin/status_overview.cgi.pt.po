@@ -1,0 +1,117 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+#, fuzzy
+msgid "Averto"
+msgstr "Aviso"
+
+#, fuzzy
+msgid "Bonvolu provi restartigi."
+msgstr "Tente reiniciar."
+
+#, fuzzy
+msgid "Daŭro de funkciado"
+msgstr "Duração da operação"
+
+#, fuzzy
+msgid "Elŝutu Praŝarĝilo"
+msgstr "Download da máquina de inicialização"
+
+#, fuzzy
+msgid "Firmprogramo"
+msgstr "Programa firme"
+
+#, fuzzy
+msgid "Gastnomo"
+msgstr "nome de anfitrião"
+
+#, fuzzy
+msgid "IP-Adreso"
+msgstr "endereço de IP"
+
+#, fuzzy
+msgid "Kerno Versio"
+msgstr "Versão Core."
+
+#, fuzzy
+msgid "Kluzadreso"
+msgstr "Endereço do clube"
+
+#, fuzzy
+msgid "Komandlinio :"
+msgstr "Linha de comando:"
+
+#, fuzzy
+msgid "Liga Kvalito"
+msgstr "Qualidade da liga"
+
+#, fuzzy
+msgid "Loka Tempo"
+msgstr "Horário local"
+
+#, fuzzy
+msgid "MAC-Adreso"
+msgstr "Endereço MAC"
+
+#, fuzzy
+msgid "MD5-Sumo de Praŝarĝilo :"
+msgstr "Versão da placa."
+
+#, fuzzy
+msgid "Modelo"
+msgstr "Modelo"
+
+#, fuzzy
+msgid "Network (WLAN0)"
+msgstr "Rede (WLAN0)"
+
+#, fuzzy
+msgid "Praŝarĝilo"
+msgstr "Versão da placa."
+
+#, fuzzy
+msgid "Praŝargilo Versio"
+msgstr "Versão da placa."
+
+#, fuzzy
+msgid "Retmasko"
+msgstr "Recuperar"
+
+#, fuzzy
+msgid "Ŝarĝa Mezumo"
+msgstr "Carga média"
+
+#, fuzzy
+msgid "Sistemo"
+msgstr "Sistema"
+
+#, fuzzy
+msgid "Versio de Praŝarĝilo :"
+msgstr "Versão da placa."
+
+#, fuzzy
+msgid "Via sdcard estas muntita nurlegebla. Agordoj ne konserveblas."
+msgstr "Seu sdcard é montado somente legível. "
+
+#, fuzzy
+#~ msgid "Praŝarĝilo MD5-Sumo :"
+#~ msgstr "Modo de inicialização de soma MD5:"
+
+#, fuzzy
+#~ msgid "Praŝarĝilo Versio :"
+#~ msgstr "Versão da placa."
+
+#, fuzzy
+#~ msgid "Please try rebooting."
+#~ msgstr "Por favor, tente reiniciar."
