@@ -17,8 +17,16 @@ msgid "Averto"
 msgstr "সতর্কতা"
 
 #, fuzzy
+msgid "Bonvolu provi restartigi."
+msgstr "পুনরায় চালু করার চেষ্টা করুন।"
+
+#, fuzzy
 msgid "Daŭro de funkciado"
 msgstr "অপারেশন দৈর্ঘ্য"
+
+#, fuzzy
+msgid "Elŝutu Praŝarĝilo"
+msgstr "বুট মেশিন ডাউনলোড করুন"
 
 #, fuzzy
 msgid "Firmprogramo"
@@ -29,20 +37,56 @@ msgid "Gastnomo"
 msgstr "হোস্টনাম"
 
 #, fuzzy
+msgid "IP-Adreso"
+msgstr "আইপি ঠিকানা"
+
+#, fuzzy
 msgid "Kerno Versio"
 msgstr "কোর সংস্করণ"
+
+#, fuzzy
+msgid "Kluzadreso"
+msgstr "ক্লাব ঠিকানা"
+
+#, fuzzy
+msgid "Komandlinio :"
+msgstr "কমান্ড লাইন:"
+
+#, fuzzy
+msgid "Liga Kvalito"
+msgstr "লীগ মানের"
 
 #, fuzzy
 msgid "Loka Tempo"
 msgstr "স্থানীয় সময়"
 
 #, fuzzy
+msgid "MAC-Adreso"
+msgstr "ম্যাক ঠিকানা"
+
+#, fuzzy
+msgid "MD5-Sumo de Praŝarĝilo :"
+msgstr "বোর্ড সংস্করণ"
+
+#, fuzzy
 msgid "Modelo"
 msgstr "মডেল"
 
 #, fuzzy
+msgid "Network (WLAN0)"
+msgstr "নেটওয়ার্ক (Wlan0)"
+
+#, fuzzy
+msgid "Praŝarĝilo"
+msgstr "বোর্ড সংস্করণ"
+
+#, fuzzy
 msgid "Praŝargilo Versio"
 msgstr "বোর্ড সংস্করণ"
+
+#, fuzzy
+msgid "Retmasko"
+msgstr "পুনরুদ্ধার"
 
 #, fuzzy
 msgid "Ŝarĝa Mezumo"
@@ -53,5 +97,21 @@ msgid "Sistemo"
 msgstr "পদ্ধতি"
 
 #, fuzzy
+msgid "Versio de Praŝarĝilo :"
+msgstr "বোর্ড সংস্করণ"
+
+#, fuzzy
 msgid "Via sdcard estas muntita nurlegebla. Agordoj ne konserveblas."
 msgstr "আপনার SDCARD শুধুমাত্র পঠনযোগ্য মাউন্ট করা হয়। "
+
+#, fuzzy
+#~ msgid "Praŝarĝilo MD5-Sumo :"
+#~ msgstr "MD5 SUM বুট মোড:"
+
+#, fuzzy
+#~ msgid "Praŝarĝilo Versio :"
+#~ msgstr "বোর্ড সংস্করণ"
+
+#, fuzzy
+#~ msgid "Please try rebooting."
+#~ msgstr "পুনরায় বুট করার চেষ্টা করুন।"

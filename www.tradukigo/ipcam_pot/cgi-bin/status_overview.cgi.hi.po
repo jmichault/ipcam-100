@@ -17,8 +17,16 @@ msgid "Averto"
 msgstr "चेतावनी"
 
 #, fuzzy
+msgid "Bonvolu provi restartigi."
+msgstr "कृपया पुनः आरंभ करने का प्रयास करें।"
+
+#, fuzzy
 msgid "Daŭro de funkciado"
 msgstr "ऑपरेशन की लंबाई"
+
+#, fuzzy
+msgid "Elŝutu Praŝarĝilo"
+msgstr "बूट मशीन डाउनलोड करें"
 
 #, fuzzy
 msgid "Firmprogramo"
@@ -29,20 +37,56 @@ msgid "Gastnomo"
 msgstr "होस्ट का नाम"
 
 #, fuzzy
+msgid "IP-Adreso"
+msgstr "आईपी ​​पता"
+
+#, fuzzy
 msgid "Kerno Versio"
 msgstr "कोर संस्करण"
+
+#, fuzzy
+msgid "Kluzadreso"
+msgstr "क्लब का पता"
+
+#, fuzzy
+msgid "Komandlinio :"
+msgstr "कमांड लाइन:"
+
+#, fuzzy
+msgid "Liga Kvalito"
+msgstr "लीग की गुणवत्ता"
 
 #, fuzzy
 msgid "Loka Tempo"
 msgstr "स्थानीय समय"
 
 #, fuzzy
+msgid "MAC-Adreso"
+msgstr "मैक पता"
+
+#, fuzzy
+msgid "MD5-Sumo de Praŝarĝilo :"
+msgstr "बोर्ड संस्करण"
+
+#, fuzzy
 msgid "Modelo"
 msgstr "नमूना"
 
 #, fuzzy
+msgid "Network (WLAN0)"
+msgstr "नेटवर्क (° 0001 डिग्री) WLAN0 (° 0002 डिग्री)"
+
+#, fuzzy
+msgid "Praŝarĝilo"
+msgstr "बोर्ड संस्करण"
+
+#, fuzzy
 msgid "Praŝargilo Versio"
 msgstr "बोर्ड संस्करण"
+
+#, fuzzy
+msgid "Retmasko"
+msgstr "पुन: प्राप्त करें"
 
 #, fuzzy
 msgid "Ŝarĝa Mezumo"
@@ -53,5 +97,21 @@ msgid "Sistemo"
 msgstr "प्रणाली"
 
 #, fuzzy
+msgid "Versio de Praŝarĝilo :"
+msgstr "बोर्ड संस्करण"
+
+#, fuzzy
 msgid "Via sdcard estas muntita nurlegebla. Agordoj ne konserveblas."
 msgstr "आपका एसडीकार्ड केवल पठनीय घुड़सवार है। "
+
+#, fuzzy
+#~ msgid "Praŝarĝilo MD5-Sumo :"
+#~ msgstr "MD5 SUM बूट मोड:"
+
+#, fuzzy
+#~ msgid "Praŝarĝilo Versio :"
+#~ msgstr "बोर्ड संस्करण"
+
+#, fuzzy
+#~ msgid "Please try rebooting."
+#~ msgstr "कृपया रीबूट करने का प्रयास करें।"

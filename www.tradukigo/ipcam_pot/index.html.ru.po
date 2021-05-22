@@ -13,24 +13,16 @@ msgstr ""
 "X-Generator: html2pot\n"
 
 #, fuzzy
-msgid "Aŭtomata Nokta Detekto"
-msgstr "Автоматическое ночное обнаружение"
-
-#, fuzzy
-msgid "Blanko LED"
+msgid "Blanka LED"
 msgstr "Белый светодиод"
-
-#, fuzzy
-msgid "Brila"
-msgstr "Яркий"
 
 #, fuzzy
 msgid "Ĝisdatigi"
 msgstr "Обновлять"
 
 #, fuzzy
-msgid "Kamerao Kontroloj"
-msgstr "Управление камерой"
+msgid "Kamerao"
+msgstr "Камера"
 
 #, fuzzy
 msgid "LED agordoj"
@@ -45,44 +37,8 @@ msgid "Movado-Detekto"
 msgstr "Обнаружение движения"
 
 #, fuzzy
-msgid "Movado - LED"
-msgstr "Движение - Светодиод"
-
-#, fuzzy
-msgid "Movado - Momentfotoj"
-msgstr "Движение - момент Фотографии"
-
-#, fuzzy
-msgid "Movado - MQTT-Mesaĝo"
-msgstr "Движение - MQTT сообщение"
-
-#, fuzzy
-msgid "Movado - MQTT-Momentfoto"
-msgstr "Движение - MQTT-MomentFoto"
-
-#, fuzzy
-msgid "Movado - Sendi retpoŝtojn"
-msgstr "Движение - Отправить электронные письма"
-
-#, fuzzy
-msgid "Movado - Sendi Telegramon"
-msgstr "Движение - Отправить телеграмму"
-
-#, fuzzy
-msgid "MQTT-Kontrolo Servilo"
-msgstr "MQTT Control Server"
-
-#, fuzzy
-msgid "MQTT-Statuso Servilo"
-msgstr "MQTT Status Server"
-
-#, fuzzy
 msgid "Nokta Agordoj"
 msgstr "Ночные настройки"
-
-#, fuzzy
-msgid "Obskura"
-msgstr "Затемнять"
 
 #, fuzzy
 msgid "OSD"
@@ -109,20 +65,12 @@ msgid "Restartigi"
 msgstr "Заново"
 
 #, fuzzy
-msgid "Reto"
-msgstr "Сеть"
-
-#, fuzzy
 msgid "Reto Informoj"
 msgstr "Сетевая информация"
 
 #, fuzzy
 msgid "RTSP Agordoj"
 msgstr "RTSP Настройки"
-
-#, fuzzy
-msgid "RTSP-Servilo"
-msgstr "Rtsp server."
 
 #, fuzzy
 msgid "Servoj"
@@ -137,10 +85,6 @@ msgid "Sono"
 msgstr "Звук"
 
 #, fuzzy
-msgid "Sono ĉe Lanĉo"
-msgstr "Звук в запуске"
-
-#, fuzzy
 msgid "Stato"
 msgstr "Состояние"
 
@@ -153,14 +97,6 @@ msgid "T21 Kodumoj"
 msgstr "T21 коды"
 
 #, fuzzy
-msgid "Temo"
-msgstr "Предмет"
-
-#, fuzzy
-msgid "Transruĝa Filtrilo"
-msgstr "Инфракрасный фильтр"
-
-#, fuzzy
 msgid "Transruĝa LED"
 msgstr "Инфракрасный светодиод"
 
@@ -168,3 +104,70 @@ msgstr "Инфракрасный светодиод"
 msgid "Versio :"
 msgstr "Версия:"
 
+#, fuzzy
+#~ msgid "Aŭtomata Nokta Detekto"
+#~ msgstr "Автоматическое ночное обнаружение"
+
+#, fuzzy
+#~ msgid "Brila"
+#~ msgstr "Яркий"
+
+#, fuzzy
+#~ msgid "Kamerao Kontroloj"
+#~ msgstr "Управление камерой"
+
+#, fuzzy
+#~ msgid "Movado - LED"
+#~ msgstr "Движение - Светодиод"
+
+#, fuzzy
+#~ msgid "Movado - Momentfotoj"
+#~ msgstr "Движение - момент Фотографии"
+
+#, fuzzy
+#~ msgid "Movado - MQTT-Mesaĝo"
+#~ msgstr "Движение - MQTT сообщение"
+
+#, fuzzy
+#~ msgid "Movado - MQTT-Momentfoto"
+#~ msgstr "Движение - MQTT-MomentFoto"
+
+#, fuzzy
+#~ msgid "Movado - Sendi retpoŝtojn"
+#~ msgstr "Движение - Отправить электронные письма"
+
+#, fuzzy
+#~ msgid "Movado - Sendi Telegramon"
+#~ msgstr "Движение - Отправить телеграмму"
+
+#, fuzzy
+#~ msgid "MQTT-Kontrolo Servilo"
+#~ msgstr "MQTT Control Server"
+
+#, fuzzy
+#~ msgid "MQTT-Statuso Servilo"
+#~ msgstr "MQTT Status Server"
+
+#, fuzzy
+#~ msgid "Obskura"
+#~ msgstr "Затемнять"
+
+#, fuzzy
+#~ msgid "Reto"
+#~ msgstr "Сеть"
+
+#, fuzzy
+#~ msgid "RTSP-Servilo"
+#~ msgstr "Rtsp server."
+
+#, fuzzy
+#~ msgid "Sono ĉe Lanĉo"
+#~ msgstr "Звук в запуске"
+
+#, fuzzy
+#~ msgid "Temo"
+#~ msgstr "Предмет"
+
+#, fuzzy
+#~ msgid "Transruĝa Filtrilo"
+#~ msgstr "Инфракрасный фильтр"

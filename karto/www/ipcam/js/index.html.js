@@ -41,7 +41,7 @@ function showResult(txt) {
 }
 
 $(document).ready(function () {
-    setPageLang("index",$(document));
+    setPageLang("index.html",$(document));
     setTheme(getThemeChoice());
     
     // Set title page and menu with hostname

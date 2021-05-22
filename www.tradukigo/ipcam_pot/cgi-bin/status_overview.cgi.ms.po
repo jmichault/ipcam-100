@@ -17,8 +17,16 @@ msgid "Averto"
 msgstr "Amaran"
 
 #, fuzzy
+msgid "Bonvolu provi restartigi."
+msgstr "Cuba mulakan semula."
+
+#, fuzzy
 msgid "Daŭro de funkciado"
 msgstr "Panjang operasi"
+
+#, fuzzy
+msgid "Elŝutu Praŝarĝilo"
+msgstr "Muat turun Mesin Boot."
 
 #, fuzzy
 msgid "Firmprogramo"
@@ -29,20 +37,56 @@ msgid "Gastnomo"
 msgstr "Nama hos"
 
 #, fuzzy
+msgid "IP-Adreso"
+msgstr "alamat IP"
+
+#, fuzzy
 msgid "Kerno Versio"
 msgstr "Versi Teras"
+
+#, fuzzy
+msgid "Kluzadreso"
+msgstr "Alamat Kelab."
+
+#, fuzzy
+msgid "Komandlinio :"
+msgstr "Perintah baris:"
+
+#, fuzzy
+msgid "Liga Kvalito"
+msgstr "Kualiti liga"
 
 #, fuzzy
 msgid "Loka Tempo"
 msgstr "Masa tempatan"
 
 #, fuzzy
+msgid "MAC-Adreso"
+msgstr "Alamat MAC"
+
+#, fuzzy
+msgid "MD5-Sumo de Praŝarĝilo :"
+msgstr "Versi papan"
+
+#, fuzzy
 msgid "Modelo"
 msgstr "Model"
 
 #, fuzzy
+msgid "Network (WLAN0)"
+msgstr "Rangkaian (WLAN0)"
+
+#, fuzzy
+msgid "Praŝarĝilo"
+msgstr "Versi papan"
+
+#, fuzzy
 msgid "Praŝargilo Versio"
 msgstr "Versi papan"
+
+#, fuzzy
+msgid "Retmasko"
+msgstr "Mengambil semula"
 
 #, fuzzy
 msgid "Ŝarĝa Mezumo"
@@ -53,5 +97,21 @@ msgid "Sistemo"
 msgstr "Sistem"
 
 #, fuzzy
+msgid "Versio de Praŝarĝilo :"
+msgstr "Versi papan"
+
+#, fuzzy
 msgid "Via sdcard estas muntita nurlegebla. Agordoj ne konserveblas."
 msgstr "SDCard anda dipasang hanya boleh dibaca. "
+
+#, fuzzy
+#~ msgid "Praŝarĝilo MD5-Sumo :"
+#~ msgstr "Mod Boot MD5:"
+
+#, fuzzy
+#~ msgid "Praŝarĝilo Versio :"
+#~ msgstr "Versi papan"
+
+#, fuzzy
+#~ msgid "Please try rebooting."
+#~ msgstr "Sila cuba reboot."

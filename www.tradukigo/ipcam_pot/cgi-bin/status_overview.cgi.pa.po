@@ -17,8 +17,16 @@ msgid "Averto"
 msgstr "ਚੇਤਾਵਨੀ"
 
 #, fuzzy
+msgid "Bonvolu provi restartigi."
+msgstr "ਮੁੜ ਸ਼ੁਰੂ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ ਜੀ."
+
+#, fuzzy
 msgid "Daŭro de funkciado"
 msgstr "ਓਪਰੇਸ਼ਨ ਦੀ ਲੰਬਾਈ"
+
+#, fuzzy
+msgid "Elŝutu Praŝarĝilo"
+msgstr "ਬੂਟ ਮਸ਼ੀਨ ਡਾ Download ਨਲੋਡ ਕਰੋ"
 
 #, fuzzy
 msgid "Firmprogramo"
@@ -29,20 +37,56 @@ msgid "Gastnomo"
 msgstr "ਹੋਸਟ-ਨਾਮ"
 
 #, fuzzy
+msgid "IP-Adreso"
+msgstr "IP ਪਤਾ"
+
+#, fuzzy
 msgid "Kerno Versio"
 msgstr "ਕੋਰ ਵਰਜ਼ਨ"
+
+#, fuzzy
+msgid "Kluzadreso"
+msgstr "ਕਲੱਬ ਦਾ ਪਤਾ"
+
+#, fuzzy
+msgid "Komandlinio :"
+msgstr "ਕਮਾਂਡ ਲਾਈਨ:"
+
+#, fuzzy
+msgid "Liga Kvalito"
+msgstr "ਲੀਗ ਗੁਣ"
 
 #, fuzzy
 msgid "Loka Tempo"
 msgstr "ਸਥਾਨਕ ਸਮਾਂ"
 
 #, fuzzy
+msgid "MAC-Adreso"
+msgstr "ਮੈਕ ਐਡਰੈੱਸ"
+
+#, fuzzy
+msgid "MD5-Sumo de Praŝarĝilo :"
+msgstr "ਬੋਰਡ ਵਰਜ਼ਨ"
+
+#, fuzzy
 msgid "Modelo"
 msgstr "ਮਾਡਲ"
 
 #, fuzzy
+msgid "Network (WLAN0)"
+msgstr "ਨੈਟਵਰਕ (wlan0)"
+
+#, fuzzy
+msgid "Praŝarĝilo"
+msgstr "ਬੋਰਡ ਵਰਜ਼ਨ"
+
+#, fuzzy
 msgid "Praŝargilo Versio"
 msgstr "ਬੋਰਡ ਵਰਜ਼ਨ"
+
+#, fuzzy
+msgid "Retmasko"
+msgstr "ਮੁੜ ਪ੍ਰਾਪਤ ਕਰੋ"
 
 #, fuzzy
 msgid "Ŝarĝa Mezumo"
@@ -53,5 +97,21 @@ msgid "Sistemo"
 msgstr "ਸਿਸਟਮ"
 
 #, fuzzy
+msgid "Versio de Praŝarĝilo :"
+msgstr "ਬੋਰਡ ਵਰਜ਼ਨ"
+
+#, fuzzy
 msgid "Via sdcard estas muntita nurlegebla. Agordoj ne konserveblas."
 msgstr "ਤੁਹਾਡਾ SDCark ਸਿਰਫ ਪੜ੍ਹਨਯੋਗ ਮਾ .ਂਟ ਕੀਤਾ ਜਾਂਦਾ ਹੈ. "
+
+#, fuzzy
+#~ msgid "Praŝarĝilo MD5-Sumo :"
+#~ msgstr "MD5 So Boot ਬੂਟ ਮੋਡ:"
+
+#, fuzzy
+#~ msgid "Praŝarĝilo Versio :"
+#~ msgstr "ਬੋਰਡ ਵਰਜ਼ਨ"
+
+#, fuzzy
+#~ msgid "Please try rebooting."
+#~ msgstr "ਕਿਰਪਾ ਕਰਕੇ ਮੁੜ ਚਾਲੂ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ."

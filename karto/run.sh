@@ -26,6 +26,7 @@ then
   cd "${SDCARD}"
   echo "========================" > log/update.log
   echo "ĝisdatigo per «update.zip»" >>log/update.log
+  ls -l update.zip >>log/update.log
   echo "========================" >>log/update.log
   unzip -o update.zip >>log/update.log 2>&1
   rm update.zip >>log/update.log 2>&1

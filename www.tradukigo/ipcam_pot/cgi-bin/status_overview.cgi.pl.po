@@ -17,8 +17,16 @@ msgid "Averto"
 msgstr "Ostrzeżenie"
 
 #, fuzzy
+msgid "Bonvolu provi restartigi."
+msgstr "Spróbuj ponownie uruchomić."
+
+#, fuzzy
 msgid "Daŭro de funkciado"
 msgstr "Długość operacji"
+
+#, fuzzy
+msgid "Elŝutu Praŝarĝilo"
+msgstr "Pobierz maszynę do butów"
 
 #, fuzzy
 msgid "Firmprogramo"
@@ -29,20 +37,56 @@ msgid "Gastnomo"
 msgstr "Nazwa hosta."
 
 #, fuzzy
+msgid "IP-Adreso"
+msgstr "adres IP"
+
+#, fuzzy
 msgid "Kerno Versio"
 msgstr "Wersja podstawowa"
+
+#, fuzzy
+msgid "Kluzadreso"
+msgstr "Adres klubu"
+
+#, fuzzy
+msgid "Komandlinio :"
+msgstr "Wiersz poleceń:"
+
+#, fuzzy
+msgid "Liga Kvalito"
+msgstr "Jakość ligowa"
 
 #, fuzzy
 msgid "Loka Tempo"
 msgstr "Czas lokalny"
 
 #, fuzzy
+msgid "MAC-Adreso"
+msgstr "Adres MAC."
+
+#, fuzzy
+msgid "MD5-Sumo de Praŝarĝilo :"
+msgstr "Wersja plansza"
+
+#, fuzzy
 msgid "Modelo"
 msgstr "Model"
 
 #, fuzzy
+msgid "Network (WLAN0)"
+msgstr "Sieć (WLAN0)"
+
+#, fuzzy
+msgid "Praŝarĝilo"
+msgstr "Wersja plansza"
+
+#, fuzzy
 msgid "Praŝargilo Versio"
 msgstr "Wersja plansza"
+
+#, fuzzy
+msgid "Retmasko"
+msgstr "Odzyskać"
 
 #, fuzzy
 msgid "Ŝarĝa Mezumo"
@@ -53,5 +97,21 @@ msgid "Sistemo"
 msgstr "System"
 
 #, fuzzy
+msgid "Versio de Praŝarĝilo :"
+msgstr "Wersja plansza"
+
+#, fuzzy
 msgid "Via sdcard estas muntita nurlegebla. Agordoj ne konserveblas."
 msgstr "Twój Sdcard jest zamontowany tylko czytelny. "
+
+#, fuzzy
+#~ msgid "Praŝarĝilo MD5-Sumo :"
+#~ msgstr "MD5 Sum Sound Mode:"
+
+#, fuzzy
+#~ msgid "Praŝarĝilo Versio :"
+#~ msgstr "Wersja plansza"
+
+#, fuzzy
+#~ msgid "Please try rebooting."
+#~ msgstr "Spróbuj ponownie uruchomić ponownie."

@@ -17,8 +17,16 @@ msgid "Averto"
 msgstr "Waarschuwing"
 
 #, fuzzy
+msgid "Bonvolu provi restartigi."
+msgstr "Probeer opnieuw op te starten."
+
+#, fuzzy
 msgid "Daŭro de funkciado"
 msgstr "Werking"
+
+#, fuzzy
+msgid "Elŝutu Praŝarĝilo"
+msgstr "Download opstartmachines"
 
 #, fuzzy
 msgid "Firmprogramo"
@@ -29,20 +37,56 @@ msgid "Gastnomo"
 msgstr "Hostnaam"
 
 #, fuzzy
+msgid "IP-Adreso"
+msgstr "IP adres"
+
+#, fuzzy
 msgid "Kerno Versio"
 msgstr "Kernversie"
+
+#, fuzzy
+msgid "Kluzadreso"
+msgstr "Clubadres"
+
+#, fuzzy
+msgid "Komandlinio :"
+msgstr "Opdrachtregel:"
+
+#, fuzzy
+msgid "Liga Kvalito"
+msgstr "League kwaliteit"
 
 #, fuzzy
 msgid "Loka Tempo"
 msgstr "Lokale tijd"
 
 #, fuzzy
+msgid "MAC-Adreso"
+msgstr "Mac adres"
+
+#, fuzzy
+msgid "MD5-Sumo de Praŝarĝilo :"
+msgstr "Bordversie"
+
+#, fuzzy
 msgid "Modelo"
 msgstr "Model"
 
 #, fuzzy
+msgid "Network (WLAN0)"
+msgstr "Netwerk (WLAN0)"
+
+#, fuzzy
+msgid "Praŝarĝilo"
+msgstr "Bordversie"
+
+#, fuzzy
 msgid "Praŝargilo Versio"
 msgstr "Bordversie"
+
+#, fuzzy
+msgid "Retmasko"
+msgstr "Ophalen"
 
 #, fuzzy
 msgid "Ŝarĝa Mezumo"
@@ -53,5 +97,21 @@ msgid "Sistemo"
 msgstr "Systeem"
 
 #, fuzzy
+msgid "Versio de Praŝarĝilo :"
+msgstr "Bordversie"
+
+#, fuzzy
 msgid "Via sdcard estas muntita nurlegebla. Agordoj ne konserveblas."
 msgstr "Uw SDCARD is alleen leesbaar gemonteerd. "
+
+#, fuzzy
+#~ msgid "Praŝarĝilo MD5-Sumo :"
+#~ msgstr "MD5 SUM-opstartmodus:"
+
+#, fuzzy
+#~ msgid "Praŝarĝilo Versio :"
+#~ msgstr "Bordversie"
+
+#, fuzzy
+#~ msgid "Please try rebooting."
+#~ msgstr "Probeer opnieuw op te starten."

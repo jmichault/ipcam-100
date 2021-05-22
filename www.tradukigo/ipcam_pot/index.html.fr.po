@@ -12,21 +12,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: html2pot\n"
 
-msgid "Aŭtomata Nokta Detekto"
-msgstr "Détection automatique de la nuit"
-
-msgid "Blanko LED"
+msgid "Blanka LED"
 msgstr "LED blanche"
-
-#, fuzzy
-msgid "Brila"
-msgstr "Brillant"
 
 msgid "Ĝisdatigi"
 msgstr "Mettre à jour"
 
-msgid "Kamerao Kontroloj"
-msgstr "Contrôles de la caméra"
+#, fuzzy
+msgid "Kamerao"
+msgstr "Caméra"
 
 msgid "LED agordoj"
 msgstr "Paramètres LED"
@@ -37,35 +31,8 @@ msgstr "Éteindre"
 msgid "Movado-Detekto"
 msgstr "Détection de mouvement"
 
-msgid "Movado - LED"
-msgstr "Mouvement - LED"
-
-msgid "Movado - Momentfotoj"
-msgstr "Mouvement - Captures Photos"
-
-msgid "Movado - MQTT-Mesaĝo"
-msgstr "Mouvement - Message MQTT"
-
-msgid "Movado - MQTT-Momentfoto"
-msgstr "Mouvement - Captures Photos MQTT"
-
-msgid "Movado - Sendi retpoŝtojn"
-msgstr "Mouvement - Envoyer des emails"
-
-msgid "Movado - Sendi Telegramon"
-msgstr "Mouvement - Envoyer un télégramme"
-
-msgid "MQTT-Kontrolo Servilo"
-msgstr "Service de contrôle MQTT"
-
-msgid "MQTT-Statuso Servilo"
-msgstr "Service de statut MQTT"
-
 msgid "Nokta Agordoj"
 msgstr "Réglages nocturnes"
-
-msgid "Obskura"
-msgstr "Sombre"
 
 msgid "OSD"
 msgstr "OSD"
@@ -85,17 +52,11 @@ msgstr "Journaux"
 msgid "Restartigi"
 msgstr "Redémarrer"
 
-msgid "Reto"
-msgstr "Réseau"
-
 msgid "Reto Informoj"
 msgstr "Informations sur le réseau"
 
 msgid "RTSP Agordoj"
 msgstr "Paramètres RTSP"
-
-msgid "RTSP-Servilo"
-msgstr "Service RTSP"
 
 msgid "Servoj"
 msgstr "Services"
@@ -106,9 +67,6 @@ msgstr "Système"
 msgid "Sono"
 msgstr "Audio"
 
-msgid "Sono ĉe Lanĉo"
-msgstr "Audio au démarrage"
-
 msgid "Stato"
 msgstr "État"
 
@@ -118,15 +76,60 @@ msgstr "Aperçu"
 msgid "T21 Kodumoj"
 msgstr "Codes T21"
 
-msgid "Temo"
-msgstr "Thème"
-
-msgid "Transruĝa Filtrilo"
-msgstr "Filtre infrarouge"
-
 msgid "Transruĝa LED"
 msgstr "LED infrarouge"
 
 msgid "Versio :"
 msgstr "Version:"
 
+#~ msgid "Aŭtomata Nokta Detekto"
+#~ msgstr "Détection automatique de la nuit"
+
+#, fuzzy
+#~ msgid "Brila"
+#~ msgstr "Brillant"
+
+#~ msgid "Kamerao Kontroloj"
+#~ msgstr "Contrôles de la caméra"
+
+#~ msgid "Movado - LED"
+#~ msgstr "Mouvement - LED"
+
+#~ msgid "Movado - Momentfotoj"
+#~ msgstr "Mouvement - Captures Photos"
+
+#~ msgid "Movado - MQTT-Mesaĝo"
+#~ msgstr "Mouvement - Message MQTT"
+
+#~ msgid "Movado - MQTT-Momentfoto"
+#~ msgstr "Mouvement - Captures Photos MQTT"
+
+#~ msgid "Movado - Sendi retpoŝtojn"
+#~ msgstr "Mouvement - Envoyer des emails"
+
+#~ msgid "Movado - Sendi Telegramon"
+#~ msgstr "Mouvement - Envoyer un télégramme"
+
+#~ msgid "MQTT-Kontrolo Servilo"
+#~ msgstr "Service de contrôle MQTT"
+
+#~ msgid "MQTT-Statuso Servilo"
+#~ msgstr "Service de statut MQTT"
+
+#~ msgid "Obskura"
+#~ msgstr "Sombre"
+
+#~ msgid "Reto"
+#~ msgstr "Réseau"
+
+#~ msgid "RTSP-Servilo"
+#~ msgstr "Service RTSP"
+
+#~ msgid "Sono ĉe Lanĉo"
+#~ msgstr "Audio au démarrage"
+
+#~ msgid "Temo"
+#~ msgstr "Thème"
+
+#~ msgid "Transruĝa Filtrilo"
+#~ msgstr "Filtre infrarouge"

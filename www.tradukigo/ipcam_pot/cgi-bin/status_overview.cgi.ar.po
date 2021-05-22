@@ -17,8 +17,18 @@ msgid "Averto"
 msgstr "تحذير"
 
 #, fuzzy
+msgid "Bonvolu provi restartigi."
+msgstr ""
+"                                                                                                     ."
+"ﻞﻴﻐﺸﺘﻟﺍ ﺓﺩﺎﻋﺇ ﺔﻟﻭﺎﺤﻣ ﻰﺟﺮﻳ"
+
+#, fuzzy
 msgid "Daŭro de funkciado"
 msgstr "طول العملية"
+
+#, fuzzy
+msgid "Elŝutu Praŝarĝilo"
+msgstr "تحميل آلة التمهيد"
 
 #, fuzzy
 msgid "Firmprogramo"
@@ -29,20 +39,56 @@ msgid "Gastnomo"
 msgstr "اسم المضيف"
 
 #, fuzzy
+msgid "IP-Adreso"
+msgstr "عنوان IP"
+
+#, fuzzy
 msgid "Kerno Versio"
 msgstr "النسخة الأساسية"
+
+#, fuzzy
+msgid "Kluzadreso"
+msgstr "عنوان النادي"
+
+#, fuzzy
+msgid "Komandlinio :"
+msgstr "سطر الأوامر:"
+
+#, fuzzy
+msgid "Liga Kvalito"
+msgstr "جودة الدوري"
 
 #, fuzzy
 msgid "Loka Tempo"
 msgstr "الوقت المحلي"
 
 #, fuzzy
+msgid "MAC-Adreso"
+msgstr "عنوان ماك"
+
+#, fuzzy
+msgid "MD5-Sumo de Praŝarĝilo :"
+msgstr "نسخة المجلس"
+
+#, fuzzy
 msgid "Modelo"
 msgstr "نموذج"
 
 #, fuzzy
+msgid "Network (WLAN0)"
+msgstr "شبكة (WLAN0)"
+
+#, fuzzy
+msgid "Praŝarĝilo"
+msgstr "نسخة المجلس"
+
+#, fuzzy
 msgid "Praŝargilo Versio"
 msgstr "نسخة المجلس"
+
+#, fuzzy
+msgid "Retmasko"
+msgstr "يسترد"
 
 #, fuzzy
 msgid "Ŝarĝa Mezumo"
@@ -53,5 +99,21 @@ msgid "Sistemo"
 msgstr "نظام"
 
 #, fuzzy
+msgid "Versio de Praŝarĝilo :"
+msgstr "نسخة المجلس"
+
+#, fuzzy
 msgid "Via sdcard estas muntita nurlegebla. Agordoj ne konserveblas."
 msgstr "يتم تثبيت SDCard الخاص بك فقط مقروءة. "
+
+#, fuzzy
+#~ msgid "Praŝarĝilo MD5-Sumo :"
+#~ msgstr "وضع التمهيد MD5"
+
+#, fuzzy
+#~ msgid "Praŝarĝilo Versio :"
+#~ msgstr "نسخة المجلس"
+
+#, fuzzy
+#~ msgid "Please try rebooting."
+#~ msgstr "يرجى محاولة إعادة التشغيل."

@@ -13,24 +13,16 @@ msgstr ""
 "X-Generator: html2pot\n"
 
 #, fuzzy
-msgid "Aŭtomata Nokta Detekto"
-msgstr "Pengesanan malam automatik"
-
-#, fuzzy
-msgid "Blanko LED"
+msgid "Blanka LED"
 msgstr "Putih LED."
-
-#, fuzzy
-msgid "Brila"
-msgstr "Terang"
 
 #, fuzzy
 msgid "Ĝisdatigi"
 msgstr "Kemas kini"
 
 #, fuzzy
-msgid "Kamerao Kontroloj"
-msgstr "Kawalan kamera."
+msgid "Kamerao"
+msgstr "Kamera"
 
 #, fuzzy
 msgid "LED agordoj"
@@ -45,44 +37,8 @@ msgid "Movado-Detekto"
 msgstr "Pengesanan pergerakan"
 
 #, fuzzy
-msgid "Movado - LED"
-msgstr "Pergerakan - LED."
-
-#, fuzzy
-msgid "Movado - Momentfotoj"
-msgstr "Pergerakan - Moment Foto"
-
-#, fuzzy
-msgid "Movado - MQTT-Mesaĝo"
-msgstr "Pergerakan - Mesej MQTT"
-
-#, fuzzy
-msgid "Movado - MQTT-Momentfoto"
-msgstr "Pergerakan - mqtt-momentfoto"
-
-#, fuzzy
-msgid "Movado - Sendi retpoŝtojn"
-msgstr "Pergerakan - menghantar e-mel"
-
-#, fuzzy
-msgid "Movado - Sendi Telegramon"
-msgstr "Pergerakan - hantar telegram"
-
-#, fuzzy
-msgid "MQTT-Kontrolo Servilo"
-msgstr "Pelayan kawalan MQTT."
-
-#, fuzzy
-msgid "MQTT-Statuso Servilo"
-msgstr "Pelayan status MQTT."
-
-#, fuzzy
 msgid "Nokta Agordoj"
 msgstr "Tetapan malam"
-
-#, fuzzy
-msgid "Obskura"
-msgstr "Tidak jelas"
 
 #, fuzzy
 msgid "OSD"
@@ -109,20 +65,12 @@ msgid "Restartigi"
 msgstr "Untuk memulakan semula"
 
 #, fuzzy
-msgid "Reto"
-msgstr "Rangkaian"
-
-#, fuzzy
 msgid "Reto Informoj"
 msgstr "Maklumat rangkaian"
 
 #, fuzzy
 msgid "RTSP Agordoj"
 msgstr "Tetapan RTSP."
-
-#, fuzzy
-msgid "RTSP-Servilo"
-msgstr "Pelayan rTSP."
 
 #, fuzzy
 msgid "Servoj"
@@ -137,10 +85,6 @@ msgid "Sono"
 msgstr "Bunyi"
 
 #, fuzzy
-msgid "Sono ĉe Lanĉo"
-msgstr "Bunyi pada pelancaran"
-
-#, fuzzy
 msgid "Stato"
 msgstr "Nyatakan"
 
@@ -153,14 +97,6 @@ msgid "T21 Kodumoj"
 msgstr "Kod t21."
 
 #, fuzzy
-msgid "Temo"
-msgstr "Subjek"
-
-#, fuzzy
-msgid "Transruĝa Filtrilo"
-msgstr "Penapis inframerah"
-
-#, fuzzy
 msgid "Transruĝa LED"
 msgstr "Inframerah LED."
 
@@ -168,3 +104,70 @@ msgstr "Inframerah LED."
 msgid "Versio :"
 msgstr "Versi:"
 
+#, fuzzy
+#~ msgid "Aŭtomata Nokta Detekto"
+#~ msgstr "Pengesanan malam automatik"
+
+#, fuzzy
+#~ msgid "Brila"
+#~ msgstr "Terang"
+
+#, fuzzy
+#~ msgid "Kamerao Kontroloj"
+#~ msgstr "Kawalan kamera."
+
+#, fuzzy
+#~ msgid "Movado - LED"
+#~ msgstr "Pergerakan - LED."
+
+#, fuzzy
+#~ msgid "Movado - Momentfotoj"
+#~ msgstr "Pergerakan - Moment Foto"
+
+#, fuzzy
+#~ msgid "Movado - MQTT-Mesaĝo"
+#~ msgstr "Pergerakan - Mesej MQTT"
+
+#, fuzzy
+#~ msgid "Movado - MQTT-Momentfoto"
+#~ msgstr "Pergerakan - mqtt-momentfoto"
+
+#, fuzzy
+#~ msgid "Movado - Sendi retpoŝtojn"
+#~ msgstr "Pergerakan - menghantar e-mel"
+
+#, fuzzy
+#~ msgid "Movado - Sendi Telegramon"
+#~ msgstr "Pergerakan - hantar telegram"
+
+#, fuzzy
+#~ msgid "MQTT-Kontrolo Servilo"
+#~ msgstr "Pelayan kawalan MQTT."
+
+#, fuzzy
+#~ msgid "MQTT-Statuso Servilo"
+#~ msgstr "Pelayan status MQTT."
+
+#, fuzzy
+#~ msgid "Obskura"
+#~ msgstr "Tidak jelas"
+
+#, fuzzy
+#~ msgid "Reto"
+#~ msgstr "Rangkaian"
+
+#, fuzzy
+#~ msgid "RTSP-Servilo"
+#~ msgstr "Pelayan rTSP."
+
+#, fuzzy
+#~ msgid "Sono ĉe Lanĉo"
+#~ msgstr "Bunyi pada pelancaran"
+
+#, fuzzy
+#~ msgid "Temo"
+#~ msgstr "Subjek"
+
+#, fuzzy
+#~ msgid "Transruĝa Filtrilo"
+#~ msgstr "Penapis inframerah"

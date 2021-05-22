@@ -28,7 +28,7 @@ $(document).ready(function () {
   $('.langsel').click(function () {
      var val = $(this).data('sellang');
     Cookies.set("lang", val, { path: '/' });
-    setPageLang("index");
+    setPageLang("index",$(document));
   })
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);

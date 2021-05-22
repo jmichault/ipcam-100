@@ -17,8 +17,16 @@ msgid "Averto"
 msgstr "Предупреждение"
 
 #, fuzzy
+msgid "Bonvolu provi restartigi."
+msgstr "Пожалуйста, попробуйте перезапустить."
+
+#, fuzzy
 msgid "Daŭro de funkciado"
 msgstr "Длина операции"
+
+#, fuzzy
+msgid "Elŝutu Praŝarĝilo"
+msgstr "Скачать загрузочную машину"
 
 #, fuzzy
 msgid "Firmprogramo"
@@ -29,20 +37,56 @@ msgid "Gastnomo"
 msgstr "Имя хоста"
 
 #, fuzzy
+msgid "IP-Adreso"
+msgstr "айпи адрес"
+
+#, fuzzy
 msgid "Kerno Versio"
 msgstr "Основная версия"
+
+#, fuzzy
+msgid "Kluzadreso"
+msgstr "Клубный адрес"
+
+#, fuzzy
+msgid "Komandlinio :"
+msgstr "Командная строка:"
+
+#, fuzzy
+msgid "Liga Kvalito"
+msgstr "Качество лиги"
 
 #, fuzzy
 msgid "Loka Tempo"
 msgstr "Местное время"
 
 #, fuzzy
+msgid "MAC-Adreso"
+msgstr "MAC-адрес"
+
+#, fuzzy
+msgid "MD5-Sumo de Praŝarĝilo :"
+msgstr "Доска версии"
+
+#, fuzzy
 msgid "Modelo"
 msgstr "Модель"
 
 #, fuzzy
+msgid "Network (WLAN0)"
+msgstr "Сеть (wlan0)"
+
+#, fuzzy
+msgid "Praŝarĝilo"
+msgstr "Доска версии"
+
+#, fuzzy
 msgid "Praŝargilo Versio"
 msgstr "Доска версии"
+
+#, fuzzy
+msgid "Retmasko"
+msgstr "Забрать"
 
 #, fuzzy
 msgid "Ŝarĝa Mezumo"
@@ -53,5 +97,21 @@ msgid "Sistemo"
 msgstr "Система"
 
 #, fuzzy
+msgid "Versio de Praŝarĝilo :"
+msgstr "Доска версии"
+
+#, fuzzy
 msgid "Via sdcard estas muntita nurlegebla. Agordoj ne konserveblas."
 msgstr "Ваша SDCard устанавливается только читаемость. "
+
+#, fuzzy
+#~ msgid "Praŝarĝilo MD5-Sumo :"
+#~ msgstr "Режим загрузки MD5:"
+
+#, fuzzy
+#~ msgid "Praŝarĝilo Versio :"
+#~ msgstr "Доска версии"
+
+#, fuzzy
+#~ msgid "Please try rebooting."
+#~ msgstr "Пожалуйста, попробуйте перезагрузить."

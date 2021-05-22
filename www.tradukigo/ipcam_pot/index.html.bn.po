@@ -13,24 +13,16 @@ msgstr ""
 "X-Generator: html2pot\n"
 
 #, fuzzy
-msgid "Aŭtomata Nokta Detekto"
-msgstr "স্বয়ংক্রিয় রাতের সনাক্তকরণ"
-
-#, fuzzy
-msgid "Blanko LED"
+msgid "Blanka LED"
 msgstr "হোয়াইট নেতৃত্বে"
-
-#, fuzzy
-msgid "Brila"
-msgstr "উজ্জ্বল"
 
 #, fuzzy
 msgid "Ĝisdatigi"
 msgstr "হালনাগাদ"
 
 #, fuzzy
-msgid "Kamerao Kontroloj"
-msgstr "ক্যামেরা নিয়ন্ত্রণ"
+msgid "Kamerao"
+msgstr "ক্যামেরা"
 
 #, fuzzy
 msgid "LED agordoj"
@@ -45,44 +37,8 @@ msgid "Movado-Detekto"
 msgstr "আন্দোলন সনাক্তকরণ"
 
 #, fuzzy
-msgid "Movado - LED"
-msgstr "আন্দোলন - নেতৃত্বে"
-
-#, fuzzy
-msgid "Movado - Momentfotoj"
-msgstr "আন্দোলন - মুহূর্ত ছবি"
-
-#, fuzzy
-msgid "Movado - MQTT-Mesaĝo"
-msgstr "আন্দোলন - MQTT বার্তা"
-
-#, fuzzy
-msgid "Movado - MQTT-Momentfoto"
-msgstr "আন্দোলন - MQTT-MENTIPFOTO"
-
-#, fuzzy
-msgid "Movado - Sendi retpoŝtojn"
-msgstr "আন্দোলন - ইমেইল পাঠান"
-
-#, fuzzy
-msgid "Movado - Sendi Telegramon"
-msgstr "আন্দোলন - একটি টেলিগ্রাম পাঠান"
-
-#, fuzzy
-msgid "MQTT-Kontrolo Servilo"
-msgstr "MQTT কন্ট্রোল সার্ভার"
-
-#, fuzzy
-msgid "MQTT-Statuso Servilo"
-msgstr "এমকিউটিটি স্ট্যাটাস সার্ভার"
-
-#, fuzzy
 msgid "Nokta Agordoj"
 msgstr "নাইট সেটিংস"
-
-#, fuzzy
-msgid "Obskura"
-msgstr "অস্পষ্ট"
 
 #, fuzzy
 msgid "OSD"
@@ -109,20 +65,12 @@ msgid "Restartigi"
 msgstr "নতুন করে শুরু"
 
 #, fuzzy
-msgid "Reto"
-msgstr "অন্তর্জাল"
-
-#, fuzzy
 msgid "Reto Informoj"
 msgstr "নেটওয়ার্ক তথ্য"
 
 #, fuzzy
 msgid "RTSP Agordoj"
 msgstr "RTSP সেটিংস"
-
-#, fuzzy
-msgid "RTSP-Servilo"
-msgstr "RTSP সার্ভার"
 
 #, fuzzy
 msgid "Servoj"
@@ -137,10 +85,6 @@ msgid "Sono"
 msgstr "সাউন্ড"
 
 #, fuzzy
-msgid "Sono ĉe Lanĉo"
-msgstr "লঞ্চে শব্দ"
-
-#, fuzzy
 msgid "Stato"
 msgstr "রাষ্ট্র"
 
@@ -153,14 +97,6 @@ msgid "T21 Kodumoj"
 msgstr "টি 21 কোড"
 
 #, fuzzy
-msgid "Temo"
-msgstr "বিষয়"
-
-#, fuzzy
-msgid "Transruĝa Filtrilo"
-msgstr "ইনফ্রারেড ফিল্টার"
-
-#, fuzzy
 msgid "Transruĝa LED"
 msgstr "ইনফ্রারেড নেতৃত্বে"
 
@@ -168,3 +104,70 @@ msgstr "ইনফ্রারেড নেতৃত্বে"
 msgid "Versio :"
 msgstr "সংস্করণ:"
 
+#, fuzzy
+#~ msgid "Aŭtomata Nokta Detekto"
+#~ msgstr "স্বয়ংক্রিয় রাতের সনাক্তকরণ"
+
+#, fuzzy
+#~ msgid "Brila"
+#~ msgstr "উজ্জ্বল"
+
+#, fuzzy
+#~ msgid "Kamerao Kontroloj"
+#~ msgstr "ক্যামেরা নিয়ন্ত্রণ"
+
+#, fuzzy
+#~ msgid "Movado - LED"
+#~ msgstr "আন্দোলন - নেতৃত্বে"
+
+#, fuzzy
+#~ msgid "Movado - Momentfotoj"
+#~ msgstr "আন্দোলন - মুহূর্ত ছবি"
+
+#, fuzzy
+#~ msgid "Movado - MQTT-Mesaĝo"
+#~ msgstr "আন্দোলন - MQTT বার্তা"
+
+#, fuzzy
+#~ msgid "Movado - MQTT-Momentfoto"
+#~ msgstr "আন্দোলন - MQTT-MENTIPFOTO"
+
+#, fuzzy
+#~ msgid "Movado - Sendi retpoŝtojn"
+#~ msgstr "আন্দোলন - ইমেইল পাঠান"
+
+#, fuzzy
+#~ msgid "Movado - Sendi Telegramon"
+#~ msgstr "আন্দোলন - একটি টেলিগ্রাম পাঠান"
+
+#, fuzzy
+#~ msgid "MQTT-Kontrolo Servilo"
+#~ msgstr "MQTT কন্ট্রোল সার্ভার"
+
+#, fuzzy
+#~ msgid "MQTT-Statuso Servilo"
+#~ msgstr "এমকিউটিটি স্ট্যাটাস সার্ভার"
+
+#, fuzzy
+#~ msgid "Obskura"
+#~ msgstr "অস্পষ্ট"
+
+#, fuzzy
+#~ msgid "Reto"
+#~ msgstr "অন্তর্জাল"
+
+#, fuzzy
+#~ msgid "RTSP-Servilo"
+#~ msgstr "RTSP সার্ভার"
+
+#, fuzzy
+#~ msgid "Sono ĉe Lanĉo"
+#~ msgstr "লঞ্চে শব্দ"
+
+#, fuzzy
+#~ msgid "Temo"
+#~ msgstr "বিষয়"
+
+#, fuzzy
+#~ msgid "Transruĝa Filtrilo"
+#~ msgstr "ইনফ্রারেড ফিল্টার"

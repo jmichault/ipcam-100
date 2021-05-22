@@ -17,8 +17,16 @@ msgid "Averto"
 msgstr "警告"
 
 #, fuzzy
+msgid "Bonvolu provi restartigi."
+msgstr "再起動してみてください。"
+
+#, fuzzy
 msgid "Daŭro de funkciado"
 msgstr "運営の長さ"
+
+#, fuzzy
+msgid "Elŝutu Praŝarĝilo"
+msgstr "ブートマシンをダウンロードしてください"
 
 #, fuzzy
 msgid "Firmprogramo"
@@ -29,20 +37,56 @@ msgid "Gastnomo"
 msgstr "ホスト名"
 
 #, fuzzy
+msgid "IP-Adreso"
+msgstr "IPアドレス"
+
+#, fuzzy
 msgid "Kerno Versio"
 msgstr "コアバージョン"
+
+#, fuzzy
+msgid "Kluzadreso"
+msgstr "クラブアドレス"
+
+#, fuzzy
+msgid "Komandlinio :"
+msgstr "コマンドライン："
+
+#, fuzzy
+msgid "Liga Kvalito"
+msgstr "リーグ品質"
 
 #, fuzzy
 msgid "Loka Tempo"
 msgstr "現地時間"
 
 #, fuzzy
+msgid "MAC-Adreso"
+msgstr "Macアドレス"
+
+#, fuzzy
+msgid "MD5-Sumo de Praŝarĝilo :"
+msgstr "ボードバージョン"
+
+#, fuzzy
 msgid "Modelo"
 msgstr "モデル"
 
 #, fuzzy
+msgid "Network (WLAN0)"
+msgstr "ネットワーク (WLAN0)"
+
+#, fuzzy
+msgid "Praŝarĝilo"
+msgstr "ボードバージョン"
+
+#, fuzzy
 msgid "Praŝargilo Versio"
 msgstr "ボードバージョン"
+
+#, fuzzy
+msgid "Retmasko"
+msgstr "検索します"
 
 #, fuzzy
 msgid "Ŝarĝa Mezumo"
@@ -53,5 +97,21 @@ msgid "Sistemo"
 msgstr "システム"
 
 #, fuzzy
+msgid "Versio de Praŝarĝilo :"
+msgstr "ボードバージョン"
+
+#, fuzzy
 msgid "Via sdcard estas muntita nurlegebla. Agordoj ne konserveblas."
 msgstr "あなたのSDカードは読みやすいだけです。"
+
+#, fuzzy
+#~ msgid "Praŝarĝilo MD5-Sumo :"
+#~ msgstr "MD5 SUMブートモード："
+
+#, fuzzy
+#~ msgid "Praŝarĝilo Versio :"
+#~ msgstr "ボードバージョン"
+
+#, fuzzy
+#~ msgid "Please try rebooting."
+#~ msgstr "再起動してみてください。"

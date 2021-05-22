@@ -12,20 +12,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: html2pot\n"
 
-msgid "Aŭtomata Nokta Detekto"
-msgstr "Auto Night Detection"
-
-msgid "Blanko LED"
+#, fuzzy
+msgid "Blanka LED"
 msgstr "White LED"
-
-msgid "Brila"
-msgstr "Light"
 
 msgid "Ĝisdatigi"
 msgstr "Update"
 
-msgid "Kamerao Kontroloj"
-msgstr "Camera controls"
+#, fuzzy
+msgid "Kamerao"
+msgstr "Camera"
 
 msgid "LED agordoj"
 msgstr "LED settings"
@@ -36,35 +32,8 @@ msgstr "Turn off"
 msgid "Movado-Detekto"
 msgstr "Motion detection"
 
-msgid "Movado - LED"
-msgstr "Motion - LED"
-
-msgid "Movado - Momentfotoj"
-msgstr "Motion - Snapshots"
-
-msgid "Movado - MQTT-Mesaĝo"
-msgstr "Motion - MQTT message"
-
-msgid "Movado - MQTT-Momentfoto"
-msgstr "Motion - MQTT Snapshot"
-
-msgid "Movado - Sendi retpoŝtojn"
-msgstr "Motion - send emails"
-
-msgid "Movado - Sendi Telegramon"
-msgstr "Motion - Send Telegram"
-
-msgid "MQTT-Kontrolo Servilo"
-msgstr "MQTT control server"
-
-msgid "MQTT-Statuso Servilo"
-msgstr "MQTT status server"
-
 msgid "Nokta Agordoj"
 msgstr "SW night configuration"
-
-msgid "Obskura"
-msgstr "Dark"
 
 msgid "OSD"
 msgstr "OSD"
@@ -84,17 +53,11 @@ msgstr "Logs"
 msgid "Restartigi"
 msgstr "Reboot"
 
-msgid "Reto"
-msgstr "Network"
-
 msgid "Reto Informoj"
 msgstr "Network Information"
 
 msgid "RTSP Agordoj"
 msgstr "RTSP settings"
-
-msgid "RTSP-Servilo"
-msgstr "RTSP server"
 
 msgid "Servoj"
 msgstr "Services"
@@ -105,9 +68,6 @@ msgstr "System"
 msgid "Sono"
 msgstr "Audio"
 
-msgid "Sono ĉe Lanĉo"
-msgstr "Sound on Startup"
-
 msgid "Stato"
 msgstr "Status"
 
@@ -117,15 +77,59 @@ msgstr "Overview"
 msgid "T21 Kodumoj"
 msgstr "T21 Hacks"
 
-msgid "Temo"
-msgstr "Theme"
-
-msgid "Transruĝa Filtrilo"
-msgstr "IR-Cut"
-
 msgid "Transruĝa LED"
 msgstr "IR LED"
 
 msgid "Versio :"
 msgstr "Version:"
 
+#~ msgid "Aŭtomata Nokta Detekto"
+#~ msgstr "Auto Night Detection"
+
+#~ msgid "Brila"
+#~ msgstr "Light"
+
+#~ msgid "Kamerao Kontroloj"
+#~ msgstr "Camera controls"
+
+#~ msgid "Movado - LED"
+#~ msgstr "Motion - LED"
+
+#~ msgid "Movado - Momentfotoj"
+#~ msgstr "Motion - Snapshots"
+
+#~ msgid "Movado - MQTT-Mesaĝo"
+#~ msgstr "Motion - MQTT message"
+
+#~ msgid "Movado - MQTT-Momentfoto"
+#~ msgstr "Motion - MQTT Snapshot"
+
+#~ msgid "Movado - Sendi retpoŝtojn"
+#~ msgstr "Motion - send emails"
+
+#~ msgid "Movado - Sendi Telegramon"
+#~ msgstr "Motion - Send Telegram"
+
+#~ msgid "MQTT-Kontrolo Servilo"
+#~ msgstr "MQTT control server"
+
+#~ msgid "MQTT-Statuso Servilo"
+#~ msgstr "MQTT status server"
+
+#~ msgid "Obskura"
+#~ msgstr "Dark"
+
+#~ msgid "Reto"
+#~ msgstr "Network"
+
+#~ msgid "RTSP-Servilo"
+#~ msgstr "RTSP server"
+
+#~ msgid "Sono ĉe Lanĉo"
+#~ msgstr "Sound on Startup"
+
+#~ msgid "Temo"
+#~ msgstr "Theme"
+
+#~ msgid "Transruĝa Filtrilo"
+#~ msgstr "IR-Cut"

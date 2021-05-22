@@ -12,19 +12,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: html2pot\n"
 
-msgid "Aŭtomata Nokta Detekto"
-msgstr ""
-
-msgid "Blanko LED"
-msgstr ""
-
-msgid "Brila"
+msgid "Blanka LED"
 msgstr ""
 
 msgid "Ĝisdatigi"
 msgstr ""
 
-msgid "Kamerao Kontroloj"
+msgid "Kamerao"
 msgstr ""
 
 msgid "LED agordoj"
@@ -36,34 +30,7 @@ msgstr ""
 msgid "Movado-Detekto"
 msgstr ""
 
-msgid "Movado - LED"
-msgstr ""
-
-msgid "Movado - Momentfotoj"
-msgstr ""
-
-msgid "Movado - MQTT-Mesaĝo"
-msgstr ""
-
-msgid "Movado - MQTT-Momentfoto"
-msgstr ""
-
-msgid "Movado - Sendi retpoŝtojn"
-msgstr ""
-
-msgid "Movado - Sendi Telegramon"
-msgstr ""
-
-msgid "MQTT-Kontrolo Servilo"
-msgstr ""
-
-msgid "MQTT-Statuso Servilo"
-msgstr ""
-
 msgid "Nokta Agordoj"
-msgstr ""
-
-msgid "Obskura"
 msgstr ""
 
 msgid "OSD"
@@ -84,16 +51,10 @@ msgstr ""
 msgid "Restartigi"
 msgstr ""
 
-msgid "Reto"
-msgstr ""
-
 msgid "Reto Informoj"
 msgstr ""
 
 msgid "RTSP Agordoj"
-msgstr ""
-
-msgid "RTSP-Servilo"
 msgstr ""
 
 msgid "Servoj"
@@ -105,9 +66,6 @@ msgstr ""
 msgid "Sono"
 msgstr ""
 
-msgid "Sono ĉe Lanĉo"
-msgstr ""
-
 msgid "Stato"
 msgstr ""
 
@@ -115,12 +73,6 @@ msgid "Superrigardo"
 msgstr ""
 
 msgid "T21 Kodumoj"
-msgstr ""
-
-msgid "Temo"
-msgstr ""
-
-msgid "Transruĝa Filtrilo"
 msgstr ""
 
 msgid "Transruĝa LED"

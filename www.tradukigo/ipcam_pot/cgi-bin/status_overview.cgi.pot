@@ -15,7 +15,13 @@ msgstr ""
 msgid "Averto"
 msgstr ""
 
+msgid "Bonvolu provi restartigi."
+msgstr ""
+
 msgid "Daŭro de funkciado"
+msgstr ""
+
+msgid "Elŝutu Praŝarĝilo"
 msgstr ""
 
 msgid "Firmprogramo"
@@ -24,22 +30,52 @@ msgstr ""
 msgid "Gastnomo"
 msgstr ""
 
+msgid "IP-Adreso"
+msgstr ""
+
 msgid "Kerno Versio"
+msgstr ""
+
+msgid "Kluzadreso"
+msgstr ""
+
+msgid "Komandlinio :"
+msgstr ""
+
+msgid "Liga Kvalito"
 msgstr ""
 
 msgid "Loka Tempo"
 msgstr ""
 
+msgid "MAC-Adreso"
+msgstr ""
+
+msgid "MD5-Sumo de Praŝarĝilo :"
+msgstr ""
+
 msgid "Modelo"
 msgstr ""
 
+msgid "Network (WLAN0)"
+msgstr ""
+
+msgid "Praŝarĝilo"
+msgstr ""
+
 msgid "Praŝargilo Versio"
+msgstr ""
+
+msgid "Retmasko"
 msgstr ""
 
 msgid "Ŝarĝa Mezumo"
 msgstr ""
 
 msgid "Sistemo"
+msgstr ""
+
+msgid "Versio de Praŝarĝilo :"
 msgstr ""
 
 msgid "Via sdcard estas muntita nurlegebla. Agordoj ne konserveblas."

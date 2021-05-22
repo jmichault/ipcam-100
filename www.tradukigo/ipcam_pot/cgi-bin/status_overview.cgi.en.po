@@ -17,8 +17,16 @@ msgid "Averto"
 msgstr "Warning"
 
 #, fuzzy
+msgid "Bonvolu provi restartigi."
+msgstr "Please try restarting."
+
+#, fuzzy
 msgid "Daŭro de funkciado"
 msgstr "Length of operation"
+
+#, fuzzy
+msgid "Elŝutu Praŝarĝilo"
+msgstr "Download boot machine"
 
 #, fuzzy
 msgid "Firmprogramo"
@@ -29,20 +37,56 @@ msgid "Gastnomo"
 msgstr "Hostname"
 
 #, fuzzy
+msgid "IP-Adreso"
+msgstr "IP address"
+
+#, fuzzy
 msgid "Kerno Versio"
 msgstr "Core Version"
+
+#, fuzzy
+msgid "Kluzadreso"
+msgstr "Club address"
+
+#, fuzzy
+msgid "Komandlinio :"
+msgstr "Command line:"
+
+#, fuzzy
+msgid "Liga Kvalito"
+msgstr "League quality"
 
 #, fuzzy
 msgid "Loka Tempo"
 msgstr "Local time"
 
 #, fuzzy
+msgid "MAC-Adreso"
+msgstr "MAC address"
+
+#, fuzzy
+msgid "MD5-Sumo de Praŝarĝilo :"
+msgstr "Board version"
+
+#, fuzzy
 msgid "Modelo"
 msgstr "Model"
 
 #, fuzzy
+msgid "Network (WLAN0)"
+msgstr "Network (WLAN0)"
+
+#, fuzzy
+msgid "Praŝarĝilo"
+msgstr "Board version"
+
+#, fuzzy
 msgid "Praŝargilo Versio"
 msgstr "Board version"
+
+#, fuzzy
+msgid "Retmasko"
+msgstr "Retrieve"
 
 #, fuzzy
 msgid "Ŝarĝa Mezumo"
@@ -53,5 +97,21 @@ msgid "Sistemo"
 msgstr "System"
 
 #, fuzzy
+msgid "Versio de Praŝarĝilo :"
+msgstr "Board version"
+
+#, fuzzy
 msgid "Via sdcard estas muntita nurlegebla. Agordoj ne konserveblas."
 msgstr "Your SDCard is mounted only readable. "
+
+#, fuzzy
+#~ msgid "Praŝarĝilo MD5-Sumo :"
+#~ msgstr "MD5 sum boot mode:"
+
+#, fuzzy
+#~ msgid "Praŝarĝilo Versio :"
+#~ msgstr "Board version"
+
+#, fuzzy
+#~ msgid "Please try rebooting."
+#~ msgstr "Please try rebooting."
