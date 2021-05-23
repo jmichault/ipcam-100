@@ -58,9 +58,9 @@ void DynamicRTSPServer
 
     if (sms == NULL) {
       sms = createNewSMS(envir(), streamName, NULL); 
-      addServerMediaSession(sms);
+      if (sms != NULL) addServerMediaSession(sms);
     }
-  if (completionFunc != NULL) {
+  if (completionFunc != NULL && sms != NULL) {
     (*completionFunc)(completionClientData, sms);
   }
 }
@@ -89,7 +89,7 @@ static ServerMediaSession* createNewSMS(UsageEnvironment& env,
       sms->addSubsession(UnicastServerMediaSubsession::createNew(env, 1));
     else
       sms->addSubsession(H264ImpServerMediaSubsession::createNew(env, fileName, reuseSource));
-  } else if (strcmp(extension, ".264") == 0) {
+  } else if (extension && strcmp(extension, ".264") == 0) {
     // Assumed to be a H.264 Video Elementary Stream file:
     NEW_SMS("H.264 Video");
     OutPacketBuffer::maxSize = 100000; // allow for some possibly large H.264 frames
