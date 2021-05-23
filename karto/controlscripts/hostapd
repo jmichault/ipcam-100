@@ -9,6 +9,7 @@ LOGPATH="$LOGDIR/${SERVICE_NAME}.log"
 BIN=/ipc/bin/${SERVICE_NAME}
 CONFIG="${SDCARD}/config/${SERVICE_NAME}.conf"
 OPTS="-d -B -P "$PIDFILE" "$CONFIG""
+IP="172.25.0.1"
 
 
 status()
@@ -36,6 +37,7 @@ start()
     echo "${BIN} ${OPTS}" >> "$LOGPATH"
     ${BIN} ${OPTS} 2>> "$LOGPATH" >> "$LOGPATH" &
     echo "$!" > "$PIDFILE"
+    ifconfig wlan1 $IP
   fi
 }
 
