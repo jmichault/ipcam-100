@@ -88,7 +88,7 @@ var rtsp_jsForm=
          $('#res').html('<p> Erreur dans l enregistrement.</p>');
        });
 
-     XHR.open("POST", "/cgi-bin/rtsp_sav.cgi");
+     XHR.open("POST", "cgi-bin/conf_sav.cgi?file=rtsp.conf");
      XHR.send(FD);
    }
  }

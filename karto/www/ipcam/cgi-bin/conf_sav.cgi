@@ -10,7 +10,7 @@ then
 fi
 
 #FICOUT=${SDCARD}/www/config/rtsp.conf
-FICOUT=/opt/media/mmcblk0p1/www/config/$F_file
+FICOUT=/opt/media/mmcblk0p1/www/ipcam/config/$F_file
 
 echo "$POST_QUERY_STRING" >$FICOUT
 
