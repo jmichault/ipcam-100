@@ -89,7 +89,7 @@ var rtsp_jsForm=
        });
 
      XHR.open("POST", "cgi-bin/conf_sav.cgi?file=rtsp.conf");
-     XHR.send(FD);
+     XHR.send("var config="+FD);
    }
  }
 } ;
