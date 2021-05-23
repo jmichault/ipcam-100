@@ -21,9 +21,30 @@ killall -9 hostapd
 killall -9 udhcpd
 killall -9 udhcpc
 
+# agordi horloĝon je la dato de la lasta protokolo.
+cd "${SDCARD}"
+touch log/bootclock
+hwclock -s
+touch log/hwclock
+FIC=$(ls -rt --color=never log|tail -n 1)
+if [ x"$FIC" == xhwclock ]
+then
+  echo "agordi horloĝon de RTC"
+  hwclock -s
+elif [ x"$FIC" != xbootclock ]
+then
+  echo "agordi horloĝon de log/$FIC"
+  LASTDATE=$(date -Iseconds -r log/"$FIC"|sed "s/[T:+-]/:/g
+"|awk -F: '{print $2 $3 $4 $5 $1 "." $6;}')
+  date $LASTDATE
+  hwclock -uw
+fi
+#
+
+
+# ĝisdatigo de firmvaro se necese
 if [ -f "${SDCARD}/update.zip" ]
 then
-  cd "${SDCARD}"
   echo "========================" > log/update.log
   echo "ĝisdatigo per «update.zip»" >>log/update.log
   ls -l update.zip >>log/update.log
@@ -127,7 +148,7 @@ set_timezone
 
 ntp_srv="$(cat "$CONFIGPATH/ntp_srv.conf")"
 timeout -t 30 sh -c "until ping -c1 \"$ntp_srv\" &>/dev/null; do sleep 3; done";
-${SDCARD}/bin/busybox ntpd -p "$ntp_srv"
+${SDCARD}/bin/busybox ntpd -S synchwclock -p "$ntp_srv"
 
 ## Autostart all enabled services:
 for i in ${SDCARD}/config/autostart/*; do
