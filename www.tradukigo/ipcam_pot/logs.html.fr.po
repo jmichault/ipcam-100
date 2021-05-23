@@ -1,0 +1,41 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+#, fuzzy
+msgid "Lasta ĝisdatigo"
+msgstr "Dernière mise à jour"
+
+#, fuzzy
+msgid "Listo de Procezoj"
+msgstr "Liste des processus"
+
+#, fuzzy
+msgid "Muntitaj dosiersistemoj"
+msgstr "Systèmes de fichiers montés"
+
+#, fuzzy
+msgid "Protokolaj Dosieroj"
+msgstr "Fichiers Journaux"
+
+#, fuzzy
+msgid "Resumo"
+msgstr "Résumé"
+
+#, fuzzy
+msgid "Video-servilo"
+msgstr "Version vidéo"
+
+#, fuzzy
+#~ msgid "Surmetingoj"
+#~ msgstr "Chiffres"

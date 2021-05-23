@@ -1,0 +1,41 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+#, fuzzy
+msgid "Lasta ĝisdatigo"
+msgstr "आखिरी अपडेट"
+
+#, fuzzy
+msgid "Listo de Procezoj"
+msgstr "प्रक्रियाओं की सूची"
+
+#, fuzzy
+msgid "Muntitaj dosiersistemoj"
+msgstr "घुड़सवार फ़ाइल सिस्टम"
+
+#, fuzzy
+msgid "Protokolaj Dosieroj"
+msgstr "प्रोटोकॉल फाइलें"
+
+#, fuzzy
+msgid "Resumo"
+msgstr "सारांश"
+
+#, fuzzy
+msgid "Video-servilo"
+msgstr "वीडियो संस्करण"
+
+#, fuzzy
+#~ msgid "Surmetingoj"
+#~ msgstr "सर्पिंग"
