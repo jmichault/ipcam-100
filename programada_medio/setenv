@@ -1,8 +1,13 @@
 #!/bin/bash
 
-export BASE=$(dirname $(readlink -f "$0"))
+
+if [ x$0 == 'x-bash' ]
+then
+BASE=`echo $PWD|sed 's/ipcam-100.*/ipcam-100\/programada_medio/'`
+else
+BASE=$(dirname $(readlink -f "$0"))
+fi
+echo BASE=$BASE
 export PATH=$BASE/toolchain/bin/:$PATH
+export HOST=mips-linux-uclibc-gnu
 
-export HOST=mips-linux-gnu
-
-bash

@@ -46,8 +46,8 @@ Kio funkcias en alternativa firmvaro:
 Kio ne funkcias en alternativa firmvaro:
 * sondosistemo
 * OSD
-* ĝisdatigo de firmvaro
 * aŭtomata nokta detekto
+* ĝisdatigo de firmvaro
 * ir-cut
 * mqtt
 * pasvorto por rtsp.
@@ -65,8 +65,9 @@ Instalado alternativan firmvaron :
 * Faru "cd /opt/media/mmcblk0p1;./install.sh"
 * Vi povas konekti al la URL "https://IP" (uzanto admin, pasvorto ismart21).
 * Vi povas konekti per ssh (uzanto admin, pasvorto ismart12).
-* ffplay -i rtsp://admin:ismart21@IP_adreso/media/stream1
-* ffplay -i rtsp://admin:ismart21@IP_adreso/media/stream2
+* ffplay -i rtsp://admin:ismart21@IP_adreso/stream1
+* ffplay -i rtsp://admin:ismart21@IP_adreso/stream2
+* 
 
 Malinstalado alternativan firmvaron :
 * Konektu al la kamerao per ssh.

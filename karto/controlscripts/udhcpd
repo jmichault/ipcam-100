@@ -6,7 +6,7 @@ SERVICE_NAME="udhcpd"
 PIDFILE="/var/run/${SERVICE_NAME}.pid"
 LOGDIR="${SDCARD}/log"
 LOGPATH="$LOGDIR/${SERVICE_NAME}.log"
-BIN=/ipc/bin/${SERVICE_NAME}
+BIN="busybox ${SERVICE_NAME}"
 CONFIG="${SDCARD}/config/${SERVICE_NAME}.conf"
 OPTS="-fS "$CONFIG""
 
