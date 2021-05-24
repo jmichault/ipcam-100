@@ -19,14 +19,14 @@
  <div class='card-content'>
   <table class="motor_control">
    <tr>
-    <td class=""></td>
-    <td class="">
+    <td></td>
+    <td class="text-center">
       <button class="button is-link lang" onclick="call('cgi-bin/action.cgi?cmd=motor_up&val='+document.getElementById('val').value)" data-lang="&uarr; Supra"></button>
     </td>
-    <td class="">
+    <td>
     </td>
     <td rowspan=3>
-     <img id="liveview" src="cgi-bin/currentpic.cgi" onerror="this.src='/unable_load.png';">
+     <img width="100%" id="liveview" src="cgi-bin/currentpic.cgi" onerror="this.src='/unable_load.png';">
     </td>
    </tr>
    <tr>
@@ -42,7 +42,7 @@
    </tr>
    <tr>
     <td></td>
-    <td>
+    <td class="text-center">
      <button class="button is-link" onclick="call('cgi-bin/action.cgi?cmd=motor_down&val='+document.getElementById('val').value)">&darr; Malsupra</button>
     </td>
     <td></td>
