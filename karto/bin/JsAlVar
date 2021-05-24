@@ -1,0 +1,25 @@
+#!/bin/sh
+#####################################
+# Legas una linio de «json» file.
+# ĉi tiu linio devas esti tia:
+#   variablo=[{"name":"RAPIDECO","value":"500"},....
+# kaj atribuu valoron al variablo nomata per "name".
+#####################################
+
+FIC=$1
+VAR=$2
+MAX=$3
+
+data=$(cat "$FIC"|grep "^${VAR}="|sed "s/^${VAR}=//")
+echo data=$data
+for i in $(seq 0 $MAX)
+do
+  couple=$(echo "$data"|jq -r '.['$i']')
+  nomo=$(echo "$couple"|jq -r '.name'|sed 's/[\.\[]//g;s/\]//g')
+  valoro=$(echo "$couple"|jq -r '.value')
+  if [ x"$valoro" == xnull ]
+  then
+    break
+  fi
+export $nomo="$valoro"
+done

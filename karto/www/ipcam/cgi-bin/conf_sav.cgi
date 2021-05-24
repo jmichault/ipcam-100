@@ -4,7 +4,7 @@
 SDPATH=${DOCUMENT_ROOT}/..
 . ${SDPATH}/www/cgi-bin/func.cgi
 
-if [x$F_file == x ]
+if [ x$F_file == x ]
 then
   exit 1
 fi

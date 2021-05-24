@@ -17,8 +17,8 @@ var rtsp_jsForm=
    },
    "canal":
    {
-    type: "array"
-    ,items:
+    type: "array",
+    items:
     {
       type: "object",
       title: "propriétés de la vidéo",
