@@ -76,7 +76,7 @@
 <div class='card status_card'>
  <header class='card-header'><p class='card-header-title'>Agordoj</p></header>
  <div class='card-content'>
-  <form class="form-inline" id="ptz_form" >
+  <form class="form-inline bg-light" id="ptz_form" >
   </form>
  </div>
 </div>
@@ -100,11 +100,8 @@
       $('#ptz_form').jsonForm(ptz_jsForm );
       ptz_conf.forEach(setformval);
       // Make liveview self refresh
-      var image = document.getElementById("liveview");
-      function updateImage() {
-        image.src = image.src.split("?")[0] + "?" + new Date().getTime();
-      }
-      setInterval(updateImage, 1000);
+      image = document.getElementById("liveview");
+      miaInterval = setInterval(updateImage, 1000);
     })
     </script>
 

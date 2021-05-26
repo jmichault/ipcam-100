@@ -1,0 +1,60 @@
+  <div class="row">
+   <div class="container col-2">
+     <br><br>
+     <input id="blue_led" type="checkbox" class="switch form-check-input" name="blue_led" data-checked="cgi-bin/action.cgi?cmd=blue_led_on" data-unchecked="cgi-bin/action.cgi?cmd=blue_led_off">
+     <label class="form-check-label lang" data-lang="Blanka LED"></label><br><br>
+     <input id="ir_led" type="checkbox" name="ir_led" class="switch form-check-input" data-checked="cgi-bin/action.cgi?cmd=ir_led_on" data-unchecked="cgi-bin/action.cgi?cmd=ir_led_off">
+     <label class="form-check-label lang" data-lang="Transruĝa LED"></label><br>
+   </div>
+   <div id="content2" class="container col-8">
+    <img width="100%" id="liveview" src="cgi-bin/currentpic.cgi" onerror="this.src='/unable_load.png';">
+    <div id="dpad_container">
+     <div id="dpad">
+      <div class="dpad_button up">
+       <!-- up -->
+       <a class="cam_button" href="javascript:void(0)" data-cmd="motor_up">
+        &#x25B2;
+       </a>
+      </div>
+      <div class="dpad_button down">
+       <!-- down -->
+       <a class="cam_button" href="javascript:void(0)" data-cmd="motor_down">
+        &#x25BC;
+       </a>
+      </div>
+      <div class="dpad_button left">
+       <!-- left -->
+       <a class="cam_button" href="javascript:void(0)" data-cmd="motor_left">
+        &#x25C0;
+       </a>
+      </div>
+      <div class="dpad_button right">
+       <!-- right -->
+       <a class="cam_button" href="javascript:void(0)" data-cmd="motor_right">
+        &#x25B6;
+       </a>
+      </div>
+      <div class="dpad_button p0">
+       <!-- P0 ... -->
+       <a class="cam_button" href="javascript:void(0)" data-cmd="motoro_poz&val=0"> P0 </a>
+       <a class="cam_button" href="javascript:void(0)" data-cmd="motoro_poz&val=1"> P1 </a>
+       <a class="cam_button" href="javascript:void(0)" data-cmd="motoro_poz&val=2"> P2 </a>
+       <a class="cam_button" href="javascript:void(0)" data-cmd="motoro_poz&val=3"> P3 </a>
+       <a class="cam_button" href="javascript:void(0)" data-cmd="motoro_poz&val=4"> P4 </a>
+      </div>
+     </div>
+    </div>
+    <div id="dpad_indicator">
+     &hArr;
+    </div>
+   </div>
+  </div>
+
+  <script type="text/javascript">
+   $(document).ready(function () {
+      // Make liveview self refresh
+      image = document.getElementById("liveview");
+      miaInterval = setInterval(updateImage, 1000);
+   })
+  </script>
+

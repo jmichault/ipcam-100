@@ -40,11 +40,13 @@ then
   hwclock -uw
 fi
 #
-
+echo "===============================" >>$LOGPATH
+echo $(date -Iseconds) " Komencante. " >>$LOGPATH
 
 # ĝisdatigo de firmvaro se necese
 if [ -f "${SDCARD}/update.zip" ]
 then
+  echo $(date -Iseconds) " ĝisdatigo de «update.zip»".  >>$LOGPATH
   echo "========================" > log/update.log
   echo "ĝisdatigo per «update.zip»" >>log/update.log
   ls -l update.zip >>log/update.log
@@ -141,21 +143,26 @@ done
 hostname -F $CONFIGPATH/hostname.conf
 
 ## start network
-${SDCARD}/controlscripts/network
+echo $(date -Iseconds) " Komenco de reto. " >>$LOGPATH
+${SDCARD}/controlscripts/network >>$LOGPATH 2>&1
 
 ## Set Timezone
 set_timezone
 
+echo $(date -Iseconds) " Komenco de NTPD. " >>$LOGPATH
 ntp_srv="$(cat "$CONFIGPATH/ntp_srv.conf")"
 timeout -t 30 sh -c "until ping -c1 \"$ntp_srv\" &>/dev/null; do sleep 3; done";
 ${SDCARD}/bin/busybox ntpd -S synchwclock -p "$ntp_srv"
+echo $(date -Iseconds) " NTPD komenciĝis. " >>$LOGPATH
 
 ## Autostart all enabled services:
+echo $(date -Iseconds) " Komenco de servoj. " >>$LOGPATH
 for i in ${SDCARD}/config/autostart/*; do
   $i &
 done
 
 ## Autostart startup userscripts
+echo $(date -Iseconds) " Komenco de uzantoskriptoj. " >>$LOGPATH
 for i in ${SDCARD}/config/userscripts/startup/*; do
   $i &
 done

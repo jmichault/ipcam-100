@@ -11,7 +11,7 @@ VAR=$2
 MAX=$3
 
 data=$(cat "$FIC"|grep "^${VAR}="|sed "s/^${VAR}=//")
-echo data=$data
+#echo data=$data
 for i in $(seq 0 $MAX)
 do
   couple=$(echo "$data"|jq -r '.['$i']')

@@ -1,59 +1,105 @@
 #!/bin/sh
+. /etc/profile >/dev/null
+export LD_LIBRARY_PATH="${SDCARD}/lib:/thirdlib:/system/lib/:/ipc/lib/"
+
+#### KOMENCO DE MASTRUMA KAPLINIO
+# Mallonga-priskribo: 
+# Komenco:
+# Retejo-administrita:ne
+#### FINO DE MASTRUMA KAPLINIO
+
 SERVICE_NAME="network"
 
 status()
 {
  eth0_state=`cat /sys/class/net/eth0/operstate`
  wlan0_state=`cat /sys/class/net/wlan0/operstate`
- echo "eth0 " $eth0_state " ; wlan0 " $wlan0_state "."
+ wlan1_state=`cat /sys/class/net/wlan1/operstate`
+ echo "eth0 " $eth0_state " ; wlan0 " $wlan0_state " ; wlan1 " $wlan1_state "."
 }
 
 start()
 {
- network_interface_name="eth0"
- ifconfig "$network_interface_name" up
- udhcpc_status=$(udhcpc -i "$network_interface_name" -p /var/run/udhcpc.pid -b -x hostname:"$(hostname)")
- echo "udhcpc: $udhcpc_status" >> $LOGPATH
- sleep 5
- eth0_state=`cat /sys/class/net/eth0/operstate`
+ .  ${SDCARD}/bin/JsAlVar ${SDCARD}/www/ipcam/config/reto.conf reto_conf 50
 
- ## elektu la interfacon por komenci.
- if [ x$eth0_state = xdown ]
+ ###### WLAN0 : kliento ######
+ if [ x${wlan0_aktiva} == x1 ]
  then
-  if [ ! -f $CONFIGPATH/wpa_supplicant.conf ]; then
-   echo "Averto: Vi devas agordi wpa_supplicant por uzi wifi. Bonvolu vidi /system/sdcard/config/wpa_supplicant.conf.dist ." >> $LOGPATH
-  fi
- fi
- if [ -f $CONFIGPATH/wpa_supplicant.conf ]; then 
+  echo $(date -Iseconds) " Komenco de wlan0. " >>$LOGPATH
   ifconfig wlan0 up
-  network_interface_name="wlan0"
+  # krei wpa_supplicant.conf kaj lanĉi wpa_supplicant
+  echo "# generita dosiero, ne ŝanĝu, ŝanĝoj perdiĝos!" >${SDCARD}/config/wpa_supplicant.conf
+  echo "# generated file, do not change, changes will be lost !" >>${SDCARD}/config/wpa_supplicant.conf
+  echo "ctrl_interface=/var/run/wpa_supplicant" >>${SDCARD}/config/wpa_supplicant.conf
+  echo "ctrl_interface_group=0" >>${SDCARD}/config/wpa_supplicant.conf
+  echo "ap_scan=1" >>${SDCARD}/config/wpa_supplicant.conf
+  echo "network={" >>${SDCARD}/config/wpa_supplicant.conf
+  echo "ssid=\"${wlan0_SSID}\"" >>${SDCARD}/config/wpa_supplicant.conf
+  echo "key_mgmt=WPA-PSK" >>${SDCARD}/config/wpa_supplicant.conf
+  echo "pairwise=CCMP TKIP" >>${SDCARD}/config/wpa_supplicant.conf
+  echo "group=CCMP TKIP WEP104 WEP40" >>${SDCARD}/config/wpa_supplicant.conf
+  echo "psk=\"${wlan0_pasvorto}\"" >>${SDCARD}/config/wpa_supplicant.conf
+  echo "priority=2" >>${SDCARD}/config/wpa_supplicant.conf
+  echo "}" >>${SDCARD}/config/wpa_supplicant.conf
   wpa_supplicant_status="$(wpa_supplicant -d -B -i wlan0 -c $CONFIGPATH/wpa_supplicant.conf -P /var/run/wpa_supplicant.pid)"
   echo "wpa_supplicant: $wpa_supplicant_status" >> $LOGPATH
+
+  if [ x"${wlan0_dhcp}" == x1 ]
+  then
+    echo $(date -Iseconds) " Komenco de udhcpc por wlan0. " >>$LOGPATH
+    udhcpc_status=$(udhcpc -i wlan0 -p /var/run/udhcpc_wlan0.pid -b -x hostname:"$(hostname)")
+    echo "udhcpc wlan0: $udhcpc_status" >> $LOGPATH
+  else
+    ifconfig wlan0 add $wlan0_ip netmask $wlan0_retmasko
+  fi
  fi
-
- ## Configure network address
- if [ -f "$CONFIGPATH/staticip.conf" ]; then
-  # Install a resolv.conf if present so DNS can work
-  if [ -f "$CONFIGPATH/resolv.conf" ]; then
-    cp "$CONFIGPATH/resolv.conf" /etc/resolv.conf
+ ###### eth0  ######
+ if [ x${eth0_aktiva} == x1 ]
+ then
+  ifconfig eth0 up
+  if [ x"${eth0_dhcp}" == x1 ]
+  then
+    echo $(date -Iseconds) " Komenco de udhcpc por eth0. " >>$LOGPATH
+    udhcpc_status=$(udhcpc -i eth0 -p /var/run/udhcpc_eth0.pid -b -x hostname:"$(hostname)")
+    echo "udhcpc eth0: $udhcpc_status" >> $LOGPATH
+  else
+    ifconfig eth0 add $eth0_ip netmask $eth0_retmasko
   fi
-
-  # Configure staticip/netmask from config/staticip.conf
-  staticip_and_netmask=$(cat "$CONFIGPATH/staticip.conf" | grep -v "^$" | grep -v "^#")
-  ifconfig "$network_interface_name" $staticip_and_netmask
-  ifconfig "$network_interface_name" up
-  # Configure default gateway
-  if [ -f "$CONFIGPATH/defaultgw.conf" ]; then
-    defaultgw=$(cat "$CONFIGPATH/defaultgw.conf" | grep -v "^$" | grep -v "^#")
-    route add default gw $defaultgw $network_interface_name
-    echo "Configured $defaultgw as default gateway" >> $LOGPATH
-  fi
-  echo "Configured $network_interface_name with static address $staticip_and_netmask" >> $LOGPATH
+ fi
+ ###### Enirejo ######
+ eth0_state=`cat /sys/class/net/eth0/operstate`
+ if [ x$eth0_state = xdown ]
+ then
+  echo eth0 down
  else
-  # Configure with DHCP client
-  ifconfig "$network_interface_name" up
-  udhcpc_status=$(udhcpc -i "$network_interface_name" -p /var/run/udhcpc.pid -b -x hostname:"$(hostname)")
-  echo "udhcpc: $udhcpc_status" >> $LOGPATH
+  echo eth0 up
+ fi
+ ###### WLAN1 : AP ######
+ if [ x${wlan1_aktiva} == x1 ]
+ then
+  echo $(date -Iseconds) " Komenco de wlan1. " >>$LOGPATH
+  # krei hostapd.conf kaj lanĉi hostapd
+  echo "# generita dosiero, ne ŝanĝu, ŝanĝoj perdiĝos!" >${SDCARD}/config/hostapd.conf
+  echo "# generated file, do not change, changes will be lost !" >>${SDCARD}/config/hostapd.conf
+  cat ${SDCARD}/config/hostapd.conf.dist >>${SDCARD}/config/hostapd.conf
+  echo "ssid=${wlan1_SSID}" >>${SDCARD}/config/hostapd.conf
+  echo "wpa_passphrase=${wlan1_pasvorto}" >>${SDCARD}/config/hostapd.conf
+  ${SDCARD}/controlscripts/hostapd start
+  # krei udhcpd.conf kaj lanĉi udhcpd
+  if [ x"${wlan1_dhcpstart}" != x ]
+  then
+    echo "# generita dosiero, ne ŝanĝu, ŝanĝoj perdiĝos!" >${SDCARD}/config/udhcpd.conf
+    echo "# generated file, do not change, changes will be lost !" >>${SDCARD}/config/udhcpd.conf
+    cat ${SDCARD}/config/udhcpd.conf.dist >>${SDCARD}/config/udhcpd.conf
+    echo "start ${wlan1_dhcpstart}" >>${SDCARD}/config/udhcpd.conf
+    echo "end ${wlan1_dhcpend}" >>${SDCARD}/config/udhcpd.conf
+    echo "option subnet ${wlan1_retmasko}" >>${SDCARD}/config/udhcpd.conf
+    echo "opt dns ${wlan1_ip}" >>${SDCARD}/config/udhcpd.conf
+    echo "opt router ${wlan1_ip}" >>${SDCARD}/config/udhcpd.conf
+    echo "opt wins ${wlan1_ip}" >>${SDCARD}/config/udhcpd.conf
+    ${SDCARD}/controlscripts/udhcpd start
+  fi
+  ifconfig wlan1 add $wlan1_ip netmask $wlan1_retmasko
  fi
 }
 

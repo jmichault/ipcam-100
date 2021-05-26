@@ -144,7 +144,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a id="title" class="navbar-brand" href="." class="lang" data-lang="T21 Kodumoj">T21</a>
+  <a id="title" class="navbar-brand onpage" href="javascript: void(0)" data-target="hejmo.html" class="lang" data-lang="T21 Kodumoj">T21</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -166,6 +166,7 @@
         <a class="nav-link dropdown-toggle lang" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-lang="Sistemo"></a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a id="system" class="dropdown-item lang onpage" href="javascript: void(0)" data-target="cgi-bin/system_system.cgi" data-lang="Sistemo"></a>
+          <a id="reto" class="dropdown-item lang onpage" href="javascript: void(0)" data-target="reto.html" data-lang="Reto"></a>
           <a hidden id="admin" class="dropdown-item lang onpage" href="javascript: void(0)" data-target="cgi-bin/system_admin.cgi" data-lang="Pasvortoj"></a>
           <a id="scripts" class="dropdown-item lang onpage" href="javascript: void(0)" data-target="cgi-bin/scripts.cgi" data-lang="Servoj"></a>
           <a hidden id="update" class="dropdown-item lang onpage" href="javascript: void(0)" data-target="update.html" data-lang="Ĝisdatigi"></a>
@@ -202,57 +203,6 @@
  </nav>
 
  <div id="content" class="container-fluid" >
-  <div class="row">
-   <div class="container col-2">
-     <br><br>
-     <input id="blue_led" type="checkbox" class="switch form-check-input" name="blue_led" data-checked="cgi-bin/action.cgi?cmd=blue_led_on" data-unchecked="cgi-bin/action.cgi?cmd=blue_led_off">
-     <label class="form-check-label lang" data-lang="Blanka LED"></label><br><br>
-     <input id="ir_led" type="checkbox" name="ir_led" class="switch form-check-input" data-checked="cgi-bin/action.cgi?cmd=ir_led_on" data-unchecked="cgi-bin/action.cgi?cmd=ir_led_off">
-     <label class="form-check-label lang" data-lang="Transruĝa LED"></label><br>
-   </div>
-   <div id="content2" class="container col-8">
-    <img width="100%" id="liveview" src="cgi-bin/currentpic.cgi" onerror="this.src='/unable_load.png';">
-    <div id="dpad_container">
-     <div id="dpad">
-      <div class="dpad_button up">
-       <!-- up -->
-       <a class="cam_button" href="javascript:void(0)" data-cmd="motor_up">
-        &#x25B2;
-       </a>
-      </div>
-      <div class="dpad_button down">
-       <!-- down -->
-       <a class="cam_button" href="javascript:void(0)" data-cmd="motor_down">
-        &#x25BC;
-       </a>
-      </div>
-      <div class="dpad_button left">
-       <!-- left -->
-       <a class="cam_button" href="javascript:void(0)" data-cmd="motor_left">
-        &#x25C0;
-       </a>
-      </div>
-      <div class="dpad_button right">
-       <!-- right -->
-       <a class="cam_button" href="javascript:void(0)" data-cmd="motor_right">
-        &#x25B6;
-       </a>
-      </div>
-      <div class="dpad_button p0">
-       <!-- P0 ... -->
-       <a class="cam_button" href="javascript:void(0)" data-cmd="motoro_poz&val=0"> P0 </a>
-       <a class="cam_button" href="javascript:void(0)" data-cmd="motoro_poz&val=1"> P1 </a>
-       <a class="cam_button" href="javascript:void(0)" data-cmd="motoro_poz&val=2"> P2 </a>
-       <a class="cam_button" href="javascript:void(0)" data-cmd="motoro_poz&val=3"> P3 </a>
-       <a class="cam_button" href="javascript:void(0)" data-cmd="motoro_poz&val=4"> P4 </a>
-      </div>
-     </div>
-    </div>
-    <div id="dpad_indicator">
-     &hArr;
-    </div>
-   </div>
-  </div>
  </div>
 
 

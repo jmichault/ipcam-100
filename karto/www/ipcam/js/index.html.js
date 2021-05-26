@@ -53,6 +53,7 @@ $(document).ready(function () {
    
     // Load link into #content
     $('.onpage').click(function () {
+        clearInterval(miaInterval);
         var e = $(this);
         var target = e.data('target');
         var cachebuster = "_=" + new Date().getTime();
@@ -149,15 +150,15 @@ $(document).ready(function () {
         $(document.location.hash).click();
     }
 
-    // Make liveview self refresh
-    //$("#liveview").attr("onload", "scheduleRefreshLiveImage(1000);");
-    var image = document.getElementById("liveview");
-    function updateImage() {
-        image.src = image.src.split("?")[0] + "?" + new Date().getTime();
-    }
-    setInterval(updateImage, 1000);
-
 });
+
+// Make liveview self refresh
+var image = document.getElementById("liveview");
+function updateImage() {
+  image.src = image.src.split("?")[0] + "?" + new Date().getTime();
+}
+var miaInterval = setInterval(updateImage, 1000);
+clearInterval(miaInterval);
 
 // set theme cookie
 function setCookie(name, value) {
