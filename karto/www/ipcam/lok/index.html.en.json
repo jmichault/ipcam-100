@@ -1,8 +1,6 @@
 {"":{"language":"en","plural-forms":"nplurals=2; plural=(n > 1);"}
-,"Blanka LED": "White LED"
 ,"Ĝisdatigi": "Update"
 ,"Kamerao": "Camera"
-,"LED agordoj": "LED settings"
 ,"Malŝalti": "Turn off"
 ,"Movado-Detekto": "Motion detection"
 ,"Nokta Agordoj": "SW night configuration"
@@ -12,6 +10,7 @@
 ,"Problemoj?": "Issues?"
 ,"Protokoloj": "Logs"
 ,"Restartigi": "Reboot"
+,"Reto": "Network"
 ,"Reto Informoj": "Network Information"
 ,"RTSP Agordoj": "RTSP settings"
 ,"Servoj": "Services"
@@ -20,6 +19,5 @@
 ,"Stato": "Status"
 ,"Superrigardo": "Overview"
 ,"T21 Kodumoj": "T21 Hacks"
-,"Transruĝa LED": "IR LED"
 ,"Versio :": "Version:"
 }

@@ -64,9 +64,10 @@ $(document).ready(function () {
             // new param
             cachebuster = "?" + cachebuster;
         }
-        $('#content').load(target + cachebuster,function() {
-          setPageLang(target,$('#content'));
-        });
+        $('#content').load(target + cachebuster);
+        //$('#content').load(target + cachebuster,function() {
+        //  setPageLang(target,$('#content'));
+        //});
     });
     // Load link into window
     $('.direct').click(function () {

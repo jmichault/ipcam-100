@@ -13,20 +13,12 @@ msgstr ""
 "X-Generator: html2pot\n"
 
 #, fuzzy
-msgid "Blanka LED"
-msgstr "হোয়াইট নেতৃত্বে"
-
-#, fuzzy
 msgid "Ĝisdatigi"
 msgstr "হালনাগাদ"
 
 #, fuzzy
 msgid "Kamerao"
 msgstr "ক্যামেরা"
-
-#, fuzzy
-msgid "LED agordoj"
-msgstr "LED সেটিংস"
 
 #, fuzzy
 msgid "Malŝalti"
@@ -65,6 +57,10 @@ msgid "Restartigi"
 msgstr "নতুন করে শুরু"
 
 #, fuzzy
+msgid "Reto"
+msgstr "অন্তর্জাল"
+
+#, fuzzy
 msgid "Reto Informoj"
 msgstr "নেটওয়ার্ক তথ্য"
 
@@ -97,12 +93,20 @@ msgid "T21 Kodumoj"
 msgstr "টি 21 কোড"
 
 #, fuzzy
-msgid "Transruĝa LED"
-msgstr "ইনফ্রারেড নেতৃত্বে"
-
-#, fuzzy
 msgid "Versio :"
 msgstr "সংস্করণ:"
+
+#, fuzzy
+#~ msgid "Blanka LED"
+#~ msgstr "হোয়াইট নেতৃত্বে"
+
+#, fuzzy
+#~ msgid "LED agordoj"
+#~ msgstr "LED সেটিংস"
+
+#, fuzzy
+#~ msgid "Transruĝa LED"
+#~ msgstr "ইনফ্রারেড নেতৃত্বে"
 
 #, fuzzy
 #~ msgid "Aŭtomata Nokta Detekto"
@@ -151,10 +155,6 @@ msgstr "সংস্করণ:"
 #, fuzzy
 #~ msgid "Obskura"
 #~ msgstr "অস্পষ্ট"
-
-#, fuzzy
-#~ msgid "Reto"
-#~ msgstr "অন্তর্জাল"
 
 #, fuzzy
 #~ msgid "RTSP-Servilo"

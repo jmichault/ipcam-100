@@ -1,8 +1,6 @@
 {"":{"language":"zh","plural-forms":"nplurals=2; plural=(n > 1);"}
-,"Blanka LED": "白色LED"
 ,"Ĝisdatigi": "更新"
 ,"Kamerao": "相机"
-,"LED agordoj": "LED设置"
 ,"Malŝalti": "关"
 ,"Movado-Detekto": "运动检测"
 ,"Nokta Agordoj": "夜间设置"
@@ -12,6 +10,7 @@
 ,"Problemoj?": "问题？"
 ,"Protokoloj": "协议"
 ,"Restartigi": "重新启动"
+,"Reto": "网络"
 ,"Reto Informoj": "网络信息"
 ,"RTSP Agordoj": "RTSP设置"
 ,"Servoj": "服务"
@@ -20,6 +19,5 @@
 ,"Stato": "状态"
 ,"Superrigardo": "概述"
 ,"T21 Kodumoj": "T21代码"
-,"Transruĝa LED": "红外LED"
 ,"Versio :": "版本："
 }

@@ -2,40 +2,26 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Paramètres vidéos</title>
+    <title class="lang" data-lang="Video Agordoj"></title>
     <link rel="stylesheet" style="text/css" href="../lib/bootstrap.min.css" />
   </head>
   <body>
-    <h1>Paramètres vidéos :</h1>
-    <form id="myForm"></form>
+    <h1 class="lang" data-lang="Video Agordoj :"></h1>
+    <form id="rtspForm"></form>
     <div id="res" class="alert"></div>
     <!-- voir https://github.com/jsonform/jsonform/wiki -->
     <script type="text/javascript" src="../lib/jquery.min.js"></script>
     <script type="text/javascript" src="../lib/underscore.js"></script>
     <script type="text/javascript" src="../lib/jsv.js"></script>
     <script type="text/javascript" src="../lib/jsonform.min.js"></script>
-    <script type="text/javascript" src="forms/rtsp_form.js"></script>
+    <script type="text/javascript" src="forms/rtsp.html.js"></script>
     <script type="text/javascript" src="config/rtsp.conf"></script>
     <script type="text/javascript">
+      setPageLang('rtsp.html',$(window));
+      setFormLang(rtsp_jsForm);
       $('form').jsonForm(rtsp_jsForm );
       config.forEach(setformval);
-
-      function setformval(elt,index,array){
-        var $el = $('[name="'+elt.name+'"]'),
-         type = $el.attr('type');
-        $el.val(elt.value);
-        switch(type){
-          case 'checkbox':
-            $el.attr('checked', 'checked');
-            break;
-          case 'radio':
-            $el.filter('[value="'+elt.value+'"]').attr('checked', 'checked');
-            break;
-          default:
-            $el.val(elt.value);
-        }
-       };
-
+      $('#rtspForm .nav-link')[0].click();
     </script>
   </body>
 </html>

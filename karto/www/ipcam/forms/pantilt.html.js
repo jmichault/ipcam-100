@@ -28,7 +28,7 @@ var ptz_jsForm=
  onSubmit: function (errors, values) {
    if (errors)
    {
-     $('#res').html('<p>Données incorrectes.</p>');
+     $('#res').html('<p>Malĝustaj datumoj.</p>');
    }
    else
    { 
@@ -36,11 +36,11 @@ var ptz_jsForm=
      var XHR = new XMLHttpRequest();
      var FD = JSON.stringify($("#ptz_form").serializeArray());
      XHR.addEventListener("load", function(event) {
-         $('#res').html('<p> Changements enregistrés.</p>');
+         $('#res').html('<p>Ŝanĝoj konservitaj.</p>');
        });
 
      XHR.addEventListener("error", function(event) {
-         $('#res').html('<p> Erreur dans l enregistrement.</p>');
+         $('#res').html('<p>Eraro dum registrado.</p>');
        });
 
      XHR.open("POST", "cgi-bin/conf_sav.cgi?file=ptz.conf");

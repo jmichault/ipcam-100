@@ -13,20 +13,12 @@ msgstr ""
 "X-Generator: html2pot\n"
 
 #, fuzzy
-msgid "Blanka LED"
-msgstr "LED blanco"
-
-#, fuzzy
 msgid "Ĝisdatigi"
 msgstr "Actualizar"
 
 #, fuzzy
 msgid "Kamerao"
 msgstr "Cámara"
-
-#, fuzzy
-msgid "LED agordoj"
-msgstr "Configuraciones LED"
 
 #, fuzzy
 msgid "Malŝalti"
@@ -65,6 +57,10 @@ msgid "Restartigi"
 msgstr "Para reiniciar"
 
 #, fuzzy
+msgid "Reto"
+msgstr "La red"
+
+#, fuzzy
 msgid "Reto Informoj"
 msgstr "Información de la red"
 
@@ -97,12 +93,20 @@ msgid "T21 Kodumoj"
 msgstr "Códigos T21"
 
 #, fuzzy
-msgid "Transruĝa LED"
-msgstr "LED infrarrojo"
-
-#, fuzzy
 msgid "Versio :"
 msgstr "Versión:"
+
+#, fuzzy
+#~ msgid "Blanka LED"
+#~ msgstr "LED blanco"
+
+#, fuzzy
+#~ msgid "LED agordoj"
+#~ msgstr "Configuraciones LED"
+
+#, fuzzy
+#~ msgid "Transruĝa LED"
+#~ msgstr "LED infrarrojo"
 
 #, fuzzy
 #~ msgid "Aŭtomata Nokta Detekto"
@@ -151,10 +155,6 @@ msgstr "Versión:"
 #, fuzzy
 #~ msgid "Obskura"
 #~ msgstr "Oscuro"
-
-#, fuzzy
-#~ msgid "Reto"
-#~ msgstr "La red"
 
 #, fuzzy
 #~ msgid "RTSP-Servilo"

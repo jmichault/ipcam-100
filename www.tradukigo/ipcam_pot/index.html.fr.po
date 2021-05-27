@@ -12,18 +12,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: html2pot\n"
 
-msgid "Blanka LED"
-msgstr "LED blanche"
-
 msgid "Ĝisdatigi"
 msgstr "Mettre à jour"
 
 #, fuzzy
 msgid "Kamerao"
 msgstr "Caméra"
-
-msgid "LED agordoj"
-msgstr "Paramètres LED"
 
 msgid "Malŝalti"
 msgstr "Éteindre"
@@ -52,6 +46,9 @@ msgstr "Journaux"
 msgid "Restartigi"
 msgstr "Redémarrer"
 
+msgid "Reto"
+msgstr "Réseau"
+
 msgid "Reto Informoj"
 msgstr "Informations sur le réseau"
 
@@ -76,11 +73,17 @@ msgstr "Aperçu"
 msgid "T21 Kodumoj"
 msgstr "Codes T21"
 
-msgid "Transruĝa LED"
-msgstr "LED infrarouge"
-
 msgid "Versio :"
 msgstr "Version:"
+
+#~ msgid "Blanka LED"
+#~ msgstr "LED blanche"
+
+#~ msgid "LED agordoj"
+#~ msgstr "Paramètres LED"
+
+#~ msgid "Transruĝa LED"
+#~ msgstr "LED infrarouge"
 
 #~ msgid "Aŭtomata Nokta Detekto"
 #~ msgstr "Détection automatique de la nuit"
@@ -118,9 +121,6 @@ msgstr "Version:"
 
 #~ msgid "Obskura"
 #~ msgstr "Sombre"
-
-#~ msgid "Reto"
-#~ msgstr "Réseau"
 
 #~ msgid "RTSP-Servilo"
 #~ msgstr "Service RTSP"

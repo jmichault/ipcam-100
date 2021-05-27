@@ -1,8 +1,6 @@
 {"":{"language":"nl","plural-forms":"nplurals=2; plural=(n > 1);"}
-,"Blanka LED": "Witte led"
 ,"Ĝisdatigi": "Bijwerken"
 ,"Kamerao": "Camera"
-,"LED agordoj": "LED-instellingen"
 ,"Malŝalti": "Uitschakelen"
 ,"Movado-Detekto": "Bewegingsdetectie"
 ,"Nokta Agordoj": "Nachtinstellingen"
@@ -12,6 +10,7 @@
 ,"Problemoj?": "Problemen?"
 ,"Protokoloj": "Protocollen"
 ,"Restartigi": "Herstarten"
+,"Reto": "Netwerk"
 ,"Reto Informoj": "Netwerkinformatie"
 ,"RTSP Agordoj": "RTSP-instellingen"
 ,"Servoj": "Diensten"
@@ -20,6 +19,5 @@
 ,"Stato": "Staat"
 ,"Superrigardo": "Overzicht"
 ,"T21 Kodumoj": "T21-codes"
-,"Transruĝa LED": "Infrarood-LED"
 ,"Versio :": "Versie:"
 }

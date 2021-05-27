@@ -1,0 +1,65 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: eo\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+msgid ""
+msgstr ""
+
+msgid "adreso de sensilo"
+msgstr ""
+
+msgid "alteco"
+msgstr ""
+
+msgid "bildograndeco (sekundara kanalo devas esti malpli granda)"
+msgstr ""
+
+msgid "bitrapido (kbps)"
+msgstr ""
+
+msgid "capteur"
+msgstr ""
+
+msgid "ĉefa kanalo"
+msgstr ""
+
+msgid "duaranga kanalo"
+msgstr ""
+
+msgid "interfaco :"
+msgstr ""
+
+msgid "larĝo"
+msgstr ""
+
+msgid "maxQP (pli malalta = pli bona kvalito)"
+msgstr ""
+
+msgid "minQP (pli malalta = pli bona kvalito)"
+msgstr ""
+
+msgid "nombro da kadroj sekunde"
+msgstr ""
+
+msgid "nomo de sensilo :"
+msgstr ""
+
+msgid "Video Agordoj"
+msgstr ""
+
+msgid "Video Agordoj :"
+msgstr ""
+
+msgid "video-formato"
+msgstr ""
+

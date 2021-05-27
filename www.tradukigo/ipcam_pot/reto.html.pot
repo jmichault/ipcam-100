@@ -1,0 +1,77 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: eo\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+msgid "Reto-Agordoj"
+msgstr ""
+
+msgid "-"
+msgstr ""
+
+msgid "/"
+msgstr ""
+
+msgid "Adresoj gamo :"
+msgstr ""
+
+msgid "Aktivi :"
+msgstr ""
+
+msgid "dns1 IP-adreso :"
+msgstr ""
+
+msgid "dns2 IP-adreso :"
+msgstr ""
+
+msgid "enirejo :"
+msgstr ""
+
+msgid "ĝeneralaj agordoj"
+msgstr ""
+
+msgid "IP-adreso :"
+msgstr ""
+
+msgid "LAN eth0"
+msgstr ""
+
+msgid "SSID :"
+msgstr ""
+
+msgid "<strong>DHCP Servilo :</strong>"
+msgstr ""
+
+msgid "<strong>DNS Serviloj :</strong>"
+msgstr ""
+
+msgid "<strong>IP Agordoj :</strong>"
+msgstr ""
+
+msgid "<strong>manaj IP-agordoj (estos ignorita se dhcp estas ebligita) :</strong>"
+msgstr ""
+
+msgid "<strong>Wifi Agordoj :</strong>"
+msgstr ""
+
+msgid "Uzi dhcp :"
+msgstr ""
+
+msgid "WiFi-AP wlan1"
+msgstr ""
+
+msgid "WiFi-kliento wlan0"
+msgstr ""
+
+msgid "WiFi pasvorto :"
+msgstr ""
+

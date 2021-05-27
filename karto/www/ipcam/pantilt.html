@@ -86,7 +86,7 @@
     <script type="text/javascript" src="../lib/jsv.js"></script>
     <script type="text/javascript" src="../lib/jsonform.min.js"></script>
     <script type="text/javascript" src="js/forms.js"></script>
-    <script type="text/javascript" src="forms/ptz.js"></script>
+    <script type="text/javascript" src="forms/pantilt.html.js"></script>
     <script type="text/javascript" src="config/ptz.conf"></script>
     <script type="text/javascript">
     function setPoz(poz) {
@@ -96,12 +96,11 @@
         var elY = $('[name="P['+poz+'].Y"]');
         elY.val(val[2]);
     }
-    $(document).ready(function () {
-      $('#ptz_form').jsonForm(ptz_jsForm );
-      ptz_conf.forEach(setformval);
-      // Make liveview self refresh
-      image = document.getElementById("liveview");
-      miaInterval = setInterval(updateImage, 1000);
-    })
+    setPageLang('pantilt.html',$(window));
+    setFormLang(ptz_jsForm);
+    $('#ptz_form').jsonForm(ptz_jsForm );
+    ptz_conf.forEach(setformval);
+    // Make liveview self refresh
+    image = document.getElementById("liveview");
+    miaInterval = setInterval(updateImage, 1000);
     </script>
-

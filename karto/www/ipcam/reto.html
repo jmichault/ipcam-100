@@ -1,15 +1,18 @@
-    <h1>Reto-Agordoj</h1>
-    <form class="bg-light" id="retoForm"></form>
-    <div id="res" class="alert"></div>
-    <!-- voir https://github.com/jsonform/jsonform/wiki -->
-    <script type="text/javascript" src="../lib/jquery.min.js"></script>
-    <script type="text/javascript" src="../lib/underscore.js"></script>
-    <script type="text/javascript" src="../lib/jsv.js"></script>
-    <script type="text/javascript" src="../lib/jsonform.min.js"></script>
-    <script type="text/javascript" src="js/forms.js"></script>
-    <script type="text/javascript" src="forms/reto.js"></script>
-    <script type="text/javascript" src="config/reto.conf"></script>
-    <script type="text/javascript">
-      $('form').jsonForm(reto_jsForm );
-      reto_conf.forEach(setformval);
-    </script>
+<h1 class="lang" data-lang="Reto-Agordoj"></h1>
+<form class="bg-light rounded-lg" id="retoForm"></form>
+<div id="res" class="alert"></div>
+<!-- voir https://github.com/jsonform/jsonform/wiki -->
+<script type="text/javascript" src="../lib/jquery.min.js"></script>
+<script type="text/javascript" src="../lib/underscore.js"></script>
+<script type="text/javascript" src="../lib/jsv.js"></script>
+<script type="text/javascript" src="../lib/jsonform.min.js"></script>
+<script type="text/javascript" src="js/forms.js"></script>
+<script type="text/javascript" src="forms/reto.html.js"></script>
+<script type="text/javascript" src="config/reto.conf"></script>
+<script type="text/javascript">
+  setPageLang('reto.html',$(window));
+  setFormLang(reto_jsForm);
+  $('#retoForm').jsonForm(reto_jsForm );
+  reto_conf.forEach(setformval);
+  $('#retoForm .nav-link')[0].click();
+</script>

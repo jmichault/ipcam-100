@@ -1,8 +1,6 @@
 {"":{"language":"bn","plural-forms":"nplurals=2; plural=(n > 1);"}
-,"Blanka LED": "হোয়াইট নেতৃত্বে"
 ,"Ĝisdatigi": "হালনাগাদ"
 ,"Kamerao": "ক্যামেরা"
-,"LED agordoj": "LED সেটিংস"
 ,"Malŝalti": "বন্ধ কর"
 ,"Movado-Detekto": "আন্দোলন সনাক্তকরণ"
 ,"Nokta Agordoj": "নাইট সেটিংস"
@@ -12,6 +10,7 @@
 ,"Problemoj?": "সমস্যা?"
 ,"Protokoloj": "প্রোটোকল"
 ,"Restartigi": "নতুন করে শুরু"
+,"Reto": "অন্তর্জাল"
 ,"Reto Informoj": "নেটওয়ার্ক তথ্য"
 ,"RTSP Agordoj": "RTSP সেটিংস"
 ,"Servoj": "সেবা"
@@ -20,6 +19,5 @@
 ,"Stato": "রাষ্ট্র"
 ,"Superrigardo": "সংক্ষিপ্ত বিবরণ"
 ,"T21 Kodumoj": "টি 21 কোড"
-,"Transruĝa LED": "ইনফ্রারেড নেতৃত্বে"
 ,"Versio :": "সংস্করণ:"
 }

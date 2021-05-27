@@ -13,20 +13,12 @@ msgstr ""
 "X-Generator: html2pot\n"
 
 #, fuzzy
-msgid "Blanka LED"
-msgstr "Putih LED."
-
-#, fuzzy
 msgid "Ĝisdatigi"
 msgstr "Kemas kini"
 
 #, fuzzy
 msgid "Kamerao"
 msgstr "Kamera"
-
-#, fuzzy
-msgid "LED agordoj"
-msgstr "Tetapan LED."
 
 #, fuzzy
 msgid "Malŝalti"
@@ -65,6 +57,10 @@ msgid "Restartigi"
 msgstr "Untuk memulakan semula"
 
 #, fuzzy
+msgid "Reto"
+msgstr "Rangkaian"
+
+#, fuzzy
 msgid "Reto Informoj"
 msgstr "Maklumat rangkaian"
 
@@ -97,12 +93,20 @@ msgid "T21 Kodumoj"
 msgstr "Kod t21."
 
 #, fuzzy
-msgid "Transruĝa LED"
-msgstr "Inframerah LED."
-
-#, fuzzy
 msgid "Versio :"
 msgstr "Versi:"
+
+#, fuzzy
+#~ msgid "Blanka LED"
+#~ msgstr "Putih LED."
+
+#, fuzzy
+#~ msgid "LED agordoj"
+#~ msgstr "Tetapan LED."
+
+#, fuzzy
+#~ msgid "Transruĝa LED"
+#~ msgstr "Inframerah LED."
 
 #, fuzzy
 #~ msgid "Aŭtomata Nokta Detekto"
@@ -151,10 +155,6 @@ msgstr "Versi:"
 #, fuzzy
 #~ msgid "Obskura"
 #~ msgstr "Tidak jelas"
-
-#, fuzzy
-#~ msgid "Reto"
-#~ msgstr "Rangkaian"
 
 #, fuzzy
 #~ msgid "RTSP-Servilo"
