@@ -3,7 +3,7 @@
 BAZO=$(dirname $(readlink -f $0))
 cd "$BAZO"
 
-for FIC in index.html logs.html cgi-bin/status_overview.cgi
+for FIC in reto.html pantilt.html rtsp.html index.html logs.html cgi-bin/status_overview.cgi
 do
   
   if [ ! -f ipcam_pot/$FIC.pot -o ../karto/www/ipcam/$FIC -nt ipcam_pot/$FIC.pot ] ; then

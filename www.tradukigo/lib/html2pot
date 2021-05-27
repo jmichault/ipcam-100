@@ -18,17 +18,20 @@ msgstr ""
 
 EOF
 
-grep "data-lang" $1|sed "s/.*data-lang=\"//;s/\"[ \t]*>.*//"|sort -u|while read TXT
-do
-  echo msgid \"$TXT\"
-  echo msgstr \"\"
-  echo
-done
-grep 'gettext("' $1|sed 's/.*gettext("//;s/\").*//'|sort -u|while read TXT
-do
-  echo msgid \"$TXT\"
-  echo msgstr \"\"
-  echo
-done
+function sercxi()
+{
+# ŝerĉas por data-lang (html files)
+ grep "data-lang" $1|sed "s/.*data-lang=\"//;s/\"[ \t]*>.*//"
+# ŝerĉas por gettext (javascript or cgi files)
+ grep 'gettext("' $1|sed 's/.*gettext("//;s/\").*//'
+# ŝerĉas por title: or helpvalue in forms
+ egrep 'title"*:|helpvalue"*:' $(dirname $1)/forms/$(basename $1).js|sed 's/.*\(title\|helpvalue\)"*: *"//;s/\".*//' 
+}
 
+sercxi $1|sort -u|while read TXT
+do
+  echo msgid \"$TXT\"
+  echo msgstr \"\"
+  echo
+done
 
