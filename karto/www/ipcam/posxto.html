@@ -1,0 +1,12 @@
+<h1 class="lang" data-lang="Poŝto-Agordoj"></h1>
+<form class="form-inline bg-light rounded-lg py-3 px-3" id="posxtoForm"></form>
+<div id="res" class="alert"></div>
+<!-- voir https://github.com/jsonform/jsonform/wiki -->
+<script type="text/javascript" src="forms/posxto.html.js"></script>
+<script type="text/javascript" src="config/posxto.conf"></script>
+<script type="text/javascript">
+  setPageLang('posxto.html',$(window));
+  setFormLang(posxto_jsForm);
+  $('#posxtoForm').jsonForm(posxto_jsForm );
+  posxto_conf.forEach(setformval);
+</script>
