@@ -14,16 +14,18 @@ then
   MAX=$3
 fi
 
-data=$(cat "$FIC"|grep "^${VAR}="|sed "s/^${VAR}=//")
+data=$(cat "$FIC"|grep -E "^(var)* *${VAR}="|sed -E "s/^(var)* *${VAR}=//;s/ *; *$//")
 #echo data=$data
 for i in $(seq 0 $MAX)
 do
   couple=$(echo "$data"|jq -r '.['$i']')
+#echo couple=$couple
   nomo=$(echo "$couple"|jq -r '.name'|sed 's/[\.\[]//g;s/\]//g')
   valoro=$(echo "$couple"|jq -r '.value')
-  if [ x"$valoro" == xnull ]
+  if [ x"$valoro" == "xnull" -o x"$valoro" == "x" ]
   then
     break
   fi
+#echo $nomo="$valoro"
 export $nomo="$valoro"
 done

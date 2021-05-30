@@ -64,6 +64,6 @@ done
 printf '%s\n' "--${boundary}--"
 printf '%s\n' "-- End --"
 
-} | busybox sendmail -H"exec /opt/media/sdc/bin/openssl s_client -quiet -connect $SERVER:$PORT" -f"$FROM" -au"$AUTH" -ap"$PASS" $TO 2>/dev/null
+} | busybox sendmail -H"exec /opt/media/sdc/bin/openssl s_client -quiet -connect $SERVER:$PORT" -f"$FROM" -au"$AUTH" -ap"$PASS" $SciiMailAl
 
 rm /tmp/sendPictureMail.lock

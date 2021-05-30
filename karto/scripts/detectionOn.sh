@@ -3,6 +3,12 @@
 # Source your custom motion configurations
 . ${SDCARD}/scripts/common_functions.sh
 
+motion_trigger_led=true
+max_snapshots=20
+save_dir=/opt/media/sdc/motion/stills
+save_file_date_pattern="+%d-%m-%Y_%H.%M.%S"
+
+
 .  JsAlVar ${SDCARD}/www/ipcam/config/movo.conf DetektoDatenoj
 
 

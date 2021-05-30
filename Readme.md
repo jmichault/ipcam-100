@@ -19,7 +19,7 @@ WebVersion:     V2.3.4-20190709
 procesoro : ingenic T21  
 video-sentilo : GC2053
 
-Multa laboro estis farita por kameraoj ekipitaj per inĝenia T20-procesoro.  
+Multa laboro estis farita por kameraoj ekipitaj per ingenic T20-procesoro.  
 modifitaj firmvaroj :  https://github.com/EliasKotlyar/Xiaomi-Dafang-Hacks  
 fontoj de modifitaj firmvaroj : https://github.com/Dafang-Hacks/Main  
 https://github.com/openmiko/openmiko
@@ -35,8 +35,7 @@ Kio funkcias en alternativa firmvaro:
 * kalibrado de motoro
 * PTZ agordoj
 * NTP kliento
-* ŝanĝo de pasvorto por http-aliro
-* blua kaj IR LED kontrolo
+* blanka kaj IR LED kontrolo
 * FTP servilo
 * Video-Agordoj
 * duaranga videorivereto
@@ -44,13 +43,13 @@ Kio funkcias en alternativa firmvaro:
 * mail
 
 Kio ne funkcias en alternativa firmvaro:
-* sondosistemo
+* sonosistemo
 * OSD
 * aŭtomata nokta detekto
 * ĝisdatigo de firmvaro
 * ir-cut
 * mqtt
-* pasvorto por rtsp.
+* ŝanĝo de pasvorto por http-aliro,rtsp,ssh.
 * ktp ...
 
 Instalado alternativan firmvaron :  
