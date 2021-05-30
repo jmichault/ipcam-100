@@ -12,3 +12,71 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: html2pot\n"
 
+#, fuzzy
+msgid "adreso de sensilo"
+msgstr "                                                                                                                                                          ﺭﺎﻌﺸﺘﺳﻻ﻿ﺍ ﺯﺎﻬﺟ ﻥﺍﻮﻨﻋ"
+
+#, fuzzy
+msgid "alteco"
+msgstr "                                                                                                                                                                       ﻉﺎﻔﺗﺭﺍ"
+
+#, fuzzy
+msgid "bildograndeco (sekundara kanalo devas esti malpli granda)"
+msgstr ")ﺮﻐﺻﺃ ﺔﻳﻮﻧﺎﺜﻟﺍ ﺓﺎﻨﻘﻟﺍ ﻥﻮﻜﺗ ﻥﺃ ﺐﺠﻳ (ﺓﺭﻮﺼﻟﺍ ﻢﺠﺣ"
+
+#, fuzzy
+msgid "bitrapido (kbps)"
+msgstr "                                                                                                                                               kbps) (ﺖﺒﻟﺍ ﻝﺪﻌﻣ"
+
+#, fuzzy
+msgid "capteur"
+msgstr "                                                                                                                                                                     ﺮﻌﺸﺘﺴﻤﻟﺍ"
+
+#, fuzzy
+msgid "ĉefa kanalo"
+msgstr "                                                                                                                                                                     ﺮﻌﺸﺘﺴﻤﻟﺍ"
+
+#, fuzzy
+msgid "duaranga kanalo"
+msgstr "                                                                                                                                                                     ﺮﻌﺸﺘﺴﻤﻟﺍ"
+
+#, fuzzy
+msgid "interfaco :"
+msgstr "                                                                                                                                                                     ﺮﻌﺸﺘﺴﻤﻟﺍ"
+
+#, fuzzy
+msgid "larĝo"
+msgstr "                                                                                                                                                                     ﺮﻌﺸﺘﺴﻤﻟﺍ"
+
+#, fuzzy
+msgid "maxQP (pli malalta = pli bona kvalito)"
+msgstr "                                                                                                                                                                     ﺮﻌﺸﺘﺴﻤﻟﺍ"
+
+#, fuzzy
+msgid "minQP (pli malalta = pli bona kvalito)"
+msgstr "                                                                                                                                                                     ﺮﻌﺸﺘﺴﻤﻟﺍ"
+
+#, fuzzy
+msgid "nombro da kadroj sekunde"
+msgstr "                                                                                                                                                                     ﺮﻌﺸﺘﺴﻤﻟﺍ"
+
+#, fuzzy
+msgid "nomo de sensilo :"
+msgstr "                                                                                                                                                                     ﺮﻌﺸﺘﺴﻤﻟﺍ"
+
+#, fuzzy
+msgid "sensor"
+msgstr "                                                                                                                                                                     ﺮﻌﺸﺘﺴﻤﻟﺍ"
+
+#, fuzzy
+msgid "Video Agordoj :"
+msgstr "                                                                                                                                                                     ﺮﻌﺸﺘﺴﻤﻟﺍ"
+
+#, fuzzy
+msgid "video-formato"
+msgstr "                                                                                                                                                                     ﺮﻌﺸﺘﺴﻤﻟﺍ"
+
+#, fuzzy
+msgid "videotrajtoj"
+msgstr "                                                                                                                                                                     ﺮﻌﺸﺘﺴﻤﻟﺍ"
+

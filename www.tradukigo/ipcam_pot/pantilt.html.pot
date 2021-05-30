@@ -18,13 +18,13 @@ msgstr ""
 msgid "Motoro Testo"
 msgstr ""
 
-msgid "&uarr; Supra"
-msgstr ""
-
 msgid "Pozicio : X ="
 msgstr ""
 
 msgid "Rapideco :"
+msgstr ""
+
+msgid "&uarr; Supra"
 msgstr ""
 
 msgid "Y ="

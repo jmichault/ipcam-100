@@ -12,9 +12,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: html2pot\n"
 
-msgid ""
-msgstr ""
-
 msgid "adreso de sensilo"
 msgstr ""
 
@@ -54,12 +51,15 @@ msgstr ""
 msgid "nomo de sensilo :"
 msgstr ""
 
-msgid "Video Agordoj"
+msgid "sensor"
 msgstr ""
 
 msgid "Video Agordoj :"
 msgstr ""
 
 msgid "video-formato"
+msgstr ""
+
+msgid "videotrajtoj"
 msgstr ""
 

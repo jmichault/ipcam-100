@@ -21,7 +21,7 @@ var rtsp_jsForm=
     items:
     {
       type: "object",
-      title: ""videotrajtoj ,
+      title: "videotrajtoj" ,
       properties:
       {
         taille: { type: 'string', title: "bildograndeco (sekundara kanalo devas esti malpli granda)", enum : [ "1920x1080","1280x720","640x360" ] },
@@ -35,25 +35,31 @@ var rtsp_jsForm=
    }
  },
  form:
- [{
-    key:"sensor",
-  },
-  {
-   type: "tabs"
-  ,id: "tabs"
-  ,items: 
-    [{
+ [ {
+   type: "tabs",
+   id: "tabs",
+   items: 
+    [ {
+      title: "sensor",
+      type: "tab",
+      htmlClass: "py-3 px-3 ", 
+      items:
+      [{
+        key:"sensor",
+      }]
+    },
+    {
       title: "ĉefa kanalo",
-      type: "tab"
-      ,items:
+      type: "tab",
+      items:
       [{
         key: "canal[1]",
       }]
     },
     {
       title: "duaranga kanalo",
-      type: "tab"
-      ,items:
+      type: "tab",
+      items:
       [{
         key: "canal[2]",
       }]
@@ -79,7 +85,7 @@ var rtsp_jsForm=
    { 
      // voir https://api.jquery.com/serializearray/
      var XHR = new XMLHttpRequest();
-     var FD = JSON.stringify($("#myForm").serializeArray());
+     var FD = JSON.stringify($("#rtspForm").serializeArray());
      XHR.addEventListener("load", function(event) {
          $('#res').html('<p>Ŝanĝoj konservitaj.</p>');
        });

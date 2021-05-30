@@ -1,0 +1,101 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+msgid ""
+msgstr ""
+
+#, fuzzy
+msgid "Al :"
+msgstr ""
+
+#, fuzzy
+msgid "Areoj"
+msgstr ""
+
+#, fuzzy
+msgid "Detekto Aktivida :"
+msgstr ""
+
+#, fuzzy
+msgid "Fina Tempo"
+msgstr ""
+
+#, fuzzy
+msgid "ĝeneralaj agordoj"
+msgstr ""
+
+#, fuzzy
+msgid "Maksimuma nombro de samtempaj zonoj kun movado"
+msgstr ""
+
+#, fuzzy
+msgid "Minimuma nombro de zonoj dum movado"
+msgstr ""
+
+#, fuzzy
+msgid "Movo-Agordoj"
+msgstr ""
+
+#, fuzzy
+msgid "Ordonon:"
+msgstr ""
+
+#, fuzzy
+msgid "plenumi ordonon:"
+msgstr ""
+
+#, fuzzy
+msgid "Sciigo"
+msgstr ""
+
+#, fuzzy
+msgid "Senaktiva Tempo"
+msgstr ""
+
+#, fuzzy
+msgid "sendi retpoŝton :"
+msgstr ""
+
+#, fuzzy
+msgid "sendi «telegram» :"
+msgstr ""
+
+#, fuzzy
+msgid "sendi «URL» :"
+msgstr ""
+
+#, fuzzy
+msgid "Sentemo :"
+msgstr ""
+
+#, fuzzy
+msgid "Stokado"
+msgstr ""
+
+#, fuzzy
+msgid "stoki bildojn :"
+msgstr ""
+
+#, fuzzy
+msgid "stoki filmetojn :"
+msgstr ""
+
+#, fuzzy
+msgid "stoki sur fora servilo :"
+msgstr ""
+
+#, fuzzy
+msgid "Url :"
+msgstr ""
+

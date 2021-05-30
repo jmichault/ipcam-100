@@ -52,9 +52,36 @@
 
   <script type="text/javascript">
    $(document).ready(function () {
-      // Make liveview self refresh
-      image = document.getElementById("liveview");
-      miaInterval = setInterval(updateImage, 1000);
+    setPageLang('hejmo.html',$(window));
+    // Make liveview self refresh
+    image = document.getElementById("liveview");
+    miaInterval = setInterval(updateImage, 1000);
+    // Camera controls
+    $(".cam_button").click(function () {
+        var b = $(this);
+        $.get("cgi-bin/action.cgi?cmd=" + b.data('cmd')).done();
+    });
+    // Switch controls
+    $(".switch").click(function () {
+        var e = $(this);
+        e.prop('disabled', true);
+        $.get("cgi-bin/state.cgi", {
+            cmd: e.attr('id')
+        }).done(function (status) {
+            if (status.trim().toLowerCase() == "on") {
+                $.get(e.data('unchecked')).done(function (data) {
+                    e.prop('checked', false);
+                });
+            } else {
+                $.get(e.data('checked')).done(function (data) {
+                    e.prop('checked', true);
+                });
+            }
+            e.prop('disabled', false);
+        });
+    });
+
+
    })
   </script>
 

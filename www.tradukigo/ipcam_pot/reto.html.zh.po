@@ -13,87 +13,86 @@ msgstr ""
 "X-Generator: html2pot\n"
 
 #, fuzzy
+msgid "-"
+msgstr " - "
+
+#, fuzzy
+msgid "/"
+msgstr "/"
+
+#, fuzzy
+msgid "Adresoj gamo :"
+msgstr "地址范围："
+
+#, fuzzy
+msgid "Aktivi :"
+msgstr "资产："
+
+#, fuzzy
+msgid "dns1 IP-adreso :"
+msgstr "dns1 IP地址："
+
+#, fuzzy
+msgid "dns2 IP-adreso :"
+msgstr "dns2 IP地址："
+
+#, fuzzy
+msgid "enirejo :"
+msgstr "入口："
+
+#, fuzzy
+msgid "ĝeneralaj agordoj"
+msgstr "常规设置"
+
+#, fuzzy
+msgid "IP-adreso :"
+msgstr "IP地址："
+
+#, fuzzy
+msgid "LAN eth0"
+msgstr "局域网eth0"
+
+#, fuzzy
 msgid "Reto-Agordoj"
 msgstr "网络设置"
 
 #, fuzzy
-msgid "-"
-msgstr ""
-
-#, fuzzy
-msgid "/"
-msgstr ""
-
-#, fuzzy
-msgid "Adresoj gamo :"
-msgstr ""
-
-#, fuzzy
-msgid "Aktivi :"
-msgstr ""
-
-#, fuzzy
-msgid "dns1 IP-adreso :"
-msgstr ""
-
-#, fuzzy
-msgid "dns2 IP-adreso :"
-msgstr ""
-
-#, fuzzy
-msgid "enirejo :"
-msgstr ""
-
-#, fuzzy
-msgid "ĝeneralaj agordoj"
-msgstr ""
-
-#, fuzzy
-msgid "IP-adreso :"
-msgstr ""
-
-#, fuzzy
-msgid "LAN eth0"
-msgstr ""
-
-#, fuzzy
 msgid "SSID :"
-msgstr ""
+msgstr "SSID："
 
 #, fuzzy
 msgid "<strong>DHCP Servilo :</strong>"
-msgstr ""
+msgstr "<强>DHCP服务器：</强>"
 
 #, fuzzy
 msgid "<strong>DNS Serviloj :</strong>"
-msgstr ""
+msgstr "<强>DNS服务器：</强>"
 
 #, fuzzy
 msgid "<strong>IP Agordoj :</strong>"
-msgstr ""
+msgstr "<强>IP设置：</强>"
 
 #, fuzzy
-msgid ""
-"<strong>manaj IP-agordoj (estos ignorita se dhcp estas ebligita) :</strong>"
-msgstr ""
+msgid "<strong>manaj IP-agordoj (estos ignorita se dhcp estas ebligita) :</strong>"
+msgstr "如果启用了dhcp) ：</强>，将忽略<强>手动IP设置 ("
 
 #, fuzzy
 msgid "<strong>Wifi Agordoj :</strong>"
-msgstr ""
+msgstr "<强>Wifi设置：</强>"
 
 #, fuzzy
 msgid "Uzi dhcp :"
-msgstr ""
+msgstr "使用dhcp："
 
 #, fuzzy
 msgid "WiFi-AP wlan1"
-msgstr ""
+msgstr "WiFi-AP wlan1"
 
 #, fuzzy
 msgid "WiFi-kliento wlan0"
-msgstr ""
+msgstr "WiFi客户端wlan0"
 
 #, fuzzy
 msgid "WiFi pasvorto :"
-msgstr ""
+msgstr "WiFi密码："
 

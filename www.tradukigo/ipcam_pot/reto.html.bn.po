@@ -13,16 +13,12 @@ msgstr ""
 "X-Generator: html2pot\n"
 
 #, fuzzy
-msgid "Reto-Agordoj"
-msgstr "নেটওয়ার্ক সেটিংস"
-
-#, fuzzy
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #, fuzzy
 msgid "/"
-msgstr ""
+msgstr "/"
 
 #, fuzzy
 msgid "Adresoj gamo :"
@@ -57,6 +53,10 @@ msgid "LAN eth0"
 msgstr "ল্যান এথ0"
 
 #, fuzzy
+msgid "Reto-Agordoj"
+msgstr "নেটওয়ার্ক সেটিংস"
+
+#, fuzzy
 msgid "SSID :"
 msgstr "এসএসআইডি:"
 
@@ -73,8 +73,7 @@ msgid "<strong>IP Agordoj :</strong>"
 msgstr "<শক্তিশালী>আইপি সেটিংস:</ শক্তিশালী>"
 
 #, fuzzy
-msgid ""
-"<strong>manaj IP-agordoj (estos ignorita se dhcp estas ebligita) :</strong>"
+msgid "<strong>manaj IP-agordoj (estos ignorita se dhcp estas ebligita) :</strong>"
 msgstr "<শক্তিশালী>ম্যানুয়াল আইপি সেটিংস (উপেক্ষা করা হবে যদি ডিএইচসিপি সক্ষম হয়) :</ শক্তিশালী>"
 
 #, fuzzy
@@ -96,4 +95,3 @@ msgstr "ওয়াইফাই ক্লায়েন্ট wlan0"
 #, fuzzy
 msgid "WiFi pasvorto :"
 msgstr "ওয়াইফাই পাসওয়ার্ড:"
-

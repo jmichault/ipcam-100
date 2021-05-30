@@ -1,8 +1,8 @@
 {"":{"language":"fr","plural-forms":"nplurals=2; plural=(n > 1);"}
 ,"kopiu ĉi tiun pozicion al:": "copiez cette position dans:"
 ,"Motoro Testo": "Test moteur"
-,"&uarr; Supra": "↑ Supra"
-,"Pozicio : X =": ""
-,"Rapideco :": ""
-,"Y =": ""
+,"Pozicio : X =": "Position: X ="
+,"Rapideco :": "Vitesse:"
+,"&uarr; Supra": "&uarr; Haut"
+,"Y =": "Y ="
 }

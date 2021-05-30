@@ -8,7 +8,11 @@
 
 FIC=$1
 VAR=$2
-MAX=$3
+MAX=100
+if [ $# -gt 2 ]
+then
+  MAX=$3
+fi
 
 data=$(cat "$FIC"|grep "^${VAR}="|sed "s/^${VAR}=//")
 #echo data=$data

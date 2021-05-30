@@ -3,7 +3,7 @@
 BAZO=$(dirname $(readlink -f $0))
 cd "$BAZO"
 
-for FIC in reto.html pantilt.html rtsp.html index.html logs.html cgi-bin/status_overview.cgi
+for FIC in hejmo.html movo.html reto.html pantilt.html rtsp.html index.html logs.html cgi-bin/status_overview.cgi
 do
   
   if [ ! -f ipcam_pot/$FIC.pot -o ../karto/www/ipcam/$FIC -nt ipcam_pot/$FIC.pot ] ; then
@@ -17,21 +17,23 @@ do
     if [ ! -f ipcam_pot/$FIC.$lang.po ] ; then
       echo "krei ipcam_pot/${FIC}.${lang}.po"
       cat ipcam_pot/${FIC}.pot|sed "s/^\"Language: .*\\\n\"/\"Language: "${lang}"\\\n\"/" > ipcam_pot/${FIC}.${lang}.po
-      lib/traduki_po.sh ipcam_pot/${FIC}.${lang}.po
-      mv ipcam_pot/${FIC}.${lang}.po.nova ipcam_pot/${FIC}.${lang}.po
+      # lib/traduki_po.sh ipcam_pot/${FIC}.${lang}.po
+      # mv ipcam_pot/${FIC}.${lang}.po.nova ipcam_pot/${FIC}.${lang}.po
     elif [ ipcam_pot/$FIC.pot -nt ipcam_pot/${FIC}.${lang}.po ]; then
       echo "kunfandi ipcam_pot/${FIC}.${lang}.po"
-      msgmerge -U ipcam_pot/${FIC}.${lang}.po ipcam_pot/$FIC.pot
-      lib/traduki_po.sh ipcam_pot/${FIC}.${lang}.po
-      mv ipcam_pot/${FIC}.${lang}.po.nova ipcam_pot/${FIC}.${lang}.po
+      msgmerge --no-wrap -U ipcam_pot/${FIC}.${lang}.po ipcam_pot/$FIC.pot
+      # lib/traduki_po.sh ipcam_pot/${FIC}.${lang}.po
+      # mv ipcam_pot/${FIC}.${lang}.po.nova ipcam_pot/${FIC}.${lang}.po
+      touch ipcam_pot/${FIC}.${lang}.po
     else
-      lib/traduki_po.sh ipcam_pot/${FIC}.${lang}.po
-      if ! diff ipcam_pot/${FIC}.${lang}.po.nova ipcam_pot/${FIC}.${lang}.po >/dev/null 2>&1 ; then
-        echo "ĝisdatigi ipcam_pot/${FIC}.${lang}.po"
-        mv ipcam_pot/${FIC}.${lang}.po.nova ipcam_pot/${FIC}.${lang}.po
-      else
-        rm ipcam_pot/${FIC}.${lang}.po.nova
-      fi
+      # lib/traduki_po.sh ipcam_pot/${FIC}.${lang}.po
+      # if ! diff ipcam_pot/${FIC}.${lang}.po.nova ipcam_pot/${FIC}.${lang}.po >/dev/null 2>&1 ; then
+      #   echo "ĝisdatigi ipcam_pot/${FIC}.${lang}.po"
+      #   mv ipcam_pot/${FIC}.${lang}.po.nova ipcam_pot/${FIC}.${lang}.po
+      # else
+      #   rm ipcam_pot/${FIC}.${lang}.po.nova
+      # fi
+      true
     fi
     if [ ! -f ../karto/www/ipcam/lok/${FIC}.${lang}.json ] ; then
       echo krei karto/www/ipcam/lok/${FIC}.${lang}.json
@@ -39,6 +41,7 @@ do
     elif [ ipcam_pot/${FIC}.${lang}.po -nt ../karto/www/ipcam/lok/${FIC}.${lang}.json ] ; then
       echo ĝisdatigi karto/www/ipcam/lok/${FIC}.${lang}.json
       lib/po2json ipcam_pot/${FIC}.${lang}.po ../karto/www/ipcam/lok/${FIC}.${lang}.json
+      touch ../karto/www/ipcam/lok/${FIC}.${lang}.json
     fi
   done
 done  

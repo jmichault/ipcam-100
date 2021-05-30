@@ -34,6 +34,7 @@
 #define TAG "imp_komuna"
 #include "imp_komuna.h"
 #include "../rtspserver-tools/sharedmem.h"
+#include "movolegilo.h"
 
 //param
 IMP_IVS_MoveParam MovoParam=
@@ -143,21 +144,33 @@ static void *ivs_move_get_result_process(void *arg)
   int chn_num = (int)arg;
   IMP_IVS_MoveOutput *result = NULL;
   printf("get_result_process komenco\n");
+// movAgordo.Aktivida :
   bool inMovo=false;
+  int dumPauxzo=movAgordo.SenaktivaTempo*10;
+  int dumFina=0;
 
-  for (i = 0;  ; i++)
+  for (i = 0;  ; i++,usleep(100000))
   {
-    ret = IMP_IVS_PollingResult(chn_num, 1000); // timeout 1s
+    ret = IMP_IVS_PollingResult(chn_num, 10); // timeout 0.01s
     if (ret < 0) {
       IMP_LOG_ERR(TAG, "IMP_IVS_PollingResult(%d, %d) failed\n", chn_num, 2000);
       printf("timeout IMP_IVS_PollingResult\n");
-      usleep(100000);
       continue;
     }
     ret = IMP_IVS_GetResult(chn_num, (void **)&result);
     if (ret < 0) {
       fprintf(stderr , "%s: IMP_IVS_GetResult(%d) failed\n",TAG, chn_num);
-      usleep(100000);
+      continue;
+    }
+    ret = IMP_IVS_ReleaseResult(chn_num, (void *)result);
+    if (ret < 0) {
+      IMP_LOG_ERR(TAG, "IMP_IVS_ReleaseResult(%d) failed\n", chn_num);
+      continue;
+    }
+    if(dumPauxzo>0)
+    {
+      dumPauxzo--;
+      if(dumPauxzo==0) printf("finita paŭzo, aktiva detekto\n");
       continue;
     }
     int hasMove=0;
@@ -165,38 +178,40 @@ static void *ivs_move_get_result_process(void *arg)
     {
       if(result->retRoi[i])
       {
-        if(!hasMove) printf("Movo detekta en : ");
+        //if(!hasMove) printf("Movo detekta en : ");
         hasMove += result->retRoi[i];
-        printf( "%d ", i);
+        //printf( "%d ", i);
       }
     }
     if(hasMove)
     {
-      printf(".\n");
+      printf(".");
       if(!inMovo)
       {
         printf("Movado komenca.\n");
         inMovo=true;
-        exec_command(detectionScriptOn, NULL);
+        if(movAgordo.Aktivida) exec_command(detectionScriptOn, NULL);
       }
-      usleep(500000);
+      dumFina=movAgordo.FinaTempo*10;
     }
     else
     {
+      if(inMovo && dumFina>0)
+      {
+        dumFina --;
+        continue;
+      }
       if(inMovo)
       {
-        printf("Movado finita.\n");
+        printf("Movado finita, paŭza detekto.\n");
         inMovo=false;
-        exec_command(detectionScriptOff, NULL);
+        dumFina=0;
+        if(movAgordo.Aktivida)
+          exec_command(detectionScriptOff, NULL);
+        dumPauxzo=movAgordo.SenaktivaTempo*10;
       }
     }
 
-    ret = IMP_IVS_ReleaseResult(chn_num, (void *)result);
-    if (ret < 0) {
-      IMP_LOG_ERR(TAG, "IMP_IVS_ReleaseResult(%d) failed\n", chn_num);
-      return (void *)-1;
-    }
-    usleep(100000);
   }
   printf("get_result_process fino.\n");
 

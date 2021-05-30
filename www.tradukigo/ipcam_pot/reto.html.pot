@@ -12,9 +12,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: html2pot\n"
 
-msgid "Reto-Agordoj"
-msgstr ""
-
 msgid "-"
 msgstr ""
 
@@ -43,6 +40,9 @@ msgid "IP-adreso :"
 msgstr ""
 
 msgid "LAN eth0"
+msgstr ""
+
+msgid "Reto-Agordoj"
 msgstr ""
 
 msgid "SSID :"

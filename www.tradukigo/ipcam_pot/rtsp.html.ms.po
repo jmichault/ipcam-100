@@ -12,3 +12,71 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: html2pot\n"
 
+#, fuzzy
+msgid "adreso de sensilo"
+msgstr ""
+
+#, fuzzy
+msgid "alteco"
+msgstr ""
+
+#, fuzzy
+msgid "bildograndeco (sekundara kanalo devas esti malpli granda)"
+msgstr ""
+
+#, fuzzy
+msgid "bitrapido (kbps)"
+msgstr ""
+
+#, fuzzy
+msgid "capteur"
+msgstr ""
+
+#, fuzzy
+msgid "ĉefa kanalo"
+msgstr ""
+
+#, fuzzy
+msgid "duaranga kanalo"
+msgstr ""
+
+#, fuzzy
+msgid "interfaco :"
+msgstr ""
+
+#, fuzzy
+msgid "larĝo"
+msgstr ""
+
+#, fuzzy
+msgid "maxQP (pli malalta = pli bona kvalito)"
+msgstr ""
+
+#, fuzzy
+msgid "minQP (pli malalta = pli bona kvalito)"
+msgstr ""
+
+#, fuzzy
+msgid "nombro da kadroj sekunde"
+msgstr ""
+
+#, fuzzy
+msgid "nomo de sensilo :"
+msgstr ""
+
+#, fuzzy
+msgid "sensor"
+msgstr ""
+
+#, fuzzy
+msgid "Video Agordoj :"
+msgstr ""
+
+#, fuzzy
+msgid "video-formato"
+msgstr ""
+
+#, fuzzy
+msgid "videotrajtoj"
+msgstr ""
+

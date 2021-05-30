@@ -18,9 +18,7 @@ msgstr "تحديث"
 
 #, fuzzy
 msgid "Kamerao"
-msgstr ""
-"                                                                                                                      ﺮﻳﻮﺼﺗ "
-"ﺔﻟﺁ"
+msgstr "                                                                                                                      ﺮﻳﻮﺼﺗ ﺔﻟﺁ"
 
 #, fuzzy
 msgid "Malŝalti"

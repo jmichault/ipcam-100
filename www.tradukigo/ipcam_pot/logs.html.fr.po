@@ -12,30 +12,21 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: html2pot\n"
 
-#, fuzzy
 msgid "Lasta ĝisdatigo"
 msgstr "Dernière mise à jour"
 
-#, fuzzy
 msgid "Listo de Procezoj"
 msgstr "Liste des processus"
 
-#, fuzzy
 msgid "Muntitaj dosiersistemoj"
 msgstr "Systèmes de fichiers montés"
 
-#, fuzzy
 msgid "Protokolaj Dosieroj"
 msgstr "Fichiers Journaux"
 
-#, fuzzy
 msgid "Resumo"
 msgstr "Résumé"
 
-#, fuzzy
 msgid "Video-servilo"
-msgstr "Version vidéo"
+msgstr "Serveur vidéo"
 
-#, fuzzy
-#~ msgid "Surmetingoj"
-#~ msgstr "Chiffres"

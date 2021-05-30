@@ -12,27 +12,21 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: html2pot\n"
 
-#, fuzzy
 msgid "kopiu ĉi tiun pozicion al:"
 msgstr "copiez cette position dans:"
 
-#, fuzzy
 msgid "Motoro Testo"
 msgstr "Test moteur"
 
-#, fuzzy
-msgid "&uarr; Supra"
-msgstr "↑ Supra"
-
-#, fuzzy
 msgid "Pozicio : X ="
-msgstr ""
+msgstr "Position: X ="
 
-#, fuzzy
 msgid "Rapideco :"
-msgstr ""
+msgstr "Vitesse:"
 
-#, fuzzy
+msgid "&uarr; Supra"
+msgstr "&uarr; Haut"
+
 msgid "Y ="
-msgstr ""
+msgstr "Y ="
 

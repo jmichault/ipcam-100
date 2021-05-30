@@ -127,8 +127,7 @@ init_gpio 46
 # init white_led gpio :
 init_gpio 81
 # init motor :
-. ${SDCARD}/config/ptz.conf
-(${SDCARD}/bin/motor -p;${SDCARD}/bin/motor -x $X0 -y $Y0 -r $RAPIDECO) &
+${SDCARD}/bin/motor -p &
 
 ## start crond:
 ${SDCARD}/bin/busybox crond -L ${SDCARD}/log/crond.log -c ${SDCARD}/config/cron/crontabs

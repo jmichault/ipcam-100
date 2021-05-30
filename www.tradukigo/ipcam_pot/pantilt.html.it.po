@@ -21,18 +21,18 @@ msgid "Motoro Testo"
 msgstr "Test del motore"
 
 #, fuzzy
+msgid "Pozicio : X ="
+msgstr "Posizione: X u003d"
+
+#, fuzzy
+msgid "Rapideco :"
+msgstr "Velocità:"
+
+#, fuzzy
 msgid "&uarr; Supra"
 msgstr "↑ Supra"
 
 #, fuzzy
-msgid "Pozicio : X ="
-msgstr ""
-
-#, fuzzy
-msgid "Rapideco :"
-msgstr ""
-
-#, fuzzy
 msgid "Y ="
-msgstr ""
+msgstr "Y u003d"
 

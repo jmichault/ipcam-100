@@ -38,9 +38,7 @@ var reto_jsForm=
       items:
       [
        {"type": "help","helpvalue": "<strong>DNS Serviloj :</strong>",htmlClass: "ml-n2 mt-2"},
-       {key:"dns1",
-      fieldHtmlClass: "py-3 px-3 ", 
-},
+       {key:"dns1", fieldHtmlClass: "py-3 px-3 ", },
        {key:"dns2"},
       ]
     },

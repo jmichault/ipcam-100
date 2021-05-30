@@ -2,6 +2,8 @@
 
 . /opt/media/sdc/scripts/update_timezone.sh
 
+. JsAlVar ${SDCARD}/www/ipcam/config/movo.conf DetektoDatenoj
+
 boundary="ZZ_/afg6432dfgkl.94531q"
 FILENAME=$(date "+%Y%m%d%H%M%S-")
 MAILDATE=$(date -R)
@@ -25,7 +27,7 @@ touch /tmp/sendPictureMail.lock
 {
 
 printf '%s\n' "From: ${FROM}
-To: ${TO}
+To: ${SciiMailAl}
 Subject: ${SUBJECT}
 Date: ${MAILDATE}
 Mime-Version: 1.0

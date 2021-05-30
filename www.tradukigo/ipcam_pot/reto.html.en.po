@@ -13,16 +13,12 @@ msgstr ""
 "X-Generator: html2pot\n"
 
 #, fuzzy
-msgid "Reto-Agordoj"
-msgstr "Network Settings"
-
-#, fuzzy
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #, fuzzy
 msgid "/"
-msgstr ""
+msgstr "/"
 
 #, fuzzy
 msgid "Adresoj gamo :"
@@ -57,6 +53,10 @@ msgid "LAN eth0"
 msgstr "LAN eth0"
 
 #, fuzzy
+msgid "Reto-Agordoj"
+msgstr "Network Settings"
+
+#, fuzzy
 msgid "SSID :"
 msgstr "SSID:"
 
@@ -73,8 +73,7 @@ msgid "<strong>IP Agordoj :</strong>"
 msgstr "<strong>IP Settings:</ strong>"
 
 #, fuzzy
-msgid ""
-"<strong>manaj IP-agordoj (estos ignorita se dhcp estas ebligita) :</strong>"
+msgid "<strong>manaj IP-agordoj (estos ignorita se dhcp estas ebligita) :</strong>"
 msgstr "<strong>IP Settings: (/ strong) "
 
 #, fuzzy
@@ -83,17 +82,16 @@ msgstr "<strong>IP Settings:</ strong>"
 
 #, fuzzy
 msgid "Uzi dhcp :"
-msgstr "strongIP Settings:/ strong"
+msgstr "Use dhcp:"
 
 #, fuzzy
 msgid "WiFi-AP wlan1"
-msgstr "strongIP Settings:/ strong"
+msgstr "WiFi-AP wlan1"
 
 #, fuzzy
 msgid "WiFi-kliento wlan0"
-msgstr "strongIP Settings:/ strong"
+msgstr "WiFi client wlan0"
 
 #, fuzzy
 msgid "WiFi pasvorto :"
-msgstr "strongIP Settings:/ strong"
-
+msgstr "WiFi password:"

@@ -1,0 +1,80 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+msgid ""
+msgstr ""
+
+msgid "Al :"
+msgstr ""
+
+msgid "Areoj"
+msgstr ""
+
+msgid "Detekto Aktivida :"
+msgstr ""
+
+msgid "Fina Tempo"
+msgstr ""
+
+msgid "ĝeneralaj agordoj"
+msgstr ""
+
+msgid "Maksimuma nombro de samtempaj zonoj kun movado"
+msgstr ""
+
+msgid "Minimuma nombro de zonoj dum movado"
+msgstr ""
+
+msgid "Movo-Agordoj"
+msgstr ""
+
+msgid "Ordonon:"
+msgstr ""
+
+msgid "plenumi ordonon:"
+msgstr ""
+
+msgid "Sciigo"
+msgstr ""
+
+msgid "Senaktiva Tempo"
+msgstr ""
+
+msgid "sendi retpoŝton :"
+msgstr ""
+
+msgid "sendi «telegram» :"
+msgstr ""
+
+msgid "sendi «URL» :"
+msgstr ""
+
+msgid "Sentemo :"
+msgstr ""
+
+msgid "Stokado"
+msgstr ""
+
+msgid "stoki bildojn :"
+msgstr ""
+
+msgid "stoki filmetojn :"
+msgstr ""
+
+msgid "stoki sur fora servilo :"
+msgstr ""
+
+msgid "Url :"
+msgstr ""
+

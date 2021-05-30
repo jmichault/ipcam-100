@@ -21,18 +21,18 @@ msgid "Motoro Testo"
 msgstr "ইঞ্জিন পরীক্ষা"
 
 #, fuzzy
+msgid "Pozicio : X ="
+msgstr "অবস্থান: এক্স u003d"
+
+#, fuzzy
+msgid "Rapideco :"
+msgstr "দ্রুততা:"
+
+#, fuzzy
 msgid "&uarr; Supra"
 msgstr "↑ সুপ্রা"
 
 #, fuzzy
-msgid "Pozicio : X ="
-msgstr ""
-
-#, fuzzy
-msgid "Rapideco :"
-msgstr ""
-
-#, fuzzy
 msgid "Y ="
-msgstr ""
+msgstr "Y u003d"
 

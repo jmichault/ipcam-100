@@ -14,31 +14,25 @@ msgstr ""
 
 #, fuzzy
 msgid "kopiu ĉi tiun pozicion al:"
-msgstr ""
-"                                                                                                                                                         :"
-"ﻰﻟﺇ ﻒﻗﻮﻤﻟﺍ ﺍﺬﻫ ﺦﺴﻧﺍ"
+msgstr "                                                                                                                                                         :ﻰﻟﺇ ﻒﻗﻮﻤﻟﺍ ﺍﺬﻫ ﺦﺴﻧﺍ"
 
 #, fuzzy
 msgid "Motoro Testo"
-msgstr ""
-"                                                                                                                                                                ﻙﺮﺤﻤﻟﺍ "
-"ﺭﺎﺒﺘﺧﺍ"
-
-#, fuzzy
-msgid "&uarr; Supra"
-msgstr ""
-"                                                                                                                                                                      ﺍﺮﺑﻮﺳ "
-"↑"
+msgstr "                                                                                                                                                                ﻙﺮﺤﻤﻟﺍ ﺭﺎﺒﺘﺧﺍ"
 
 #, fuzzy
 msgid "Pozicio : X ="
-msgstr ""
+msgstr "                                                                                                                                                              X u003d :ﺰﻛﺮﻤﻟﺍ"
 
 #, fuzzy
 msgid "Rapideco :"
-msgstr ""
+msgstr "                                                                                                                                                                        :ﺔﻋﺮﺳ"
+
+#, fuzzy
+msgid "&uarr; Supra"
+msgstr "                                                                                                                                                                      ﺍﺮﺑﻮﺳ ↑"
 
 #, fuzzy
 msgid "Y ="
-msgstr ""
+msgstr "                                                                                                                                                                      u003d ﺹ"
 

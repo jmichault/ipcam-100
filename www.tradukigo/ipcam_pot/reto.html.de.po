@@ -13,16 +13,12 @@ msgstr ""
 "X-Generator: html2pot\n"
 
 #, fuzzy
-msgid "Reto-Agordoj"
-msgstr "Netzwerkeinstellungen"
-
-#, fuzzy
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #, fuzzy
 msgid "/"
-msgstr ""
+msgstr "/"
 
 #, fuzzy
 msgid "Adresoj gamo :"
@@ -57,6 +53,10 @@ msgid "LAN eth0"
 msgstr "LAN eth0"
 
 #, fuzzy
+msgid "Reto-Agordoj"
+msgstr "Netzwerkeinstellungen"
+
+#, fuzzy
 msgid "SSID :"
 msgstr "SSID:"
 
@@ -73,8 +73,7 @@ msgid "<strong>IP Agordoj :</strong>"
 msgstr "<stark>IP-Einstellungen:</ stark>"
 
 #, fuzzy
-msgid ""
-"<strong>manaj IP-agordoj (estos ignorita se dhcp estas ebligita) :</strong>"
+msgid "<strong>manaj IP-agordoj (estos ignorita se dhcp estas ebligita) :</strong>"
 msgstr "<stark>manuelle IP-Einstellungen (werden ignoriert, wenn dhcp aktiviert ist) :</ stark>"
 
 #, fuzzy
@@ -96,4 +95,3 @@ msgstr "WiFi Client wlan0"
 #, fuzzy
 msgid "WiFi pasvorto :"
 msgstr "WLAN Passwort:"
-

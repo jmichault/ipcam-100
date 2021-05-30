@@ -13,87 +13,86 @@ msgstr ""
 "X-Generator: html2pot\n"
 
 #, fuzzy
+msgid "-"
+msgstr "-"
+
+#, fuzzy
+msgid "/"
+msgstr "/"
+
+#, fuzzy
+msgid "Adresoj gamo :"
+msgstr "ਪਤੇ ਦੀ ਸੀਮਾ:"
+
+#, fuzzy
+msgid "Aktivi :"
+msgstr "ਸਰਗਰਮ ਕਰਨ ਲਈ:"
+
+#, fuzzy
+msgid "dns1 IP-adreso :"
+msgstr "DNS1 IP ਪਤਾ:"
+
+#, fuzzy
+msgid "dns2 IP-adreso :"
+msgstr "DNS2 IP ਪਤਾ:"
+
+#, fuzzy
+msgid "enirejo :"
+msgstr "ਪਰਵੇਸ਼:"
+
+#, fuzzy
+msgid "ĝeneralaj agordoj"
+msgstr "ਆਮ ਸੈਟਿੰਗਜ਼"
+
+#, fuzzy
+msgid "IP-adreso :"
+msgstr "IP ਪਤਾ:"
+
+#, fuzzy
+msgid "LAN eth0"
+msgstr "LAN Eth0"
+
+#, fuzzy
 msgid "Reto-Agordoj"
 msgstr "ਨੈੱਟਵਰਕ ਸੈਟਿੰਗ"
 
 #, fuzzy
-msgid "-"
-msgstr ""
-
-#, fuzzy
-msgid "/"
-msgstr ""
-
-#, fuzzy
-msgid "Adresoj gamo :"
-msgstr ""
-
-#, fuzzy
-msgid "Aktivi :"
-msgstr ""
-
-#, fuzzy
-msgid "dns1 IP-adreso :"
-msgstr ""
-
-#, fuzzy
-msgid "dns2 IP-adreso :"
-msgstr ""
-
-#, fuzzy
-msgid "enirejo :"
-msgstr ""
-
-#, fuzzy
-msgid "ĝeneralaj agordoj"
-msgstr ""
-
-#, fuzzy
-msgid "IP-adreso :"
-msgstr ""
-
-#, fuzzy
-msgid "LAN eth0"
-msgstr ""
-
-#, fuzzy
 msgid "SSID :"
-msgstr ""
+msgstr "SSID:"
 
 #, fuzzy
 msgid "<strong>DHCP Servilo :</strong>"
-msgstr ""
+msgstr "<ਮਜ਼ਬੂਤ ​​DHCP ਸਰਵਰ:</ ਮਜ਼ਬੂਤ ​​>"
 
 #, fuzzy
 msgid "<strong>DNS Serviloj :</strong>"
-msgstr ""
+msgstr "<ਮਜ਼ਬੂਤ ​​ਡੀਐਨਐਸ ਸਰਵਰ:</ ਮਜ਼ਬੂਤ ​​>"
 
 #, fuzzy
 msgid "<strong>IP Agordoj :</strong>"
-msgstr ""
+msgstr "<ਮਜ਼ਬੂਤ ​​>ਆਈਪੀ ਸੈਟਿੰਗਜ਼:</ ਮਜ਼ਬੂਤ ​​>"
 
 #, fuzzy
-msgid ""
-"<strong>manaj IP-agordoj (estos ignorita se dhcp estas ebligita) :</strong>"
-msgstr ""
+msgid "<strong>manaj IP-agordoj (estos ignorita se dhcp estas ebligita) :</strong>"
+msgstr "<ਨੂੰ ਮਜ਼ਬੂਤ ​​>ਸਕਰ>ਨੂੰ ਅਣਦੇਖਾ ਕਰ ਦਿੱਤਾ ਜਾਵੇਗਾ ਜੇ DHPP ਯੋਗ ਹੈ</ ਮਜ਼ਬੂਤ ​​>6)"
 
 #, fuzzy
 msgid "<strong>Wifi Agordoj :</strong>"
-msgstr ""
+msgstr "<ਨੂੰ ਮਜ਼ਬੂਤ ​​>WiFi ਸੈਟਿੰਗਾਂ:</ ਮਜ਼ਬੂਤ ​​>"
 
 #, fuzzy
 msgid "Uzi dhcp :"
-msgstr ""
+msgstr "DHCP ਦੀ ਵਰਤੋਂ ਕਰੋ:"
 
 #, fuzzy
 msgid "WiFi-AP wlan1"
-msgstr ""
+msgstr "Wifi ap wlan1"
 
 #, fuzzy
 msgid "WiFi-kliento wlan0"
-msgstr ""
+msgstr "ਵਾਈਫਾਈ ਗਾਹਕ WLAN0"
 
 #, fuzzy
 msgid "WiFi pasvorto :"
-msgstr ""
+msgstr "ਫਾਈ ਪਾਸਵਰਡ:"
 
