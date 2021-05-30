@@ -151,10 +151,8 @@ static void *ivs_move_get_result_process(void *arg)
 
   for (i = 0;  ; i++,usleep(100000))
   {
-    ret = IMP_IVS_PollingResult(chn_num, 10); // timeout 0.01s
+    ret = IMP_IVS_PollingResult(chn_num, 0); // timeout 0.01s
     if (ret < 0) {
-      IMP_LOG_ERR(TAG, "IMP_IVS_PollingResult(%d, %d) failed\n", chn_num, 2000);
-      printf("timeout IMP_IVS_PollingResult\n");
       continue;
     }
     ret = IMP_IVS_GetResult(chn_num, (void **)&result);
@@ -185,13 +183,13 @@ static void *ivs_move_get_result_process(void *arg)
     }
     if(hasMove)
     {
-      printf(".");
       if(!inMovo)
       {
         printf("Movado komenca.\n");
         inMovo=true;
         if(movAgordo.Aktivida) exec_command(detectionScriptOn, NULL);
       }
+      else printf(".");
       dumFina=movAgordo.FinaTempo*10;
     }
     else
