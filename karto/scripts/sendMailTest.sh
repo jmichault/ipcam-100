@@ -1,5 +1,5 @@
 #!/bin/sh
-. /etc/profile 2>/dev/null
+. /etc/profile >/dev/null 2>&1
 
 . /opt/media/sdc/scripts/update_timezone.sh
 

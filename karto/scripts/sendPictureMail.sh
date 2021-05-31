@@ -1,5 +1,5 @@
 #!/bin/sh
-. /etc/profile 2>/dev/null
+. /etc/profile >/dev/null 2>&1
 
 . /opt/media/sdc/scripts/update_timezone.sh
 
@@ -7,7 +7,7 @@
 
 boundary="ZZ_/afg6432dfgkl.94531q"
 FILENAME=$(date "+%Y%m%d%H%M%S-")
-NUMBEROFPICTURES=2
+NUMBEROFPICTURES=5
 TIMEBETWEENSNAPSHOT=1
 SUBJECT="Alerto de kamerao"
 BODY="Alerto de `hostname`"
