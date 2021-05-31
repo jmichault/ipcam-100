@@ -1,84 +1,98 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
 #, fuzzy
 msgid "-"
-msgstr ""
+msgstr " - "
 
 #, fuzzy
 msgid "/"
-msgstr ""
+msgstr "/ /"
 
 #, fuzzy
 msgid "Adresoj gamo :"
-msgstr ""
+msgstr "アドレス範囲："
 
 #, fuzzy
 msgid "Aktivi :"
-msgstr ""
+msgstr "有効にするために："
 
 #, fuzzy
 msgid "dns1 IP-adreso :"
-msgstr ""
+msgstr "DNS1 IPアドレス："
 
 #, fuzzy
 msgid "dns2 IP-adreso :"
-msgstr ""
+msgstr "DNS2 IPアドレス："
 
 #, fuzzy
 msgid "enirejo :"
-msgstr ""
+msgstr "エントランス："
 
 #, fuzzy
-msgid "eneralaj agordoj"
-msgstr ""
+msgid "ĝeneralaj agordoj"
+msgstr "一般設定"
 
 #, fuzzy
 msgid "IP-adreso :"
-msgstr ""
+msgstr "IPアドレス："
 
 #, fuzzy
 msgid "LAN eth0"
-msgstr ""
+msgstr "LAN eth0"
 
 #, fuzzy
 msgid "Reto-Agordoj"
-msgstr ""
+msgstr "ネットワーク設定"
 
 #, fuzzy
 msgid "SSID :"
-msgstr ""
+msgstr "SSID："
 
 #, fuzzy
 msgid "<strong>DHCP Servilo :</strong>"
-msgstr ""
+msgstr "<強い>DHCPサーバー：</強い>"
 
 #, fuzzy
 msgid "<strong>DNS Serviloj :</strong>"
-msgstr ""
+msgstr "<強い>DNSサーバー：</強い>"
 
 #, fuzzy
 msgid "<strong>IP Agordoj :</strong>"
-msgstr ""
+msgstr "<強い>IP設定：</強い>"
 
 #, fuzzy
 msgid "<strong>manaj IP-agordoj (estos ignorita se dhcp estas ebligita) :</strong>"
-msgstr ""
+msgstr "<強い>手動IP設定 (DHCPがイネーブルされている場合) ：</強い>6）"
 
 #, fuzzy
 msgid "<strong>Wifi Agordoj :</strong>"
-msgstr ""
+msgstr "<強い>WiFi設定：</強い>"
 
 #, fuzzy
 msgid "Uzi dhcp :"
-msgstr ""
+msgstr "DHCPを使用："
 
 #, fuzzy
 msgid "WiFi-AP wlan1"
-msgstr ""
+msgstr "WiFi AP WLAN1"
 
 #, fuzzy
 msgid "WiFi-kliento wlan0"
-msgstr ""
+msgstr "WiFiカスタマーWLAN0"
 
 #, fuzzy
 msgid "WiFi pasvorto :"
-msgstr ""
+msgstr "WiFiパスワード："
 

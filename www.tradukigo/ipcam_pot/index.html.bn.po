@@ -65,6 +65,10 @@ msgid "Reto Informoj"
 msgstr "নেটওয়ার্ক তথ্য"
 
 #, fuzzy
+msgid "Retpoŝto"
+msgstr "ইমেইল."
+
+#, fuzzy
 msgid "RTSP Agordoj"
 msgstr "RTSP সেটিংস"
 

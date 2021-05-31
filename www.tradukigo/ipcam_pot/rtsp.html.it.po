@@ -14,69 +14,69 @@ msgstr ""
 
 #, fuzzy
 msgid "adreso de sensilo"
-msgstr ""
+msgstr "Indirizzo di sensile."
 
 #, fuzzy
 msgid "alteco"
-msgstr ""
+msgstr "Altezza"
 
 #, fuzzy
 msgid "bildograndeco (sekundara kanalo devas esti malpli granda)"
-msgstr ""
+msgstr "La dimensione di evidenziazione (il canale secondario deve essere inferiore)"
 
 #, fuzzy
 msgid "bitrapido (kbps)"
-msgstr ""
+msgstr "Bitrido (Kbps)"
 
 #, fuzzy
 msgid "capteur"
-msgstr ""
+msgstr "Capteur."
 
 #, fuzzy
 msgid "ĉefa kanalo"
-msgstr ""
+msgstr "Canale principale"
 
 #, fuzzy
 msgid "duaranga kanalo"
-msgstr ""
+msgstr "Canale secondario"
 
 #, fuzzy
 msgid "interfaco :"
-msgstr ""
+msgstr "Interfaccia:"
 
 #, fuzzy
 msgid "larĝo"
-msgstr ""
+msgstr "Larghezza"
 
 #, fuzzy
 msgid "maxQP (pli malalta = pli bona kvalito)"
-msgstr ""
+msgstr "Larghezza"
 
 #, fuzzy
 msgid "minQP (pli malalta = pli bona kvalito)"
-msgstr ""
+msgstr "Minqp (inferiore = qualità migliore)"
 
 #, fuzzy
 msgid "nombro da kadroj sekunde"
-msgstr ""
+msgstr "Numero di fotogrammi al secondo"
 
 #, fuzzy
 msgid "nomo de sensilo :"
-msgstr ""
+msgstr "Nome del senso sensibile:"
 
 #, fuzzy
 msgid "sensor"
-msgstr ""
+msgstr "Sensore"
 
 #, fuzzy
 msgid "Video Agordoj :"
-msgstr ""
+msgstr "Impostazioni video:"
 
 #, fuzzy
 msgid "video-formato"
-msgstr ""
+msgstr "Formato video"
 
 #, fuzzy
 msgid "videotrajtoj"
-msgstr ""
+msgstr "Videoreies."
 

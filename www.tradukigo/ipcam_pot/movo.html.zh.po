@@ -15,66 +15,87 @@ msgstr ""
 msgid ""
 msgstr ""
 
+#, fuzzy
 msgid "Al :"
-msgstr ""
+msgstr "至："
 
+#, fuzzy
 msgid "Areoj"
-msgstr ""
+msgstr "地区"
 
+#, fuzzy
 msgid "Detekto Aktivida :"
-msgstr ""
+msgstr "检测激活："
 
+#, fuzzy
 msgid "Fina Tempo"
-msgstr ""
+msgstr "最后一次"
 
+#, fuzzy
 msgid "ĝeneralaj agordoj"
-msgstr ""
+msgstr "常规设置"
 
+#, fuzzy
 msgid "Maksimuma nombro de samtempaj zonoj kun movado"
-msgstr ""
+msgstr "具有运动的最大同时区域数"
 
+#, fuzzy
 msgid "Minimuma nombro de zonoj dum movado"
-msgstr ""
+msgstr "运动期间的最小区域数"
 
+#, fuzzy
 msgid "Movo-Agordoj"
-msgstr ""
+msgstr "移动设置"
 
+#, fuzzy
 msgid "Ordonon:"
-msgstr ""
+msgstr "命令："
 
+#, fuzzy
 msgid "plenumi ordonon:"
-msgstr ""
+msgstr "执行订单："
 
+#, fuzzy
 msgid "Sciigo"
-msgstr ""
+msgstr "通知"
 
+#, fuzzy
 msgid "Senaktiva Tempo"
-msgstr ""
+msgstr "非活动时间"
 
+#, fuzzy
 msgid "sendi retpoŝton :"
-msgstr ""
+msgstr "发送电子邮件："
 
+#, fuzzy
 msgid "sendi «telegram» :"
-msgstr ""
+msgstr "发送“电报”："
 
+#, fuzzy
 msgid "sendi «URL» :"
-msgstr ""
+msgstr "发送“URL”："
 
+#, fuzzy
 msgid "Sentemo :"
-msgstr ""
+msgstr "灵敏度："
 
+#, fuzzy
 msgid "Stokado"
-msgstr ""
+msgstr "贮存"
 
+#, fuzzy
 msgid "stoki bildojn :"
-msgstr ""
+msgstr "商店图片："
 
+#, fuzzy
 msgid "stoki filmetojn :"
-msgstr ""
+msgstr "商店视频："
 
+#, fuzzy
 msgid "stoki sur fora servilo :"
-msgstr ""
+msgstr "存储在远程服务器上："
 
+#, fuzzy
 msgid "Url :"
-msgstr ""
+msgstr "URL："
 

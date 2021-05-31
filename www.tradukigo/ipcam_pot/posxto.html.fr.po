@@ -1,0 +1,56 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+msgid "Adresanto :"
+msgstr "Expéditeur :"
+
+msgid "Al :"
+msgstr "À :"
+
+msgid "Ensaluto :"
+msgstr "Utilisateur :"
+
+msgid "Haveno :"
+msgstr "Port :"
+
+msgid "Mesaĝo :"
+msgstr "Message :"
+
+msgid "Pasvorto :"
+msgstr "Mot de passe :"
+
+msgid "Poŝto-Agordoj"
+msgstr "Paramètres courriel"
+
+msgid "Pri :"
+msgstr "Sujet :"
+
+msgid "Servilo :"
+msgstr "Serveur :"
+
+msgid "<strong>Aŭtentigo :</strong>"
+msgstr "<strong>Authentification :</strong>"
+
+msgid "<strong>Servilo (SSL deviga) :</strong>"
+msgstr "<strong>Serveur (SSL obligatoire) :</strong>"
+
+msgid "<strong>Testo :</strong>"
+msgstr "<strong>Test :</strong>"
+
+msgid "Submeti"
+msgstr "Soumettre"
+
+msgid "Submeti kaj Testi"
+msgstr "Soumettre et tester"
+

@@ -15,66 +15,87 @@ msgstr ""
 msgid ""
 msgstr ""
 
+#, fuzzy
 msgid "Al :"
-msgstr ""
+msgstr "に："
 
+#, fuzzy
 msgid "Areoj"
-msgstr ""
+msgstr "エリア"
 
+#, fuzzy
 msgid "Detekto Aktivida :"
-msgstr ""
+msgstr "検出された検出："
 
+#, fuzzy
 msgid "Fina Tempo"
-msgstr ""
+msgstr "最後の時間"
 
+#, fuzzy
 msgid "ĝeneralaj agordoj"
-msgstr ""
+msgstr "一般設定"
 
+#, fuzzy
 msgid "Maksimuma nombro de samtempaj zonoj kun movado"
-msgstr ""
+msgstr "移動を伴う同時ゾーンの最大数"
 
+#, fuzzy
 msgid "Minimuma nombro de zonoj dum movado"
-msgstr ""
+msgstr "移動中のゾーンの最小数"
 
+#, fuzzy
 msgid "Movo-Agordoj"
-msgstr ""
+msgstr "設定を移動します"
 
+#, fuzzy
 msgid "Ordonon:"
-msgstr ""
+msgstr "注文："
 
+#, fuzzy
 msgid "plenumi ordonon:"
-msgstr ""
+msgstr "注文を実行するには："
 
+#, fuzzy
 msgid "Sciigo"
-msgstr ""
+msgstr "お知らせ"
 
+#, fuzzy
 msgid "Senaktiva Tempo"
-msgstr ""
+msgstr "非アクティブタイム"
 
+#, fuzzy
 msgid "sendi retpoŝton :"
-msgstr ""
+msgstr "メールを送る："
 
+#, fuzzy
 msgid "sendi «telegram» :"
-msgstr ""
+msgstr "「テレグラム」を送る："
 
+#, fuzzy
 msgid "sendi «URL» :"
-msgstr ""
+msgstr "\"URL\"を送信します。"
 
+#, fuzzy
 msgid "Sentemo :"
-msgstr ""
+msgstr "感度："
 
+#, fuzzy
 msgid "Stokado"
-msgstr ""
+msgstr "ストレージ"
 
+#, fuzzy
 msgid "stoki bildojn :"
-msgstr ""
+msgstr "画像を保存する："
 
+#, fuzzy
 msgid "stoki filmetojn :"
-msgstr ""
+msgstr "ビデオを保存："
 
+#, fuzzy
 msgid "stoki sur fora servilo :"
-msgstr ""
+msgstr "リモートサーバーに保存します。"
 
+#, fuzzy
 msgid "Url :"
-msgstr ""
+msgstr "URL："
 

@@ -15,66 +15,87 @@ msgstr ""
 msgid ""
 msgstr ""
 
+#, fuzzy
 msgid "Al :"
-msgstr ""
+msgstr "К:"
 
+#, fuzzy
 msgid "Areoj"
-msgstr ""
+msgstr "Область"
 
+#, fuzzy
 msgid "Detekto Aktivida :"
-msgstr ""
+msgstr "Обнаружение активировано:"
 
+#, fuzzy
 msgid "Fina Tempo"
-msgstr ""
+msgstr "Окончательное время"
 
+#, fuzzy
 msgid "ĝeneralaj agordoj"
-msgstr ""
+msgstr "Общие настройки"
 
+#, fuzzy
 msgid "Maksimuma nombro de samtempaj zonoj kun movado"
-msgstr ""
+msgstr "Максимальное количество одновременных зон с движением"
 
+#, fuzzy
 msgid "Minimuma nombro de zonoj dum movado"
-msgstr ""
+msgstr "Минимальное количество зон во время движения"
 
+#, fuzzy
 msgid "Movo-Agordoj"
-msgstr ""
+msgstr "Переместить настройки"
 
+#, fuzzy
 msgid "Ordonon:"
-msgstr ""
+msgstr "Заказ:"
 
+#, fuzzy
 msgid "plenumi ordonon:"
-msgstr ""
+msgstr "выполнить заказ:"
 
+#, fuzzy
 msgid "Sciigo"
-msgstr ""
+msgstr "Уведомление"
 
+#, fuzzy
 msgid "Senaktiva Tempo"
-msgstr ""
+msgstr "Неактивное время"
 
+#, fuzzy
 msgid "sendi retpoŝton :"
-msgstr ""
+msgstr "Отправить письмо:"
 
+#, fuzzy
 msgid "sendi «telegram» :"
-msgstr ""
+msgstr "Отправить \"Телеграмму\":"
 
+#, fuzzy
 msgid "sendi «URL» :"
-msgstr ""
+msgstr "Отправить \"URL\":"
 
+#, fuzzy
 msgid "Sentemo :"
-msgstr ""
+msgstr "Чувствительность:"
 
+#, fuzzy
 msgid "Stokado"
-msgstr ""
+msgstr "Место хранения"
 
+#, fuzzy
 msgid "stoki bildojn :"
-msgstr ""
+msgstr "Хранить изображения:"
 
+#, fuzzy
 msgid "stoki filmetojn :"
-msgstr ""
+msgstr "Хранить видео:"
 
+#, fuzzy
 msgid "stoki sur fora servilo :"
-msgstr ""
+msgstr "Хранить на удаленном сервере:"
 
+#, fuzzy
 msgid "Url :"
-msgstr ""
+msgstr "URL:"
 

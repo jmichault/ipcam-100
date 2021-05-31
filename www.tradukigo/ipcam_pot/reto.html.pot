@@ -12,66 +12,87 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: html2pot\n"
 
+#, fuzzy
 msgid "-"
 msgstr ""
 
+#, fuzzy
 msgid "/"
 msgstr ""
 
+#, fuzzy
 msgid "Adresoj gamo :"
 msgstr ""
 
+#, fuzzy
 msgid "Aktivi :"
 msgstr ""
 
+#, fuzzy
 msgid "dns1 IP-adreso :"
 msgstr ""
 
+#, fuzzy
 msgid "dns2 IP-adreso :"
 msgstr ""
 
+#, fuzzy
 msgid "enirejo :"
 msgstr ""
 
+#, fuzzy
 msgid "ĝeneralaj agordoj"
 msgstr ""
 
+#, fuzzy
 msgid "IP-adreso :"
 msgstr ""
 
+#, fuzzy
 msgid "LAN eth0"
 msgstr ""
 
+#, fuzzy
 msgid "Reto-Agordoj"
 msgstr ""
 
+#, fuzzy
 msgid "SSID :"
 msgstr ""
 
+#, fuzzy
 msgid "<strong>DHCP Servilo :</strong>"
 msgstr ""
 
+#, fuzzy
 msgid "<strong>DNS Serviloj :</strong>"
 msgstr ""
 
+#, fuzzy
 msgid "<strong>IP Agordoj :</strong>"
 msgstr ""
 
+#, fuzzy
 msgid "<strong>manaj IP-agordoj (estos ignorita se dhcp estas ebligita) :</strong>"
 msgstr ""
 
+#, fuzzy
 msgid "<strong>Wifi Agordoj :</strong>"
 msgstr ""
 
+#, fuzzy
 msgid "Uzi dhcp :"
 msgstr ""
 
+#, fuzzy
 msgid "WiFi-AP wlan1"
 msgstr ""
 
+#, fuzzy
 msgid "WiFi-kliento wlan0"
 msgstr ""
 
+#, fuzzy
 msgid "WiFi pasvorto :"
 msgstr ""
 

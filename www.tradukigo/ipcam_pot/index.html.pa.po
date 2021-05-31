@@ -65,6 +65,10 @@ msgid "Reto Informoj"
 msgstr "ਨੈੱਟਵਰਕ ਜਾਣਕਾਰੀ"
 
 #, fuzzy
+msgid "Retpoŝto"
+msgstr "ਈ - ਮੇਲ"
+
+#, fuzzy
 msgid "RTSP Agordoj"
 msgstr "ਆਰਟੀਐਸਪੀ ਸੈਟਿੰਗਜ਼"
 

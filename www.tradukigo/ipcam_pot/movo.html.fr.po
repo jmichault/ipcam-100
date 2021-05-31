@@ -57,21 +57,27 @@ msgstr "Envoi d'un «telegram» :"
 msgid "sendi «URL» :"
 msgstr "Envoi d'une «URL» :"
 
+#, fuzzy
 msgid "Sentemo :"
-msgstr ""
+msgstr "Sensibilité:"
 
+#, fuzzy
 msgid "Stokado"
-msgstr ""
+msgstr "Stockage"
 
+#, fuzzy
 msgid "stoki bildojn :"
-msgstr ""
+msgstr "Stocker Images:"
 
+#, fuzzy
 msgid "stoki filmetojn :"
-msgstr ""
+msgstr "Stocker les vidéos:"
 
+#, fuzzy
 msgid "stoki sur fora servilo :"
-msgstr ""
+msgstr "Stocker sur un serveur distant:"
 
+#, fuzzy
 msgid "Url :"
-msgstr ""
+msgstr "URL:"
 

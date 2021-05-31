@@ -14,69 +14,69 @@ msgstr ""
 
 #, fuzzy
 msgid "adreso de sensilo"
-msgstr ""
+msgstr "ਸੰਵੇਦਨ ਦਾ ਪਤਾ"
 
 #, fuzzy
 msgid "alteco"
-msgstr ""
+msgstr "ਕੱਦ"
 
 #, fuzzy
 msgid "bildograndeco (sekundara kanalo devas esti malpli granda)"
-msgstr ""
+msgstr "ਆਕਾਰ ਦਾ ਆਕਾਰ (ਸੈਕੰਡਰੀ ਚੈਨਲ ਘੱਟ ਵੱਡਾ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ)"
 
 #, fuzzy
 msgid "bitrapido (kbps)"
-msgstr ""
+msgstr "ਬਿਟਿਟ੍ਰੋ (ਕੇਬੀਪੀਐਸ)"
 
 #, fuzzy
 msgid "capteur"
-msgstr ""
+msgstr "ਕੈਪਟੇਅਰ"
 
 #, fuzzy
 msgid "ĉefa kanalo"
-msgstr ""
+msgstr "ਮੁੱਖ ਚੈਨਲ"
 
 #, fuzzy
 msgid "duaranga kanalo"
-msgstr ""
+msgstr "ਸੈਕੰਡਰੀ ਚੈਨਲ"
 
 #, fuzzy
 msgid "interfaco :"
-msgstr ""
+msgstr "ਇੰਟਰਫੇਸ:"
 
 #, fuzzy
 msgid "larĝo"
-msgstr ""
+msgstr "ਚੌੜਾਈ"
 
 #, fuzzy
 msgid "maxQP (pli malalta = pli bona kvalito)"
-msgstr ""
+msgstr "ਮੈਕਸਕਯੂਪੀ (ਘੱਟ = ਬਿਹਤਰ ਗੁਣਵੱਤਾ)"
 
 #, fuzzy
 msgid "minQP (pli malalta = pli bona kvalito)"
-msgstr ""
+msgstr "ਮਿਨਕੈਪ (ਘੱਟ = ਬਿਹਤਰ ਗੁਣਵੱਤਾ)"
 
 #, fuzzy
 msgid "nombro da kadroj sekunde"
-msgstr ""
+msgstr "ਪ੍ਰਤੀ ਸਕਿੰਟ ਫਰੇਮਾਂ ਦੀ ਗਿਣਤੀ"
 
 #, fuzzy
 msgid "nomo de sensilo :"
-msgstr ""
+msgstr "ਸੰਵੇਦਨ ਦਾ ਨਾਮ:"
 
 #, fuzzy
 msgid "sensor"
-msgstr ""
+msgstr "ਸੈਂਸਰ"
 
 #, fuzzy
 msgid "Video Agordoj :"
-msgstr ""
+msgstr "ਵੀਡੀਓ ਸੈਟਿੰਗਜ਼:"
 
 #, fuzzy
 msgid "video-formato"
-msgstr ""
+msgstr "ਵੀਡੀਓ ਫਾਰਮੈਟ"
 
 #, fuzzy
 msgid "videotrajtoj"
-msgstr ""
+msgstr "ਵੀਡੀਓ ਟੀਡੋਜ਼"
 

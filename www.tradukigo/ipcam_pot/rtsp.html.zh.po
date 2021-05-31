@@ -14,69 +14,69 @@ msgstr ""
 
 #, fuzzy
 msgid "adreso de sensilo"
-msgstr ""
+msgstr "敏感的地址"
 
 #, fuzzy
 msgid "alteco"
-msgstr ""
+msgstr "高度"
 
 #, fuzzy
 msgid "bildograndeco (sekundara kanalo devas esti malpli granda)"
-msgstr ""
+msgstr "突出显示尺寸 (辅助通道必须更大)"
 
 #, fuzzy
 msgid "bitrapido (kbps)"
-msgstr ""
+msgstr "Bititrido (Kbps)"
 
 #, fuzzy
 msgid "capteur"
-msgstr ""
+msgstr "Capteur."
 
 #, fuzzy
 msgid "ĉefa kanalo"
-msgstr ""
+msgstr "主要渠道"
 
 #, fuzzy
 msgid "duaranga kanalo"
-msgstr ""
+msgstr "次要通道"
 
 #, fuzzy
 msgid "interfaco :"
-msgstr ""
+msgstr "界面："
 
 #, fuzzy
 msgid "larĝo"
-msgstr ""
+msgstr "宽度"
 
 #, fuzzy
 msgid "maxQP (pli malalta = pli bona kvalito)"
-msgstr ""
+msgstr "MAXQP (较低=更好的质量)"
 
 #, fuzzy
 msgid "minQP (pli malalta = pli bona kvalito)"
-msgstr ""
+msgstr "MAXQP (较低=更好的质量)"
 
 #, fuzzy
 msgid "nombro da kadroj sekunde"
-msgstr ""
+msgstr "每秒帧数"
 
 #, fuzzy
 msgid "nomo de sensilo :"
-msgstr ""
+msgstr "敏感名称："
 
 #, fuzzy
 msgid "sensor"
-msgstr ""
+msgstr "传感器"
 
 #, fuzzy
 msgid "Video Agordoj :"
-msgstr ""
+msgstr "视频设置："
 
 #, fuzzy
 msgid "video-formato"
-msgstr ""
+msgstr "视频格式"
 
 #, fuzzy
 msgid "videotrajtoj"
-msgstr ""
+msgstr "录像机"
 

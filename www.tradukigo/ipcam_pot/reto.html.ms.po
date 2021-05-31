@@ -1,84 +1,98 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ms\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
 #, fuzzy
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #, fuzzy
 msgid "/"
-msgstr ""
+msgstr "/"
 
 #, fuzzy
 msgid "Adresoj gamo :"
-msgstr ""
+msgstr "Alamat Julat:"
 
 #, fuzzy
 msgid "Aktivi :"
-msgstr ""
+msgstr "Untuk mengaktifkan:"
 
 #, fuzzy
 msgid "dns1 IP-adreso :"
-msgstr ""
+msgstr "Alamat IP DNS1:"
 
 #, fuzzy
 msgid "dns2 IP-adreso :"
-msgstr ""
+msgstr "Alamat IP DNS2:"
 
 #, fuzzy
 msgid "enirejo :"
-msgstr ""
+msgstr "Masuk:"
 
 #, fuzzy
-msgid "eneralaj agordoj"
-msgstr ""
+msgid "ĝeneralaj agordoj"
+msgstr "Tetapan umum"
 
 #, fuzzy
 msgid "IP-adreso :"
-msgstr ""
+msgstr "Alamat IP:"
 
 #, fuzzy
 msgid "LAN eth0"
-msgstr ""
+msgstr "LAN ETH0."
 
 #, fuzzy
 msgid "Reto-Agordoj"
-msgstr ""
+msgstr "Tetapan rangkaian"
 
 #, fuzzy
 msgid "SSID :"
-msgstr ""
+msgstr "SSID:"
 
 #, fuzzy
 msgid "<strong>DHCP Servilo :</strong>"
-msgstr ""
+msgstr "<Strong>Pelayan DHCP:</ Strong>"
 
 #, fuzzy
 msgid "<strong>DNS Serviloj :</strong>"
-msgstr ""
+msgstr "<Strong>Servers DNS:</ Strong>"
 
 #, fuzzy
 msgid "<strong>IP Agordoj :</strong>"
-msgstr ""
+msgstr "<Strong>Tetapan IP:</ Strong>"
 
 #, fuzzy
 msgid "<strong>manaj IP-agordoj (estos ignorita se dhcp estas ebligita) :</strong>"
-msgstr ""
+msgstr "<Strong>Tetapan IP: (/ Strong) "
 
 #, fuzzy
 msgid "<strong>Wifi Agordoj :</strong>"
-msgstr ""
+msgstr "<Strong>Tetapan IP:</ Strong>"
 
 #, fuzzy
 msgid "Uzi dhcp :"
-msgstr ""
+msgstr "Gunakan DHCP:"
 
 #, fuzzy
 msgid "WiFi-AP wlan1"
-msgstr ""
+msgstr "Wifi ap wlan1."
 
 #, fuzzy
 msgid "WiFi-kliento wlan0"
-msgstr ""
+msgstr "WLAN0 WIFI."
 
 #, fuzzy
 msgid "WiFi pasvorto :"
-msgstr ""
+msgstr "Kata Laluan WiFi:"
 

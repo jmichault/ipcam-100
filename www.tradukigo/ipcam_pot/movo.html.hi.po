@@ -15,66 +15,87 @@ msgstr ""
 msgid ""
 msgstr ""
 
+#, fuzzy
 msgid "Al :"
-msgstr ""
+msgstr "सेवा:"
 
+#, fuzzy
 msgid "Areoj"
-msgstr ""
+msgstr "क्षेत्रों"
 
+#, fuzzy
 msgid "Detekto Aktivida :"
-msgstr ""
+msgstr "पहचान सक्रिय:"
 
+#, fuzzy
 msgid "Fina Tempo"
-msgstr ""
+msgstr "अंतिम समय"
 
+#, fuzzy
 msgid "ĝeneralaj agordoj"
-msgstr ""
+msgstr "सामान्य सेटिंग्स"
 
+#, fuzzy
 msgid "Maksimuma nombro de samtempaj zonoj kun movado"
-msgstr ""
+msgstr "आंदोलन के साथ एक साथ क्षेत्रों की अधिकतम संख्या"
 
+#, fuzzy
 msgid "Minimuma nombro de zonoj dum movado"
-msgstr ""
+msgstr "आंदोलन के दौरान न्यूनतम क्षेत्रों की संख्या"
 
+#, fuzzy
 msgid "Movo-Agordoj"
-msgstr ""
+msgstr "सेटिंग्स को स्थानांतरित करें"
 
+#, fuzzy
 msgid "Ordonon:"
-msgstr ""
+msgstr "गण:"
 
+#, fuzzy
 msgid "plenumi ordonon:"
-msgstr ""
+msgstr "ऑर्डर करने के लिए:"
 
+#, fuzzy
 msgid "Sciigo"
-msgstr ""
+msgstr "अधिसूचना"
 
+#, fuzzy
 msgid "Senaktiva Tempo"
-msgstr ""
+msgstr "निष्क्रिय समय"
 
+#, fuzzy
 msgid "sendi retpoŝton :"
-msgstr ""
+msgstr "एक ईमेल भेजो:"
 
+#, fuzzy
 msgid "sendi «telegram» :"
-msgstr ""
+msgstr "\"टेलीग्राम\" भेजें:"
 
+#, fuzzy
 msgid "sendi «URL» :"
-msgstr ""
+msgstr "\"URL\" भेजें:"
 
+#, fuzzy
 msgid "Sentemo :"
-msgstr ""
+msgstr "संवेदनशीलता:"
 
+#, fuzzy
 msgid "Stokado"
-msgstr ""
+msgstr "भंडारण"
 
+#, fuzzy
 msgid "stoki bildojn :"
-msgstr ""
+msgstr "छवियों को स्टोर करें:"
 
+#, fuzzy
 msgid "stoki filmetojn :"
-msgstr ""
+msgstr "स्टोर वीडियो:"
 
+#, fuzzy
 msgid "stoki sur fora servilo :"
-msgstr ""
+msgstr "एक दूरस्थ सर्वर पर स्टोर करें:"
 
+#, fuzzy
 msgid "Url :"
-msgstr ""
+msgstr "URL:"
 

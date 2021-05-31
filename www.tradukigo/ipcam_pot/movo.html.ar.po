@@ -17,85 +17,85 @@ msgstr ""
 
 #, fuzzy
 msgid "Al :"
-msgstr ""
+msgstr "ل:"
 
 #, fuzzy
 msgid "Areoj"
-msgstr ""
+msgstr "المناطق"
 
 #, fuzzy
 msgid "Detekto Aktivida :"
-msgstr ""
+msgstr "اكتشاف تنشيط:"
 
 #, fuzzy
 msgid "Fina Tempo"
-msgstr ""
+msgstr "في المرة النهائية"
 
 #, fuzzy
 msgid "ĝeneralaj agordoj"
-msgstr ""
+msgstr "الاعدادات العامة"
 
 #, fuzzy
 msgid "Maksimuma nombro de samtempaj zonoj kun movado"
-msgstr ""
+msgstr "الحد الأقصى لعدد مناطق في وقت واحد مع الحركة"
 
 #, fuzzy
 msgid "Minimuma nombro de zonoj dum movado"
-msgstr ""
+msgstr "الحد الأدنى لعدد المناطق أثناء الحركة"
 
 #, fuzzy
 msgid "Movo-Agordoj"
-msgstr ""
+msgstr "نقل الإعدادات"
 
 #, fuzzy
 msgid "Ordonon:"
-msgstr ""
+msgstr "ترتيب:"
 
 #, fuzzy
 msgid "plenumi ordonon:"
-msgstr ""
+msgstr "لأداء طلب:"
 
 #, fuzzy
 msgid "Sciigo"
-msgstr ""
+msgstr "تنبيه"
 
 #, fuzzy
 msgid "Senaktiva Tempo"
-msgstr ""
+msgstr "وقت غير نشط"
 
 #, fuzzy
 msgid "sendi retpoŝton :"
-msgstr ""
+msgstr "أرسل بريدا إلكترونيا:"
 
 #, fuzzy
 msgid "sendi «telegram» :"
-msgstr ""
+msgstr "إرسال \"برقية\":"
 
 #, fuzzy
 msgid "sendi «URL» :"
-msgstr ""
+msgstr "إرسال \"عنوان URL\":"
 
 #, fuzzy
 msgid "Sentemo :"
-msgstr ""
+msgstr "حساسية:"
 
 #, fuzzy
 msgid "Stokado"
-msgstr ""
+msgstr "تخزين"
 
 #, fuzzy
 msgid "stoki bildojn :"
-msgstr ""
+msgstr "صور تخزين:"
 
 #, fuzzy
 msgid "stoki filmetojn :"
-msgstr ""
+msgstr "تخزين مقاطع الفيديو:"
 
 #, fuzzy
 msgid "stoki sur fora servilo :"
-msgstr ""
+msgstr "تخزين على خادم بعيد:"
 
 #, fuzzy
 msgid "Url :"
-msgstr ""
+msgstr "عنوان URL:"
 

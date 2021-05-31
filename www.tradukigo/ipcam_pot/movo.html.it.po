@@ -15,66 +15,87 @@ msgstr ""
 msgid ""
 msgstr ""
 
+#, fuzzy
 msgid "Al :"
-msgstr ""
+msgstr "Per:"
 
+#, fuzzy
 msgid "Areoj"
-msgstr ""
+msgstr "le zone"
 
+#, fuzzy
 msgid "Detekto Aktivida :"
-msgstr ""
+msgstr "Rilevamento attivato:"
 
+#, fuzzy
 msgid "Fina Tempo"
-msgstr ""
+msgstr "Tempo finale"
 
+#, fuzzy
 msgid "ĝeneralaj agordoj"
-msgstr ""
+msgstr "Impostazioni generali"
 
+#, fuzzy
 msgid "Maksimuma nombro de samtempaj zonoj kun movado"
-msgstr ""
+msgstr "Numero massimo di zone simultanee con movimento"
 
+#, fuzzy
 msgid "Minimuma nombro de zonoj dum movado"
-msgstr ""
+msgstr "Numero minimo di zone durante il movimento"
 
+#, fuzzy
 msgid "Movo-Agordoj"
-msgstr ""
+msgstr "Sposta le impostazioni"
 
+#, fuzzy
 msgid "Ordonon:"
-msgstr ""
+msgstr "Ordine:"
 
+#, fuzzy
 msgid "plenumi ordonon:"
-msgstr ""
+msgstr "Per eseguire un ordine:"
 
+#, fuzzy
 msgid "Sciigo"
-msgstr ""
+msgstr "Notifica"
 
+#, fuzzy
 msgid "Senaktiva Tempo"
-msgstr ""
+msgstr "Orario inattivo"
 
+#, fuzzy
 msgid "sendi retpoŝton :"
-msgstr ""
+msgstr "Invia una email:"
 
+#, fuzzy
 msgid "sendi «telegram» :"
-msgstr ""
+msgstr "Invia \"Telegram\":"
 
+#, fuzzy
 msgid "sendi «URL» :"
-msgstr ""
+msgstr "Invia \"URL\":"
 
+#, fuzzy
 msgid "Sentemo :"
-msgstr ""
+msgstr "Sensibilità:"
 
+#, fuzzy
 msgid "Stokado"
-msgstr ""
+msgstr "Conservazione"
 
+#, fuzzy
 msgid "stoki bildojn :"
-msgstr ""
+msgstr "Immagini Store:"
 
+#, fuzzy
 msgid "stoki filmetojn :"
-msgstr ""
+msgstr "Store Video:"
 
+#, fuzzy
 msgid "stoki sur fora servilo :"
-msgstr ""
+msgstr "Conservare su un server remoto:"
 
+#, fuzzy
 msgid "Url :"
-msgstr ""
+msgstr "URL:"
 

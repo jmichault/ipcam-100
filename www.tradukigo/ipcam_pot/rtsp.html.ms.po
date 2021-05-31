@@ -14,69 +14,69 @@ msgstr ""
 
 #, fuzzy
 msgid "adreso de sensilo"
-msgstr ""
+msgstr "Alamat Sensile."
 
 #, fuzzy
 msgid "alteco"
-msgstr ""
+msgstr "Ketinggian"
 
 #, fuzzy
 msgid "bildograndeco (sekundara kanalo devas esti malpli granda)"
-msgstr ""
+msgstr "Saiz Sorotan (Saluran sekunder mestilah kurang besar)"
 
 #, fuzzy
 msgid "bitrapido (kbps)"
-msgstr ""
+msgstr "bititrido (kbps)"
 
 #, fuzzy
 msgid "capteur"
-msgstr ""
+msgstr "Capteur."
 
 #, fuzzy
 msgid "ĉefa kanalo"
-msgstr ""
+msgstr "Saluran utama"
 
 #, fuzzy
 msgid "duaranga kanalo"
-msgstr ""
+msgstr "Saluran sekunder"
 
 #, fuzzy
 msgid "interfaco :"
-msgstr ""
+msgstr "Interface:"
 
 #, fuzzy
 msgid "larĝo"
-msgstr ""
+msgstr "Lebar"
 
 #, fuzzy
 msgid "maxQP (pli malalta = pli bona kvalito)"
-msgstr ""
+msgstr "maxqp (lebih rendah = berkualiti yang lebih baik)"
 
 #, fuzzy
 msgid "minQP (pli malalta = pli bona kvalito)"
-msgstr ""
+msgstr "minqp (lebih rendah = kualiti yang lebih baik)"
 
 #, fuzzy
 msgid "nombro da kadroj sekunde"
-msgstr ""
+msgstr "Bilangan Bingkai sesaat"
 
 #, fuzzy
 msgid "nomo de sensilo :"
-msgstr ""
+msgstr "Nama Sensile:"
 
 #, fuzzy
 msgid "sensor"
-msgstr ""
+msgstr "Sensor"
 
 #, fuzzy
 msgid "Video Agordoj :"
-msgstr ""
+msgstr "Tetapan Video:"
 
 #, fuzzy
 msgid "video-formato"
-msgstr ""
+msgstr "Format video."
 
 #, fuzzy
 msgid "videotrajtoj"
-msgstr ""
+msgstr "Videotiori."
 

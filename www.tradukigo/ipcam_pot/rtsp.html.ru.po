@@ -14,69 +14,69 @@ msgstr ""
 
 #, fuzzy
 msgid "adreso de sensilo"
-msgstr ""
+msgstr "Адрес чувствительности"
 
 #, fuzzy
 msgid "alteco"
-msgstr ""
+msgstr "Высота"
 
 #, fuzzy
 msgid "bildograndeco (sekundara kanalo devas esti malpli granda)"
-msgstr ""
+msgstr "Выделенный размер (Вторичный канал должен быть менее большим)"
 
 #, fuzzy
 msgid "bitrapido (kbps)"
-msgstr ""
+msgstr "бититридо (Кбит / с)"
 
 #, fuzzy
 msgid "capteur"
-msgstr ""
+msgstr "Capeeur"
 
 #, fuzzy
 msgid "ĉefa kanalo"
-msgstr ""
+msgstr "Основной канал"
 
 #, fuzzy
 msgid "duaranga kanalo"
-msgstr ""
+msgstr "Вторичный канал"
 
 #, fuzzy
 msgid "interfaco :"
-msgstr ""
+msgstr "Интерфейс:"
 
 #, fuzzy
 msgid "larĝo"
-msgstr ""
+msgstr "Ширина"
 
 #, fuzzy
 msgid "maxQP (pli malalta = pli bona kvalito)"
-msgstr ""
+msgstr "MaxQP (ниже = лучшее качество)"
 
 #, fuzzy
 msgid "minQP (pli malalta = pli bona kvalito)"
-msgstr ""
+msgstr "MaxQP (ниже = лучшее качество)"
 
 #, fuzzy
 msgid "nombro da kadroj sekunde"
-msgstr ""
+msgstr "Количество кадров в секунду"
 
 #, fuzzy
 msgid "nomo de sensilo :"
-msgstr ""
+msgstr "Количество кадров в секунду"
 
 #, fuzzy
 msgid "sensor"
-msgstr ""
+msgstr "Датчик"
 
 #, fuzzy
 msgid "Video Agordoj :"
-msgstr ""
+msgstr "Настройки видео:"
 
 #, fuzzy
 msgid "video-formato"
-msgstr ""
+msgstr "Видеоформат"
 
 #, fuzzy
 msgid "videotrajtoj"
-msgstr ""
+msgstr "Видеоизотические"
 

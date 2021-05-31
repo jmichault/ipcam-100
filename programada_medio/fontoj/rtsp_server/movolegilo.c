@@ -161,5 +161,5 @@ int nbRect=0;
       doTrt(buffer,bufferValue);
     }
   }
-
+  fclose(ficin);
 }

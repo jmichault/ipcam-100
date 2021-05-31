@@ -14,69 +14,69 @@ msgstr ""
 
 #, fuzzy
 msgid "adreso de sensilo"
-msgstr ""
+msgstr "官能の住所"
 
 #, fuzzy
 msgid "alteco"
-msgstr ""
+msgstr "高さ"
 
 #, fuzzy
 msgid "bildograndeco (sekundara kanalo devas esti malpli granda)"
-msgstr ""
+msgstr "ハイライトサイズ (二次チャンネルはそれほど大きくなければならない)"
 
 #, fuzzy
 msgid "bitrapido (kbps)"
-msgstr ""
+msgstr "ビタリド (Kbps)"
 
 #, fuzzy
 msgid "capteur"
-msgstr ""
+msgstr "捕獲"
 
 #, fuzzy
 msgid "ĉefa kanalo"
-msgstr ""
+msgstr "メインチャネル"
 
 #, fuzzy
 msgid "duaranga kanalo"
-msgstr ""
+msgstr "二次チャンネル"
 
 #, fuzzy
 msgid "interfaco :"
-msgstr ""
+msgstr "インターフェース："
 
 #, fuzzy
 msgid "larĝo"
-msgstr ""
+msgstr "幅"
 
 #, fuzzy
 msgid "maxQP (pli malalta = pli bona kvalito)"
-msgstr ""
+msgstr "MAXQP (低=品質向上)"
 
 #, fuzzy
 msgid "minQP (pli malalta = pli bona kvalito)"
-msgstr ""
+msgstr "MINQP (下=品質向上)"
 
 #, fuzzy
 msgid "nombro da kadroj sekunde"
-msgstr ""
+msgstr "1秒あたりのフレーム数"
 
 #, fuzzy
 msgid "nomo de sensilo :"
-msgstr ""
+msgstr "官能名の名前："
 
 #, fuzzy
 msgid "sensor"
-msgstr ""
+msgstr "センサー"
 
 #, fuzzy
 msgid "Video Agordoj :"
-msgstr ""
+msgstr "ビデオ設定："
 
 #, fuzzy
 msgid "video-formato"
-msgstr ""
+msgstr "ビデオフォーマット"
 
 #, fuzzy
 msgid "videotrajtoj"
-msgstr ""
+msgstr "ビデオトイズ"
 

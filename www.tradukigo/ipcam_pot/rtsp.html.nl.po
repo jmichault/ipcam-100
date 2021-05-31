@@ -14,69 +14,69 @@ msgstr ""
 
 #, fuzzy
 msgid "adreso de sensilo"
-msgstr ""
+msgstr "Adres van een sensiel"
 
 #, fuzzy
 msgid "alteco"
-msgstr ""
+msgstr "Hoogte"
 
 #, fuzzy
 msgid "bildograndeco (sekundara kanalo devas esti malpli granda)"
-msgstr ""
+msgstr "Highlight Size (Secundair kanaal moet minder groot zijn)"
 
 #, fuzzy
 msgid "bitrapido (kbps)"
-msgstr ""
+msgstr "Highlight Size (Secundair kanaal moet minder groot zijn)"
 
 #, fuzzy
 msgid "capteur"
-msgstr ""
+msgstr "Highlight SizeSecundair kanaal moet minder groot zijn"
 
 #, fuzzy
 msgid "ĉefa kanalo"
-msgstr ""
+msgstr "Hoofdkanaal"
 
 #, fuzzy
 msgid "duaranga kanalo"
-msgstr ""
+msgstr "Secundair kanaal"
 
 #, fuzzy
 msgid "interfaco :"
-msgstr ""
+msgstr "Koppel:"
 
 #, fuzzy
 msgid "larĝo"
-msgstr ""
+msgstr "Breedte"
 
 #, fuzzy
 msgid "maxQP (pli malalta = pli bona kvalito)"
-msgstr ""
+msgstr "MAXQP (lager = betere kwaliteit)"
 
 #, fuzzy
 msgid "minQP (pli malalta = pli bona kvalito)"
-msgstr ""
+msgstr "MINQP (lager = betere kwaliteit)"
 
 #, fuzzy
 msgid "nombro da kadroj sekunde"
-msgstr ""
+msgstr "Aantal frames per seconde"
 
 #, fuzzy
 msgid "nomo de sensilo :"
-msgstr ""
+msgstr "Aantal frames per seconde"
 
 #, fuzzy
 msgid "sensor"
-msgstr ""
+msgstr "Sensor"
 
 #, fuzzy
 msgid "Video Agordoj :"
-msgstr ""
+msgstr "Beeldinstellingen:"
 
 #, fuzzy
 msgid "video-formato"
-msgstr ""
+msgstr "Video formaat"
 
 #, fuzzy
 msgid "videotrajtoj"
-msgstr ""
+msgstr "Videotories"
 

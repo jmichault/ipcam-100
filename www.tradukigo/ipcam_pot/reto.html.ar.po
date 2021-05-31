@@ -1,84 +1,98 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
 #, fuzzy
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #, fuzzy
 msgid "/"
-msgstr ""
+msgstr "/"
 
 #, fuzzy
 msgid "Adresoj gamo :"
-msgstr ""
+msgstr "مجموعة العناوين:"
 
 #, fuzzy
 msgid "Aktivi :"
-msgstr ""
+msgstr "لتنشيط:"
 
 #, fuzzy
 msgid "dns1 IP-adreso :"
-msgstr ""
+msgstr "عنوان IP DNS1:"
 
 #, fuzzy
 msgid "dns2 IP-adreso :"
-msgstr ""
+msgstr "عنوان IP DNS2:"
 
 #, fuzzy
 msgid "enirejo :"
-msgstr ""
+msgstr "مدخل:"
 
 #, fuzzy
-msgid "eneralaj agordoj"
-msgstr ""
+msgid "ĝeneralaj agordoj"
+msgstr "الاعدادات العامة"
 
 #, fuzzy
 msgid "IP-adreso :"
-msgstr ""
+msgstr "عنوان IP:"
 
 #, fuzzy
 msgid "LAN eth0"
-msgstr ""
+msgstr "شبكة LAN ETH0."
 
 #, fuzzy
 msgid "Reto-Agordoj"
-msgstr ""
+msgstr "اعدادات الشبكة"
 
 #, fuzzy
 msgid "SSID :"
-msgstr ""
+msgstr "SSID:"
 
 #, fuzzy
 msgid "<strong>DHCP Servilo :</strong>"
-msgstr ""
+msgstr "<قوي>خادم DHCP:</ قوي>"
 
 #, fuzzy
 msgid "<strong>DNS Serviloj :</strong>"
-msgstr ""
+msgstr "<قودا>خوادم DNS:</ قوي>"
 
 #, fuzzy
 msgid "<strong>IP Agordoj :</strong>"
-msgstr ""
+msgstr "<قواطع>إعدادات IP:</ قوي>"
 
 #, fuzzy
 msgid "<strong>manaj IP-agordoj (estos ignorita se dhcp estas ebligita) :</strong>"
-msgstr ""
+msgstr "سيتم تجاهل<قوي>إعداد إعدادات IP اليدوية (إذا تم تمكين DHCP) :</ قوي>"
 
 #, fuzzy
 msgid "<strong>Wifi Agordoj :</strong>"
-msgstr ""
+msgstr "<قواطع>إعدادات WiFi:</ قوي>"
 
 #, fuzzy
 msgid "Uzi dhcp :"
-msgstr ""
+msgstr "قواطعإعدادات WiFi:/ قوي"
 
 #, fuzzy
 msgid "WiFi-AP wlan1"
-msgstr ""
+msgstr "WiFi AP WLAN1."
 
 #, fuzzy
 msgid "WiFi-kliento wlan0"
-msgstr ""
+msgstr "واي فاي العملاء wlan0."
 
 #, fuzzy
 msgid "WiFi pasvorto :"
-msgstr ""
+msgstr "واي فاي العملاء wlan0."
 

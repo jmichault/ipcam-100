@@ -51,6 +51,9 @@ msgstr ""
 msgid "Reto Informoj"
 msgstr ""
 
+msgid "Retpoŝto"
+msgstr ""
+
 msgid "RTSP Agordoj"
 msgstr ""
 

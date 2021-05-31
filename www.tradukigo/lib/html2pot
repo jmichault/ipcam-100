@@ -24,12 +24,13 @@ function sercxi()
  grep "data-lang" $1|sed "s/.*data-lang=\"//;s/\"[ \t]*>.*//"
 # ŝerĉas por gettext (javascript or cgi files)
  grep 'gettext("' $1|sed 's/.*gettext("//;s/\").*//'
-# ŝerĉas por title: or helpvalue in forms
- egrep 'title"*:|helpvalue"*:' $(dirname $1)/forms/$(basename $1).js|sed 's/.*\(title\|helpvalue\)"*: *"//;s/\".*//' 
+# ŝerĉas por title: or value or helpvalue in forms
+ egrep 'title"*:|value"*:' $(dirname $1)/forms/$(basename $1).js|sed 's/.*\(title\|helpvalue\)"*: *"//;s/\".*//' 
 }
 
-sercxi $1|sort -u|while read TXT
+sercxi $1|sort -u|grep -v "^ *$"|while read TXT
 do
+  echo "#, fuzzy"
   echo msgid \"$TXT\"
   echo msgstr \"\"
   echo

@@ -14,69 +14,69 @@ msgstr ""
 
 #, fuzzy
 msgid "adreso de sensilo"
-msgstr ""
+msgstr "संवेदन का पता"
 
 #, fuzzy
 msgid "alteco"
-msgstr ""
+msgstr "ऊंचाई"
 
 #, fuzzy
 msgid "bildograndeco (sekundara kanalo devas esti malpli granda)"
-msgstr ""
+msgstr "हाइलाइट आकारएक माध्यमिक चैनल कम बड़ा होना चाहिए)"
 
 #, fuzzy
 msgid "bitrapido (kbps)"
-msgstr ""
+msgstr "बिटिट्रिडो (° 0001 डिग्री) केबीपीएस (डिग्री 0002 डिग्री)"
 
 #, fuzzy
 msgid "capteur"
-msgstr ""
+msgstr "कैशन"
 
 #, fuzzy
 msgid "ĉefa kanalo"
-msgstr ""
+msgstr "मुख्य चैनल"
 
 #, fuzzy
 msgid "duaranga kanalo"
-msgstr ""
+msgstr "माध्यमिक चैनल"
 
 #, fuzzy
 msgid "interfaco :"
-msgstr ""
+msgstr "इंटरफेस:"
 
 #, fuzzy
 msgid "larĝo"
-msgstr ""
+msgstr "चौड़ाई"
 
 #, fuzzy
 msgid "maxQP (pli malalta = pli bona kvalito)"
-msgstr ""
+msgstr "MAXQP (° 0001 डिग्री) निचला = बेहतर गुणवत्ता (° 0002 डिग्री)"
 
 #, fuzzy
 msgid "minQP (pli malalta = pli bona kvalito)"
-msgstr ""
+msgstr "Minqp (° 0001 डिग्री) निचला = बेहतर गुणवत्ता (° ° 0002 डिग्री)"
 
 #, fuzzy
 msgid "nombro da kadroj sekunde"
-msgstr ""
+msgstr "प्रति सेकंड फ्रेम की संख्या"
 
 #, fuzzy
 msgid "nomo de sensilo :"
-msgstr ""
+msgstr "सेंसेल का नाम:"
 
 #, fuzzy
 msgid "sensor"
-msgstr ""
+msgstr "सेंसर"
 
 #, fuzzy
 msgid "Video Agordoj :"
-msgstr ""
+msgstr "वीडियो सेटिंग्स:"
 
 #, fuzzy
 msgid "video-formato"
-msgstr ""
+msgstr "वीडियो फार्मेट"
 
 #, fuzzy
 msgid "videotrajtoj"
-msgstr ""
+msgstr "Videotories"
 

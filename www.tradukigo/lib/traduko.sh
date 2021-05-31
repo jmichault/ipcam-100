@@ -17,7 +17,7 @@ do
 
 if [ x$cook = x ]
 then
-  curl -c _traduko.jar -A 'Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0' \
+  curl --connect-timeout 2 $PROXY -c _traduko.jar -A 'Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0' \
    "https://translate.google.com" -o /dev/null 2>/dev/null
 fi
 
@@ -29,7 +29,7 @@ fi
 #echo SITE=$SITE
 SITE=translate.google.com
 
-MSG0=$(curl -b _traduko.jar -A 'Mozilla/5.0 (X11; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0' \
+MSG0=$(curl --connect-timeout 2 $PROXY -b _traduko.jar -A 'Mozilla/5.0 (X11; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0' \
  --refer "https://${SITE}/" \
  "https://${SITE}/translate_a/single?client=webapp&sl=${src}&tl=${dst}&hl=${dst}&dt=at&dt=bd&dt=ex&dt=ld&dt=md&dt=qca&dt=rw&dt=rm&dt=ss&dt=t&dt=gt&pc=1&otf=1&ssel=0&tsel=0&kc=1&tk=&ie=UTF-8&oe=UTF-8" \
 --data-urlencode "q=${txt}" 2>/dev/null \
@@ -52,7 +52,7 @@ if echo "$MSG0"|grep "sorry" >/dev/null
 then
  #echo sorry
   BASEDIR=$(dirname $(readlink -f $0))
-  MSG=$("$BASEDIR"/trans -b -s $src -t $dst "$txt" )
+  MSG=$("$BASEDIR"/trans $PROXY -b -s $src -t $dst "$txt" )
 else
 # echo pas sorry
   MSG=$(echo $MSG0 \

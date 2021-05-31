@@ -15,66 +15,87 @@ msgstr ""
 msgid ""
 msgstr ""
 
+#, fuzzy
 msgid "Al :"
-msgstr ""
+msgstr "Kepada:"
 
+#, fuzzy
 msgid "Areoj"
-msgstr ""
+msgstr "Kawasan-kawasan"
 
+#, fuzzy
 msgid "Detekto Aktivida :"
-msgstr ""
+msgstr "Pengesanan diaktifkan:"
 
+#, fuzzy
 msgid "Fina Tempo"
-msgstr ""
+msgstr "Masa Akhir"
 
+#, fuzzy
 msgid "ĝeneralaj agordoj"
-msgstr ""
+msgstr "Tetapan umum"
 
+#, fuzzy
 msgid "Maksimuma nombro de samtempaj zonoj kun movado"
-msgstr ""
+msgstr "Bilangan maksimum zon serentak dengan pergerakan"
 
+#, fuzzy
 msgid "Minimuma nombro de zonoj dum movado"
-msgstr ""
+msgstr "Bilangan zon minimum semasa pergerakan"
 
+#, fuzzy
 msgid "Movo-Agordoj"
-msgstr ""
+msgstr "Pindahkan tetapan"
 
+#, fuzzy
 msgid "Ordonon:"
-msgstr ""
+msgstr "Perintah:"
 
+#, fuzzy
 msgid "plenumi ordonon:"
-msgstr ""
+msgstr "Untuk melaksanakan pesanan:"
 
+#, fuzzy
 msgid "Sciigo"
-msgstr ""
+msgstr "Pemberitahuan"
 
+#, fuzzy
 msgid "Senaktiva Tempo"
-msgstr ""
+msgstr "Masa yang tidak aktif"
 
+#, fuzzy
 msgid "sendi retpoŝton :"
-msgstr ""
+msgstr "Hantar email:"
 
+#, fuzzy
 msgid "sendi «telegram» :"
-msgstr ""
+msgstr "Hantar \"Telegram\":"
 
+#, fuzzy
 msgid "sendi «URL» :"
-msgstr ""
+msgstr "Hantar \"URL\":"
 
+#, fuzzy
 msgid "Sentemo :"
-msgstr ""
+msgstr "SENSITIVITI:"
 
+#, fuzzy
 msgid "Stokado"
-msgstr ""
+msgstr "Penyimpanan"
 
+#, fuzzy
 msgid "stoki bildojn :"
-msgstr ""
+msgstr "Simpan imej:"
 
+#, fuzzy
 msgid "stoki filmetojn :"
-msgstr ""
+msgstr "Simpan video:"
 
+#, fuzzy
 msgid "stoki sur fora servilo :"
-msgstr ""
+msgstr "Simpan pada pelayan jauh:"
 
+#, fuzzy
 msgid "Url :"
-msgstr ""
+msgstr "URL:"
 

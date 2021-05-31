@@ -34,7 +34,7 @@ var movo_jsForm=
       htmlClass: "form-inline py-3 px-3 ", 
       items:
       [
-       {key:"on", fieldHtmlClass: "py-3 px-3 ", },
+       {key:"on", htmlClass: "py-3 px-3", fieldHtmlClass: "ml-2", },
        {key:"sentemo"},
        {key:"FinaTempo"},
        {key:"SenaktivaTempo"},

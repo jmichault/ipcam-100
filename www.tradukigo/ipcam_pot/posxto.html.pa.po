@@ -1,0 +1,70 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: pa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+#, fuzzy
+msgid "Adresanto :"
+msgstr "ਐਡਰੈਸਸਰ:"
+
+#, fuzzy
+msgid "Al :"
+msgstr "ਨੂੰ:"
+
+#, fuzzy
+msgid "Ensaluto :"
+msgstr "ਲਾਗਿਨ:"
+
+#, fuzzy
+msgid "Haveno :"
+msgstr "ਪੋਰਟ:"
+
+#, fuzzy
+msgid "Mesaĝo :"
+msgstr "ਸੁਨੇਹਾ:"
+
+#, fuzzy
+msgid "Pasvorto :"
+msgstr "ਪਾਸਵਰਡ:"
+
+#, fuzzy
+msgid "Poŝto-Agordoj"
+msgstr "ਮੇਲ ਸੈਟਿੰਗਜ਼"
+
+#, fuzzy
+msgid "Pri :"
+msgstr "ਬਾਰੇ:"
+
+#, fuzzy
+msgid "Servilo :"
+msgstr "ਸਰਵਰ:"
+
+#, fuzzy
+msgid "<strong>Aŭtentigo :</strong>"
+msgstr "<ਮਜ਼ਬੂਤ ​​>ਪ੍ਰਮਾਣਿਕਤਾ:</ ਮਜ਼ਬੂਤ ​​>"
+
+#, fuzzy
+msgid "<strong>Servilo (SSL deviga) :</strong>"
+msgstr "<ਮਜ਼ਬੂਤ ​​>ਸਰਵਰ (ਐਸਐਸਐਲ ਲਾਜ਼ਮੀ</ ਮਜ਼ਬੂਤ ​​>"
+
+#, fuzzy
+msgid "<strong>Testo :</strong>"
+msgstr "<ਮਜ਼ਬੂਤ ​​>ਟੈਸਟ:</ ਮਜ਼ਬੂਤ ​​>"
+
+#, fuzzy
+msgid "Submeti"
+msgstr "ਜਮ੍ਹਾ ਕਰਨ ਲਈ"
+
+#, fuzzy
+msgid "Submeti kaj Testi"
+msgstr "ਜਮ੍ਹਾ ਕਰੋ ਅਤੇ ਟੈਸਟ ਕਰੋ"
+

@@ -15,66 +15,87 @@ msgstr ""
 msgid ""
 msgstr ""
 
+#, fuzzy
 msgid "Al :"
-msgstr ""
+msgstr "প্রতি:"
 
+#, fuzzy
 msgid "Areoj"
-msgstr ""
+msgstr "এলাকা"
 
+#, fuzzy
 msgid "Detekto Aktivida :"
-msgstr ""
+msgstr "সনাক্তকরণ সক্রিয়:"
 
+#, fuzzy
 msgid "Fina Tempo"
-msgstr ""
+msgstr "চূড়ান্ত সময়"
 
+#, fuzzy
 msgid "ĝeneralaj agordoj"
-msgstr ""
+msgstr "সাধারণ সেটিংস"
 
+#, fuzzy
 msgid "Maksimuma nombro de samtempaj zonoj kun movado"
-msgstr ""
+msgstr "আন্দোলনের সাথে একযোগে জোনের সর্বোচ্চ সংখ্যা"
 
+#, fuzzy
 msgid "Minimuma nombro de zonoj dum movado"
-msgstr ""
+msgstr "আন্দোলনের সময় সর্বনিম্ন সংখ্যা জোন্স"
 
+#, fuzzy
 msgid "Movo-Agordoj"
-msgstr ""
+msgstr "সেটিংস সরান"
 
+#, fuzzy
 msgid "Ordonon:"
-msgstr ""
+msgstr "আদেশ:"
 
+#, fuzzy
 msgid "plenumi ordonon:"
-msgstr ""
+msgstr "একটি আদেশ সঞ্চালন করতে:"
 
+#, fuzzy
 msgid "Sciigo"
-msgstr ""
+msgstr "বিজ্ঞপ্তি"
 
+#, fuzzy
 msgid "Senaktiva Tempo"
-msgstr ""
+msgstr "নিষ্ক্রিয় সময়"
 
+#, fuzzy
 msgid "sendi retpoŝton :"
-msgstr ""
+msgstr "একটি ইমেইল পাঠাও:"
 
+#, fuzzy
 msgid "sendi «telegram» :"
-msgstr ""
+msgstr "\"টেলিগ্রাম\" পাঠান:"
 
+#, fuzzy
 msgid "sendi «URL» :"
-msgstr ""
+msgstr "\"URL\" পাঠান:"
 
+#, fuzzy
 msgid "Sentemo :"
-msgstr ""
+msgstr "সংবেদনশীলতা:"
 
+#, fuzzy
 msgid "Stokado"
-msgstr ""
+msgstr "স্টোরেজ"
 
+#, fuzzy
 msgid "stoki bildojn :"
-msgstr ""
+msgstr "দোকান ইমেজ:"
 
+#, fuzzy
 msgid "stoki filmetojn :"
-msgstr ""
+msgstr "দোকান ভিডিও:"
 
+#, fuzzy
 msgid "stoki sur fora servilo :"
-msgstr ""
+msgstr "একটি দূরবর্তী সার্ভারে সংরক্ষণ করুন:"
 
+#, fuzzy
 msgid "Url :"
-msgstr ""
+msgstr "ইউআরএল:"
 

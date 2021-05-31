@@ -65,6 +65,10 @@ msgid "Reto Informoj"
 msgstr "Netwerkinformatie"
 
 #, fuzzy
+msgid "Retpoŝto"
+msgstr "E-mail"
+
+#, fuzzy
 msgid "RTSP Agordoj"
 msgstr "RTSP-instellingen"
 

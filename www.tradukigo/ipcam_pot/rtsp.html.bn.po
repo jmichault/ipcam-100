@@ -14,69 +14,69 @@ msgstr ""
 
 #, fuzzy
 msgid "adreso de sensilo"
-msgstr ""
+msgstr "সেন্সিলের ঠিকানা"
 
 #, fuzzy
 msgid "alteco"
-msgstr ""
+msgstr "সেন্সিলের ঠিকানা"
 
 #, fuzzy
 msgid "bildograndeco (sekundara kanalo devas esti malpli granda)"
-msgstr ""
+msgstr "হাইলাইট আকার (সেকেন্ডারি চ্যানেল কম বড়)হতে হবে"
 
 #, fuzzy
 msgid "bitrapido (kbps)"
-msgstr ""
+msgstr "Bititrido (Kbps)"
 
 #, fuzzy
 msgid "capteur"
-msgstr ""
+msgstr "ক্যাপচার"
 
 #, fuzzy
 msgid "ĉefa kanalo"
-msgstr ""
+msgstr "প্রধান চ্যানেল"
 
 #, fuzzy
 msgid "duaranga kanalo"
-msgstr ""
+msgstr "সেকেন্ডারি চ্যানেল"
 
 #, fuzzy
 msgid "interfaco :"
-msgstr ""
+msgstr "ইন্টারফেস:"
 
 #, fuzzy
 msgid "larĝo"
-msgstr ""
+msgstr "প্রস্থ"
 
 #, fuzzy
 msgid "maxQP (pli malalta = pli bona kvalito)"
-msgstr ""
+msgstr "MaxQP (নিম্ন = ভাল মানের)"
 
 #, fuzzy
 msgid "minQP (pli malalta = pli bona kvalito)"
-msgstr ""
+msgstr "MINQP (নিম্ন = ভাল মানের)"
 
 #, fuzzy
 msgid "nombro da kadroj sekunde"
-msgstr ""
+msgstr "প্রতি সেকেন্ডে ফ্রেম সংখ্যা"
 
 #, fuzzy
 msgid "nomo de sensilo :"
-msgstr ""
+msgstr "সেন্সিলের নাম:"
 
 #, fuzzy
 msgid "sensor"
-msgstr ""
+msgstr "সেন্সর"
 
 #, fuzzy
 msgid "Video Agordoj :"
-msgstr ""
+msgstr "ভিডিও সেটিংস:"
 
 #, fuzzy
 msgid "video-formato"
-msgstr ""
+msgstr "ভিডিও বিন্যাস"
 
 #, fuzzy
 msgid "videotrajtoj"
-msgstr ""
+msgstr "VideoTories."
 

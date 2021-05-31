@@ -51,6 +51,10 @@ msgstr "Réseau"
 msgid "Reto Informoj"
 msgstr "Informations sur le réseau"
 
+#, fuzzy
+msgid "Retpoŝto"
+msgstr "E-mail"
+
 msgid "RTSP Agordoj"
 msgstr "Paramètres RTSP"
 
@@ -74,4 +78,3 @@ msgstr "Codes T21"
 
 msgid "Versio :"
 msgstr "Version:"
-

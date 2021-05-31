@@ -15,66 +15,87 @@ msgstr ""
 msgid ""
 msgstr ""
 
+#, fuzzy
 msgid "Al :"
-msgstr ""
+msgstr "ਨੂੰ:"
 
+#, fuzzy
 msgid "Areoj"
-msgstr ""
+msgstr "ਖੇਤਰ"
 
+#, fuzzy
 msgid "Detekto Aktivida :"
-msgstr ""
+msgstr "ਖੋਜ ਸਰਗਰਮ:"
 
+#, fuzzy
 msgid "Fina Tempo"
-msgstr ""
+msgstr "ਅੰਤਮ ਸਮਾਂ"
 
+#, fuzzy
 msgid "ĝeneralaj agordoj"
-msgstr ""
+msgstr "ਆਮ ਸੈਟਿੰਗਜ਼"
 
+#, fuzzy
 msgid "Maksimuma nombro de samtempaj zonoj kun movado"
-msgstr ""
+msgstr "ਅੰਦੋਲਨ ਦੇ ਨਾਲ ਇਕੋ ਸਮੇਂ ਜ਼ੋਨ ਦੀ ਵੱਧ ਤੋਂ ਵੱਧ ਗਿਣਤੀ"
 
+#, fuzzy
 msgid "Minimuma nombro de zonoj dum movado"
-msgstr ""
+msgstr "ਅੰਦੋਲਨ ਦੌਰਾਨ ਜ਼ੋਨ ਦੀ ਘੱਟੋ ਘੱਟ ਗਿਣਤੀ"
 
+#, fuzzy
 msgid "Movo-Agordoj"
-msgstr ""
+msgstr "ਸੈਟਿੰਗਾਂ ਨੂੰ ਭੇਜੋ"
 
+#, fuzzy
 msgid "Ordonon:"
-msgstr ""
+msgstr "ਆਰਡਰ:"
 
+#, fuzzy
 msgid "plenumi ordonon:"
-msgstr ""
+msgstr "ਆਰਡਰ ਕਰਨ ਲਈ:"
 
+#, fuzzy
 msgid "Sciigo"
-msgstr ""
+msgstr "ਸੂਚਨਾ"
 
+#, fuzzy
 msgid "Senaktiva Tempo"
-msgstr ""
+msgstr "ਨਾ-ਸਰਗਰਮ ਸਮਾਂ"
 
+#, fuzzy
 msgid "sendi retpoŝton :"
-msgstr ""
+msgstr "ਇੱਕ ਈਮੇਲ ਭੇਜੋ:"
 
+#, fuzzy
 msgid "sendi «telegram» :"
-msgstr ""
+msgstr "\"ਟੈਲੀਗ੍ਰਾਮ\" ਭੇਜੋ:"
 
+#, fuzzy
 msgid "sendi «URL» :"
-msgstr ""
+msgstr "\"URL\" ਭੇਜੋ:"
 
+#, fuzzy
 msgid "Sentemo :"
-msgstr ""
+msgstr "ਸੰਵੇਦਨਸ਼ੀਲਤਾ:"
 
+#, fuzzy
 msgid "Stokado"
-msgstr ""
+msgstr "ਸਟੋਰੇਜ"
 
+#, fuzzy
 msgid "stoki bildojn :"
-msgstr ""
+msgstr "ਸਟੋਰ ਚਿੱਤਰ:"
 
+#, fuzzy
 msgid "stoki filmetojn :"
-msgstr ""
+msgstr "ਵੀਡੀਓ ਸਟੋਰ ਕਰੋ:"
 
+#, fuzzy
 msgid "stoki sur fora servilo :"
-msgstr ""
+msgstr "ਰਿਮੋਟ ਸਰਵਰ ਤੇ ਸਟੋਰ ਕਰੋ:"
 
+#, fuzzy
 msgid "Url :"
-msgstr ""
+msgstr "URL:"
 

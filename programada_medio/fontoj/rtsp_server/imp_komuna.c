@@ -57,7 +57,7 @@ IMP_IVS_MoveParam MovoParam=
 static void *ekrankopio_process(void *arg)
 {
   int i = 0, ret = 0;
-  printf(" ekrankopio_process komenco\n");
+  fprintf(stderr," ekrankopio_process komenco\n");
   SharedMem_init();
   int snap_num=-1;
   if( channel_attrs[0].encAttr.enType==PT_JPEG) snap_num=0;
@@ -98,7 +98,7 @@ static void *ekrankopio_process(void *arg)
 
     usleep(1000000);
   }
-  printf("get_result_process fino.\n");
+  fprintf(stderr,"get_result_process fino.\n");
 
   return (void *)0;
 }
@@ -133,26 +133,27 @@ static void exec_command(const char *command, char param[4][2])
   }
   else
   {
-         printf("komando «%s» ne ekzistas\n",command);
+         fprintf(stderr,"komando «%s» ne ekzistas\n",command);
   }
 }
 
 
 static void *ivs_move_get_result_process(void *arg)
 {
-  int i = 0, ret = 0;
+  int boucle = 0, ret = 0;
   int chn_num = (int)arg;
   IMP_IVS_MoveOutput *result = NULL;
-  printf("get_result_process komenco\n");
+  fprintf(stderr,"get_result_process komenco\n");
 // movAgordo.Aktivida :
   bool inMovo=false;
   int dumPauxzo=movAgordo.SenaktivaTempo*10;
   int dumFina=0;
 
-  for (i = 0;  ; i++,usleep(100000))
+  for (boucle = 0;  ; boucle++,usleep(100000))
   {
-    ret = IMP_IVS_PollingResult(chn_num, 0); // timeout 0.01s
+    ret = IMP_IVS_PollingResult(chn_num, IMP_IVS_DEFAULT_TIMEOUTMS); // timeout -1 = default
     if (ret < 0) {
+      fprintf(stderr , "%s: IMP_IVS_PollingResult(%d) failed\n",TAG, chn_num);
       continue;
     }
     ret = IMP_IVS_GetResult(chn_num, (void **)&result);
@@ -168,7 +169,7 @@ static void *ivs_move_get_result_process(void *arg)
     if(dumPauxzo>0)
     {
       dumPauxzo--;
-      if(dumPauxzo==0) printf("finita paŭzo, aktiva detekto\n");
+      if(dumPauxzo==0) fprintf(stderr,"finita paŭzo, aktiva detekto\n");
       continue;
     }
     int hasMove=0;
@@ -176,7 +177,7 @@ static void *ivs_move_get_result_process(void *arg)
     {
       if(result->retRoi[i])
       {
-        //if(!hasMove) printf("Movo detekta en : ");
+        //if(!hasMove) fprintf(stderr,"Movo detekta en : ");
         hasMove += result->retRoi[i];
         //printf( "%d ", i);
       }
@@ -185,11 +186,11 @@ static void *ivs_move_get_result_process(void *arg)
     {
       if(!inMovo)
       {
-        printf("Movado komenca.\n");
+        fprintf(stderr,"Movado komenca.\n");
         inMovo=true;
         if(movAgordo.Aktivida) exec_command(detectionScriptOn, NULL);
       }
-      else printf(".");
+      else fprintf(stderr,".");
       dumFina=movAgordo.FinaTempo*10;
     }
     else
@@ -201,7 +202,7 @@ static void *ivs_move_get_result_process(void *arg)
       }
       if(inMovo)
       {
-        printf("Movado finita, paŭza detekto.\n");
+        fprintf(stderr,"Movado finita, paŭza detekto.\n");
         inMovo=false;
         dumFina=0;
         if(movAgordo.Aktivida)
@@ -211,7 +212,7 @@ static void *ivs_move_get_result_process(void *arg)
     }
 
   }
-  printf("get_result_process fino.\n");
+  fprintf(stderr,"get_result_process fino.\n");
 
   return (void *)0;
 }
@@ -272,7 +273,7 @@ int imp_init()
   IMP_LOG_DBG(TAG, "ivs init sukceso\n");
 
   // ivs move start
-  printf("ivs move start\n");
+  fprintf(stderr,"ivs move start\n");
 
   IMPIVSInterface *interface=NULL;
   interface = IMP_IVS_CreateMoveInterface(&MovoParam);
@@ -285,7 +286,7 @@ int imp_init()
 
   // start get result thread
   int chn_num=0;
-  printf("ivs thread start\n");
+  fprintf(stderr,"ivs thread start\n");
   if (pthread_create(&ivs_tid, NULL, ivs_move_get_result_process, (void *)chn_num) < 0)
     IMP_LOG_ERR(TAG, "create ivs_move_get_result_process failed\n");
 

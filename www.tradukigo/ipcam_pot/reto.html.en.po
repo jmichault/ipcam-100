@@ -90,7 +90,7 @@ msgstr "WiFi-AP wlan1"
 
 #, fuzzy
 msgid "WiFi-kliento wlan0"
-msgstr "WiFi client wlan0"
+msgstr "WiFi-client wlan0"
 
 #, fuzzy
 msgid "WiFi pasvorto :"
