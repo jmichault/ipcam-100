@@ -13,20 +13,12 @@ msgstr ""
 "X-Generator: html2pot\n"
 
 #, fuzzy
-msgid "Blanka LED"
-msgstr "白色LED."
-
-#, fuzzy
 msgid "Ĝisdatigi"
 msgstr "更新"
 
 #, fuzzy
 msgid "Kamerao"
 msgstr "カメラ"
-
-#, fuzzy
-msgid "LED agordoj"
-msgstr "LEDの設定"
 
 #, fuzzy
 msgid "Malŝalti"
@@ -65,8 +57,16 @@ msgid "Restartigi"
 msgstr "再起動します"
 
 #, fuzzy
+msgid "Reto"
+msgstr "通信網"
+
+#, fuzzy
 msgid "Reto Informoj"
 msgstr "ネットワーク情報"
+
+#, fuzzy
+msgid "Retpoŝto"
+msgstr "Eメール"
 
 #, fuzzy
 msgid "RTSP Agordoj"
@@ -97,12 +97,20 @@ msgid "T21 Kodumoj"
 msgstr "T21コード"
 
 #, fuzzy
-msgid "Transruĝa LED"
-msgstr "赤外線LED"
-
-#, fuzzy
 msgid "Versio :"
 msgstr "バージョン："
+
+#, fuzzy
+#~ msgid "Blanka LED"
+#~ msgstr "白色LED."
+
+#, fuzzy
+#~ msgid "LED agordoj"
+#~ msgstr "LEDの設定"
+
+#, fuzzy
+#~ msgid "Transruĝa LED"
+#~ msgstr "赤外線LED"
 
 #, fuzzy
 #~ msgid "Aŭtomata Nokta Detekto"
@@ -151,10 +159,6 @@ msgstr "バージョン："
 #, fuzzy
 #~ msgid "Obskura"
 #~ msgstr "邪険"
-
-#, fuzzy
-#~ msgid "Reto"
-#~ msgstr "通信網"
 
 #, fuzzy
 #~ msgid "RTSP-Servilo"

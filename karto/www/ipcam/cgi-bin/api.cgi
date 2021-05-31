@@ -328,6 +328,14 @@ if [ -n "$F_action" ]; then
     busybox rmmod sample_motor  2>&1
     $BINPATH/busybox nohup /system/bin/iCamera &  &>/dev/null &
   ;;
+  send_test_mail)
+    result=`$SDPATH/scripts/sendMailTest.sh 2>&1`
+    if [ $? == 0 ]; then
+      getReturn 1234 "success" "sendMailTest completed successfully : $result"
+    else
+      getReturn 1234 "error" "sendMailTest failed : $result"
+    fi
+  ;;
   send_picture_mail)
     $SDPATH/scripts/sendPictureMail.sh
     if [ $? == 0 ]; then

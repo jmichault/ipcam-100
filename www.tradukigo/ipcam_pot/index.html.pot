@@ -12,16 +12,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: html2pot\n"
 
-msgid "Blanka LED"
-msgstr ""
-
 msgid "Ĝisdatigi"
 msgstr ""
 
 msgid "Kamerao"
-msgstr ""
-
-msgid "LED agordoj"
 msgstr ""
 
 msgid "Malŝalti"
@@ -51,7 +45,13 @@ msgstr ""
 msgid "Restartigi"
 msgstr ""
 
+msgid "Reto"
+msgstr ""
+
 msgid "Reto Informoj"
+msgstr ""
+
+msgid "Retpoŝto"
 msgstr ""
 
 msgid "RTSP Agordoj"
@@ -73,9 +73,6 @@ msgid "Superrigardo"
 msgstr ""
 
 msgid "T21 Kodumoj"
-msgstr ""
-
-msgid "Transruĝa LED"
 msgstr ""
 
 msgid "Versio :"

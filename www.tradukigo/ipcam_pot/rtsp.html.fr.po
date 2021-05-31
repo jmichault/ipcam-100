@@ -1,0 +1,65 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+msgid "adreso de sensilo"
+msgstr "adresse du capteur"
+
+msgid "alteco"
+msgstr "hauteur"
+
+msgid "bildograndeco (sekundara kanalo devas esti malpli granda)"
+msgstr "taille d'image (le canal secondaire doit être plus petit)"
+
+msgid "bitrapido (kbps)"
+msgstr "débit (kbps)"
+
+msgid "capteur"
+msgstr "capteur"
+
+msgid "ĉefa kanalo"
+msgstr "canal primaire"
+
+msgid "duaranga kanalo"
+msgstr "canal secondaire"
+
+msgid "interfaco :"
+msgstr "interface :"
+
+msgid "larĝo"
+msgstr "largeur"
+
+msgid "maxQP (pli malalta = pli bona kvalito)"
+msgstr "maxQP (plus bas = meilleure qualité)"
+
+msgid "minQP (pli malalta = pli bona kvalito)"
+msgstr "minQP (plus bas = meilleure qualité)"
+
+msgid "nombro da kadroj sekunde"
+msgstr "nombre de trames/seconde"
+
+msgid "nomo de sensilo :"
+msgstr "nom du capteur :"
+
+msgid "sensor"
+msgstr "capteur"
+
+msgid "Video Agordoj :"
+msgstr "Paramètres vidéo :"
+
+msgid "video-formato"
+msgstr "format vidéo"
+
+msgid "videotrajtoj"
+msgstr "propriétés de la vidéo"
+

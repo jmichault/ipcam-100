@@ -1,0 +1,101 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ms\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+msgid ""
+msgstr ""
+
+#, fuzzy
+msgid "Al :"
+msgstr "Kepada:"
+
+#, fuzzy
+msgid "Areoj"
+msgstr "Kawasan-kawasan"
+
+#, fuzzy
+msgid "Detekto Aktivida :"
+msgstr "Pengesanan diaktifkan:"
+
+#, fuzzy
+msgid "Fina Tempo"
+msgstr "Masa Akhir"
+
+#, fuzzy
+msgid "ĝeneralaj agordoj"
+msgstr "Tetapan umum"
+
+#, fuzzy
+msgid "Maksimuma nombro de samtempaj zonoj kun movado"
+msgstr "Bilangan maksimum zon serentak dengan pergerakan"
+
+#, fuzzy
+msgid "Minimuma nombro de zonoj dum movado"
+msgstr "Bilangan zon minimum semasa pergerakan"
+
+#, fuzzy
+msgid "Movo-Agordoj"
+msgstr "Pindahkan tetapan"
+
+#, fuzzy
+msgid "Ordonon:"
+msgstr "Perintah:"
+
+#, fuzzy
+msgid "plenumi ordonon:"
+msgstr "Untuk melaksanakan pesanan:"
+
+#, fuzzy
+msgid "Sciigo"
+msgstr "Pemberitahuan"
+
+#, fuzzy
+msgid "Senaktiva Tempo"
+msgstr "Masa yang tidak aktif"
+
+#, fuzzy
+msgid "sendi retpoŝton :"
+msgstr "Hantar email:"
+
+#, fuzzy
+msgid "sendi «telegram» :"
+msgstr "Hantar \"Telegram\":"
+
+#, fuzzy
+msgid "sendi «URL» :"
+msgstr "Hantar \"URL\":"
+
+#, fuzzy
+msgid "Sentemo :"
+msgstr "SENSITIVITI:"
+
+#, fuzzy
+msgid "Stokado"
+msgstr "Penyimpanan"
+
+#, fuzzy
+msgid "stoki bildojn :"
+msgstr "Simpan imej:"
+
+#, fuzzy
+msgid "stoki filmetojn :"
+msgstr "Simpan video:"
+
+#, fuzzy
+msgid "stoki sur fora servilo :"
+msgstr "Simpan pada pelayan jauh:"
+
+#, fuzzy
+msgid "Url :"
+msgstr "URL:"
+

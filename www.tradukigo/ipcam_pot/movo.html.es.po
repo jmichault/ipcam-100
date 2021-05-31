@@ -1,0 +1,101 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+msgid ""
+msgstr ""
+
+#, fuzzy
+msgid "Al :"
+msgstr "A:"
+
+#, fuzzy
+msgid "Areoj"
+msgstr "Zonas"
+
+#, fuzzy
+msgid "Detekto Aktivida :"
+msgstr "Detección activada:"
+
+#, fuzzy
+msgid "Fina Tempo"
+msgstr "Tiempo final"
+
+#, fuzzy
+msgid "ĝeneralaj agordoj"
+msgstr "Configuración general"
+
+#, fuzzy
+msgid "Maksimuma nombro de samtempaj zonoj kun movado"
+msgstr "Número máximo de zonas simultáneas con movimiento."
+
+#, fuzzy
+msgid "Minimuma nombro de zonoj dum movado"
+msgstr "Número mínimo de zonas durante el movimiento."
+
+#, fuzzy
+msgid "Movo-Agordoj"
+msgstr "Mover configuraciones"
+
+#, fuzzy
+msgid "Ordonon:"
+msgstr "Pedido:"
+
+#, fuzzy
+msgid "plenumi ordonon:"
+msgstr "Para realizar un pedido:"
+
+#, fuzzy
+msgid "Sciigo"
+msgstr "Notificación"
+
+#, fuzzy
+msgid "Senaktiva Tempo"
+msgstr "Tiempo inactivo"
+
+#, fuzzy
+msgid "sendi retpoŝton :"
+msgstr "Enviar un correo electrónico:"
+
+#, fuzzy
+msgid "sendi «telegram» :"
+msgstr "Enviar \"telegrame\":"
+
+#, fuzzy
+msgid "sendi «URL» :"
+msgstr "Enviar \"URL\":"
+
+#, fuzzy
+msgid "Sentemo :"
+msgstr "Sensibilidad:"
+
+#, fuzzy
+msgid "Stokado"
+msgstr "Almacenamiento"
+
+#, fuzzy
+msgid "stoki bildojn :"
+msgstr "Tienda de imágenes:"
+
+#, fuzzy
+msgid "stoki filmetojn :"
+msgstr "Tienda de videos:"
+
+#, fuzzy
+msgid "stoki sur fora servilo :"
+msgstr "Almacenar en un servidor remoto:"
+
+#, fuzzy
+msgid "Url :"
+msgstr "URL:"
+

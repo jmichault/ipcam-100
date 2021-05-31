@@ -1,0 +1,98 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+#, fuzzy
+msgid "-"
+msgstr " - "
+
+#, fuzzy
+msgid "/"
+msgstr "/"
+
+#, fuzzy
+msgid "Adresoj gamo :"
+msgstr "地址范围："
+
+#, fuzzy
+msgid "Aktivi :"
+msgstr "资产："
+
+#, fuzzy
+msgid "dns1 IP-adreso :"
+msgstr "dns1 IP地址："
+
+#, fuzzy
+msgid "dns2 IP-adreso :"
+msgstr "dns2 IP地址："
+
+#, fuzzy
+msgid "enirejo :"
+msgstr "入口："
+
+#, fuzzy
+msgid "ĝeneralaj agordoj"
+msgstr "常规设置"
+
+#, fuzzy
+msgid "IP-adreso :"
+msgstr "IP地址："
+
+#, fuzzy
+msgid "LAN eth0"
+msgstr "局域网eth0"
+
+#, fuzzy
+msgid "Reto-Agordoj"
+msgstr "网络设置"
+
+#, fuzzy
+msgid "SSID :"
+msgstr "SSID："
+
+#, fuzzy
+msgid "<strong>DHCP Servilo :</strong>"
+msgstr "<强>DHCP服务器：</强>"
+
+#, fuzzy
+msgid "<strong>DNS Serviloj :</strong>"
+msgstr "<强>DNS服务器：</强>"
+
+#, fuzzy
+msgid "<strong>IP Agordoj :</strong>"
+msgstr "<强>IP设置：</强>"
+
+#, fuzzy
+msgid "<strong>manaj IP-agordoj (estos ignorita se dhcp estas ebligita) :</strong>"
+msgstr "如果启用了dhcp) ：</强>，将忽略<强>手动IP设置 ("
+
+#, fuzzy
+msgid "<strong>Wifi Agordoj :</strong>"
+msgstr "<强>Wifi设置：</强>"
+
+#, fuzzy
+msgid "Uzi dhcp :"
+msgstr "使用dhcp："
+
+#, fuzzy
+msgid "WiFi-AP wlan1"
+msgstr "WiFi-AP wlan1"
+
+#, fuzzy
+msgid "WiFi-kliento wlan0"
+msgstr "WiFi客户端wlan0"
+
+#, fuzzy
+msgid "WiFi pasvorto :"
+msgstr "WiFi密码："
+

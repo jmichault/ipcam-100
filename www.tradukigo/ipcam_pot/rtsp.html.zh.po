@@ -1,0 +1,82 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+#, fuzzy
+msgid "adreso de sensilo"
+msgstr "敏感的地址"
+
+#, fuzzy
+msgid "alteco"
+msgstr "高度"
+
+#, fuzzy
+msgid "bildograndeco (sekundara kanalo devas esti malpli granda)"
+msgstr "突出显示尺寸 (辅助通道必须更大)"
+
+#, fuzzy
+msgid "bitrapido (kbps)"
+msgstr "Bititrido (Kbps)"
+
+#, fuzzy
+msgid "capteur"
+msgstr "Capteur."
+
+#, fuzzy
+msgid "ĉefa kanalo"
+msgstr "主要渠道"
+
+#, fuzzy
+msgid "duaranga kanalo"
+msgstr "次要通道"
+
+#, fuzzy
+msgid "interfaco :"
+msgstr "界面："
+
+#, fuzzy
+msgid "larĝo"
+msgstr "宽度"
+
+#, fuzzy
+msgid "maxQP (pli malalta = pli bona kvalito)"
+msgstr "MAXQP (较低=更好的质量)"
+
+#, fuzzy
+msgid "minQP (pli malalta = pli bona kvalito)"
+msgstr "MAXQP (较低=更好的质量)"
+
+#, fuzzy
+msgid "nombro da kadroj sekunde"
+msgstr "每秒帧数"
+
+#, fuzzy
+msgid "nomo de sensilo :"
+msgstr "敏感名称："
+
+#, fuzzy
+msgid "sensor"
+msgstr "传感器"
+
+#, fuzzy
+msgid "Video Agordoj :"
+msgstr "视频设置："
+
+#, fuzzy
+msgid "video-formato"
+msgstr "视频格式"
+
+#, fuzzy
+msgid "videotrajtoj"
+msgstr "录像机"
+

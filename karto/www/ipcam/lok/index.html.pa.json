@@ -1,8 +1,6 @@
 {"":{"language":"pa","plural-forms":"nplurals=2; plural=(n > 1);"}
-,"Blanka LED": "ਚਿੱਟਾ ਅਗਵਾਈ"
 ,"Ĝisdatigi": "ਅਪਡੇਟ"
 ,"Kamerao": "ਕੈਮਰਾ"
-,"LED agordoj": "ਐਲਈਡੀ ਸੈਟਿੰਗਜ਼"
 ,"Malŝalti": "ਬੰਦ ਕਰ ਦਿਓ"
 ,"Movado-Detekto": "ਅੰਦੋਲਨ ਦੀ ਪਛਾਣ"
 ,"Nokta Agordoj": "ਰਾਤ ਦੀਆਂ ਸੈਟਿੰਗਾਂ"
@@ -12,7 +10,9 @@
 ,"Problemoj?": "ਸਮੱਸਿਆਵਾਂ?"
 ,"Protokoloj": "ਪ੍ਰੋਟੋਕੋਲ"
 ,"Restartigi": "ਮੁੜ ਚਾਲੂ ਕਰਨ ਲਈ"
+,"Reto": "ਨੈੱਟਵਰਕ"
 ,"Reto Informoj": "ਨੈੱਟਵਰਕ ਜਾਣਕਾਰੀ"
+,"Retpoŝto": "ਈ - ਮੇਲ"
 ,"RTSP Agordoj": "ਆਰਟੀਐਸਪੀ ਸੈਟਿੰਗਜ਼"
 ,"Servoj": "ਸੇਵਾਵਾਂ"
 ,"Sistemo": "ਸਿਸਟਮ"
@@ -20,6 +20,5 @@
 ,"Stato": "ਰਾਜ"
 ,"Superrigardo": "ਸੰਖੇਪ ਜਾਣਕਾਰੀ"
 ,"T21 Kodumoj": "ਟੀ 21 ਕੋਡ"
-,"Transruĝa LED": "ਇਨਫਰਾਰੈੱਡ ਐਲਈਡੀ"
 ,"Versio :": "ਵਰਜਨ:"
 }

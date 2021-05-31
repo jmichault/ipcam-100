@@ -2,8 +2,14 @@
 . /etc/profile >/dev/null
 export LD_LIBRARY_PATH="${SDCARD}/lib:/thirdlib:/system/lib/:/ipc/lib/"
 
+#### KOMENCO DE MASTRUMA KAPLINIO
+# Mallonga-priskribo: 
+# Komenco:
+# Retejo-administrita:ne
+#### FINO DE MASTRUMA KAPLINIO
+
 SERVICE_NAME=""
-BIN=
+BIN=""
 OPTS=""
 
 PIDFILE="/var/run/${SERVICE_NAME}.pid"

@@ -46,7 +46,7 @@ static void doTrt( char * nomo, char * valoro)
     else
       fprintf(stderr,"ne kognata sensor.type %s\n",valoro);
   }
-  else if(!strcmp(nomo,"sensor.type"))
+  else if(!strcmp(nomo,"sensor.nom"))
     strncpy(SenAgordo.name,valoro,32);
   else if(!strcmp(nomo,"sensor.largeur"))
     SenAgordo.width = strtol(valoro,NULL,10);
@@ -73,9 +73,9 @@ static void doTrt( char * nomo, char * valoro)
     else
       fprintf(stderr,"ne kognata canal[1].format %s\n",valoro);
   }
-  else if(!strcmp(nomo,"canal[1].minQP"))
+  else if(!strcmp(nomo,"canal[1].minqp"))
     KanAgordo[0].minQP = strtol(valoro,NULL,10);
-  else if(!strcmp(nomo,"canal[1].maxQP"))
+  else if(!strcmp(nomo,"canal[1].maxqp"))
     KanAgordo[0].maxQP = strtol(valoro,NULL,10);
   else if(!strcmp(nomo,"canal[1].bitrate"))
     KanAgordo[0].bitrate = strtol(valoro,NULL,10);
@@ -100,9 +100,9 @@ static void doTrt( char * nomo, char * valoro)
     else
       fprintf(stderr,"ne kognata canal[2].format %s\n",valoro);
   }
-  else if(!strcmp(nomo,"canal[2].minQP"))
+  else if(!strcmp(nomo,"canal[2].minqp"))
     KanAgordo[1].minQP = strtol(valoro,NULL,10);
-  else if(!strcmp(nomo,"canal[2].maxQP"))
+  else if(!strcmp(nomo,"canal[2].maxqp"))
     KanAgordo[1].maxQP = strtol(valoro,NULL,10);
   else if(!strcmp(nomo,"canal[2].bitrate"))
     KanAgordo[1].bitrate = strtol(valoro,NULL,10);
@@ -176,4 +176,5 @@ int lastret=0;
       doTrt(buffer,bufferValue);
     }
   }
+  fclose(ficin);
 }

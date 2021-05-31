@@ -155,10 +155,6 @@ if [ -n "$F_cmd" ]; then
       motor -p
     ;;
 
-    motor_PTZ)
-      ${DOCUMENT_ROOT}/../scripts/PTZpresets.sh $F_x_axis $F_y_axis
-    ;;
-
     audio_test)
       F_audioSource=$(printf '%b' "${F_audioSource//%/\\x}")
       if [ "$F_audioSource" == "" ]; then
@@ -338,46 +334,19 @@ if [ -n "$F_cmd" ]; then
 
     motoro_poz)
       poz=$(echo "${F_val}"| sed -e 's/+/ /g')
-      .  ${DOCUMENT_ROOT}/../config/ptz.conf
+      .  JsAlVar ${DOCUMENT_ROOT}/ipcam/config/ptz.conf ptz_conf 11
       if [ x$poz = x0 ] ; then
-        motor -x $X0 -y $Y0 -r $RAPIDECO;
+        motor -x $P0X -y $P0Y -r $RAPIDECO;
       elif [ x$poz = x1 ] ; then
-        motor -x $X1 -y $Y1 -r $RAPIDECO;
+        motor -x $P1X -y $P1Y -r $RAPIDECO;
       elif [ x$poz = x2 ] ; then
-        motor -x $X2 -y $Y2 -r $RAPIDECO;
+        motor -x $P2X -y $P2Y -r $RAPIDECO;
       elif [ x$poz = x3 ] ; then
-        motor -x $X3 -y $Y3 -r $RAPIDECO;
+        motor -x $P3X -y $P3Y -r $RAPIDECO;
       elif [ x$poz = x4 ] ; then
-        motor -x $X4 -y $Y4 -r $RAPIDECO;
+        motor -x $P4X -y $P4Y -r $RAPIDECO;
       fi
         
-    ;;
-
-    set_motoro)
-      rapideco=$(echo "${F_rapideco}"| sed -e 's/+/ /g')
-      x0=$(echo "${F_x0}"| sed -e 's/+/ /g')
-      y0=$(echo "${F_y0}"| sed -e 's/+/ /g')
-      x1=$(echo "${F_x1}"| sed -e 's/+/ /g')
-      y1=$(echo "${F_y1}"| sed -e 's/+/ /g')
-      x2=$(echo "${F_x2}"| sed -e 's/+/ /g')
-      y2=$(echo "${F_y2}"| sed -e 's/+/ /g')
-      x3=$(echo "${F_x3}"| sed -e 's/+/ /g')
-      y3=$(echo "${F_y3}"| sed -e 's/+/ /g')
-      x4=$(echo "${F_x4}"| sed -e 's/+/ /g')
-      y4=$(echo "${F_y4}"| sed -e 's/+/ /g')
-      rewrite_config ${DOCUMENT_ROOT}/../config/ptz.conf RAPIDECO "\"$rapideco\""
-      rewrite_config ${DOCUMENT_ROOT}/../config/ptz.conf X0 "\"$x0\""
-      rewrite_config ${DOCUMENT_ROOT}/../config/ptz.conf Y0 "\"$y0\""
-      rewrite_config ${DOCUMENT_ROOT}/../config/ptz.conf X1 "\"$x1\""
-      rewrite_config ${DOCUMENT_ROOT}/../config/ptz.conf Y1 "\"$y1\""
-      rewrite_config ${DOCUMENT_ROOT}/../config/ptz.conf X2 "\"$x2\""
-      rewrite_config ${DOCUMENT_ROOT}/../config/ptz.conf Y2 "\"$y2\""
-      rewrite_config ${DOCUMENT_ROOT}/../config/ptz.conf X3 "\"$x3\""
-      rewrite_config ${DOCUMENT_ROOT}/../config/ptz.conf Y3 "\"$y3\""
-      rewrite_config ${DOCUMENT_ROOT}/../config/ptz.conf X4 "\"$x4\""
-      rewrite_config ${DOCUMENT_ROOT}/../config/ptz.conf Y4 "\"$y4\""
-      echo "Konservita agordo.<br/>"
-      return
     ;;
 
     set_video_size)

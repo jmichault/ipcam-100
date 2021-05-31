@@ -1,0 +1,70 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: bn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+#, fuzzy
+msgid "Adresanto :"
+msgstr "একটি রুপকার:"
+
+#, fuzzy
+msgid "Al :"
+msgstr "প্রতি:"
+
+#, fuzzy
+msgid "Ensaluto :"
+msgstr "প্রবেশ করুন:"
+
+#, fuzzy
+msgid "Haveno :"
+msgstr "পোর্ট:"
+
+#, fuzzy
+msgid "Mesaĝo :"
+msgstr "বার্তা:"
+
+#, fuzzy
+msgid "Pasvorto :"
+msgstr "পাসওয়ার্ড:"
+
+#, fuzzy
+msgid "Poŝto-Agordoj"
+msgstr "মেল সেটিংস"
+
+#, fuzzy
+msgid "Pri :"
+msgstr "সম্পর্কিত:"
+
+#, fuzzy
+msgid "Servilo :"
+msgstr "সার্ভার:"
+
+#, fuzzy
+msgid "<strong>Aŭtentigo :</strong>"
+msgstr "<শক্তিশালী>প্রমাণীকরণ:</ শক্তিশালী>"
+
+#, fuzzy
+msgid "<strong>Servilo (SSL deviga) :</strong>"
+msgstr "<শক্তিশালী>সার্ভার (এসএসএল প্রয়োজনীয়) :</ শক্তিশালী>"
+
+#, fuzzy
+msgid "<strong>Testo :</strong>"
+msgstr "<শক্তিশালী>টেস্টো:</ শক্তিশালী>"
+
+#, fuzzy
+msgid "Submeti"
+msgstr "জমা দিন"
+
+#, fuzzy
+msgid "Submeti kaj Testi"
+msgstr "জমা দিন এবং পরীক্ষা করুন"
+

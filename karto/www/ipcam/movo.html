@@ -1,0 +1,113 @@
+<h1 class="lang" data-lang="Movo-Agordoj"></h1>
+<form class="bg-light rounded-lg" id="movoForm"></form>
+<div id="res" class="alert"></div>
+<div id="output" class='output'> </div>
+
+<script type="text/javascript" src="forms/movo.html.js"></script>
+
+
+
+
+<!-- datenoj -->
+<script type="text/javascript" src="config/movo.conf"></script>
+
+<script type="text/javascript">
+  setPageLang('movo.html',$(window));
+  setFormLang(movo_jsForm);
+  $('#movoForm').jsonForm(movo_jsForm );
+  //movo_conf.forEach(setformval);
+  DetektoDatenoj.forEach(setformval);
+  $('#movoForm .nav-link')[0].click();
+
+  DetektoDatenoj.forEach(setformval);
+        // inicializi rektangulojn
+        $('img#ekrankopio').selectAreas({
+          minSize: [10, 10],
+          onChanged: debugQtyAreas,
+          width: 640,
+          height: 368,
+          maxAreas: 52,
+          areas: [
+          ]
+        });
+        Rektoj.forEach( function (area){
+          $('img#ekrankopio').selectAreas('add', area);
+        });
+        $('#btnView').click(function () {
+          var areas = $('img#ekrankopio').selectAreas('areas');
+          displayAreas(areas);
+        });
+        $('#btnReset22').click(function () {
+          output("reset to 2x2")
+          $('img#ekrankopio').selectAreas('reset');
+          var areaOptions=[
+              { x:   0, y:   0, width: 320, height: 180 },
+              { x: 320, y:   0, width: 320, height: 180 },
+              { x:   0, y: 180, width: 320, height: 180 },
+              { x: 320, y: 180, width: 320, height: 180 }];
+          $('img#ekrankopio').selectAreas('add', areaOptions);
+        });
+        $('#btnReset33').click(function () {
+          output("reset to 3x3")
+          $('img#ekrankopio').selectAreas('reset');
+          var areaOptions=[
+              { x:   0, y:   0, width: 213, height: 120 },
+              { x:   0, y: 120, width: 213, height: 120 },
+              { x:   0, y: 240, width: 213, height: 120 }];
+          var i=0,j=0;
+          for ( i=0 ; i<3 ; i++)
+          {
+            for ( j =0 ; j<3 ; j++)
+              areaOptions[j].x =i*213;
+            $('img#ekrankopio').selectAreas('add', areaOptions);
+          }
+        });
+        $('#btnNew').click(function () {
+          var areaOptions = {
+            x: Math.floor((Math.random() * 200)),
+            y: Math.floor((Math.random() * 200)),
+            width: Math.floor((Math.random() * 100)) + 50,
+            height: Math.floor((Math.random() * 100)) + 20,
+          };
+          output("Add a new area: " + areaToString(areaOptions))
+          $('img#ekrankopio').selectAreas('add', areaOptions);
+        });
+        $('#btnSave').click(function () {
+          var XHR = new XMLHttpRequest();
+          XHR.addEventListener("load", function(event) {
+              $('#output').html('<p> Changements enregistrés.</p>');
+            });
+          XHR.addEventListener("error", function(event) {
+              $('#output').html('<p> Erreur dans l enregistrement.</p>');
+            });
+          XHR.open("POST", "/cgi-bin/conf_sav.cgi?file=movo.conf");
+          var textRect=JSON.stringify($('img#ekrankopio').selectAreas('areas'));
+          var textDetekto = JSON.stringify($("#formDetekto").serializeArray());
+          XHR.send( 'var Rektoj=' + textRect + ';\nvar DetektoDatenoj='+ textDetekto + ';\n' );
+        });
+
+      var selectionExists;
+
+      function areaToString (area) {
+        return (typeof area.id === "undefined" ? "" : (area.id + ": ")) + area.x + ':' + area.y  + ' ' + area.width + 'x' + area.height + '<br />'
+      }
+
+      function output (text) {
+        $('#output').html(text);
+      }
+
+      // Log the quantity of selections
+      function debugQtyAreas (event, id, areas) {
+        console.log(areas.length + " areas", arguments);
+      };
+
+      // Display areas coordinates in a div
+      function displayAreas (areas) {
+        var text = "";
+        $.each(areas, function (id, area) {
+          text += areaToString(area);
+        });
+        output(text);
+      };
+
+</script>

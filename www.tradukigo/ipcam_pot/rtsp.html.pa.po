@@ -1,0 +1,82 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: pa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+#, fuzzy
+msgid "adreso de sensilo"
+msgstr "ਸੰਵੇਦਨ ਦਾ ਪਤਾ"
+
+#, fuzzy
+msgid "alteco"
+msgstr "ਕੱਦ"
+
+#, fuzzy
+msgid "bildograndeco (sekundara kanalo devas esti malpli granda)"
+msgstr "ਆਕਾਰ ਦਾ ਆਕਾਰ (ਸੈਕੰਡਰੀ ਚੈਨਲ ਘੱਟ ਵੱਡਾ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ)"
+
+#, fuzzy
+msgid "bitrapido (kbps)"
+msgstr "ਬਿਟਿਟ੍ਰੋ (ਕੇਬੀਪੀਐਸ)"
+
+#, fuzzy
+msgid "capteur"
+msgstr "ਕੈਪਟੇਅਰ"
+
+#, fuzzy
+msgid "ĉefa kanalo"
+msgstr "ਮੁੱਖ ਚੈਨਲ"
+
+#, fuzzy
+msgid "duaranga kanalo"
+msgstr "ਸੈਕੰਡਰੀ ਚੈਨਲ"
+
+#, fuzzy
+msgid "interfaco :"
+msgstr "ਇੰਟਰਫੇਸ:"
+
+#, fuzzy
+msgid "larĝo"
+msgstr "ਚੌੜਾਈ"
+
+#, fuzzy
+msgid "maxQP (pli malalta = pli bona kvalito)"
+msgstr "ਮੈਕਸਕਯੂਪੀ (ਘੱਟ = ਬਿਹਤਰ ਗੁਣਵੱਤਾ)"
+
+#, fuzzy
+msgid "minQP (pli malalta = pli bona kvalito)"
+msgstr "ਮਿਨਕੈਪ (ਘੱਟ = ਬਿਹਤਰ ਗੁਣਵੱਤਾ)"
+
+#, fuzzy
+msgid "nombro da kadroj sekunde"
+msgstr "ਪ੍ਰਤੀ ਸਕਿੰਟ ਫਰੇਮਾਂ ਦੀ ਗਿਣਤੀ"
+
+#, fuzzy
+msgid "nomo de sensilo :"
+msgstr "ਸੰਵੇਦਨ ਦਾ ਨਾਮ:"
+
+#, fuzzy
+msgid "sensor"
+msgstr "ਸੈਂਸਰ"
+
+#, fuzzy
+msgid "Video Agordoj :"
+msgstr "ਵੀਡੀਓ ਸੈਟਿੰਗਜ਼:"
+
+#, fuzzy
+msgid "video-formato"
+msgstr "ਵੀਡੀਓ ਫਾਰਮੈਟ"
+
+#, fuzzy
+msgid "videotrajtoj"
+msgstr "ਵੀਡੀਓ ਟੀਡੋਜ਼"
+

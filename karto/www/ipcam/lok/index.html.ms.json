@@ -1,8 +1,6 @@
 {"":{"language":"ms","plural-forms":"nplurals=2; plural=(n > 1);"}
-,"Blanka LED": "Putih LED."
 ,"Ĝisdatigi": "Kemas kini"
 ,"Kamerao": "Kamera"
-,"LED agordoj": "Tetapan LED."
 ,"Malŝalti": "Matikan"
 ,"Movado-Detekto": "Pengesanan pergerakan"
 ,"Nokta Agordoj": "Tetapan malam"
@@ -12,7 +10,9 @@
 ,"Problemoj?": "Masalah?"
 ,"Protokoloj": "Protokol."
 ,"Restartigi": "Untuk memulakan semula"
+,"Reto": "Rangkaian"
 ,"Reto Informoj": "Maklumat rangkaian"
+,"Retpoŝto": "E-mel"
 ,"RTSP Agordoj": "Tetapan RTSP."
 ,"Servoj": "Perkhidmatan"
 ,"Sistemo": "Sistem"
@@ -20,6 +20,5 @@
 ,"Stato": "Nyatakan"
 ,"Superrigardo": "Gambaran keseluruhan"
 ,"T21 Kodumoj": "Kod t21."
-,"Transruĝa LED": "Inframerah LED."
 ,"Versio :": "Versi:"
 }

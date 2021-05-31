@@ -1,0 +1,101 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+msgid ""
+msgstr ""
+
+#, fuzzy
+msgid "Al :"
+msgstr "Naar:"
+
+#, fuzzy
+msgid "Areoj"
+msgstr "Gebieden"
+
+#, fuzzy
+msgid "Detekto Aktivida :"
+msgstr "Detectie geactiveerd:"
+
+#, fuzzy
+msgid "Fina Tempo"
+msgstr "Laatste keer"
+
+#, fuzzy
+msgid "ĝeneralaj agordoj"
+msgstr "Algemene instellingen"
+
+#, fuzzy
+msgid "Maksimuma nombro de samtempaj zonoj kun movado"
+msgstr "Maximum aantal gelijktijdige zones met beweging"
+
+#, fuzzy
+msgid "Minimuma nombro de zonoj dum movado"
+msgstr "Minimaal aantal zones tijdens het verkeer"
+
+#, fuzzy
+msgid "Movo-Agordoj"
+msgstr "Verplaats de instellingen"
+
+#, fuzzy
+msgid "Ordonon:"
+msgstr "Bestellen:"
+
+#, fuzzy
+msgid "plenumi ordonon:"
+msgstr "om een ​​bestelling uit te voeren:"
+
+#, fuzzy
+msgid "Sciigo"
+msgstr "Kennisgeving"
+
+#, fuzzy
+msgid "Senaktiva Tempo"
+msgstr "Inactieve tijd"
+
+#, fuzzy
+msgid "sendi retpoŝton :"
+msgstr "Stuur een email:"
+
+#, fuzzy
+msgid "sendi «telegram» :"
+msgstr "Stuur \"Telegram\":"
+
+#, fuzzy
+msgid "sendi «URL» :"
+msgstr "Stuur \"URL\":"
+
+#, fuzzy
+msgid "Sentemo :"
+msgstr "Gevoeligheid:"
+
+#, fuzzy
+msgid "Stokado"
+msgstr "Opslag"
+
+#, fuzzy
+msgid "stoki bildojn :"
+msgstr "Bewaar afbeeldingen:"
+
+#, fuzzy
+msgid "stoki filmetojn :"
+msgstr "Bewaar video's:"
+
+#, fuzzy
+msgid "stoki sur fora servilo :"
+msgstr "Bewaren op een externe server:"
+
+#, fuzzy
+msgid "Url :"
+msgstr "URL:"
+

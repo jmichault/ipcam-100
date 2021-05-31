@@ -1,0 +1,82 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+#, fuzzy
+msgid "adreso de sensilo"
+msgstr "Indirizzo di sensile."
+
+#, fuzzy
+msgid "alteco"
+msgstr "Altezza"
+
+#, fuzzy
+msgid "bildograndeco (sekundara kanalo devas esti malpli granda)"
+msgstr "La dimensione di evidenziazione (il canale secondario deve essere inferiore)"
+
+#, fuzzy
+msgid "bitrapido (kbps)"
+msgstr "Bitrido (Kbps)"
+
+#, fuzzy
+msgid "capteur"
+msgstr "Capteur."
+
+#, fuzzy
+msgid "ĉefa kanalo"
+msgstr "Canale principale"
+
+#, fuzzy
+msgid "duaranga kanalo"
+msgstr "Canale secondario"
+
+#, fuzzy
+msgid "interfaco :"
+msgstr "Interfaccia:"
+
+#, fuzzy
+msgid "larĝo"
+msgstr "Larghezza"
+
+#, fuzzy
+msgid "maxQP (pli malalta = pli bona kvalito)"
+msgstr "Larghezza"
+
+#, fuzzy
+msgid "minQP (pli malalta = pli bona kvalito)"
+msgstr "Minqp (inferiore = qualità migliore)"
+
+#, fuzzy
+msgid "nombro da kadroj sekunde"
+msgstr "Numero di fotogrammi al secondo"
+
+#, fuzzy
+msgid "nomo de sensilo :"
+msgstr "Nome del senso sensibile:"
+
+#, fuzzy
+msgid "sensor"
+msgstr "Sensore"
+
+#, fuzzy
+msgid "Video Agordoj :"
+msgstr "Impostazioni video:"
+
+#, fuzzy
+msgid "video-formato"
+msgstr "Formato video"
+
+#, fuzzy
+msgid "videotrajtoj"
+msgstr "Videoreies."
+

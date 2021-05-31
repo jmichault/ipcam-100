@@ -1,8 +1,6 @@
 {"":{"language":"ru","plural-forms":"nplurals=2; plural=(n > 1);"}
-,"Blanka LED": "Белый светодиод"
 ,"Ĝisdatigi": "Обновлять"
 ,"Kamerao": "Камера"
-,"LED agordoj": "Светодиодные настройки"
 ,"Malŝalti": "Выключать"
 ,"Movado-Detekto": "Обнаружение движения"
 ,"Nokta Agordoj": "Ночные настройки"
@@ -12,7 +10,9 @@
 ,"Problemoj?": "Проблемы?"
 ,"Protokoloj": "Протоколы"
 ,"Restartigi": "Заново"
+,"Reto": "Сеть"
 ,"Reto Informoj": "Сетевая информация"
+,"Retpoŝto": "Электронное письмо"
 ,"RTSP Agordoj": "RTSP Настройки"
 ,"Servoj": "Услуги"
 ,"Sistemo": "Система"
@@ -20,6 +20,5 @@
 ,"Stato": "Состояние"
 ,"Superrigardo": "Обзор"
 ,"T21 Kodumoj": "T21 коды"
-,"Transruĝa LED": "Инфракрасный светодиод"
 ,"Versio :": "Версия:"
 }

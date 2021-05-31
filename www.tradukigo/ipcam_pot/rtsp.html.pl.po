@@ -1,0 +1,82 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+#, fuzzy
+msgid "adreso de sensilo"
+msgstr "Adres sensile"
+
+#, fuzzy
+msgid "alteco"
+msgstr "Wysokość"
+
+#, fuzzy
+msgid "bildograndeco (sekundara kanalo devas esti malpli granda)"
+msgstr "Wielkość podświetlenia (Kanał wtórny musi być mniej duży)"
+
+#, fuzzy
+msgid "bitrapido (kbps)"
+msgstr "Bititrido (KBPS)"
+
+#, fuzzy
+msgid "capteur"
+msgstr "Kapeur."
+
+#, fuzzy
+msgid "ĉefa kanalo"
+msgstr "Główny kanał"
+
+#, fuzzy
+msgid "duaranga kanalo"
+msgstr "Kanał wtórny"
+
+#, fuzzy
+msgid "interfaco :"
+msgstr "Berło:"
+
+#, fuzzy
+msgid "larĝo"
+msgstr "Szerokość"
+
+#, fuzzy
+msgid "maxQP (pli malalta = pli bona kvalito)"
+msgstr "maxqp (niższa = lepsza jakość)"
+
+#, fuzzy
+msgid "minQP (pli malalta = pli bona kvalito)"
+msgstr "Minqp (Dolna = lepsza jakość)"
+
+#, fuzzy
+msgid "nombro da kadroj sekunde"
+msgstr "Liczba ramek na sekundę"
+
+#, fuzzy
+msgid "nomo de sensilo :"
+msgstr "Nazwa sensile:"
+
+#, fuzzy
+msgid "sensor"
+msgstr "Czujnik"
+
+#, fuzzy
+msgid "Video Agordoj :"
+msgstr "Ustawienia wideo:"
+
+#, fuzzy
+msgid "video-formato"
+msgstr "Format wideo"
+
+#, fuzzy
+msgid "videotrajtoj"
+msgstr "VideoTories."
+

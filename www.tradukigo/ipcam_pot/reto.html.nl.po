@@ -1,0 +1,98 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+#, fuzzy
+msgid "-"
+msgstr "-"
+
+#, fuzzy
+msgid "/"
+msgstr "/"
+
+#, fuzzy
+msgid "Adresoj gamo :"
+msgstr "Adressen bereik:"
+
+#, fuzzy
+msgid "Aktivi :"
+msgstr "Activeren:"
+
+#, fuzzy
+msgid "dns1 IP-adreso :"
+msgstr "DNS1 IP-adres:"
+
+#, fuzzy
+msgid "dns2 IP-adreso :"
+msgstr "DNS2 IP-adres:"
+
+#, fuzzy
+msgid "enirejo :"
+msgstr "Ingang:"
+
+#, fuzzy
+msgid "ĝeneralaj agordoj"
+msgstr "Algemene instellingen"
+
+#, fuzzy
+msgid "IP-adreso :"
+msgstr "IP adres:"
+
+#, fuzzy
+msgid "LAN eth0"
+msgstr "Lan eth0"
+
+#, fuzzy
+msgid "Reto-Agordoj"
+msgstr "Netwerkinstellingen"
+
+#, fuzzy
+msgid "SSID :"
+msgstr "SSID:"
+
+#, fuzzy
+msgid "<strong>DHCP Servilo :</strong>"
+msgstr "<sterk>DHCP-server:</ sterk>"
+
+#, fuzzy
+msgid "<strong>DNS Serviloj :</strong>"
+msgstr "<sterk>DNS-servers:</ sterk>"
+
+#, fuzzy
+msgid "<strong>IP Agordoj :</strong>"
+msgstr "<Strong>IP-instellingen:</ sterk>"
+
+#, fuzzy
+msgid "<strong>manaj IP-agordoj (estos ignorita se dhcp estas ebligita) :</strong>"
+msgstr "<Sterk>Handmatige IP-instellingen (worden genegeerd als DHCP is ingeschakeld) :</ sterk>"
+
+#, fuzzy
+msgid "<strong>Wifi Agordoj :</strong>"
+msgstr "<Sterke>WIFI-instellingen:</ sterk>"
+
+#, fuzzy
+msgid "Uzi dhcp :"
+msgstr "Gebruik DHCP:"
+
+#, fuzzy
+msgid "WiFi-AP wlan1"
+msgstr "Wifi ap wlan1"
+
+#, fuzzy
+msgid "WiFi-kliento wlan0"
+msgstr "Wifi-klant wlan0"
+
+#, fuzzy
+msgid "WiFi pasvorto :"
+msgstr "Wifi wachtwoord:"
+

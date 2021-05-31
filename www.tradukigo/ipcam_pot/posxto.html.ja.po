@@ -1,0 +1,70 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+#, fuzzy
+msgid "Adresanto :"
+msgstr "ドレッサー："
+
+#, fuzzy
+msgid "Al :"
+msgstr "に："
+
+#, fuzzy
+msgid "Ensaluto :"
+msgstr "ログイン："
+
+#, fuzzy
+msgid "Haveno :"
+msgstr "ポート："
+
+#, fuzzy
+msgid "Mesaĝo :"
+msgstr "メッセージ："
+
+#, fuzzy
+msgid "Pasvorto :"
+msgstr "パスワード："
+
+#, fuzzy
+msgid "Poŝto-Agordoj"
+msgstr "メール設定"
+
+#, fuzzy
+msgid "Pri :"
+msgstr "約："
+
+#, fuzzy
+msgid "Servilo :"
+msgstr "サーバ："
+
+#, fuzzy
+msgid "<strong>Aŭtentigo :</strong>"
+msgstr "<強い>認証：</強い>"
+
+#, fuzzy
+msgid "<strong>Servilo (SSL deviga) :</strong>"
+msgstr "<強い>サーバー (SSL必須) :</強い>"
+
+#, fuzzy
+msgid "<strong>Testo :</strong>"
+msgstr "<強い>試験：</強い>"
+
+#, fuzzy
+msgid "Submeti"
+msgstr "提出する"
+
+#, fuzzy
+msgid "Submeti kaj Testi"
+msgstr "提出とテスト"
+

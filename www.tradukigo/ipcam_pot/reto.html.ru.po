@@ -1,0 +1,98 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+#, fuzzy
+msgid "-"
+msgstr "-"
+
+#, fuzzy
+msgid "/"
+msgstr "/"
+
+#, fuzzy
+msgid "Adresoj gamo :"
+msgstr "Адрес диапазона:"
+
+#, fuzzy
+msgid "Aktivi :"
+msgstr "Активировать:"
+
+#, fuzzy
+msgid "dns1 IP-adreso :"
+msgstr "IP-адрес DNS1:"
+
+#, fuzzy
+msgid "dns2 IP-adreso :"
+msgstr "IP-адрес DNS2:"
+
+#, fuzzy
+msgid "enirejo :"
+msgstr "Вход:"
+
+#, fuzzy
+msgid "ĝeneralaj agordoj"
+msgstr "Общие настройки"
+
+#, fuzzy
+msgid "IP-adreso :"
+msgstr "Айпи адрес:"
+
+#, fuzzy
+msgid "LAN eth0"
+msgstr "LAN ETH0."
+
+#, fuzzy
+msgid "Reto-Agordoj"
+msgstr "Настройки сети"
+
+#, fuzzy
+msgid "SSID :"
+msgstr "SSID:"
+
+#, fuzzy
+msgid "<strong>DHCP Servilo :</strong>"
+msgstr "<Сильные>DHCP-сервер:</ Сильные>"
+
+#, fuzzy
+msgid "<strong>DNS Serviloj :</strong>"
+msgstr "<Сильные>DNS-серверы:</ Сильные>"
+
+#, fuzzy
+msgid "<strong>IP Agordoj :</strong>"
+msgstr "<Сильные>Настройки IP:</ Сильные>"
+
+#, fuzzy
+msgid "<strong>manaj IP-agordoj (estos ignorita se dhcp estas ebligita) :</strong>"
+msgstr "<Сильные>Ручные настройки IP (будут игнорироваться, если DHCP включен) :</ SIRC>"
+
+#, fuzzy
+msgid "<strong>Wifi Agordoj :</strong>"
+msgstr "<Сильные>Настройки WiFi:</ Сильные>"
+
+#, fuzzy
+msgid "Uzi dhcp :"
+msgstr "Используйте DHCP:"
+
+#, fuzzy
+msgid "WiFi-AP wlan1"
+msgstr "WiFi AP WLAN1."
+
+#, fuzzy
+msgid "WiFi-kliento wlan0"
+msgstr "WiFi клиент WLAN0"
+
+#, fuzzy
+msgid "WiFi pasvorto :"
+msgstr "Wi-Fi Password:"
+

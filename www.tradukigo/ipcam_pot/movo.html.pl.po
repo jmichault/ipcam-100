@@ -1,0 +1,101 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+msgid ""
+msgstr ""
+
+#, fuzzy
+msgid "Al :"
+msgstr "Do:"
+
+#, fuzzy
+msgid "Areoj"
+msgstr "Obszary"
+
+#, fuzzy
+msgid "Detekto Aktivida :"
+msgstr "Aktywowany wykrywanie:"
+
+#, fuzzy
+msgid "Fina Tempo"
+msgstr "Czas końcowy"
+
+#, fuzzy
+msgid "ĝeneralaj agordoj"
+msgstr "Ustawienia główne"
+
+#, fuzzy
+msgid "Maksimuma nombro de samtempaj zonoj kun movado"
+msgstr "Maksymalna liczba jednoczesnych stref z ruchem"
+
+#, fuzzy
+msgid "Minimuma nombro de zonoj dum movado"
+msgstr "Minimalna liczba stref podczas ruchu"
+
+#, fuzzy
+msgid "Movo-Agordoj"
+msgstr "Przenieś ustawienia"
+
+#, fuzzy
+msgid "Ordonon:"
+msgstr "Zamówienie:"
+
+#, fuzzy
+msgid "plenumi ordonon:"
+msgstr "Aby wykonać zamówienie:"
+
+#, fuzzy
+msgid "Sciigo"
+msgstr "Powiadomienie"
+
+#, fuzzy
+msgid "Senaktiva Tempo"
+msgstr "Czas nieaktywny"
+
+#, fuzzy
+msgid "sendi retpoŝton :"
+msgstr "Wyślij e-mail:"
+
+#, fuzzy
+msgid "sendi «telegram» :"
+msgstr "Wyślij \"telegram\":"
+
+#, fuzzy
+msgid "sendi «URL» :"
+msgstr "Wyślij \"URL\":"
+
+#, fuzzy
+msgid "Sentemo :"
+msgstr "Wrażliwość:"
+
+#, fuzzy
+msgid "Stokado"
+msgstr "Przechowywanie"
+
+#, fuzzy
+msgid "stoki bildojn :"
+msgstr "Przechowuj obrazy:"
+
+#, fuzzy
+msgid "stoki filmetojn :"
+msgstr "Store Filmy:"
+
+#, fuzzy
+msgid "stoki sur fora servilo :"
+msgstr "Sklep na zdalnym serwerze:"
+
+#, fuzzy
+msgid "Url :"
+msgstr "URL:"
+

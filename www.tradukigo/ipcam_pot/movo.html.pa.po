@@ -1,0 +1,101 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: pa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+msgid ""
+msgstr ""
+
+#, fuzzy
+msgid "Al :"
+msgstr "ਨੂੰ:"
+
+#, fuzzy
+msgid "Areoj"
+msgstr "ਖੇਤਰ"
+
+#, fuzzy
+msgid "Detekto Aktivida :"
+msgstr "ਖੋਜ ਸਰਗਰਮ:"
+
+#, fuzzy
+msgid "Fina Tempo"
+msgstr "ਅੰਤਮ ਸਮਾਂ"
+
+#, fuzzy
+msgid "ĝeneralaj agordoj"
+msgstr "ਆਮ ਸੈਟਿੰਗਜ਼"
+
+#, fuzzy
+msgid "Maksimuma nombro de samtempaj zonoj kun movado"
+msgstr "ਅੰਦੋਲਨ ਦੇ ਨਾਲ ਇਕੋ ਸਮੇਂ ਜ਼ੋਨ ਦੀ ਵੱਧ ਤੋਂ ਵੱਧ ਗਿਣਤੀ"
+
+#, fuzzy
+msgid "Minimuma nombro de zonoj dum movado"
+msgstr "ਅੰਦੋਲਨ ਦੌਰਾਨ ਜ਼ੋਨ ਦੀ ਘੱਟੋ ਘੱਟ ਗਿਣਤੀ"
+
+#, fuzzy
+msgid "Movo-Agordoj"
+msgstr "ਸੈਟਿੰਗਾਂ ਨੂੰ ਭੇਜੋ"
+
+#, fuzzy
+msgid "Ordonon:"
+msgstr "ਆਰਡਰ:"
+
+#, fuzzy
+msgid "plenumi ordonon:"
+msgstr "ਆਰਡਰ ਕਰਨ ਲਈ:"
+
+#, fuzzy
+msgid "Sciigo"
+msgstr "ਸੂਚਨਾ"
+
+#, fuzzy
+msgid "Senaktiva Tempo"
+msgstr "ਨਾ-ਸਰਗਰਮ ਸਮਾਂ"
+
+#, fuzzy
+msgid "sendi retpoŝton :"
+msgstr "ਇੱਕ ਈਮੇਲ ਭੇਜੋ:"
+
+#, fuzzy
+msgid "sendi «telegram» :"
+msgstr "\"ਟੈਲੀਗ੍ਰਾਮ\" ਭੇਜੋ:"
+
+#, fuzzy
+msgid "sendi «URL» :"
+msgstr "\"URL\" ਭੇਜੋ:"
+
+#, fuzzy
+msgid "Sentemo :"
+msgstr "ਸੰਵੇਦਨਸ਼ੀਲਤਾ:"
+
+#, fuzzy
+msgid "Stokado"
+msgstr "ਸਟੋਰੇਜ"
+
+#, fuzzy
+msgid "stoki bildojn :"
+msgstr "ਸਟੋਰ ਚਿੱਤਰ:"
+
+#, fuzzy
+msgid "stoki filmetojn :"
+msgstr "ਵੀਡੀਓ ਸਟੋਰ ਕਰੋ:"
+
+#, fuzzy
+msgid "stoki sur fora servilo :"
+msgstr "ਰਿਮੋਟ ਸਰਵਰ ਤੇ ਸਟੋਰ ਕਰੋ:"
+
+#, fuzzy
+msgid "Url :"
+msgstr "URL:"
+

@@ -66,3 +66,14 @@ function setPageLang(base,source){
    });
 };
 
+function setFormLang(data) {
+  for(var key in data){
+    if(key == 'title' || key == 'helpvalue')
+      data[key]=loki18n.gettext(data[key]);
+    if (data.hasOwnProperty(key)) {
+      if (data[key] != null && typeof data[key] == 'object') {
+        setFormLang(data[key]);
+      }
+    }
+  }
+}

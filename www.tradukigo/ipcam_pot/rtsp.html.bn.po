@@ -1,0 +1,82 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: bn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+#, fuzzy
+msgid "adreso de sensilo"
+msgstr "সেন্সিলের ঠিকানা"
+
+#, fuzzy
+msgid "alteco"
+msgstr "সেন্সিলের ঠিকানা"
+
+#, fuzzy
+msgid "bildograndeco (sekundara kanalo devas esti malpli granda)"
+msgstr "হাইলাইট আকার (সেকেন্ডারি চ্যানেল কম বড়)হতে হবে"
+
+#, fuzzy
+msgid "bitrapido (kbps)"
+msgstr "Bititrido (Kbps)"
+
+#, fuzzy
+msgid "capteur"
+msgstr "ক্যাপচার"
+
+#, fuzzy
+msgid "ĉefa kanalo"
+msgstr "প্রধান চ্যানেল"
+
+#, fuzzy
+msgid "duaranga kanalo"
+msgstr "সেকেন্ডারি চ্যানেল"
+
+#, fuzzy
+msgid "interfaco :"
+msgstr "ইন্টারফেস:"
+
+#, fuzzy
+msgid "larĝo"
+msgstr "প্রস্থ"
+
+#, fuzzy
+msgid "maxQP (pli malalta = pli bona kvalito)"
+msgstr "MaxQP (নিম্ন = ভাল মানের)"
+
+#, fuzzy
+msgid "minQP (pli malalta = pli bona kvalito)"
+msgstr "MINQP (নিম্ন = ভাল মানের)"
+
+#, fuzzy
+msgid "nombro da kadroj sekunde"
+msgstr "প্রতি সেকেন্ডে ফ্রেম সংখ্যা"
+
+#, fuzzy
+msgid "nomo de sensilo :"
+msgstr "সেন্সিলের নাম:"
+
+#, fuzzy
+msgid "sensor"
+msgstr "সেন্সর"
+
+#, fuzzy
+msgid "Video Agordoj :"
+msgstr "ভিডিও সেটিংস:"
+
+#, fuzzy
+msgid "video-formato"
+msgstr "ভিডিও বিন্যাস"
+
+#, fuzzy
+msgid "videotrajtoj"
+msgstr "VideoTories."
+

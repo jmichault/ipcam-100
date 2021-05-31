@@ -21,9 +21,32 @@ killall -9 hostapd
 killall -9 udhcpd
 killall -9 udhcpc
 
+# agordi horloĝon je la dato de la lasta protokolo.
+cd "${SDCARD}"
+touch log/bootclock
+hwclock -s
+touch log/hwclock
+FIC=$(ls -rt --color=never log|tail -n 1)
+if [ x"$FIC" == xhwclock ]
+then
+  echo "agordi horloĝon de RTC"
+  hwclock -s
+elif [ x"$FIC" != xbootclock ]
+then
+  echo "agordi horloĝon de log/$FIC"
+  LASTDATE=$(date -Iseconds -r log/"$FIC"|sed "s/[T:+-]/:/g
+"|awk -F: '{print $2 $3 $4 $5 $1 "." $6;}')
+  date $LASTDATE
+  hwclock -uw
+fi
+#
+echo "===============================" >>$LOGPATH
+echo $(date -Iseconds) " Komencante. " >>$LOGPATH
+
+# ĝisdatigo de firmvaro se necese
 if [ -f "${SDCARD}/update.zip" ]
 then
-  cd "${SDCARD}"
+  echo $(date -Iseconds) " ĝisdatigo de «update.zip»".  >>$LOGPATH
   echo "========================" > log/update.log
   echo "ĝisdatigo per «update.zip»" >>log/update.log
   ls -l update.zip >>log/update.log
@@ -104,8 +127,7 @@ init_gpio 46
 # init white_led gpio :
 init_gpio 81
 # init motor :
-. ${SDCARD}/config/ptz.conf
-(${SDCARD}/bin/motor -p;${SDCARD}/bin/motor -x $X0 -y $Y0 -r $RAPIDECO) &
+${SDCARD}/bin/motor -p &
 
 ## start crond:
 ${SDCARD}/bin/busybox crond -L ${SDCARD}/log/crond.log -c ${SDCARD}/config/cron/crontabs
@@ -120,21 +142,26 @@ done
 hostname -F $CONFIGPATH/hostname.conf
 
 ## start network
-${SDCARD}/controlscripts/network
+echo $(date -Iseconds) " Komenco de reto. " >>$LOGPATH
+${SDCARD}/controlscripts/network >>$LOGPATH 2>&1
 
 ## Set Timezone
 set_timezone
 
+echo $(date -Iseconds) " Komenco de NTPD. " >>$LOGPATH
 ntp_srv="$(cat "$CONFIGPATH/ntp_srv.conf")"
 timeout -t 30 sh -c "until ping -c1 \"$ntp_srv\" &>/dev/null; do sleep 3; done";
-${SDCARD}/bin/busybox ntpd -p "$ntp_srv"
+${SDCARD}/bin/busybox ntpd -S synchwclock -p "$ntp_srv"
+echo $(date -Iseconds) " NTPD komenciĝis. " >>$LOGPATH
 
 ## Autostart all enabled services:
+echo $(date -Iseconds) " Komenco de servoj. " >>$LOGPATH
 for i in ${SDCARD}/config/autostart/*; do
   $i &
 done
 
 ## Autostart startup userscripts
+echo $(date -Iseconds) " Komenco de uzantoskriptoj. " >>$LOGPATH
 for i in ${SDCARD}/config/userscripts/startup/*; do
   $i &
 done

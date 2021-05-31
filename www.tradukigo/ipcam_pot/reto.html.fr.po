@@ -1,0 +1,76 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+msgid "-"
+msgstr "-"
+
+msgid "/"
+msgstr "/"
+
+msgid "Adresoj gamo :"
+msgstr "Plage d'adresses :"
+
+msgid "Aktivi :"
+msgstr "Activer :"
+
+msgid "dns1 IP-adreso :"
+msgstr "Adresse IP dns1 :"
+
+msgid "dns2 IP-adreso :"
+msgstr "Adresse IP dns2 :"
+
+msgid "enirejo :"
+msgstr "passerelle :"
+
+msgid "ĝeneralaj agordoj"
+msgstr "réglages généraux"
+
+msgid "IP-adreso :"
+msgstr "Adresse IP:"
+
+msgid "LAN eth0"
+msgstr "LAN eth0"
+
+msgid "Reto-Agordoj"
+msgstr "Paramètres réseau"
+
+msgid "SSID :"
+msgstr "SSID :"
+
+msgid "<strong>DHCP Servilo :</strong>"
+msgstr "<strong>Serveur DHCP :</strong>"
+
+msgid "<strong>DNS Serviloj :</strong>"
+msgstr "<strong>serveurs DNS :</strong>"
+
+msgid "<strong>IP Agordoj :</strong>"
+msgstr "<strong>Paramètres IP :</strong>"
+
+msgid "<strong>manaj IP-agordoj (estos ignorita se dhcp estas ebligita) :</strong>"
+msgstr "<strong>paramètres IP manuels (seront ignorés si dhcp est activé) :</strong>"
+
+msgid "<strong>Wifi Agordoj :</strong>"
+msgstr "<strong>Paramètres Wifi :</strong>"
+
+msgid "Uzi dhcp :"
+msgstr "Utiliser DHCP :"
+
+msgid "WiFi-AP wlan1"
+msgstr "WiFi-AP wlan1"
+
+msgid "WiFi-kliento wlan0"
+msgstr "WiFi wlan0"
+
+msgid "WiFi pasvorto :"
+msgstr "Mot de passe WiFi :"

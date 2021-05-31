@@ -1,18 +1,30 @@
 #!/bin/sh
+. /etc/profile >/dev/null 2>&1
 
 . /opt/media/sdc/scripts/update_timezone.sh
 
+. JsAlVar ${SDCARD}/www/ipcam/config/movo.conf DetektoDatenoj
+
 boundary="ZZ_/afg6432dfgkl.94531q"
 FILENAME=$(date "+%Y%m%d%H%M%S-")
+NUMBEROFPICTURES=5
+TIMEBETWEENSNAPSHOT=1
+SUBJECT="Alerto de kamerao"
+BODY="Alerto de `hostname`"
+
+
+
 MAILDATE=$(date -R)
 
-if [ ! -f /opt/media/sdc/config/sendmail.conf ]
+if [ ! -f ${SDCARD}/www/ipcam/config/posxto.conf ]
 then
-  echo "You must configure /opt/media/sdc/config/sendmail.conf before using sendPictureMail"
+  echo "You must configure ${SDCARD}/www/ipcam/config/posxto.conf before using sendPictureMail"
   exit 1
 fi
 
-. /opt/media/sdc/config/sendmail.conf
+. JsAlVar ${SDCARD}/www/ipcam/config/posxto.conf posxto_conf
+
+
 
 if [ -f /tmp/sendPictureMail.lock ]; then
   echo "sendPictureEmail already running, /tmp/sendPictureMail.lock is present"
@@ -24,8 +36,8 @@ touch /tmp/sendPictureMail.lock
 # Build headers of the emails
 {
 
-printf '%s\n' "From: ${FROM}
-To: ${TO}
+printf '%s\n' "From: ${adresanto}
+To: ${SciiMailAl}
 Subject: ${SUBJECT}
 Date: ${MAILDATE}
 Mime-Version: 1.0
@@ -62,6 +74,6 @@ done
 printf '%s\n' "--${boundary}--"
 printf '%s\n' "-- End --"
 
-} | busybox sendmail -H"exec /opt/media/sdc/bin/openssl s_client -quiet -connect $SERVER:$PORT" -f"$FROM" -au"$AUTH" -ap"$PASS" $TO 2>/dev/null
+} | busybox sendmail -H"exec /opt/media/sdc/bin/openssl s_client -quiet -connect $servilo:$haveno" -f"$adresanto" -au"$ensaluto" -ap"$pasvorto" $SciiMailAl
 
 rm /tmp/sendPictureMail.lock

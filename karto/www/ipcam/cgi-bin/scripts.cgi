@@ -143,5 +143,4 @@ else
   done
 fi
 
-script=$(cat js/scripts.cgi.js)
-echo "<script>$script</script>"
+echo "<script src="js/scripts.cgi.js"></script>"

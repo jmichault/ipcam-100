@@ -1,0 +1,70 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+#, fuzzy
+msgid "Adresanto :"
+msgstr "Addressee:"
+
+#, fuzzy
+msgid "Al :"
+msgstr "Al:"
+
+#, fuzzy
+msgid "Ensaluto :"
+msgstr "Login:"
+
+#, fuzzy
+msgid "Haveno :"
+msgstr "Port:"
+
+#, fuzzy
+msgid "Mesaĝo :"
+msgstr "Message:"
+
+#, fuzzy
+msgid "Pasvorto :"
+msgstr "Password:"
+
+#, fuzzy
+msgid "Poŝto-Agordoj"
+msgstr "Mail Settings"
+
+#, fuzzy
+msgid "Pri :"
+msgstr "About:"
+
+#, fuzzy
+msgid "Servilo :"
+msgstr "Server:"
+
+#, fuzzy
+msgid "<strong>Aŭtentigo :</strong>"
+msgstr "<strong>Authentication:</ strong>"
+
+#, fuzzy
+msgid "<strong>Servilo (SSL deviga) :</strong>"
+msgstr "<strong>Server (SSL required) :</ strong>"
+
+#, fuzzy
+msgid "<strong>Testo :</strong>"
+msgstr "<strong>Testo:</ strong>"
+
+#, fuzzy
+msgid "Submeti"
+msgstr "Submit"
+
+#, fuzzy
+msgid "Submeti kaj Testi"
+msgstr "Submit and Test"
+

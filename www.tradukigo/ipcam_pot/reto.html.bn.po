@@ -1,0 +1,97 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: bn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+#, fuzzy
+msgid "-"
+msgstr "-"
+
+#, fuzzy
+msgid "/"
+msgstr "/"
+
+#, fuzzy
+msgid "Adresoj gamo :"
+msgstr "ঠিকানার সীমা:"
+
+#, fuzzy
+msgid "Aktivi :"
+msgstr "সম্পদসমূহ:"
+
+#, fuzzy
+msgid "dns1 IP-adreso :"
+msgstr "dns1 আইপি ঠিকানা:"
+
+#, fuzzy
+msgid "dns2 IP-adreso :"
+msgstr "dns2 আইপি ঠিকানা:"
+
+#, fuzzy
+msgid "enirejo :"
+msgstr "প্রবেশদ্বার:"
+
+#, fuzzy
+msgid "ĝeneralaj agordoj"
+msgstr "সাধারণ সেটিংস"
+
+#, fuzzy
+msgid "IP-adreso :"
+msgstr "আইপি ঠিকানা:"
+
+#, fuzzy
+msgid "LAN eth0"
+msgstr "ল্যান এথ0"
+
+#, fuzzy
+msgid "Reto-Agordoj"
+msgstr "নেটওয়ার্ক সেটিংস"
+
+#, fuzzy
+msgid "SSID :"
+msgstr "এসএসআইডি:"
+
+#, fuzzy
+msgid "<strong>DHCP Servilo :</strong>"
+msgstr "<শক্তিশালী>ডিএইচসিপি সার্ভার:</ শক্তিশালী>"
+
+#, fuzzy
+msgid "<strong>DNS Serviloj :</strong>"
+msgstr "<শক্তিশালী>ডিএনএস সার্ভারগুলি:</ শক্তিশালী>"
+
+#, fuzzy
+msgid "<strong>IP Agordoj :</strong>"
+msgstr "<শক্তিশালী>আইপি সেটিংস:</ শক্তিশালী>"
+
+#, fuzzy
+msgid "<strong>manaj IP-agordoj (estos ignorita se dhcp estas ebligita) :</strong>"
+msgstr "<শক্তিশালী>ম্যানুয়াল আইপি সেটিংস (উপেক্ষা করা হবে যদি ডিএইচসিপি সক্ষম হয়) :</ শক্তিশালী>"
+
+#, fuzzy
+msgid "<strong>Wifi Agordoj :</strong>"
+msgstr "<শক্তিশালী>ওয়াইফাই সেটিংস:</ শক্তিশালী>"
+
+#, fuzzy
+msgid "Uzi dhcp :"
+msgstr "ডিএইচসিপি ব্যবহার করুন:"
+
+#, fuzzy
+msgid "WiFi-AP wlan1"
+msgstr "WiFi-AP wlan1"
+
+#, fuzzy
+msgid "WiFi-kliento wlan0"
+msgstr "ওয়াইফাই ক্লায়েন্ট wlan0"
+
+#, fuzzy
+msgid "WiFi pasvorto :"
+msgstr "ওয়াইফাই পাসওয়ার্ড:"

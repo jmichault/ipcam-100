@@ -1,0 +1,82 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+#, fuzzy
+msgid "adreso de sensilo"
+msgstr "संवेदन का पता"
+
+#, fuzzy
+msgid "alteco"
+msgstr "ऊंचाई"
+
+#, fuzzy
+msgid "bildograndeco (sekundara kanalo devas esti malpli granda)"
+msgstr "हाइलाइट आकारएक माध्यमिक चैनल कम बड़ा होना चाहिए)"
+
+#, fuzzy
+msgid "bitrapido (kbps)"
+msgstr "बिटिट्रिडो (° 0001 डिग्री) केबीपीएस (डिग्री 0002 डिग्री)"
+
+#, fuzzy
+msgid "capteur"
+msgstr "कैशन"
+
+#, fuzzy
+msgid "ĉefa kanalo"
+msgstr "मुख्य चैनल"
+
+#, fuzzy
+msgid "duaranga kanalo"
+msgstr "माध्यमिक चैनल"
+
+#, fuzzy
+msgid "interfaco :"
+msgstr "इंटरफेस:"
+
+#, fuzzy
+msgid "larĝo"
+msgstr "चौड़ाई"
+
+#, fuzzy
+msgid "maxQP (pli malalta = pli bona kvalito)"
+msgstr "MAXQP (° 0001 डिग्री) निचला = बेहतर गुणवत्ता (° 0002 डिग्री)"
+
+#, fuzzy
+msgid "minQP (pli malalta = pli bona kvalito)"
+msgstr "Minqp (° 0001 डिग्री) निचला = बेहतर गुणवत्ता (° ° 0002 डिग्री)"
+
+#, fuzzy
+msgid "nombro da kadroj sekunde"
+msgstr "प्रति सेकंड फ्रेम की संख्या"
+
+#, fuzzy
+msgid "nomo de sensilo :"
+msgstr "सेंसेल का नाम:"
+
+#, fuzzy
+msgid "sensor"
+msgstr "सेंसर"
+
+#, fuzzy
+msgid "Video Agordoj :"
+msgstr "वीडियो सेटिंग्स:"
+
+#, fuzzy
+msgid "video-formato"
+msgstr "वीडियो फार्मेट"
+
+#, fuzzy
+msgid "videotrajtoj"
+msgstr "Videotories"
+

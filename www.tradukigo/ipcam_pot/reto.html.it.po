@@ -1,0 +1,97 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+#, fuzzy
+msgid "-"
+msgstr "-"
+
+#, fuzzy
+msgid "/"
+msgstr "/"
+
+#, fuzzy
+msgid "Adresoj gamo :"
+msgstr "Intervallo di indirizzi:"
+
+#, fuzzy
+msgid "Aktivi :"
+msgstr "Risorse:"
+
+#, fuzzy
+msgid "dns1 IP-adreso :"
+msgstr "indirizzo IP dns1:"
+
+#, fuzzy
+msgid "dns2 IP-adreso :"
+msgstr "indirizzo IP dns2:"
+
+#, fuzzy
+msgid "enirejo :"
+msgstr "Ingresso:"
+
+#, fuzzy
+msgid "ĝeneralaj agordoj"
+msgstr "impostazioni generali"
+
+#, fuzzy
+msgid "IP-adreso :"
+msgstr "Indirizzo IP:"
+
+#, fuzzy
+msgid "LAN eth0"
+msgstr "LAN eth0"
+
+#, fuzzy
+msgid "Reto-Agordoj"
+msgstr "Impostazioni di rete"
+
+#, fuzzy
+msgid "SSID :"
+msgstr "SSID:"
+
+#, fuzzy
+msgid "<strong>DHCP Servilo :</strong>"
+msgstr "<forte>Server DHCP:</ forte>"
+
+#, fuzzy
+msgid "<strong>DNS Serviloj :</strong>"
+msgstr "<forte>Server DNS:</ forte>"
+
+#, fuzzy
+msgid "<strong>IP Agordoj :</strong>"
+msgstr "<forte>Impostazioni IP:</ forte>"
+
+#, fuzzy
+msgid "<strong>manaj IP-agordoj (estos ignorita se dhcp estas ebligita) :</strong>"
+msgstr "<forte>impostazioni IP manuali (verranno ignorate se dhcp è abilitato) :</ forte>"
+
+#, fuzzy
+msgid "<strong>Wifi Agordoj :</strong>"
+msgstr "<forte>Impostazioni Wi-Fi:</ forte>"
+
+#, fuzzy
+msgid "Uzi dhcp :"
+msgstr "Usa dhcp:"
+
+#, fuzzy
+msgid "WiFi-AP wlan1"
+msgstr "WiFi-AP wlan1"
+
+#, fuzzy
+msgid "WiFi-kliento wlan0"
+msgstr "Client-WiFi wlan0"
+
+#, fuzzy
+msgid "WiFi pasvorto :"
+msgstr "Password WiFi:"

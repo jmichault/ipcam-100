@@ -1,0 +1,101 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+msgid ""
+msgstr ""
+
+#, fuzzy
+msgid "Al :"
+msgstr "ل:"
+
+#, fuzzy
+msgid "Areoj"
+msgstr "المناطق"
+
+#, fuzzy
+msgid "Detekto Aktivida :"
+msgstr "اكتشاف تنشيط:"
+
+#, fuzzy
+msgid "Fina Tempo"
+msgstr "في المرة النهائية"
+
+#, fuzzy
+msgid "ĝeneralaj agordoj"
+msgstr "الاعدادات العامة"
+
+#, fuzzy
+msgid "Maksimuma nombro de samtempaj zonoj kun movado"
+msgstr "الحد الأقصى لعدد مناطق في وقت واحد مع الحركة"
+
+#, fuzzy
+msgid "Minimuma nombro de zonoj dum movado"
+msgstr "الحد الأدنى لعدد المناطق أثناء الحركة"
+
+#, fuzzy
+msgid "Movo-Agordoj"
+msgstr "نقل الإعدادات"
+
+#, fuzzy
+msgid "Ordonon:"
+msgstr "ترتيب:"
+
+#, fuzzy
+msgid "plenumi ordonon:"
+msgstr "لأداء طلب:"
+
+#, fuzzy
+msgid "Sciigo"
+msgstr "تنبيه"
+
+#, fuzzy
+msgid "Senaktiva Tempo"
+msgstr "وقت غير نشط"
+
+#, fuzzy
+msgid "sendi retpoŝton :"
+msgstr "أرسل بريدا إلكترونيا:"
+
+#, fuzzy
+msgid "sendi «telegram» :"
+msgstr "إرسال \"برقية\":"
+
+#, fuzzy
+msgid "sendi «URL» :"
+msgstr "إرسال \"عنوان URL\":"
+
+#, fuzzy
+msgid "Sentemo :"
+msgstr "حساسية:"
+
+#, fuzzy
+msgid "Stokado"
+msgstr "تخزين"
+
+#, fuzzy
+msgid "stoki bildojn :"
+msgstr "صور تخزين:"
+
+#, fuzzy
+msgid "stoki filmetojn :"
+msgstr "تخزين مقاطع الفيديو:"
+
+#, fuzzy
+msgid "stoki sur fora servilo :"
+msgstr "تخزين على خادم بعيد:"
+
+#, fuzzy
+msgid "Url :"
+msgstr "عنوان URL:"
+

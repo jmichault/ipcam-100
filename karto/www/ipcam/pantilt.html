@@ -1,0 +1,101 @@
+<script>
+ function call(url){
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', url, true);
+  xhr.send();
+    }
+ function get(url){
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', url, false);
+  xhr.send();
+  return xhr.responseText;
+    }
+
+</script>
+
+<!-- Motoro -->
+<div class='card status_card'>
+ <header class='card-header'><p class='card-header-title lang' data-lang="Motoro Testo"></p></header>
+ <div class='card-content'>
+  <table class="motor_control">
+   <tr>
+    <td></td>
+    <td class="text-center">
+      <button class="button is-link lang" onclick="call('cgi-bin/action.cgi?cmd=motor_up&val='+document.getElementById('val').value)" data-lang="&uarr; Supra"></button>
+    </td>
+    <td>
+    </td>
+    <td rowspan=3>
+     <img width="100%" id="liveview" src="cgi-bin/currentpic.cgi" onerror="this.src='/unable_load.png';">
+    </td>
+   </tr>
+   <tr>
+    <td class="">
+     <button class="button is-link" onclick="call('cgi-bin/action.cgi?cmd=motor_left&val='+document.getElementById('val').value)">&larr; Maldekstra</button>
+    </td>
+    <td>
+     <input class="input has-text-centered" type="text" id="val" name="val" value="100">
+    </td>
+    <td>
+     <button class="button is-link" onclick="call('cgi-bin/action.cgi?cmd=motor_right&val='+document.getElementById('val').value)">Dekstra &rarr;</button>
+    </td>
+   </tr>
+   <tr>
+    <td></td>
+    <td class="text-center">
+     <button class="button is-link" onclick="call('cgi-bin/action.cgi?cmd=motor_down&val='+document.getElementById('val').value)">&darr; Malsupra</button>
+    </td>
+    <td></td>
+   </tr>
+   <tr>
+    <td colspan=3>
+     <div class="buttons">
+      <button class="button is-warning" onclick="call('cgi-bin/action.cgi?cmd=motor_calibrate')">Kalibri</button>
+      <button class="button is-link" onclick="call('cgi-bin/action.cgi?cmd=motoro_poz&val=0')">P0</button>
+      <button class="button is-link" onclick="call('cgi-bin/action.cgi?cmd=motoro_poz&val=1')">P1</button>
+      <button class="button is-link" onclick="call('cgi-bin/action.cgi?cmd=motoro_poz&val=2')">P2</button>
+      <button class="button is-link" onclick="call('cgi-bin/action.cgi?cmd=motoro_poz&val=3')">P3</button>
+      <button class="button is-link" onclick="call('cgi-bin/action.cgi?cmd=motoro_poz&val=4')">P4</button>
+     </div>
+    </td>
+    <td>
+     <div class="buttons">
+      <a class="lang" data-lang="kopiu ĉi tiun pozicion al: "></a>
+      <button class="button is-link" onclick="setPoz(0)">P0</button>
+      <button class="button is-link" onclick="setPoz(1)">P1</button>
+      <button class="button is-link" onclick="setPoz(2)">P2</button>
+      <button class="button is-link" onclick="setPoz(3)">P3</button>
+      <button class="button is-link" onclick="setPoz(4)">P4</button>
+     </div>
+    </td>
+   </tr>
+  </table>
+ </div>
+</div>
+
+<div class='card status_card'>
+ <header class='card-header'><p class='card-header-title'>Agordoj</p></header>
+ <div class='card-content'>
+  <form class="form-inline bg-light" id="ptz_form" >
+  </form>
+ </div>
+</div>
+
+    <script type="text/javascript" src="forms/pantilt.html.js"></script>
+    <script type="text/javascript" src="config/ptz.conf"></script>
+    <script type="text/javascript">
+    function setPoz(poz) {
+        var val=get("cgi-bin/getMotoroPoz.cgi").split(' ');
+        var elX = $('[name="P['+poz+'].X"]');
+        elX.val(val[1]);
+        var elY = $('[name="P['+poz+'].Y"]');
+        elY.val(val[2]);
+    }
+    setPageLang('pantilt.html',$(window));
+    setFormLang(ptz_jsForm);
+    $('#ptz_form').jsonForm(ptz_jsForm );
+    ptz_conf.forEach(setformval);
+    // Make liveview self refresh
+    image = document.getElementById("liveview");
+    miaInterval = setInterval(updateImage, 1000);
+    </script>

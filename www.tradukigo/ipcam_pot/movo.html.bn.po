@@ -1,0 +1,101 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: bn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+msgid ""
+msgstr ""
+
+#, fuzzy
+msgid "Al :"
+msgstr "প্রতি:"
+
+#, fuzzy
+msgid "Areoj"
+msgstr "এলাকা"
+
+#, fuzzy
+msgid "Detekto Aktivida :"
+msgstr "সনাক্তকরণ সক্রিয়:"
+
+#, fuzzy
+msgid "Fina Tempo"
+msgstr "চূড়ান্ত সময়"
+
+#, fuzzy
+msgid "ĝeneralaj agordoj"
+msgstr "সাধারণ সেটিংস"
+
+#, fuzzy
+msgid "Maksimuma nombro de samtempaj zonoj kun movado"
+msgstr "আন্দোলনের সাথে একযোগে জোনের সর্বোচ্চ সংখ্যা"
+
+#, fuzzy
+msgid "Minimuma nombro de zonoj dum movado"
+msgstr "আন্দোলনের সময় সর্বনিম্ন সংখ্যা জোন্স"
+
+#, fuzzy
+msgid "Movo-Agordoj"
+msgstr "সেটিংস সরান"
+
+#, fuzzy
+msgid "Ordonon:"
+msgstr "আদেশ:"
+
+#, fuzzy
+msgid "plenumi ordonon:"
+msgstr "একটি আদেশ সঞ্চালন করতে:"
+
+#, fuzzy
+msgid "Sciigo"
+msgstr "বিজ্ঞপ্তি"
+
+#, fuzzy
+msgid "Senaktiva Tempo"
+msgstr "নিষ্ক্রিয় সময়"
+
+#, fuzzy
+msgid "sendi retpoŝton :"
+msgstr "একটি ইমেইল পাঠাও:"
+
+#, fuzzy
+msgid "sendi «telegram» :"
+msgstr "\"টেলিগ্রাম\" পাঠান:"
+
+#, fuzzy
+msgid "sendi «URL» :"
+msgstr "\"URL\" পাঠান:"
+
+#, fuzzy
+msgid "Sentemo :"
+msgstr "সংবেদনশীলতা:"
+
+#, fuzzy
+msgid "Stokado"
+msgstr "স্টোরেজ"
+
+#, fuzzy
+msgid "stoki bildojn :"
+msgstr "দোকান ইমেজ:"
+
+#, fuzzy
+msgid "stoki filmetojn :"
+msgstr "দোকান ভিডিও:"
+
+#, fuzzy
+msgid "stoki sur fora servilo :"
+msgstr "একটি দূরবর্তী সার্ভারে সংরক্ষণ করুন:"
+
+#, fuzzy
+msgid "Url :"
+msgstr "ইউআরএল:"
+

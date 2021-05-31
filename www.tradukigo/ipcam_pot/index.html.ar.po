@@ -13,20 +13,12 @@ msgstr ""
 "X-Generator: html2pot\n"
 
 #, fuzzy
-msgid "Blanka LED"
-msgstr "بقيادة بيضاء"
-
-#, fuzzy
 msgid "Ĝisdatigi"
 msgstr "تحديث"
 
 #, fuzzy
 msgid "Kamerao"
 msgstr "                                                                                                                      ﺮﻳﻮﺼﺗ ﺔﻟﺁ"
-
-#, fuzzy
-msgid "LED agordoj"
-msgstr "إعدادات LED."
 
 #, fuzzy
 msgid "Malŝalti"
@@ -65,8 +57,16 @@ msgid "Restartigi"
 msgstr "لإعادة التشغيل"
 
 #, fuzzy
+msgid "Reto"
+msgstr "شبكة الاتصال"
+
+#, fuzzy
 msgid "Reto Informoj"
 msgstr "معلومات الشبكة"
+
+#, fuzzy
+msgid "Retpoŝto"
+msgstr "بريد إلكتروني"
 
 #, fuzzy
 msgid "RTSP Agordoj"
@@ -97,12 +97,20 @@ msgid "T21 Kodumoj"
 msgstr "رموز T21"
 
 #, fuzzy
-msgid "Transruĝa LED"
-msgstr "أدى الأشعة تحت الحمراء"
-
-#, fuzzy
 msgid "Versio :"
 msgstr "إصدار:"
+
+#, fuzzy
+#~ msgid "Blanka LED"
+#~ msgstr "بقيادة بيضاء"
+
+#, fuzzy
+#~ msgid "LED agordoj"
+#~ msgstr "إعدادات LED."
+
+#, fuzzy
+#~ msgid "Transruĝa LED"
+#~ msgstr "أدى الأشعة تحت الحمراء"
 
 #, fuzzy
 #~ msgid "Aŭtomata Nokta Detekto"
@@ -151,10 +159,6 @@ msgstr "إصدار:"
 #, fuzzy
 #~ msgid "Obskura"
 #~ msgstr "غامض"
-
-#, fuzzy
-#~ msgid "Reto"
-#~ msgstr "شبكة الاتصال"
 
 #, fuzzy
 #~ msgid "RTSP-Servilo"

@@ -1,0 +1,101 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+msgid ""
+msgstr ""
+
+#, fuzzy
+msgid "Al :"
+msgstr "至："
+
+#, fuzzy
+msgid "Areoj"
+msgstr "地区"
+
+#, fuzzy
+msgid "Detekto Aktivida :"
+msgstr "检测激活："
+
+#, fuzzy
+msgid "Fina Tempo"
+msgstr "最后一次"
+
+#, fuzzy
+msgid "ĝeneralaj agordoj"
+msgstr "常规设置"
+
+#, fuzzy
+msgid "Maksimuma nombro de samtempaj zonoj kun movado"
+msgstr "具有运动的最大同时区域数"
+
+#, fuzzy
+msgid "Minimuma nombro de zonoj dum movado"
+msgstr "运动期间的最小区域数"
+
+#, fuzzy
+msgid "Movo-Agordoj"
+msgstr "移动设置"
+
+#, fuzzy
+msgid "Ordonon:"
+msgstr "命令："
+
+#, fuzzy
+msgid "plenumi ordonon:"
+msgstr "执行订单："
+
+#, fuzzy
+msgid "Sciigo"
+msgstr "通知"
+
+#, fuzzy
+msgid "Senaktiva Tempo"
+msgstr "非活动时间"
+
+#, fuzzy
+msgid "sendi retpoŝton :"
+msgstr "发送电子邮件："
+
+#, fuzzy
+msgid "sendi «telegram» :"
+msgstr "发送“电报”："
+
+#, fuzzy
+msgid "sendi «URL» :"
+msgstr "发送“URL”："
+
+#, fuzzy
+msgid "Sentemo :"
+msgstr "灵敏度："
+
+#, fuzzy
+msgid "Stokado"
+msgstr "贮存"
+
+#, fuzzy
+msgid "stoki bildojn :"
+msgstr "商店图片："
+
+#, fuzzy
+msgid "stoki filmetojn :"
+msgstr "商店视频："
+
+#, fuzzy
+msgid "stoki sur fora servilo :"
+msgstr "存储在远程服务器上："
+
+#, fuzzy
+msgid "Url :"
+msgstr "URL："
+

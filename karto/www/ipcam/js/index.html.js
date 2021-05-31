@@ -53,6 +53,7 @@ $(document).ready(function () {
    
     // Load link into #content
     $('.onpage').click(function () {
+        clearInterval(miaInterval);
         var e = $(this);
         var target = e.data('target');
         var cachebuster = "_=" + new Date().getTime();
@@ -63,6 +64,7 @@ $(document).ready(function () {
             // new param
             cachebuster = "?" + cachebuster;
         }
+        //$('#content').load(target + cachebuster);
         $('#content').load(target + cachebuster,function() {
           setPageLang(target,$('#content'));
         });
@@ -77,33 +79,6 @@ $(document).ready(function () {
         if (confirm(e.data('message'))) {
             window.location.href = e.data('target');
         }
-    });
-    // Camera controls
-    $(".cam_button").click(function () {
-        var b = $(this);
-        $.get("cgi-bin/action.cgi?cmd=" + b.data('cmd')).done(function (data) {
-            setTimeout(refreshLiveImage, 500);
-        });
-    });
-
-    // Switch controls
-    $(".switch").click(function () {
-        var e = $(this);
-        e.prop('disabled', true);
-        $.get("cgi-bin/state.cgi", {
-            cmd: e.attr('id')
-        }).done(function (status) {
-            if (status.trim().toLowerCase() == "on") {
-                $.get(e.data('unchecked')).done(function (data) {
-                    e.prop('checked', false);
-                });
-            } else {
-                $.get(e.data('checked')).done(function (data) {
-                    e.prop('checked', true);
-                });
-            }
-            e.prop('disabled', false);
-        });
     });
 
     // Initial syncing of switches
@@ -149,15 +124,15 @@ $(document).ready(function () {
         $(document.location.hash).click();
     }
 
-    // Make liveview self refresh
-    //$("#liveview").attr("onload", "scheduleRefreshLiveImage(1000);");
-    var image = document.getElementById("liveview");
-    function updateImage() {
-        image.src = image.src.split("?")[0] + "?" + new Date().getTime();
-    }
-    setInterval(updateImage, 1000);
-
 });
+
+// Make liveview self refresh
+var image = document.getElementById("liveview");
+function updateImage() {
+  image.src = image.src.split("?")[0] + "?" + new Date().getTime();
+}
+var miaInterval = setInterval(updateImage, 1000);
+clearInterval(miaInterval);
 
 // set theme cookie
 function setCookie(name, value) {

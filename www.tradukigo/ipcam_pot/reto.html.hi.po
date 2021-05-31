@@ -1,0 +1,97 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+#, fuzzy
+msgid "-"
+msgstr "-"
+
+#, fuzzy
+msgid "/"
+msgstr "/"
+
+#, fuzzy
+msgid "Adresoj gamo :"
+msgstr "पता श्रेणी:"
+
+#, fuzzy
+msgid "Aktivi :"
+msgstr "संपत्ति:"
+
+#, fuzzy
+msgid "dns1 IP-adreso :"
+msgstr "डीएनएस1 आईपी पता:"
+
+#, fuzzy
+msgid "dns2 IP-adreso :"
+msgstr "dns2 आईपी पता:"
+
+#, fuzzy
+msgid "enirejo :"
+msgstr "प्रवेश:"
+
+#, fuzzy
+msgid "ĝeneralaj agordoj"
+msgstr "सामान्य सेटिंग्स"
+
+#, fuzzy
+msgid "IP-adreso :"
+msgstr "आईपी पता:"
+
+#, fuzzy
+msgid "LAN eth0"
+msgstr "लैन eth0"
+
+#, fuzzy
+msgid "Reto-Agordoj"
+msgstr "नेटवर्क सेटिंग"
+
+#, fuzzy
+msgid "SSID :"
+msgstr "एसएसआईडी:"
+
+#, fuzzy
+msgid "<strong>DHCP Servilo :</strong>"
+msgstr "<मजबूत>DHCP सर्वर:</ मजबूत>"
+
+#, fuzzy
+msgid "<strong>DNS Serviloj :</strong>"
+msgstr "<मजबूत>DNS सर्वर:</ मजबूत>"
+
+#, fuzzy
+msgid "<strong>IP Agordoj :</strong>"
+msgstr "<मजबूत>IP सेटिंग्स:</ मजबूत>"
+
+#, fuzzy
+msgid "<strong>manaj IP-agordoj (estos ignorita se dhcp estas ebligita) :</strong>"
+msgstr "<मजबूत>मैनुअल IP सेटिंग्स (को अनदेखा कर दिया जाएगा यदि dhcp सक्षम है) :</ मजबूत>"
+
+#, fuzzy
+msgid "<strong>Wifi Agordoj :</strong>"
+msgstr "<मजबूत>वाईफ़ाई सेटिंग्स:</ मजबूत>"
+
+#, fuzzy
+msgid "Uzi dhcp :"
+msgstr "डीएचसीपी का प्रयोग करें:"
+
+#, fuzzy
+msgid "WiFi-AP wlan1"
+msgstr "वाईफाई-एपी wlan1"
+
+#, fuzzy
+msgid "WiFi-kliento wlan0"
+msgstr "वाईफाई क्लाइंट wlan0"
+
+#, fuzzy
+msgid "WiFi pasvorto :"
+msgstr "वाईफ़ाई पासवर्ड:"

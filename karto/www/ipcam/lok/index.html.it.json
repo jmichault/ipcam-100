@@ -1,8 +1,6 @@
 {"":{"language":"it","plural-forms":"nplurals=2; plural=(n > 1);"}
-,"Blanka LED": "LED bianco"
 ,"Ĝisdatigi": "Aggiornare"
 ,"Kamerao": "telecamera"
-,"LED agordoj": "Impostazioni a LED"
 ,"Malŝalti": "Spegni"
 ,"Movado-Detekto": "Rilevamento del movimento"
 ,"Nokta Agordoj": "Impostazioni notturne"
@@ -12,7 +10,9 @@
 ,"Problemoj?": "I problemi?"
 ,"Protokoloj": "Protocolli"
 ,"Restartigi": "Ricominciare"
+,"Reto": "Rete"
 ,"Reto Informoj": "Informazioni sulla rete"
+,"Retpoŝto": "E-mail"
 ,"RTSP Agordoj": "Impostazioni RTSP."
 ,"Servoj": "Servizi"
 ,"Sistemo": "Sistema"
@@ -20,6 +20,5 @@
 ,"Stato": "Stato"
 ,"Superrigardo": "Panoramica"
 ,"T21 Kodumoj": "Codici T21."
-,"Transruĝa LED": "LED a infrarossi"
 ,"Versio :": "Versione:"
 }

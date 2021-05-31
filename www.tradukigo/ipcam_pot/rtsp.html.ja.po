@@ -1,0 +1,82 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+#, fuzzy
+msgid "adreso de sensilo"
+msgstr "官能の住所"
+
+#, fuzzy
+msgid "alteco"
+msgstr "高さ"
+
+#, fuzzy
+msgid "bildograndeco (sekundara kanalo devas esti malpli granda)"
+msgstr "ハイライトサイズ (二次チャンネルはそれほど大きくなければならない)"
+
+#, fuzzy
+msgid "bitrapido (kbps)"
+msgstr "ビタリド (Kbps)"
+
+#, fuzzy
+msgid "capteur"
+msgstr "捕獲"
+
+#, fuzzy
+msgid "ĉefa kanalo"
+msgstr "メインチャネル"
+
+#, fuzzy
+msgid "duaranga kanalo"
+msgstr "二次チャンネル"
+
+#, fuzzy
+msgid "interfaco :"
+msgstr "インターフェース："
+
+#, fuzzy
+msgid "larĝo"
+msgstr "幅"
+
+#, fuzzy
+msgid "maxQP (pli malalta = pli bona kvalito)"
+msgstr "MAXQP (低=品質向上)"
+
+#, fuzzy
+msgid "minQP (pli malalta = pli bona kvalito)"
+msgstr "MINQP (下=品質向上)"
+
+#, fuzzy
+msgid "nombro da kadroj sekunde"
+msgstr "1秒あたりのフレーム数"
+
+#, fuzzy
+msgid "nomo de sensilo :"
+msgstr "官能名の名前："
+
+#, fuzzy
+msgid "sensor"
+msgstr "センサー"
+
+#, fuzzy
+msgid "Video Agordoj :"
+msgstr "ビデオ設定："
+
+#, fuzzy
+msgid "video-formato"
+msgstr "ビデオフォーマット"
+
+#, fuzzy
+msgid "videotrajtoj"
+msgstr "ビデオトイズ"
+

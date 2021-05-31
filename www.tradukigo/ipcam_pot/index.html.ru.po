@@ -13,20 +13,12 @@ msgstr ""
 "X-Generator: html2pot\n"
 
 #, fuzzy
-msgid "Blanka LED"
-msgstr "Белый светодиод"
-
-#, fuzzy
 msgid "Ĝisdatigi"
 msgstr "Обновлять"
 
 #, fuzzy
 msgid "Kamerao"
 msgstr "Камера"
-
-#, fuzzy
-msgid "LED agordoj"
-msgstr "Светодиодные настройки"
 
 #, fuzzy
 msgid "Malŝalti"
@@ -65,8 +57,16 @@ msgid "Restartigi"
 msgstr "Заново"
 
 #, fuzzy
+msgid "Reto"
+msgstr "Сеть"
+
+#, fuzzy
 msgid "Reto Informoj"
 msgstr "Сетевая информация"
+
+#, fuzzy
+msgid "Retpoŝto"
+msgstr "Электронное письмо"
 
 #, fuzzy
 msgid "RTSP Agordoj"
@@ -97,12 +97,20 @@ msgid "T21 Kodumoj"
 msgstr "T21 коды"
 
 #, fuzzy
-msgid "Transruĝa LED"
-msgstr "Инфракрасный светодиод"
-
-#, fuzzy
 msgid "Versio :"
 msgstr "Версия:"
+
+#, fuzzy
+#~ msgid "Blanka LED"
+#~ msgstr "Белый светодиод"
+
+#, fuzzy
+#~ msgid "LED agordoj"
+#~ msgstr "Светодиодные настройки"
+
+#, fuzzy
+#~ msgid "Transruĝa LED"
+#~ msgstr "Инфракрасный светодиод"
 
 #, fuzzy
 #~ msgid "Aŭtomata Nokta Detekto"
@@ -151,10 +159,6 @@ msgstr "Версия:"
 #, fuzzy
 #~ msgid "Obskura"
 #~ msgstr "Затемнять"
-
-#, fuzzy
-#~ msgid "Reto"
-#~ msgstr "Сеть"
 
 #, fuzzy
 #~ msgid "RTSP-Servilo"

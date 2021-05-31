@@ -1,8 +1,6 @@
 {"":{"language":"ar","plural-forms":"nplurals=2; plural=(n > 1);"}
-,"Blanka LED": "بقيادة بيضاء"
 ,"Ĝisdatigi": "تحديث"
 ,"Kamerao": "                                                                                                                      ﺮﻳﻮﺼﺗ ﺔﻟﺁ"
-,"LED agordoj": "إعدادات LED."
 ,"Malŝalti": "اطفئه"
 ,"Movado-Detekto": "اكتشاف الحركة"
 ,"Nokta Agordoj": "إعدادات الليل"
@@ -12,7 +10,9 @@
 ,"Problemoj?": "مشاكل؟"
 ,"Protokoloj": "البروتوكولات"
 ,"Restartigi": "لإعادة التشغيل"
+,"Reto": "شبكة الاتصال"
 ,"Reto Informoj": "معلومات الشبكة"
+,"Retpoŝto": "بريد إلكتروني"
 ,"RTSP Agordoj": "إعدادات RTSP."
 ,"Servoj": "خدمات"
 ,"Sistemo": "نظام"
@@ -20,6 +20,5 @@
 ,"Stato": "حالة"
 ,"Superrigardo": "ملخص"
 ,"T21 Kodumoj": "رموز T21"
-,"Transruĝa LED": "أدى الأشعة تحت الحمراء"
 ,"Versio :": "إصدار:"
 }

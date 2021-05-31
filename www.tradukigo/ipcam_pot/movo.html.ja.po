@@ -1,0 +1,101 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 21:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: html2pot\n"
+
+msgid ""
+msgstr ""
+
+#, fuzzy
+msgid "Al :"
+msgstr "に："
+
+#, fuzzy
+msgid "Areoj"
+msgstr "エリア"
+
+#, fuzzy
+msgid "Detekto Aktivida :"
+msgstr "検出された検出："
+
+#, fuzzy
+msgid "Fina Tempo"
+msgstr "最後の時間"
+
+#, fuzzy
+msgid "ĝeneralaj agordoj"
+msgstr "一般設定"
+
+#, fuzzy
+msgid "Maksimuma nombro de samtempaj zonoj kun movado"
+msgstr "移動を伴う同時ゾーンの最大数"
+
+#, fuzzy
+msgid "Minimuma nombro de zonoj dum movado"
+msgstr "移動中のゾーンの最小数"
+
+#, fuzzy
+msgid "Movo-Agordoj"
+msgstr "設定を移動します"
+
+#, fuzzy
+msgid "Ordonon:"
+msgstr "注文："
+
+#, fuzzy
+msgid "plenumi ordonon:"
+msgstr "注文を実行するには："
+
+#, fuzzy
+msgid "Sciigo"
+msgstr "お知らせ"
+
+#, fuzzy
+msgid "Senaktiva Tempo"
+msgstr "非アクティブタイム"
+
+#, fuzzy
+msgid "sendi retpoŝton :"
+msgstr "メールを送る："
+
+#, fuzzy
+msgid "sendi «telegram» :"
+msgstr "「テレグラム」を送る："
+
+#, fuzzy
+msgid "sendi «URL» :"
+msgstr "\"URL\"を送信します。"
+
+#, fuzzy
+msgid "Sentemo :"
+msgstr "感度："
+
+#, fuzzy
+msgid "Stokado"
+msgstr "ストレージ"
+
+#, fuzzy
+msgid "stoki bildojn :"
+msgstr "画像を保存する："
+
+#, fuzzy
+msgid "stoki filmetojn :"
+msgstr "ビデオを保存："
+
+#, fuzzy
+msgid "stoki sur fora servilo :"
+msgstr "リモートサーバーに保存します。"
+
+#, fuzzy
+msgid "Url :"
+msgstr "URL："
+
