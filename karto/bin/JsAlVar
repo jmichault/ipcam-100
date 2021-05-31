@@ -22,7 +22,7 @@ do
 #echo couple=$couple
   nomo=$(echo "$couple"|jq -r '.name'|sed 's/[\.\[]//g;s/\]//g')
   valoro=$(echo "$couple"|jq -r '.value')
-  if [ x"$valoro" == "xnull" -o x"$valoro" == "x" ]
+  if [ x"$nomo" == "xnull" -o x"$nomo" == "x" ]
   then
     break
   fi
