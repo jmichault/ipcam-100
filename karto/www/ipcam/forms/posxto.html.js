@@ -8,8 +8,8 @@ var posxto_jsForm=
   servilo: { type: 'string', title: "Servilo :"},
   haveno: { type: 'integer', title: "Haveno :", default:465},
   testoAl: { type: 'string', title: "Al :",default:"x@y.com"},
-  testoPri: { type: 'string', title: "Pri :",default:"Alarmo de kamerao"},
-  testoMesagxo: { type: 'string', title: "Mesaĝo :",default:"Jen atentigo de via kamerao"},
+  testoPri: { type: 'string', title: "Pri :",default:"Testo de Alarmo"},
+  testoMesagxo: { type: 'string', title: "Mesaĝo :",default:"Jen atentigotesto de via kamerao"},
  },
  form:
  [
@@ -26,7 +26,7 @@ var posxto_jsForm=
       htmlClass: "inline py-3 px-3 ", 
     items:[
     { key: "ensaluto"},
-    { key: "pasvorto"},
+    { key: "pasvorto",type:"password"},
   ] },
   {"type": "help","helpvalue": "<strong>Testo :</strong>",htmlClass: "ml-n2 mt-2"},
   { type:"fieldset",
@@ -47,11 +47,15 @@ var posxto_jsForm=
     },
     {
       "type": "button",
-      htmlClass: "ml-3",
+      htmlClass: "btn-primary ml-3",
       "title": "Submeti kaj Testi",
       "onClick": function (evt) {
         $("#posxtoSubmeti").click();
-        alert('Testo ne implementa!');       
+        $.get("cgi-bin/api.cgi", {action: "send_test_mail"}, function(title){
+            //$('#res').html($('#res').html+title);
+          alert(title);// FARENDA : neniam afiŝis 
+        });
+        //alert('Testo ne implementa!');       
        }
     },
   ]
