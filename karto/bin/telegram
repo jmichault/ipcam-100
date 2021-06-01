@@ -1,38 +1,39 @@
 #!/bin/sh
+. /etc/profile >/dev/null 2>&1
 what="$1"
 shift
 data="$@"
-CURL="/opt/media/sdc/bin/curl"
+CURL="${SDCARD}/bin/curl"
 
-. /opt/media/sdc/config/telegram.conf
+. JsAlVar ${SDCARD}/www/ipcam/config/movo.conf DetektoDatenoj
 
 sendMessage() {
   text="$(echo "${@}" | sed 's:\\n:\n:g')"
   echo "Sending message: $text"
 
-  $CURL -s \
+  $CURL --capath /etc/ssl/certs -s \
     -X POST \
-    https://api.telegram.org/bot$apiToken/sendMessage \
+    https://api.telegram.org/bot${SciiTelToken}/sendMessage \
     --data-urlencode "text=$text" \
-    -d "chat_id=$userChatId"
+    -d "chat_id=${SciiTelChatId}"
 }
 
 sendFile() {
   echo "Sending file: $1"
-  $CURL -s \
+  $CURL --capath /etc/ssl/certs -s \
     -X POST \
-    https://api.telegram.org/bot$apiToken/sendDocument \
-    -F chat_id="$userChatId" \
+    https://api.telegram.org/bot${SciiTelToken}/sendDocument \
+    -F chat_id="${SciiTelChatId}" \
     -F document=@"$1"
 }
 
 sendPhoto() {
   caption="$(hostname)-$(date +"%d%m%Y_%H%M%S")"
   echo "Sending Photo: $1 $caption" >> /tmp/telegram.log
-  $CURL -s \
+  $CURL --capath /etc/ssl/certs -s \
     -X POST \
-    https://api.telegram.org/bot$apiToken/sendPhoto \
-    -F chat_id="$userChatId" \
+    https://api.telegram.org/bot${SciiTelToken}/sendPhoto \
+    -F chat_id="${SciiTelChatId}" \
     -F photo="@${1}" \
     -F caption="${caption}"
 }

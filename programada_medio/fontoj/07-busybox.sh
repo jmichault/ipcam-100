@@ -37,5 +37,5 @@ sed -i 's/# CONFIG_FLASH_ERASEALL is not set/CONFIG_FLASH_ERASEALL=y/' .config
 
 make CROSS_COMPILE=$CROSS_COMPILE
 
-cp -p busybox ../../../karto/bin/
+#cp -p busybox ../../../karto/bin/
 

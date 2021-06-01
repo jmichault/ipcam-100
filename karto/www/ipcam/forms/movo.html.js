@@ -16,11 +16,8 @@ var movo_jsForm=
   "SciiMailOn": { type: "checkbox", title: "sendi retpoŝton :", },
   "SciiMailAl": { type: "string", title: "Al :", },
   "SciiTelOn": { type: "checkbox", title: "sendi «telegram» :", },
-  "SciiTelAl": { type: "string", title: "Al :", },
-  "SciiUrlOn": { type: "checkbox", title: "sendi «URL» :", },
-  "SciiUrlUrl": { type: "string", title: "Url :", },
-  "SciiOrdOn": { type: "checkbox", title: "plenumi ordonon:", },
-  "SciiOrdOrd": { type: "string", title: "Ordonon:", },
+  "SciiTelToken": { type: "string", title: "Token :", },
+  "SciiTelChatId": { type: "string", title: "ChatId :", },
  },
 "form":
 [
@@ -64,15 +61,9 @@ var movo_jsForm=
        ]},
        { type:"fieldset", items:[
         {key:"SciiTelOn"},
-        {key:"SciiTelAl"},
-       ]},
-       { type:"fieldset", items:[
-        {key:"SciiUrlOn"},
-        {key:"SciiUrlUrl"},
-       ]},
-       { type:"fieldset", items:[
-        {key:"SciiOrdOn"},
-        {key:"SciiOrdOrd"},
+        {key:"SciiTelToken"},
+        {key:"SciiTelChatId"},
+        {"type": "help", "helpvalue": '<ul><li>Serĉu @Botfather en «telegram»</li><li>krei novan «bot» kun «/newbot»</li><li>Botfather prezentos al vi la «token»</li><li>Kreu novan Grupon kaj enmetu la kreitan «bot» enen</li><li>Nun skribu ion al la Grupo</li><li>Voku https://api.telegram.org/bot[token)/getUpdates en via retumilo kaj serĉu «{"chat":{"id":».</li></ul>',},
        ]},
       ]
     },
