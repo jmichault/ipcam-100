@@ -1,4 +1,11 @@
 #!/bin/sh
+
+#### KOMENCO DE MASTRUMA KAPLINIO
+# Mallonga-priskribo: http/https servilo.
+# Komenco: 10
+# Retejo-administrita: ies
+#### FINO DE MASTRUMA KAPLINIO
+
 . /etc/profile >/dev/null
 export LD_LIBRARY_PATH="${SDCARD}/lib:/thirdlib:/system/lib/:/ipc/lib/"
 

@@ -1,6 +1,5 @@
 #!/bin/sh
-. /etc/profile >/dev/null
-export LD_LIBRARY_PATH="${SDCARD}/lib:/thirdlib:/system/lib/:/ipc/lib/"
+. /etc/profile >/dev/null 2>&1
 
 #### KOMENCO DE MASTRUMA KAPLINIO
 # Mallonga-priskribo: 
@@ -49,10 +48,16 @@ stop()
   fi
 }
 
+restart()
+{
+  stop
+  start
+}
+
 if [ $# -eq 0 ]; then
   start
 else
-  case $1 in start|stop|status)
+  case $1 in start|stop|status|restart)
     $1
     ;;
   esac

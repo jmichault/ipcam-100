@@ -7,7 +7,9 @@ $(document).ready(function () {
             e.addClass("is-loading");
             $.get(e.data("target")).done(function (res) {
                 $("#show_" + e.data("script")).html(res);
-                $("#content").load("cgi-bin/scripts.cgi");
+                $("#content").load("cgi-bin/scripts.cgi",function() {
+                  setPageLang("cgi-bin/scripts.cgi",$('#content'));
+                });
             });
         }
         return false;
@@ -20,7 +22,9 @@ $(document).ready(function () {
             e.addClass("is-loading");
             $.get(e.data("target")).done(function (res) {
                 $("#show_" + e.data("script")).html(res);
-                $("#content").load("cgi-bin/scripts.cgi");
+                $("#content").load("cgi-bin/scripts.cgi",function() {
+                  setPageLang("cgi-bin/scripts.cgi",$('#content'));
+                });
             });
         }
         return false;

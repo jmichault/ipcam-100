@@ -1,4 +1,11 @@
 #!/bin/sh
+
+#### KOMENCO DE MASTRUMA KAPLINIO
+# Mallonga-priskribo: 
+# Komenco:
+# Retejo-administrita:ne
+#### FINO DE MASTRUMA KAPLINIO
+
 SERVICE_NAME="Night Mode"
 export LD_LIBRARY_PATH='/opt/media/sdc/lib/:/lib/:/ipc/lib/'
 

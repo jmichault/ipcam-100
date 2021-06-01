@@ -70,6 +70,7 @@ cat >src/plugin-static.h  <<'EOF'
 PLUGIN_INIT(mod_alias)
 PLUGIN_INIT(mod_auth)
 PLUGIN_INIT(mod_authn_file)
+PLUGIN_INIT(mod_authn_tkt)
 PLUGIN_INIT(mod_redirect)
 PLUGIN_INIT(mod_rewrite)
 PLUGIN_INIT(mod_cgi)

@@ -1,5 +1,12 @@
 #!/bin/sh
-. /etc/profile >/dev/null
+. /etc/profile >/dev/null 2>&1
+
+#### KOMENCO DE MASTRUMA KAPLINIO
+# Mallonga-priskribo: ssh servilo.
+# Komenco: 10
+# Retejo-administrita: ies
+#### FINO DE MASTRUMA KAPLINIO
+
 SERVICE_NAME="sshd Server"
 PIDFILE="/var/run/dropbear.pid"
 LOGDIR="${SDCARD}/log"

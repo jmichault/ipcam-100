@@ -1,5 +1,12 @@
 #!/bin/sh
 
+#### KOMENCO DE MASTRUMA KAPLINIO
+# Mallonga-priskribo: telegram bot servilo.
+# Komenco: 20
+# Retejo-administrita: ne
+#### FINO DE MASTRUMA KAPLINIO
+
+
 ######### Bot commands #########
 # /mem - show memory information
 # /shot - take a shot
