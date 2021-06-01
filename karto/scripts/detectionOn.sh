@@ -39,7 +39,7 @@ if [ x"$SciiMailOn" == x1 ] ; then
 fi
 
 # Send a telegram message
-if [ "$SciiTelOn" == x1 ]; then
+if [ x"$SciiTelOn" == x1 ]; then
 	if [ "$StokPicOn" == x1 ] ; then
 		${SDCARD}/bin/telegram p "$save_dir/$filename"
 	else
