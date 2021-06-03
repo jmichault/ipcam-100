@@ -2,8 +2,9 @@
 . /etc/profile >/dev/null
 
 . cgi-bin/func.cgi
-
-../bin/htpasswd -b -v ../config/ipcam.user "$F_uname" "$F_psw" >/dev/null
+uname=$(urldecode "$F_uname")
+psw=$(urldecode "$F_psw")
+../bin/htpasswd -b -v ../config/ipcam.user "$uname" "$psw" >>/dev/null 2>&1
 if [ $? -ne 0 ]
 then
 echo '<html>

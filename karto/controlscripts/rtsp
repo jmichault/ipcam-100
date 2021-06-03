@@ -1,5 +1,12 @@
 #!/bin/sh
-. /etc/profile >/dev/null
+. /etc/profile >/dev/null 2>&1
+
+#### KOMENCO DE MASTRUMA KAPLINIO
+# Mallonga-priskribo: RTSP servilo. Ankaŭ administras movodetekton.
+# Komenco: 10
+# Retejo-administrita: ies
+#### FINO DE MASTRUMA KAPLINIO
+
 SERVICE_NAME="RTSP Server"
 PIDFILE="/var/run/rtsp_server.pid"
 LOGDIR="${SDCARD}/log"

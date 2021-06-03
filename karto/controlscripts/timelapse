@@ -1,4 +1,11 @@
 #!/bin/sh
+
+#### KOMENCO DE MASTRUMA KAPLINIO
+# Mallonga-priskribo: timelapse servilo. Registras bildon regule.
+# Komenco: 20
+# Retejo-administrita: ne
+#### FINO DE MASTRUMA KAPLINIO
+
 SERVICE_NAME="Timelapse"
 PIDFILE='/var/run/timelapse.pid'
 

@@ -1,6 +1,5 @@
 #!/bin/sh
-. /etc/profile >/dev/null
-export LD_LIBRARY_PATH="${SDCARD}/lib:/thirdlib:/system/lib/:/ipc/lib/"
+. /etc/profile >/dev/null 2>&1
 
 #### KOMENCO DE MASTRUMA KAPLINIO
 # Mallonga-priskribo: pozicionas motoro al P0

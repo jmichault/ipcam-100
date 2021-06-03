@@ -1,0 +1,53 @@
+
+<h1 class="lang" data-lang="Pasvortoj"></h1>
+<div class="bg-light rounded-lg" id="formPasv">
+    <ul class="nav nav-tabs">
+        <li class="nav-item" data-tab="1">
+            <a class="nav-link active lang" id="nav-tab1" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="false"
+               data-lang="Systemo (SSH)">
+            </a> </li>
+        <li class="nav-item" data-tab="2">
+            <a class="lang nav-link" id="nav-tab2" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false"
+               data-lang="lighttpd (HTTP/HTTPS)">
+            </a> </li>
+        <li class="nav-item" data-tab="3">
+            <a class="nav-link lang" id="nav-tab3" data-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false" 
+                data-lang="Video-servilo (RTSP)">
+            </a> </li>
+    </ul>
+
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" data-content="1" id="tab1" role="tabpanel" aria-labelledby="nav-tab1"></div>
+    <div class="tab-pane fade" data-content="2" id="tab2" role="tabpanel" aria-labelledby="nav-tab2"></div>
+    <div class="tab-pane fade" data-content="3" id="tab3" role="tabpanel" aria-labelledby="nav-tab3"></div>
+  </div>
+
+</div>
+<div id="output" class='output'> </div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    var str = "logname=1"
+    $.ajax({ 'url': 'cgi-bin/pasv.cgi?cmd=showlog',
+             'type': 'POST',
+             'data': str
+    }).done(function(log) {
+        $('#tab1').html(log);
+        setPageLang("pasv.html",$('#tab1'));
+    });
+    $('#formPasv li').click(function() {
+           var tab = $(this).data('tab');
+           var str = "logname=" + tab
+           //console.log("Print:"+str);
+           $('#output').html('');
+           $.ajax({
+           'url': 'cgi-bin/pasv.cgi?cmd=showlog',
+           'type': 'POST',
+           'data': str
+            }).done(function(log) {
+               $('#tab'+tab).html(log);
+               setPageLang("pasv.html",$('#tab'+tab));
+      });
+    });
+  });
+</script>

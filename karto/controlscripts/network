@@ -1,10 +1,9 @@
 #!/bin/sh
-. /etc/profile >/dev/null
-export LD_LIBRARY_PATH="${SDCARD}/lib:/thirdlib:/system/lib/:/ipc/lib/"
+. /etc/profile >/dev/null 2>&1
 
 #### KOMENCO DE MASTRUMA KAPLINIO
-# Mallonga-priskribo: 
-# Komenco:
+# Mallonga-priskribo: komencas la reton : eth0, wlan0 kaj wlan1.
+# Komenco: 00
 # Retejo-administrita:ne
 #### FINO DE MASTRUMA KAPLINIO
 
