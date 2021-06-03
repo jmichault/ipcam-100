@@ -33,11 +33,37 @@ int main(int argc, char** argv) {
   UsageEnvironment* env = BasicUsageEnvironment::createNew(*scheduler);
 
   UserAuthenticationDatabase* authDB = NULL;
+/*
   // To implement client access control to the RTSP server, do the following:
   authDB = new UserAuthenticationDatabase;
   authDB->addUserRecord("admin", "ismart21"); // replace these with real strings
+*/
+/*
+  // 
+  authDB = new UserAuthenticationDatabase("RTSP server",true);
+  // echo -n "admin:RTSP server:ismart21"|busybox md5sum
+  // d05b52a484376265b08c79fc81f972fa
+  authDB->addUserRecord("admin", "d05b52a484376265b08c79fc81f972fa");
   // Repeat the above with each <username>, <password> that you wish to allow
   // access to the server.
+*/
+  authDB = new UserAuthenticationDatabase("RTSP server",true);
+  {
+    FILE * ficin = fopen("/opt/media/mmcblk0p1/config/rtsp.user","r");
+    char buffer[150];
+    while(fgets(buffer,149,ficin))
+    {
+      char * pCol=strstr(buffer,":");
+      if(pCol)
+      {
+        (*pCol)=0; pCol++;
+        char * pLn=strstr(pCol,"\n");
+        if (pLn) (*pLn)=0;
+        authDB->addUserRecord(buffer, pCol);
+      }
+    }
+    fclose(ficin);
+  }
 
   agordoLegilo();
   movoLegilo();

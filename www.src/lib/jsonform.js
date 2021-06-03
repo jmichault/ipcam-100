@@ -251,7 +251,7 @@ var fileDisplayTemplate = '<div class="_jsonform-preview">' +
   '<a href="<%= value.url %>"><%= value.name %></a> (<%= Math.ceil(value.size/1024) %>kB)' +
   '<% } %>' +
   '</div>' +
-  '<a href="#" class="btn btn-default _jsonform-delete"><i class="glyphicon glyphicon-remove" title="Remove"></i></a> ';
+  '<a href="#" class="btn btn-default _jsonform-delete"><img src="/lib/x.svg" alt="delete"></a> ';
 
 var inputFieldTemplate = function (type) {
   return {
@@ -859,8 +859,8 @@ jsonform.elementTypes = {
   'array': {
     'template': '<div id="<%= id %>"><ul class="_jsonform-array-ul" style="list-style-type:none;"><%= children %></ul>' +
       '<span class="_jsonform-array-buttons">' +
-        '<a href="#" class="btn btn-default _jsonform-array-addmore"><i class="glyphicon glyphicon-plus-sign" title="Add new"></i></a> ' +
-        '<a href="#" class="btn btn-default _jsonform-array-deletelast"><i class="glyphicon glyphicon-minus-sign" title="Delete last"></i></a>' +
+        '<a href="#" class="btn btn-default _jsonform-array-addmore"><img src="/lib/plus.svg" alt="Add new"></a> ' +
+        '<a href="#" class="btn btn-default _jsonform-array-deletelast"><img src="/lib/minus.svg" alt="Delete last"></a>' +
       '</span>' +
       '</div>',
     'fieldtemplate': true,
@@ -870,7 +870,7 @@ jsonform.elementTypes = {
         // Insert a "draggable" icon
         // floating to the left of the main element
         return '<li data-idx="<%= node.childPos %>">' +
-          '<span class="draggable line"><i class="glyphicon glyphicon-list" title="Move item"></i></span>' +
+          '<span class="draggable line"><img src="/lib/list.svg" alt="Move item"></span>' +
           inner +
           '</li>';
       }
@@ -1003,8 +1003,8 @@ jsonform.elementTypes = {
         '<%= children %>' +
       '</div>' +
       '</div>' +
-      '<a href="#" class="btn btn-default _jsonform-array-addmore"><i class="glyphicon glyphicon-plus-sign" title="Add new"></i></a> ' +
-      '<a href="#" class="btn btn-default _jsonform-array-deleteitem"><i class="glyphicon glyphicon-minus-sign" title="Delete item"></i></a></div>',
+      '<a href="#" class="btn btn-default _jsonform-array-addmore"><img src="/lib/plus.svg" alt="Add new"></a> ' +
+      '<a href="#" class="btn btn-default _jsonform-array-deleteitem"><img src="/lib/minus.svg" alt="Delete item"></a></div>',
     'fieldtemplate': true,
     'array': true,
     'childTemplate': function (inner) {

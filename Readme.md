@@ -41,6 +41,8 @@ Kio funkcias en alternativa firmvaro:
 * duaranga videorivereto
 * movado-detekto
 * mail
+* telegram
+* ŝanĝo de pasvorto por http-aliro,rtsp,ssh.
 
 Kio ne funkcias en alternativa firmvaro:
 * sonosistemo
@@ -49,7 +51,6 @@ Kio ne funkcias en alternativa firmvaro:
 * ĝisdatigo de firmvaro
 * ir-cut
 * mqtt
-* ŝanĝo de pasvorto por http-aliro,rtsp,ssh.
 * ktp ...
 
 Instalado alternativan firmvaron :  
@@ -60,7 +61,7 @@ Instalado alternativan firmvaron :
 * Trovu la IP-adreson de la kamerao.
 * (vi ankaŭ povas uzi la reton wifi de la kamerao: konekti vian komputilon al la reto _HSIPC-******_. Ĉi-kaze la IP-adreso de la kamerao estas 172.25.0.1) )
 * Konektu al la kamerao per "telnet IP 9527" (uzanto root, pasvorto jco66688), ne pli ol 5 minutojn post la funkciigo de la kamerao.
-* Faru "killall -9 auto_run.sh" por por malebligi ke la konekto estu tranĉita.
+* Faru "killall -9 auto_run.sh" por malebligi ke la konekto estu tranĉita.
 * Faru "cd /opt/media/mmcblk0p1;./install.sh"
 * Vi povas konekti al la URL "https://IP" (uzanto admin, pasvorto ismart21).
 * Vi povas konekti per ssh (uzanto admin, pasvorto ismart12).
@@ -70,7 +71,6 @@ Instalado alternativan firmvaron :
 
 Malinstalado alternativan firmvaron :
 * Konektu al la kamerao per ssh.
-* Faru "killall -9 run.sh system-emergency-telnet" por eviti fermi la konekton.
 * Faru "cd /opt/media/mmcblk0p1;./uninstall.sh;reboot"
 Vi ankaǔ povas simple forigi la karton mikroSD.
 
