@@ -157,7 +157,9 @@ echo $(date -Iseconds) " NTPD komenciĝis. " >>$LOGPATH
 ## Autostart all enabled services:
 echo $(date -Iseconds) " Komenco de servoj. " >>$LOGPATH
 for nivelo in `ls --color=never config/autostart|awk '{print substr($0,1,2);}'|sort -un`
+do
   for i in ${SDCARD}/config/autostart/${nivelo}*; do
+    echo $(date -Iseconds) " Komenco de $i. " >>$LOGPATH
     $i &
   done
   wait
@@ -166,6 +168,7 @@ done
 ## Autostart startup userscripts
 echo $(date -Iseconds) " Komenco de uzantoskriptoj. " >>$LOGPATH
 for i in ${SDCARD}/config/userscripts/startup/*; do
+  echo $(date -Iseconds) " Komenco de $i. " >>$LOGPATH
   $i &
 done
 
