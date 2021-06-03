@@ -1,11 +1,12 @@
 #!/bin/sh
 . /etc/profile >/dev/null 2>&1
+. JsAlVar ${SDCARD}/www/ipcam/config/movo.conf DetektoDatenoj
+
 what="$1"
 shift
 data="$@"
 CURL="${SDCARD}/bin/curl"
 
-. JsAlVar ${SDCARD}/www/ipcam/config/movo.conf DetektoDatenoj
 
 sendMessage() {
   text="$(echo "${@}" | sed 's:\\n:\n:g')"
