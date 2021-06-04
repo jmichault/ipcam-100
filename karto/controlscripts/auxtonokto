@@ -1,0 +1,64 @@
+#!/bin/sh
+. /etc/profile >/dev/null 2>&1
+
+#### KOMENCO DE MASTRUMA KAPLINIO
+# Mallonga-priskribo: aŭtomata nokta reĝimo
+# Komenco: 30
+# Retejo-administrita: ies
+#### FINO DE MASTRUMA KAPLINIO
+
+SERVICE_NAME="auxtonokto"
+BIN="${SDCARD}/scripts/auxtonokto"
+OPTS=""
+
+PIDFILE="/var/run/${SERVICE_NAME}.pid"
+LOGDIR="${SDCARD}/log"
+LOGPATH="$LOGDIR/${SERVICE_NAME}.log"
+CONFIG="${SDCARD}/config/${SERVICE_NAME}.conf"
+
+
+status()
+{
+  pid="$(cat "$PIDFILE" 2>/dev/null)"
+  if [ "$pid" ]; then
+    # Prints PID: $pid if exists and returns 0(no error) else returns 1(error condition)
+    kill -0 "$pid" >/dev/null && echo "PID: $pid" || return 1
+  fi
+}
+
+start()
+{
+  if [ "$(status)" != "" ]; then
+    echo "A ${SERVICE_NAME} is already running, please stop it or reboot"
+  else
+    echo "Starting ${SERVICE_NAME}"
+    echo "================== START ===============" >> "$LOGPATH"
+    echo "${BIN} ${OPTS}" >> "$LOGPATH"
+    ${BIN} ${OPTS} 2>> "$LOGPATH" >> "$LOGPATH" &
+    echo "$!" > "$PIDFILE"
+  fi
+}
+
+stop()
+{
+  pid="$(cat "$PIDFILE" 2>/dev/null)"
+  if [ "$pid" ]; then
+    kill "$pid"
+    rm "$PIDFILE" 1> /dev/null 2>&1
+  fi
+}
+
+restart()
+{
+  stop
+  start
+}
+
+if [ $# -eq 0 ]; then
+  start
+else
+  case $1 in start|stop|status|restart)
+    $1
+    ;;
+  esac
+fi

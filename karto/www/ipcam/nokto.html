@@ -1,0 +1,13 @@
+<h1 class="lang" data-lang="Nokto-Agordoj"></h1>
+<form class="form-inline py-4 px-4 bg-light rounded-lg" id="noktoForm" ></form>
+<div id="res" class="alert"></div>
+<!-- voir https://github.com/jsonform/jsonform/wiki -->
+<script type="text/javascript" src="forms/nokto.html.js"></script>
+<script type="text/javascript" src="config/nokto.conf"></script>
+<script type="text/javascript">
+  setPageLang('nokto.html',$(window));
+  setFormLang(nokto_jsForm);
+  $('#noktoForm').jsonForm(nokto_jsForm );
+  nokto_conf.forEach(setformval);
+  //$('#noktoForm .nav-link')[0].click();
+</script>

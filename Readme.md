@@ -43,11 +43,11 @@ Kio funkcias en alternativa firmvaro:
 * mail
 * telegram
 * ŝanĝo de pasvorto por http-aliro,rtsp,ssh.
+* aŭtomata nokta detekto
 
 Kio ne funkcias en alternativa firmvaro:
 * sonosistemo
 * OSD
-* aŭtomata nokta detekto
 * ĝisdatigo de firmvaro
 * ir-cut
 * mqtt
