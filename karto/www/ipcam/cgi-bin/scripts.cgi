@@ -33,6 +33,13 @@ if [ -n "$F_script" ]; then
         "$SCRIPT_HOME/$script" stop 2>&1 && echo "OK" || echo "NOK"
         echo "</pre>"
         ;;
+      restart)
+        echo "Content-type: text/html"
+        echo ""
+
+        echo "Restarting script '$script'..."
+        echo "<pre>$("$SCRIPT_HOME/$script" restart 2>&1)</pre>"
+        ;;  
       enable)
         komenco=`grep "^# Komenco:" "$SCRIPT_HOME/$script"|sed 's/^# Komenco: *//'`
         echo "#!/bin/sh" > "${SDCARD}/config/autostart/${komenco}_$script"
@@ -139,6 +146,13 @@ else
         echo "disabled"
       fi
       echo ">Stop</button>"
+    fi
+    if grep -q "^restart()" "$SCRIPT_HOME/$i"; then
+      echo "<button data-target='cgi-bin/scripts.cgi?cmd=restart&script=$i' class='btn btn-secondary is-danger script_action_restart' data-script='$i' "
+      if [ ! -n "$status" ]; then
+        echo "disabled"
+      fi
+      echo ">Restart</button>"
     fi
     echo "</td>"
     # Priskribo

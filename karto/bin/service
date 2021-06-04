@@ -1,0 +1,30 @@
+#!/bin/sh
+. /etc/profile >/dev/null 2>&1
+
+SERVILODOS="${SDCARD}/controlscripts"
+
+if [ $# -lt 2 ]; then
+   echo "Usage: `basename $0` servilo_nomo ago" >&2
+   echo "   ago : [start|stop|status|restart|disable|enable]" >&2
+   exit 1
+fi
+
+SERVILO="$1"
+AGO="$2"
+
+case "$AGO" in
+  start|stop|status|restart)
+    "${SERVILODOS}/$SERVILO" "$AGO"
+  ;;
+  disable)
+    rm "${SDCARD}/config/autostart/${SERVILO}" >/dev/null 2>&1
+    komenco=`grep "^# Komenco:" "${SERVILODOS}/${SERVILO}"|sed 's/^# Komenco: *//'`
+    rm "${SDCARD}/config/autostart/${komenco}_${SERVILO}"
+  ;;
+  enable)
+    komenco=`grep "^# Komenco:" "${SERVILODOS}/${SERVILO}"|sed 's/^# Komenco: *//'`
+    echo "#!/bin/sh" > "${SDCARD}/config/autostart/${komenco}_${SERVILO}"
+    echo "${SERVILODOS}/$script" >> "${SDCARD}/config/autostart/${komenco}_${SERVILO}"
+  ;;
+  default)
+esac

@@ -50,17 +50,34 @@ start()
 
 stop()
 {
-  pid="$(cat "$PIDFILE" 2>/dev/null)"
-  if [ "$pid" ]; then
-    kill "$pid"
-    rm "$PIDFILE" 1> /dev/null 2>&1
-  fi
+  pid="$(cat "$PIDFILE" 2>/dev/null)"                                                   
+  if [ "$pid" ]; then                                                                   
+    kill "$pid"                                                         
+    provo=0
+    while [ -d /proc/"$pid" -a $provo -lt 30 ]                                           
+    do                                                                  
+     provo=$(($provo+1))
+     sleep 1                                                         
+    done                                                                
+    if [ $provo -ge 30 ]
+    then
+     kill -9 "$pid"                                                         
+     echo "Procezo $pid ne ĉesis !"
+    fi                                                                    
+  fi                                                                    
+  rm "$PIDFILE" 1> /dev/null 2>&1                                       
+}
+
+restart()
+{
+  stop
+  start
 }
 
 if [ $# -eq 0 ]; then
   start
 else
-  case $1 in start|stop|status)
+  case $1 in start|stop|status|restart)
     $1
     ;;
   esac
