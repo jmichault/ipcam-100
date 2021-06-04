@@ -10,4 +10,5 @@ fi
 echo BASE=$BASE
 export PATH=$BASE/toolchain/bin/:$PATH
 export HOST=mips-linux-uclibc-gnu
+export CROSS_COMPILE=mips-linux-uclibc-gnu-
 
