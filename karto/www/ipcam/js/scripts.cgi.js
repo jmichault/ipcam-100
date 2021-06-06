@@ -30,6 +30,21 @@ $(document).ready(function () {
         return false;
     });
 
+    $("button.script_action_restart").click(function () {
+        var e = $(this); console.log(e.prop("disabled"));
+        if (!e.prop("disabled")) {
+            e.prop("disabled", !e.prop("disabled"));
+            e.addClass("is-loading");
+            $.get(e.data("target")).done(function (res) {
+                $("#show_" + e.data("script")).html(res);
+                $("#content").load("cgi-bin/scripts.cgi",function() {
+                  setPageLang("cgi-bin/scripts.cgi",$('#content'));
+                });
+            });
+        }
+        return false;
+    });
+
     $("input.autostart").click(function () {
         var e = $(this);
         e.prop("disabled", true);

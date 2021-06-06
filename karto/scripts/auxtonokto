@@ -1,0 +1,71 @@
+#!/bin/sh
+. /etc/profile >/dev/null 2>&1
+. ${SDCARD}/scripts/common_functions.sh
+. JsAlVar ${SDCARD}/www/ipcam/config/nokto.conf nokto_conf
+
+echo "aŭtonokto komencas."
+echo "  nivelo : $nivelo"
+echo "  histerezo : $histerezo"
+echo "  nombro : $nombro"
+
+
+
+
+tago()
+{
+  if [ "x$blankaLed" == "x1" ]
+  then
+    blue_led off
+  fi
+  if [ "x$irLed" == "x1" ]
+  then
+    ir_led off
+  fi
+}
+
+nokto()
+{
+  if [ "x$blankaLed" == "x1" ]
+  then
+    blue_led on
+  fi
+  if [ "x$irLed" == "x1" ]
+  then
+    ir_led on
+  fi
+}
+
+nbplus=0
+nbminus=0
+#lum_blanka_led=10
+
+baskula_nivelo=$nivelo
+
+while true
+do
+sleep $intervalo
+
+lum=`lumsensilo|sed 's/.*= *//'`
+  if [ $lum -gt $baskula_nivelo ]
+  then
+    nbminus=0
+    nbplus=$((nbplus+1))
+  else
+    nbplus=0
+    nbminus=$((nbminus+1))
+  fi
+  if [ $nbminus -eq $nombro ]
+  then
+    echo $( date -Iseconds)" : nokta reĝimo, lum=$lum."
+    nokto
+    stato=nokto
+    baskula_nivelo=$(($nivelo+$histerezo))
+  elif [ $nbplus -eq $nombro ]
+  then
+    echo $( date -Iseconds)" : taga reĝimo, lum=$lum."
+    tago
+    stato=tago
+    baskula_nivelo=$(($nivelo-$histerezo))
+  fi
+
+done

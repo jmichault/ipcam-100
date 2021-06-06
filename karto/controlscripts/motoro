@@ -26,6 +26,7 @@ return 0
 start()
 {
 .  JsAlVar ${SDCARD}/www/ipcam/config/ptz.conf ptz_conf 11
+  motor -p
   motor -x $P0X -y $P0Y -r $RAPIDECO;
 return 0
 }

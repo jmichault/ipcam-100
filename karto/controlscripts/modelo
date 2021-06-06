@@ -29,10 +29,10 @@ status()
 start()
 {
   if [ "$(status)" != "" ]; then
-    echo "A ${SERVICE_NAME} is already running, please stop it or reboot"
+    echo "$(date -Iseconds) : A ${SERVICE_NAME} is already running, please stop it or reboot"
   else
-    echo "Starting ${SERVICE_NAME}"
-    echo "================== START ===============" >> "$LOGPATH"
+    echo "$(date -Iseconds) : Starting ${SERVICE_NAME}"
+    echo $(date -Iseconds)" : ================== START ===============" >> "$LOGPATH"
     echo "${BIN} ${OPTS}" >> "$LOGPATH"
     ${BIN} ${OPTS} 2>> "$LOGPATH" >> "$LOGPATH" &
     echo "$!" > "$PIDFILE"
@@ -41,11 +41,23 @@ start()
 
 stop()
 {
-  pid="$(cat "$PIDFILE" 2>/dev/null)"
-  if [ "$pid" ]; then
-    kill "$pid"
-    rm "$PIDFILE" 1> /dev/null 2>&1
-  fi
+  pid="$(cat "$PIDFILE" 2>/dev/null)"                                                   
+  if [ "$pid" ]; then                                                                   
+    kill "$pid"                                                         
+    provo=0
+    while [ -d /proc/"$pid" -a $provo -lt 30 ]                                           
+    do                                                                  
+     provo=$(($provo+1))
+     sleep 1                                                         
+    done                                                                
+    if [ $provo -ge 30 ]
+    then
+     kill -9 "$pid"                                                         
+     echo "Procezo $pid ne ĉesis !"
+    fi                                                                    
+  fi                                                                    
+  rm "$PIDFILE" 1> /dev/null 2>&1                                       
+  echo $(date -Iseconds)" : ================== STOP ===============" >> "$LOGPATH"
 }
 
 restart()

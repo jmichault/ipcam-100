@@ -301,7 +301,7 @@ jsonform.elementTypes = {
       ' max=<%= range.max %>' +
       ' step=<%= range.step %>' +
       '<%= (node.schemaElement && node.schemaElement.required ? " required=\'required\'" : "") %>' +
-      ' />',
+      ' oninput="this.nextElementSibling.value = this.value" /><output></output>',
     'fieldtemplate': true,
     'inputfield': true,
     'onBeforeRender': function (data, node) {

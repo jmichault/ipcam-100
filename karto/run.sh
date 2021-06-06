@@ -126,11 +126,6 @@ echo "Bind mounted ${SDCARD}/etc to /etc" >> $LOGPATH
 init_gpio 46
 # init white_led gpio :
 init_gpio 81
-# init motor :
-${SDCARD}/bin/motor -p &
-
-## start crond:
-${SDCARD}/bin/busybox crond -L ${SDCARD}/log/crond.log -c ${SDCARD}/config/cron/crontabs
 
 # krei linkoj por ssh , scp, ssl_client, ...
 if [ ! -d /opt/bin ] ; then mkdir /opt/bin; fi
@@ -141,18 +136,8 @@ done
 ## Set Hostname
 hostname -F $CONFIGPATH/hostname.conf
 
-## start network
-echo $(date -Iseconds) " Komenco de reto. " >>$LOGPATH
-${SDCARD}/controlscripts/network >>$LOGPATH 2>&1
-
 ## Set Timezone
 set_timezone
-
-echo $(date -Iseconds) " Komenco de NTPD. " >>$LOGPATH
-ntp_srv="$(cat "$CONFIGPATH/ntp_srv.conf")"
-timeout -t 30 sh -c "until ping -c1 \"$ntp_srv\" &>/dev/null; do sleep 3; done";
-${SDCARD}/bin/busybox ntpd -S synchwclock -p "$ntp_srv"
-echo $(date -Iseconds) " NTPD komenciĝis. " >>$LOGPATH
 
 ## Autostart all enabled services:
 echo $(date -Iseconds) " Komenco de servoj. " >>$LOGPATH
@@ -160,7 +145,7 @@ for nivelo in `ls --color=never config/autostart|awk '{print substr($0,1,2);}'|s
 do
   for i in ${SDCARD}/config/autostart/${nivelo}*; do
     echo $(date -Iseconds) " Komenco de $i. " >>$LOGPATH
-    $i &
+    $i >>$LOGPATH 2>&1 & 
   done
   wait
 done

@@ -2,18 +2,19 @@
 . /etc/profile >/dev/null 2>&1
 
 #### KOMENCO DE MASTRUMA KAPLINIO
-# Mallonga-priskribo: dhcp servilo. 
-# Komenco: 00
-# Retejo-administrita:ne
+# Mallonga-priskribo: aŭtomata nokta reĝimo
+# Komenco: 30
+# Retejo-administrita: ies
 #### FINO DE MASTRUMA KAPLINIO
 
-SERVICE_NAME="udhcpd"
+SERVICE_NAME="auxtonokto"
+BIN="${SDCARD}/scripts/auxtonokto"
+OPTS=""
+
 PIDFILE="/var/run/${SERVICE_NAME}.pid"
 LOGDIR="${SDCARD}/log"
 LOGPATH="$LOGDIR/${SERVICE_NAME}.log"
-BIN="busybox ${SERVICE_NAME}"
 CONFIG="${SDCARD}/config/${SERVICE_NAME}.conf"
-OPTS="-fS "$CONFIG""
 
 
 status()

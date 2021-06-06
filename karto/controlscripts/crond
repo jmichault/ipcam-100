@@ -2,19 +2,21 @@
 . /etc/profile >/dev/null 2>&1
 
 #### KOMENCO DE MASTRUMA KAPLINIO
-# Mallonga-priskribo: dhcp servilo. 
-# Komenco: 00
-# Retejo-administrita:ne
+# Mallonga-priskribo: cron
+# Komenco: 30
+# Retejo-administrita: ies
 #### FINO DE MASTRUMA KAPLINIO
 
-SERVICE_NAME="udhcpd"
+SERVICE_NAME="crond"
+BIN="${SDCARD}/bin/busybox crond"
+OPTS="-L ${SDCARD}/log/crond.log -c ${SDCARD}/config/cron/crontabs"
+
 PIDFILE="/var/run/${SERVICE_NAME}.pid"
 LOGDIR="${SDCARD}/log"
 LOGPATH="$LOGDIR/${SERVICE_NAME}.log"
-BIN="busybox ${SERVICE_NAME}"
 CONFIG="${SDCARD}/config/${SERVICE_NAME}.conf"
-OPTS="-fS "$CONFIG""
 
+export CRONPERIODIC=${SDCARD}/config/cron/periodic
 
 status()
 {
@@ -28,10 +30,10 @@ status()
 start()
 {
   if [ "$(status)" != "" ]; then
-    echo "A ${SERVICE_NAME} is already running, please stop it or reboot"
+    echo "$(date -Iseconds) : A ${SERVICE_NAME} is already running, please stop it or reboot"
   else
-    echo "Starting ${SERVICE_NAME}"
-    echo "================== START ===============" >> "$LOGPATH"
+    echo "$(date -Iseconds) : Starting ${SERVICE_NAME}"
+    echo $(date -Iseconds)" : ================== START ===============" >> "$LOGPATH"
     echo "${BIN} ${OPTS}" >> "$LOGPATH"
     ${BIN} ${OPTS} 2>> "$LOGPATH" >> "$LOGPATH" &
     echo "$!" > "$PIDFILE"
@@ -56,6 +58,7 @@ stop()
     fi                                                                    
   fi                                                                    
   rm "$PIDFILE" 1> /dev/null 2>&1                                       
+  echo $(date -Iseconds)" : ================== STOP ===============" >> "$LOGPATH"
 }
 
 restart()

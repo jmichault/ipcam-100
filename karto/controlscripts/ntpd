@@ -2,18 +2,19 @@
 . /etc/profile >/dev/null 2>&1
 
 #### KOMENCO DE MASTRUMA KAPLINIO
-# Mallonga-priskribo: dhcp servilo. 
-# Komenco: 00
-# Retejo-administrita:ne
+# Mallonga-priskribo: 
+# Komenco: 10
+# Retejo-administrita: ies
 #### FINO DE MASTRUMA KAPLINIO
 
-SERVICE_NAME="udhcpd"
+SERVICE_NAME="ntpd"
+BIN="${SDCARD}/bin/busybox ntpd"
+OPTS="-S synchwclock -p "$ntp_srv""
+
 PIDFILE="/var/run/${SERVICE_NAME}.pid"
 LOGDIR="${SDCARD}/log"
 LOGPATH="$LOGDIR/${SERVICE_NAME}.log"
-BIN="busybox ${SERVICE_NAME}"
 CONFIG="${SDCARD}/config/${SERVICE_NAME}.conf"
-OPTS="-fS "$CONFIG""
 
 
 status()
@@ -28,13 +29,16 @@ status()
 start()
 {
   if [ "$(status)" != "" ]; then
-    echo "A ${SERVICE_NAME} is already running, please stop it or reboot"
+    echo  $(date -Iseconds)" : A ${SERVICE_NAME} is already running, please stop it or reboot"
   else
-    echo "Starting ${SERVICE_NAME}"
-    echo "================== START ===============" >> "$LOGPATH"
-    echo "${BIN} ${OPTS}" >> "$LOGPATH"
-    ${BIN} ${OPTS} 2>> "$LOGPATH" >> "$LOGPATH" &
+    echo  $(date -Iseconds)" : Starting ${SERVICE_NAME}"
+    echo $(date -Iseconds)" : ================== START ===============" >> "$LOGPATH"
+    ntp_srv="$(cat "$CONFIGPATH/ntp_srv.conf")"
     echo "$!" > "$PIDFILE"
+    timeout 30 sh -c "until ping -c1 \"$ntp_srv\" &>/dev/null; do sleep 3; done";
+    echo ${SDCARD}/bin/busybox ntpd -S synchwclock -p "$ntp_srv" >> "$LOGPATH"
+    ${SDCARD}/bin/busybox ntpd -S synchwclock -p "$ntp_srv"
+    echo $(date -Iseconds) " NTPD komenciĝis. " >>$LOGPATH
   fi
 }
 
