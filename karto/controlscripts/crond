@@ -2,20 +2,21 @@
 . /etc/profile >/dev/null 2>&1
 
 #### KOMENCO DE MASTRUMA KAPLINIO
-# Mallonga-priskribo: 
-# Komenco: 10
+# Mallonga-priskribo: cron
+# Komenco: 30
 # Retejo-administrita: ies
 #### FINO DE MASTRUMA KAPLINIO
 
-SERVICE_NAME="ntpd"
-BIN="${SDCARD}/bin/busybox ntpd"
-OPTS="-S synchwclock -p "$ntp_srv""
+SERVICE_NAME="crond"
+BIN="${SDCARD}/bin/busybox crond"
+OPTS="-L ${SDCARD}/log/crond.log -c ${SDCARD}/config/cron/crontabs"
 
 PIDFILE="/var/run/${SERVICE_NAME}.pid"
 LOGDIR="${SDCARD}/log"
 LOGPATH="$LOGDIR/${SERVICE_NAME}.log"
 CONFIG="${SDCARD}/config/${SERVICE_NAME}.conf"
 
+export CRONPERIODIC=${SDCARD}/config/cron/periodic
 
 status()
 {
@@ -29,16 +30,13 @@ status()
 start()
 {
   if [ "$(status)" != "" ]; then
-    echo  $(date -Iseconds)" : A ${SERVICE_NAME} is already running, please stop it or reboot"
+    echo "$(date -Iseconds) : A ${SERVICE_NAME} is already running, please stop it or reboot"
   else
-    echo  $(date -Iseconds)" : Starting ${SERVICE_NAME}"
+    echo "$(date -Iseconds) : Starting ${SERVICE_NAME}"
     echo $(date -Iseconds)" : ================== START ===============" >> "$LOGPATH"
-    ntp_srv="$(cat "$CONFIGPATH/ntp_srv.conf")"
+    echo "${BIN} ${OPTS}" >> "$LOGPATH"
+    ${BIN} ${OPTS} 2>> "$LOGPATH" >> "$LOGPATH" &
     echo "$!" > "$PIDFILE"
-    timeout 30 sh -c "until ping -c1 \"$ntp_srv\" &>/dev/null; do sleep 3; done";
-    echo ${SDCARD}/bin/busybox ntpd -S synchwclock -p "$ntp_srv" >> "$LOGPATH"
-    ${SDCARD}/bin/busybox ntpd -S synchwclock -p "$ntp_srv"
-    echo $(date -Iseconds) " NTPD komenciĝis. " >>$LOGPATH
   fi
 }
 
@@ -60,6 +58,7 @@ stop()
     fi                                                                    
   fi                                                                    
   rm "$PIDFILE" 1> /dev/null 2>&1                                       
+  echo $(date -Iseconds)" : ================== STOP ===============" >> "$LOGPATH"
 }
 
 restart()

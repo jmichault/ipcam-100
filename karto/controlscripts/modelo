@@ -29,10 +29,10 @@ status()
 start()
 {
   if [ "$(status)" != "" ]; then
-    echo "A ${SERVICE_NAME} is already running, please stop it or reboot"
+    echo "$(date -Iseconds) : A ${SERVICE_NAME} is already running, please stop it or reboot"
   else
-    echo "Starting ${SERVICE_NAME}"
-    echo "================== START ===============" >> "$LOGPATH"
+    echo "$(date -Iseconds) : Starting ${SERVICE_NAME}"
+    echo $(date -Iseconds)" : ================== START ===============" >> "$LOGPATH"
     echo "${BIN} ${OPTS}" >> "$LOGPATH"
     ${BIN} ${OPTS} 2>> "$LOGPATH" >> "$LOGPATH" &
     echo "$!" > "$PIDFILE"
@@ -57,6 +57,7 @@ stop()
     fi                                                                    
   fi                                                                    
   rm "$PIDFILE" 1> /dev/null 2>&1                                       
+  echo $(date -Iseconds)" : ================== STOP ===============" >> "$LOGPATH"
 }
 
 restart()

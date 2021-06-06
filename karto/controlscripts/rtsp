@@ -31,7 +31,7 @@ start()
   else
     echo "Starting rtsp_server"
 
-    echo "================== START ===============" >> "$LOGPATH"
+    echo $(date -Iseconds)" : ================== START ===============" >> "$LOGPATH"
     echo "${SDCARD}/bin/rtsp_server ${CONFPATH}" >> "$LOGPATH"
     ${SDCARD}/bin/rtsp_server ${CONFPATH} 2>> "$LOGPATH" >> "$LOGPATH" &
     echo "$!" > "$PIDFILE"
@@ -56,6 +56,7 @@ stop()
     fi                                                                    
   fi                                                                    
   rm "$PIDFILE" 1> /dev/null 2>&1                                       
+    echo $(date -Iseconds)" : ================== STOP ===============" >> "$LOGPATH"
 }
 
 restart()

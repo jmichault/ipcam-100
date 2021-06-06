@@ -127,9 +127,6 @@ init_gpio 46
 # init white_led gpio :
 init_gpio 81
 
-## start crond:
-${SDCARD}/bin/busybox crond -L ${SDCARD}/log/crond.log -c ${SDCARD}/config/cron/crontabs
-
 # krei linkoj por ssh , scp, ssl_client, ...
 if [ ! -d /opt/bin ] ; then mkdir /opt/bin; fi
 for x in ssh scp dbclient ssl_client ; do
