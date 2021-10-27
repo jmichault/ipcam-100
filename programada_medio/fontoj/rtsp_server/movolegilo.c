@@ -22,6 +22,9 @@
 #include <imp/imp_ivs.h>
 #include <imp/imp_ivs_move.h>
 #include "movolegilo.h"
+#ifdef UZI_DMALLOC
+#include <dmalloc.h>
+#endif
 
 extern IMP_IVS_MoveParam MovoParam;
 extern char * AgordoVojo;
@@ -94,6 +97,11 @@ int nbRect=0;
   {
     sprintf(buffer,"%s/movo.conf",AgordoVojo);
     ficin = fopen(buffer,"r");
+  }
+  if( ! ficin )
+  {
+    fprintf(stderr,"movo.conf ne trovita\n");
+    return;
   }
   for(ret=0 ; ret!= EOF ; )
   {

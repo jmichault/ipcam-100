@@ -1,3 +1,5 @@
+#UZI_DMALLOC=1
+
 CROSS_COMPILE=    ../../toolchain/bin/mips-linux-gnu-
 CC = $(CROSS_COMPILE)gcc
 CPLUSPLUS = $(CROSS_COMPILE)g++
@@ -14,7 +16,12 @@ CFLAGS += -muclibc -g
 CPPFLAGS = $(INCLUDES) -I include -I../../include -O2 -Wall -muclibc -std=c++11 -g
 LDFLAGS += -muclibc -limp -lpthread -lm -lrt -L../../lib -lalog
 LDFLAGS += -Wl,-gc-sections -g
-LDFLAGS += -lssl -ltls -lcrypto -lliveMedia -lgroupsock -lBasicUsageEnvironment -lUsageEnvironment
+LIBS += -lssl -ltls -lcrypto -lliveMedia -lgroupsock -lBasicUsageEnvironment -lUsageEnvironment
+
+ifdef UZI_DMALLOC
+  LIBS += -ldmallocthcxx
+  CFLAGS += -DUZI_MALLOC=1
+endif
 
 
 all: 	rtsp_server

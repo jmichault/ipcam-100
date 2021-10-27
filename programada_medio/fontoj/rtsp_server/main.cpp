@@ -14,8 +14,14 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include <stdlib.h>
+#include <string.h>
+#ifdef UZI_DMALLOC
+#include <dmalloc.h>
+#endif
 #include <BasicUsageEnvironment/BasicUsageEnvironment.hh>
 #include <GroupsockHelper.hh> // for "weHaveAnIPv*Address()"
+#include <signal.h>
 #include "DynamicRTSPServer.hh"
 #include "imp_komuna.h"
 #include "agordolegilo.h"
@@ -23,14 +29,43 @@
 
 char * AgordoVojo=NULL;
 
+UsageEnvironment* env = NULL;
+RTSPServer* rtspServer = NULL;
+TaskScheduler* scheduler = NULL;
+UserAuthenticationDatabase* authDB = NULL;
+
+char quit = 0;
+
+void sighandler(int n) {
+  printf("ricevita signalo %d\n",n);
+#ifdef UZI_DMALLOC
+  dmalloc_log_stats();
+#endif
+  quit = 1;
+  sleep(5);
+  Medium::close(rtspServer);
+  delete scheduler;
+  printf("avant env->reclaim\n");
+  if (env->reclaim()) printf("env->reclaim() OK\n");
+  else printf("env->reclaim() KO\n");
+  delete scheduler;
+  delete authDB;
+  imp_exit();
+#ifdef UZI_DMALLOC
+  printf("avant dmalloc_shutdown\n");
+  dmalloc_shutdown ();
+#endif
+  exit(0);
+}
+
+
 
 int main(int argc, char** argv) {
   
   if(argc>1) AgordoVojo=argv[1];
-  OutPacketBuffer::maxSize = (1920*1080*3/2);
   // Begin by setting up our usage environment:
-  TaskScheduler* scheduler = BasicTaskScheduler::createNew();
-  UsageEnvironment* env = BasicUsageEnvironment::createNew(*scheduler);
+  scheduler = BasicTaskScheduler::createNew();
+  env = BasicUsageEnvironment::createNew(*scheduler);
 
   UserAuthenticationDatabase* authDB = NULL;
 /*
@@ -51,18 +86,26 @@ int main(int argc, char** argv) {
   {
     FILE * ficin = fopen("/opt/media/mmcblk0p1/config/rtsp.user","r");
     char buffer[150];
-    while(fgets(buffer,149,ficin))
+    if(ficin)
     {
-      char * pCol=strstr(buffer,":");
-      if(pCol)
+      while(fgets(buffer,149,ficin))
       {
-        (*pCol)=0; pCol++;
-        char * pLn=strstr(pCol,"\n");
-        if (pLn) (*pLn)=0;
-        authDB->addUserRecord(buffer, pCol);
+        char * pCol=strstr(buffer,":");
+        if(pCol)
+        {
+          (*pCol)=0; pCol++;
+          char * pLn=strstr(pCol,"\n");
+          if (pLn) (*pLn)=0;
+          authDB->addUserRecord(buffer, pCol);
+        }
       }
+      fclose(ficin);
     }
-    fclose(ficin);
+    else
+    {
+      fprintf(stderr,"  rtsp.user ne trovita.\n");
+      authDB->addUserRecord("admin","ismart21"); 
+    }
   }
 
   agordoLegilo();
@@ -189,6 +232,7 @@ int main(int argc, char** argv) {
       channel_attrs[1].rcAttr.attrRcMode.attrH264Cbr.gopRelation = 0;
     }
   }
+printf("avant imp_init()\n");
   // init T21
   int ret=imp_init();
   if(ret<0)
@@ -196,10 +240,12 @@ int main(int argc, char** argv) {
     fprintf(stderr,"imp_init failed\n");
     exit(1);
   }
+printf("apres imp_init()\n");
+
+
 
   // Create the RTSP server.  Try first with the default port number (554),
   // and then with the alternative port number (8554):
-  RTSPServer* rtspServer;
   portNumBits rtspServerPortNum = 554;
   rtspServer = DynamicRTSPServer::createNew(*env, rtspServerPortNum, authDB);
   if (rtspServer == NULL) {
@@ -238,8 +284,10 @@ int main(int argc, char** argv) {
   } else {
     *env << "(RTSP-over-HTTP tunneling is not available.)\n";
   }
+  signal(SIGTERM|SIGINT|SIGQUIT, sighandler);
 
   env->taskScheduler().doEventLoop(); // does not return
+  *env << "T21-hacks , foriri RTSP Server\n";
 
   return 0;
 }

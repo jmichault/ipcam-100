@@ -32,6 +32,9 @@
 #include <imp/imp_encoder.h>
 #include <imp/imp_ivs.h>
 #include <imp/imp_ivs_move.h>
+#ifdef UZI_DMALLOC
+#include <dmalloc.h>
+#endif
 
 // sensilotrajtoj
 #define SENSOR_FRAME_RATE_NUM   20

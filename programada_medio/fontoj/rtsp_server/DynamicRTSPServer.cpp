@@ -14,9 +14,13 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include <stdlib.h>
+#include <string.h>
+#ifdef UZI_DMALLOC
+#include <dmalloc.h>
+#endif
 #include "DynamicRTSPServer.hh"
 #include <liveMedia/liveMedia.hh>
-#include <string.h>
 #include "H264ImpServerMediaSubsession.hh"
 #include "ServerMediaSubsession.h"
 #include "imp_komuna.h"
@@ -38,10 +42,13 @@ DynamicRTSPServer::DynamicRTSPServer(UsageEnvironment& env, int ourSocketIPv4, i
 				     Port ourPort,
 				     UserAuthenticationDatabase* authDatabase, unsigned reclamationTestSeconds)
   : RTSPServer(env, ourSocketIPv4, ourSocketIPv6, ourPort, authDatabase, reclamationTestSeconds) {
+  printf(" new DynamicRTSPServer\n");
 }
 
 DynamicRTSPServer::~DynamicRTSPServer() {
+  printf("~DynamicRTSPServer\n");
 }
+
 
 static ServerMediaSession* createNewSMS(UsageEnvironment& env,
 					char const* fileName, FILE* fid); // forward
@@ -89,7 +96,7 @@ static ServerMediaSession* createNewSMS(UsageEnvironment& env,
       sms->addSubsession(UnicastServerMediaSubsession::createNew(env, 1));
     else
       sms->addSubsession(H264ImpServerMediaSubsession::createNew(env, fileName, reuseSource));
-  } else if (extension && strcmp(extension, ".264") == 0) {
+  } else if (extension && (strcmp(extension, ".264") == 0 || strcmp(extension, ".mp4") == 0)) {
     // Assumed to be a H.264 Video Elementary Stream file:
     NEW_SMS("H.264 Video");
     OutPacketBuffer::maxSize = 100000; // allow for some possibly large H.264 frames

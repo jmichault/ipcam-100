@@ -50,8 +50,8 @@ private:
 private:
   static unsigned referenceCount; // used to count how many instances of this class currently exist
   int canal;
-  char * buffer=NULL;
-  int bufferSize=0;
+  static char * buffer;
+  static int bufferSize;
   int bytesRead=0;
 };
 

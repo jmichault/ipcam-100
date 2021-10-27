@@ -23,6 +23,9 @@
 #include <fcntl.h>
 #include <errno.h>
 #include <unistd.h>
+#ifdef UZI_DMALLOC
+#include <dmalloc.h>
+#endif
 
 #include <imp/imp_log.h>
 #include <imp/imp_ivs.h>
@@ -54,6 +57,8 @@ IMP_IVS_MoveParam MovoParam=
 	{ .p0.x = 160, .p0.y =  92, .p1.x = 320, .p1.y = 184},
 }; 
 
+extern char quit;
+
 static void *ekrankopio_process(void *arg)
 {
   int i = 0, ret = 0;
@@ -65,6 +70,13 @@ static void *ekrankopio_process(void *arg)
 
   for (i = 0;  ; i++)
   {
+    static unsigned char *bufferStream = NULL;
+    if(quit)
+    {
+      fprintf(stderr," ekrankopio_process finiĝas\n");
+      if(bufferStream) free(bufferStream);
+      return (void *)0;
+    }
     if( snap_num>=0)
     {
       /* JPEG Snap */
@@ -73,7 +85,6 @@ static void *ekrankopio_process(void *arg)
       {
         IMPEncoderStream stream;
         int bytesRead=0;
-        static unsigned char *bufferStream = NULL;
         if(!bufferStream) bufferStream = (unsigned char *) malloc(1920*1080);
         /* Get JPEG Snap */
         ret = IMP_Encoder_GetStream(snap_num, &stream, 1);
@@ -151,6 +162,11 @@ static void *ivs_move_get_result_process(void *arg)
 
   for (boucle = 0;  ; boucle++,usleep(100000))
   {
+    if(quit)
+    {
+      fprintf(stderr,"get_result_process fino.\n");
+      return (void *)0;
+    }
     ret = IMP_IVS_PollingResult(chn_num, IMP_IVS_DEFAULT_TIMEOUTMS); // timeout -1 = default
     if (ret < 0) {
       fprintf(stderr , "%s: IMP_IVS_PollingResult(%d) failed\n",TAG, chn_num);

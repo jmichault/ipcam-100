@@ -4,6 +4,10 @@
 #include <string.h>
 #include "agordolegilo.h"
 
+#ifdef UZI_DMALLOC
+#include <dmalloc.h>
+#endif
+
 extern char * AgordoVojo;
 
 struct sensilo_agordo SenAgordo=
@@ -128,6 +132,11 @@ int lastret=0;
   {
     sprintf(buffer,"%s/rtsp.conf",AgordoVojo);
     ficin = fopen(buffer,"r");
+  }
+  if(!ficin)
+  {
+    fprintf(stderr,"rtsp.conf ne trovita\n");
+    return;
   }
   AgordoNeedReset=false;
   for(lastret=0 ; ret!= EOF ; lastret=ret)

@@ -14,9 +14,17 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include <stdlib.h>
+#include <string.h>
+#ifdef UZI_DMALLOC
+#include <dmalloc.h>
+#endif
 #include "ImpSource.hh"
 #include <groupsock/GroupsockHelper.hh> // for "gettimeofday()"
 #include "imp_komuna.h"
+
+char * ImpSource::buffer=NULL;
+int ImpSource::bufferSize=0;
 
 ImpSource*
 ImpSource::createNew(UsageEnvironment& env,
@@ -31,6 +39,7 @@ unsigned ImpSource::referenceCount = 0;
 ImpSource::ImpSource(UsageEnvironment& env,
 			   int params)
   : FramedSource(env), canal(params) {
+  printf(" new ImpSource\n");
   if (referenceCount == 0) {
     // Any global initialization of the device would be done here:
     bufferSize = 100000;
@@ -58,11 +67,14 @@ ImpSource::ImpSource(UsageEnvironment& env,
 ImpSource::~ImpSource() {
   // Any instance-specific 'destruction' (i.e., resetting) of the device would be done here:
   //%%% TO BE WRITTEN %%%
+  printf("~ImpSource\n");
 
   --referenceCount;
   if (referenceCount == 0) {
     // Any global 'destruction' (i.e., resetting) of the device would be done here:
-    //%%% TO BE WRITTEN %%%
+    free(buffer);
+    buffer=NULL;
+    bufferSize = 0;
 
     // Reclaim our 'event trigger'
     envir().taskScheduler().deleteEventTrigger(eventTriggerId);

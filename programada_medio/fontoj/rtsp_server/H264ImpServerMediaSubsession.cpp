@@ -14,6 +14,11 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include <stdlib.h>
+#include <string.h>
+#ifdef UZI_DMALLOC
+#include <dmalloc.h>
+#endif
 #include "H264ImpServerMediaSubsession.hh"
 #include "liveMedia/H264VideoRTPSink.hh"
 #include "liveMedia/ByteStreamFileSource.hh"
@@ -31,9 +36,11 @@ H264ImpServerMediaSubsession::H264ImpServerMediaSubsession(UsageEnvironment& env
 								       char const* fileName, Boolean reuseFirstSource)
   : FileServerMediaSubsession(env, fileName, reuseFirstSource),
     fAuxSDPLine(NULL), fDoneFlag(0), fDummyRTPSink(NULL) {
+  printf(" new H264ImpServerMediaSubsession\n");
 }
 
 H264ImpServerMediaSubsession::~H264ImpServerMediaSubsession() {
+  printf("~H264ImpServerMediaSubsession\n");
   delete[] fAuxSDPLine;
 }
 
@@ -102,9 +109,9 @@ FramedSource* H264ImpServerMediaSubsession::createNewStreamSource(unsigned /*cli
   // Create the video source:
   ImpSource * fileSource;
   if ( ! strcmp(fFileName,"stream1") )
-    fileSource = ImpSource ::createNew(envir(), 0);
+    fileSource = ImpSource::createNew(envir(), 0);
   else
-    fileSource = ImpSource ::createNew(envir(), 1);
+    fileSource = ImpSource::createNew(envir(), 1);
   if (fileSource == NULL) return NULL;
   estBitrate=100;
 

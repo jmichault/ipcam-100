@@ -17,6 +17,12 @@
 // Webcam MJPEG camera input device
 // Implementation
 
+#include <malloc.h>
+#include <stdlib.h>
+#include <string.h>
+#ifdef UZI_DMALLOC
+#include <dmalloc.h>
+#endif
 #include "ImpJpegVideoDeviceSource.h"
 #include "imp_komuna.h"
 
@@ -57,6 +63,7 @@ int ImpJpegVideoDeviceSource::initDevice(int canal) {
 ImpJpegVideoDeviceSource
 ::ImpJpegVideoDeviceSource(UsageEnvironment &env, int canal)
         : JPEGVideoSource(env)  {
+  printf(" new ImpJpegVideoDeviceSource\n");
     m_canal=canal;
     if (initDevice(canal)) {
         throw DeviceException();
@@ -64,6 +71,7 @@ ImpJpegVideoDeviceSource
 }
 
 ImpJpegVideoDeviceSource::~ImpJpegVideoDeviceSource() {
+  printf("~ImpJpegVideoDeviceSource\n");
 }
 
 

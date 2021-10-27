@@ -7,6 +7,11 @@
 ** 
 ** -------------------------------------------------------------------------*/
 
+#include <stdlib.h>
+#include <string.h>
+#ifdef UZI_DMALLOC
+#include <dmalloc.h>
+#endif
 #include <sstream>
 
 // libv4l2
