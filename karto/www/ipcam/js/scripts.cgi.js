@@ -68,15 +68,11 @@ $(document).ready(function () {
 
     $(".view_script").click(function () {
         var e = $(this);
-        var qv = $("#quickviewDefault");
-        var v = $("#quicViewContent");
-        if (qv.hasClass("is-active")) {
-            // hide first if it's already active
-            qv.toggleClass("is-active");
-        }
+        var qv = $("#modalview");
+        qv.display();
+        var v = $("#modalbody");
         v.html("Loading...");
         v.load(e.attr("href"));
-        qv.toggleClass("is-active");
         return false;
     });
 
