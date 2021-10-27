@@ -14,7 +14,7 @@ int SU_ADC_system_init()
 int SU_ADC_system_exit()
 {
   SU_ADC_DisableChn(0);
-  return SU_ADC_Init();
+  return SU_ADC_Exit();
 }
 
 int main(int argc, char *argv[])
