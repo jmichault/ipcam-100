@@ -55,7 +55,7 @@ Kio ne funkcias en alternativa firmvaro:
 
 Instalado alternativan firmvaron :  
 * Kopiu ĉion el la dosierujo "karto" en la radikon de la mikroSD.
-* laŭvole agordu la reton (config/staticip.conf, config/resolv.conf, config/wpa_supplicant.conf)
+* laŭvole agordu la reton (www/ipcam/config.dist/reto.conf)
 * Enmetu la karton mikroSD.
 * Konektu la kameraon al via loka reto kaj funkciigu la kameraon.
 * Trovu la IP-adreson de la kamerao.
