@@ -432,12 +432,12 @@ led_blink()
     blink_count=$1
     led_status=$(blue_led status)
 
-#    for ((i=1;i<=blink_count;i++)); do
+    for i in $(seq 1 $blink_count); do
        blue_led on
        sleep 0.25
        blue_led off
        sleep 0.25
-#    done
+    done
 
     if [ $led_status == "ON" ]; then
         blue_led on
