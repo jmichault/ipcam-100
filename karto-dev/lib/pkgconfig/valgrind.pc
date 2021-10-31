@@ -1,0 +1,16 @@
+prefix=/opt/media/mmcblk0p1
+exec_prefix=/opt/media/mmcblk0p1
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include/valgrind
+arch=mips32
+os=linux
+platform=mips32-linux
+valt_load_address=0x58000000
+
+Name: Valgrind
+Description: A dynamic binary instrumentation framework
+Version: 3.17.0
+Requires:
+Libs: -L${libdir}/valgrind -lcoregrind-mips32-linux -lvex-mips32-linux -lgcc
+Cflags: -I${includedir}
+
