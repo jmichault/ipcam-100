@@ -3,7 +3,7 @@
 # Legas una variablo de «json» file.
 # ĉi tiu linio devas esti tia:
 #   variablo=[{"name":"RAPIDECO","value":"500"},....
-# kaj atribuu valoron al variablo nomata per "name".
+# kaj montras «nomo=valoro» por permesi kreadon de la responda bash-skripto. 
 #####################################
 
 FIC=$1
@@ -32,7 +32,6 @@ data=$( cat $FIC| (
  )
 ) 
 
-
 for i in $(seq 0 $MAX)
 do
   couple=$(echo "$data"|jq -r '.['$i']' 2>/dev/null)
@@ -42,6 +41,6 @@ do
   then
     break
   fi
-  #echo $nomo="$valoro"
-  export $nomo="$valoro"
+  echo $nomo="$valoro"
+  #export $nomo="$valoro"
 done

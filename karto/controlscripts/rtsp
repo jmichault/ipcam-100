@@ -26,6 +26,20 @@ status()
 
 start()
 {
+  # krei hazardan uzanton por interna uzo
+  lokuz=$(cat ${SDCARD}/config/rtsp.lok|sed "s/:.*//")
+  lokpas=$(cat ${SDCARD}/config/rtsp.lok|sed "s/.*://")
+  if [ "x$lokuz" = "x" -o "x$lokpas" = "x" ] ; then
+    lokuz=$(dd if=/dev/random bs=24 count=1 2>/dev/null|busybox sha1sum|sed 's/ *- *//')
+    lokpas=$(dd if=/dev/random bs=24 count=1 2>/dev/null|busybox sha1sum|sed 's/ *- *//')
+    echo "$lokuz:$lokpas" >${SDCARD}/config/rtsp.lok
+  fi
+  if ! grep "^$lokuz:" "${SDCARD}/config/rtsp.user" >/dev/null ; then
+    grep -v "^$lokuz:" "${SDCARD}/config/rtsp.user" >/tmp/htpasstmp.$$                                                 
+    echo "$lokuz:$(echo -n "$lokuz:RTSP server:$lokpas"|md5sum|sed 's/ *- *//')" >>/tmp/htpasstmp.$$
+    mv /tmp/htpasstmp.$$ "${SDCARD}/config/rtsp.user"                                                                  
+  fi
+
   if [ "$(status)" != "" ]; then
     echo "A rtsp_server is already running, please stop it or reboot"
   else
@@ -36,6 +50,9 @@ start()
     ${SDCARD}/bin/rtsp_server ${CONFPATH} 2>> "$LOGPATH" >> "$LOGPATH" &
     echo "$!" > "$PIDFILE"
   fi
+  # kreas bash-skripto por «detectionOn.sh»
+  JsAlSkr ${SDCARD}/www/ipcam/config/rtsp.conf config >${SDCARD}/config/varDetekto
+  JsAlSkr ${SDCARD}/www/ipcam/config/movo.conf DetektoDatenoj >>${SDCARD}/config/varDetekto
 }
 
 stop()
