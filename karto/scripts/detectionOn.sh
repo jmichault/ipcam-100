@@ -9,9 +9,8 @@ max_pik=100
 max_vid=20
 # minimuma libera spaco sur la SDa karto 
 min_lib=1000000
-save_dir=${SDCARD}/motio
-save_file_date_pattern="+%Y-%m-%d_%H.%M.%S"
-
+save_subdir=$(date +%Y-%m-%d)
+pat0=$(date +%H.%M.%S)
 
 #.  JsAlVar ${SDCARD}/www/ipcam/config/rtsp.conf config
 #.  JsAlVar ${SDCARD}/www/ipcam/config/movo.conf DetektoDatenoj
@@ -23,14 +22,12 @@ if [ "$motion_trigger_led" = true ] ; then
     led_blink 4 &
 fi
 
-pattern="${save_file_date_pattern:-+%Y-%m-%d_%H.%M.%S}"
-pat0=$(date $pattern)
-
 
 # Komencu registri videon
 if [ x"$StokMovOn" == x1 ] ; then
-  if [ ! -d "$save_dir/vid" ]; then
-    mkdir -p "$save_dir/vid"
+  save_dir=$SDCARD/motio/vid/$save_subdir/
+  if [ ! -d "$save_dir" ]; then
+    mkdir -p "$save_dir"
   fi
   lokuz=$(cat ${SDCARD}/config/rtsp.lok|sed "s/:.*//")
   lokpas=$(cat ${SDCARD}/config/rtsp.lok|sed "s/.*://")
@@ -39,18 +36,19 @@ if [ x"$StokMovOn" == x1 ] ; then
   video_duration=10
   video_temp=$pat0.mp4
   echo komencas la videoregistradon
-  openRTSP -4 -w "$largxo" -h "$alteco" -f "$canal1fps" -d "$video_duration" rtsp://$lokuz:$lokpas@127.0.0.1/stream1 > "$save_dir/vid/$video_temp" &
+  openRTSP -4 -w "$largxo" -h "$alteco" -f "$canal1fps" -d "$video_duration" rtsp://$lokuz:$lokpas@127.0.0.1/stream1 > "$save_dir/$video_temp" &
 fi
 
 
 # Save a snapshot
 if [ x"$StokPicOn" == x1 ] ; then
   echo komencas la ekrankopion
-	filename=$pat0.jpg
-	if [ ! -d "$save_dir/pik" ]; then
-		mkdir -p "$save_dir/pik"
-	fi
-	${SDCARD}/bin/getimage > "$save_dir/pik/$filename" &
+  save_dir=$SDCARD/motio/pik/$save_subdir/
+  if [ ! -d "$save_dir" ]; then
+    mkdir -p "$save_dir"
+  fi
+  filename=$pat0.jpg
+  ${SDCARD}/bin/getimage > "$save_dir/$filename" &
 fi
 
 # Send emails ...
@@ -58,6 +56,8 @@ if [ x"$SciiMailOn" == x1 ] ; then
   echo sendas retmesaĝon
     ${SDCARD}/scripts/sendPictureMail.sh &
 fi
+
+wait
 
 # Send a telegram message
 if [ x"$SciiTelOn" == x1 ]; then
@@ -70,8 +70,6 @@ if [ x"$SciiTelOn" == x1 ]; then
  		rm "/tmp/telegram_image$$.jpg"
 	fi
 fi
-
-wait
 
 # limigi la nombron da videoj
 echo forigas supernombrajn filmetojn

@@ -76,9 +76,9 @@ cat << EOF
     </div>
 </div>
 
-<!-- Network -->
+<!-- Reto -->
 <div class='card status_card'>
- <header class='card-header bg-primary text-white'><p class='card-header-title lang' data-lang="Network (WLAN0)"></p></header>
+ <header class='card-header bg-primary text-white'><p class='card-header-title lang' data-lang="Reto (WLAN0)"></p></header>
  <div class='card-body'>
   <div class='content'>
    <table class="table table-striped table-bordered">

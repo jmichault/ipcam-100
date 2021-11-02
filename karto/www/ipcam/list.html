@@ -1,0 +1,82 @@
+ <link rel="stylesheet" href="../lib/bootstrap.min.css">
+
+<h1 class="lang" data-lang="Media Dosieroj"></h1>
+<div class="container-fluid bg-light rounded-lg" >
+ <ul class="nav nav-tabs" id="tabs">
+  <li class="nav-item" data-tab="pik">
+   <a class="nav-link active lang" id="nav-tab1" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="false"
+    data-lang="Pik">
+  </a> </li>
+  <li class="nav-item" data-tab="vid">
+   <a class="nav-link lang" id="nav-tab2" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false"
+    data-lang="Vid">
+  </a> </li>
+ </ul>
+ <div class="tab-content">
+  <div class="row content">
+   <div class="col-sm-2 " id="miadirs" >
+    <ul class="nav nav-pills flex-column align-content-center" id="dirs">
+       
+    </ul>
+   </div>
+   <div class="col-sm-6" id="files" href="#">
+
+   </div>
+  </div>
+ </div>
+</div>
+<!-- modal por bildo -->
+<div class="modal fade" id="bildomodal">
+  <div class="modal-dialog modal-lg" style="width: 670px !important;" >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title lang" id="myModalLabel" data-lang="Bildrigardilo"></h4>
+      </div>
+      <div class="modal-body" id="bildo">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default lang" data-dismiss="modal" data-lang="Fermi"></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="js/sdcard.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+      getDirs('pik');
+      setPageLang("list.html",$('#tab1'));
+    $('#tabs li').click(function() {
+       const dir = $(this).data('tab');
+       getDirs(dir);
+      });
+    $("#dirs").click(function(event) {
+       //var x1=$('#dirs').find(".active").first();
+       //x1.removeClass("active");
+       $('#dirs').find(".active").first().removeClass("active");
+       event.target.classList.add("active");
+       const subdir = $(event.target).data('subdir');
+       const dir = $('#tabs').find(".active").first().parents().first().data('tab');
+       getFiles(dir,subdir);
+      });
+    $("#files").click(function(event) {
+       const dir = $('#tabs').find(".active").first().parents().first().data('tab');
+       const subdir = $('#dirs').find(".active").first().data('subdir');
+       var elt=$(event.target);
+       var dos = elt.data('src');
+       while (!dos && elt)
+       {
+         elt = elt.parents().first();
+         dos=elt.data('src');
+       }
+       if(dir == 'vid')
+         $('#bildo').html("<video width=\"640\" height=\"360\" controls>"
+			+"<source src=\""+dos+"\" type=\"video/mp4\">"
+			+"Via retumilo ne subtenas la video-etikedon.  </video>");
+       else
+         $('#bildo').html("<img src=\""+dos+"\" style=\"width: 640px; height: 360px;\" >");
+       $('#bildomodal').modal('show');
+    });
+  });
+</script>
+
