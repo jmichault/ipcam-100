@@ -332,6 +332,10 @@ if [ -n "$F_cmd" ]; then
       snapshot
     ;;
 
+    detektotesto)
+     ${DOCUMENT_ROOT}/../scripts/detectionOn.sh
+    ;;
+
     motoro_poz)
       poz=$(echo "${F_val}"| sed -e 's/+/ /g')
       .  JsAlVar ${DOCUMENT_ROOT}/ipcam/config/ptz.conf ptz_conf 11

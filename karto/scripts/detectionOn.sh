@@ -34,9 +34,10 @@ if [ x"$StokMovOn" == x1 ] ; then
   largxo=$(echo $canal1taille|sed "s/x.*//")
   alteco=$(echo $canal1taille|sed "s/.*x//")
   video_duration=10
-  video_temp=$pat0.mp4
+  video_temp=$pat0.mkv
   echo komencas la videoregistradon
-  openRTSP -4 -w "$largxo" -h "$alteco" -f "$canal1fps" -d "$video_duration" rtsp://$lokuz:$lokpas@127.0.0.1/stream1 > "$save_dir/$video_temp" &
+  #openRTSP -4 -w "$largxo" -h "$alteco" -f "$canal1fps" -d "$video_duration" rtsp://$lokuz:$lokpas@127.0.0.1/stream1 > "$save_dir/$video_temp" &
+  ffmpeg-min-recorder -i rtsp://$lokuz:$lokpas@127.0.0.1/stream1 -vcodec copy -vframes 300 "$save_dir/$video_temp" &
 fi
 
 
