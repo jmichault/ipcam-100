@@ -1,4 +1,5 @@
 #!/bin/sh
+. /etc/profile >/dev/null 2>&1
 
 #### KOMENCO DE MASTRUMA KAPLINIO
 # Mallonga-priskribo: timelapse servilo. Registras bildon regule.
@@ -20,7 +21,7 @@ start()
 {
   LOG=/dev/null
   echo "Starting timelapse"
-  /opt/media/sdc/bin/busybox nohup /opt/media/sdc/scripts/timelapse.sh &> /dev/null &
+  ${SDCARD}/bin/busybox nohup ${SDCARD}/scripts/timelapse.sh &> /dev/null &
   PID=$!
   echo $PID > $PIDFILE
   echo $PID

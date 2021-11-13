@@ -1,4 +1,5 @@
 #!/bin/sh
+. /etc/profile >/dev/null 2>&1
 
 # This will be verbose, and issue a testing cert
 # When it is successful, comment out the following line
@@ -6,7 +7,7 @@
 # real ones, so only comment out when it works.)
 DEBUG="--test --debug"
 
-CONFIGPATH="/opt/media/sdc/config"
+CONFIGPATH="${SDCARD}/config"
 ACMEPATH="${CONFIGPATH}/ssl/acme"
 SSL_DOMAIN_PATH="${CONFIGPATH}/ssl_domain.conf"
 
@@ -40,14 +41,14 @@ fi
           --fullchain-file ${ACMEPATH}/fullchain.crt \
           --reloadcmd  "cat ${ACMEPATH}/host.crt ${ACMEPATH}/host.key > ${CONFIGPATH}/lighttpd.pem ;\
                         pkill lighttpd.bin ;\
-                        /opt/media/sdc/bin/lighttpd -f ${CONFIGPATH}/lighttpd.conf"
+                        ${SDCARD}/bin/lighttpd -f ${CONFIGPATH}/lighttpd.conf"
 
 
 ## Adding cronjob to keep the cert updated
 cat > ${CONFIGPATH}/cron/periodic/weekly/letsencrypt <<EOF
 #!/bin/sh
-PATH=/opt/media/sdc/bin:/system/bin:/bin:/sbin:/usr/bin:/usr/sbin
-CONFIGPATH="/opt/media/sdc/config"
+PATH=${SDCARD}/bin:/system/bin:/bin:/sbin:/usr/bin:/usr/sbin
+CONFIGPATH="${SDCARD}/config"
 export OPENSSL_CONF="${CONFIGPATH}/openssl.cnf"
 
 $(pwd)/acme.sh --cron --home ${ACMEPATH} >> /tmp/letsencrypt_cron.log 2>&1

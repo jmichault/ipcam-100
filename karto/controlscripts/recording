@@ -1,4 +1,5 @@
 #!/bin/sh
+. /etc/profile >/dev/null 2>&1
 
 #### KOMENCO DE MASTRUMA KAPLINIO
 # Mallonga-priskribo: 
@@ -9,26 +10,26 @@
 SERVICE_NAME="Recording"
 PIDFILE="/var/run/recording.pid"
 WATCHDOG_PIDFILE="/var/run/recording-watch.pid"
-DCIM_PATH="/opt/media/sdc/DCIM"
-export LD_LIBRARY_PATH='/opt/media/sdc/lib/:/thirdlib:/system/lib/:/ipc/lib/'
+DCIM_PATH="${SDCARD}/DCIM"
+export LD_LIBRARY_PATH='${SDCARD}/lib/:/thirdlib:/system/lib/:/ipc/lib/'
 
-. /opt/media/sdc/scripts/common_functions.sh
-. /opt/media/sdc/scripts/update_timezone.sh
+. ${SDCARD}/scripts/common_functions.sh
+. ${SDCARD}/scripts/update_timezone.sh
 
 if [ ! -d "$DCIM_PATH" ]; then
   mkdir -p $DCIM_PATH
 fi
 
-if [ ! -f /opt/media/sdc/config/recording.conf ]; then
-  cp /opt/media/sdc/config/recording.conf.dist /opt/media/sdc/config/recording.conf
+if [ ! -f ${SDCARD}/config/recording.conf ]; then
+  cp ${SDCARD}/config/recording.conf.dist ${SDCARD}/config/recording.conf
 fi
 
-if [ ! -f /opt/media/sdc/config/rtspserver.conf ]; then
-  cp /opt/media/sdc/config/rtspserver.conf.dist /opt/media/sdc/config/rtspserver.conf
+if [ ! -f ${SDCARD}/config/rtspserver.conf ]; then
+  cp ${SDCARD}/config/rtspserver.conf.dist ${SDCARD}/config/rtspserver.conf
 fi
 
-. /opt/media/sdc/config/recording.conf
-. /opt/media/sdc/config/rtspserver.conf
+. ${SDCARD}/config/recording.conf
+. ${SDCARD}/config/rtspserver.conf
 
 status()
 {
@@ -44,23 +45,23 @@ start()
     echo "A recording is already running, please stop it or reboot"
   else
     echo "Starting recording"
-    /opt/media/sdc/controlscripts/rtsp-mjpeg stop # Mjpeg not supported
+    ${SDCARD}/controlscripts/rtsp-mjpeg stop # Mjpeg not supported
 
     if [ "$USERNAME" != "" ]; then
         CREDENTIAL="$USERNAME:$USERPASSWORD@"
     fi
 
     if [ "$rec_motion_activated" == 1 ]; then
-        start_service_if_need /opt/media/sdc/controlscripts/motion-detection
+        start_service_if_need ${SDCARD}/controlscripts/motion-detection
         motion_args="-s_stop 1 -s_control_file /tmp/rec_control"
         deactivate_motion_recording #Disable record on start
     else
         motion_args="-s_stop 0"
     fi
     # Example:
-    # /opt/media/sdc/bin/ffmpeg-min-recorder -loglevel info -rtbufsize 786432 -re -vcodec h264 -analyzeduration 0 -rtsp_transport tcp -stimeout 3500000 -i rtsp://root:jco66688@0.0.0.0:554/unicast -vcodec copy -acodec copy -map 0 -dn -f extsegment -s_max_prerecord_bytes 524288 -s_prerecord_ms 0 -s_postrecord_ms 8000 -s_max_file_duration_ms 60000 -s_reserved_disk_space_mb 512 -s_stop 1 -s_control_file /tmp/rec_control /opt/media/sdc/DCIM
+    # ${SDCARD}/bin/ffmpeg-min-recorder -loglevel info -rtbufsize 786432 -re -vcodec h264 -analyzeduration 0 -rtsp_transport tcp -stimeout 3500000 -i rtsp://root:jco66688@0.0.0.0:554/unicast -vcodec copy -acodec copy -map 0 -dn -f extsegment -s_max_prerecord_bytes 524288 -s_prerecord_ms 0 -s_postrecord_ms 8000 -s_max_file_duration_ms 60000 -s_reserved_disk_space_mb 512 -s_stop 1 -s_control_file /tmp/rec_control ${SDCARD}/DCIM
 
-    /opt/media/sdc/bin/busybox nohup /opt/media/sdc/bin/ffmpeg-min-recorder -loglevel quiet -rtbufsize 786432 -re -vcodec h264 -analyzeduration 0 -rtsp_transport tcp -stimeout 6500000 -i rtsp://${CREDENTIAL}127.0.0.1:$PORT/unicast \
+    ${SDCARD}/bin/busybox nohup ${SDCARD}/bin/ffmpeg-min-recorder -loglevel quiet -rtbufsize 786432 -re -vcodec h264 -analyzeduration 0 -rtsp_transport tcp -stimeout 6500000 -i rtsp://${CREDENTIAL}127.0.0.1:$PORT/unicast \
         -vcodec copy -acodec copy -map 0 -dn -f extsegment \
         -s_max_prerecord_bytes 524288 -s_prerecord_ms 0 -s_postrecord_ms ${rec_postrecord_sec}000 -s_max_file_duration_ms ${rec_file_duration_sec}000 \
         -s_reserved_disk_space_mb $rec_reserverd_disk_mb $motion_args "$DCIM_PATH" &>/dev/null &
@@ -68,7 +69,7 @@ start()
 
     ## Watchdog
     if ! checkpid "$WATCHDOG_PIDFILE"; then
-      /opt/media/sdc/scripts/service-watchdog.sh /opt/media/sdc/controlscripts/recording 0 &
+      ${SDCARD}/scripts/service-watchdog.sh ${SDCARD}/controlscripts/recording 0 &
       echo "$!" > "$WATCHDOG_PIDFILE"
     fi
   fi

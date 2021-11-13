@@ -1,4 +1,5 @@
 #!/bin/sh
+. /etc/profile >/dev/null 2>&1
 
 #### KOMENCO DE MASTRUMA KAPLINIO
 # Mallonga-priskribo: telnet servilo. Uzu ssh anstataŭe.
@@ -8,15 +9,15 @@
 
 SERVICE_NAME="Telnet Server"
 PIDFILE="/var/run/telnet-server.pid"
-export LD_LIBRARY_PATH='/opt/media/sdc/lib/:/thirdlib:/system/lib/:/ipc/lib/'
-PATH=/opt/media/sdc/bin:/system/bin:/bin:/sbin:/usr/bin:/usr/sbin
+export LD_LIBRARY_PATH='${SDCARD}/lib/:/thirdlib:/system/lib/:/ipc/lib/'
+PATH=${SDCARD}/bin:/system/bin:/bin:/sbin:/usr/bin:/usr/sbin
 
-if [ ! -f /opt/media/sdc/config/telnetd.conf ]; then
-  cp /opt/media/sdc/config/telnetd.conf.dist /opt/media/sdc/config/telnetd.conf
+if [ ! -f ${SDCARD}/config/telnetd.conf ]; then
+  cp ${SDCARD}/config/telnetd.conf.dist ${SDCARD}/config/telnetd.conf
 fi
 
-if [ -f /opt/media/sdc/config/telnetd.conf ]; then
-  . /opt/media/sdc/config/telnetd.conf
+if [ -f ${SDCARD}/config/telnetd.conf ]; then
+  . ${SDCARD}/config/telnetd.conf
 fi
 
 

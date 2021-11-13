@@ -1,3 +1,4 @@
 #!/bin/sh
-LD_LIBRARY_PATH='/thirdlib:/system/lib:/opt/media/sdc/lib'
-/opt/media/sdc/bin/mosquitto_sub.bin "$@"
+. /etc/profile >/dev/null 2>&1
+LD_LIBRARY_PATH='/thirdlib:/system/lib:${SDCARD}/lib'
+${SDCARD}/bin/mosquitto_sub.bin "$@"

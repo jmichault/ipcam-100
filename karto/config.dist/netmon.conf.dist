@@ -1,5 +1,5 @@
 ############################################################
-# edit this file and move it to /opt/media/sdc/config/netmon.conf #
+# edit this file and move it to ${SDCARD}/config/netmon.conf #
 ############################################################
 
 # IP address to ping
