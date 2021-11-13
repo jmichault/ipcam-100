@@ -1,4 +1,5 @@
 #!/bin/sh
+. /etc/profile >/dev/null 2>&1
 MONITOR_TIMEOUT_SECONDS=1
 MONITOR_TIMEOUT_SECONDS_ON_DETECTION=5
 
@@ -10,14 +11,14 @@ monitor_motion_detection()
     while :
     do
         sleep $MONITOR_TIMEOUT_SECONDS
-        NEW_MOTION_FLAG="$(/opt/media/sdc/bin/getflag /tmp/rec_control)"
+        NEW_MOTION_FLAG="$(${SDCARD}/bin/getflag /tmp/rec_control)"
 
         if [ $NEW_MOTION_FLAG -ne $LAST_MOTION_FLAG ]; then
             if [ $NEW_MOTION_FLAG -eq 1 ]; then
-                /opt/media/sdc/scripts/detectionOn.sh
+                ${SDCARD}/scripts/detectionOn.sh
                 sleep $MONITOR_TIMEOUT_SECONDS_ON_DETECTION
             else
-                /opt/media/sdc/scripts/detectionOff.sh
+                ${SDCARD}/scripts/detectionOff.sh
             fi
 
             LAST_MOTION_FLAG=$NEW_MOTION_FLAG

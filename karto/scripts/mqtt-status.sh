@@ -1,9 +1,10 @@
 #!/bin/sh
-. /opt/media/sdc/config/mqtt.conf
-. /opt/media/sdc/scripts/common_functions.sh
+. /etc/profile >/dev/null 2>&1
+. ${SDCARD}/config/mqtt.conf
+. ${SDCARD}/scripts/common_functions.sh
 
 ## Uptime
-uptime=$(/opt/media/sdc/bin/busybox uptime)
+uptime=$(${SDCARD}/bin/busybox uptime)
 
 ## Wifi
 ssid=$(/system/bin/iwconfig 2>/dev/null | grep ESSID | sed -e "s/.*ESSID:\"//" | sed -e "s/\".*//")

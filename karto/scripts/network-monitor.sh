@@ -1,6 +1,7 @@
 #!/bin/sh
-. /opt/media/sdc/config/netmon.conf
-LOGPATH="/opt/media/sdc/log/network_reboot.log"
+. /etc/profile >/dev/null 2>&1
+. ${SDCARD}/config/netmon.conf
+LOGPATH="${SDCARD}/log/network_reboot.log"
 
 while true
 do

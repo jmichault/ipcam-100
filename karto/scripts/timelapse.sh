@@ -1,11 +1,12 @@
 #!/bin/sh
+. /etc/profile >/dev/null 2>&1
 
 # Takes a snapshot every N seconds interval configured
-# in /opt/media/sdc/config/timelapse.conf
+# in ${SDCARD}/config/timelapse.conf
 
 PIDFILE='/var/run/timelapse.pid'
-TIMELAPSE_CONF='/opt/media/sdc/config/timelapse.conf'
-BASE_SAVE_DIR='/opt/media/sdc/DCIM/timelapse'
+TIMELAPSE_CONF='${SDCARD}/config/timelapse.conf'
+BASE_SAVE_DIR='${SDCARD}/DCIM/timelapse'
 
 if [ -f "$TIMELAPSE_CONF" ]; then
     . "$TIMELAPSE_CONF" 2>/dev/null
@@ -38,9 +39,9 @@ while true; do
     counter_formatted=$(printf '%03d' $counter)
     filename="${filename_prefix}_${counter_formatted}.jpg"
     if [ -z "$COMPRESSION_QUALITY" ]; then
-         /opt/media/sdc/bin/getimage > "$SAVE_DIR/$filename" &
+         ${SDCARD}/bin/getimage > "$SAVE_DIR/$filename" &
     else
-        /opt/media/sdc/bin/getimage | /opt/media/sdc/bin/jpegoptim -m"$COMPRESSION_QUALITY" --stdin --stdout > "$SAVE_DIR/$filename" &
+        ${SDCARD}/bin/getimage | ${SDCARD}/bin/jpegoptim -m"$COMPRESSION_QUALITY" --stdin --stdout > "$SAVE_DIR/$filename" &
     fi
     sleep $TIMELAPSE_INTERVAL
 

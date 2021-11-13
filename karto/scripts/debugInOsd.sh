@@ -1,4 +1,5 @@
 #!/bin/sh
+. /etc/profile >/dev/null 2>&1
 IF=wlan0
 
 while true
@@ -19,6 +20,6 @@ do
         memtop=`top -n 1 | grep Mem: |grep -v grep |  awk '{ printf("Used=%.0fk Free=%.0fk",$2,$4)}'`
         string="`hostname`  ${IP}  tx:$TKBPS kb/s  rx:$RKBPS kb/s  CPU=${CPU}%   FreeMem=${freemem}% ${memtop}"
 #        echo ".$string." >> /var/log/osd
-        /opt/media/sdc/bin/setconf -k o -v "${string}"
+        ${SDCARD}/bin/setconf -k o -v "${string}"
 
 done

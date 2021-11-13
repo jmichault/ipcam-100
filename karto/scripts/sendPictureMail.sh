@@ -1,7 +1,7 @@
 #!/bin/sh
 . /etc/profile >/dev/null 2>&1
 
-. /opt/media/sdc/scripts/update_timezone.sh
+. ${SDCARD}/scripts/update_timezone.sh
 
 . JsAlVar ${SDCARD}/www/ipcam/config/movo.conf DetektoDatenoj
 
@@ -60,7 +60,7 @@ Content-Transfer-Encoding: base64
 Content-Disposition: attachment; filename=\"${FILENAME}${i}.jpg\"
 "
 
-        /opt/media/sdc/bin/getimage | /opt/media/sdc/bin/openssl enc -base64
+        ${SDCARD}/bin/getimage | ${SDCARD}/bin/openssl enc -base64
 
     echo
 
@@ -74,6 +74,6 @@ done
 printf '%s\n' "--${boundary}--"
 printf '%s\n' "-- End --"
 
-} | busybox sendmail -H"exec /opt/media/sdc/bin/openssl s_client -quiet -connect $servilo:$haveno" -f"$adresanto" -au"$ensaluto" -ap"$pasvorto" $SciiMailAl
+} | busybox sendmail -H"exec ${SDCARD}/bin/openssl s_client -quiet -connect $servilo:$haveno" -f"$adresanto" -au"$ensaluto" -ap"$pasvorto" $SciiMailAl
 
 rm /tmp/sendPictureMail.lock

@@ -1,7 +1,7 @@
 #!/bin/sh
 . /etc/profile >/dev/null 2>&1
 
-. /opt/media/sdc/scripts/update_timezone.sh
+. ${SDCARD}/scripts/update_timezone.sh
 
 MAILDATE=$(date -R)
 
@@ -30,6 +30,6 @@ Content-Disposition: inline
 
 ${testoMesagxo}
 "
-} | busybox sendmail -v -H"exec /opt/media/sdc/bin/openssl s_client -quiet -connect $servilo:$haveno" -f"$adresanto" -au"$ensaluto" -ap"$pasvorto" $testoAl
+} | busybox sendmail -v -H"exec ${SDCARD}/bin/openssl s_client -quiet -connect $servilo:$haveno" -f"$adresanto" -au"$ensaluto" -ap"$pasvorto" $testoAl
 
 

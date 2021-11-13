@@ -1,4 +1,5 @@
 #!/bin/sh
+. /etc/profile >/dev/null 2>&1
 
 # This file is supposed to bundle some frequently used functions
 # so they can be easily improved in one place and be reused all over the place
@@ -135,14 +136,14 @@ ldr(){
 http_server(){
   case "$1" in
   on)
-    /opt/media/sdc/bin/lighttpd -f /opt/media/sdc/config/lighttpd.conf
+    ${SDCARD}/bin/lighttpd -f ${SDCARD}/config/lighttpd.conf
     ;;
   off)
     killall lighttpd.bin
     ;;
   restart)
     killall lighttpd.bin
-    /opt/media/sdc/bin/lighttpd -f /opt/media/sdc/config/lighttpd.conf
+    ${SDCARD}/bin/lighttpd -f ${SDCARD}/config/lighttpd.conf
     ;;
   status)
     if pgrep lighttpd.bin &> /dev/null
@@ -159,13 +160,13 @@ http_server(){
 rtsp_h264_server(){
   case "$1" in
   on)
-    /opt/media/sdc/controlscripts/rtsp-h264 start
+    ${SDCARD}/controlscripts/rtsp-h264 start
     ;;
   off)
-    /opt/media/sdc/controlscripts/rtsp-h264 stop
+    ${SDCARD}/controlscripts/rtsp-h264 stop
     ;;
   status)
-    if /opt/media/sdc/controlscripts/rtsp-h264 status | grep -q "PID"
+    if ${SDCARD}/controlscripts/rtsp-h264 status | grep -q "PID"
       then
         echo "ON"
     else
@@ -179,13 +180,13 @@ rtsp_h264_server(){
 rtsp_mjpeg_server(){
   case "$1" in
   on)
-    /opt/media/sdc/controlscripts/rtsp-mjpeg start
+    ${SDCARD}/controlscripts/rtsp-mjpeg start
     ;;
   off)
-    /opt/media/sdc/controlscripts/rtsp-mjpeg stop
+    ${SDCARD}/controlscripts/rtsp-mjpeg stop
     ;;
   status)
-    if /opt/media/sdc/controlscripts/rtsp-mjpeg status | grep -q "PID"
+    if ${SDCARD}/controlscripts/rtsp-mjpeg status | grep -q "PID"
     then
         echo "ON"
     else
@@ -212,15 +213,15 @@ deactivate_motion_recording()
 motion_detection(){
   case "$1" in
   on)
-    /opt/media/sdc/bin/setconf -k m -v 4
+    ${SDCARD}/bin/setconf -k m -v 4
     deactivate_motion_recording
     ;;
   off)
-    /opt/media/sdc/bin/setconf -k m -v -1
+    ${SDCARD}/bin/setconf -k m -v -1
     deactivate_motion_recording
     ;;
   status)
-    status=$(/opt/media/sdc/bin/setconf -g m 2>/dev/null)
+    status=$(${SDCARD}/bin/setconf -g m 2>/dev/null)
     case $status in
       -1)
         echo "OFF"
@@ -236,13 +237,13 @@ motion_detection(){
 motion_send_mail(){
   case "$1" in
   on)
-    rewrite_config /opt/media/sdc/config/motion.conf sendemail "true"
+    rewrite_config ${SDCARD}/config/motion.conf sendemail "true"
     ;;
   off)
-    rewrite_config /opt/media/sdc/config/motion.conf sendemail "false"
+    rewrite_config ${SDCARD}/config/motion.conf sendemail "false"
     ;;
   status)
-    status=`awk '/sendemail/' /opt/media/sdc/config/motion.conf |cut -f2 -d \=`
+    status=`awk '/sendemail/' ${SDCARD}/config/motion.conf |cut -f2 -d \=`
     case $status in
       false)
         echo "OFF"
@@ -258,17 +259,17 @@ motion_send_mail(){
 night_mode(){
   case "$1" in
   on)
-    /opt/media/sdc/bin/setconf -k n -v 1
+    ${SDCARD}/bin/setconf -k n -v 1
     ir_led on
     ir_cut off
     ;;
   off)
     ir_led off
     ir_cut on
-    /opt/media/sdc/bin/setconf -k n -v 0
+    ${SDCARD}/bin/setconf -k n -v 0
     ;;
   status)
-    status=$(/opt/media/sdc/bin/setconf -g n)
+    status=$(${SDCARD}/bin/setconf -g n)
     case $status in
       0)
         echo "OFF"
@@ -284,10 +285,10 @@ night_mode(){
 auto_night_mode(){
   case "$1" in
     on)
-      /opt/media/sdc/controlscripts/auto-night-detection start
+      ${SDCARD}/controlscripts/auto-night-detection start
       ;;
     off)
-      /opt/media/sdc/controlscripts/auto-night-detection stop
+      ${SDCARD}/controlscripts/auto-night-detection stop
       ;;
     status)
       if [ -f /var/run/auto-night-detection.pid ]; then
@@ -301,7 +302,7 @@ auto_night_mode(){
 # Take a snapshot
 snapshot(){
     filename="/tmp/snapshot.jpg"
-    /opt/media/sdc/bin/getimage > "$filename" &
+    ${SDCARD}/bin/getimage > "$filename" &
     sleep 1
 }
 
@@ -312,7 +313,7 @@ reboot_system() {
 
 # Re-Mount the SD Card
 remount_sdcard() {
-  mount -o remount,rw /opt/media/sdc
+  mount -o remount,rw ${SDCARD}
 }
 
 is_file_contain_str() {
@@ -394,7 +395,7 @@ start_service_if_need()
 # Set a new ftp login password
 ftp_login_password()
 {
-    echo "$1 $2 users /" > /opt/media/sdc/config/bftpd.password
+    echo "$1 $2 users /" > ${SDCARD}/config/bftpd.password
 }
 
 all_password()
@@ -402,8 +403,8 @@ all_password()
     DEFAULT_LOGIN="root"
     http_password $1
     ftp_login_password "$DEFAULT_LOGIN" $1
-    rewrite_config /opt/media/sdc/config/rtspserver.conf USERNAME "$DEFAULT_LOGIN"
-    rewrite_config /opt/media/sdc/config/rtspserver.conf USERPASSWORD "$1"
+    rewrite_config ${SDCARD}/config/rtspserver.conf USERNAME "$DEFAULT_LOGIN"
+    rewrite_config ${SDCARD}/config/rtspserver.conf USERPASSWORD "$1"
 }
 
 # Input arg - file with PID
