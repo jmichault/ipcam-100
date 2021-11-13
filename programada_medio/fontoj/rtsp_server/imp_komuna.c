@@ -115,8 +115,8 @@ static void *ekrankopio_process(void *arg)
 }
 
 
-char * detectionScriptOn = "/opt/media/sdc/scripts/detectionOn.sh";
-char * detectionScriptOff = "/opt/media/sdc/scripts/detectionOff.sh";
+char * detectionScriptOn = "detectionOn.sh";
+char * detectionScriptOff = "detectionOff.sh";
 
 static int file_exist(const char *filename)
 {
@@ -129,22 +129,16 @@ static int file_exist(const char *filename)
 
 static void exec_command(const char *command, char param[4][2])
 {
-  if (file_exist(command))
+  fprintf(stderr,"Komenco de la ordono «%s».\n",command);
+  if (param == NULL)
   {
-    if (param == NULL)
-    {
-      int retVal =  system(command);
-    }
-    else
-    {
-      char exe[256] = {0};
-      snprintf(exe, sizeof(exe), "%s %s %s %s %s", command, param[0],param[1],param[2],param[3]);
-      int retVal =  system(exe);
-    }
+    int retVal =  system(command);
   }
   else
   {
-         fprintf(stderr,"komando «%s» ne ekzistas\n",command);
+    char exe[256] = {0};
+    snprintf(exe, sizeof(exe), "%s %s %s %s %s", command, param[0],param[1],param[2],param[3]);
+    int retVal =  system(exe);
   }
 }
 
