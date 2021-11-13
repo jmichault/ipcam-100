@@ -9,6 +9,7 @@ max_pik=100
 max_vid=20
 # minimuma libera spaco sur la SDa karto 
 min_lib=1000000
+motio_dir=$SDCARD/motio/
 save_subdir=$(date +%Y-%m-%d)
 pat0=$(date +%H.%M.%S)
 
@@ -25,7 +26,7 @@ fi
 
 # Komencu registri videon
 if [ x"$StokMovOn" == x1 ] ; then
-  save_dir=$SDCARD/motio/vid/$save_subdir/
+  save_dir=$motio_dir/vid/$save_subdir/
   if [ ! -d "$save_dir" ]; then
     mkdir -p "$save_dir"
   fi
@@ -44,7 +45,7 @@ fi
 # Save a snapshot
 if [ x"$StokPicOn" == x1 ] ; then
   echo komencas la ekrankopion
-  save_dir=$SDCARD/motio/pik/$save_subdir/
+  save_dir=$motio_dir/pik/$save_subdir/
   if [ ! -d "$save_dir" ]; then
     mkdir -p "$save_dir"
   fi
@@ -64,7 +65,7 @@ wait
 if [ x"$SciiTelOn" == x1 ]; then
   echo sendas telegram-mesaĝon
 	if [ "$StokPicOn" == x1 ] ; then
-		${SDCARD}/bin/telegram p "$save_dir/pik/$filename"
+		${SDCARD}/bin/telegram p "$motio_dir/pik/$save_subdir/$filename"
 	else
 		${SDCARD}/bin/getimage > "/tmp/telegram_image$$.jpg"
  		${SDCARD}/bin/telegram p "/tmp/telegram_image$$.jpg"
@@ -74,17 +75,17 @@ fi
 
 # limigi la nombron da videoj
 echo forigas supernombrajn filmetojn
-while [ "$(ls "$save_dir/vid" | wc -l)" -gt "$max_vid" ]; do
-	rm -f "$save_dir/vid/$(ls -ltr "$save_dir/vid" | awk 'NR==2{print $9}')"
+while [ "$(ls "$motio_dir/vid" | wc -l)" -gt "$max_vid" ]; do
+	rm -f "$motio_dir/vid/$(ls -ltr "$motio_dir/vid" | awk 'NR==2{print $9}')"
 done
 # limigi la nombron da bildoj
 echo forigas supernombrajn bildojn
-while [ "$(ls "$save_dir/pik" | wc -l)" -gt "$max_pik" ]; do
-	rm -f "$save_dir/pik/$(ls -ltr "$save_dir/pik" | awk 'NR==2{print $9}')"
+while [ "$(ls "$motio_dir/pik" | wc -l)" -gt "$max_pik" ]; do
+	rm -f "$motio_dir/pik/$(ls -ltr "$motio_dir/pik" | awk 'NR==2{print $9}')"
 done
 echo liberigas spacon 
 while [ "$(df -k ${SDCARD}| awk 'NR==2{print $4}')" -lt "$min_lib" ]; do
-  DOS=$(ls -lrt "$save_dir"/*/* | awk 'NR==1{print $9}')
+  DOS=$(ls -lrt "$motio_dir"/*/* | awk 'NR==1{print $9}')
   if [ "x$DOS" = "x" ]; then
     echo "neeble liberigi la deziratan spacon."
     break
