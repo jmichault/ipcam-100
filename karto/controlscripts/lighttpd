@@ -43,10 +43,10 @@ start()
     ## change secret
     SEC=$(openssl rand -base64 36)
     cat "$CONFIGPATH/lighttpd.conf"|grep -v "auth.*\"secret\"" >/tmp/lighttpd.conf.$$
-    mv "$CONFIGPATH/lighttpd.conf.2" "$CONFIGPATH/lighttpd.conf.3"
-    mv "$CONFIGPATH/lighttpd.conf.1" "$CONFIGPATH/lighttpd.conf.2"
-    mv "$CONFIGPATH/lighttpd.conf" "$CONFIGPATH/lighttpd.conf.1"
-    mv /tmp/lighttpd.conf.$$ "$CONFIGPATH/lighttpd.conf"
+    mv -f "$CONFIGPATH/lighttpd.conf.2" "$CONFIGPATH/lighttpd.conf.3"
+    mv -f "$CONFIGPATH/lighttpd.conf.1" "$CONFIGPATH/lighttpd.conf.2"
+    mv -f "$CONFIGPATH/lighttpd.conf" "$CONFIGPATH/lighttpd.conf.1"
+    mv -f /tmp/lighttpd.conf.$$ "$CONFIGPATH/lighttpd.conf"
     echo "auth.method.tkt.opts += (\"secret\" => \"${SEC}\")" >>"$CONFIGPATH/lighttpd.conf"
     ## 
     echo "Starting ${SERVICE_NAME}"

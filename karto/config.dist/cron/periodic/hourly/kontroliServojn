@@ -8,6 +8,15 @@ then
   exit
 fi
 
+if touch ${SDCARD}/test.$$ ; then
+ echo carte OK
+ rm -f ${SDCARD}/test.$$
+else
+ echo fsck à faire
+ fsck.vfat -y /dev/mmcblk0p1
+ reboot
+fi
+
 for SERVICE in lighttpd rtsp
 do 
   if  ! service $SERVICE status
