@@ -10,12 +10,15 @@ function getFiles(dir, subdir) {
    $('#files').html("");
    for (var i = 0; i < out_all.length-1; i++) {
     var out_info = out_all[i].split("#:#");
+    var src="/lib/bt-play.png";
+    if ( dir == "pik" )
+      src="DCIM/"+dir+"/"+subdir+"/"+out_info[0];
     $('#files').append(
       "<a class=\"data\" data-src=\"DCIM/"+dir+"/"+subdir+"/"+out_info[0]+"\" data-dos=\""+out_info[0]+"\">"
       +" <div class=\"media\" >"
       +"  <div class=\"media-left\">"
-      +"   <img src=\"DCIM/"+dir+"/"+subdir+"/"+out_info[0]
-               +"\" class=\"media-object align-self-center\" style=\"width:60px\">"
+      +"   <img decoding=async loading=lazy alt=\"\" src=\""+src
+               +"\" class=\"mr-3 align-self-center\" style=\"width:60px\">"
       +"  </div>"
       +"  <div class=\"media-body text-center\">"
       +"   <h4 class=\"media-heading\">"+out_info[0]+"</h4>"
