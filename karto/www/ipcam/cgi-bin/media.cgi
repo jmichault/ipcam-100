@@ -24,11 +24,15 @@ if [ -n "$F_cmd" ]; then
    getFiles)
     find "/opt/media/mmcblk0p1/motio/${F_dir}/${F_subdir}" -type f -maxdepth 1 -mindepth 1|sort -r|while read file
       do                                    
-          file_size=$(ls -lh "$file" | awk '{print $5}') 
-          file_url="${F_dir}/$file"
-          file_date=$(ls -lh "$file" | awk '{print $6 "-" $7 "-" $8}')
-          file_name=$(basename "$file")
-          echo "${file_name}#:#${file_size}#:#${file_date}#:#${file_url}"
+        file_url="$file"                                                                                        
+        shift $#                                                                                                  
+        set -- $(ls -lh "$file")                                                                                  
+        shift 4                                                                                                   
+        file_size=$1                                                                                            
+        shift                                                                                                     
+        file_date="$1 $2 $3"                                                                                    
+        file_name=${file##?*/}                                                                                  
+        echo "${file_name}#:#${file_size}#:#${file_date}#:#${file_url}"
       done
     return
     ;;
