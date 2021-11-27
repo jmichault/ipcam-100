@@ -1,0 +1,43 @@
+#/bin/sh
+#################################
+# konservi agordojn
+#################################
+. /etc/profile >/dev/null 2>&1
+
+konservi()
+{
+  destdos="/tmp/kons$$/$1/$2"
+  ujo=${destdos%/?*}
+  mkdir -p $ujo
+  cp -p "$2" "/tmp/kons$$/$1/$2"
+}
+
+for dir in etc config www/ipcam/config
+do
+  cd ${SDCARD}/${dir}
+  find . -type f | while read file
+  do
+    if [ ! -f "${SDCARD}/${dir}.dist/$file" ]; then
+      konservi "$dir" "$file"
+      continue
+    fi
+    if diff "$file" "${SDCARD}/${dir}.dist/$file" >/dev/null 2>&1 ; then
+      continue;
+    else
+      konservi "$dir" "$file"
+      continue
+    fi
+  done
+done
+
+cd /tmp/kons$$
+mv -f /root/agordojn.1.tgz /root/agordojn.2.tgz >/dev/null 2>&1
+mv -f /root/agordojn.tgz /root/agordojn.1.tgz >/dev/null 2>&1
+tar zcf /root/agordojn.tgz .
+cp -p /root/agordojn.tgz ${SDCARD}/www/ipcam/sekurkopio/
+if diff /root/agordojn.1.tgz /root/agordojn.tgz >/dev/null 2>&1 ; then
+  mv -f /root/agordojn.2.tgz /root/agordojn.1.tgz >/dev/null 2>&1
+fi
+cd /root
+rm -rf /tmp/kons$$
+

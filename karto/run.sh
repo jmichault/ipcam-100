@@ -95,7 +95,7 @@ END
     cp -fRL "/etc/profile" ${SDCARD}/etc
     echo "
 export SDCARD=/opt/media/mmcblk0p1
-export PATH=${SDCARD}/bin:$PATH
+export PATH=${SDCARD}/bin:/opt/bin:$PATH
 export LD_LIBRARY_PATH=\"${SDCARD}/lib:/lib/:/ipc/lib/\"
 export CONFIGPATH=\"${SDCARD}/config\"
 export LOGDIR=\"${SDCARD}/log\"
@@ -131,6 +131,9 @@ init_gpio 81
 if [ ! -d /opt/bin ] ; then mkdir /opt/bin; fi
 for x in ssh scp dbclient ssl_client ; do
   if [ ! -L /opt/bin/$x ] ; then ln -s ${SDCARD}/bin/dropbearmulti /opt/bin/$x ; fi
+done
+for x in bunzip2 bzip2 gzip gunzip ; do
+  if [ ! -L /opt/bin/$x ] ; then ln -s ${SDCARD}/bin/busybox /opt/bin/$x ; fi
 done
 
 ## Set Hostname
