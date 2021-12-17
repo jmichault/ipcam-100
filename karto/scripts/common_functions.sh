@@ -435,9 +435,9 @@ led_blink()
 
     for i in $(seq 1 $blink_count); do
        blue_led on
-       sleep 0.25
+       sleep 0.15
        blue_led off
-       sleep 0.25
+       sleep 0.15
     done
 
     if [ $led_status == "ON" ]; then

@@ -1,0 +1,2 @@
+
+curl --cacert /etc/ssl/certs/ca-certificates.crt https://jmichault.github.io/ipcam-100-dok/public/karto.zip --output ${SDCARD}/update.zip
