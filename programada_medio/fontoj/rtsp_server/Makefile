@@ -34,6 +34,7 @@ OBJS += imp_komuna.o imp_vars_h264.o
 OBJS += H264ImpServerMediaSubsession.o ImpSource.o
 # Mjpeg Objs :
 OBJS += ImpJpegVideoDeviceSource.o JpegFrameParser.o ServerMediaSubsession.o
+#
 OBJS += ../rtspserver-tools/sharedmem.o
 OBJS += agordolegilo.o movolegilo.o
 

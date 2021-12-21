@@ -119,6 +119,15 @@ static void *ekrankopio_process(void *arg)
 char * detectionScriptOn = "detectionOn.sh";
 char * detectionScriptOff = "detectionOff.sh";
 
+static void exec_command(const char *command)
+{
+  pid_t pid = fork();
+  if ( pid == 0 )
+  {
+    execl("/bin/sh", "sh", "-c", command, (char *) NULL);
+  }
+}
+
 static void *ivs_move_get_result_process(void *arg)
 {
   int boucle = 0, ret = 0;
@@ -133,25 +142,25 @@ static void *ivs_move_get_result_process(void *arg)
   // watchdog
   int watchdog_fd = open("/dev/watchdog",O_RDWR);
   if(watchdog_fd < 0) {
-    fprintf(stderr, "Could not init watchdog: %s\n", strerror(errno));
+    fprintf(stderr, "Ne eblis lanĉi gardhundon: %s\n", strerror(errno));
   }
 
-  for (boucle = 0;  ; boucle++,usleep(100000))
+  for (boucle = 0;  ; boucle++,usleep(200000))
   {
-    if ( ! (boucle % 100) && (watchdog_fd >= 0) )
+    if ( watchdog_fd >= 0 )
     {
       ret = ioctl(watchdog_fd, WDIOC_KEEPALIVE, NULL);
       if (ret < 0)
-        fprintf(stderr, "Could not pat watchdog: %s\n", strerror(errno));
+        fprintf(stderr, "Ne eblis frapeti gardhundon: %s\n", strerror(errno));
       else
-        fprintf(stderr, "pat watchdog OK.\n");
+        fprintf(stderr, "frapeta gardhundon.\n");
     }
     if(quit)
     {
       fprintf(stderr,"get_result_process fino.\n");
-      return (void *)0;
+      break;
     }
-    ret = IMP_IVS_PollingResult(chn_num, IMP_IVS_DEFAULT_TIMEOUTMS); // timeout -1 = default
+    ret = IMP_IVS_PollingResult(chn_num, 50000); // timeout =50s
     if (ret < 0) {
       fprintf(stderr , "%s: IMP_IVS_PollingResult(%d) failed\n",TAG, chn_num);
       continue;
@@ -194,7 +203,7 @@ static void *ivs_move_get_result_process(void *arg)
           char exe[256] ;
           snprintf(exe, sizeof(exe), "%s %ld", detectionScriptOn, hasMove);
           fprintf(stderr,"Komenco de la ordono «%s».\n",exe);
-          int retVal =  system(exe);
+          exec_command(exe);
 	}
       }
       else fprintf(stderr,"%ld.",hasMove);
@@ -217,12 +226,18 @@ static void *ivs_move_get_result_process(void *arg)
           char exe[256] ;
           snprintf(exe, sizeof(exe), "%s", detectionScriptOff);
           fprintf(stderr,"Komenco de la ordono «%s».\n",exe);
-          int retVal =  system(exe);
+          exec_command(exe);
         }
         dumPauxzo=movAgordo.SenaktivaTempo*10;
       }
     }
 
+  }
+  if ( watchdog_fd >= 0 )
+  {
+    fprintf(stderr,"Malaktivigo de la gardhundo.\n");
+    write(watchdog_fd,"V",1);
+    close(watchdog_fd);
   }
   fprintf(stderr,"get_result_process fino.\n");
 
