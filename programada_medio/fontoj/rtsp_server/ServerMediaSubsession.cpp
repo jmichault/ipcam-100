@@ -60,7 +60,7 @@ FramedSource *UnicastServerMediaSubsession::createNewStreamSource(unsigned clien
 
 RTPSink *UnicastServerMediaSubsession::createNewRTPSink(Groupsock *rtpGroupsock, unsigned char rtpPayloadTypeIfDynamic,
                                                         FramedSource *inputSource) {
-    //printf("UnicastServerMediaSubsession::createNewRTPSink\n");
+    //fprintf(stderr,"UnicastServerMediaSubsession::createNewRTPSink\n");
     return createSink(envir(), rtpGroupsock, rtpPayloadTypeIfDynamic, m_canal);
 }
 

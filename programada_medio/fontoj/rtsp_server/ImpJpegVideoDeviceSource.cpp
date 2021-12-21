@@ -63,7 +63,7 @@ int ImpJpegVideoDeviceSource::initDevice(int canal) {
 ImpJpegVideoDeviceSource
 ::ImpJpegVideoDeviceSource(UsageEnvironment &env, int canal)
         : JPEGVideoSource(env)  {
-  printf(" new ImpJpegVideoDeviceSource\n");
+  fprintf(stderr," new ImpJpegVideoDeviceSource\n");
     m_canal=canal;
     if (initDevice(canal)) {
         throw DeviceException();
@@ -71,7 +71,7 @@ ImpJpegVideoDeviceSource
 }
 
 ImpJpegVideoDeviceSource::~ImpJpegVideoDeviceSource() {
-  printf("~ImpJpegVideoDeviceSource\n");
+  fprintf(stderr,"~ImpJpegVideoDeviceSource\n");
 }
 
 

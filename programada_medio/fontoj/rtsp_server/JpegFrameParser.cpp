@@ -58,13 +58,13 @@ JpegFrameParser::JpegFrameParser() :
         _qTables(NULL), _qTablesLength(0),
         _restartInterval(0),
         _scandata(NULL), _scandataLength(0) {
-  printf(" new JpegFrameParser\n");
+  fprintf(stderr," new JpegFrameParser\n");
     _qTables = new unsigned char[128 * 2];
     memset(_qTables, 8, 128 * 2);
 }
 
 JpegFrameParser::~JpegFrameParser() {
-  printf("~JpegFrameParser\n");
+  fprintf(stderr,"~JpegFrameParser\n");
     if (_qTables != NULL)
         delete[] _qTables;
 }

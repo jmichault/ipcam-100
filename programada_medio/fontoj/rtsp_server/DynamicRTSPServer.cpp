@@ -42,11 +42,11 @@ DynamicRTSPServer::DynamicRTSPServer(UsageEnvironment& env, int ourSocketIPv4, i
 				     Port ourPort,
 				     UserAuthenticationDatabase* authDatabase, unsigned reclamationTestSeconds)
   : RTSPServer(env, ourSocketIPv4, ourSocketIPv6, ourPort, authDatabase, reclamationTestSeconds) {
-  printf(" new DynamicRTSPServer\n");
+  fprintf(stderr," new DynamicRTSPServer\n");
 }
 
 DynamicRTSPServer::~DynamicRTSPServer() {
-  printf("~DynamicRTSPServer\n");
+  fprintf(stderr,"~DynamicRTSPServer\n");
 }
 
 

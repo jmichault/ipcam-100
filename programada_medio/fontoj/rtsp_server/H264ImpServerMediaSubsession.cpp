@@ -36,11 +36,11 @@ H264ImpServerMediaSubsession::H264ImpServerMediaSubsession(UsageEnvironment& env
 								       char const* fileName, Boolean reuseFirstSource)
   : FileServerMediaSubsession(env, fileName, reuseFirstSource),
     fAuxSDPLine(NULL), fDoneFlag(0), fDummyRTPSink(NULL) {
-  printf(" new H264ImpServerMediaSubsession\n");
+  fprintf(stderr," new H264ImpServerMediaSubsession\n");
 }
 
 H264ImpServerMediaSubsession::~H264ImpServerMediaSubsession() {
-  printf("~H264ImpServerMediaSubsession\n");
+  fprintf(stderr,"~H264ImpServerMediaSubsession\n");
   delete[] fAuxSDPLine;
 }
 

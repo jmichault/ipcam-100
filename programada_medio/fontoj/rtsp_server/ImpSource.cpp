@@ -39,7 +39,7 @@ unsigned ImpSource::referenceCount = 0;
 ImpSource::ImpSource(UsageEnvironment& env,
 			   int params)
   : FramedSource(env), canal(params) {
-  printf(" new ImpSource\n");
+  fprintf(stderr," new ImpSource\n");
   if (referenceCount == 0) {
     // Any global initialization of the device would be done here:
     bufferSize = 100000;
@@ -67,7 +67,7 @@ ImpSource::ImpSource(UsageEnvironment& env,
 ImpSource::~ImpSource() {
   // Any instance-specific 'destruction' (i.e., resetting) of the device would be done here:
   //%%% TO BE WRITTEN %%%
-  printf("~ImpSource\n");
+  fprintf(stderr,"~ImpSource\n");
 
   --referenceCount;
   if (referenceCount == 0) {

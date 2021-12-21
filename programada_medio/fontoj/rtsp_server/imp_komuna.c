@@ -26,6 +26,7 @@
 #ifdef UZI_DMALLOC
 #include <dmalloc.h>
 #endif
+#include <linux/watchdog.h>
 
 #include <imp/imp_log.h>
 #include <imp/imp_ivs.h>
@@ -118,31 +119,6 @@ static void *ekrankopio_process(void *arg)
 char * detectionScriptOn = "detectionOn.sh";
 char * detectionScriptOff = "detectionOff.sh";
 
-static int file_exist(const char *filename)
-{
-  FILE *f = fopen(filename,"r");
-  if (f == NULL)
-    return 0;
-  fclose(f);
-  return 1;
-}
-
-static void exec_command(const char *command, char param[4][2])
-{
-  fprintf(stderr,"Komenco de la ordono «%s».\n",command);
-  if (param == NULL)
-  {
-    int retVal =  system(command);
-  }
-  else
-  {
-    char exe[256] = {0};
-    snprintf(exe, sizeof(exe), "%s %s %s %s %s", command, param[0],param[1],param[2],param[3]);
-    int retVal =  system(exe);
-  }
-}
-
-
 static void *ivs_move_get_result_process(void *arg)
 {
   int boucle = 0, ret = 0;
@@ -154,8 +130,22 @@ static void *ivs_move_get_result_process(void *arg)
   int dumPauxzo=movAgordo.SenaktivaTempo*10;
   int dumFina=0;
 
+  // watchdog
+  int watchdog_fd = open("/dev/watchdog",O_RDWR);
+  if(watchdog_fd < 0) {
+    fprintf(stderr, "Could not init watchdog: %s\n", strerror(errno));
+  }
+
   for (boucle = 0;  ; boucle++,usleep(100000))
   {
+    if ( ! (boucle % 100) && (watchdog_fd >= 0) )
+    {
+      ret = ioctl(watchdog_fd, WDIOC_KEEPALIVE, NULL);
+      if (ret < 0)
+        fprintf(stderr, "Could not pat watchdog: %s\n", strerror(errno));
+      else
+        fprintf(stderr, "pat watchdog OK.\n");
+    }
     if(quit)
     {
       fprintf(stderr,"get_result_process fino.\n");
@@ -182,25 +172,32 @@ static void *ivs_move_get_result_process(void *arg)
       if(dumPauxzo==0) fprintf(stderr,"finita paŭzo, aktiva detekto\n");
       continue;
     }
-    int hasMove=0;
+    long int hasMove=0;
+    int nbZono=0;
     for( int i=0 ; i< MovoParam.roiRectCnt ; i++)
     {
       if(result->retRoi[i])
       {
         //if(!hasMove) fprintf(stderr,"Movo detekta en : ");
-        hasMove += result->retRoi[i];
-        //printf( "%d ", i);
+        hasMove |= (1 << i) ;
+        nbZono++;
       }
     }
-    if(hasMove)
+    if(nbZono >= movAgordo.MinZonoj && nbZono <= movAgordo.MaxZonoj)
     {
       if(!inMovo)
       {
         fprintf(stderr,"Movado komenca.\n");
         inMovo=true;
-        if(movAgordo.Aktivida) exec_command(detectionScriptOn, NULL);
+        if(movAgordo.Aktivida)
+        {
+          char exe[256] ;
+          snprintf(exe, sizeof(exe), "%s %ld", detectionScriptOn, hasMove);
+          fprintf(stderr,"Komenco de la ordono «%s».\n",exe);
+          int retVal =  system(exe);
+	}
       }
-      else fprintf(stderr,".");
+      else fprintf(stderr,"%ld.",hasMove);
       dumFina=movAgordo.FinaTempo*10;
     }
     else
@@ -216,7 +213,12 @@ static void *ivs_move_get_result_process(void *arg)
         inMovo=false;
         dumFina=0;
         if(movAgordo.Aktivida)
-          exec_command(detectionScriptOff, NULL);
+        {
+          char exe[256] ;
+          snprintf(exe, sizeof(exe), "%s", detectionScriptOff);
+          fprintf(stderr,"Komenco de la ordono «%s».\n",exe);
+          int retVal =  system(exe);
+        }
         dumPauxzo=movAgordo.SenaktivaTempo*10;
       }
     }

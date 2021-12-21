@@ -37,7 +37,7 @@ UserAuthenticationDatabase* authDB = NULL;
 char quit = 0;
 
 void sighandler(int n) {
-  printf("ricevita signalo %d\n",n);
+  fprintf(stderr,"ricevita signalo %d\n",n);
 #ifdef UZI_DMALLOC
   dmalloc_log_stats();
 #endif
@@ -45,14 +45,14 @@ void sighandler(int n) {
   sleep(5);
   Medium::close(rtspServer);
   delete scheduler;
-  printf("avant env->reclaim\n");
-  if (env->reclaim()) printf("env->reclaim() OK\n");
-  else printf("env->reclaim() KO\n");
+  fprintf(stderr,"avant env->reclaim\n");
+  if (env->reclaim()) fprintf(stderr,"env->reclaim() OK\n");
+  else fprintf(stderr,"env->reclaim() KO\n");
   delete scheduler;
   delete authDB;
   imp_exit();
 #ifdef UZI_DMALLOC
-  printf("avant dmalloc_shutdown\n");
+  fprintf(stderr,"avant dmalloc_shutdown\n");
   dmalloc_shutdown ();
 #endif
   exit(0);
@@ -232,7 +232,7 @@ int main(int argc, char** argv) {
       channel_attrs[1].rcAttr.attrRcMode.attrH264Cbr.gopRelation = 0;
     }
   }
-printf("avant imp_init()\n");
+  fprintf(stderr,"avant imp_init()\n");
   // init T21
   int ret=imp_init();
   if(ret<0)
@@ -240,7 +240,7 @@ printf("avant imp_init()\n");
     fprintf(stderr,"imp_init failed\n");
     exit(1);
   }
-printf("apres imp_init()\n");
+  fprintf(stderr,"apres imp_init()\n");
 
 
 
