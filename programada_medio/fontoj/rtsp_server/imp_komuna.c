@@ -125,10 +125,13 @@ char * detectionScriptOff = "detectionOff.sh";
 
 static void exec_command(const char *command)
 {
+
+  sigignore( SIGCHLD );
   pid_t pid = fork();
   if ( pid == 0 )
   {
-    system(command);
+    setsid();
+    execl("/bin/sh", "sh", "-c", command, (char *) NULL);
   }
 }
 
