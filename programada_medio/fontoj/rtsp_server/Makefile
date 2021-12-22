@@ -20,7 +20,7 @@ LIBS += -lssl -ltls -lcrypto -lliveMedia -lgroupsock -lBasicUsageEnvironment -lU
 
 ifdef UZI_DMALLOC
   LIBS += -ldmallocthcxx
-  CFLAGS += -DUZI_MALLOC=1
+  CFLAGS += -DUZI_MALLOC=1 -DDMALLOC
 endif
 
 
@@ -40,7 +40,7 @@ OBJS += agordolegilo.o movolegilo.o
 
 rtsp_server: $(OBJS)
 	$(CPLUSPLUS) $(LDFLAGS) -o $@ $^ $(LIBS)
-#	$(STRIP) $@
+	$(STRIP) $@
 
 
 %.o:%.c 

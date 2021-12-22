@@ -27,6 +27,10 @@
 #include <dmalloc.h>
 #endif
 #include <linux/watchdog.h>
+#include <sched.h>
+#include <stddef.h>
+#include <signal.h>
+
 
 #include <imp/imp_log.h>
 #include <imp/imp_ivs.h>
@@ -124,7 +128,7 @@ static void exec_command(const char *command)
   pid_t pid = fork();
   if ( pid == 0 )
   {
-    execl("/bin/sh", "sh", "-c", command, (char *) NULL);
+    system(command);
   }
 }
 
@@ -152,8 +156,8 @@ static void *ivs_move_get_result_process(void *arg)
       ret = ioctl(watchdog_fd, WDIOC_KEEPALIVE, NULL);
       if (ret < 0)
         fprintf(stderr, "Ne eblis frapeti gardhundon: %s\n", strerror(errno));
-      else
-        fprintf(stderr, "frapeta gardhundon.\n");
+      //else
+      //  fprintf(stderr, "frapeta gardhundon.\n");
     }
     if(quit)
     {
