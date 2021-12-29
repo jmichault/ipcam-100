@@ -97,17 +97,17 @@ ir_led(){
 ir_cut(){
   case "$1" in
   on)
-    setgpio 25 0
-    setgpio 26 1
+    setgpio 79 0
+    setgpio 80 1
     sleep 1
-    setgpio 26 0
+    setgpio 80 0
     echo "1" > /var/run/ircut
     ;;
   off)
-    setgpio 26 0
-    setgpio 25 1
+    setgpio 80 0
+    setgpio 79 1
     sleep 1
-    setgpio 25 0
+    setgpio 79 0
     echo "0" > /var/run/ircut
     ;;
   status)

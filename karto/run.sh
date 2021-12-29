@@ -71,6 +71,9 @@ echo "Bind mounted ${SDCARD}/etc to /etc" >> $LOGPATH
 
 # init ir_led gpio :
 init_gpio 46
+# init IR cut filter :
+init_gpio 79
+init_gpio 80
 # init white_led gpio :
 init_gpio 81
 

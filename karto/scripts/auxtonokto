@@ -13,6 +13,7 @@ echo "  nombro : $nombro"
 
 tago()
 {
+  ir_cut on
   if [ "x$blankaLed" == "x1" ]
   then
     blue_led off
@@ -25,6 +26,7 @@ tago()
 
 nokto()
 {
+  ir_cut off
   if [ "x$blankaLed" == "x1" ]
   then
     blue_led on

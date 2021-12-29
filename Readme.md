@@ -40,12 +40,12 @@ video-sentilo : GC2053
 * ŝanĝo de pasvorto por http-aliro,rtsp,ssh.
 * aŭtomata nokta detekto
 * Bildrigardilo
+* ir-cut
 
 ## Kio ne funkcias en alternativa firmvaro:
 * sonosistemo
 * OSD
 * ĝisdatigo de firmvaro
-* ir-cut
 * mqtt
 * ktp ...
 
